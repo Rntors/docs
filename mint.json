@@ -47,31 +47,31 @@
     {
       "group": "Getting Started",
       "pages": [
-        "introduction",
-        "getting-started",
-        "concepts"
+        "docs/introduction",
+        "docs/getting-started",
+        "docs/concepts"
       ]
     },
     {
       "group": "Authentication",
       "pages": [
-        "authentication/api-keys",
-        "authentication/scopes"
+        "docs/authentication/api-keys",
+        "docs/authentication/scopes"
       ]
     },
     {
       "group": "Webhooks",
       "pages": [
-        "webhooks/introduction",
-        "webhooks/security",
-        "webhooks/event-catalog",
-        "webhooks/payload-examples"
+        "docs/webhooks/introduction",
+        "docs/webhooks/security",
+        "docs/webhooks/event-catalog",
+        "docs/webhooks/payload-examples"
       ]
     },
     {
       "group": "API Reference",
       "pages": [
-        "api-reference/overview"
+        "docs/api-reference/overview"
       ]
     }
   ],
@@ -81,5 +81,6 @@
   },
   "api": {
     "baseUrl": "https://api.rntor.com/v1"
-  }
+  },
+  "openapi": "docs/api-reference/openapi.yaml"
 }
