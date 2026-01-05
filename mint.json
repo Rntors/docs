@@ -17,6 +17,10 @@
   },
   "topbarLinks": [
     {
+      "name": "Support",
+      "url": "mailto:support@rntor.com"
+    },
+    {
       "name": "Dashboard",
       "url": "https://app.rntor.com"
     }
@@ -29,13 +33,6 @@
     {
       "name": "API Reference",
       "url": "api-reference"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Support",
-      "icon": "envelope",
-      "url": "mailto:support@rntor.com"
     }
   ],
   "navigation": [
