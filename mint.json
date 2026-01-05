@@ -81,6 +81,5 @@
   },
   "api": {
     "baseUrl": "https://api.rntor.com/v1"
-  },
-  "openapi": "docs/api-reference/openapi.yaml"
+  }
 }
