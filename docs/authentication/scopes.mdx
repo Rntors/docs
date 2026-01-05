@@ -1,0 +1,157 @@
+---
+title: Scopes & Permissions
+description: "Understanding API key scopes and permission levels"
+---
+
+# Scopes & Permissions
+
+Scopes define what actions an API key can perform. This page explains the available scopes and how they control access to Rntor resources.
+
+## Overview
+
+When you generate an API key, it's assigned a set of scopes that determine:
+- Which resources can be accessed
+- What operations are allowed (read, write, delete)
+- Which data is included in responses
+
+## Default Scopes
+
+New API keys are created with these read-only scopes:
+
+| Scope | Description |
+|-------|-------------|
+| `read:bookings` | View bookings and availability |
+| `read:customers` | View customer information |
+| `read:invoices` | View invoice data and payment status |
+
+```json Default Scope Assignment
+{
+  "scopes": [
+    "read:bookings",
+    "read:customers",
+    "read:invoices"
+  ]
+}
+```
+
+## Available Scopes
+
+### Bookings
+
+| Scope | Description |
+|-------|-------------|
+| `read:bookings` | View bookings, check availability |
+| `write:bookings` | Create and update bookings |
+| `delete:bookings` | Cancel bookings |
+
+### Customers
+
+| Scope | Description |
+|-------|-------------|
+| `read:customers` | View customer profiles and companies |
+| `write:customers` | Create and update customers |
+| `delete:customers` | Deactivate customer accounts |
+
+### Invoices
+
+| Scope | Description |
+|-------|-------------|
+| `read:invoices` | View invoices and payment history |
+| `write:invoices` | Create and update invoices |
+
+### Resources
+
+| Scope | Description |
+|-------|-------------|
+| `read:resources` | View resources and locations |
+| `write:resources` | Update resource availability and pricing |
+
+### Events
+
+| Scope | Description |
+|-------|-------------|
+| `read:events` | View events and registrations |
+| `write:events` | Create events, manage registrations |
+
+### Subscriptions
+
+| Scope | Description |
+|-------|-------------|
+| `read:subscriptions` | View customer subscriptions |
+| `write:subscriptions` | Create and modify subscriptions |
+
+## Scope Inheritance
+
+Some scopes implicitly include others:
+
+```
+write:bookings → includes → read:bookings
+write:customers → includes → read:customers
+delete:bookings → includes → read:bookings, write:bookings
+```
+
+## Checking Scopes
+
+Your API key's scopes are returned in authentication responses:
+
+```json API Response Headers
+{
+  "X-Scopes": "read:bookings,read:customers,read:invoices"
+}
+```
+
+## Insufficient Permissions
+
+Attempting an action without the required scope returns `403 Forbidden`:
+
+```json Error Response
+{
+  "error": "insufficient_scope",
+  "message": "This action requires the 'write:bookings' scope",
+  "required_scope": "write:bookings",
+  "your_scopes": ["read:bookings", "read:customers", "read:invoices"]
+}
+```
+
+## Requesting Additional Scopes
+
+<Note>
+  Currently, all API keys are created with the default read-only scopes. Additional scopes will be available when the REST API launches. Contact support if you need expanded access for your integration.
+</Note>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Principle of Least Privilege">
+    Request only the scopes your application needs. If you only need to read booking data, don't request write permissions.
+  </Accordion>
+
+  <Accordion title="Separate Keys for Different Functions">
+    Create separate API keys for different parts of your application:
+    - Reporting dashboard: `read:bookings`, `read:invoices`
+    - Booking widget: `read:resources`, `write:bookings`
+    - Admin panel: Full scope access
+  </Accordion>
+
+  <Accordion title="Document Required Scopes">
+    In your integration documentation, clearly list which scopes are required for each feature.
+  </Accordion>
+</AccordionGroup>
+
+## Future Scopes
+
+The following scopes are planned for the full REST API release:
+
+| Scope | Description |
+|-------|-------------|
+| `read:credits` | View credit balances and transactions |
+| `write:credits` | Add or deduct credits |
+| `read:tickets` | View support tickets |
+| `write:tickets` | Create and update tickets |
+| `admin:merchant` | Full administrative access |
+
+## Webhook Scopes
+
+Webhook subscriptions are managed separately through the Svix portal. API key scopes do not affect which webhook events you can subscribe to.
+
+All webhook events are available regardless of your API key scopes.

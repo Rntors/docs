@@ -1,0 +1,482 @@
+---
+title: Event Catalog
+description: "Complete reference of all 37 webhook events available in Rntor"
+---
+
+# Event Catalog
+
+Rntor sends webhooks for 37 event types across 13 categories. Subscribe to the events relevant to your integration.
+
+## Event Types Overview
+
+| Category | Events | Description |
+|----------|--------|-------------|
+| [Merchants](#merchants) | 1 | Merchant/network settings changes |
+| [Resources](#resources) | 3 | Resource/space management |
+| [Bookings](#bookings) | 4 | Room reservations and scheduling |
+| [Customers](#customers) | 3 | Member account changes |
+| [Invoices](#invoices) | 3 | Billing and payments |
+| [Subscriptions](#subscriptions) | 3 | Membership plan changes |
+| [Events](#events) | 2 | Community event registrations |
+| [Memberships](#memberships) | 2 | Team member management |
+| [Support](#support) | 4 | Help desk tickets |
+| [Visitors](#visitors) | 2 | Guest check-in/out |
+| [Orders](#orders) | 4 | Shop order lifecycle |
+| [Plans](#plans) | 3 | Membership plan management |
+| [Shop](#shop) | 3 | Shop category management |
+
+---
+
+## Merchants
+
+Events related to merchant/network settings.
+
+<ResponseField name="merchant.updated" type="event">
+  Triggered when merchant settings are modified.
+  
+  **Use cases:**
+  - Sync branding changes to external systems
+  - Update partner integration configurations
+  - Track configuration changes
+</ResponseField>
+
+---
+
+## Resources
+
+Events related to bookable resources (desks, rooms, offices, etc.).
+
+<ResponseField name="resource.created" type="event">
+  Triggered when a new resource is added.
+  
+  **Use cases:**
+  - Sync resources to external booking systems
+  - Update floor plan integrations
+  - Notify relevant team members
+</ResponseField>
+
+<ResponseField name="resource.updated" type="event">
+  Triggered when a resource is modified (name, capacity, pricing, etc.).
+  
+  **Use cases:**
+  - Sync changes to external systems
+  - Update cached availability data
+  - Track configuration changes
+</ResponseField>
+
+<ResponseField name="resource.deleted" type="event">
+  Triggered when a resource is removed.
+  
+  **Use cases:**
+  - Remove from external catalogs
+  - Cancel associated bookings
+  - Update floor plan integrations
+</ResponseField>
+
+---
+
+## Bookings
+
+Events related to resource bookings and reservations.
+
+<ResponseField name="booking.created" type="event">
+  Triggered when a new booking is created.
+  
+  **Use cases:**
+  - Sync bookings to external calendars
+  - Send custom confirmation notifications
+  - Update availability in other systems
+</ResponseField>
+
+<ResponseField name="booking.updated" type="event">
+  Triggered when a booking is modified (time, attendees, notes, etc.).
+  
+  **Use cases:**
+  - Sync calendar changes
+  - Notify affected parties
+  - Update resource allocations
+</ResponseField>
+
+<ResponseField name="booking.confirmed" type="event">
+  Triggered when a pending booking is approved.
+  
+  **Use cases:**
+  - Send confirmation emails
+  - Reserve physical resources
+  - Add to billing queue
+</ResponseField>
+
+<ResponseField name="booking.cancelled" type="event">
+  Triggered when a booking is cancelled.
+  
+  **Use cases:**
+  - Free up resources
+  - Process refunds
+  - Notify waitlisted members
+</ResponseField>
+
+---
+
+## Customers
+
+Events related to customer (member) accounts.
+
+<ResponseField name="customer.created" type="event">
+  Triggered when a new customer is added to the system.
+  
+  **Use cases:**
+  - Provision accounts in external systems
+  - Send welcome emails
+  - Add to marketing lists (with consent)
+</ResponseField>
+
+<ResponseField name="customer.updated" type="event">
+  Triggered when customer information is modified.
+  
+  **Use cases:**
+  - Sync profile changes
+  - Update billing information
+  - Trigger re-verification workflows
+</ResponseField>
+
+<ResponseField name="customer.deleted" type="event">
+  Triggered when a customer account is deactivated.
+  
+  **Use cases:**
+  - Revoke access credentials
+  - Archive data
+  - Cancel active subscriptions
+</ResponseField>
+
+---
+
+## Invoices
+
+Events related to billing and payments.
+
+<ResponseField name="invoice.issued" type="event">
+  Triggered when a new invoice is generated.
+  
+  **Use cases:**
+  - Sync to accounting software
+  - Send payment reminders
+  - Update accounts receivable
+</ResponseField>
+
+<ResponseField name="invoice.paid" type="event">
+  Triggered when an invoice is marked as paid.
+  
+  **Use cases:**
+  - Record payment in accounting
+  - Send payment receipts
+  - Activate pending services
+</ResponseField>
+
+<ResponseField name="invoice.overdue" type="event">
+  Triggered when an invoice passes its due date without payment.
+  
+  **Use cases:**
+  - Send overdue notices
+  - Restrict account access
+  - Flag for collections
+</ResponseField>
+
+---
+
+## Subscriptions
+
+Events related to membership plans and recurring billing.
+
+<ResponseField name="subscription.created" type="event">
+  Triggered when a new subscription is started.
+  
+  **Use cases:**
+  - Set up recurring payments
+  - Grant access permissions
+  - Schedule welcome onboarding
+</ResponseField>
+
+<ResponseField name="subscription.updated" type="event">
+  Triggered when a subscription is modified (plan change, pause, etc.).
+  
+  **Use cases:**
+  - Adjust billing amounts
+  - Update access levels
+  - Notify of plan changes
+</ResponseField>
+
+<ResponseField name="subscription.cancelled" type="event">
+  Triggered when a subscription is cancelled.
+  
+  **Use cases:**
+  - Stop recurring billing
+  - Schedule access revocation
+  - Trigger churn analysis
+</ResponseField>
+
+---
+
+## Events
+
+Events related to community events and registrations.
+
+<ResponseField name="event.registration.created" type="event">
+  Triggered when someone registers for an event.
+  
+  **Use cases:**
+  - Add to event roster
+  - Send confirmation with details
+  - Check capacity limits
+</ResponseField>
+
+<ResponseField name="event.registration.cancelled" type="event">
+  Triggered when an event registration is cancelled.
+  
+  **Use cases:**
+  - Free up capacity
+  - Process refunds if paid
+  - Notify waitlisted attendees
+</ResponseField>
+
+---
+
+## Memberships
+
+Events related to team and company memberships.
+
+<ResponseField name="membership.created" type="event">
+  Triggered when a member is added to a company account.
+  
+  **Use cases:**
+  - Grant company permissions
+  - Send team invitation
+  - Update seat count
+</ResponseField>
+
+<ResponseField name="membership.invited" type="event">
+  Triggered when an invitation is sent to join a company.
+  
+  **Use cases:**
+  - Track pending invitations
+  - Send reminder emails
+  - Monitor onboarding funnel
+</ResponseField>
+
+---
+
+## Support
+
+Events related to help desk and support tickets.
+
+<ResponseField name="ticket.created" type="event">
+  Triggered when a new support ticket is opened.
+  
+  **Use cases:**
+  - Route to appropriate agent
+  - Send acknowledgment
+  - Sync to external helpdesk
+</ResponseField>
+
+<ResponseField name="ticket.updated" type="event">
+  Triggered when a support ticket is modified (assignee, category, priority, etc.).
+  
+  **Use cases:**
+  - Track ticket changes
+  - Notify assigned agents
+  - Update external helpdesk systems
+</ResponseField>
+
+<ResponseField name="ticket.resolved" type="event">
+  Triggered when a support ticket is closed/resolved.
+  
+  **Use cases:**
+  - Send satisfaction survey
+  - Update SLA metrics
+  - Close external tickets
+</ResponseField>
+
+<ResponseField name="ticket.deleted" type="event">
+  Triggered when a support ticket is deleted.
+  
+  **Use cases:**
+  - Remove from external helpdesk
+  - Clean up related data
+  - Update reporting dashboards
+</ResponseField>
+
+---
+
+## Visitors
+
+Events related to guest and visitor management.
+
+<ResponseField name="visitor.checked_in" type="event">
+  Triggered when a visitor checks in at a location.
+  
+  **Use cases:**
+  - Notify host of arrival
+  - Print visitor badge
+  - Log access for security
+</ResponseField>
+
+<ResponseField name="visitor.checked_out" type="event">
+  Triggered when a visitor checks out.
+  
+  **Use cases:**
+  - Close visitor session
+  - Calculate visit duration
+  - Update occupancy counts
+</ResponseField>
+
+---
+
+## Orders
+
+Events related to shop order lifecycle.
+
+<ResponseField name="order.created" type="event">
+  Triggered when a new shop order is placed.
+  
+  **Use cases:**
+  - Sync orders to external POS/inventory systems
+  - Send order confirmation to external channels
+  - Trigger fulfillment workflows
+</ResponseField>
+
+<ResponseField name="order.updated" type="event">
+  Triggered when an order's status or details are updated.
+  
+  **Use cases:**
+  - Track order progress
+  - Sync status changes to external systems
+  - Update customer-facing order tracking
+</ResponseField>
+
+<ResponseField name="order.completed" type="event">
+  Triggered when an order is marked as completed.
+  
+  **Use cases:**
+  - Mark order as fulfilled in external systems
+  - Trigger post-order follow-ups
+  - Update inventory counts
+</ResponseField>
+
+<ResponseField name="order.cancelled" type="event">
+  Triggered when an order is cancelled.
+  
+  **Use cases:**
+  - Process refunds in external payment systems
+  - Restore inventory counts
+  - Update analytics/reporting
+</ResponseField>
+
+---
+
+## Plans
+
+Events related to membership plan management.
+
+<ResponseField name="plan.created" type="event">
+  Triggered when a new membership plan is created.
+  
+  **Use cases:**
+  - Sync plans to external billing systems
+  - Update marketing materials with new offerings
+  - Notify sales team of new products
+</ResponseField>
+
+<ResponseField name="plan.updated" type="event">
+  Triggered when a plan is updated.
+  
+  **Use cases:**
+  - Sync price changes to external systems
+  - Update cached plan data
+  - Trigger notifications for plan changes
+</ResponseField>
+
+<ResponseField name="plan.deleted" type="event">
+  Triggered when a plan is deleted.
+  
+  **Use cases:**
+  - Remove plan from external catalogs
+  - Archive plan in connected systems
+  - Update reporting dashboards
+</ResponseField>
+
+---
+
+## Shop
+
+Events related to shop category management.
+
+<ResponseField name="shop_category.created" type="event">
+  Triggered when a new shop category is created.
+  
+  **Use cases:**
+  - Sync categories to external e-commerce systems
+  - Update product catalogs
+  - Track shop structure changes
+</ResponseField>
+
+<ResponseField name="shop_category.updated" type="event">
+  Triggered when a shop category is updated.
+  
+  **Use cases:**
+  - Sync category changes to external systems
+  - Update cached category data
+  - Track category modifications
+</ResponseField>
+
+<ResponseField name="shop_category.deleted" type="event">
+  Triggered when a shop category is deleted.
+  
+  **Use cases:**
+  - Remove category from external catalogs
+  - Clean up related products
+  - Update reporting dashboards
+</ResponseField>
+
+---
+
+## Subscribing to Events
+
+### Via Svix Portal
+
+1. Navigate to **Settings → Developers → Webhooks**
+2. Click on your endpoint (or create one)
+3. Under **Event Types**, select the events you want
+4. Save changes
+
+### Filtering Events
+
+You can subscribe to:
+- **All events**: Receive every webhook type
+- **Category**: All events in a category (e.g., all booking.*)
+- **Specific events**: Only selected event types
+
+<Tip>
+  Start with essential events for your integration. You can always add more later.
+</Tip>
+
+## Payload Structure
+
+All events follow the same envelope structure:
+
+```json
+{
+  // Entity-specific fields
+  "id": "uuid",
+  "field1": "value",
+  "field2": "value",
+  
+  // Metadata (present in all events)
+  "_meta": {
+    "event_id": "uuid",
+    "event_type": "category.action",
+    "merchant_id": "uuid",
+    "timestamp": "2024-01-15T10:30:00.000Z"
+  }
+}
+```
+
+See [Payload Examples](/webhooks/payload-examples) for detailed examples of each event type.

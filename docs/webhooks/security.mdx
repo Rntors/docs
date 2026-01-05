@@ -1,0 +1,308 @@
+---
+title: Webhook Security
+description: "Verify webhook signatures to ensure payloads are authentic"
+---
+
+# Webhook Security
+
+Every webhook request from Rntor includes a cryptographic signature. Verifying this signature ensures the payload is authentic and hasn't been tampered with.
+
+## Why Verify Signatures?
+
+Without signature verification, an attacker could:
+- Send fake webhook events to your endpoint
+- Forge booking confirmations or payment notifications
+- Trigger unintended actions in your system
+
+<Warning>
+  Always verify webhook signatures in production. Never skip verification, even for testing.
+</Warning>
+
+## Signature Headers
+
+Each webhook request includes three headers for verification:
+
+| Header | Description | Example |
+|--------|-------------|---------|
+| `svix-id` | Unique message identifier | `msg_2KrZZ1hTPxpRNb3hl9Dj5RvEBcR` |
+| `svix-timestamp` | Unix timestamp (seconds) | `1704289800` |
+| `svix-signature` | Comma-separated signatures | `v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=` |
+
+## Verification Process
+
+1. Construct the signed payload: `{svix-id}.{svix-timestamp}.{body}`
+2. Compute HMAC-SHA256 using your webhook secret
+3. Compare with the signature in the header
+4. Verify the timestamp is within 5 minutes
+
+## Getting Your Webhook Secret
+
+1. Go to **Settings → Developers → Webhooks**
+2. Click on your endpoint
+3. Click **Reveal Signing Secret**
+4. Copy the secret (starts with `whsec_`)
+
+<Warning>
+  Store the signing secret securely. Never expose it in client-side code or logs.
+</Warning>
+
+## Code Examples
+
+### JavaScript / Node.js
+
+Using the official Svix library (recommended):
+
+```bash Install
+npm install svix
+```
+
+```javascript Verify with Svix SDK
+import { Webhook } from 'svix';
+
+const secret = process.env.WEBHOOK_SECRET; // whsec_...
+
+app.post('/webhooks/rntor', (req, res) => {
+  const payload = req.body;
+  const headers = req.headers;
+
+  const wh = new Webhook(secret);
+  
+  try {
+    const verified = wh.verify(JSON.stringify(payload), {
+      'svix-id': headers['svix-id'],
+      'svix-timestamp': headers['svix-timestamp'],
+      'svix-signature': headers['svix-signature'],
+    });
+    
+    // Process the verified payload
+    handleWebhook(verified);
+    res.status(200).send('OK');
+    
+  } catch (err) {
+    console.error('Webhook verification failed:', err.message);
+    res.status(401).send('Invalid signature');
+  }
+});
+```
+
+Manual verification (without SDK):
+
+```javascript Manual Verification
+import crypto from 'crypto';
+
+function verifyWebhookSignature(payload, headers, secret) {
+  const svixId = headers['svix-id'];
+  const svixTimestamp = headers['svix-timestamp'];
+  const svixSignature = headers['svix-signature'];
+
+  // Check timestamp is within 5 minutes
+  const timestamp = parseInt(svixTimestamp, 10);
+  const currentTime = Math.floor(Date.now() / 1000);
+  if (Math.abs(currentTime - timestamp) > 300) {
+    throw new Error('Timestamp too old');
+  }
+
+  // Construct signed payload
+  const signedPayload = `${svixId}.${svixTimestamp}.${payload}`;
+
+  // Decode secret (remove whsec_ prefix and base64 decode)
+  const secretBytes = Buffer.from(secret.replace('whsec_', ''), 'base64');
+
+  // Calculate expected signature
+  const expectedSignature = crypto
+    .createHmac('sha256', secretBytes)
+    .update(signedPayload)
+    .digest('base64');
+
+  // Compare signatures
+  const signatures = svixSignature.split(',');
+  for (const sig of signatures) {
+    const [version, signature] = sig.split(',');
+    if (version === 'v1' && signature === expectedSignature) {
+      return true;
+    }
+  }
+
+  throw new Error('Invalid signature');
+}
+```
+
+### Python
+
+Using the official Svix library:
+
+```bash Install
+pip install svix
+```
+
+```python Verify with Svix SDK
+from svix.webhooks import Webhook
+import os
+
+webhook_secret = os.environ.get('WEBHOOK_SECRET')  # whsec_...
+
+@app.route('/webhooks/rntor', methods=['POST'])
+def handle_webhook():
+    payload = request.get_data(as_text=True)
+    headers = {
+        'svix-id': request.headers.get('svix-id'),
+        'svix-timestamp': request.headers.get('svix-timestamp'),
+        'svix-signature': request.headers.get('svix-signature'),
+    }
+
+    wh = Webhook(webhook_secret)
+    
+    try:
+        verified = wh.verify(payload, headers)
+        # Process the verified payload
+        handle_event(verified)
+        return 'OK', 200
+        
+    except Exception as e:
+        print(f'Webhook verification failed: {e}')
+        return 'Invalid signature', 401
+```
+
+Manual verification:
+
+```python Manual Verification
+import hmac
+import hashlib
+import base64
+import time
+
+def verify_webhook_signature(payload, headers, secret):
+    svix_id = headers.get('svix-id')
+    svix_timestamp = headers.get('svix-timestamp')
+    svix_signature = headers.get('svix-signature')
+
+    # Check timestamp is within 5 minutes
+    timestamp = int(svix_timestamp)
+    current_time = int(time.time())
+    if abs(current_time - timestamp) > 300:
+        raise ValueError('Timestamp too old')
+
+    # Construct signed payload
+    signed_payload = f'{svix_id}.{svix_timestamp}.{payload}'
+
+    # Decode secret
+    secret_bytes = base64.b64decode(secret.replace('whsec_', ''))
+
+    # Calculate expected signature
+    expected_signature = base64.b64encode(
+        hmac.new(secret_bytes, signed_payload.encode(), hashlib.sha256).digest()
+    ).decode()
+
+    # Compare signatures
+    for sig in svix_signature.split(','):
+        parts = sig.split(',')
+        if len(parts) == 2 and parts[0] == 'v1' and parts[1] == expected_signature:
+            return True
+
+    raise ValueError('Invalid signature')
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "github.com/svix/svix-webhooks/go"
+    "net/http"
+    "os"
+)
+
+func handleWebhook(w http.ResponseWriter, r *http.Request) {
+    secret := os.Getenv("WEBHOOK_SECRET")
+    
+    wh, err := svix.NewWebhook(secret)
+    if err != nil {
+        http.Error(w, "Invalid secret", http.StatusInternalServerError)
+        return
+    }
+
+    payload, err := io.ReadAll(r.Body)
+    if err != nil {
+        http.Error(w, "Failed to read body", http.StatusBadRequest)
+        return
+    }
+
+    err = wh.Verify(payload, r.Header)
+    if err != nil {
+        http.Error(w, "Invalid signature", http.StatusUnauthorized)
+        return
+    }
+
+    // Process verified payload
+    w.WriteHeader(http.StatusOK)
+}
+```
+
+## Replay Attack Prevention
+
+The timestamp check prevents replay attacks:
+
+```javascript
+const timestamp = parseInt(headers['svix-timestamp'], 10);
+const currentTime = Math.floor(Date.now() / 1000);
+
+// Reject if timestamp is more than 5 minutes old
+if (Math.abs(currentTime - timestamp) > 300) {
+  throw new Error('Webhook timestamp too old');
+}
+```
+
+## Troubleshooting
+
+### Signature Verification Fails
+
+1. **Raw body required**: Ensure you're using the raw request body, not a parsed JSON object
+2. **Encoding issues**: The body must be the exact bytes received, no modifications
+3. **Correct secret**: Verify you're using the endpoint-specific signing secret
+4. **Clock sync**: Ensure your server clock is synchronized (NTP)
+
+### Common Mistakes
+
+<AccordionGroup>
+  <Accordion title="Using parsed JSON instead of raw body">
+    ```javascript
+    // ❌ Wrong - parsed JSON
+    const payload = req.body;
+    wh.verify(JSON.stringify(payload), headers);
+    
+    // ✅ Correct - raw body
+    const rawBody = req.rawBody; // or use express.raw()
+    wh.verify(rawBody, headers);
+    ```
+  </Accordion>
+
+  <Accordion title="Missing raw body middleware">
+    ```javascript
+    // Add this BEFORE your routes
+    app.use('/webhooks', express.raw({ type: 'application/json' }));
+    ```
+  </Accordion>
+
+  <Accordion title="Using the wrong secret">
+    Each endpoint has its own signing secret. Make sure you're using the secret for the specific endpoint receiving the webhook.
+  </Accordion>
+</AccordionGroup>
+
+## Security Best Practices
+
+<Check>
+  Always verify signatures in production
+</Check>
+<Check>
+  Store signing secrets in environment variables
+</Check>
+<Check>
+  Reject requests with old timestamps
+</Check>
+<Check>
+  Use HTTPS for your webhook endpoint
+</Check>
+<Check>
+  Log verification failures for monitoring
+</Check>

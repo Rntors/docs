@@ -1,0 +1,121 @@
+---
+title: Getting Started
+description: "Set up your Rntor developer integration in minutes"
+---
+
+# Getting Started
+
+This guide walks you through setting up your first Rntor integration. By the end, you'll have API credentials and a working webhook subscription.
+
+## Prerequisites
+
+<Check>
+  A Rntor merchant account with owner permissions
+</Check>
+
+<Check>
+  Access to Settings → Developers in your dashboard
+</Check>
+
+## Step 1: Navigate to Developers
+
+1. Log in to your Rntor dashboard
+2. Go to **Settings** in the main navigation
+3. Select the **Developers** tab
+
+<Frame>
+  <img src="/images/developers-tab.png" alt="Developers Tab" />
+</Frame>
+
+## Step 2: Generate API Credentials
+
+API keys are used to authenticate your integration. While the REST API is coming soon, generating credentials now prepares you for immediate access when it launches.
+
+1. In the **API Keys** section, click **Generate New Key**
+2. Enter a descriptive name (e.g., "Production Integration" or "Zapier Connection")
+3. Review the default scopes
+4. Click **Generate**
+
+<Warning>
+  Your **Client Secret** is only shown once. Copy and store it securely immediately after generation.
+</Warning>
+
+You'll receive:
+- **Client ID**: `rntor_` followed by 24 characters (safe to store, used in requests)
+- **Client Secret**: `sk_` followed by 40 characters (keep secret, used for authentication)
+
+```bash Example Credentials
+Client ID: rntor_abc123def456ghi789jkl012
+Client Secret: sk_mno345pqr678stu901vwx234yza567bcd890efg
+```
+
+## Step 3: Set Up Webhook Endpoints
+
+Webhooks let you receive real-time notifications when events occur in Rntor.
+
+1. Switch to the **Webhooks** tab
+2. The Svix webhook portal will load
+3. Click **Add Endpoint**
+4. Enter your endpoint URL (must be HTTPS)
+5. Select which events to subscribe to
+
+<Tip>
+  Start with a few key events like `booking.created` and `customer.created` to test your integration.
+</Tip>
+
+### Testing Locally
+
+For local development, use a tunneling service:
+
+```bash Using ngrok
+ngrok http 3000
+# Use the generated HTTPS URL as your webhook endpoint
+```
+
+## Step 4: Verify Your First Webhook
+
+Once subscribed, trigger an event in Rntor (e.g., create a booking) and verify:
+
+1. Your endpoint receives the POST request
+2. The payload contains the expected data
+3. Signature verification passes (see [Security](/webhooks/security))
+
+```javascript Example: Logging Received Webhooks
+app.post('/webhooks/rntor', (req, res) => {
+  console.log('Received webhook:', req.body);
+  
+  const { event_type, _meta } = req.body;
+  console.log(`Event: ${event_type}`);
+  console.log(`Merchant: ${_meta.merchant_id}`);
+  
+  res.status(200).send('OK');
+});
+```
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Webhook Security" icon="shield" href="/webhooks/security">
+    Implement signature verification to secure your endpoints
+  </Card>
+  <Card title="Event Catalog" icon="list" href="/webhooks/event-catalog">
+    Explore all 21 available webhook events
+  </Card>
+  <Card title="Payload Examples" icon="code" href="/webhooks/payload-examples">
+    See real payload structures for key events
+  </Card>
+  <Card title="API Scopes" icon="lock" href="/authentication/scopes">
+    Understand permission scopes for API access
+  </Card>
+</CardGroup>
+
+## Rate Limits
+
+All API requests are rate limited to ensure platform stability:
+
+| Limit | Value |
+|-------|-------|
+| Requests per minute | 60 |
+| Burst limit | 10 requests |
+
+Exceeding these limits returns a `429 Too Many Requests` response.
