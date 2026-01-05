@@ -32,7 +32,8 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api-reference"
+      "url": "api-reference",
+      "openapi": "/api-reference/openapi.yaml"
     }
   ],
   "navigation": [
