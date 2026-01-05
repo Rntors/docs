@@ -32,8 +32,7 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api-reference",
-      "openapi": "/api-reference/openapi.yaml"
+      "url": "api-reference"
     }
   ],
   "navigation": [
@@ -69,12 +68,14 @@
     },
     {
       "group": "Networks",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /networks"
       ]
     },
     {
       "group": "Bookings",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /bookings",
         "POST /bookings",
@@ -84,6 +85,7 @@
     },
     {
       "group": "Companies",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /companies",
         "POST /companies",
@@ -93,6 +95,7 @@
     },
     {
       "group": "Resources",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /resources",
         "GET /resources/{id}",
@@ -102,6 +105,7 @@
     },
     {
       "group": "Locations",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /locations",
         "GET /locations/{id}"
@@ -109,6 +113,7 @@
     },
     {
       "group": "Invoices",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /invoices",
         "POST /invoices",
@@ -118,6 +123,7 @@
     },
     {
       "group": "Events",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /events",
         "POST /events",
@@ -126,6 +132,7 @@
     },
     {
       "group": "Plans",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /plans",
         "POST /plans",
@@ -136,6 +143,7 @@
     },
     {
       "group": "Memberships",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /memberships",
         "POST /memberships",
@@ -146,6 +154,7 @@
     },
     {
       "group": "Benefits",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /benefits",
         "POST /benefits",
@@ -156,6 +165,7 @@
     },
     {
       "group": "Feed",
+      "openapi": "/api-reference/openapi.yaml",
       "pages": [
         "GET /feed",
         "POST /feed",
