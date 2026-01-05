@@ -65,6 +65,103 @@
       "pages": [
         "api-reference/overview"
       ]
+    },
+    {
+      "group": "Networks",
+      "pages": [
+        "api-reference/networks/list-networks"
+      ]
+    },
+    {
+      "group": "Bookings",
+      "pages": [
+        "api-reference/bookings/list-bookings",
+        "api-reference/bookings/create-booking",
+        "api-reference/bookings/get-booking",
+        "api-reference/bookings/delete-booking"
+      ]
+    },
+    {
+      "group": "Companies",
+      "pages": [
+        "api-reference/companies/list-companies",
+        "api-reference/companies/create-company",
+        "api-reference/companies/get-company",
+        "api-reference/companies/update-company"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "api-reference/resources/list-resources",
+        "api-reference/resources/get-resource",
+        "api-reference/resources/update-resource",
+        "api-reference/resources/get-availability"
+      ]
+    },
+    {
+      "group": "Locations",
+      "pages": [
+        "api-reference/locations/list-locations",
+        "api-reference/locations/get-location"
+      ]
+    },
+    {
+      "group": "Invoices",
+      "pages": [
+        "api-reference/invoices/list-invoices",
+        "api-reference/invoices/create-invoice",
+        "api-reference/invoices/get-invoice",
+        "api-reference/invoices/pay-invoice"
+      ]
+    },
+    {
+      "group": "Events",
+      "pages": [
+        "api-reference/events/list-events",
+        "api-reference/events/create-event",
+        "api-reference/events/get-event"
+      ]
+    },
+    {
+      "group": "Plans",
+      "pages": [
+        "api-reference/plans/list-plans",
+        "api-reference/plans/create-plan",
+        "api-reference/plans/get-plan",
+        "api-reference/plans/update-plan",
+        "api-reference/plans/delete-plan"
+      ]
+    },
+    {
+      "group": "Memberships",
+      "pages": [
+        "api-reference/memberships/list-memberships",
+        "api-reference/memberships/create-membership",
+        "api-reference/memberships/get-membership",
+        "api-reference/memberships/update-membership",
+        "api-reference/memberships/delete-membership"
+      ]
+    },
+    {
+      "group": "Benefits",
+      "pages": [
+        "api-reference/benefits/list-benefits",
+        "api-reference/benefits/create-benefit",
+        "api-reference/benefits/get-benefit",
+        "api-reference/benefits/update-benefit",
+        "api-reference/benefits/delete-benefit"
+      ]
+    },
+    {
+      "group": "Feed",
+      "pages": [
+        "api-reference/feed/list-posts",
+        "api-reference/feed/create-post",
+        "api-reference/feed/get-post",
+        "api-reference/feed/update-post",
+        "api-reference/feed/delete-post"
+      ]
     }
   ],
   "openapi": "/api-reference/openapi.yaml",
