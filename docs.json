@@ -1,11 +1,178 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "$schema": "https://mintlify.com/schema.json",
   "theme": "mint",
-  "name": "Documentation",
+  "name": "Rntor Developer Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373"
+    "primary": "#6366F1",
+    "light": "#818CF8",
+    "dark": "#4F46E5"
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@rntor.com"
+    },
+    {
+      "name": "Dashboard",
+      "url": "https://app.rntor.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://app.rntor.com/signup"
   },
   "navigation": {
-    "groups": []
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "getting-started",
+              "concepts"
+            ]
+          },
+          {
+            "group": "Authentication",
+            "pages": [
+              "authentication/api-keys",
+              "authentication/scopes"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "webhooks/introduction",
+              "webhooks/security",
+              "webhooks/event-catalog",
+              "webhooks/payload-examples"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "/api-reference/openapi.yaml",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api-reference/overview"
+            ]
+          },
+          {
+            "group": "Networks",
+            "pages": [
+              "GET /networks"
+            ]
+          },
+          {
+            "group": "Bookings",
+            "pages": [
+              "GET /bookings",
+              "POST /bookings",
+              "GET /bookings/{id}",
+              "DELETE /bookings/{id}"
+            ]
+          },
+          {
+            "group": "Companies",
+            "pages": [
+              "GET /companies",
+              "POST /companies",
+              "GET /companies/{id}",
+              "PUT /companies/{id}"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "GET /resources",
+              "GET /resources/{id}",
+              "PUT /resources/{id}",
+              "GET /resources/{id}/availability"
+            ]
+          },
+          {
+            "group": "Locations",
+            "pages": [
+              "GET /locations",
+              "GET /locations/{id}"
+            ]
+          },
+          {
+            "group": "Invoices",
+            "pages": [
+              "GET /invoices",
+              "POST /invoices",
+              "GET /invoices/{id}",
+              "POST /invoices/{id}/pay"
+            ]
+          },
+          {
+            "group": "Events",
+            "pages": [
+              "GET /events",
+              "POST /events",
+              "GET /events/{id}"
+            ]
+          },
+          {
+            "group": "Plans",
+            "pages": [
+              "GET /plans",
+              "POST /plans",
+              "GET /plans/{id}",
+              "PUT /plans/{id}",
+              "DELETE /plans/{id}"
+            ]
+          },
+          {
+            "group": "Memberships",
+            "pages": [
+              "GET /memberships",
+              "POST /memberships",
+              "GET /memberships/{id}",
+              "PUT /memberships/{id}",
+              "DELETE /memberships/{id}"
+            ]
+          },
+          {
+            "group": "Benefits",
+            "pages": [
+              "GET /benefits",
+              "POST /benefits",
+              "GET /benefits/{id}",
+              "PUT /benefits/{id}",
+              "DELETE /benefits/{id}"
+            ]
+          },
+          {
+            "group": "Feed",
+            "pages": [
+              "GET /feed",
+              "POST /feed",
+              "GET /feed/{id}",
+              "PUT /feed/{id}",
+              "DELETE /feed/{id}"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "twitter": "https://twitter.com/rntor",
+    "linkedin": "https://linkedin.com/company/rntor"
+  },
+  "api": {
+    "baseUrl": "https://api.rntor.com/v1"
   }
 }
