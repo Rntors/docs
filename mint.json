@@ -33,11 +33,6 @@
   ],
   "anchors": [
     {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://discord.rntor.com"
-    },
-    {
       "name": "Support",
       "icon": "envelope",
       "url": "mailto:support@rntor.com"
@@ -47,31 +42,31 @@
     {
       "group": "Getting Started",
       "pages": [
-        "docs/introduction",
-        "docs/getting-started",
-        "docs/concepts"
+        "introduction",
+        "getting-started",
+        "concepts"
       ]
     },
     {
       "group": "Authentication",
       "pages": [
-        "docs/authentication/api-keys",
-        "docs/authentication/scopes"
+        "authentication/api-keys",
+        "authentication/scopes"
       ]
     },
     {
       "group": "Webhooks",
       "pages": [
-        "docs/webhooks/introduction",
-        "docs/webhooks/security",
-        "docs/webhooks/event-catalog",
-        "docs/webhooks/payload-examples"
+        "webhooks/introduction",
+        "webhooks/security",
+        "webhooks/event-catalog",
+        "webhooks/payload-examples"
       ]
     },
     {
       "group": "API Reference",
       "pages": [
-        "docs/api-reference/overview"
+        "api-reference/overview"
       ]
     }
   ],
