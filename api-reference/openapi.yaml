@@ -1,67 +1,30 @@
 openapi: 3.0.3
 info:
   title: Rntor API
-  description: |
-    The Rntor API provides programmatic access to coworking and space management functionality.
-    
-    ## Authentication
-    
-    All API requests require two headers:
-    - `Authorization: Bearer <client_secret>` - Your Client Secret
-    - `X-Client-ID: <client_id>` - Your Client ID
-    
-    Generate API credentials from the Developer Portal in your Rntor dashboard.
-    
-    ## Rate Limiting
-    
-    API requests are rate limited per API key. Default: 60 requests/minute.
-    
-    Rate limit headers are included in all responses:
-    - `X-RateLimit-Limit` - Requests allowed per minute
-    - `X-RateLimit-Remaining` - Requests remaining in current window
-    - `X-RateLimit-Reset` - Unix timestamp when the rate limit resets
-    
-    ## Pagination
-    
-    List endpoints support pagination via query parameters:
-    - `page` - Page number (default: 1)
-    - `per_page` - Items per page (default: 20, max: 100)
-    
+  description: REST API for programmatic access to your coworking and space management data
   version: 1.0.0
   contact:
-    name: Rntor Developer Support
     email: support@rntor.com
-    url: https://docs.rntor.com
-  license:
-    name: Proprietary
-    url: https://rntor.com/terms
-
+    url: https://app.rntor.com
 servers:
-  - url: https://iwdewzswethsnvwvpind.supabase.co/functions/v1/public-api
-    description: Production API
+  - url: https://api.rntor.com/v1
+    description: Production server
 
 security:
-  - ApiKeyAuth: []
-    ClientId: []
+  - bearerAuth: []
+    clientId: []
 
 components:
   securitySchemes:
-    ApiKeyAuth:
+    bearerAuth:
       type: http
       scheme: bearer
-      description: |
-        Use your Client Secret as the bearer token.
-        
-        Example: `Authorization: Bearer sk_mno345pqr678stu901vwx234yza567bcd890efg`
-    
-    ClientId:
+      description: Your API client secret
+    clientId:
       type: apiKey
       in: header
-      name: X-Client-Id
-      description: |
-        Your Client ID for request identification.
-        
-        Example: `X-Client-Id: rntor_abc123def456ghi789jkl012`
+      name: X-Client-ID
+      description: Your API client ID
 
   schemas:
     Error:
@@ -72,15 +35,10 @@ components:
           properties:
             code:
               type: string
-              description: Machine-readable error code
-              example: invalid_request
+              example: not_found
             message:
               type: string
-              description: Human-readable error message
-              example: The request was invalid
-            details:
-              type: object
-              description: Additional error context
+              example: Resource not found
         meta:
           type: object
           properties:
@@ -130,9 +88,6 @@ components:
         customer_id:
           type: string
           format: uuid
-        location_id:
-          type: string
-          format: uuid
         start_time:
           type: string
           format: date-time
@@ -141,7 +96,7 @@ components:
           format: date-time
         status:
           type: string
-          enum: [pending, confirmed, cancelled, completed, no_show]
+          enum: [pending, confirmed, cancelled, completed]
         title:
           type: string
         notes:
@@ -167,10 +122,10 @@ components:
           format: uuid
         name:
           type: string
-        auto_approve_members:
-          type: boolean
         money_balance:
           type: number
+        auto_approve_members:
+          type: boolean
         created_at:
           type: string
           format: date-time
@@ -188,29 +143,19 @@ components:
           type: string
         type:
           type: string
+        description:
+          type: string
+        capacity:
+          type: integer
         location_id:
           type: string
           format: uuid
-        capacity:
-          type: integer
         is_active:
-          type: boolean
-        is_bookable:
           type: boolean
         hourly_rate:
           type: number
         daily_rate:
           type: number
-        half_day_rate:
-          type: number
-        currency:
-          type: string
-        description:
-          type: string
-        amenities:
-          type: array
-          items:
-            type: string
         created_at:
           type: string
           format: date-time
@@ -230,24 +175,12 @@ components:
           type: string
         city:
           type: string
-        state:
-          type: string
         country:
-          type: string
-        postal_code:
           type: string
         timezone:
           type: string
-        phone:
-          type: string
-        email:
-          type: string
         is_active:
           type: boolean
-        latitude:
-          type: number
-        longitude:
-          type: number
         created_at:
           type: string
           format: date-time
@@ -269,56 +202,19 @@ components:
         company_id:
           type: string
           format: uuid
-          nullable: true
-        status:
-          type: string
-        subtotal:
-          type: number
-        tax_amount:
-          type: number
-        total:
+        total_amount:
           type: number
         currency:
           type: string
+        status:
+          type: string
+          enum: [draft, pending, paid, overdue, cancelled]
         due_date:
           type: string
           format: date
         paid_at:
           type: string
           format: date-time
-          nullable: true
-        payment_method:
-          type: string
-        notes:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        updated_at:
-          type: string
-          format: date-time
-
-    InvoiceItem:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        description:
-          type: string
-          nullable: true
-        quantity:
-          type: integer
-        unit_price:
-          type: number
-        tax_rate:
-          type: number
-        amount:
-          type: number
-        product_type:
-          type: string
         created_at:
           type: string
           format: date-time
@@ -333,7 +229,6 @@ components:
           type: string
         description:
           type: string
-          nullable: true
         start_time:
           type: string
           format: date-time
@@ -342,58 +237,43 @@ components:
           format: date-time
         venue:
           type: string
-          nullable: true
-        location_id:
-          type: string
-          format: uuid
-          nullable: true
-        organizer_id:
-          type: string
-          format: uuid
-        status:
-          type: string
-          enum: [scheduled, cancelled, completed]
-        is_public:
-          type: boolean
         max_attendees:
           type: integer
-          nullable: true
         price:
           type: number
-          nullable: true
-        price_money:
-          type: number
-          nullable: true
-        price_credits:
-          type: number
-          nullable: true
-        currency:
+        status:
           type: string
-          nullable: true
-        registration_required:
+          enum: [draft, published, cancelled, completed]
+        is_public:
           type: boolean
-        registration_deadline:
-          type: string
-          format: date-time
-          nullable: true
-        refund_policy:
-          type: string
-          nullable: true
-        show_attendees:
-          type: boolean
-        send_confirmation_email:
-          type: boolean
-        image_url:
-          type: string
-          nullable: true
         created_at:
           type: string
           format: date-time
-        updated_at:
+
+    Plan:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        currency:
+          type: string
+        billing_cycle:
+          type: string
+          enum: [monthly, yearly]
+        is_active:
+          type: boolean
+        created_at:
           type: string
           format: date-time
 
-    EventTicket:
+    Membership:
       type: object
       properties:
         id:
@@ -402,201 +282,160 @@ components:
         customer_id:
           type: string
           format: uuid
-        event_id:
+        plan_id:
           type: string
           format: uuid
         status:
           type: string
-          enum: [registered, cancelled, waitlisted]
-        registered_at:
-          type: string
-          format: date-time
-        checked_in:
-          type: boolean
-        checked_in_at:
-          type: string
-          format: date-time
-          nullable: true
-        amount_paid:
-          type: number
-          nullable: true
-        payment_method:
-          type: string
-          nullable: true
-        paid_at:
-          type: string
-          format: date-time
-          nullable: true
-        cancelled_at:
-          type: string
-          format: date-time
-          nullable: true
-        promo_code_id:
-          type: string
-          format: uuid
-          nullable: true
-
-    ResourceAvailability:
-      type: object
-      properties:
-        resource_id:
-          type: string
-          format: uuid
-        resource_name:
-          type: string
-        is_bookable:
-          type: boolean
+          enum: [active, paused, cancelled, expired]
         start_date:
           type: string
           format: date
         end_date:
           type: string
           format: date
-        booked_slots:
-          type: array
-          items:
-            type: object
-            properties:
-              booking_id:
-                type: string
-                format: uuid
-              start_time:
-                type: string
-                format: date-time
-              end_time:
-                type: string
-                format: date-time
-              status:
-                type: string
+        created_at:
+          type: string
+          format: date-time
 
-  responses:
-    Unauthorized:
-      description: Invalid or missing authentication credentials
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            error:
-              code: unauthorized
-              message: Invalid API credentials
-            meta:
-              request_id: req_abc123def456
+    Benefit:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        description:
+          type: string
+        partner_name:
+          type: string
+        discount_value:
+          type: string
+        is_active:
+          type: boolean
+        valid_from:
+          type: string
+          format: date
+        valid_until:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
 
-    Forbidden:
-      description: Insufficient permissions for this operation
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            error:
-              code: forbidden
-              message: "Insufficient permissions. Required scope: read:bookings"
-              details:
-                required_scope: "read:bookings"
-                your_scopes:
-                  - "read:locations"
-            meta:
-              request_id: req_abc123def456
+    FeedPost:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        content:
+          type: string
+        author_id:
+          type: string
+          format: uuid
+        is_published:
+          type: boolean
+        is_pinned:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
 
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            error:
-              code: not_found
-              message: Booking not found
-            meta:
-              request_id: req_abc123def456
-
-    RateLimited:
-      description: Rate limit exceeded
-      headers:
-        X-RateLimit-Limit:
-          schema:
-            type: integer
-          description: Requests allowed per minute
-        X-RateLimit-Remaining:
-          schema:
-            type: integer
-          description: Requests remaining in current window
-        X-RateLimit-Reset:
-          schema:
-            type: integer
-          description: Unix timestamp when the rate limit resets
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            error:
-              code: rate_limited
-              message: Rate limit exceeded. Try again in 45 seconds.
-              details:
-                limit: 60
-                reset_at: "2024-01-15T10:31:00Z"
-            meta:
-              request_id: req_abc123def456
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      description: Page number
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    PerPageParam:
+      name: per_page
+      in: query
+      description: Items per page
+      schema:
+        type: integer
+        default: 20
+        minimum: 1
+        maximum: 100
 
 paths:
+  /networks:
+    get:
+      summary: List networks
+      description: Returns array with current merchant/network
+      operationId: listNetworks
+      tags:
+        - Networks
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
   /bookings:
     get:
+      summary: List bookings
+      description: Retrieve a list of bookings with optional filters
+      operationId: listBookings
       tags:
         - Bookings
-      summary: List bookings
-      description: Retrieve a paginated list of bookings for your organization.
-      operationId: listBookings
       parameters:
-        - name: page
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
+        - name: status
           in: query
-          schema:
-            type: integer
-            default: 1
-        - name: per_page
-          in: query
-          schema:
-            type: integer
-            default: 20
-            maximum: 100
-        - name: location_id
-          in: query
+          description: Filter by booking status
           schema:
             type: string
-            format: uuid
+            enum: [pending, confirmed, cancelled, completed]
         - name: resource_id
           in: query
+          description: Filter by resource ID
           schema:
             type: string
             format: uuid
         - name: customer_id
           in: query
+          description: Filter by customer ID
           schema:
             type: string
             format: uuid
-        - name: status
-          in: query
-          schema:
-            type: string
-            enum: [pending, confirmed, cancelled, completed, no_show]
         - name: start_date
           in: query
-          description: Filter bookings starting on or after this date (ISO 8601)
+          description: Filter bookings starting from this date
           schema:
             type: string
-            format: date-time
+            format: date
         - name: end_date
           in: query
-          description: Filter bookings ending on or before this date (ISO 8601)
+          description: Filter bookings ending before this date
           schema:
             type: string
-            format: date-time
+            format: date
       responses:
         '200':
-          description: List of bookings
+          description: Successful response
           content:
             application/json:
               schema:
@@ -611,23 +450,16 @@ paths:
                   meta:
                     $ref: '#/components/schemas/Meta'
         '401':
-          $ref: '#/components/responses/Unauthorized'
+          description: Unauthorized
         '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Forbidden - insufficient scope
 
     post:
+      summary: Create a booking
+      description: Create a new booking for a resource
+      operationId: createBooking
       tags:
         - Bookings
-      summary: Create a booking
-      description: |
-        Create a new booking for a resource.
-        
-        **Required scope:** `write:bookings`
-        
-        The `merchant_id` is automatically set from your API key context and cannot be overridden.
-      operationId: createBooking
       requestBody:
         required: true
         content:
@@ -637,61 +469,30 @@ paths:
               required:
                 - resource_id
                 - customer_id
-                - location_id
                 - start_time
                 - end_time
               properties:
                 resource_id:
                   type: string
                   format: uuid
-                  description: ID of the resource to book
                 customer_id:
                   type: string
                   format: uuid
-                  description: ID of the customer making the booking
-                location_id:
-                  type: string
-                  format: uuid
-                  description: ID of the location
                 start_time:
                   type: string
                   format: date-time
-                  description: Booking start time (ISO 8601). Must be in the future.
                 end_time:
                   type: string
                   format: date-time
-                  description: Booking end time (ISO 8601). Must be after start_time.
                 title:
                   type: string
-                  description: Optional title for the booking
                 notes:
                   type: string
-                  description: Optional notes
                 attendees:
                   type: integer
-                  minimum: 1
-                  default: 1
-                  description: Number of attendees. Must not exceed resource capacity.
-                total_amount:
-                  type: number
-                  description: Optional total amount
-                currency:
-                  type: string
-                  description: Currency code (e.g., USD, EUR)
-                payment_method:
-                  type: string
-                  description: Payment method used
-            example:
-              resource_id: "550e8400-e29b-41d4-a716-446655440000"
-              customer_id: "550e8400-e29b-41d4-a716-446655440001"
-              location_id: "550e8400-e29b-41d4-a716-446655440002"
-              start_time: "2024-12-20T09:00:00Z"
-              end_time: "2024-12-20T11:00:00Z"
-              title: "Team Meeting"
-              attendees: 5
       responses:
         '201':
-          description: Booking created successfully
+          description: Booking created
           content:
             application/json:
               schema:
@@ -701,72 +502,18 @@ paths:
                     $ref: '#/components/schemas/Booking'
                   meta:
                     $ref: '#/components/schemas/Meta'
-              example:
-                data:
-                  id: "550e8400-e29b-41d4-a716-446655440003"
-                  resource_id: "550e8400-e29b-41d4-a716-446655440000"
-                  customer_id: "550e8400-e29b-41d4-a716-446655440001"
-                  location_id: "550e8400-e29b-41d4-a716-446655440002"
-                  start_time: "2024-12-20T09:00:00Z"
-                  end_time: "2024-12-20T11:00:00Z"
-                  status: "pending"
-                  title: "Team Meeting"
-                  attendees: 5
-                  created_at: "2024-12-15T10:30:00Z"
-                  updated_at: "2024-12-15T10:30:00Z"
-                meta:
-                  request_id: "req_abc123def456"
-                  timestamp: "2024-12-15T10:30:00Z"
         '400':
           description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                error:
-                  code: validation_error
-                  message: "end_time must be after start_time"
-                  details:
-                    fields: ["start_time", "end_time"]
-                meta:
-                  request_id: "req_abc123def456"
         '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          description: Resource, customer, or location not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '409':
-          description: Resource not available for the requested time slot
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                error:
-                  code: conflict
-                  message: "Resource is not available for the requested time slot"
-                  details:
-                    resource_id: "550e8400-e29b-41d4-a716-446655440000"
-                    start_time: "2024-12-20T09:00:00Z"
-                    end_time: "2024-12-20T11:00:00Z"
-                meta:
-                  request_id: "req_abc123def456"
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Unauthorized
 
   /bookings/{id}:
     get:
+      summary: Get a booking
+      description: Retrieve a single booking by ID
+      operationId: getBooking
       tags:
         - Bookings
-      summary: Get a booking
-      description: Retrieve a single booking by ID.
-      operationId: getBooking
       parameters:
         - name: id
           in: path
@@ -776,7 +523,7 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Booking details
+          description: Successful response
           content:
             application/json:
               schema:
@@ -786,28 +533,15 @@ paths:
                     $ref: '#/components/schemas/Booking'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Booking not found
 
     delete:
+      summary: Cancel a booking
+      description: Cancel (soft delete) a booking
+      operationId: cancelBooking
       tags:
         - Bookings
-      summary: Cancel a booking
-      description: |
-        Cancel a booking (soft delete - sets status to "cancelled").
-        
-        **Required scope:** `write:bookings`
-        
-        **Idempotent:** If the booking is already cancelled, returns 200 with current state.
-        
-        **Restrictions:** Cannot cancel bookings with status `completed` or `no_show` (returns 409).
-      operationId: cancelBooking
       parameters:
         - name: id
           in: path
@@ -817,75 +551,23 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Booking cancelled (or already cancelled)
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Booking'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-              example:
-                data:
-                  id: "550e8400-e29b-41d4-a716-446655440003"
-                  status: "cancelled"
-                  resource_id: "550e8400-e29b-41d4-a716-446655440000"
-                  customer_id: "550e8400-e29b-41d4-a716-446655440001"
-                  location_id: "550e8400-e29b-41d4-a716-446655440002"
-                  start_time: "2024-12-20T09:00:00Z"
-                  end_time: "2024-12-20T11:00:00Z"
-                  updated_at: "2024-12-15T11:00:00Z"
-                meta:
-                  request_id: "req_abc123def456"
-                  timestamp: "2024-12-15T11:00:00Z"
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+          description: Booking cancelled
         '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Cannot cancel booking with current status
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                error:
-                  code: conflict
-                  message: "Cannot cancel booking with status 'completed'"
-                  details:
-                    current_status: "completed"
-                    allowed_statuses: ["pending", "confirmed"]
-                meta:
-                  request_id: "req_abc123def456"
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Booking not found
 
   /companies:
     get:
+      summary: List companies
+      description: Retrieve a list of companies
+      operationId: listCompanies
       tags:
         - Companies
-      summary: List companies
-      description: Retrieve a paginated list of companies (billing organizations).
-      operationId: listCompanies
       parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-            default: 1
-        - name: per_page
-          in: query
-          schema:
-            type: integer
-            default: 20
-            maximum: 100
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
       responses:
         '200':
-          description: List of companies
+          description: Successful response
           content:
             application/json:
               schema:
@@ -899,59 +581,13 @@ paths:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /companies/{id}:
-    get:
-      tags:
-        - Companies
-      summary: Get a company
-      description: Retrieve a single company by ID.
-      operationId: getCompany
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: Company details
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Company'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
     post:
+      summary: Create a company
+      description: Create a new company
+      operationId: createCompany
       tags:
         - Companies
-      summary: Create a company
-      description: |
-        Create a new company (billing organization).
-        
-        **Required scope:** `write:companies`
-        
-        The `merchant_id` is automatically set from your API key context and cannot be overridden.
-      operationId: createCompany
       requestBody:
         required: true
         content:
@@ -963,18 +599,11 @@ paths:
               properties:
                 name:
                   type: string
-                  description: Company name
-                  minLength: 1
                 auto_approve_members:
                   type: boolean
-                  default: false
-                  description: Whether to auto-approve new member requests
-            example:
-              name: "Acme Corporation"
-              auto_approve_members: true
       responses:
         '201':
-          description: Company created successfully
+          description: Company created
           content:
             application/json:
               schema:
@@ -984,45 +613,14 @@ paths:
                     $ref: '#/components/schemas/Company'
                   meta:
                     $ref: '#/components/schemas/Meta'
-              example:
-                data:
-                  id: "550e8400-e29b-41d4-a716-446655440010"
-                  name: "Acme Corporation"
-                  auto_approve_members: true
-                  money_balance: 0
-                  created_at: "2024-12-15T10:30:00Z"
-                  updated_at: "2024-12-15T10:30:00Z"
-                meta:
-                  request_id: "req_abc123def456"
-                  timestamp: "2024-12-15T10:30:00Z"
-        '400':
-          description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                error:
-                  code: validation_error
-                  message: "name is required and must be a non-empty string"
-                  details:
-                    field: "name"
-                meta:
-                  request_id: "req_abc123def456"
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /companies/{id}:
     get:
+      summary: Get a company
+      description: Retrieve a single company by ID
+      operationId: getCompany
       tags:
         - Companies
-      summary: Get a company
-      description: Retrieve a single company by ID.
-      operationId: getCompany
       parameters:
         - name: id
           in: path
@@ -1032,7 +630,7 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Company details
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1042,26 +640,15 @@ paths:
                     $ref: '#/components/schemas/Company'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Company not found
 
     put:
+      summary: Update a company
+      description: Update an existing company
+      operationId: updateCompany
       tags:
         - Companies
-      summary: Update a company
-      description: |
-        Update an existing company.
-        
-        **Required scope:** `write:companies`
-        
-        Only provided fields are updated. At least one field must be provided.
-      operationId: updateCompany
       parameters:
         - name: id
           in: path
@@ -1078,77 +665,24 @@ paths:
               properties:
                 name:
                   type: string
-                  description: Company name
-                  minLength: 1
                 auto_approve_members:
                   type: boolean
-                  description: Whether to auto-approve new member requests
-            example:
-              name: "Acme Inc."
-              auto_approve_members: false
       responses:
         '200':
-          description: Company updated successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Company'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-              example:
-                data:
-                  id: "550e8400-e29b-41d4-a716-446655440010"
-                  name: "Acme Inc."
-                  auto_approve_members: false
-                  money_balance: 0
-                  created_at: "2024-12-15T10:30:00Z"
-                  updated_at: "2024-12-15T11:00:00Z"
-                meta:
-                  request_id: "req_abc123def456"
-                  timestamp: "2024-12-15T11:00:00Z"
-        '400':
-          description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                error:
-                  code: validation_error
-                  message: "No valid fields to update. Allowed fields: name, auto_approve_members"
-                meta:
-                  request_id: "req_abc123def456"
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+          description: Company updated
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Company not found
 
   /resources:
     get:
+      summary: List resources
+      description: Retrieve a list of resources with optional filters
+      operationId: listResources
       tags:
         - Resources
-      summary: List resources
-      description: Retrieve a paginated list of bookable resources.
-      operationId: listResources
       parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-            default: 1
-        - name: per_page
-          in: query
-          schema:
-            type: integer
-            default: 20
-            maximum: 100
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
         - name: location_id
           in: query
           schema:
@@ -1158,13 +692,9 @@ paths:
           in: query
           schema:
             type: string
-        - name: is_active
-          in: query
-          schema:
-            type: boolean
       responses:
         '200':
-          description: List of resources
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1178,20 +708,14 @@ paths:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /resources/{id}:
     get:
+      summary: Get a resource
+      description: Retrieve a single resource by ID
+      operationId: getResource
       tags:
         - Resources
-      summary: Get a resource
-      description: Retrieve a single resource by ID.
-      operationId: getResource
       parameters:
         - name: id
           in: path
@@ -1201,7 +725,7 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Resource details
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1211,24 +735,15 @@ paths:
                     $ref: '#/components/schemas/Resource'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Resource not found
 
     patch:
+      summary: Update a resource
+      description: Partially update a resource
+      operationId: updateResource
       tags:
         - Resources
-      summary: Update a resource
-      description: |
-        Partially update a resource. Only provided fields will be updated.
-        
-        **Required scope:** `write:resources`
-      operationId: patchResource
       parameters:
         - name: id
           in: path
@@ -1245,82 +760,29 @@ paths:
               properties:
                 name:
                   type: string
-                  description: Resource name
                 description:
                   type: string
-                  description: Resource description
-                type:
-                  type: string
-                  description: Resource type (desk, office, meeting_room, etc.)
                 capacity:
                   type: integer
-                  minimum: 1
-                  description: Maximum capacity
                 is_active:
                   type: boolean
-                  description: Whether the resource is active
-                is_bookable:
-                  type: boolean
-                  description: Whether the resource can be booked
                 hourly_rate:
                   type: number
-                  minimum: 0
-                  description: Hourly rental rate
                 daily_rate:
                   type: number
-                  minimum: 0
-                  description: Daily rental rate
-                half_day_rate:
-                  type: number
-                  minimum: 0
-                  description: Half-day rental rate
-                currency:
-                  type: string
-                  description: Currency code (e.g., USD, EUR)
-                amenities:
-                  type: array
-                  items:
-                    type: string
-                  description: List of amenities
-            example:
-              name: "Conference Room A"
-              capacity: 12
-              hourly_rate: 50
-              is_bookable: true
       responses:
         '200':
-          description: Resource updated successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Resource'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+          description: Resource updated
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Resource not found
 
   /resources/{id}/availability:
     get:
+      summary: Check resource availability
+      description: Check availability for a specific resource
+      operationId: getResourceAvailability
       tags:
         - Resources
-      summary: Check resource availability
-      description: Check availability for a resource within a date range.
-      operationId: getResourceAvailability
       parameters:
         - name: id
           in: path
@@ -1328,69 +790,50 @@ paths:
           schema:
             type: string
             format: uuid
-        - name: start_date
+        - name: date
           in: query
           required: true
-          description: Start of date range (ISO 8601)
-          schema:
-            type: string
-            format: date
-        - name: end_date
-          in: query
-          required: true
-          description: End of date range (ISO 8601)
           schema:
             type: string
             format: date
       responses:
         '200':
-          description: Resource availability
+          description: Availability information
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   data:
-                    $ref: '#/components/schemas/ResourceAvailability'
+                    type: object
+                    properties:
+                      available_slots:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            start_time:
+                              type: string
+                              format: date-time
+                            end_time:
+                              type: string
+                              format: date-time
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '400':
-          description: Validation error (missing start_date or end_date)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /locations:
     get:
+      summary: List locations
+      description: Retrieve a list of locations
+      operationId: listLocations
       tags:
         - Locations
-      summary: List locations
-      description: Retrieve a paginated list of locations.
-      operationId: listLocations
       parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-            default: 1
-        - name: per_page
-          in: query
-          schema:
-            type: integer
-            default: 20
-            maximum: 100
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
       responses:
         '200':
-          description: List of locations
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1404,20 +847,14 @@ paths:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /locations/{id}:
     get:
+      summary: Get a location
+      description: Retrieve a single location by ID
+      operationId: getLocation
       tags:
         - Locations
-      summary: Get a location
-      description: Retrieve a single location by ID.
-      operationId: getLocation
       parameters:
         - name: id
           in: path
@@ -1427,7 +864,7 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Location details
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1437,61 +874,32 @@ paths:
                     $ref: '#/components/schemas/Location'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Location not found
 
   /invoices:
     get:
+      summary: List invoices
+      description: Retrieve a list of invoices with optional filters
+      operationId: listInvoices
       tags:
         - Invoices
-      summary: List invoices
-      description: Retrieve a paginated list of invoices.
-      operationId: listInvoices
       parameters:
-        - name: page
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
+        - name: status
           in: query
           schema:
-            type: integer
-            default: 1
-        - name: per_page
-          in: query
-          schema:
-            type: integer
-            default: 20
-            maximum: 100
+            type: string
+            enum: [draft, pending, paid, overdue, cancelled]
         - name: customer_id
           in: query
           schema:
             type: string
             format: uuid
-        - name: company_id
-          in: query
-          schema:
-            type: string
-            format: uuid
-        - name: status
-          in: query
-          schema:
-            type: string
-        - name: due_date_from
-          in: query
-          schema:
-            type: string
-            format: date
-        - name: due_date_to
-          in: query
-          schema:
-            type: string
-            format: date
       responses:
         '200':
-          description: List of invoices
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1505,201 +913,13 @@ paths:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
     post:
-      tags:
-        - Invoices
       summary: Create an invoice
-      description: |
-        Create a new invoice in draft status.
-        
-        **Required scope:** `write:invoices`
+      description: Create a new invoice
       operationId: createInvoice
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                customer_id:
-                  type: string
-                  format: uuid
-                  description: Customer ID (required if no company_id)
-                company_id:
-                  type: string
-                  format: uuid
-                  description: Company ID (required if no customer_id)
-                currency:
-                  type: string
-                  default: USD
-                  description: Currency code
-                memo:
-                  type: string
-                  description: Invoice memo/notes
-                due_date:
-                  type: string
-                  format: date-time
-                  description: Payment due date
-                issue_date:
-                  type: string
-                  format: date-time
-                  description: Issue date (defaults to now)
-            example:
-              customer_id: "550e8400-e29b-41d4-a716-446655440001"
-              currency: "USD"
-              due_date: "2026-02-01T00:00:00Z"
-      responses:
-        '201':
-          description: Invoice created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Invoice'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          description: Customer or company not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /invoices/{id}:
-    get:
       tags:
         - Invoices
-      summary: Get an invoice
-      description: Retrieve a single invoice by ID.
-      operationId: getInvoice
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: Invoice details
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Invoice'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /invoices/{id}/pay:
-    post:
-      tags:
-        - Invoices
-      summary: Pay an invoice
-      description: |
-        Mark an invoice as paid.
-        
-        **Required scope:** `write:invoices`
-        
-        **Idempotent:** If already paid, returns 200 with current state.
-      operationId: payInvoice
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                amount:
-                  type: number
-                  description: Amount paid (defaults to invoice total)
-                payment_method:
-                  type: string
-                  description: Payment method (defaults to 'api')
-            example:
-              payment_method: "bank_transfer"
-      responses:
-        '200':
-          description: Invoice paid
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Invoice'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Cannot pay invoice with current status
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /invoices/{id}/items:
-    post:
-      tags:
-        - Invoices
-      summary: Create an invoice item
-      description: |
-        Add a line item to a draft invoice.
-        
-        **Required scope:** `write:invoices`
-        
-        **Restriction:** Only draft invoices can have items added.
-      operationId: createInvoiceItem
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
       requestBody:
         required: true
         content:
@@ -1707,112 +927,107 @@ paths:
             schema:
               type: object
               required:
-                - name
-                - unit_price
+                - customer_id
               properties:
-                name:
+                customer_id:
                   type: string
-                  description: Item name
-                description:
+                  format: uuid
+                company_id:
                   type: string
-                  description: Item description
-                quantity:
-                  type: integer
-                  default: 1
-                  description: Quantity
-                unit_price:
-                  type: number
-                  minimum: 0
-                  description: Price per unit
-                tax_rate:
-                  type: number
-                  default: 0
-                  description: Tax rate percentage
-                product_type:
+                  format: uuid
+                due_date:
                   type: string
-                  default: custom
-                  description: Product type
-            example:
-              name: "Meeting Room Booking"
-              description: "Conference Room A - 2 hours"
-              quantity: 2
-              unit_price: 50
-              tax_rate: 10
+                  format: date
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      description:
+                        type: string
+                      quantity:
+                        type: integer
+                      unit_price:
+                        type: number
       responses:
         '201':
-          description: Invoice item created
+          description: Invoice created
+
+  /invoices/{id}:
+    get:
+      summary: Get an invoice
+      description: Retrieve a single invoice by ID
+      operationId: getInvoice
+      tags:
+        - Invoices
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   data:
-                    $ref: '#/components/schemas/InvoiceItem'
+                    $ref: '#/components/schemas/Invoice'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '400':
-          description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Cannot add items to non-draft invoice
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Invoice not found
+
+  /invoices/{id}/pay:
+    post:
+      summary: Pay an invoice
+      description: Mark an invoice as paid
+      operationId: payInvoice
+      tags:
+        - Invoices
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payment_method:
+                  type: string
+      responses:
+        '200':
+          description: Invoice paid
+        '404':
+          description: Invoice not found
 
   /events:
     get:
       summary: List events
-      description: Retrieve a paginated list of events.
+      description: Retrieve a list of events with optional filters
       operationId: listEvents
       tags:
         - Events
       parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/PerPage'
-        - name: location_id
-          in: query
-          schema:
-            type: string
-            format: uuid
-          description: Filter by location
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
         - name: status
           in: query
           schema:
             type: string
-            enum: [scheduled, cancelled, completed]
-          description: Filter by status
-        - name: is_public
-          in: query
-          schema:
-            type: boolean
-          description: Filter by public visibility
-        - name: start_date_from
-          in: query
-          schema:
-            type: string
-            format: date-time
-          description: Filter events starting after this date
-        - name: start_date_to
-          in: query
-          schema:
-            type: string
-            format: date-time
-          description: Filter events starting before this date
+            enum: [draft, published, cancelled, completed]
       responses:
         '200':
-          description: List of events
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1826,16 +1041,10 @@ paths:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
     post:
       summary: Create an event
-      description: Create a new event.
+      description: Create a new event
       operationId: createEvent
       tags:
         - Events
@@ -1849,113 +1058,33 @@ paths:
                 - title
                 - start_time
                 - end_time
-                - organizer_id
               properties:
                 title:
                   type: string
-                  description: Event title
                 description:
                   type: string
-                  description: Event description
                 start_time:
                   type: string
                   format: date-time
-                  description: Event start time (ISO 8601)
                 end_time:
                   type: string
                   format: date-time
-                  description: Event end time (ISO 8601)
                 venue:
                   type: string
-                  description: Venue name or address
-                location_id:
-                  type: string
-                  format: uuid
-                  description: Associated location ID
-                organizer_id:
-                  type: string
-                  format: uuid
-                  description: Organizer (customer) ID
-                is_public:
-                  type: boolean
-                  default: true
-                  description: Whether event is publicly visible
                 max_attendees:
                   type: integer
-                  description: Maximum number of attendees
                 price:
                   type: number
-                  description: Event ticket price
-                price_money:
-                  type: number
-                  description: Price in money
-                price_credits:
-                  type: number
-                  description: Price in credits
-                currency:
-                  type: string
-                  description: Currency code
-                registration_required:
+                is_public:
                   type: boolean
-                  default: false
-                  description: Whether registration is required
-                registration_deadline:
-                  type: string
-                  format: date-time
-                  description: Registration deadline
-                refund_policy:
-                  type: string
-                  description: Refund policy text
-                show_attendees:
-                  type: boolean
-                  default: false
-                  description: Show attendees list publicly
-                send_confirmation_email:
-                  type: boolean
-                  default: true
-                  description: Send confirmation email on registration
-                image_url:
-                  type: string
-                  description: Event image URL
-            example:
-              title: "Monthly Networking Event"
-              description: "Join us for our monthly networking event"
-              start_time: "2024-02-01T18:00:00Z"
-              end_time: "2024-02-01T20:00:00Z"
-              venue: "Main Conference Hall"
-              organizer_id: "123e4567-e89b-12d3-a456-426614174000"
-              is_public: true
-              max_attendees: 50
-              registration_required: true
       responses:
         '201':
           description: Event created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Event'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          description: Validation error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /events/{id}:
     get:
-      summary: Retrieve an event
-      description: Get a single event by ID.
+      summary: Get an event
+      description: Retrieve a single event by ID
       operationId: getEvent
       tags:
         - Events
@@ -1966,10 +1095,9 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Event ID
       responses:
         '200':
-          description: Event details
+          description: Successful response
           content:
             application/json:
               schema:
@@ -1979,329 +1107,22 @@ paths:
                     $ref: '#/components/schemas/Event'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /events/{id}/cancel:
-    put:
-      summary: Cancel an event
-      description: Cancel an event. This action is idempotent.
-      operationId: cancelEvent
-      tags:
-        - Events
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-          description: Event ID
-      responses:
-        '200':
-          description: Event cancelled
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Event'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /events/{id}/copy:
-    post:
-      summary: Copy an event
-      description: Create a copy of an existing event with optional overrides.
-      operationId: copyEvent
-      tags:
-        - Events
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-          description: Source event ID to copy
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  description: Override title (defaults to "Original Title (Copy)")
-                start_time:
-                  type: string
-                  format: date-time
-                  description: Override start time
-                end_time:
-                  type: string
-                  format: date-time
-                  description: Override end time
-            example:
-              title: "Networking Event - February"
-              start_time: "2024-03-01T18:00:00Z"
-              end_time: "2024-03-01T20:00:00Z"
-      responses:
-        '201':
-          description: Event copied
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Event'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /events/{id}/tickets:
-    get:
-      summary: List event tickets
-      description: Retrieve a paginated list of registrations/tickets for an event.
-      operationId: listEventTickets
-      tags:
-        - Events
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-          description: Event ID
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/PerPage'
-        - name: status
-          in: query
-          schema:
-            type: string
-            enum: [registered, cancelled, waitlisted]
-          description: Filter by status
-        - name: checked_in
-          in: query
-          schema:
-            type: boolean
-          description: Filter by check-in status
-      responses:
-        '200':
-          description: List of tickets
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/EventTicket'
-                  pagination:
-                    $ref: '#/components/schemas/Pagination'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /events/{id}/tickets/{ticket_id}:
-    get:
-      summary: Retrieve an event ticket
-      description: Get a single ticket/registration by ID.
-      operationId: getEventTicket
-      tags:
-        - Events
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-          description: Event ID
-        - name: ticket_id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-          description: Ticket/registration ID
-      responses:
-        '200':
-          description: Ticket details
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/EventTicket'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-    MembershipPlan:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: Unique plan identifier
-        name:
-          type: string
-          description: Plan name
-          example: Monthly Unlimited
-        description:
-          type: string
-          nullable: true
-          description: Plan description
-        cycle:
-          type: string
-          enum: [daily, weekly, monthly, quarterly, yearly]
-          description: Billing cycle
-          example: monthly
-        price:
-          type: number
-          description: Plan price
-          example: 299.00
-        currency:
-          type: string
-          description: Currency code
-          example: USD
-        custom_tax_rate:
-          type: boolean
-          description: Whether plan has custom tax rate
-        tax_rate:
-          type: number
-          nullable: true
-          description: Custom tax rate percentage
-        minimum_commitment:
-          type: boolean
-          description: Whether plan requires minimum commitment
-        commitment_cycles:
-          type: integer
-          nullable: true
-          description: Number of cycles for commitment
-        expiring_credits:
-          type: integer
-          description: Credits included per cycle
-        expiring_day_passes:
-          type: integer
-          description: Day passes included per cycle
-        discount_rooms:
-          type: number
-          nullable: true
-          description: Discount percentage for rooms
-        discount_desks:
-          type: number
-          nullable: true
-          description: Discount percentage for desks
-        discount_equipment:
-          type: number
-          nullable: true
-          description: Discount percentage for equipment
-        discount_events:
-          type: number
-          nullable: true
-          description: Discount percentage for events
-        discount_shop:
-          type: number
-          nullable: true
-          description: Discount percentage for shop
-        discount_credit_packages:
-          type: number
-          nullable: true
-          description: Discount percentage for credit packages
-        signup_enabled:
-          type: boolean
-          description: Whether public signup is enabled
-        signup_type:
-          type: string
-          description: Signup type (public, private, application)
-          example: public
-        is_active:
-          type: boolean
-          description: Whether plan is active
-        location_id:
-          type: string
-          format: uuid
-          description: Associated location ID
-        created_at:
-          type: string
-          format: date-time
-          description: Creation timestamp
-        updated_at:
-          type: string
-          format: date-time
-          description: Last update timestamp
+          description: Event not found
 
   /plans:
     get:
-      summary: Retrieve plans
-      description: List all membership plans for the merchant.
+      summary: List plans
+      description: Retrieve a list of membership plans
       operationId: listPlans
       tags:
         - Plans
       parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/PerPage'
-        - name: location_id
-          in: query
-          schema:
-            type: string
-            format: uuid
-          description: Filter by location ID
-        - name: is_active
-          in: query
-          schema:
-            type: boolean
-          description: Filter by active status
-        - name: cycle
-          in: query
-          schema:
-            type: string
-            enum: [daily, weekly, monthly, quarterly, yearly]
-          description: Filter by billing cycle
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
       responses:
         '200':
-          description: List of membership plans
+          description: Successful response
           content:
             application/json:
               schema:
@@ -2310,21 +1131,15 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/components/schemas/MembershipPlan'
+                      $ref: '#/components/schemas/Plan'
                   pagination:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-    
+
     post:
       summary: Create a plan
-      description: Create a new membership plan.
+      description: Create a new membership plan
       operationId: createPlan
       tags:
         - Plans
@@ -2336,106 +1151,27 @@ paths:
               type: object
               required:
                 - name
-                - location_id
-                - cycle
                 - price
-                - currency
               properties:
                 name:
                   type: string
-                  description: Plan name
-                  example: Monthly Unlimited
                 description:
                   type: string
-                  description: Plan description
-                location_id:
-                  type: string
-                  format: uuid
-                  description: Location ID
-                cycle:
-                  type: string
-                  enum: [daily, weekly, monthly, quarterly, yearly]
-                  description: Billing cycle
                 price:
                   type: number
-                  description: Plan price
-                  example: 299.00
                 currency:
                   type: string
-                  description: Currency code
-                  example: USD
-                custom_tax_rate:
-                  type: boolean
-                  description: Use custom tax rate
-                tax_rate:
-                  type: number
-                  description: Custom tax rate percentage
-                minimum_commitment:
-                  type: boolean
-                  description: Require minimum commitment
-                commitment_cycles:
-                  type: integer
-                  description: Number of commitment cycles
-                expiring_credits:
-                  type: integer
-                  description: Credits per cycle
-                expiring_day_passes:
-                  type: integer
-                  description: Day passes per cycle
-                discount_rooms:
-                  type: number
-                  description: Room discount percentage
-                discount_desks:
-                  type: number
-                  description: Desk discount percentage
-                discount_equipment:
-                  type: number
-                  description: Equipment discount percentage
-                discount_events:
-                  type: number
-                  description: Events discount percentage
-                discount_shop:
-                  type: number
-                  description: Shop discount percentage
-                discount_credit_packages:
-                  type: number
-                  description: Credit packages discount percentage
-                signup_enabled:
-                  type: boolean
-                  description: Enable public signup
-                signup_type:
+                billing_cycle:
                   type: string
-                  description: Signup type
-                is_active:
-                  type: boolean
-                  description: Plan is active
+                  enum: [monthly, yearly]
       responses:
         '201':
           description: Plan created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/MembershipPlan'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /plans/{id}:
     get:
-      summary: Retrieve a plan
-      description: Get a single membership plan by ID.
+      summary: Get a plan
+      description: Retrieve a single plan by ID
       operationId: getPlan
       tags:
         - Plans
@@ -2446,31 +1182,15 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Plan ID
       responses:
         '200':
-          description: Plan details
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/MembershipPlan'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+          description: Successful response
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-    
+          description: Plan not found
+
     patch:
       summary: Update a plan
-      description: Update an existing membership plan. Only provided fields will be updated.
+      description: Partially update a plan
       operationId: updatePlan
       tags:
         - Plans
@@ -2481,9 +1201,7 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Plan ID
       requestBody:
-        required: true
         content:
           application/json:
             schema:
@@ -2493,69 +1211,19 @@ paths:
                   type: string
                 description:
                   type: string
-                cycle:
-                  type: string
-                  enum: [daily, weekly, monthly, quarterly, yearly]
                 price:
                   type: number
-                currency:
-                  type: string
-                custom_tax_rate:
-                  type: boolean
-                tax_rate:
-                  type: number
-                minimum_commitment:
-                  type: boolean
-                commitment_cycles:
-                  type: integer
-                expiring_credits:
-                  type: integer
-                expiring_day_passes:
-                  type: integer
-                discount_rooms:
-                  type: number
-                discount_desks:
-                  type: number
-                discount_equipment:
-                  type: number
-                discount_events:
-                  type: number
-                discount_shop:
-                  type: number
-                discount_credit_packages:
-                  type: number
-                signup_enabled:
-                  type: boolean
-                signup_type:
-                  type: string
                 is_active:
                   type: boolean
       responses:
         '200':
           description: Plan updated
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/MembershipPlan'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-    
+          description: Plan not found
+
     delete:
       summary: Delete a plan
-      description: Delete a membership plan by ID.
+      description: Delete a membership plan
       operationId: deletePlan
       tags:
         - Plans
@@ -2566,145 +1234,30 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Plan ID
       responses:
         '200':
           description: Plan deleted
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        format: uuid
-                      deleted:
-                        type: boolean
-                        example: true
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-    Membership:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: Unique membership identifier
-        customer_id:
-          type: string
-          format: uuid
-          nullable: true
-          description: Associated customer ID
-        company_id:
-          type: string
-          format: uuid
-          nullable: true
-          description: Associated company ID
-        status:
-          type: string
-          enum: [active, paused, cancelled, deleted]
-          description: Membership status
-          example: active
-        billing_cycle:
-          type: string
-          enum: [daily, weekly, monthly, quarterly, yearly]
-          description: Billing cycle
-          example: monthly
-        billing_cycle_anchor:
-          type: string
-          format: date
-          nullable: true
-          description: Anchor date for billing cycle
-        start_date:
-          type: string
-          format: date
-          description: Membership start date
-        end_date:
-          type: string
-          format: date
-          nullable: true
-          description: Membership end date
-        total_amount:
-          type: number
-          nullable: true
-          description: Total amount per billing cycle
-        currency:
-          type: string
-          nullable: true
-          description: Currency code
-          example: USD
-        advance_invoicing:
-          type: string
-          nullable: true
-          description: Advance invoicing setting
-        invoice_behavior:
-          type: string
-          nullable: true
-          description: Invoice behavior
-        issue_first_invoice:
-          type: string
-          nullable: true
-          description: When to issue first invoice
-        payment_paused:
-          type: boolean
-          description: Whether payment is paused
-        payment_paused_until:
-          type: string
-          format: date
-          nullable: true
-          description: Date until payment is paused
-        created_at:
-          type: string
-          format: date-time
-          description: Creation timestamp
-        updated_at:
-          type: string
-          format: date-time
-          description: Last update timestamp
+          description: Plan not found
 
   /memberships:
     get:
-      summary: Retrieve memberships
-      description: List all memberships (subscriptions) for the merchant.
+      summary: List memberships
+      description: Retrieve a list of memberships
       operationId: listMemberships
       tags:
         - Memberships
       parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/PerPage'
-        - name: customer_id
-          in: query
-          schema:
-            type: string
-            format: uuid
-          description: Filter by customer ID
-        - name: company_id
-          in: query
-          schema:
-            type: string
-            format: uuid
-          description: Filter by company ID
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
         - name: status
           in: query
           schema:
             type: string
-            enum: [active, paused, cancelled]
-          description: Filter by status
+            enum: [active, paused, cancelled, expired]
       responses:
         '200':
-          description: List of memberships
+          description: Successful response
           content:
             application/json:
               schema:
@@ -2718,16 +1271,10 @@ paths:
                     $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-    
+
     post:
       summary: Create a membership
-      description: Create a new membership for a customer or company.
+      description: Create a new membership
       operationId: createMembership
       tags:
         - Memberships
@@ -2738,119 +1285,26 @@ paths:
             schema:
               type: object
               required:
-                - start_date
-                - billing_cycle
+                - customer_id
+                - plan_id
               properties:
                 customer_id:
                   type: string
                   format: uuid
-                  description: Customer ID (required if no company_id)
-                company_id:
+                plan_id:
                   type: string
                   format: uuid
-                  description: Company ID (required if no customer_id)
                 start_date:
                   type: string
                   format: date
-                  description: Membership start date
-                end_date:
-                  type: string
-                  format: date
-                  description: Membership end date
-                billing_cycle:
-                  type: string
-                  enum: [daily, weekly, monthly, quarterly, yearly]
-                  description: Billing cycle
-                billing_cycle_anchor:
-                  type: string
-                  format: date
-                  description: Anchor date for billing cycle
-                status:
-                  type: string
-                  enum: [active, paused]
-                  description: Initial status
-                total_amount:
-                  type: number
-                  description: Amount per billing cycle
-                currency:
-                  type: string
-                  description: Currency code
-                advance_invoicing:
-                  type: string
-                  description: Advance invoicing setting
-                invoice_behavior:
-                  type: string
-                  description: Invoice behavior
-                issue_first_invoice:
-                  type: string
-                  description: When to issue first invoice
-                payment_paused:
-                  type: boolean
-                  description: Whether payment is paused
-                payment_paused_until:
-                  type: string
-                  format: date
-                  description: Date until payment is paused
       responses:
         '201':
           description: Membership created
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Membership'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-
-  /memberships/deleted:
-    get:
-      summary: Retrieve deleted memberships
-      description: List all deleted memberships for the merchant.
-      operationId: listDeletedMemberships
-      tags:
-        - Memberships
-      parameters:
-        - $ref: '#/components/parameters/Page'
-        - $ref: '#/components/parameters/PerPage'
-      responses:
-        '200':
-          description: List of deleted memberships
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Membership'
-                  pagination:
-                    $ref: '#/components/schemas/Pagination'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '429':
-          $ref: '#/components/responses/RateLimited'
 
   /memberships/{id}:
     get:
-      summary: Retrieve a membership
-      description: Get a single membership by ID.
+      summary: Get a membership
+      description: Retrieve a single membership by ID
       operationId: getMembership
       tags:
         - Memberships
@@ -2861,31 +1315,15 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Membership ID
       responses:
         '200':
-          description: Membership details
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Membership'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+          description: Successful response
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-    
+          description: Membership not found
+
     put:
       summary: Update a membership
-      description: Update an existing membership.
+      description: Update an existing membership
       operationId: updateMembership
       tags:
         - Memberships
@@ -2896,9 +1334,7 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Membership ID
       requestBody:
-        required: true
         content:
           application/json:
             schema:
@@ -2907,59 +1343,18 @@ paths:
                 status:
                   type: string
                   enum: [active, paused, cancelled]
-                billing_cycle:
-                  type: string
-                  enum: [daily, weekly, monthly, quarterly, yearly]
-                billing_cycle_anchor:
-                  type: string
-                  format: date
-                start_date:
-                  type: string
-                  format: date
                 end_date:
-                  type: string
-                  format: date
-                total_amount:
-                  type: number
-                currency:
-                  type: string
-                advance_invoicing:
-                  type: string
-                invoice_behavior:
-                  type: string
-                issue_first_invoice:
-                  type: string
-                payment_paused:
-                  type: boolean
-                payment_paused_until:
                   type: string
                   format: date
       responses:
         '200':
           description: Membership updated
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Membership'
-                  meta:
-                    $ref: '#/components/schemas/Meta'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
-    
+          description: Membership not found
+
     delete:
       summary: Delete a membership
-      description: Soft delete a membership by ID.
+      description: Delete a membership
       operationId: deleteMembership
       tags:
         - Memberships
@@ -2970,42 +1365,289 @@ paths:
           schema:
             type: string
             format: uuid
-          description: Membership ID
       responses:
         '200':
           description: Membership deleted
+        '404':
+          description: Membership not found
+
+  /benefits:
+    get:
+      summary: List benefits
+      description: Retrieve a list of benefits
+      operationId: listBenefits
+      tags:
+        - Benefits
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
+      responses:
+        '200':
+          description: Successful response
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   data:
-                    $ref: '#/components/schemas/Membership'
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Benefit'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
                   meta:
                     $ref: '#/components/schemas/Meta'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
+
+    post:
+      summary: Create a benefit
+      description: Create a new benefit
+      operationId: createBenefit
+      tags:
+        - Benefits
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                partner_name:
+                  type: string
+                discount_value:
+                  type: string
+                valid_from:
+                  type: string
+                  format: date
+                valid_until:
+                  type: string
+                  format: date
+      responses:
+        '201':
+          description: Benefit created
+
+  /benefits/{id}:
+    get:
+      summary: Get a benefit
+      description: Retrieve a single benefit by ID
+      operationId: getBenefit
+      tags:
+        - Benefits
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
         '404':
-          $ref: '#/components/responses/NotFound'
-        '429':
-          $ref: '#/components/responses/RateLimited'
+          description: Benefit not found
+
+    put:
+      summary: Update a benefit
+      description: Update an existing benefit
+      operationId: updateBenefit
+      tags:
+        - Benefits
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                is_active:
+                  type: boolean
+      responses:
+        '200':
+          description: Benefit updated
+        '404':
+          description: Benefit not found
+
+    delete:
+      summary: Delete a benefit
+      description: Delete a benefit
+      operationId: deleteBenefit
+      tags:
+        - Benefits
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Benefit deleted
+        '404':
+          description: Benefit not found
+
+  /feed:
+    get:
+      summary: List feed posts
+      description: Retrieve a list of feed posts
+      operationId: listFeedPosts
+      tags:
+        - Feed
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/FeedPost'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+
+    post:
+      summary: Create a feed post
+      description: Create a new feed post
+      operationId: createFeedPost
+      tags:
+        - Feed
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - content
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+                is_published:
+                  type: boolean
+                is_pinned:
+                  type: boolean
+      responses:
+        '201':
+          description: Feed post created
+
+  /feed/{id}:
+    get:
+      summary: Get a feed post
+      description: Retrieve a single feed post by ID
+      operationId: getFeedPost
+      tags:
+        - Feed
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Feed post not found
+
+    put:
+      summary: Update a feed post
+      description: Update an existing feed post
+      operationId: updateFeedPost
+      tags:
+        - Feed
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+                is_published:
+                  type: boolean
+                is_pinned:
+                  type: boolean
+      responses:
+        '200':
+          description: Feed post updated
+        '404':
+          description: Feed post not found
+
+    delete:
+      summary: Delete a feed post
+      description: Delete a feed post
+      operationId: deleteFeedPost
+      tags:
+        - Feed
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Feed post deleted
+        '404':
+          description: Feed post not found
 
 tags:
+  - name: Networks
+    description: Network/merchant operations
   - name: Bookings
-    description: Manage resource bookings
+    description: Booking management
   - name: Companies
-    description: Manage companies (billing organizations)
+    description: Company management
   - name: Resources
-    description: View, update, and check availability of bookable resources
+    description: Resource management
   - name: Locations
-    description: Access location information
+    description: Location management
   - name: Invoices
-    description: Create, view, and manage invoices
+    description: Invoice management
   - name: Events
-    description: Create, manage, and track events and tickets
+    description: Event management
   - name: Plans
-    description: Create, view, update, and delete membership plans
+    description: Membership plan management
   - name: Memberships
-    description: Create, view, update, and delete memberships (subscriptions)
+    description: Membership management
+  - name: Benefits
+    description: Benefit management
+  - name: Feed
+    description: Feed post management
