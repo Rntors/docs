@@ -25,7 +25,7 @@ The Rntor REST API provides programmatic access to your coworking and space mana
 ## Base URL
 
 ```
-https://iwdewzswethsnvwvpind.supabase.co/functions/v1/public-api
+https://api.rntor.com/v1
 ```
 
 ## Authentication
@@ -38,96 +38,6 @@ X-Client-ID: YOUR_CLIENT_ID
 ```
 
 Generate API credentials from **Settings → Developers → API Keys** in your Rntor dashboard.
-
-## Available Endpoints
-
-### Read Endpoints (42)
-
-| Endpoint | Scope Required | Description |
-|----------|----------------|-------------|
-| `GET /networks` | `read:merchant` | List networks (returns array with current merchant) |
-| `GET /merchant` | `read:merchant` | Get current merchant (alias for /networks) |
-| `GET /bookings` | `read:bookings` | List bookings with filters |
-| `GET /bookings/{id}` | `read:bookings` | Get a single booking |
-| `GET /companies` | `read:companies` | List companies |
-| `GET /companies/{id}` | `read:companies` | Get a single company |
-| `GET /resources` | `read:resources` | List resources with filters |
-| `GET /resources/{id}` | `read:resources` | Get a single resource |
-| `GET /resources/{id}/availability` | `read:resources` | Check resource availability |
-| `GET /locations` | `read:locations` | List locations |
-| `GET /locations/{id}` | `read:locations` | Get a single location |
-| `GET /invoices` | `read:invoices` | List invoices with filters |
-| `GET /invoices/{id}` | `read:invoices` | Get a single invoice |
-| `GET /credit-notes` | `read:invoices` | List credit notes |
-| `GET /credit-notes/{id}` | `read:invoices` | Get a single credit note |
-| `GET /contracts/{id}` | `read:contracts` | Get a contract |
-| `GET /events` | `read:events` | List events with filters |
-| `GET /events/{id}` | `read:events` | Get a single event |
-| `GET /events/{id}/tickets` | `read:events` | List event tickets |
-| `GET /events/{id}/tickets/{ticket_id}` | `read:events` | Get a single event ticket |
-| `GET /plans` | `read:plans` | List membership plans |
-| `GET /plans/{id}` | `read:plans` | Get a single plan |
-| `GET /memberships` | `read:memberships` | List memberships |
-| `GET /memberships/{id}` | `read:memberships` | Get a single membership |
-| `GET /memberships/deleted` | `read:memberships` | List deleted memberships |
-| `GET /benefits` | `read:benefits` | List benefits |
-| `GET /benefits/{id}` | `read:benefits` | Get a single benefit |
-| `GET /benefit-categories` | `read:benefits` | List benefit categories |
-| `GET /benefit-categories/{id}` | `read:benefits` | Get a single benefit category |
-| `GET /benefit-applications` | `read:benefits` | List benefit applications |
-| `GET /benefit-applications/{id}` | `read:benefits` | Get a single benefit application |
-| `GET /feed` | `read:feed` | List feed posts |
-| `GET /feed/{id}` | `read:feed` | Get a single feed post |
-| `GET /feed/{id}/likes` | `read:feed` | List likes for a post |
-| `GET /feed/{id}/comments` | `read:feed` | List comments for a post |
-| `GET /orders` | `read:orders` | List shop orders |
-| `GET /orders/{id}` | `read:orders` | Get a single order |
-| `GET /shop-categories` | `read:shop` | List shop categories |
-| `GET /shop-categories/{id}` | `read:shop` | Get a single shop category |
-
-### Write Endpoints (44)
-
-| Endpoint | Scope Required | Description |
-|----------|----------------|-------------|
-| `POST /bookings` | `write:bookings` | Create a new booking |
-| `DELETE /bookings/{id}` | `write:bookings` | Cancel a booking (soft delete) |
-| `POST /companies` | `write:companies` | Create a new company |
-| `PUT /companies/{id}` | `write:companies` | Update a company |
-| `PATCH /resources/{id}` | `write:resources` | Partially update a resource |
-| `POST /invoices` | `write:invoices` | Create a new invoice |
-| `POST /invoices/{id}/pay` | `write:invoices` | Pay an invoice |
-| `POST /invoices/{id}/items` | `write:invoices` | Add item to invoice |
-| `POST /contracts` | `write:contracts` | Create a contract |
-| `DELETE /contracts/{id}` | `write:contracts` | Delete a contract |
-| `POST /contracts/{id}/issue` | `write:contracts` | Issue a contract |
-| `POST /events` | `write:events` | Create a new event |
-| `PUT /events/{id}/cancel` | `write:events` | Cancel an event |
-| `POST /events/{id}/copy` | `write:events` | Copy an event |
-| `POST /plans` | `write:plans` | Create a new plan |
-| `PATCH /plans/{id}` | `write:plans` | Update a plan |
-| `DELETE /plans/{id}` | `write:plans` | Delete a plan |
-| `POST /memberships` | `write:memberships` | Create a new membership |
-| `PUT /memberships/{id}` | `write:memberships` | Update a membership |
-| `DELETE /memberships/{id}` | `write:memberships` | Delete a membership |
-| `POST /benefits` | `write:benefits` | Create a new benefit |
-| `PUT /benefits/{id}` | `write:benefits` | Update a benefit |
-| `DELETE /benefits/{id}` | `write:benefits` | Delete a benefit |
-| `POST /benefit-categories` | `write:benefits` | Create a benefit category |
-| `PUT /benefit-categories/{id}` | `write:benefits` | Update a benefit category |
-| `DELETE /benefit-categories/{id}` | `write:benefits` | Delete a benefit category |
-| `POST /benefit-applications` | `write:benefits` | Apply for a benefit |
-| `POST /feed` | `write:feed` | Create a feed post |
-| `PUT /feed/{id}` | `write:feed` | Update a feed post |
-| `DELETE /feed/{id}` | `write:feed` | Delete a feed post |
-| `POST /feed/{id}/likes` | `write:feed` | Like a post |
-| `DELETE /feed/{id}/likes/{like_id}` | `write:feed` | Unlike a post |
-| `POST /feed/{id}/comments` | `write:feed` | Comment on a post |
-| `DELETE /feed/{id}/comments/{comment_id}` | `write:feed` | Delete a comment |
-| `POST /feed/{id}/comments/{comment_id}/likes` | `write:feed` | Like a comment |
-| `DELETE /feed/{id}/comments/{comment_id}/likes/{like_id}` | `write:feed` | Unlike a comment |
-| `POST /shop-categories` | `write:shop` | Create a shop category |
-| `PUT /shop-categories/{id}` | `write:shop` | Update a shop category |
-| `DELETE /shop-categories/{id}` | `write:shop` | Delete a shop category |
 
 ## Rate Limiting
 
@@ -149,8 +59,7 @@ Rate limit headers are included in all responses:
 {
   "data": {
     "id": "abc123",
-    "name": "Meeting Room A",
-    ...
+    "name": "Meeting Room A"
   },
   "meta": {
     "request_id": "req_abc123def456",
@@ -164,8 +73,8 @@ Rate limit headers are included in all responses:
 ```json
 {
   "data": [
-    { "id": "abc123", ... },
-    { "id": "def456", ... }
+    { "id": "abc123" },
+    { "id": "def456" }
   ],
   "pagination": {
     "page": 1,
@@ -214,25 +123,6 @@ List endpoints support pagination via query parameters:
 |-----------|---------|-----|-------------|
 | `page` | 1 | - | Page number |
 | `per_page` | 20 | 100 | Items per page |
-
-## Example Request
-
-```bash
-curl -X GET "https://iwdewzswethsnvwvpind.supabase.co/functions/v1/public-api/bookings?status=confirmed&per_page=10" \
-  -H "Authorization: Bearer sk_your_client_secret" \
-  -H "X-Client-ID: rntor_your_client_id"
-```
-
-## OpenAPI Specification
-
-Download the full OpenAPI 3.0 specification for:
-- Auto-generating client libraries
-- Importing into Postman/Insomnia
-- Integration with API gateways
-
-<Card title="OpenAPI Spec" icon="file-code" href="/api-reference/openapi.yaml">
-  Download the OpenAPI specification
-</Card>
 
 ## Stay Updated
 
