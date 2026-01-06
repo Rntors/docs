@@ -14,10 +14,6 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:support@rntor.com"
-    },
-    {
       "name": "Dashboard",
       "url": "https://app.rntor.com"
     }
@@ -66,15 +62,16 @@
               "webhooks/introduction",
               "webhooks/security"
             ]
-          },
-          {
-            "group": "Events",
-            "pages": [
-              "webhooks/event-catalog",
-              "webhooks/payload-examples"
-            ]
           }
         ]
+      },
+      {
+        "tab": "Webhook event types",
+        "href": "https://webhooks.rntor.com/"
+      },
+      {
+        "tab": "Support",
+        "href": "mailto:support@rntor.com"
       }
     ]
   },
