@@ -1,0 +1,60 @@
+---
+title: 'Authentication'
+description: 'Learn how to authenticate your API requests'
+---
+
+## OAuth 2.0
+
+The Rntor API uses OAuth 2.0 for authentication. All API requests must include a valid access token in the `Authorization` header.
+
+```bash
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+## Getting Your API Credentials
+
+1. Log in to your [Rntor Dashboard](https://app.rntor.com)
+2. Navigate to **Settings** → **API & Integrations**
+3. Click **Create API Key**
+4. Copy your Client ID and Client Secret
+
+<Warning>
+Keep your Client Secret secure. Never expose it in client-side code or public repositories.
+</Warning>
+
+## Required Headers
+
+All API requests must include the following headers:
+
+| Header | Description |
+|--------|-------------|
+| `Authorization` | Your API client secret as a Bearer token |
+| `X-Client-ID` | Your API client ID |
+| `Content-Type` | `application/json` for requests with a body |
+
+## Example Request
+
+```bash
+curl -X GET "https://api.rntor.com/v1/networks" \
+  -H "Authorization: Bearer YOUR_CLIENT_SECRET" \
+  -H "X-Client-ID: YOUR_CLIENT_ID"
+```
+
+## Scopes
+
+API keys can be configured with specific scopes to limit access:
+
+| Scope | Description |
+|-------|-------------|
+| `read:bookings` | Read booking data |
+| `write:bookings` | Create and modify bookings |
+| `read:members` | Read member information |
+| `write:members` | Create and modify members |
+| `read:resources` | Read resource data |
+| `write:resources` | Create and modify resources |
+| `read:invoices` | Read invoice data |
+| `write:invoices` | Create and modify invoices |
+
+<Info>
+Request only the scopes your integration needs. This follows the principle of least privilege.
+</Info>

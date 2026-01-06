@@ -1,0 +1,113 @@
+---
+title: 'Error Handling'
+description: 'Understanding API error responses'
+---
+
+## Error Response Format
+
+When an error occurs, the API returns a consistent error response:
+
+```json
+{
+  "error": {
+    "code": "invalid_request",
+    "message": "The request body is missing required field 'email'",
+    "details": {
+      "field": "email",
+      "reason": "required"
+    }
+  }
+}
+```
+
+## HTTP Status Codes
+
+| Status Code | Description |
+|-------------|-------------|
+| `200` | Success |
+| `201` | Created |
+| `204` | No Content (successful deletion) |
+| `400` | Bad Request - Invalid parameters |
+| `401` | Unauthorized - Invalid or missing credentials |
+| `403` | Forbidden - Insufficient permissions |
+| `404` | Not Found - Resource doesn't exist |
+| `409` | Conflict - Resource already exists |
+| `422` | Unprocessable Entity - Validation error |
+| `429` | Too Many Requests - Rate limit exceeded |
+| `500` | Internal Server Error |
+
+## Common Error Codes
+
+### Authentication Errors
+
+| Code | Description |
+|------|-------------|
+| `invalid_token` | The access token is invalid or expired |
+| `missing_token` | No authorization header provided |
+| `insufficient_scope` | Token lacks required permissions |
+
+### Validation Errors
+
+| Code | Description |
+|------|-------------|
+| `invalid_request` | Request body is malformed |
+| `validation_error` | One or more fields failed validation |
+| `missing_field` | Required field is missing |
+
+### Resource Errors
+
+| Code | Description |
+|------|-------------|
+| `not_found` | The requested resource doesn't exist |
+| `already_exists` | Resource with this identifier already exists |
+| `conflict` | Operation conflicts with current state |
+
+## Error Handling Best Practices
+
+<Steps>
+  <Step title="Check Status Code First">
+    Use the HTTP status code to determine the general category of error.
+  </Step>
+  <Step title="Parse Error Response">
+    Extract the `error.code` and `error.message` for specific handling.
+  </Step>
+  <Step title="Log Details">
+    Store the full error response for debugging purposes.
+  </Step>
+  <Step title="Display User-Friendly Messages">
+    Translate error codes into messages appropriate for your users.
+  </Step>
+</Steps>
+
+## Example Error Handling
+
+```javascript
+try {
+  const response = await fetch('https://api.rntor.com/v1/bookings', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiSecret}`,
+      'X-Client-ID': clientId,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(bookingData)
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    
+    switch (error.error.code) {
+      case 'validation_error':
+        // Handle validation errors
+        break;
+      case 'conflict':
+        // Handle booking conflicts
+        break;
+      default:
+        // Handle other errors
+    }
+  }
+} catch (e) {
+  // Handle network errors
+}
+```

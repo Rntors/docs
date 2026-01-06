@@ -1,0 +1,67 @@
+---
+title: 'Pagination'
+description: 'How to paginate through large result sets'
+---
+
+## Overview
+
+The Rntor API uses cursor-based pagination for endpoints that return lists of resources. This approach provides consistent results even when data is being modified.
+
+## Pagination Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `limit` | integer | 20 | Number of items per page (max: 100) |
+| `cursor` | string | - | Cursor for the next page of results |
+
+## Response Format
+
+Paginated responses include a `pagination` object:
+
+```json
+{
+  "data": [...],
+  "pagination": {
+    "has_more": true,
+    "next_cursor": "eyJpZCI6IjEyMzQ1In0=",
+    "total_count": 150
+  }
+}
+```
+
+## Example
+
+### First Request
+
+```bash
+curl -X GET "https://api.rntor.com/v1/bookings?limit=20" \
+  -H "Authorization: Bearer YOUR_CLIENT_SECRET" \
+  -H "X-Client-ID: YOUR_CLIENT_ID"
+```
+
+### Subsequent Requests
+
+Use the `next_cursor` from the previous response:
+
+```bash
+curl -X GET "https://api.rntor.com/v1/bookings?limit=20&cursor=eyJpZCI6IjEyMzQ1In0=" \
+  -H "Authorization: Bearer YOUR_CLIENT_SECRET" \
+  -H "X-Client-ID: YOUR_CLIENT_ID"
+```
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Use Reasonable Limits" icon="gauge">
+    Request only what you need. Smaller page sizes mean faster responses.
+  </Card>
+  <Card title="Handle Empty Pages" icon="list">
+    Always check `has_more` before requesting the next page.
+  </Card>
+  <Card title="Store Cursors Carefully" icon="bookmark">
+    Cursors are opaque strings. Don't modify or parse them.
+  </Card>
+  <Card title="Avoid Offset Pagination" icon="ban">
+    Cursor-based pagination is more reliable for large datasets.
+  </Card>
+</CardGroup>
