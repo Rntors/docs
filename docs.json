@@ -8,9 +8,9 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#6366F1",
-    "light": "#818CF8",
-    "dark": "#4F46E5"
+    "primary": "#4F46E5",
+    "light": "#6366F1",
+    "dark": "#3730A3"
   },
   "topbarLinks": [
     {
@@ -45,21 +45,43 @@
               "authentication/api-keys",
               "authentication/scopes"
             ]
-          },
-          {
-            "group": "Webhooks",
-            "pages": [
-              "webhooks/introduction",
-              "webhooks/security",
-              "webhooks/event-catalog",
-              "webhooks/payload-examples"
-            ]
           }
         ]
       },
       {
         "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "api-reference/overview",
+              "api-reference/authentication",
+              "api-reference/pagination",
+              "api-reference/rate-limiting",
+              "api-reference/errors"
+            ]
+          }
+        ],
         "openapi": "/api-reference/openapi.yaml"
+      },
+      {
+        "tab": "Webhooks",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "webhooks/introduction",
+              "webhooks/security"
+            ]
+          },
+          {
+            "group": "Events",
+            "pages": [
+              "webhooks/event-catalog",
+              "webhooks/payload-examples"
+            ]
+          }
+        ]
       }
     ]
   },
