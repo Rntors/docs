@@ -6,6 +6,10 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
+  "hero": {
+    "dark": "/images/hero-dark.png",
+    "light": "/images/hero-light.png"
+  },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#165D31",
