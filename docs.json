@@ -52,6 +52,86 @@
               "api-reference/rate-limiting",
               "api-reference/errors"
             ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              {
+                "group": "Networks",
+                "pages": [
+                  "api-reference/endpoint/networks/list-networks"
+                ]
+              },
+              {
+                "group": "Bookings",
+                "pages": [
+                  "api-reference/endpoint/bookings/list-bookings",
+                  "api-reference/endpoint/bookings/create-booking",
+                  "api-reference/endpoint/bookings/get-booking",
+                  "api-reference/endpoint/bookings/cancel-booking"
+                ]
+              },
+              {
+                "group": "Companies",
+                "pages": [
+                  "api-reference/endpoint/companies/list-companies",
+                  "api-reference/endpoint/companies/create-company",
+                  "api-reference/endpoint/companies/get-company",
+                  "api-reference/endpoint/companies/update-company"
+                ]
+              },
+              {
+                "group": "Resources",
+                "pages": [
+                  "api-reference/endpoint/resources/list-resources",
+                  "api-reference/endpoint/resources/get-resource",
+                  "api-reference/endpoint/resources/update-resource",
+                  "api-reference/endpoint/resources/get-resource-availability"
+                ]
+              },
+              {
+                "group": "Locations",
+                "pages": [
+                  "api-reference/endpoint/locations/list-locations",
+                  "api-reference/endpoint/locations/get-location"
+                ]
+              },
+              {
+                "group": "Invoices",
+                "pages": [
+                  "api-reference/endpoint/invoices/list-invoices",
+                  "api-reference/endpoint/invoices/create-invoice",
+                  "api-reference/endpoint/invoices/get-invoice",
+                  "api-reference/endpoint/invoices/pay-invoice"
+                ]
+              },
+              {
+                "group": "Events",
+                "pages": [
+                  "api-reference/endpoint/events/list-events",
+                  "api-reference/endpoint/events/create-event",
+                  "api-reference/endpoint/events/get-event"
+                ]
+              },
+              {
+                "group": "Plans",
+                "pages": [
+                  "api-reference/endpoint/plans/list-plans",
+                  "api-reference/endpoint/plans/create-plan",
+                  "api-reference/endpoint/plans/get-plan",
+                  "api-reference/endpoint/plans/update-plan",
+                  "api-reference/endpoint/plans/delete-plan"
+                ]
+              },
+              {
+                "group": "Memberships",
+                "pages": [
+                  "api-reference/endpoint/memberships/list-memberships",
+                  "api-reference/endpoint/memberships/create-membership",
+                  "api-reference/endpoint/memberships/get-membership"
+                ]
+              }
+            ]
           }
         ],
         "openapi": "/api-reference/openapi.yaml"
