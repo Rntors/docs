@@ -43,7 +43,6 @@
           {
             "group": "Getting Started",
             "pages": [
-              "api-reference/overview",
               "api-reference/authentication",
               "api-reference/pagination",
               "api-reference/rate-limiting",
