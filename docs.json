@@ -52,56 +52,6 @@
               "api-reference/rate-limiting",
               "api-reference/errors"
             ]
-          },
-          {
-            "group": "Endpoints",
-            "pages": [
-              {
-                "group": "Networks",
-                "icon": "network-wired",
-                "pages": []
-              },
-              {
-                "group": "Bookings",
-                "icon": "calendar-check",
-                "pages": []
-              },
-              {
-                "group": "Companies",
-                "icon": "building",
-                "pages": []
-              },
-              {
-                "group": "Resources",
-                "icon": "cube",
-                "pages": []
-              },
-              {
-                "group": "Locations",
-                "icon": "location-dot",
-                "pages": []
-              },
-              {
-                "group": "Invoices",
-                "icon": "file-invoice",
-                "pages": []
-              },
-              {
-                "group": "Events",
-                "icon": "calendar",
-                "pages": []
-              },
-              {
-                "group": "Plans",
-                "icon": "list-check",
-                "pages": []
-              },
-              {
-                "group": "Memberships",
-                "icon": "id-card",
-                "pages": []
-              }
-            ]
           }
         ],
         "openapi": "/api-reference/openapi.yaml"
