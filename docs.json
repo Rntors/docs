@@ -52,9 +52,14 @@
               "api-reference/rate-limiting",
               "api-reference/errors"
             ]
+          },
+          {
+            "group": "Endpoints",
+            "openapi": {
+              "source": "/api-reference/openapi.yaml"
+            }
           }
-        ],
-        "openapi": "/api-reference/openapi.yaml"
+        ]
       },
       {
         "tab": "Webhooks",
