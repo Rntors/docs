@@ -359,35 +359,87 @@ components:
 
     Membership:
       type: object
+      description: A membership plan template that customers can subscribe to
       properties:
         id:
           type: string
           format: uuid
           example: "3c90c3cc-0d44-4b50-8888-8dd25736052a"
-        customer_id:
+        location_id:
           type: string
           format: uuid
-        plan_id:
+          description: The location this membership plan belongs to
+        name:
           type: string
-          format: uuid
-        status:
+          example: "Premium Membership"
+        description:
           type: string
-          enum: [active, paused, cancelled, expired]
-          example: active
-        start_date:
+          example: "Full access to all amenities and resources"
+        cycle:
           type: string
-          format: date
-          example: "2024-01-01"
-        end_date:
-          type: string
-          format: date
-          example: "2024-12-31"
-        billing_cycle:
-          type: string
+          enum: [daily, weekly, monthly, quarterly, yearly]
           example: monthly
-        total_amount:
+        price:
           type: number
           example: 299.00
+        currency:
+          type: string
+          example: "USD"
+        custom_tax_rate:
+          type: boolean
+          example: false
+        tax_rate:
+          type: number
+          example: 10.0
+        minimum_commitment:
+          type: boolean
+          example: false
+        commitment_cycles:
+          type: integer
+          example: 12
+        expiring_credits:
+          type: integer
+          description: Monthly credits included in this plan
+          example: 100
+        expiring_day_passes:
+          type: integer
+          description: Monthly day passes included in this plan
+          example: 5
+        discount_rooms:
+          type: number
+          description: Percentage discount on room bookings
+          example: 20.0
+        discount_desks:
+          type: number
+          description: Percentage discount on desk bookings
+          example: 15.0
+        discount_equipment:
+          type: number
+          example: 10.0
+        discount_events:
+          type: number
+          example: 25.0
+        discount_shop:
+          type: number
+          example: 10.0
+        discount_credit_packages:
+          type: number
+          example: 5.0
+        signup_enabled:
+          type: boolean
+          example: true
+        signup_type:
+          type: string
+          example: "standard"
+        is_active:
+          type: boolean
+          example: true
+        exclusive_resource_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Resources exclusively available to this plan
         created_at:
           type: string
           format: date-time
@@ -533,6 +585,54 @@ components:
         status:
           type: string
           example: "scheduled"
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    Subscription:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: "3c90c3cc-0d44-4b50-8888-8dd25736052a"
+        customer_id:
+          type: string
+          format: uuid
+        company_id:
+          type: string
+          format: uuid
+        billing_cycle:
+          type: string
+          enum: [monthly, quarterly, annually]
+          example: monthly
+        start_date:
+          type: string
+          format: date
+          example: "2024-01-01"
+        end_date:
+          type: string
+          format: date
+          example: "2024-12-31"
+        status:
+          type: string
+          enum: [active, paused, cancelled, expired]
+          example: active
+        total_amount:
+          type: number
+          example: 299.00
+        currency:
+          type: string
+          example: "USD"
+        payment_paused:
+          type: boolean
+          example: false
+        payment_paused_until:
+          type: string
+          format: date-time
         created_at:
           type: string
           format: date-time
@@ -1711,6 +1811,271 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # ==========================================================================
+  # Subscriptions
+  # ==========================================================================
+  /subscriptions:
+    get:
+      summary: List subscriptions
+      description: Retrieve a list of customer subscriptions with optional filters
+      operationId: listSubscriptions
+      tags:
+        - Subscriptions
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PerPageParam'
+        - name: customer_id
+          in: query
+          schema:
+            type: string
+            format: uuid
+        - name: company_id
+          in: query
+          schema:
+            type: string
+            format: uuid
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [active, paused, cancelled, expired]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Subscription'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+              example:
+                data:
+                  - id: "3c90c3cc-0d44-4b50-8888-8dd25736052a"
+                    customer_id: "4d91d4dd-1e55-5c61-9999-9ee36847163b"
+                    billing_cycle: "monthly"
+                    start_date: "2024-01-01"
+                    end_date: null
+                    status: "active"
+                    total_amount: 299.00
+                    currency: "USD"
+                    payment_paused: false
+                    created_at: "2024-01-01T00:00:00Z"
+                    updated_at: "2024-01-01T00:00:00Z"
+                pagination:
+                  page: 1
+                  per_page: 20
+                  total: 150
+                  total_pages: 8
+                  has_more: true
+                meta:
+                  request_id: req_abc123def456
+                  timestamp: "2024-01-15T10:30:00Z"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+    post:
+      summary: Create a subscription
+      description: Create a new customer subscription
+      operationId: createSubscription
+      tags:
+        - Subscriptions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - billing_cycle
+                - start_date
+              properties:
+                customer_id:
+                  type: string
+                  format: uuid
+                  description: Either customer_id or company_id is required
+                company_id:
+                  type: string
+                  format: uuid
+                  description: Either customer_id or company_id is required
+                billing_cycle:
+                  type: string
+                  enum: [monthly, quarterly, annually]
+                start_date:
+                  type: string
+                  format: date
+                end_date:
+                  type: string
+                  format: date
+                total_amount:
+                  type: number
+                currency:
+                  type: string
+            example:
+              customer_id: "4d91d4dd-1e55-5c61-9999-9ee36847163b"
+              billing_cycle: "monthly"
+              start_date: "2024-01-01"
+              total_amount: 299.00
+              currency: "USD"
+      responses:
+        '201':
+          description: Subscription created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Subscription'
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /subscriptions/{id}:
+    get:
+      summary: Retrieve a subscription
+      description: Get a single subscription by ID
+      operationId: getSubscription
+      tags:
+        - Subscriptions
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Subscription'
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    patch:
+      summary: Update a subscription
+      description: Update an existing subscription
+      operationId: updateSubscription
+      tags:
+        - Subscriptions
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                billing_cycle:
+                  type: string
+                  enum: [monthly, quarterly, annually]
+                start_date:
+                  type: string
+                  format: date
+                end_date:
+                  type: string
+                  format: date
+                status:
+                  type: string
+                  enum: [active, paused, cancelled, expired]
+                total_amount:
+                  type: number
+                currency:
+                  type: string
+                payment_paused:
+                  type: boolean
+                payment_paused_until:
+                  type: string
+                  format: date-time
+            example:
+              status: "paused"
+              payment_paused: true
+              payment_paused_until: "2024-02-01T00:00:00Z"
+      responses:
+        '200':
+          description: Subscription updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Subscription'
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      summary: Delete a subscription
+      description: Delete a subscription by ID
+      operationId: deleteSubscription
+      tags:
+        - Subscriptions
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Subscription deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        format: uuid
+                      deleted:
+                        type: boolean
+                        example: true
+                  meta:
+                    $ref: '#/components/schemas/Meta'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  # ==========================================================================
   # Events
   # ==========================================================================
   /events:
@@ -2264,23 +2629,34 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # ==========================================================================
-  # Memberships
+  # Memberships (Membership Plans)
   # ==========================================================================
   /memberships:
     get:
-      summary: List memberships
-      description: Retrieve a list of memberships
+      summary: List membership plans
+      description: Retrieve a list of membership plans available for customers to subscribe to
       operationId: listMemberships
       tags:
         - Memberships
       parameters:
         - $ref: '#/components/parameters/PageParam'
         - $ref: '#/components/parameters/PerPageParam'
-        - name: status
+        - name: location_id
           in: query
+          description: Filter by location
           schema:
             type: string
-            enum: [active, paused, cancelled, expired]
+            format: uuid
+        - name: is_active
+          in: query
+          description: Filter by active status
+          schema:
+            type: boolean
+        - name: signup_enabled
+          in: query
+          description: Filter by signup enabled status
+          schema:
+            type: boolean
       responses:
         '200':
           description: Successful response
@@ -2303,8 +2679,8 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 
     post:
-      summary: Create a membership
-      description: Create a new membership
+      summary: Create a membership plan
+      description: Create a new membership plan
       operationId: createMembership
       tags:
         - Memberships
@@ -2315,21 +2691,67 @@ paths:
             schema:
               type: object
               required:
-                - customer_id
-                - plan_id
+                - location_id
+                - name
+                - cycle
+                - price
+                - currency
               properties:
-                customer_id:
+                location_id:
                   type: string
                   format: uuid
-                plan_id:
+                name:
                   type: string
-                  format: uuid
-                start_date:
+                  example: "Premium Membership"
+                description:
                   type: string
-                  format: date
+                cycle:
+                  type: string
+                  enum: [daily, weekly, monthly, quarterly, yearly]
+                price:
+                  type: number
+                  example: 299.00
+                currency:
+                  type: string
+                  example: "USD"
+                custom_tax_rate:
+                  type: boolean
+                tax_rate:
+                  type: number
+                minimum_commitment:
+                  type: boolean
+                commitment_cycles:
+                  type: integer
+                expiring_credits:
+                  type: integer
+                expiring_day_passes:
+                  type: integer
+                discount_rooms:
+                  type: number
+                discount_desks:
+                  type: number
+                discount_equipment:
+                  type: number
+                discount_events:
+                  type: number
+                discount_shop:
+                  type: number
+                discount_credit_packages:
+                  type: number
+                signup_enabled:
+                  type: boolean
+                signup_type:
+                  type: string
+                is_active:
+                  type: boolean
+                exclusive_resource_ids:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
       responses:
         '201':
-          description: Membership created
+          description: Membership plan created
           content:
             application/json:
               schema:
@@ -2346,8 +2768,8 @@ paths:
 
   /memberships/deleted:
     get:
-      summary: List deleted memberships
-      description: Retrieve a list of deleted memberships
+      summary: List inactive membership plans
+      description: Retrieve a list of inactive (deleted) membership plans
       operationId: listDeletedMemberships
       tags:
         - Memberships
@@ -2377,8 +2799,8 @@ paths:
 
   /memberships/{id}:
     get:
-      summary: Get a membership
-      description: Retrieve a single membership by ID
+      summary: Get a membership plan
+      description: Retrieve a single membership plan by ID
       operationId: getMembership
       tags:
         - Memberships
@@ -2409,8 +2831,8 @@ paths:
           $ref: '#/components/responses/NotFound'
 
     put:
-      summary: Update a membership
-      description: Update an existing membership
+      summary: Update a membership plan
+      description: Update an existing membership plan
       operationId: updateMembership
       tags:
         - Memberships
@@ -2427,15 +2849,55 @@ paths:
             schema:
               type: object
               properties:
-                status:
+                name:
                   type: string
-                  enum: [active, paused, cancelled]
-                end_date:
+                description:
                   type: string
-                  format: date
+                cycle:
+                  type: string
+                  enum: [daily, weekly, monthly, quarterly, yearly]
+                price:
+                  type: number
+                currency:
+                  type: string
+                custom_tax_rate:
+                  type: boolean
+                tax_rate:
+                  type: number
+                minimum_commitment:
+                  type: boolean
+                commitment_cycles:
+                  type: integer
+                expiring_credits:
+                  type: integer
+                expiring_day_passes:
+                  type: integer
+                discount_rooms:
+                  type: number
+                discount_desks:
+                  type: number
+                discount_equipment:
+                  type: number
+                discount_events:
+                  type: number
+                discount_shop:
+                  type: number
+                discount_credit_packages:
+                  type: number
+                signup_enabled:
+                  type: boolean
+                signup_type:
+                  type: string
+                is_active:
+                  type: boolean
+                exclusive_resource_ids:
+                  type: array
+                  items:
+                    type: string
+                    format: uuid
       responses:
         '200':
-          description: Membership updated
+          description: Membership plan updated
           content:
             application/json:
               schema:
@@ -2453,8 +2915,8 @@ paths:
           $ref: '#/components/responses/NotFound'
 
     delete:
-      summary: Delete a membership
-      description: Delete a membership
+      summary: Delete a membership plan
+      description: Delete a membership plan (sets is_active to false)
       operationId: deleteMembership
       tags:
         - Memberships
@@ -2467,18 +2929,14 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Membership deleted
+          description: Membership plan deleted
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   data:
-                    type: object
-                    properties:
-                      success:
-                        type: boolean
-                        example: true
+                    $ref: '#/components/schemas/Membership'
                   meta:
                     $ref: '#/components/schemas/Meta'
         '400':
@@ -6053,6 +6511,8 @@ tags:
     description: Location management
   - name: Invoices
     description: Invoice and credit note management
+  - name: Subscriptions
+    description: Customer subscription management
   - name: Events
     description: Event management
   - name: Plans
