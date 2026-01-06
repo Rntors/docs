@@ -57,7 +57,7 @@
         "tab": "Webhooks",
         "groups": [
           {
-            "group": "Overview",
+            "group": "Getting started",
             "pages": [
               "webhooks/introduction",
               "webhooks/security"
