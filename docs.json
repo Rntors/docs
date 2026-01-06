@@ -38,13 +38,6 @@
               "getting-started",
               "concepts"
             ]
-          },
-          {
-            "group": "Authentication",
-            "pages": [
-              "authentication/api-keys",
-              "authentication/scopes"
-            ]
           }
         ]
       },
