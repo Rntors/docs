@@ -27,174 +27,353 @@
     "url": "https://app.rntor.com/signup"
   },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Docs",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Getting Started",
-            "pages": [
-              "introduction",
-              "getting-started",
-              "concepts"
-            ]
-          },
-          {
-            "group": "Admin experience",
-            "pages": [
-              "admin/overview",
+            "tab": "Docs",
+            "groups": [
               {
-                "group": "Customer management",
-                "icon": "users",
+                "group": "Getting Started",
                 "pages": [
-                  "admin/customer-management/overview"
+                  "introduction",
+                  "getting-started",
+                  "concepts"
                 ]
               },
               {
-                "group": "Billing",
-                "icon": "circle-dollar",
+                "group": "Admin experience",
                 "pages": [
-                  "admin/billing/overview"
+                  "admin/overview",
+                  {
+                    "group": "Customer management",
+                    "icon": "users",
+                    "pages": [
+                      "admin/customer-management/overview"
+                    ]
+                  },
+                  {
+                    "group": "Billing",
+                    "icon": "circle-dollar",
+                    "pages": [
+                      "admin/billing/overview"
+                    ]
+                  },
+                  {
+                    "group": "Resource management",
+                    "icon": "box",
+                    "pages": [
+                      "admin/resource-management/overview"
+                    ]
+                  },
+                  {
+                    "group": "Engagement",
+                    "icon": "handshake",
+                    "pages": [
+                      "admin/engagement/overview"
+                    ]
+                  },
+                  {
+                    "group": "Service",
+                    "icon": "handshake-angle",
+                    "pages": [
+                      "admin/service/overview"
+                    ]
+                  },
+                  {
+                    "group": "Support",
+                    "icon": "life-ring",
+                    "pages": [
+                      "admin/support/overview"
+                    ]
+                  },
+                  {
+                    "group": "Analytics & reports",
+                    "icon": "chart-column",
+                    "pages": [
+                      "admin/analytics-reports/overview"
+                    ]
+                  },
+                  {
+                    "group": "Location",
+                    "icon": "building",
+                    "pages": [
+                      "admin/location/overview"
+                    ]
+                  },
+                  {
+                    "group": "General",
+                    "icon": "gear",
+                    "pages": [
+                      "admin/general/overview"
+                    ]
+                  },
+                  "admin/lem-ai",
+                  {
+                    "group": "Integrations",
+                    "icon": "puzzle-piece",
+                    "pages": [
+                      "admin/integrations/overview"
+                    ]
+                  },
+                  {
+                    "group": "Administration",
+                    "icon": "user",
+                    "pages": [
+                      "admin/administration/overview"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Resource management",
-                "icon": "box",
+                "group": "Member experience",
                 "pages": [
-                  "admin/resource-management/overview"
-                ]
-              },
-              {
-                "group": "Engagement",
-                "icon": "handshake",
-                "pages": [
-                  "admin/engagement/overview"
-                ]
-              },
-              {
-                "group": "Service",
-                "icon": "handshake-angle",
-                "pages": [
-                  "admin/service/overview"
-                ]
-              },
-              {
-                "group": "Support",
-                "icon": "life-ring",
-                "pages": [
-                  "admin/support/overview"
-                ]
-              },
-              {
-                "group": "Analytics & reports",
-                "icon": "chart-column",
-                "pages": [
-                  "admin/analytics-reports/overview"
-                ]
-              },
-              {
-                "group": "Location",
-                "icon": "building",
-                "pages": [
-                  "admin/location/overview"
-                ]
-              },
-              {
-                "group": "General",
-                "icon": "gear",
-                "pages": [
-                  "admin/general/overview"
-                ]
-              },
-              "admin/lem-ai",
-              {
-                "group": "Integrations",
-                "icon": "puzzle-piece",
-                "pages": [
-                  "admin/integrations/overview"
-                ]
-              },
-              {
-                "group": "Administration",
-                "icon": "user",
-                "pages": [
-                  "admin/administration/overview"
+                  "member/onboarding",
+                  {
+                    "group": "Account",
+                    "icon": "circle-user",
+                    "pages": [
+                      "member/account/overview"
+                    ]
+                  },
+                  {
+                    "group": "Bookings",
+                    "icon": "calendar-check",
+                    "pages": [
+                      "member/bookings/overview"
+                    ]
+                  },
+                  "member/events",
+                  "member/shop",
+                  "member/benefits",
+                  "member/support",
+                  {
+                    "group": "Visitors",
+                    "icon": "id-card",
+                    "pages": [
+                      "member/visitors/overview"
+                    ]
+                  }
                 ]
               }
             ]
           },
           {
-            "group": "Member experience",
-            "pages": [
-              "member/onboarding",
+            "tab": "API Reference",
+            "groups": [
               {
-                "group": "Account",
-                "icon": "circle-user",
+                "group": "Getting Started",
                 "pages": [
-                  "member/account/overview"
+                  "api-reference/authentication",
+                  "api-reference/pagination",
+                  "api-reference/rate-limiting",
+                  "api-reference/errors"
                 ]
               },
               {
-                "group": "Bookings",
-                "icon": "calendar-check",
-                "pages": [
-                  "member/bookings/overview"
-                ]
-              },
-              "member/events",
-              "member/shop",
-              "member/benefits",
-              "member/support",
-              {
-                "group": "Visitors",
-                "icon": "id-card",
-                "pages": [
-                  "member/visitors/overview"
-                ]
+                "group": "Endpoints",
+                "openapi": {
+                  "source": "/api-reference/openapi.yaml"
+                }
               }
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "api-reference/authentication",
-              "api-reference/pagination",
-              "api-reference/rate-limiting",
-              "api-reference/errors"
             ]
           },
           {
-            "group": "Endpoints",
-            "openapi": {
-              "source": "/api-reference/openapi.yaml"
-            }
-          }
-        ]
-      },
-      {
-        "tab": "Webhooks",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "webhooks/introduction",
-              "webhooks/security"
+            "tab": "Webhooks",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "webhooks/introduction",
+                  "webhooks/security"
+                ]
+              }
             ]
+          },
+          {
+            "tab": "Webhook event types",
+            "href": "https://webhooks.rntor.com/"
+          },
+          {
+            "tab": "Support",
+            "href": "mailto:support@rntor.com"
           }
         ]
       },
       {
-        "tab": "Webhook event types",
-        "href": "https://webhooks.rntor.com/"
-      },
-      {
-        "tab": "Support",
-        "href": "mailto:support@rntor.com"
+        "language": "ar",
+        "tabs": [
+          {
+            "tab": "الوثائق",
+            "groups": [
+              {
+                "group": "البدء",
+                "pages": [
+                  "ar/introduction",
+                  "ar/getting-started",
+                  "ar/concepts"
+                ]
+              },
+              {
+                "group": "تجربة المسؤول",
+                "pages": [
+                  "ar/admin/overview",
+                  {
+                    "group": "إدارة العملاء",
+                    "icon": "users",
+                    "pages": [
+                      "ar/admin/customer-management/overview"
+                    ]
+                  },
+                  {
+                    "group": "الفوترة",
+                    "icon": "circle-dollar",
+                    "pages": [
+                      "ar/admin/billing/overview"
+                    ]
+                  },
+                  {
+                    "group": "إدارة الموارد",
+                    "icon": "box",
+                    "pages": [
+                      "ar/admin/resource-management/overview"
+                    ]
+                  },
+                  {
+                    "group": "التفاعل",
+                    "icon": "handshake",
+                    "pages": [
+                      "ar/admin/engagement/overview"
+                    ]
+                  },
+                  {
+                    "group": "الخدمة",
+                    "icon": "handshake-angle",
+                    "pages": [
+                      "ar/admin/service/overview"
+                    ]
+                  },
+                  {
+                    "group": "الدعم",
+                    "icon": "life-ring",
+                    "pages": [
+                      "ar/admin/support/overview"
+                    ]
+                  },
+                  {
+                    "group": "التحليلات والتقارير",
+                    "icon": "chart-column",
+                    "pages": [
+                      "ar/admin/analytics-reports/overview"
+                    ]
+                  },
+                  {
+                    "group": "الموقع",
+                    "icon": "building",
+                    "pages": [
+                      "ar/admin/location/overview"
+                    ]
+                  },
+                  {
+                    "group": "عام",
+                    "icon": "gear",
+                    "pages": [
+                      "ar/admin/general/overview"
+                    ]
+                  },
+                  "ar/admin/lem-ai",
+                  {
+                    "group": "التكاملات",
+                    "icon": "puzzle-piece",
+                    "pages": [
+                      "ar/admin/integrations/overview"
+                    ]
+                  },
+                  {
+                    "group": "الإدارة",
+                    "icon": "user",
+                    "pages": [
+                      "ar/admin/administration/overview"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "تجربة العضو",
+                "pages": [
+                  "ar/member/onboarding",
+                  {
+                    "group": "الحساب",
+                    "icon": "circle-user",
+                    "pages": [
+                      "ar/member/account/overview"
+                    ]
+                  },
+                  {
+                    "group": "الحجوزات",
+                    "icon": "calendar-check",
+                    "pages": [
+                      "ar/member/bookings/overview"
+                    ]
+                  },
+                  "ar/member/events",
+                  "ar/member/shop",
+                  "ar/member/benefits",
+                  "ar/member/support",
+                  {
+                    "group": "الزوار",
+                    "icon": "id-card",
+                    "pages": [
+                      "ar/member/visitors/overview"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "مرجع API",
+            "groups": [
+              {
+                "group": "البدء",
+                "pages": [
+                  "ar/api-reference/authentication",
+                  "ar/api-reference/pagination",
+                  "ar/api-reference/rate-limiting",
+                  "ar/api-reference/errors"
+                ]
+              },
+              {
+                "group": "نقاط النهاية",
+                "openapi": {
+                  "source": "/api-reference/openapi.yaml"
+                }
+              }
+            ]
+          },
+          {
+            "tab": "Webhooks",
+            "groups": [
+              {
+                "group": "البدء",
+                "pages": [
+                  "ar/webhooks/introduction",
+                  "ar/webhooks/security"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "أنواع أحداث Webhook",
+            "href": "https://webhooks.rntor.com/"
+          },
+          {
+            "tab": "الدعم",
+            "href": "mailto:support@rntor.com"
+          }
+        ]
       }
     ]
   },

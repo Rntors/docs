@@ -1,0 +1,116 @@
+---
+title: البدء
+description: "أعد إعداد تكامل المطور الخاص بك في Rntor خلال دقائق"
+---
+
+
+
+يرشدك هذا الدليل إلى إعداد أول تكامل لك مع Rntor. بنهايته، ستحصل على بيانات اعتماد API واشتراك webhook فعّال.
+
+## المتطلبات الأساسية
+
+<Check>
+  حساب تاجر في Rntor مع صلاحيات المالك
+</Check>
+
+<Check>
+  الوصول إلى Settings → Developers في لوحة التحكم الخاصة بك
+</Check>
+
+## الخطوة 1: الانتقال إلى Developers
+
+1. سجّل الدخول إلى لوحة تحكم Rntor الخاصة بك
+2. انتقل إلى **Settings** في شريط التنقل الرئيسي
+3. اختر علامة التبويب **Developers**
+
+<Frame>
+  <img src="/images/developer-light.png" alt="Developers Tab" className="block dark:hidden" />
+  <img src="/images/developer-dark.png" alt="Developers Tab" className="hidden dark:block" />
+</Frame>
+
+## الخطوة 2: إنشاء بيانات اعتماد API
+
+تُستخدم مفاتيح API لمصادقة تكاملك. وبينما لا تزال REST API قادمة قريباً، فإن إنشاء بيانات الاعتماد الآن يهيئك للوصول الفوري عند إطلاقها.
+
+1. في قسم **API Keys**، انقر على **Generate New Key**
+2. أدخل اسماً وصفياً (مثل "Production Integration" أو "Zapier Connection")
+3. راجع النطاقات الافتراضية
+4. انقر على **Generate**
+
+<Warning>
+  يتم عرض **Client Secret** الخاص بك مرة واحدة فقط. انسخه واحفظه بأمان فور إنشائه.
+</Warning>
+
+ستتلقى:
+- **Client ID**: `rntor_` متبوعاً بـ 24 حرفاً (آمن للتخزين، يُستخدم في الطلبات)
+- **Client Secret**: `sk_` متبوعاً بـ 40 حرفاً (احتفظ به سراً، يُستخدم للمصادقة)
+
+```bash Example Credentials
+Client ID: rntor_abc123def456ghi789jkl012
+Client Secret: sk_mno345pqr678stu901vwx234yza567bcd890efg
+```
+
+## الخطوة 3: إعداد نقاط نهاية Webhook
+
+تتيح لك Webhooks استقبال إشعارات في الوقت الفعلي عند وقوع الأحداث في Rntor.
+
+1. انتقل إلى علامة التبويب **Webhooks**
+2. ستُحمَّل بوابة webhooks الخاصة بـ Svix
+3. انقر على **Add Endpoint**
+4. أدخل عنوان URL لنقطة النهاية الخاصة بك (يجب أن يكون HTTPS)
+5. اختر الأحداث التي تريد الاشتراك فيها
+
+<Tip>
+  ابدأ بعدد قليل من الأحداث الرئيسية مثل `booking.created` و `customer.created` لاختبار تكاملك.
+</Tip>
+
+### الاختبار محلياً
+
+للتطوير المحلي، استخدم خدمة نفق:
+
+```bash Using ngrok
+ngrok http 3000
+# Use the generated HTTPS URL as your webhook endpoint
+```
+
+## الخطوة 4: تحقق من أول webhook
+
+بمجرد الاشتراك، أطلق حدثاً في Rntor (مثل إنشاء حجز) وتحقق من:
+
+1. أن نقطة النهاية الخاصة بك تتلقى طلب POST
+2. أن الحمولة تحتوي على البيانات المتوقعة
+3. أن التحقق من التوقيع يمر بنجاح (انظر [الأمان](/webhooks/security))
+
+```javascript Example: Logging Received Webhooks
+app.post('/webhooks/rntor', (req, res) => {
+  console.log('Received webhook:', req.body);
+  
+  const { event_type, _meta } = req.body;
+  console.log(`Event: ${event_type}`);
+  console.log(`Merchant: ${_meta.merchant_id}`);
+  
+  res.status(200).send('OK');
+});
+```
+
+## الخطوات التالية
+
+<CardGroup cols={2}>
+  <Card title="أمان Webhook" icon="shield" href="/webhooks/security">
+    طبّق التحقق من التوقيع لتأمين نقاط النهاية الخاصة بك
+  </Card>
+  <Card title="مصادقة API" icon="key" href="/api-reference/authentication">
+    تعرّف على كيفية مصادقة طلبات API الخاصة بك
+  </Card>
+</CardGroup>
+
+## حدود المعدل
+
+تخضع جميع طلبات API لحدود معدل لضمان استقرار المنصة:
+
+| الحد | القيمة |
+|------|--------|
+| الطلبات لكل دقيقة | 60 |
+| حد الدفعة | 10 طلبات |
+
+تجاوز هذه الحدود يُرجع استجابة `429 Too Many Requests`.
