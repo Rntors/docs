@@ -1,0 +1,306 @@
+---
+title: التحقق من طلبات webhooks
+description: "تحقق من توقيعات webhook لضمان صحة الحمولات"
+---
+
+يتضمن كل طلب webhook من Rntor توقيعاً تشفيرياً. يضمن التحقق من هذا التوقيع أن الحمولة صحيحة ولم يتم التلاعب بها.
+
+## لماذا يجب التحقق من التوقيعات؟
+
+بدون التحقق من التوقيع، قد يستطيع المهاجم:
+- إرسال أحداث webhook مزيفة إلى نقطة النهاية الخاصة بك
+- تزوير تأكيدات الحجز أو إشعارات الدفع
+- إطلاق إجراءات غير مقصودة في نظامك
+
+<Warning>
+  تحقق دائماً من توقيعات webhook في بيئة الإنتاج. لا تتجاوز أبداً التحقق، حتى للاختبار.
+</Warning>
+
+## رؤوس التوقيع
+
+يتضمن كل طلب webhook ثلاثة رؤوس للتحقق:
+
+| الرأس | الوصف | مثال |
+|--------|-------------|---------|
+| `svix-id` | معرّف الرسالة الفريد | `msg_2KrZZ1hTPxpRNb3hl9Dj5RvEBcR` |
+| `svix-timestamp` | الطابع الزمني Unix (بالثواني) | `1704289800` |
+| `svix-signature` | توقيعات مفصولة بفواصل | `v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=` |
+
+## عملية التحقق
+
+1. أنشئ الحمولة الموقعة: `{svix-id}.{svix-timestamp}.{body}`
+2. احسب HMAC-SHA256 باستخدام سر webhook الخاص بك
+3. قارن مع التوقيع في الرأس
+4. تحقق من أن الطابع الزمني خلال 5 دقائق
+
+## الحصول على سر webhook الخاص بك
+
+1. انتقل إلى **Settings → Developers → Webhooks**
+2. انقر على نقطة النهاية الخاصة بك
+3. انقر على **Reveal Signing Secret**
+4. انسخ السر (يبدأ بـ `whsec_`)
+
+<Warning>
+  خزّن سر التوقيع بأمان. لا تكشفه أبداً في الكود من جانب العميل أو في السجلات.
+</Warning>
+
+## أمثلة على الكود
+
+### JavaScript / Node.js
+
+باستخدام مكتبة Svix الرسمية (موصى به):
+
+```bash Install
+npm install svix
+```
+
+```javascript Verify with Svix SDK
+import { Webhook } from 'svix';
+
+const secret = process.env.WEBHOOK_SECRET; // whsec_...
+
+app.post('/webhooks/rntor', (req, res) => {
+  const payload = req.body;
+  const headers = req.headers;
+
+  const wh = new Webhook(secret);
+  
+  try {
+    const verified = wh.verify(JSON.stringify(payload), {
+      'svix-id': headers['svix-id'],
+      'svix-timestamp': headers['svix-timestamp'],
+      'svix-signature': headers['svix-signature'],
+    });
+    
+    // Process the verified payload
+    handleWebhook(verified);
+    res.status(200).send('OK');
+    
+  } catch (err) {
+    console.error('Webhook verification failed:', err.message);
+    res.status(401).send('Invalid signature');
+  }
+});
+```
+
+التحقق اليدوي (بدون SDK):
+
+```javascript Manual Verification
+import crypto from 'crypto';
+
+function verifyWebhookSignature(payload, headers, secret) {
+  const svixId = headers['svix-id'];
+  const svixTimestamp = headers['svix-timestamp'];
+  const svixSignature = headers['svix-signature'];
+
+  // Check timestamp is within 5 minutes
+  const timestamp = parseInt(svixTimestamp, 10);
+  const currentTime = Math.floor(Date.now() / 1000);
+  if (Math.abs(currentTime - timestamp) > 300) {
+    throw new Error('Timestamp too old');
+  }
+
+  // Construct signed payload
+  const signedPayload = `${svixId}.${svixTimestamp}.${payload}`;
+
+  // Decode secret (remove whsec_ prefix and base64 decode)
+  const secretBytes = Buffer.from(secret.replace('whsec_', ''), 'base64');
+
+  // Calculate expected signature
+  const expectedSignature = crypto
+    .createHmac('sha256', secretBytes)
+    .update(signedPayload)
+    .digest('base64');
+
+  // Compare signatures
+  const signatures = svixSignature.split(',');
+  for (const sig of signatures) {
+    const [version, signature] = sig.split(',');
+    if (version === 'v1' && signature === expectedSignature) {
+      return true;
+    }
+  }
+
+  throw new Error('Invalid signature');
+}
+```
+
+### Python
+
+باستخدام مكتبة Svix الرسمية:
+
+```bash Install
+pip install svix
+```
+
+```python Verify with Svix SDK
+from svix.webhooks import Webhook
+import os
+
+webhook_secret = os.environ.get('WEBHOOK_SECRET')  # whsec_...
+
+@app.route('/webhooks/rntor', methods=['POST'])
+def handle_webhook():
+    payload = request.get_data(as_text=True)
+    headers = {
+        'svix-id': request.headers.get('svix-id'),
+        'svix-timestamp': request.headers.get('svix-timestamp'),
+        'svix-signature': request.headers.get('svix-signature'),
+    }
+
+    wh = Webhook(webhook_secret)
+    
+    try:
+        verified = wh.verify(payload, headers)
+        # Process the verified payload
+        handle_event(verified)
+        return 'OK', 200
+        
+    except Exception as e:
+        print(f'Webhook verification failed: {e}')
+        return 'Invalid signature', 401
+```
+
+التحقق اليدوي:
+
+```python Manual Verification
+import hmac
+import hashlib
+import base64
+import time
+
+def verify_webhook_signature(payload, headers, secret):
+    svix_id = headers.get('svix-id')
+    svix_timestamp = headers.get('svix-timestamp')
+    svix_signature = headers.get('svix-signature')
+
+    # Check timestamp is within 5 minutes
+    timestamp = int(svix_timestamp)
+    current_time = int(time.time())
+    if abs(current_time - timestamp) > 300:
+        raise ValueError('Timestamp too old')
+
+    # Construct signed payload
+    signed_payload = f'{svix_id}.{svix_timestamp}.{payload}'
+
+    # Decode secret
+    secret_bytes = base64.b64decode(secret.replace('whsec_', ''))
+
+    # Calculate expected signature
+    expected_signature = base64.b64encode(
+        hmac.new(secret_bytes, signed_payload.encode(), hashlib.sha256).digest()
+    ).decode()
+
+    # Compare signatures
+    for sig in svix_signature.split(','):
+        parts = sig.split(',')
+        if len(parts) == 2 and parts[0] == 'v1' and parts[1] == expected_signature:
+            return True
+
+    raise ValueError('Invalid signature')
+```
+
+### Go
+
+```go
+package main
+
+import (
+    "github.com/svix/svix-webhooks/go"
+    "net/http"
+    "os"
+)
+
+func handleWebhook(w http.ResponseWriter, r *http.Request) {
+    secret := os.Getenv("WEBHOOK_SECRET")
+    
+    wh, err := svix.NewWebhook(secret)
+    if err != nil {
+        http.Error(w, "Invalid secret", http.StatusInternalServerError)
+        return
+    }
+
+    payload, err := io.ReadAll(r.Body)
+    if err != nil {
+        http.Error(w, "Failed to read body", http.StatusBadRequest)
+        return
+    }
+
+    err = wh.Verify(payload, r.Header)
+    if err != nil {
+        http.Error(w, "Invalid signature", http.StatusUnauthorized)
+        return
+    }
+
+    // Process verified payload
+    w.WriteHeader(http.StatusOK)
+}
+```
+
+## منع هجمات إعادة التشغيل
+
+يمنع التحقق من الطابع الزمني هجمات إعادة التشغيل:
+
+```javascript
+const timestamp = parseInt(headers['svix-timestamp'], 10);
+const currentTime = Math.floor(Date.now() / 1000);
+
+// Reject if timestamp is more than 5 minutes old
+if (Math.abs(currentTime - timestamp) > 300) {
+  throw new Error('Webhook timestamp too old');
+}
+```
+
+## استكشاف الأخطاء وإصلاحها
+
+### فشل التحقق من التوقيع
+
+1. **الجسم الخام مطلوب**: تأكد من أنك تستخدم جسم الطلب الخام، وليس كائن JSON المحلَّل
+2. **مشكلات الترميز**: يجب أن يكون الجسم هو البايتات الدقيقة المستلمة، بدون تعديلات
+3. **السر الصحيح**: تحقق من أنك تستخدم سر التوقيع الخاص بنقطة النهاية
+4. **مزامنة الساعة**: تأكد من أن ساعة الخادم الخاص بك متزامنة (NTP)
+
+### الأخطاء الشائعة
+
+<AccordionGroup>
+  <Accordion title="استخدام JSON المحلَّل بدلاً من الجسم الخام">
+    ```javascript
+    // ❌ Wrong - parsed JSON
+    const payload = req.body;
+    wh.verify(JSON.stringify(payload), headers);
+    
+    // ✅ Correct - raw body
+    const rawBody = req.rawBody; // or use express.raw()
+    wh.verify(rawBody, headers);
+    ```
+  </Accordion>
+
+  <Accordion title="غياب وسيط الجسم الخام">
+    ```javascript
+    // Add this BEFORE your routes
+    app.use('/webhooks', express.raw({ type: 'application/json' }));
+    ```
+  </Accordion>
+
+  <Accordion title="استخدام السر الخطأ">
+    لكل نقطة نهاية سر توقيعها الخاص. تأكد من أنك تستخدم السر الخاص بنقطة النهاية المحددة التي تستقبل webhook.
+  </Accordion>
+</AccordionGroup>
+
+## أفضل ممارسات الأمان
+
+<Check>
+  تحقق دائماً من التوقيعات في بيئة الإنتاج
+</Check>
+<Check>
+  خزّن أسرار التوقيع في متغيرات البيئة
+</Check>
+<Check>
+  ارفض الطلبات ذات الطوابع الزمنية القديمة
+</Check>
+<Check>
+  استخدم HTTPS لنقطة نهاية webhook الخاصة بك
+</Check>
+<Check>
+  سجّل إخفاقات التحقق للمراقبة
+</Check>

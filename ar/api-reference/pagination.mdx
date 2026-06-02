@@ -1,0 +1,67 @@
+---
+title: 'التقسيم إلى صفحات'
+description: 'كيفية التقسيم إلى صفحات عبر مجموعات النتائج الكبيرة'
+---
+
+## نظرة عامة
+
+تستخدم Rntor API التقسيم إلى صفحات القائم على المؤشر للنقاط النهائية التي تُرجع قوائم بالموارد. يوفر هذا النهج نتائج متسقة حتى أثناء تعديل البيانات.
+
+## معاملات التقسيم إلى صفحات
+
+| المعامل | النوع | الافتراضي | الوصف |
+|-----------|------|---------|-------------|
+| `limit` | integer | 20 | عدد العناصر لكل صفحة (الحد الأقصى: 100) |
+| `cursor` | string | - | المؤشر للصفحة التالية من النتائج |
+
+## تنسيق الاستجابة
+
+تتضمن الاستجابات المقسَّمة كائن `pagination`:
+
+```json
+{
+  "data": [...],
+  "pagination": {
+    "has_more": true,
+    "next_cursor": "eyJpZCI6IjEyMzQ1In0=",
+    "total_count": 150
+  }
+}
+```
+
+## مثال
+
+### الطلب الأول
+
+```bash
+curl -X GET "https://api.rntor.com/v1/bookings?limit=20" \
+  -H "Authorization: Bearer YOUR_CLIENT_SECRET" \
+  -H "X-Client-ID: YOUR_CLIENT_ID"
+```
+
+### الطلبات اللاحقة
+
+استخدم `next_cursor` من الاستجابة السابقة:
+
+```bash
+curl -X GET "https://api.rntor.com/v1/bookings?limit=20&cursor=eyJpZCI6IjEyMzQ1In0=" \
+  -H "Authorization: Bearer YOUR_CLIENT_SECRET" \
+  -H "X-Client-ID: YOUR_CLIENT_ID"
+```
+
+## أفضل الممارسات
+
+<CardGroup cols={2}>
+  <Card title="استخدم حدوداً معقولة" icon="gauge">
+    اطلب فقط ما تحتاج إليه. أحجام الصفحات الأصغر تعني استجابات أسرع.
+  </Card>
+  <Card title="عالج الصفحات الفارغة" icon="list">
+    تحقق دائماً من `has_more` قبل طلب الصفحة التالية.
+  </Card>
+  <Card title="خزّن المؤشرات بعناية" icon="bookmark">
+    المؤشرات هي سلاسل مبهمة. لا تعدّلها أو تحلّلها.
+  </Card>
+  <Card title="تجنّب التقسيم بالإزاحة" icon="ban">
+    التقسيم القائم على المؤشر أكثر موثوقية لمجموعات البيانات الكبيرة.
+  </Card>
+</CardGroup>

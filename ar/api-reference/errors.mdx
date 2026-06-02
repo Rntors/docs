@@ -1,0 +1,113 @@
+---
+title: 'معالجة الأخطاء'
+description: 'فهم استجابات أخطاء API'
+---
+
+## تنسيق استجابة الخطأ
+
+عند وقوع خطأ، تُرجع API استجابة خطأ متسقة:
+
+```json
+{
+  "error": {
+    "code": "invalid_request",
+    "message": "The request body is missing required field 'email'",
+    "details": {
+      "field": "email",
+      "reason": "required"
+    }
+  }
+}
+```
+
+## رموز حالة HTTP
+
+| رمز الحالة | الوصف |
+|-------------|-------------|
+| `200` | نجاح |
+| `201` | تم الإنشاء |
+| `204` | لا يوجد محتوى (حذف ناجح) |
+| `400` | طلب غير صالح - معاملات غير صالحة |
+| `401` | غير مصرَّح - بيانات اعتماد غير صالحة أو مفقودة |
+| `403` | محظور - صلاحيات غير كافية |
+| `404` | غير موجود - المورد غير موجود |
+| `409` | تعارض - المورد موجود بالفعل |
+| `422` | كيان لا يمكن معالجته - خطأ في التحقق |
+| `429` | الكثير من الطلبات - تم تجاوز حد المعدل |
+| `500` | خطأ داخلي في الخادم |
+
+## رموز الأخطاء الشائعة
+
+### أخطاء المصادقة
+
+| الرمز | الوصف |
+|------|-------------|
+| `invalid_token` | رمز الوصول غير صالح أو منتهي الصلاحية |
+| `missing_token` | لم يُقدَّم رأس authorization |
+| `insufficient_scope` | يفتقر الرمز إلى الصلاحيات المطلوبة |
+
+### أخطاء التحقق
+
+| الرمز | الوصف |
+|------|-------------|
+| `invalid_request` | جسم الطلب مشوَّه |
+| `validation_error` | فشل التحقق من حقل واحد أو أكثر |
+| `missing_field` | الحقل المطلوب مفقود |
+
+### أخطاء الموارد
+
+| الرمز | الوصف |
+|------|-------------|
+| `not_found` | المورد المطلوب غير موجود |
+| `already_exists` | المورد بهذا المعرّف موجود بالفعل |
+| `conflict` | العملية تتعارض مع الحالة الحالية |
+
+## أفضل ممارسات معالجة الأخطاء
+
+<Steps>
+  <Step title="تحقق من رمز الحالة أولاً">
+    استخدم رمز حالة HTTP لتحديد الفئة العامة للخطأ.
+  </Step>
+  <Step title="حلّل استجابة الخطأ">
+    استخرج `error.code` و `error.message` للمعالجة المحددة.
+  </Step>
+  <Step title="سجّل التفاصيل">
+    خزّن استجابة الخطأ الكاملة لأغراض تصحيح الأخطاء.
+  </Step>
+  <Step title="اعرض رسائل سهلة للمستخدم">
+    ترجم رموز الأخطاء إلى رسائل مناسبة لمستخدميك.
+  </Step>
+</Steps>
+
+## مثال على معالجة الأخطاء
+
+```javascript
+try {
+  const response = await fetch('https://api.rntor.com/v1/bookings', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiSecret}`,
+      'X-Client-ID': clientId,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(bookingData)
+  });
+  
+  if (!response.ok) {
+    const error = await response.json();
+    
+    switch (error.error.code) {
+      case 'validation_error':
+        // Handle validation errors
+        break;
+      case 'conflict':
+        // Handle booking conflicts
+        break;
+      default:
+        // Handle other errors
+    }
+  }
+} catch (e) {
+  // Handle network errors
+}
+```
