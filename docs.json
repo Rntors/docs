@@ -29,7 +29,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Docs",
         "groups": [
           {
             "group": "Getting Started",
@@ -37,6 +37,121 @@
               "introduction",
               "getting-started",
               "concepts"
+            ]
+          },
+          {
+            "group": "Admin experience",
+            "pages": [
+              "admin/overview",
+              {
+                "group": "Customer management",
+                "icon": "users",
+                "pages": [
+                  "admin/customer-management/overview"
+                ]
+              },
+              {
+                "group": "Billing",
+                "icon": "circle-dollar",
+                "pages": [
+                  "admin/billing/overview"
+                ]
+              },
+              {
+                "group": "Resource management",
+                "icon": "box",
+                "pages": [
+                  "admin/resource-management/overview"
+                ]
+              },
+              {
+                "group": "Engagement",
+                "icon": "handshake",
+                "pages": [
+                  "admin/engagement/overview"
+                ]
+              },
+              {
+                "group": "Service",
+                "icon": "handshake-angle",
+                "pages": [
+                  "admin/service/overview"
+                ]
+              },
+              {
+                "group": "Support",
+                "icon": "life-ring",
+                "pages": [
+                  "admin/support/overview"
+                ]
+              },
+              {
+                "group": "Analytics & reports",
+                "icon": "chart-column",
+                "pages": [
+                  "admin/analytics-reports/overview"
+                ]
+              },
+              {
+                "group": "Location",
+                "icon": "building",
+                "pages": [
+                  "admin/location/overview"
+                ]
+              },
+              {
+                "group": "General",
+                "icon": "gear",
+                "pages": [
+                  "admin/general/overview"
+                ]
+              },
+              "admin/lem-ai",
+              {
+                "group": "Integrations",
+                "icon": "puzzle-piece",
+                "pages": [
+                  "admin/integrations/overview"
+                ]
+              },
+              {
+                "group": "Administration",
+                "icon": "user",
+                "pages": [
+                  "admin/administration/overview"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Member experience",
+            "pages": [
+              "member/onboarding",
+              {
+                "group": "Account",
+                "icon": "circle-user",
+                "pages": [
+                  "member/account/overview"
+                ]
+              },
+              {
+                "group": "Bookings",
+                "icon": "calendar-check",
+                "pages": [
+                  "member/bookings/overview"
+                ]
+              },
+              "member/events",
+              "member/shop",
+              "member/benefits",
+              "member/support",
+              {
+                "group": "Visitors",
+                "icon": "id-card",
+                "pages": [
+                  "member/visitors/overview"
+                ]
+              }
             ]
           }
         ]
