@@ -303,7 +303,7 @@
               {
                 "group": "Endpoints",
                 "openapi": {
-                  "source": "/api-reference/openapi.yaml"
+                  "source": "//api-reference/openapi.yaml"
                 }
               }
             ]
@@ -499,7 +499,7 @@
               {
                 "group": "نقاط النهاية",
                 "openapi": {
-                  "source": "/api-reference/openapi.yaml"
+                  "source": "//api-reference/openapi.yaml"
                 }
               }
             ]
