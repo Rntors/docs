@@ -309,7 +309,38 @@
                   {
                     "group": "General",
                     "icon": "gear",
-                    "pages": []
+                    "pages": [
+                      "admin/general/privacy-policy",
+                      "admin/general/terms-of-use",
+                      "admin/general/mail-from-and-footer",
+                      "admin/general/users",
+                      {
+                        "group": "Member web portal",
+                        "pages": [
+                          "admin/general/member-web-portal/get-started",
+                          "admin/general/member-web-portal/customize-member-web-portal",
+                          "admin/general/member-web-portal/custom-domain-for-your-member-web-portal",
+                          "admin/general/member-web-portal/customize-landing-page",
+                          "admin/general/member-web-portal/troubleshoot-issues-with-accessing-member-web-portal",
+                          "admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration"
+                        ]
+                      },
+                      {
+                        "group": "Member mobile app",
+                        "pages": [
+                          "admin/general/member-mobile-app/get-started",
+                          "admin/general/member-mobile-app/customize-member-mobile-app",
+                          "admin/general/member-mobile-app/prepare-your-apple-developer-account",
+                          "admin/general/member-mobile-app/maintain-member-mobile-app",
+                          "admin/general/member-mobile-app/troubleshoot-issues-with-accessing-member-mobile-app"
+                        ]
+                      },
+                      "admin/general/customize-emails",
+                      "admin/general/language",
+                      "admin/general/supported-languages",
+                      "admin/general/media-formats",
+                      "admin/general/content-sorting"
+                    ]
                   },
                   {
                     "group": "Integrations",
