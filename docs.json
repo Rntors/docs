@@ -363,7 +363,44 @@
                     "group": "Administration",
                     "icon": "user",
                     "pages": [
-                      "admin/administration/overview"
+                      "admin/administration/overview",
+                      {
+                        "group": "Your account",
+                        "pages": [
+                          {
+                            "group": "Notifications",
+                            "pages": [
+                              "admin/administration/your-account/notifications/set-up-notifications",
+                              "admin/administration/your-account/notifications/push-notifications",
+                              "admin/administration/your-account/notifications/integration-failures"
+                            ]
+                          },
+                          "admin/administration/your-account/language"
+                        ]
+                      },
+                      {
+                        "group": "Administrators",
+                        "pages": [
+                          "admin/administration/administrators/administrators",
+                          "admin/administration/administrators/permissions",
+                          "admin/administration/administrators/owner"
+                        ]
+                      },
+                      {
+                        "group": "Billing",
+                        "pages": [
+                          "admin/administration/billing/rntor-subscription",
+                          "admin/administration/billing/pre-onboarding-tips",
+                          "admin/administration/billing/onboarding",
+                          "admin/administration/billing/make-changes-to-rntor-subscription",
+                          "admin/administration/billing/active-users",
+                          "admin/administration/billing/partner-referral-program"
+                        ]
+                      },
+                      "admin/administration/locations",
+                      "admin/administration/api-and-webhooks",
+                      "admin/administration/test-environment",
+                      "admin/administration/contact-support"
                     ]
                   }
                 ]
