@@ -48,6 +48,16 @@
                 "pages": [
                   "admin/overview",
                   {
+                    "group": "Noor AI",
+                    "icon": "sparkles",
+                    "pages": [
+                      "admin/noor-ai/ask-noor-ai",
+                      "admin/noor-ai/bulk-create-resources-products-events-and-benefits",
+                      "admin/noor-ai/promote-products-events-and-benefits",
+                      "admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets"
+                    ]
+                  },
+                  {
                     "group": "Customer management",
                     "icon": "users",
                     "pages": [
