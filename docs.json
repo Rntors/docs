@@ -194,7 +194,40 @@
                     "group": "Resource management",
                     "icon": "box",
                     "pages": [
-                      "admin/resource-management/overview"
+                      "admin/resource-management/overview",
+                      {
+                        "group": "Resources",
+                        "pages": [
+                          "admin/resource-management/resources/set-up-resources",
+                          "admin/resource-management/resources/set-up-pricing",
+                          "admin/resource-management/resources/dynamic-pricing",
+                          "admin/resource-management/resources/applications-for-bookings",
+                          "admin/resource-management/resources/hourly-desk-bookings",
+                          "admin/resource-management/resources/manage-bookings",
+                          "admin/resource-management/resources/exclusive-resource-access",
+                          "admin/resource-management/resources/overlapping-resources",
+                          "admin/resource-management/resources/manage-resource-rentals-with-assignments",
+                          "admin/resource-management/resources/rental-applications-or-immediate-sign-ups",
+                          "admin/resource-management/resources/hybrid-offices",
+                          "admin/resource-management/resources/troubleshoot-issues-with-room-bookings"
+                        ]
+                      },
+                      {
+                        "group": "Floors",
+                        "pages": [
+                          "admin/resource-management/floors/set-up-floor-plans",
+                          "admin/resource-management/floors/use-floor-plans",
+                          "admin/resource-management/floors/manage-floor-plans"
+                        ]
+                      },
+                      {
+                        "group": "Room display",
+                        "pages": [
+                          "admin/resource-management/room-display/set-up-room-display",
+                          "admin/resource-management/room-display/use-room-display",
+                          "admin/resource-management/room-display/troubleshoot-issues-with-room-display"
+                        ]
+                      }
                     ]
                   },
                   {
