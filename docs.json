@@ -81,7 +81,113 @@
                     "group": "Billing",
                     "icon": "circle-dollar",
                     "pages": [
-                      "admin/billing/overview"
+                      "admin/billing/set-up-billing",
+                      {
+                        "group": "Plans",
+                        "pages": [
+                          "admin/billing/plans/set-up-plans",
+                          "admin/billing/plans/immediate-plan-sign-ups",
+                          "admin/billing/plans/applications-for-plans",
+                          "admin/billing/plans/virtual-office-and-mailing"
+                        ]
+                      },
+                      {
+                        "group": "Contracts",
+                        "pages": [
+                          "admin/billing/contracts/set-up-contracts",
+                          "admin/billing/contracts/templates",
+                          "admin/billing/contracts/esignature",
+                          "admin/billing/contracts/external-signature"
+                        ]
+                      },
+                      {
+                        "group": "Subscriptions",
+                        "pages": [
+                          "admin/billing/subscriptions/set-up-subscriptions",
+                          "admin/billing/subscriptions/billing-cycle-anchor",
+                          "admin/billing/subscriptions/advance-invoicing",
+                          "admin/billing/subscriptions/control-invoice-issuance",
+                          "admin/billing/subscriptions/control-invoice-auto-charge",
+                          "admin/billing/subscriptions/edit-a-subscription",
+                          "admin/billing/subscriptions/cancel-a-subscription"
+                        ]
+                      },
+                      {
+                        "group": "Invoices",
+                        "pages": [
+                          "admin/billing/invoices/set-up-invoicing",
+                          "admin/billing/invoices/issue-invoices",
+                          "admin/billing/invoices/track-and-manage-invoices",
+                          "admin/billing/invoices/invoice-statuses",
+                          "admin/billing/invoices/pending-invoice-items",
+                          "admin/billing/invoices/upcoming-invoices",
+                          "admin/billing/invoices/edit-invoices",
+                          "admin/billing/invoices/credit-notes",
+                          "admin/billing/invoices/prorate-an-invoice",
+                          "admin/billing/invoices/record-invoice-payments",
+                          "admin/billing/invoices/pay-for-invoice",
+                          "admin/billing/invoices/payment-retries-and-reminders",
+                          "admin/billing/invoices/resend-an-invoice",
+                          "admin/billing/invoices/invoice-due-date",
+                          "admin/billing/invoices/customer-money-balance",
+                          "admin/billing/invoices/download-an-invoice",
+                          "admin/billing/invoices/void-an-invoice",
+                          "admin/billing/invoices/delete-an-invoice",
+                          "admin/billing/invoices/proforma-invoices",
+                          "admin/billing/invoices/qr-bill",
+                          "admin/billing/invoices/accounting",
+                          {
+                            "group": "eInvoicing",
+                            "pages": [
+                              "admin/billing/invoices/einvoicing/overview",
+                              "admin/billing/invoices/einvoicing/ksef-in-poland",
+                              "admin/billing/invoices/einvoicing/peppol-in-belgium",
+                              "admin/billing/invoices/einvoicing/veri-factu-in-spain"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Payments",
+                        "pages": [
+                          "admin/billing/payments/payment-methods",
+                          "admin/billing/payments/payment-gateway",
+                          "admin/billing/payments/external",
+                          "admin/billing/payments/pay-with-invoice",
+                          "admin/billing/payments/create-one-off-payments",
+                          "admin/billing/payments/refunds",
+                          "admin/billing/payments/receipts",
+                          "admin/billing/payments/pci-dss-compliance"
+                        ]
+                      },
+                      {
+                        "group": "Credits and day passes",
+                        "pages": [
+                          "admin/billing/credits-and-day-passes/credits",
+                          "admin/billing/credits-and-day-passes/day-passes",
+                          "admin/billing/credits-and-day-passes/packages",
+                          "admin/billing/credits-and-day-passes/manage-credit-balance",
+                          "admin/billing/credits-and-day-passes/manage-day-pass-balance",
+                          "admin/billing/credits-and-day-passes/scheduled-transactions",
+                          "admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes"
+                        ]
+                      },
+                      {
+                        "group": "Discounts",
+                        "pages": [
+                          "admin/billing/discounts/coupons-and-promo-codes",
+                          "admin/billing/discounts/apply-discounts-to-bookings-and-purchases",
+                          "admin/billing/discounts/discounts-with-plan"
+                        ]
+                      },
+                      {
+                        "group": "Taxes",
+                        "pages": [
+                          "admin/billing/taxes/set-up-taxes",
+                          "admin/billing/taxes/custom-tax-rates"
+                        ]
+                      },
+                      "admin/billing/currencies"
                     ]
                   },
                   {
