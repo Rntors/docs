@@ -382,7 +382,25 @@
                     "group": "الفوترة",
                     "icon": "circle-dollar",
                     "pages": [
-                      "ar/admin/billing/overview"
+                      "ar/admin/billing/overview",
+                      {
+                        "group": "الفواتير",
+                        "pages": [
+                          "ar/admin/billing/invoices/prorate-an-invoice",
+                          "ar/admin/billing/invoices/record-invoice-payments",
+                          "ar/admin/billing/invoices/pay-for-invoice",
+                          "ar/admin/billing/invoices/payment-retries-and-reminders",
+                          "ar/admin/billing/invoices/resend-an-invoice",
+                          "ar/admin/billing/invoices/invoice-due-date",
+                          "ar/admin/billing/invoices/customer-money-balance",
+                          "ar/admin/billing/invoices/download-an-invoice",
+                          "ar/admin/billing/invoices/void-an-invoice",
+                          "ar/admin/billing/invoices/delete-an-invoice",
+                          "ar/admin/billing/invoices/proforma-invoices",
+                          "ar/admin/billing/invoices/qr-bill",
+                          "ar/admin/billing/invoices/accounting"
+                        ]
+                      }
                     ]
                   },
                   {
