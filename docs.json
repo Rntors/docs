@@ -110,7 +110,6 @@
                       "admin/general/overview"
                     ]
                   },
-                  "admin/lem-ai",
                   {
                     "group": "Integrations",
                     "icon": "puzzle-piece",
