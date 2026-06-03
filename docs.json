@@ -488,14 +488,19 @@
                     "group": "Account",
                     "icon": "circle-user",
                     "pages": [
-                      "member/account/overview"
+                      "member/account/language",
+                      "member/account/notifications",
+                      "member/account/privacy"
                     ]
                   },
                   {
                     "group": "Bookings",
                     "icon": "calendar-check",
                     "pages": [
-                      "member/bookings/overview"
+                      "member/bookings/book-a-room",
+                      "member/bookings/book-a-desk",
+                      "member/bookings/book-a-parking-space",
+                      "member/bookings/book-equipment"
                     ]
                   },
                   "member/events",
@@ -506,7 +511,8 @@
                     "group": "Visitors",
                     "icon": "id-card",
                     "pages": [
-                      "member/visitors/overview"
+                      "member/visitors/preregister-and-approve-visit-requests",
+                      "member/visitors/check-in-and-check-out"
                     ]
                   }
                 ]
