@@ -51,7 +51,30 @@
                     "group": "Customer management",
                     "icon": "users",
                     "pages": [
-                      "admin/customer-management/overview"
+                      {
+                        "group": "Users",
+                        "pages": [
+                          "admin/customer-management/users/user-roles",
+                          "admin/customer-management/users/members",
+                          "admin/customer-management/users/nonmembers",
+                          "admin/customer-management/users/manage-user-account",
+                          "admin/customer-management/users/remove-users",
+                          "admin/customer-management/users/requests-to-join",
+                          "admin/customer-management/users/troubleshoot-email-delivery-issues"
+                        ]
+                      },
+                      {
+                        "group": "Companies",
+                        "pages": [
+                          "admin/customer-management/companies/set-up-companies",
+                          "admin/customer-management/companies/company-members-and-managers",
+                          "admin/customer-management/companies/company-payment-method-permissions",
+                          "admin/customer-management/companies/delete-a-company"
+                        ]
+                      },
+                      "admin/customer-management/customer-account-history",
+                      "admin/customer-management/billing-details",
+                      "admin/customer-management/billing"
                     ]
                   },
                   {
