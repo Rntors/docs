@@ -356,7 +356,6 @@
                     "group": "Integrations",
                     "icon": "puzzle-piece",
                     "pages": [
-                      "admin/integrations/overview",
                       "admin/integrations/set-up-integrations",
                       {
                         "group": "Payments",
@@ -438,7 +437,6 @@
                     "group": "Administration",
                     "icon": "user",
                     "pages": [
-                      "admin/administration/overview",
                       {
                         "group": "Your account",
                         "pages": [
