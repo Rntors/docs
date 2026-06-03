@@ -161,7 +161,7 @@
                         ]
                       },
                       {
-                        "group": "Credits and day passes",
+                        "group": "Credits and Day Passes",
                         "pages": [
                           "admin/billing/credits-and-day-passes/credits",
                           "admin/billing/credits-and-day-passes/day-passes",
@@ -194,7 +194,11 @@
                     "group": "Resource management",
                     "icon": "box",
                     "pages": [
-                      "admin/resource-management/overview"
+                      "admin/resource-management/overview",
+                      {
+                        "group": "Resources",
+                        "pages": []
+                      }
                     ]
                   },
                   {
