@@ -356,7 +356,82 @@
                     "group": "Integrations",
                     "icon": "puzzle-piece",
                     "pages": [
-                      "admin/integrations/overview"
+                      "admin/integrations/overview",
+                      "admin/integrations/set-up-integrations",
+                      {
+                        "group": "Payments",
+                        "pages": [
+                          "admin/integrations/payments/overview",
+                          {
+                            "group": "Stripe",
+                            "pages": [
+                              "admin/integrations/payments/stripe/stripe",
+                              "admin/integrations/payments/stripe/troubleshoot-stripe-payments",
+                              "admin/integrations/payments/stripe/accept-invoice-payments-with-bank-debits"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Access control",
+                        "pages": [
+                          "admin/integrations/access-control/set-up-access-control"
+                        ]
+                      },
+                      {
+                        "group": "Accounting",
+                        "pages": [
+                          "admin/integrations/accounting/xero",
+                          "admin/integrations/accounting/quickbooks-online"
+                        ]
+                      },
+                      {
+                        "group": "Bookings",
+                        "pages": [
+                          "admin/integrations/bookings/google-calendar",
+                          "admin/integrations/bookings/calendly",
+                          "admin/integrations/bookings/hubspot-meeting-scheduler"
+                        ]
+                      },
+                      {
+                        "group": "Marketplaces",
+                        "pages": [
+                          "admin/integrations/marketplaces/liquidspace",
+                          "admin/integrations/marketplaces/integrate-with-marketplaces"
+                        ]
+                      },
+                      {
+                        "group": "Wi-Fi",
+                        "pages": [
+                          "admin/integrations/wifi/ironwifi"
+                        ]
+                      },
+                      {
+                        "group": "Communication",
+                        "pages": [
+                          "admin/integrations/communication/mailchimp",
+                          "admin/integrations/communication/twilio"
+                        ]
+                      },
+                      {
+                        "group": "Automation",
+                        "pages": [
+                          "admin/integrations/automation/zapier"
+                        ]
+                      },
+                      {
+                        "group": "Analytics",
+                        "pages": [
+                          "admin/integrations/analytics/google-analytics",
+                          "admin/integrations/analytics/meta-pixel"
+                        ]
+                      },
+                      {
+                        "group": "Printing",
+                        "pages": [
+                          "admin/integrations/printing/ezeep-blue"
+                        ]
+                      }
                     ]
                   },
                   {
