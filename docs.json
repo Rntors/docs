@@ -281,21 +281,32 @@
                     "group": "Support",
                     "icon": "life-ring",
                     "pages": [
-                      "admin/support/overview"
+                      "admin/support/overview",
+                      "admin/support/tickets",
+                      "admin/support/guides"
                     ]
                   },
                   {
                     "group": "Analytics & reports",
                     "icon": "chart-column",
                     "pages": [
-                      "admin/analytics-reports/overview"
+                      "admin/analytics-reports/overview",
+                      "admin/analytics-reports/dashboards",
+                      "admin/analytics-reports/reports",
+                      "admin/analytics-reports/export-invoices-for-accounting",
+                      "admin/analytics-reports/track-occupancy",
+                      "admin/analytics-reports/track-membership-growth",
+                      "admin/analytics-reports/track-sales"
                     ]
                   },
                   {
                     "group": "Location",
                     "icon": "building",
                     "pages": [
-                      "admin/location/overview"
+                      "admin/location/overview",
+                      "admin/location/information",
+                      "admin/location/schedule",
+                      "admin/location/visibility"
                     ]
                   },
                   {
