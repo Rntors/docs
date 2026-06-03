@@ -234,14 +234,49 @@
                     "group": "Engagement",
                     "icon": "handshake",
                     "pages": [
-                      "admin/engagement/overview"
+                      "admin/engagement/overview",
+                      "admin/engagement/feed",
+                      "admin/engagement/chats",
+                      {
+                        "group": "Events",
+                        "pages": [
+                          "admin/engagement/events/set-up-events",
+                          "admin/engagement/events/check-in-event-attendees"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "Service",
                     "icon": "handshake-angle",
                     "pages": [
-                      "admin/service/overview"
+                      "admin/service/overview",
+                      {
+                        "group": "Shop",
+                        "pages": [
+                          "admin/service/shop/set-up-shop",
+                          "admin/service/shop/manage-orders",
+                          "admin/service/shop/manage-product-availability",
+                          "admin/service/shop/manage-one-off-services"
+                        ]
+                      },
+                      {
+                        "group": "Benefits",
+                        "pages": [
+                          "admin/service/benefits/set-up-benefits",
+                          "admin/service/benefits/manage-benefit-applications"
+                        ]
+                      },
+                      {
+                        "group": "Visitors",
+                        "pages": [
+                          "admin/service/visitors/set-up-visitors",
+                          "admin/service/visitors/track-and-manage-visits",
+                          "admin/service/visitors/collect-contacts-of-walk-ins-with-reception",
+                          "admin/service/visitors/customize-reception",
+                          "admin/service/visitors/troubleshoot-issues-with-reception"
+                        ]
+                      }
                     ]
                   },
                   {
