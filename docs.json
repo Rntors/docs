@@ -246,7 +246,30 @@
                     "group": "إدارة العملاء",
                     "icon": "users",
                     "pages": [
-                      "ar/admin/customer-management/overview"
+                      {
+                        "group": "المستخدمون",
+                        "pages": [
+                          "ar/admin/customer-management/users/user-roles",
+                          "ar/admin/customer-management/users/members",
+                          "ar/admin/customer-management/users/nonmembers",
+                          "ar/admin/customer-management/users/manage-user-account",
+                          "ar/admin/customer-management/users/remove-users",
+                          "ar/admin/customer-management/users/requests-to-join",
+                          "ar/admin/customer-management/users/troubleshoot-email-delivery-issues"
+                        ]
+                      },
+                      {
+                        "group": "الشركات",
+                        "pages": [
+                          "ar/admin/customer-management/companies/set-up-companies",
+                          "ar/admin/customer-management/companies/company-members-and-managers",
+                          "ar/admin/customer-management/companies/company-payment-method-permissions",
+                          "ar/admin/customer-management/companies/delete-a-company"
+                        ]
+                      },
+                      "ar/admin/customer-management/customer-account-history",
+                      "ar/admin/customer-management/billing-details",
+                      "ar/admin/customer-management/billing"
                     ]
                   },
                   {
