@@ -1,3 +1,210 @@
 ---
 title: "members"
 ---
+
+## Who is a member
+
+A **member** is a customer who regularly uses your space's services and has been granted access to the members-only parts of the location. Members typically hold an active subscription, can book resources, pay invoices, and use credits or day passes.
+
+Each member has a profile under **Customers** that includes their contact details, subscription, assigned resources, credit and day-pass balances, billing history, internal notes, and activity timeline.
+
+<Frame>
+  ![Example of a member profile in RNTOR](/images/admin/customer-management/users/member-profile.png)
+</Frame>
+
+<Info>
+  Screenshot placeholder — replace with the latest RNTOR member profile screenshot.
+</Info>
+
+## Invite a member
+
+Administrators can invite an unlimited number of members to each location. There are several ways to bring a new member in:
+
+- Send an individual invitation
+- Mass invite members from a spreadsheet
+- Approve a request to join the location
+
+### Prerequisites
+
+Before inviting a user, make sure you have the right access and the right information:
+
+1. Log in as an administrator of the location where you want to invite the user. You need the **Customers** permission to manage that page. See [Permissions](/admin/administration/administrators/permissions).
+2. Collect the following info: **first name**, last name (optional), **email**, and phone number (optional).
+
+### Send an individual invitation
+
+1. Go to the **Customers** page in the location where you want to invite the user, then press `Invite user` in the top right.
+   <Frame>
+     ![Invite user button on the Customers page](/images/admin/customer-management/users/invite-user-button.png)
+   </Frame>
+2. Fill in the user's details.
+   - If you're inviting an administrator, enable the **Administrator** switch and [configure their permissions](/admin/administration/administrators/permissions).
+   - If the user belongs to a company, select the company and toggle **Manager** if they should manage the company profile.
+   <Frame>
+     ![New invitation modal](/images/admin/customer-management/users/new-invitation-modal.png)
+   </Frame>
+3. Click `Send invitation`. The user's creation date will appear in their profile under the **Activity** section.
+   <Frame>
+     ![User creation entry in the Activity section](/images/admin/customer-management/users/activity-created.png)
+   </Frame>
+
+### How a user gets an invitation
+
+When an administrator sends the invitation (or approves a request to join), the user receives an invitation email to activate their account. You can keep the default email or [customize the template](/admin/general/emails).
+
+<Frame>
+  ![Default invitation email](/images/admin/customer-management/users/invitation-email.png)
+</Frame>
+
+The user presses `Get started` and is taken to the **member portal** or the **member mobile app**. If they follow the link within 24 hours, they're signed in automatically without any extra verification. After that window, they go through the regular [login flow](/member/getting-started/login).
+
+<Info>
+  Users who haven't activated their account within 3 days after being invited receive an automatic reminder, if invitation reminders are enabled in your location's email settings.
+</Info>
+
+## Invite multiple members
+
+You can invite many users at once and assign them to specific companies. This saves time compared to inviting each user one by one.
+
+Before sending mass invitations, gather the data and prepare any companies or plans you'll need to reference.
+
+### Prepare companies and plans
+
+If your new users belong to companies or should have a subscription on creation, set those up first:
+
+- [How to create a company](/admin/customer-management/companies/set-up-companies)
+- [How to create a plan](/admin/billing/plans/set-up-plans)
+
+<Tip>
+  If some companies need a unique plan (for example, a custom price for their office), you don't need to create that plan separately. You can [create a custom subscription](/admin/billing/subscriptions/custom-subscriptions) for those companies after the users are invited.
+</Tip>
+
+### Prepare user data
+
+Prepare a spreadsheet with the following columns:
+
+| Column name | Required |
+| --- | --- |
+| First name | ✓ |
+| Last name |  |
+| Email | ✓ |
+| Phone number |  |
+| Company ID (if the user belongs to a company) |  |
+| Plan ID (if the user should have a subscription) |  |
+
+Make sure every email is unique — RNTOR uses email as the unique user identifier.
+
+<Info>
+  To find a **Company ID**, open the **Customers** page → **Companies** tab → open the company and copy its ID from the profile.
+</Info>
+
+<Info>
+  To find a **Plan ID**, go to **Location settings → Plans**, open the plan's `...` menu and select **Copy public link**. The last part of the URL is the plan ID. If the plan has **Sign-up** disabled, temporarily enable it to copy the link and then disable it again.
+</Info>
+
+If you plan to seed users with credits or day passes, make sure [credits](/admin/billing/credits-and-day-passes/credits) and [day passes](/admin/billing/credits-and-day-passes/day-passes) are enabled and your plans are configured accordingly.
+
+### Send mass invitations
+
+#### To individual users
+
+1. Go to the **Customers** page and tap the `...` menu in the top right corner.
+2. Choose `Invite multiple users`.
+   <Frame>
+     ![Invite multiple users menu](/images/admin/customer-management/users/mass-invite-menu.png)
+   </Frame>
+3. Copy the rows from your spreadsheet and paste them into the mass invitation window. Configure the other fields, such as invitation language, company, and plan, if needed.
+4. Press `Invite`.
+
+If your users should have a subscription, add the **plan ID**, **start date**, and **renewal** to the spreadsheet. RNTOR will create those subscriptions automatically.
+
+#### To company users
+
+To invite users into a specific company:
+
+1. Go to the **Customers** page and open the company.
+2. Press `Mass invite` under the company name.
+3. Fill in the required details and click `Invite`. Invitations are sent immediately.
+
+You'll see a confirmation on screen and a **New** label next to each freshly invited user on the **Customers** page → **Users** tab.
+
+To invite users across **different** companies in one go:
+
+1. Include the **Company ID** column in your spreadsheet.
+2. Go to **Customers** → `...` → `Invite multiple users`.
+3. Paste the rows and press `Invite`.
+
+Once users are linked to companies, [select company managers](/admin/customer-management/companies/company-members-and-managers) and [create company subscriptions](/admin/billing/subscriptions/custom-subscriptions) as needed.
+
+<Info>
+  Mass invitations create only **personal** subscriptions for users. Use company subscriptions afterward for company-level plans.
+</Info>
+
+## What a member can do
+
+A member of your location can:
+
+- View and interact with content that has **Location members** (or higher) visibility
+- Receive and pay invoices
+- Use and buy credits
+- Use and buy day passes
+- Hold a subscription and use all perks included in their plan
+- Book resources according to their plan and permissions
+
+<Info>
+  Members count toward your subscription only once they're active — that is, once they sign in to the member portal or mobile app at least once.
+</Info>
+
+Members who also belong to a **company** get a few extra capabilities:
+
+- Use the company's shared credits and day passes
+- Access perks granted by the company subscription
+- Manage company details if they are set as a **Manager**
+- Invite other users to the location, if allowed by the company manager role
+
+## Manage members
+
+Members are always listed on the **Customers** page. Administrators can view past activity for every member, including bookings, payments, invoices, credits, and day passes.
+
+You can:
+
+- [Remove a user from the location](/admin/customer-management/users/remove-users)
+- Group or ungroup users within [companies](/admin/customer-management/companies/set-up-companies)
+- Manage their [billing details](/admin/customer-management/billing-details) and [billing history](/admin/customer-management/billing)
+- Manage [assigned resources](/admin/resource-management/assignments)
+- Add internal **Notes** and **Attachments** (e.g., verification documents)
+- Send and manage [contracts](/admin/billing/contracts/set-up-contracts)
+
+## FAQs
+
+<AccordionGroup>
+  <Accordion title="Can RNTOR work as a CRM?">
+    RNTOR isn't a standalone CRM, but the **Customers** page covers the essentials most spaces need:
+
+    - List and manage **Members**, [**Nonmembers**](/admin/customer-management/users/nonmembers), and **Companies**.
+    - For each customer, track subscription, billing, assigned resources, credits and day passes, contract start and end dates, internal notes and attachments, and contracts.
+    - View purchase history: bookings, event tickets, shop orders, and benefit applications.
+    - [Invite members](#invite-a-member), add nonmembers, [remove customers](/admin/customer-management/users/remove-users), and use auto-remove rules to move members to nonmembers when their subscription ends.
+    - Get insights from the [Analytics](/admin/analytics-reports/dashboards) and [Reports](/admin/analytics-reports/reports) pages.
+
+    If you need a dedicated CRM, RNTOR connects to popular CRM platforms through its [integrations](/admin/integrations).
+  </Accordion>
+
+  <Accordion title="What if I invited the user with the wrong email address?">
+    [Remove the user profile](/admin/customer-management/users/remove-users) and reinvite them with the correct email.
+  </Accordion>
+
+  <Accordion title="I invited a user with the wrong name. Why does the old name still show after I remove and reinvite them?">
+    When you invite a user with a specific name and email, an account is created automatically. Once the account exists, only the user themselves can change their personal information. Ask the user to update their name from their **Account** page in the member portal.
+  </Accordion>
+
+  <Accordion title="How can I transfer a member from one location to another?">
+    1. Go to the **Customers** page.
+    2. Open the user's profile.
+    3. Hover next to the user's name at the top of the page and click `>`.
+    4. Click `...` in the top right → `Invite as member...` or `Add as nonmember...` → select the destination location.
+    5. The user gets an email inviting them to the new location and instantly has member access there under the same account — no extra login needed.
+    6. If they have a subscription in the original location, either [set an end date](/admin/billing/subscriptions/end-subscriptions) for it, [cancel it immediately](/admin/billing/subscriptions/cancel-subscriptions), or [create a new subscription](/admin/billing/subscriptions/create-subscriptions) for them in the new location.
+    7. Remove the user or the company from the **Customers** page of the original location to convert them into a nonmember there.
+  </Accordion>
+</AccordionGroup>
