@@ -1,3 +1,106 @@
 ---
 title: "Manage user account"
 ---
+
+Users are responsible for creating, updating, and deleting their own accounts, including all personal information. Administrators **cannot** modify a user's personal details, but they can manage that user's subscription, billing, payment methods, internal notes, and attachments from the **Customers** page.
+
+## Types of user account information
+
+| Category | Editable by |
+| --- | --- |
+| **Personal information** — first name, last name, photo, phone number, "About" | Only the user |
+| **Email address** | Only the user |
+| **Privacy settings** — name, email, phone, and bookings title visibility | Only the user (defaults are set by the workspace owner) |
+| **Payment methods** | User (if individual), company manager (for company members), administrator |
+| **Billing details** — legal business name, address, tax ID | User (if individual), company manager (for company members), administrator |
+| **Subscription** | Only administrator |
+| **Internal notes** | Only administrator (scoped per location) |
+| **Attachments** | Only administrator |
+
+<Info>
+  Internal notes and attachments are only visible to administrators — users never see them.
+</Info>
+
+## Creating an account
+
+A user account is created automatically the first time a person logs in to the **Member portal** or **mobile app**.
+
+After signing in, the user is prompted to complete their profile (name, photo, phone, about).
+
+If an administrator invited the user, the personal information fields are pre-filled with whatever was entered during the invite — the user can still edit any of them.
+
+## How users manage their account
+
+1. The user clicks their **profile picture in the bottom-left corner** to open the **Account** page.
+2. To update **personal information** (name, photo, phone, about), the user goes to **Profile**.
+3. To update **email or privacy settings**, the user goes to **Privacy and security**.
+
+![Account menu placeholder](/images/manage-user-account-menu.png)
+
+<Info>
+  The workspace owner sets default privacy settings for all users, but each user can override them in **Privacy and security → Privacy**, which may make their personal information visible to others.
+</Info>
+
+4. To manage **payment methods**, the user goes to **Membership → Billing** → "Payment methods" section.
+5. To manage **billing details**, the user goes to **Membership → Billing** and updates the legal business name, address, and tax ID.
+
+![Billing details placeholder](/images/manage-user-billing-details.png)
+
+### Edit user email address
+
+Each account is tied to a unique email. Only the user can change it.
+
+1. Log in to the member portal or mobile app.
+2. Go to **Account → Privacy and security → Email**.
+3. Enter the new email and confirm it with the verification code sent to that address.
+4. Hit **Save**.
+
+If the new email is already in use on another account, the user will see an error. To resolve it:
+
+1. Log in with the new desired email.
+2. Go to **Account → Privacy and security → Delete account** to remove that account.
+3. Log back in with the original email.
+4. Go to **Account → Privacy and security → Email** and change it to the freed address.
+5. Confirm the change with the verification code and save.
+
+## How administrators manage user accounts
+
+Administrators cannot edit a user's personal details, but they can manage everything that affects how the user interacts with the location.
+
+1. Open the user's profile from the **Customers** page.
+2. In the main panel you can:
+   - Edit the user's **subscription**.
+   - Manage the user's **billing** (invoices, credits, day passes, transactions).
+   - Edit the **Internal notes** field to leave private notes for your team (e.g., access preferences, office requirements). Notes are scoped to the current location.
+3. In the side panel you can:
+   - Review the user's **contact information** (read-only — only the user can change it).
+   - Use the **Attachments** section to upload files such as ID scans or signed documents.
+   <Info>
+     Attachments are only visible to administrators.
+   </Info>
+   - Manage the user's **payment methods**.
+   - Click **Edit** next to **Billing details** to update the legal business name, address, and tax ID on the user's behalf.
+
+![Edit billing details placeholder](/images/manage-user-edit-billing.png)
+
+<Tip>
+  If you invited the user with the wrong email, open their profile, click the **…** menu in the top right, and choose **Remove** — then send a new invitation to the correct email.
+</Tip>
+
+## Delete account
+
+If a user decides to leave, they delete their own account from **Account → Privacy and security → Delete account**.
+
+![Delete account placeholder](/images/delete-account.png)
+
+<Info>
+  Only the user can fully delete their account. Administrators can only **remove** the user from **Members** or **Nonmembers** on the **Customers** page — this clears their membership at this location but does not delete their personal account.
+</Info>
+
+When a user deletes their account, their profile remains on the **Customers** page as a "Deleted user" entry, so you can still close out their subscription, billing, and history as needed.
+
+## Gaps / risks
+
+- **Admin notification on user-initiated deletion** is not currently confirmed in RNTOR — verify before relying on it as a workflow trigger.
+- **"Bookings title visibility"** privacy toggle from the reference is not confirmed as a separate setting in RNTOR's Privacy panel.
+- Screenshots above are placeholders pending real captures.
