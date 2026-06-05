@@ -2,144 +2,111 @@
 title: "remove-users"
 ---
 
-Learn how to remove members from the community, delete nonmembers, and reinvite past users back as members.
-
-Administrators can remove any user from their view. Depending on the user's [role](/admin/administration/administrators/permissions), the action takes a different path:
-
-- Removing a **member** moves them to **Nonmembers** — their profile and history are preserved at the location.
-- Deleting a **nonmember** removes their profile from the location entirely.
+Administrators can remove any user from their view and, by removing them, manage these users' roles. Based on the [user role](/admin/administration/administrators/permissions), the process of removing a user happens on different pages.
 
 ## Remove a member
 
-If a user is no longer your [member](/admin/customer-management/users/members) and you need to remove them from the **Customers** page, follow these steps:
+If the user is no longer your [member](/admin/customer-management/users/members) and you need to remove them from the **Customers** page, follow these steps:
 
-1. Go to the **Customers** page in the necessary location and switch the filter to **Members**.
-2. Open the user's profile, or use the row's `…` menu directly from the list.
-3. Press the `…` menu in the top right of the profile (or in the list row) and select `Remove`.
-4. Confirm your choice.
+1. Go to the **Customers** page in the necessary location and click on the necessary user to open their profile.
+2. Press the `…` menu top right and select `Remove`, then confirm your choice.
 
 <Frame>
-  ![Screenshot Placeholder Remove Member](/images/placeholder-remove-member.png)
+  ![Remove a member from the Customers page](/images/placeholder-remove-member.png)
 </Frame>
 
 <Info>
-  Screenshot placeholder — replace with the latest RNTOR member profile screenshot showing the `…` → `Remove` action.
-</Info>
-
-<Info>
-  These steps do not delete the user's account — they only move the user to **Nonmembers** at this location. Only the user themselves can fully delete their account, as described on the [Manage user account](/admin/customer-management/users/manage-user-account) page.
+  These steps do not delete the user's account and only make them a [nonmember](/admin/customer-management/users/nonmembers) at this location. Only the user themselves can fully delete their account, as described on the [Manage user account](/admin/customer-management/users/manage-user-account) page.
 </Info>
 
 ### What happens when you remove a user from the Customers page
 
-- The user becomes a [nonmember](/admin/customer-management/users/nonmembers) and appears under **Customers → Nonmembers**.
-- The user's **active personal subscription** at this location is cancelled immediately, with today's date set as the end date. See [Cancel a subscription](/admin/billing/subscriptions/cancel-a-subscription).
-- The user's **payment methods** remain attached to the profile for any further charges that may be needed.
-- The user's **billing details** remain on the profile.
-- The full history of the user's **credits, day passes, payments, invoices, bookings, and activities** is preserved on the profile and continues to be visible to administrators.
-- The user keeps access to any [companies](/admin/customer-management/companies/set-up-companies) they belong to — their company membership and any active company subscription are not affected.
-- Administrators can [restore the user as a member](#reinvite-a-user) at any time without re-entering their information.
-
-### Admin rights when a member is removed
-
-When a user is moved to **Nonmembers** at a location, RNTOR also revokes their administrator/staff access at the same merchant, unless they are the **Merchant Owner / Super Admin**.
-
-- Non-owner staff access is **deactivated automatically** for the user across the merchant. They lose the ability to sign into the dashboard for that merchant until access is re-granted.
-- **Owners and Super Admins are never affected** by this automation, regardless of their member status.
-- The change is recorded on the user's activity timeline as **Staff access revoked on remove**, so administrators can audit who lost access and why.
-- To restore access, [reinvite the user as a member](#reinvite-a-user) and re-grant admin access from [Manage administrators](/admin/administration/administrators/administrators).
-
-<Info>
-  RNTOR currently has a single merchant-wide staff role. Revoking access here applies to the whole merchant — not just the location where the user was removed. If the user needs to keep dashboard access at a different location of the same merchant, do not remove them as a member there.
-</Info>
+- The user becomes a **nonmember at this location** and appears for administrators under **Customers → Nonmembers**.
+- The user has the [nonmember's rights](/admin/customer-management/users/nonmembers) at this location.
+- If the user was an **Administrator** or **Manager** for this location, those **location-scoped rights are revoked immediately** (`is_administrator`, `is_manager`, and per-location `permissions` are cleared).
+- **Access in other locations is preserved.** Removing a user from one location does not affect their membership, admin, or manager rights at any other location of the same merchant.
+- **Merchant Owners and Super Admins are never affected** by removal — their access is governed by merchant-wide ownership / super-admin status, not by per-location flags.
+- The user's **active personal subscription** at this location is cancelled automatically with today's date set as the end date.
+- The user's **default payment method** remains attached to the profile for any further charges if needed.
+- The full history of the user's **credits, day passes, payments, invoices, bookings, and activities** at this location is preserved and remains visible to administrators.
+- The user keeps any [company](/admin/customer-management/companies/set-up-companies) membership they had — company membership and any active company subscription are not affected.
+- Administrators can [reinvite the user](#reinvite-a-user) at any time without re-entering their information.
 
 ## Auto-remove members
 
-Auto-remove members is an optional behavior that keeps your **Members** list aligned with active subscriptions: when a member's subscription ends or expires, RNTOR moves them to **Nonmembers** automatically — no manual cleanup required.
+RNTOR enables you to automate the offboarding of individual users or companies at a location.
 
-### Configure Auto-remove members
+Administrators enable the _Auto-remove members_ property, which allows them to auto-remove members from the **Customers** page once their subscription ends.
 
-1. Open the location and go to **Settings → Billing → Subscriptions**.
-2. Toggle **Auto-remove members** on.
-3. The change is saved instantly and applies to future expiries.
+### Configure "Auto-remove members" property
+
+1. Administrators go to **Location settings → Billing** page → **Subscriptions** tab.
+2. Manage the _Auto-remove members_ switch:
+   - If **enabled**, members automatically become nonmembers when their subscription expires.
+   - If **disabled**, members don't become nonmembers when their subscription expires. They are still considered your members and are listed on the **Customers** page.
 
 <Frame>
-  ![Screenshot Placeholder Auto Remove Members Toggle](/images/placeholder-auto-remove-members.png)
+  ![Auto-remove members switch on Location settings → Billing → Subscriptions](/images/placeholder-auto-remove-members.png)
 </Frame>
 
 <Info>
-  Screenshot placeholder — replace with the latest RNTOR **Settings → Billing → Subscriptions** screenshot showing the `Auto-remove members` toggle.
+  This setting does not affect administrators. Merchant Owners and Super Admins are never auto-removed.
+</Info>
+
+<Info>
+  With the _Auto-remove members_ switch enabled, only members whose subscriptions end on the specified date are automatically removed from the **Customers** page. If an administrator cancels a subscription, they must also manually remove the member.
 </Info>
 
 ### How members are removed
 
-When the toggle is **on**, RNTOR runs a daily background job that checks every member at the location and demotes them to **Nonmembers** if their subscription has ended or expired.
+With the _Auto-remove members_ switch enabled, individual members or companies become [nonmembers](/admin/customer-management/users/nonmembers) when their subscription expires at this location. The expiration date depends on the _End date_ set inside the subscription. Administrators can set the expiration date when [creating](/admin/billing/subscriptions/create-a-subscription) or [editing](/admin/billing/subscriptions/edit-a-subscription) the subscription.
 
-- A member is moved to **Nonmembers** only when they no longer have any active subscription that keeps them a member at this location (see [Personal vs company subscriptions](#personal-vs-company-subscriptions)).
-- Demotion uses the same effect as a manual remove: the profile, history, payment methods, and billing details are preserved, and the user can be [reinvited](#reinvite-a-user) at any time.
-- Each automated removal is logged on the user's activity timeline as **Auto-removed member**, with the reason set to `subscription_expired`.
-- The job is **idempotent** — running it multiple times yields the same result.
-- **Merchant Owners and Super Admins are never auto-removed**, even if they no longer hold an active subscription.
+A daily background job runs once per day to apply this rule. When the toggle is on for a location, the job will, for each user at that location:
 
-When the toggle is **off**, members keep their member status after their subscription ends. Administrators can still remove them manually from the **Customers** page.
+- Move the user to **Nonmembers** at this location only.
+- Clear their location-scoped admin / manager rights for this location.
+- Leave their access at any other location of the same merchant untouched.
+- Skip the action entirely if the user is a Merchant Owner or Super Admin.
 
-### Personal vs company subscriptions
+### Notes
 
-Auto-remove evaluates personal and company subscriptions together to avoid demoting users who are still entitled to be members through their company.
+When a **company subscription** expires, the company and its members **without personal subscriptions** become nonmembers at this location.
 
-- **Personal subscription expires, no company:** the user is moved to **Nonmembers**.
-- **Personal subscription expires, but the user belongs to a company with an active company subscription at the location:** the user **remains a member**.
-- **Company subscription expires:** the company is demoted to **Nonmembers** at the location, and each company member is then re-evaluated. Members who have no other active subscription at the location are moved to **Nonmembers**; members who still hold an active personal subscription remain members.
-
-Staff access revocation described in [Admin rights when a member is removed](#admin-rights-when-a-member-is-removed) also applies to auto-removals.
+However, if a user's **personal subscription** expires but they belong to a **company with an active subscription** at the same location, the user will remain a member.
 
 ## Delete a nonmember
 
-Administrators can delete nonmembers from a location when their profile is no longer needed.
+Administrators can delete nonmembers from the location by following these steps:
 
-1. Go to the **Customers** page in the necessary location.
-2. Switch the filter at the top to **Nonmembers**.
-3. Open the nonmember's profile.
-4. Press the `…` menu in the top right and select `Delete`.
-5. Confirm your choice.
+1. Log in to RNTOR.
+2. Go to the **Customers** page in the necessary location.
+3. Select the **Nonmembers** option in the drop-down list.
+4. Switch from **Companies** to **Users** section, then click on the necessary user to open their profile.
+5. Press the `…` menu top right and select `Delete`, then confirm your choice.
 
 <Frame>
-  ![Screenshot Placeholder Delete Nonmember](/images/placeholder-delete-nonmember.png)
+  ![Delete a nonmember from the location](/images/placeholder-delete-nonmember.png)
 </Frame>
 
 <Info>
-  Screenshot placeholder — replace with the latest RNTOR nonmember profile screenshot showing the `…` → `Delete` action.
-</Info>
-
-<Info>
-  When a nonmember is deleted, their location profile is removed and administrators can no longer view their past data at this location or reinvite them from the **Nonmembers** list. The user can still appear again if they perform any action at this location — such as making a booking, payment, or order — at which point a fresh nonmember profile is created.
+  If a nonmember is deleted, they can still have access, but they will no longer appear on the nonmembers' list and the administrator won't be able to view their past data or reinvite them to the **Customers**. However, if the user performs any action such as making a booking, payment, or sending a chat message, etc., they will become a nonmember again.
 </Info>
 
 ## Reinvite a user
 
-RNTOR keeps every nonmember who has ever interacted with your location available on the **Customers** page. Administrators can promote a nonmember back to **Members** without retyping their information.
+RNTOR stores the information of all nonmembers who have ever interacted with your location in the member web portal or mobile app, or used to be a member before. Administrators can easily invite nonmembers to the location so they become members again.
 
 <Info>
-  You can reinvite only users who appear on the **Customers → Nonmembers** list. Users whose nonmember profile has been [deleted](#delete-a-nonmember) need to be added again from scratch.
+  You can manage only those users and companies that are already registered in the member web portal or mobile app, and appear on the **Customers → Nonmembers** tab in RNTOR.
 </Info>
 
-To make a user who appears among nonmembers your member immediately:
+To make a user who appears among nonmembers your member immediately without retyping their information, do the following:
 
-1. Go to the **Customers** page and switch the filter at the top to **Nonmembers**.
-2. Open the profile of the user you want to restore.
-3. In the **"This user is a nonmember"** banner at the top of the profile, press `Invite as member`.
+1. Navigate to **Customers** → menu `…` top right → **Nonmembers** tab.
+2. Select the user whom you want to make a member and press `Invite as member`.
 
 <Frame>
-  ![Screenshot Placeholder Invite As Member](/images/placeholder-invite-as-member.png)
+  ![Reinvite a nonmember as a member](/images/placeholder-reinvite-user.png)
 </Frame>
 
-<Info>
-  Screenshot placeholder — replace with the latest RNTOR nonmember profile screenshot showing the `Invite as member` banner.
-</Info>
-
-Once invited:
-
-- The user immediately appears on **Customers → Members** at this location.
-- The user receives an email invitation to access the member web portal or mobile app.
-- All their previous history — invoices, payments, credits, day passes, bookings, billing details, payment methods, internal notes, and attachments — remains intact.
-- Administrators can now [create or edit a subscription](/admin/billing/subscriptions/edit-a-subscription) and manage other member properties on the profile.
+Once invited, the user receives the email invitation and gains access as a member. The administrators can add the user to the company, create a subscription, and manage other member properties.
