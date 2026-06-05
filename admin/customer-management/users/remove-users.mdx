@@ -40,9 +40,58 @@ If a user is no longer your [member](/admin/customer-management/users/members) a
 - The user keeps access to any [companies](/admin/customer-management/companies/set-up-companies) they belong to — their company membership and any active company subscription are not affected.
 - Administrators can [restore the user as a member](#reinvite-a-user) at any time without re-entering their information.
 
+### Admin rights when a member is removed
+
+When a user is moved to **Nonmembers** at a location, RNTOR also revokes their administrator/staff access at the same merchant, unless they are the **Merchant Owner / Super Admin**.
+
+- Non-owner staff access is **deactivated automatically** for the user across the merchant. They lose the ability to sign into the dashboard for that merchant until access is re-granted.
+- **Owners and Super Admins are never affected** by this automation, regardless of their member status.
+- The change is recorded on the user's activity timeline as **Staff access revoked on remove**, so administrators can audit who lost access and why.
+- To restore access, [reinvite the user as a member](#reinvite-a-user) and re-grant admin access from [Manage administrators](/admin/administration/administrators/administrators).
+
 <Info>
-  If the user was an [administrator](/admin/administration/administrators/administrators), the administrator role is not revoked automatically when they are moved to nonmembers. To revoke admin access, open the user's profile and turn off the **Administrator** switch, or remove them from the administrators list. See [Manage administrators](/admin/administration/administrators/administrators).
+  RNTOR currently has a single merchant-wide staff role. Revoking access here applies to the whole merchant — not just the location where the user was removed. If the user needs to keep dashboard access at a different location of the same merchant, do not remove them as a member there.
 </Info>
+
+## Auto-remove members
+
+Auto-remove members is an optional behavior that keeps your **Members** list aligned with active subscriptions: when a member's subscription ends or expires, RNTOR moves them to **Nonmembers** automatically — no manual cleanup required.
+
+### Configure Auto-remove members
+
+1. Open the location and go to **Settings → Billing → Subscriptions**.
+2. Toggle **Auto-remove members** on.
+3. The change is saved instantly and applies to future expiries.
+
+<Frame>
+  ![Screenshot Placeholder Auto Remove Members Toggle](/images/placeholder-auto-remove-members.png)
+</Frame>
+
+<Info>
+  Screenshot placeholder — replace with the latest RNTOR **Settings → Billing → Subscriptions** screenshot showing the `Auto-remove members` toggle.
+</Info>
+
+### How members are removed
+
+When the toggle is **on**, RNTOR runs a daily background job that checks every member at the location and demotes them to **Nonmembers** if their subscription has ended or expired.
+
+- A member is moved to **Nonmembers** only when they no longer have any active subscription that keeps them a member at this location (see [Personal vs company subscriptions](#personal-vs-company-subscriptions)).
+- Demotion uses the same effect as a manual remove: the profile, history, payment methods, and billing details are preserved, and the user can be [reinvited](#reinvite-a-user) at any time.
+- Each automated removal is logged on the user's activity timeline as **Auto-removed member**, with the reason set to `subscription_expired`.
+- The job is **idempotent** — running it multiple times yields the same result.
+- **Merchant Owners and Super Admins are never auto-removed**, even if they no longer hold an active subscription.
+
+When the toggle is **off**, members keep their member status after their subscription ends. Administrators can still remove them manually from the **Customers** page.
+
+### Personal vs company subscriptions
+
+Auto-remove evaluates personal and company subscriptions together to avoid demoting users who are still entitled to be members through their company.
+
+- **Personal subscription expires, no company:** the user is moved to **Nonmembers**.
+- **Personal subscription expires, but the user belongs to a company with an active company subscription at the location:** the user **remains a member**.
+- **Company subscription expires:** the company is demoted to **Nonmembers** at the location, and each company member is then re-evaluated. Members who have no other active subscription at the location are moved to **Nonmembers**; members who still hold an active personal subscription remain members.
+
+Staff access revocation described in [Admin rights when a member is removed](#admin-rights-when-a-member-is-removed) also applies to auto-removals.
 
 ## Delete a nonmember
 
