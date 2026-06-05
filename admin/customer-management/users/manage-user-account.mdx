@@ -11,7 +11,10 @@ A user account in RNTOR stores a person's identity and the information needed to
 | First name, last name, phone, about | Yes | No |
 | Profile photo | Yes | No |
 | Login email address | Yes | No |
-| Privacy and visibility settings | Yes | No |
+| Name visibility | Yes | No |
+| Email visibility | Yes | No |
+| Phone visibility | Yes | No |
+| Bookings title visibility | Yes | No |
 | Saved payment methods | Yes | Yes (per location) |
 | Billing details | Yes | Yes (per location) |
 | Subscriptions and assignments | No | Yes |
@@ -45,9 +48,22 @@ From **Account → Profile**, a user can update:
 From **Account → Profile → Privacy and security**, a user can:
 
 - Change their login email address
-- Configure who can see their name, email, and phone
+- Configure who can see their profile information (see **Privacy settings** below)
 - Sign out of all other sessions
 - Delete their account
+
+### Privacy settings
+
+From **Account → Profile → Privacy and security → Privacy settings**, a user controls who can see each piece of their information. Each field can be set independently to one of: **Administrators**, **Company members**, **Location members**, **Network members**, or **Public**.
+
+Configurable visibility fields:
+
+- **Name visibility** — who can see the user's first and last name.
+- **Email visibility** — who can see the user's email address.
+- **Phone visibility** — who can see the user's phone number.
+- **Bookings title visibility** — who can see the title of a user's bookings on shared calendars and resource schedules.
+
+Administrators of the location always see all fields regardless of these settings.
 
 ### Billing details
 
