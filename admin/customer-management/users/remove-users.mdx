@@ -21,16 +21,13 @@ If the user is no longer your [member](/admin/customer-management/users/members)
 
 ### What happens when you remove a user from the Customers page
 
-- The user becomes a **nonmember at this location** and appears for administrators under **Customers → Nonmembers**.
+- The user becomes a nonmember at this location and appears for administrators on the **Customers → Nonmembers** page.
 - The user has the [nonmember's rights](/admin/customer-management/users/nonmembers) at this location.
-- If the user was an **Administrator** or **Manager** for this location, those **location-scoped rights are revoked immediately** (`is_administrator`, `is_manager`, and per-location `permissions` are cleared).
-- **Access in other locations is preserved.** Removing a user from one location does not affect their membership, admin, or manager rights at any other location of the same merchant.
-- **Merchant Owners and Super Admins are never affected** by removal — their access is governed by merchant-wide ownership / super-admin status, not by per-location flags.
-- The user's **active personal subscription** at this location is cancelled automatically with today's date set as the end date.
-- The user's **default payment method** remains attached to the profile for any further charges if needed.
-- The full history of the user's **credits, day passes, payments, invoices, bookings, and activities** at this location is preserved and remains visible to administrators.
-- The user keeps any [company](/admin/customer-management/companies/set-up-companies) membership they had — company membership and any active company subscription are not affected.
-- Administrators can [reinvite the user](#reinvite-a-user) at any time without re-entering their information.
+- If the user was an administrator or manager at this location, those rights are removed.
+- The user's active subscription is ended or deactivated.
+- The user's [default payment method](/admin/billing/payments/payment-methods) remains attached for future charges if needed.
+- The history of the user's credits, payments, invoices, bookings, and activities is preserved for administrators.
+- Administrators can [reinvite or restore the user](#reinvite-a-user) at any time.
 
 ## Auto-remove members
 
