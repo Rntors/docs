@@ -2,135 +2,107 @@
 title: "Manage user account"
 ---
 
-A user account in RNTOR stores a person's identity and the information needed to use your space — profile details, login email, privacy preferences, and billing data. Users own and manage their personal information. Administrators do not edit personal profile data directly; they manage operational data such as subscriptions, billing, payment methods, billing details, internal notes, attachments, and activity history per location.
+Users are responsible for creating and deleting their accounts, including managing their personal information. Administrators cannot modify users' personal details, but can manage subscriptions, billing, and add internal notes or attachments to user profiles.
 
 ## Types of user account information
 
 | Category | Editable by |
 | --- | --- |
-| **Personal information**<br />• Name<br />• Photo<br />• Email<br />• Phone number<br />• About | Only user |
-| **Privacy settings**<br />• Name visibility<br />• Email visibility<br />• Phone number visibility<br />• Bookings title visibility | The owner defines default privacy settings for all users, but each user can adjust their own settings independently. |
-| **Payment methods** | • User, if it is an individual customer<br />• Company manager, for company accounts<br />• Administrator |
-| **Billing details** | • User, if it is an individual customer<br />• Company manager, for company accounts<br />• Administrator |
-| **Subscriptions and assignments** | Only administrator |
-| **Invoices, payments, and credits** | Administrator. User or company manager where self-service payment is enabled. |
+| **Personal information**<br />• Name<br />• Photo<br />• Email<br />• Phone number<br />• "About" | Only user |
+| **Privacy settings**<br />• Name visibility<br />• Email visibility<br />• Phone number visibility<br />• Bookings title visibility | The owner defines default privacy settings for all users, but each user can adjust their settings independently. |
+| **Payment methods** | • User (if it's an individual customer)<br />• Company manager (for companies)<br />• Administrator |
+| **Billing details** | • User (if it's an individual customer)<br />• Company manager (for companies)<br />• Administrator |
+| **Subscription** | Only administrator |
 | **Internal notes** | Only administrator |
 | **Attachments** | Only administrator |
-| **Activity history** | View-only for administrator |
 
 ## Creating an account
 
-User accounts in RNTOR are created when a person signs up or is invited:
+A user account is automatically created when a user logs in to the web portal or mobile app for the first time.
 
-- **Self sign-up.** A visitor creates an account from the customer portal using their email address and password, or via Google.
-- **Invited by an administrator.** An admin adds a person as a member or nonmember from the **Customers** page. The user receives an invitation email and completes their profile on first login.
+After logging in, users are prompted to **complete and customize their profile** by entering personal information.
 
-Each person has a single global identity and a separate customer record per location they belong to.
+If the user was invited by an administrator, the personal information fields are prefilled with the data the administrator entered during the invitation, but users can edit them.
 
 ## How users manage their account
 
-Users manage their account from the customer portal under **Account**.
-
-### Edit profile
-
-From **Account → Profile**, a user can update:
-
-- First name and last name
-- Phone number
-- Short bio ("about")
-- Profile photo
-
-### Privacy and security
-
-From **Account → Privacy and security**, a user can:
-
-- Change their login email address
-- Change their password
-- Configure who can see their profile information (see **Privacy settings** below)
-- Delete their account
-
-### Privacy settings
-
-From **Account → Privacy and security → Privacy settings**, a user controls who can see each piece of their information. Each field can be set independently to one of: **Administrators**, **Company members**, **Location members**, **Network members**, or **Public**.
-
-Configurable visibility fields:
-
-- **Name visibility** — who can see the user's first and last name.
-- **Email visibility** — who can see the user's email address.
-- **Phone visibility** — who can see the user's phone number.
-- **Bookings title visibility** — who can see the title of a user's bookings on shared calendars and resource schedules.
-
-Administrators of the location always see all fields regardless of these settings.
-
-### Privacy settings
-
-From **Account → Profile → Privacy and security → Privacy settings**, a user controls who can see each piece of their information. Each field can be set independently to one of: **Administrators**, **Company members**, **Location members**, **Network members**, or **Public**.
-
-Configurable visibility fields:
-
-- **Name visibility** — who can see the user's first and last name.
-- **Email visibility** — who can see the user's email address.
-- **Phone visibility** — who can see the user's phone number.
-- **Bookings title visibility** — who can see the title of a user's bookings on shared calendars and resource schedules.
-
-Administrators of the location always see all fields regardless of these settings.
-
-### Payment methods and billing details
-
-From **Account → Billing**, a user can view invoices, manage saved payment methods, and update billing details used on their invoices.
+1. Click on their profile picture in the bottom left corner to open the **Account** page.
+2. To update their personal information, go to **Profile**.
+3. To update their email or privacy settings, go to **Privacy and security**.
 
 <Frame>
   ![Account menu in the customer portal](/images/manage-user-account-menu.png)
 </Frame>
 
-## Edit user email address
+<Info>
+  **Default privacy settings** are set by the owner, but the user can change their own privacy settings and override them, which may make their personal information visible to others.
+</Info>
 
-A user changes their own login email from **Account → Privacy and security → Email**.
+4. To **manage their payment methods**, users go to **Membership → Billing → "Payment methods"** section.
+5. To **manage their billing details**, users go to **Membership → Billing** and update the legal business name, address, and tax ID.
 
-1. The user enters the new email address and confirms.
-2. RNTOR sends a confirmation link to the new address.
-3. After the user clicks the link, the new email becomes their login.
+<Frame>
+  ![Membership billing page with payment methods and billing details](/images/manage-user-billing-details.png)
+</Frame>
 
-If the new address is already used by another RNTOR account, the change is rejected and the user is asked to use a different email.
+<Info>
+  Until the "Legal business name", "Address", and "Tax ID" are filled out, the system will continue using the information from "Billing details (Legacy)".
+</Info>
+
+### Edit user email address
+
+Each user account is associated with a unique email. Only the user themselves can update an email address for their account. For this, users:
+
+1. Log in to the member web portal or mobile app.
+2. Go to **Account** (the user icon) → **Privacy and security** → "Email."
+3. Enter a new email address and confirm its validity by inputting the confirmation code.
+4. Once all is set, hit `Save` and enjoy having an updated account.
+
+If a user attempts to update their email address to an address already associated with another account, they'll face a "The email is incorrect or connected to another account." message. To resolve it, the user must do the following:
+
+1. Log in with their new desired email address.
+2. Go to **Account** → **Privacy and security** → tap `Delete`.
+3. Log back with their old email, which they want to change.
+4. Go to **Account** → **Privacy and security →** select "Email."
+5. Enter their new email and confirm via a confirmation code.
+6. Save the change.
 
 ## How administrators manage user accounts
 
-Administrators do not edit a user's personal profile information (name, photo, login email, password, privacy settings). From **Customers**, an admin opens a customer and can manage:
+The platform ensures that users maintain full control over their personal information. Users are solely responsible for their personal details, and administrators cannot modify them. However, administrators can manage user subscriptions, billing, and add internal notes or attachments to user profiles.
 
-- **Subscriptions and assignments** — assign, change, or cancel plans and resource assignments
-- **Billing details** — update billing name, address, and tax fields used on invoices issued from this location
-- **Invoices, payments, and credits** — issue invoices, record payments, and manage credit balances
-- **Payment methods** — view saved cards and manage which methods are available
-- **Bookings** — view and manage bookings on behalf of the customer
-- **Internal notes** — add private notes visible only to staff at the current location
-- **Attachments** — upload files associated with the customer at this location
-- **Activity history** — review actions taken on the customer record
-
-Internal notes and attachments are scoped to the location where they were added and are not shared across other locations.
-
-Administrators **cannot** fully delete a user account. From **Customers**, an admin can only remove a person from **Members** or **Nonmembers** at their location. The user's global identity remains until the user deletes their own account.
-
-<Frame>
-  ![Customer billing details in the admin dashboard](/images/manage-user-billing-details.png)
-</Frame>
+1. Open a user's profile from the **Customers** page.
+2. In the middle section:
+   - **Edit the customer's subscription.**
+   - Manage the customer's billing.
+   - In the "Internal notes" field, add internal details about the customer for your team of administrators, such as unique office requirements or preferences.
+3. In the right-hand panel:
+   - In the "Contacts" section on the right-hand panel, check or copy the user's personal information, if needed.
+   - In the "Attachments" section, attach files, such as ID scans.
+     <Info>
+       Attachments are only visible to administrators.
+     </Info>
+   - **Manage customer's payment methods.**
+   - Click on `Edit` next to the "Billing details" section and **manage the user's billing details.**
 
 <Frame>
   ![Editing billing details for a customer](/images/manage-user-edit-billing.png)
 </Frame>
 
+<Tip>
+  If you invited the member with the wrong email, tap `(...)` menu top right in their profile → `Remove` and send a new invitation to the correct email.
+</Tip>
+
 ## Delete account
 
-A user can delete their own account from **Account → Privacy and security → Delete account**. The user must confirm the action before deletion proceeds.
+If a user decides to leave the member web portal or mobile app, they can delete their account from the **Account** → **Privacy and security** page, tapping `Delete`.
 
-When a user deletes their own account:
+<Frame>
+  ![Privacy and security page with Delete button](/images/manage-user-account-delete.png)
+</Frame>
 
-- The user is signed out immediately and can no longer sign in.
-- Personal data on the profile is anonymized: first name, last name, phone, profile photo, bio, and email are removed or replaced with a non-identifying placeholder.
-- The customer record at each location the user belonged to is marked as **Deleted user** and continues to appear in the **Customers** list with a muted avatar and a **Deleted** badge.
-- Administrators of every location the user belonged to receive an in-app notification and an email letting them know an account was deleted. The notification links to the affected customer profile and does not contain the original name, email, or phone.
-- Operational history is preserved and remains accessible to administrators: subscriptions, invoices, payments, credits, bookings, internal notes, attachments, and activity entries.
-- Administrators can still perform required operational actions on the deleted customer, such as canceling an active subscription, issuing a refund, or removing the user from **Members** or **Nonmembers**.
-- The user's public profile page returns **404 Not Found**.
-- The **Contacts** panel is hidden on the customer detail page, and edit actions on personal fields are disabled.
+<Info>
+  Only users themselves can completely delete their accounts. Administrators can only **remove users** from "Members" or "Nonmembers" on the **Customers** page.
+</Info>
 
-Administrators cannot delete a user account on the user's behalf. Only the account owner can initiate deletion.
+When a user deletes their account, administrators receive a **notification**. Clicking this notification takes you directly to the user's profile, where you can make necessary changes, such as **canceling this customer's subscription** or **removing them** from the **Customers**. The user's profile will remain as "Deleted user" on the **Customers** page, allowing you to manage their profile, subscription, and billing as required.
