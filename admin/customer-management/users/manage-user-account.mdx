@@ -1,3 +1,106 @@
 ---
 title: "Manage user account"
 ---
+
+A user account in RNTOR stores a person's identity and the information needed to use your space — profile details, login email, privacy preferences, and billing data. Some information is owned by the user, while administrators manage operational data such as subscriptions, internal notes, and attachments at each location.
+
+## Types of user account information
+
+| Information | Owned by user | Managed by administrator |
+| --- | --- | --- |
+| First name, last name, phone, about | Yes | No |
+| Profile photo | Yes | No |
+| Login email address | Yes | No |
+| Privacy and visibility settings | Yes | No |
+| Saved payment methods | Yes | Yes (per location) |
+| Billing details | Yes | Yes (per location) |
+| Subscriptions and assignments | No | Yes |
+| Internal notes (per location) | No | Yes |
+| Attachments | No | Yes |
+
+## Creating an account
+
+User accounts in RNTOR are created when a person signs up or is invited:
+
+- **Self sign-up.** A visitor creates an account from the customer portal using their email address.
+- **Invited by an administrator.** An admin adds a user as a member or nonmember from the **Customers** page. The user receives an invitation email and completes their profile on first login.
+
+Each person has a single global identity and a separate customer record per location they belong to.
+
+## How users manage their account
+
+Users manage their account from the customer portal under **Account**.
+
+### Edit profile
+
+From **Account → Profile**, a user can update:
+
+- First name and last name
+- Phone number
+- Short bio ("about")
+- Profile photo
+
+### Privacy and security
+
+From **Account → Profile → Privacy and security**, a user can:
+
+- Change their login email address
+- Configure who can see their name, email, and phone
+- Sign out of all other sessions
+- Delete their account
+
+### Billing details
+
+From **Account → Billing**, a user can view invoices, manage saved payment methods, and update billing details used on their invoices.
+
+## Edit user email address
+
+A user changes their own login email from **Account → Profile → Privacy and security → Email**.
+
+1. The user enters the new email address and confirms.
+2. RNTOR sends a confirmation link to the new address.
+3. After the user clicks the link, the new email becomes their login.
+
+If the new address is already used by another RNTOR account, the change is rejected and the user is asked to use a different email.
+
+<Frame>
+  ![Account menu in the customer portal](/images/manage-user-account-menu.png)
+</Frame>
+
+## How administrators manage user accounts
+
+Administrators do not edit a user's personal profile information. From **Customers**, an admin opens a customer and can manage:
+
+- **Subscription** — assign, change, or cancel plans
+- **Billing details** — update billing name, address, and tax fields used on invoices issued from this location
+- **Payment methods** — view saved cards and manage which methods are available
+- **Internal notes** — add private notes visible only to staff at the current location
+- **Attachments** — upload files associated with the customer at this location
+
+Internal notes and attachments are scoped to the location where they were added and are not shared across other locations.
+
+<Frame>
+  ![Customer billing details in the admin dashboard](/images/manage-user-billing-details.png)
+</Frame>
+
+<Frame>
+  ![Editing billing details for a customer](/images/manage-user-edit-billing.png)
+</Frame>
+
+## Delete account
+
+A user can delete their own account from **Account → Profile → Privacy and security → Delete**. The user must type the confirmation keyword before deletion proceeds.
+
+When an account is deleted:
+
+- The user is signed out and their login is removed.
+- Their profile is removed from RNTOR.
+- Operational records that must be retained for accounting (invoices, payments) remain in the system.
+
+If the user is the only owner of one or more merchants, deletion is blocked until ownership is transferred.
+
+Administrators cannot delete a user's account. From the **Customers** page, an admin can only remove a user from the Members or Nonmembers list at the current location.
+
+<Frame>
+  ![Delete account confirmation](/images/delete-account.png)
+</Frame>
