@@ -1,3 +1,112 @@
 ---
 title: "Nonmembers"
 ---
+
+## Who is a nonmember
+
+A **nonmember** is a customer at your location who is not part of the regular community and only occasionally interacts with the space. Nonmembers are also any former members who were removed from **Customers**. They do not have the same access to facilities, services, and benefits as members.
+
+A nonmember has the same profile structure as a member — invoices, payment methods, money balance, credits, day passes, internal notes, billing details, and an activity timeline — but lives under the **Nonmembers** filter on the **Customers** page.
+
+<Frame>
+  ![Nonmember profile](/images/nonmember-profile.png)
+</Frame>
+
+<Info>
+  Screenshot placeholder — replace with the latest RNTOR nonmember profile screenshot.
+</Info>
+
+Users typically become nonmembers after doing one of the following:
+
+- Creating a paid or free booking on the **Rooms**, **Desks**, **Parking**, or **Offices** pages
+- Submitting a successful payment
+- Ordering a product on the **Shop**
+- Joining an event
+
+<Info>
+  A user who only starts a payment, booking, or order — but does not complete it — does not become a nonmember.
+</Info>
+
+## Add a nonmember
+
+Administrators can add a nonmember manually to issue them an invoice or book on their behalf.
+
+### From the Customers page
+
+Use this flow when you need to issue an invoice to a nonmember for something other than a booking.
+
+1. Go to the **Customers** page in the location.
+2. Press the menu (`...`) in the top right and select **Add nonmember**.
+   <Frame>
+     ![Add nonmember from Customers](/images/add-nonmember-customers.png)
+   </Frame>
+3. Fill in the customer's **first name**, **last name**, **email**, and **phone number** (optional).
+4. Press `Done`. The profile is created and listed under the **Nonmembers** filter on the **Customers** page.
+
+To issue an invoice to the new nonmember:
+
+1. Open their profile and go to the **Billing** tab.
+2. [Create and issue a one-off invoice](/admin/billing/invoices/create-an-invoice).
+3. The customer receives the invoice by email and can pay it online.
+
+### From the Contacts page
+
+When walk-ins leave their contact details through the **Reception** flow, you can add them as a nonmember in one step instead of re-entering their information.
+
+1. Go to **Service → Visitors → Contacts**.
+2. Open the contact to see their details.
+3. Press **Add as a nonmember**. A nonmember profile is created from the contact.
+4. To **book on their behalf**, go to **Resources** and select them in the **Booker** field.
+5. To **issue an invoice**, open their new nonmember profile and go to **Billing**.
+
+<Tip>
+  We recommend letting customers complete their own bookings or payments. Add them as a nonmember when you need to accept bank-debit payments, or when the customer cannot complete the action themselves.
+</Tip>
+
+<Info>
+  Inline creation of a nonmember directly inside the **Booker** dropdown of the booking sheet is not currently supported in RNTOR. To book for a brand-new person, first add them as a nonmember from the **Customers** page or the **Contacts** page, then select them as the **Booker**.
+</Info>
+
+## What a nonmember can do
+
+- View and interact with pages and content marked as **Public** (or visible to **Network members** if they are a member at another location)
+- Receive and pay invoices
+- Sign up for plans
+- View their invoices and payments
+- Add and edit their billing details
+
+<Info>
+  Each location has its own list of nonmembers.
+</Info>
+
+## Manage nonmembers
+
+To find nonmembers, go to the **Customers** page and switch the filter at the top to **Nonmembers**.
+
+<Frame>
+  ![Nonmembers list](/images/nonmembers-list.png)
+</Frame>
+
+Administrators can see all past activity of a nonmember — bookings, payments, invoices, credits, day passes, and notes — directly on the profile.
+
+From a nonmember profile you can:
+
+- **Remove the nonmember** from the **Customers** page menu (`...`) — see [Remove users](/admin/customer-management/users/remove-users).
+- **Restore access as a member** by inviting the user again from the **Customers** page; their profile and history are preserved.
+- **Manage their billing information** — payment methods, money balance, credits, day passes, and billing details — from the **Billing** tab.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I add a nonmember if I don't have their email address?">
+    No. An email address is required to add a nonmember in RNTOR. The email is the unique identifier for the user account and is used to send invoices, receipts, and the login one-time code.
+  </Accordion>
+
+  <Accordion title="Can I create a nonmember directly from the booking sheet?">
+    Not at the moment. The **Booker** field only lets you pick existing customers. Add the person as a nonmember first from **Customers → Add nonmember** or from **Service → Visitors → Contacts**, then select them as the **Booker**.
+  </Accordion>
+
+  <Accordion title="Does a nonmember get a separate profile in each location?">
+    Yes. A person can be a member at one location and a nonmember at another. Each location has its own list of nonmembers and its own profile data (balances, invoices, notes).
+  </Accordion>
+</AccordionGroup>
