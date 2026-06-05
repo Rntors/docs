@@ -182,49 +182,45 @@ You can:
 ## FAQs
 
 <AccordionGroup>
-  <Accordion title="Can RNTOR work as a CRM?">
-    RNTOR isn't a standalone CRM, but the **Customers** page covers the essentials most spaces need:
+  <Accordion title="Can RNTOR serve as a CRM?">
+    At its core, RNTOR isn't a CRM platform. It's a comprehensive platform for space management — covering customer management, billing, payments, resources, services, and providing a member portal for bookings, payments, and interactions.
 
-    - List and manage **Members**, [**Nonmembers**](/admin/customer-management/users/nonmembers), and **Companies**.
-    - For each customer, track [subscription](/admin/billing/subscriptions/set-up-subscriptions) and [billing](/admin/customer-management/billing), assigned resources, [credits](/admin/billing/credits-and-day-passes/credits) and [day passes](/admin/billing/credits-and-day-passes/day-passes), contract start and end dates, internal notes and attachments, and [contracts](/admin/billing/contracts/set-up-contracts).
-    - View purchase history: bookings, event tickets, shop orders, and benefit applications.
-    - [Invite members](#invite-a-member), add nonmembers, [remove customers](/admin/customer-management/users/remove-users), and use auto-remove rules to move members to nonmembers when their subscription ends.
-    - Get insights from the [Analytics](/admin/analytics-reports/dashboards) and [Reports](/admin/analytics-reports/reports) pages.
+    That said, RNTOR includes the **Customers** page as one of its modules, which has all the essential CRM-like functionality to help you manage both leads and customers effectively. Specifically, the **Customers** page allows you to:
 
-    If you need a dedicated CRM, RNTOR connects to popular CRM platforms through its [integrations](/admin/integrations/set-up-integrations).
+    1. List and manage [**Members**](/admin/customer-management/users/members) (regular customers, typically with subscriptions), [**Nonmembers**](/admin/customer-management/users/nonmembers) (occasional customers), and [**Companies**](/admin/customer-management/companies/set-up-companies) (with associated members) profiles.
+    2. In each customer profile, you can set, track, and manage the customer's:
+       - [Subscription](/admin/billing/subscriptions/set-up-subscriptions) and [billing](/admin/customer-management/billing)
+       - Assigned resources (desks, offices, etc.)
+       - [Credits](/admin/billing/credits-and-day-passes/credits) and [day passes](/admin/billing/credits-and-day-passes/day-passes)
+       - Contract-based start and end dates
+       - Internal **Notes** and **Attachments** (e.g., verification documents)
+       - [Contracts](/admin/billing/contracts/set-up-contracts)
+    3. Profiles of members and nonmembers also include the history of their purchases:
+       - Bookings
+       - Event tickets and shop orders
+       - Benefit applications
+    4. You can [invite members](#invite-a-member), add nonmembers, [remove customers](/admin/customer-management/users/remove-users), and use auto-remove rules to automatically move members to nonmembers when their subscription ends.
+    5. Gain insights with the [Analytics](/admin/analytics-reports/dashboards) page and [custom reports](/admin/analytics-reports/reports) based on customer activity.
+
+    If you're looking for a dedicated, advanced CRM system, RNTOR connects to popular CRM platforms via its [integrations](/admin/integrations/set-up-integrations).
   </Accordion>
 
-  <Accordion title="What if I invited the user with the wrong email address?">
-    [Remove the user profile](/admin/customer-management/users/remove-users) and reinvite them with the correct email.
+  <Accordion title="What if I invited the user using the wrong email address?">
+    [Remove the user profile](/admin/customer-management/users/remove-users) and reinvite them with the correct email address.
   </Accordion>
 
-  <Accordion title="I invited a user with the wrong name. Why does the old name still show after I remove and reinvite them?">
-    When you invite a user with a specific name and email, an account is created automatically. Once the account exists, only the user themselves can change their personal information. Ask the user to update their name from their **Account** page in the member portal.
+  <Accordion title="I invited a user with the wrong name. Why does the previous wrong name still show up after I remove and reinvite them with the correct name?">
+    When you invite a user with a specific name and email address, their account is automatically created. Once the account is created, only the user themselves can manage their personal information. To resolve this, ask the user to edit their name from their **Account** page in the member portal.
   </Accordion>
 
   <Accordion title="How can I transfer a member from one location to another?">
+    To transfer a member from one location to another, do the following:
+
     1. Go to the **Customers** page.
     2. Open the user's profile.
-    3. Hover next to the user's name at the top of the page and click `>`.
-    4. Click `...` in the top right → `Invite as member...` or `Add as nonmember...` → select the destination location.
-    5. The user gets an email inviting them to the new location and instantly has member access there under the same account — no extra login needed.
-    6. If they have a subscription in the original location, either set an end date for it, cancel it immediately, or [create a new subscription](/admin/billing/subscriptions/set-up-subscriptions) for them in the new location.
-    7. Remove the user or the company from the **Customers** page of the original location to convert them into a nonmember there.
-  </Accordion>
-
-  <Accordion title="Why does a newly invited user appear on the Customers list before they accept?">
-    As soon as the invitation is sent, RNTOR creates a customer profile for that location so administrators can prepare their subscription, assignments, and billing details. The user shows up with an **Invited** status and switches to **Active** the first time they sign in to the member portal or mobile app. Until then, they don't count toward your active-user billing.
-  </Accordion>
-
-  <Accordion title="Can I resend an invitation if the user didn't receive it?">
-    Yes. Open the user's profile from the **Customers** page, click the `...` menu in the top right, and choose `Resend invitation`. Ask the user to check their spam folder first, and confirm the email address is correct before resending.
-  </Accordion>
-
-  <Accordion title="Can the same person be a member at more than one location?">
-    Yes. A user has a single global account in RNTOR and can be a member at multiple locations under the same login. Each location keeps its own customer record, subscription, balances, and billing history for that user.
-  </Accordion>
-
-  <Accordion title="What happens to a member's data when their subscription ends?">
-    The member's profile, bookings, invoices, transactions, and balances stay on the **Customers** page. You can either keep them as a member, let auto-remove rules move them to **Nonmembers**, or [remove them](/admin/customer-management/users/remove-users) from the location entirely.
+    3. Click the `...` menu in the top right → `Invite as member...` or `Add as nonmember...` → select the destination location.
+    4. The user will get an email inviting them to the new location and will have member access to it under the same account immediately — no extra login required.
+    5. If the user has a subscription in the original location, either set an end date for it, cancel it immediately, or [create a subscription](/admin/billing/subscriptions/set-up-subscriptions) for them in the new location.
+    6. Remove the user or the company from the **Customers** page of the original location to convert them into a nonmember there.
   </Accordion>
 </AccordionGroup>
