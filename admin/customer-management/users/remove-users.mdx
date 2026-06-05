@@ -1,3 +1,96 @@
 ---
 title: "remove-users"
 ---
+
+Learn how to remove members from the community, delete nonmembers, and reinvite past users back as members.
+
+Administrators can remove any user from their view. Depending on the user's [role](/admin/administration/administrators/permissions), the action takes a different path:
+
+- Removing a **member** moves them to **Nonmembers** — their profile and history are preserved at the location.
+- Deleting a **nonmember** removes their profile from the location entirely.
+
+## Remove a member
+
+If a user is no longer your [member](/admin/customer-management/users/members) and you need to remove them from the **Customers** page, follow these steps:
+
+1. Go to the **Customers** page in the necessary location and switch the filter to **Members**.
+2. Open the user's profile, or use the row's `…` menu directly from the list.
+3. Press the `…` menu in the top right of the profile (or in the list row) and select `Remove`.
+4. Confirm your choice.
+
+<Frame>
+  ![Screenshot Placeholder Remove Member](/images/placeholder-remove-member.png)
+</Frame>
+
+<Info>
+  Screenshot placeholder — replace with the latest RNTOR member profile screenshot showing the `…` → `Remove` action.
+</Info>
+
+<Info>
+  These steps do not delete the user's account — they only move the user to **Nonmembers** at this location. Only the user themselves can fully delete their account, as described on the [Manage user account](/admin/customer-management/users/manage-user-account) page.
+</Info>
+
+### What happens when you remove a user from the Customers page
+
+- The user becomes a [nonmember](/admin/customer-management/users/nonmembers) and appears under **Customers → Nonmembers**.
+- The user's **active personal subscription** at this location is cancelled immediately, with today's date set as the end date. See [Cancel a subscription](/admin/billing/subscriptions/cancel-a-subscription).
+- The user's **payment methods** remain attached to the profile for any further charges that may be needed.
+- The user's **billing details** remain on the profile.
+- The full history of the user's **credits, day passes, payments, invoices, bookings, and activities** is preserved on the profile and continues to be visible to administrators.
+- The user keeps access to any [companies](/admin/customer-management/companies/set-up-companies) they belong to — their company membership and any active company subscription are not affected.
+- Administrators can [restore the user as a member](#reinvite-a-user) at any time without re-entering their information.
+
+<Info>
+  If the user was an [administrator](/admin/administration/administrators/administrators), the administrator role is not revoked automatically when they are moved to nonmembers. To revoke admin access, open the user's profile and turn off the **Administrator** switch, or remove them from the administrators list. See [Manage administrators](/admin/administration/administrators/administrators).
+</Info>
+
+## Delete a nonmember
+
+Administrators can delete nonmembers from a location when their profile is no longer needed.
+
+1. Go to the **Customers** page in the necessary location.
+2. Switch the filter at the top to **Nonmembers**.
+3. Open the nonmember's profile.
+4. Press the `…` menu in the top right and select `Delete`.
+5. Confirm your choice.
+
+<Frame>
+  ![Screenshot Placeholder Delete Nonmember](/images/placeholder-delete-nonmember.png)
+</Frame>
+
+<Info>
+  Screenshot placeholder — replace with the latest RNTOR nonmember profile screenshot showing the `…` → `Delete` action.
+</Info>
+
+<Info>
+  When a nonmember is deleted, their location profile is removed and administrators can no longer view their past data at this location or reinvite them from the **Nonmembers** list. The user can still appear again if they perform any action at this location — such as making a booking, payment, or order — at which point a fresh nonmember profile is created.
+</Info>
+
+## Reinvite a user
+
+RNTOR keeps every nonmember who has ever interacted with your location available on the **Customers** page. Administrators can promote a nonmember back to **Members** without retyping their information.
+
+<Info>
+  You can reinvite only users who appear on the **Customers → Nonmembers** list. Users whose nonmember profile has been [deleted](#delete-a-nonmember) need to be added again from scratch.
+</Info>
+
+To make a user who appears among nonmembers your member immediately:
+
+1. Go to the **Customers** page and switch the filter at the top to **Nonmembers**.
+2. Open the profile of the user you want to restore.
+3. In the **"This user is a nonmember"** banner at the top of the profile, press `Invite as member`.
+
+<Frame>
+  ![Screenshot Placeholder Invite As Member](/images/placeholder-invite-as-member.png)
+</Frame>
+
+<Info>
+  Screenshot placeholder — replace with the latest RNTOR nonmember profile screenshot showing the `Invite as member` banner.
+</Info>
+
+Once invited:
+
+- The user immediately appears on **Customers → Members** at this location.
+- The user receives an email invitation to access the member web portal or mobile app.
+- All their previous history — invoices, payments, credits, day passes, bookings, billing details, payment methods, internal notes, and attachments — remains intact.
+- Administrators can now [create or edit a subscription](/admin/billing/subscriptions/edit-a-subscription) and manage other member properties on the profile.
