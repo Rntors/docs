@@ -58,13 +58,6 @@ Administrators enable the _Auto-remove members_ property, which allows them to a
 
 With the _Auto-remove members_ switch enabled, individual members or companies become [nonmembers](/admin/customer-management/users/nonmembers) when their subscription expires at this location. The expiration date depends on the _End date_ set inside the subscription. Administrators can set the expiration date when [creating](/admin/billing/subscriptions/set-up-subscriptions) or [editing](/admin/billing/subscriptions/edit-a-subscription) the subscription.
 
-A daily background job runs once per day to apply this rule. When the toggle is on for a location, the job will, for each user at that location:
-
-- Move the user to **Nonmembers** at this location only.
-- Clear their location-scoped admin / manager rights for this location.
-- Leave their access at any other location of the same merchant untouched.
-- Skip the action entirely if the user is a Merchant Owner or Super Admin.
-
 ### Notes
 
 When a **company subscription** expires, the company and its members **without personal subscriptions** become nonmembers at this location.
