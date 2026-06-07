@@ -1,3 +1,63 @@
 ---
-title: "company-members-and-managers"
+title: "Company members and managers"
 ---
+
+Your users can be grouped into companies. A company can have an unlimited number of company members and company managers.
+
+This article will help you understand the difference between these two groups of users and provide insight into what they can do.
+
+<Info>
+  To learn how to manage company members and managers, please see the [Set up companies](/admin/customer-management/companies/set-up-companies) doc.
+</Info>
+
+## Who is a company member
+
+A company member is a user who belongs to a specific company, can interact with all the resources assigned to their company, and share company subscription benefits, but cannot access or manage company billing.
+
+Here is the example of company members in the company:
+
+![Company members example](/images/company-members-example.png)
+
+## Who is a company manager
+
+A company manager is a company user who is responsible for the company's billing, receives and pays company invoices, and can manage payment methods and other company settings.
+
+Here is an example of the company manager selected in the company:
+
+![Company manager example](/images/company-manager-example.png)
+
+## What a company manager and a member can do
+
+### Subscription-related permissions
+
+| Permissions | Company manager | Company member |
+| --- | --- | --- |
+| Use company credits, check credit balance and transactions | ✓ | Yes, if enabled by a company manager |
+| Use company day passes, check day pass balance and transactions | ✓ | Yes, if enabled by a company manager |
+| Use company subscription discounts | ✓ | ✓ |
+| Get access to the space based on an access group in the company subscription | ✓ | ✓ |
+| Access resources assigned to the company | ✓ | ✓ |
+
+### Permissions to manage other company members
+
+| Permissions | Company manager | Company member |
+| --- | --- | --- |
+| [Invite new company members](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers) | ✓ | ✓ |
+| Delete other members and managers from the company | ✓ | ✗ |
+| Create room / desk / parking bookings for company members | ✓ | ✗ |
+
+### Billing-related permissions
+
+| Permissions | Company manager | Company member |
+| --- | --- | --- |
+| Use the "Company invoice" payment method to include payments in the company invoice | Yes, if enabled by the administrator in the company subscription | Yes, if enabled by a company manager |
+| Manage company "Pay with invoice" options | Yes, if enabled by the administrator in the company subscription | ✗ |
+| Make payments with a company card | ✓ | Only if enabled by a company manager |
+| Purchase credit packages for a company | ✓ | Only if a company manager permits using the company card for purchasing credit packages |
+| View transactions made with a company card | ✓ | ✗ |
+| View, receive, and pay company invoices | ✓ | ✗ |
+| View company subscription details | ✓ | ✗ |
+| Manage company payment methods | ✓ | ✗ |
+| Manage company payment method permissions | ✓ | ✗ |
+| Add company billing details | ✓ | ✗ |
+| Add company billing email | ✓ | ✗ |
