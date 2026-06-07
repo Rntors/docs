@@ -1,3 +1,119 @@
 ---
-title: "set-up-companies"
+title: "Set up companies"
 ---
+
+Administrators can add a single company, create several companies at once, invite members, assign or remove company managers, and edit company profiles at any time.
+
+![Set up companies overview](/images/companies/set-up-companies-video.png)
+
+## Create a company
+
+1. Open the **Customers** page and switch to the **Companies** tab.
+2. Click the menu (**…**) in the top-right and select **Create company**.
+
+![Create company menu](/images/companies/create-company-menu.png)
+
+3. Enter the company name and choose how new members are approved using the **Auto-approve new members** switch:
+   - **Enabled** — new members invited by company managers join automatically.
+   - **Disabled** — administrators review every join request from the **Customers → Requests** tab before a user becomes a member.
+4. Optionally upload a company logo and add the company website.
+5. Click **Create**. The company's creation timestamp is recorded on its profile under **Activities**.
+
+![New company modal](/images/companies/new-company-modal.png)
+
+6. From the company list, you can click **Create subscription** on a company row to attach a plan right away.
+
+![Company list with Create subscription](/images/companies/company-create-subscription.png)
+
+## Create multiple companies
+
+Prepare a spreadsheet with the following columns before importing:
+
+| Column name | Required |
+| --- | --- |
+| Name | Yes |
+| Plan ID | No — only if the company should have a subscription |
+
+<Info>
+  Plan IDs are listed on the **Plans** page in the dashboard. Open a plan to copy its ID from the plan details panel.
+</Info>
+
+To import several companies at once:
+
+1. Go to the **Customers** page → **Companies** tab.
+2. Click the menu (**…**) in the top-right and choose **Create multiple companies**.
+
+![Create multiple companies menu](/images/companies/create-multiple-companies.png)
+
+3. Paste the rows from your spreadsheet into the import window.
+4. Click **Create companies**.
+
+## Add company members and managers
+
+Each company is made up of **company members** and **company managers**. Managers have additional permissions for inviting and removing members within their own company.
+
+### As an administrator
+
+1. Open the company profile from the **Customers** page.
+2. On the right-hand panel use:
+   - **Add** — assign an existing user at this location to the company.
+   - **Invite** — send an invitation to a brand-new user and assign them to the company.
+   - **Mass invite** — invite several users at once and auto-assign them to the company.
+
+![Company members panel](/images/companies/company-members-panel.png)
+
+3. To promote someone, open the member's menu (**…**) and choose **Make manager**. Choose **Make member** to demote a manager back to a regular member.
+
+<Info>
+  Only administrators can assign or remove company managers.
+</Info>
+
+### As a company member
+
+1. The user opens **Membership → Members** under their company name in the customer portal.
+2. They click **Invite user** and enter the new user's name and email.
+3. What happens next depends on the company's settings:
+   - If **Auto-approve new members** is off, administrators receive the request under **Customers → Requests** and approve it before the user is added.
+   - If **Auto-approve new members** is on, the user is added to the company immediately.
+
+<Info>
+  Company members can only invite people who have not already been invited to the location.
+</Info>
+
+<Info>
+  A user can belong to only one company per location.
+</Info>
+
+## Remove company members
+
+### As an administrator
+
+1. Open the company profile.
+2. Click the menu (**…**) next to the member you want to remove.
+3. For a regular member, choose **Remove** to take them out of the company.
+4. For a company manager, choose **Make member** to keep them in the company without manager rights, or **Remove** to take them out of the company entirely.
+
+![Remove company member as admin](/images/companies/remove-company-member-admin.png)
+
+### As a company member
+
+Company managers can remove other members from inside the customer portal:
+
+1. Go to **Membership → Members** under the company name.
+2. Click the menu (**…**) next to the user and choose **Remove**.
+
+![Remove company member as member](/images/companies/remove-company-member-member.png)
+
+## Manage a company
+
+From the **Customers** page, open the **Companies** tab and click the menu (**…**) next to a company to manage it.
+
+- **Edit** — change the company name, logo, website, or the **Auto-approve new members** setting.
+- **Add** — assign existing users to the company.
+- **Invite** — invite new users and add them to the company.
+- **Mass invite** — invite a batch of users at once.
+- **Remove** — remove the company while keeping its members at the location.
+- **Remove with members** — remove the company and deactivate all of its members at the location.
+- **Create subscription** — attach a plan and start billing the company.
+
+![Manage company menu](/images/companies/manage-company-menu.png)
