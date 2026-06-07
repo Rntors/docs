@@ -1,5 +1,5 @@
 ---
-title: "Troubleshoot email delivery issues  "
+title: "Troubleshoot email delivery issues   "
 ---
 
 Members sometimes report that emails from the member web portal or mobile app never arrive. Use this guide to diagnose delivery issues with invitations, invoices, and login codes, and to improve overall deliverability.
@@ -14,9 +14,21 @@ If the email was not delivered, a red error message is shown:
 
 When the error message is present, the recipient's mail provider rejected the message. When no error is shown, the email was accepted by the provider and the issue is on the recipient's side of the inbox.
 
-![Invitation delivery error](/images/troubleshoot-email-invitation-error.png)
+![Screenshot 2026 06 07 At 3 27 39 PM](/images/Screenshot-2026-06-07-at-3.27.39-PM.png)
 
 ### If you see an error, follow these steps
+
+<Steps>
+  <Step title="Check the email address">
+    Make sure the invitee's email is spelled correctly. If there's a typo, [remove the user](/admin/customer-management/users/remove-users) and re-invite them with the correct email.
+  </Step>
+  <Step title="Ask the user to allow RNTOR emails">
+    Some corporate inboxes block messages from new senders. Ask the user (or their IT team) to allow emails from `noreply@rntor.com`.
+  </Step>
+  <Step title="Resend the invitation">
+    From the user's profile in **Customers**, send the invitation again. The user has 24 hours to follow the link before going through the standard login flow.
+  </Step>
+</Steps>
 
 1. Confirm the invitee's email address is spelled correctly. If there is a typo, remove the user and reinvite with the right address.
 2. If the address is correct, the recipient's email provider is blocking the message. Ask the member to contact their IT team or mail provider and whitelist messages from `noreply@rntor.com`.
@@ -41,6 +53,18 @@ If a member cannot find an invoice in their inbox:
 ## Login codes
 
 If a user is not receiving the one-time login code:
+
+<Steps>
+  <Step title="Check Promotions and Spam">
+    Login codes can be filtered into **Promotions** or **Spam**. Ask the user to check those folders.
+  </Step>
+  <Step title="Allow RNTOR emails">
+    Ask their email provider (or IT team) to allow messages from `noreply@rntor.com`.
+  </Step>
+  <Step title="Use the mobile app">
+    If the user is already signed in on another device, they can approve the login from the push notification on that device.
+  </Step>
+</Steps>
 
 1. Ask them to check the **Promotions** and **Spam** folders.
 2. Ask them to whitelist `noreply@rntor.com` with their mail provider.
