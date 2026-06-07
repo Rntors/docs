@@ -2,77 +2,69 @@
 title: "Troubleshoot email delivery issues    "
 ---
 
-Sometimes your members may not receive emails from the member web portal or mobile app. This guide explains how to troubleshoot delivery issues with invitations, invoices, and login codes.
+Sometimes your members may not be receiving emails from the member web portal and mobile app. We've gathered some tips to help you troubleshoot delivery issues with invitations to join locations and invoices.
 
 ## Invitations to join
 
-If a member cannot find their invitation, open the **Customers** page, select the user, and inspect the **Invitation** section.
+If a member cannot find the email invitation, go to **Customers**, select the user, and inspect the "Invitation" section.
 
-If the email wasn't delivered, you will see a red error message:
+If the email wasn't delivered successfully, you will see a "The invitation to…couldn't be delivered…" error message. If you do not see an error message, it means that the email was successfully delivered, and the issue is on the user's side of the email inbox.
 
-> The invitation email to [_user@example.com_](mailto:user@example.com) couldn't be delivered. Please verify the address and suggest the user check spam or contact their email provider.
+![Invitation delivery error](/images/troubleshoot-email-invitation-error.png)
 
-If you do not see an error message, the email was accepted by the provider and the issue is on the recipient's side.
+### If you see an error, follow these steps:
 
-<Frame>
-  ![Invitation delivery error](/images/Screenshot-2026-06-07-at-3.33.07-PM.png)
-</Frame>
+1. Make sure the invitee's email address is correct. If you made a typo, remove the user using the `Remove` button and reinvite with the correct email.
+2. If the email address is correct, the user's email service provider rejects RNTOR emails. Sometimes, corporate email inboxes have specific policies to restrict emails from new senders. Ask your member to contact their IT team if their email system is flagging RNTOR emails. They may want to check that emails from [noreply@rntor.com](mailto:noreply@rntor.com) are allowed.
+3. You can also additionally set up a [custom branded sender](#3-custom-branded-sender) for your account. After this, the emails will be sent from your custom email address. In some cases, this may help resolve delivery issues.
 
-### If you see an error, follow these steps
+Once your member resolves the issue, use the `Resend invite` button to send the invitation again.
 
-1. Make sure the invitee's email address is correct. If you made a typo, [remove the user](/admin/customer-management/users/remove-users) and reinvite with the correct email.
-2. If the address is correct, the recipient's mail provider rejected the email. Ask the member to contact their IT team or mail provider and whitelist emails from `noreply@rntor.com`.
-3. For ongoing deliverability problems, ask RNTOR support to configure a branded sender for your workspace (see [Custom branded sender](#3-custom-branded-sender)).
+### If you do not see an error, try these tips:
 
-Use the **Resend invite** button to send the invitation again after the issue is resolved.
-
-### If you do not see an error, try these tips
-
-- Ask the user to check their spam, promotions, and other folders.
-- Ask them to whitelist `noreply@rntor.com`.
-- Reinvite them using an alternative address (e.g. `@gmail.com`, `@outlook.com`).
+- Ask the user to check spam folders and other email filters, just in case emails are being sent there due to the email service providers.
+- Ask the user to allow emails from [noreply@rntor.com](mailto:noreply@rntor.com) as described in point 2 above.
+- Invite the user using their alternative secondary email address, such as @gmail.com or @hotmail.com.
 
 ## Invoices
 
-If a member cannot find an invoice in their inbox:
+If a member cannot find the invoice sent to the email, try the following:
 
-- Ask the user to check the inbox tied to their RNTOR account (visible on their **Account** page).
-- Confirm the invoice was sent from **Billing → Invoices → Send an invoice**.
-- For company invoices, confirm a [company manager](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers) is assigned and has a valid email.
+- Ask the user to check if they are looking for an invoice in the correct inbox. Users can always check under what email they have a registered account in the app on the **Account** page.
+- Double-check if the invoice was sent. Confirm the invoice was sent from **Billing → Invoices → Send an invoice**.
+- For company invoices, ensure that the company manager is selected and has a valid email address. See [Select company managers](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers).
 
 ## Login codes
 
-If a user is not receiving the one-time login code:
+If a user is not receiving the OTP code to log in, ask them to do the following:
 
-1. Ask them to check the **Promotions** or **Spam** folders.
-2. Ask them to whitelist `noreply@rntor.com` with their mail provider.
-3. If they are already logged in on another device, ask them to check the push notification on that device.
+1. Check the "Promotions" or "Spam" folders and any other email filters as the emails may be getting redirected there by mistake.
+2. Get in touch with their email service provider for guidance on how to allow emails from [noreply@rntor.com](mailto:noreply@rntor.com).
+3. If the user has already logged in on another device, ask them to check the login code sent as a push notification to that device as well.
 
 ## Improve email deliverability
 
-Most delivery problems are caused by recipient mail filters. The following improve inbox placement.
+Our team follows best practices to ensure emails land in the inbox and avoid spam filters. However, sometimes email delivery can be impacted by user-enabled inbox filters that block emails from external domains. Here's a list of recommendations to improve email deliverability for users:
 
-### 1. Whitelist the email address
+### 1. Whitelist the email address, add it to contacts, or mark an email as "Not spam."
 
-If the customer receives emails in the **Spam** folder, ask them to whitelist `noreply@rntor.com` in their provider:
+If the customer receives the emails in their "Spam" folder, suggest whitelisting our [noreply@rntor.com](mailto:noreply@rntor.com) transactional email address in their email service provider.
 
-- [Gmail instructions](https://support.google.com/mail/answer/1366858)
-- [Outlook instructions](https://support.microsoft.com/office/safe-senders-470d4ee6-e3b6-402b-8cd9-a6f00eda7339)
-- [Yahoo instructions](https://help.yahoo.com/kb/SLN28140.html)
+- Instructions for [Gmail](https://support.google.com/mail/answer/1366858).
+- Instructions for [Outlook](https://support.microsoft.com/office/safe-senders-470d4ee6-e3b6-402b-8cd9-a6f00eda7339).
+- Instructions for [Yahoo](https://help.yahoo.com/kb/SLN28140.html).
 
-### 2. Customize the email footer
+### 2. Customize the email footer.
 
-Personalize the footer of transactional emails with your business name, address, and legal information. This improves trust and reduces the chance of being flagged as spam.
+Personalize the footer of your transactional emails to include your business information, such as your company name, address, or legal disclaimers. This not only helps maintain a professional appearance but also maintains clarity and compliance.
 
 ### 3. Custom branded sender
 
-RNTOR can send your transactional emails from a branded address such as `hello@yourdomain.com` instead of the default `noreply@rntor.com`.
+Set up a custom branded sender to send emails from your branded email address. This ensures that all emails, including welcome messages, confirmations, and invoices, come from your custom address, providing a consistent and professional experience.
 
-This is currently **set up by RNTOR support** — it is not self-serve.
+This is currently **set up by RNTOR support** — it is not self-serve. To get started:
 
-How it works:
-
-1. [Contact our support team](mailto:support@rntor.com) and request a branded sender. Provide the email address you would like to use.
+1. [Contact our support team](mailto:support@rntor.com) and request a branded sender. Provide the email address you would like to use (e.g. `hello@yourdomain.com`).
 2. Support adds the domain to our email provider and returns a set of DNS records (typically SPF, DKIM, and MX entries).
 3. Add the DNS records at your domain provider (Cloudflare, GoDaddy, Namecheap, etc.).
 4. Notify support once the records are added. We verify the domain and switch your workspace to the branded sender.
@@ -84,6 +76,6 @@ If the domain is not yet verified, emails continue to be sent from the default `
 
 <AccordionGroup>
   <Accordion title="What should I do if troubleshooting steps didn't help?">
-    If the issue persists after completing all [troubleshooting steps in this guide](#improve-email-deliverability), [contact our support team](mailto:support@rntor.com) with the affected user's email address and the actions you have already taken so we can investigate.
+    If the issue persists after completing all troubleshooting steps, [contact our support team](mailto:support@rntor.com). Simply specify the actions already taken, provide the relevant user's email address and we'll help.
   </Accordion>
 </AccordionGroup>
