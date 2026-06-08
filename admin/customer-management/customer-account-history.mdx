@@ -1,3 +1,73 @@
 ---
 title: " Customer account history"
 ---
+
+Each customer profile has a chronological timeline of key changes to their membership role, billing settings, and subscriptions. It provides a single source of truth for your customer relationships.
+
+- A full timeline of a customer's journey, from their initial sign-up to changes in their membership role.
+- Billing settings changes that directly affect the customer's charges.
+- Accountability and the possibility to check which administrator performed a specific action, such as creating or canceling a customer's subscription, in case of mistakes.
+
+## Access customer account history
+
+1. Go to the **Customers** page \> "Members" or "Nonmembers" tab.
+2. Open the profile of the necessary user or company.
+3. Check the customer's account history under the "Internal notes" field.
+4. To see the exact date and time for a certain event, hover over the timestamp next to it.
+
+<Frame>
+  ![Customer profile activity timeline](/images/customer-account-history/profile-activity-timeline.png)
+</Frame>
+
+<Info>
+  The comprehensive account history is displayed starting from the date this feature was released. Account events that happened before this date aren't shown.
+</Info>
+
+## Common events and their meanings
+
+### Customer role
+
+| Event | Meaning |
+| --- | --- |
+| **Customer was created as a nonmember.** | Administrator [added a nonmember](/admin/customer-management/users/nonmembers). |
+| **Customer was created as a member.** | Administrator [invited a user](/admin/customer-management/users/members) or [created a company](/admin/customer-management/companies/set-up-companies). |
+| **Customer was created. \> Customer became a nonmember.** | User purchased or booked something and became a [nonmember](/admin/customer-management/users/nonmembers). |
+| **Customer was created. \> Customer signed up for a subscription. \> Customer became a member.** | User [signed up](/admin/billing/subscriptions/set-up-subscriptions) for a subscription and became a [member](/admin/customer-management/users/members). |
+| **Customer was created. \> Administrator moved customer to members.** | Administrator approved the user's [request to join](/admin/customer-management/users/requests-to-join) or the invitation of a user to the company. |
+| **Administrator moved customer to members.** | Administrator [invited or reinvited a nonmember](/admin/customer-management/users/members) to the community or [restored a company](/admin/customer-management/companies/set-up-companies). |
+| **Administrator moved customer to nonmembers.** | Administrator [removed a member](/admin/customer-management/users/remove-users) or [company](/admin/customer-management/companies/delete-a-company) from the community. |
+| **Customer became a nonmember.** | The company the user belonged to was removed with members, so the user automatically became a nonmember. |
+| **Customer requested to join as a member.** | User submitted a [request to join](/admin/customer-management/users/requests-to-join) the location as a member. |
+| **Customer canceled the request to join as a member.** | User canceled their pending request to join the location as a member. |
+| **Administrator approved the request for customer to join as a member.** | Administrator approved the user's request to join the location as a member. |
+| **Administrator rejected the request for customer to join as a member.** | Administrator rejected the user's request to join the location as a member. |
+
+### Company management
+
+| Event | Meaning |
+| --- | --- |
+| **Administrator changed the company name.** | Administrator edited the company name. |
+| **Administrator added/removed a user to/from company.** | Administrator added or removed an existing member to/from the company. |
+| **Administrator made a user a company manager/company member.** | Administrator changed the user's role within the company. |
+| **User was added to company.** | <ul><li>User signed up for a company subscription and was automatically added to the company as a manager, or</li><li>Administrator invited a user directly to the company or approved the invitation of a user to the company.</li></ul> |
+| **User was removed from company.** | Company was removed, and the user was automatically removed from it. |
+| **User became a company member.** | Company was removed, and the user automatically lost a company manager role in it. |
+
+### Subscription and billing settings
+
+| Event | Meaning |
+| --- | --- |
+| **Customer signed up for a subscription. \> The subscription was created for customer.** | User [signed up](/admin/billing/subscriptions/set-up-subscriptions) for a personal or company subscription. |
+| **Administrator created a subscription for customer.** | Administrator [created a subscription](/admin/billing/subscriptions/set-up-subscriptions) for a user or company. |
+| **The subscription for customer started.** | The subscription started according to its selected start date. |
+| **Administrator canceled the subscription for customer.** | Administrator [canceled the subscription](/admin/billing/subscriptions/set-up-subscriptions). |
+| **The subscription was canceled for customer.** | The customer was removed from the community, and their subscription was automatically canceled. |
+| **Administrator enabled/disabled Auto-pay for customer.** | Administrator changed the [Auto-pay setting](/admin/customer-management/companies/company-payment-method-permissions) for the customer, which might have affected whether invoices were auto-charged. |
+
+### Administrator rights
+
+| Event | Meaning |
+| --- | --- |
+| **Administrator made user an administrator/revoked the administrator rights from a user.** | Administrator enabled or disabled the ["Administrator" role](/admin/administration/administrators/administrators) for a user. |
+| **Administrator moved a user to nonmembers and revoked the administrator rights from the user.** | Administrator [removed](/admin/customer-management/users/remove-users) another administrator from community, and they automatically lost their administrator rights. |
+| **Customer became a nonmember and lost the administrator rights.** | The company administrator belonged to was removed from the community together with its members, so the user automatically lost their administrator rights and became a nonmember. |
