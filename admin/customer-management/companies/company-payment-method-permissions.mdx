@@ -1,3 +1,76 @@
 ---
 title: "Company payment method permissions"
 ---
+
+Companies can have different [payment methods](https://help.spacebring.com/en/articles/9849600-customer-payment-method-permissions), such as company cards, invoice, credits, and day passes. By default, all company managers can use them. However, company managers and administrators can set permissions for each method to control who can use it — only managers or both managers and members.
+
+This is useful when managers want to restrict company members from using certain payment methods.
+
+## Manage payment method permissions
+
+Company payment method permissions can be managed by both [company managers](/admin/customer-management/companies/company-members-and-managers#who-is-a-company-manager) and [administrators](/admin/administration/administrators/add-administrators).
+
+### As a company manager
+
+To manage permissions, company managers follow these steps:
+
+1. Go to **Locations \> Membership \>** section with their _company_ name **\> Billing**.
+
+![Membership billing section](/images/company-payment-permissions-membership.png)
+
+2. In the "Payment methods" section, click (...) next to the necessary payment method \> `Edit`.
+
+![Edit payment method](/images/company-payment-permissions-edit.png)
+
+3. Set permissions on using this payment method for each service.
+
+![Set permissions per service](/images/company-payment-permissions-services.png)
+
+- **Company managers** — only company managers can use this payment method for this service.
+- **Company members** — both company managers and members can use this payment method for this service.
+
+4. Press `Save`.
+
+<Info>
+  Company managers can use the "Company invoice" payment method and manage its permissions only if administrators [enabled the "Pay with invoice"](https://help.spacebring.com/en/articles/9089989-pay-with-invoice-payment-method) options in the company's subscription.
+</Info>
+
+<Info>
+  By default, permissions for company invoice, credits, and day passes are set to "Company members", while permissions for company cards are set to "Company managers".
+</Info>
+
+### As an administrator
+
+To manage permissions, administrators follow these steps:
+
+1. Go to **Customers \>** open a necessary company.
+2. In the "Payment methods" section, click (...) next to the necessary payment method \> `Edit`.
+
+![Admin edit payment method](/images/company-payment-permissions-admin.png)
+
+3. Set permissions on using this payment method for each service \> `Save`.
+
+## How payment method permissions work
+
+If company members are allowed to use a company payment method for a service, they can see it in the "Payment" section throughout the app and can use it when making payments.
+
+![Payment section example](/images/company-payment-permissions-payment-section.png)
+
+<Info>
+  If ["Require billing details"](https://help.spacebring.com/en/articles/8884328-billing-details) is enabled, the company's billing details must be added for company members to be able to make payments with the company's card or "Company invoice". Company managers or administrators can [add the company's billing details](https://help.spacebring.com/en/articles/8884328-billing-details).
+</Info>
+
+Company managers can view transactions made with company payment methods:
+
+- **Membership \> Billing \> Transactions** — payments made with the company card.
+- **Membership \> Billing \>** "Upcoming invoice" — payments made with the company invoice.
+- **Membership \> Credits \> Transactions** — payments made with the company credits.
+- **Membership \> Day passes \> Transactions** — payments made with the company day passes.
+
+## Tips
+
+If company managers want to control company spending and balances, they can restrict a payment method's permissions to "Company managers" and always make bookings on behalf of their colleagues when needed.
+
+To do this, when making a booking, company managers will see a "Booker" section where they can select their company member instead of themselves and use a company payment method.
+
+![Booker selector example](/images/company-payment-permissions-booker.png)
