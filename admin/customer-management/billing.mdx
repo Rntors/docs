@@ -1,5 +1,5 @@
 ---
-title: "Billing"
+title: "Billing "
 ---
 
 Customers can access and manage their own billing data and settings in the customer portal, while certain aspects can only be managed by administrators from the admin dashboard.
@@ -9,35 +9,46 @@ Customers can access and manage their own billing data and settings in the custo
 To view and manage a customer's billing data and settings, administrators go to **Customers** \> open the user or company profile.
 
 1. For companies, click **(…)** in the top right \> `Edit` to update the company name, logo, and contact details.
+
+<Frame>
+  ![Screenshot 2026 06 09 At 2 00 29 PM](/images/Screenshot-2026-06-09-at-2.00.29-PM.png)
+</Frame>
+
 2. Open the customer's **subscription** to:
-   - Edit it based on the new contract terms.
-   - Pause payment collection for the customer.
-   - View the upcoming invoice.
+
+- [Edit it](/admin/billing/subscriptions/edit-a-subscription) based on the new contract terms.
+- [Pause payment collection](/admin/billing/subscriptions/control-invoice-issuance) for the customer.
+- View the [upcoming invoice](/admin/billing/invoices/upcoming-invoices).
+
+<Frame>
+  ![Screenshot 2026 06 09 At 2 03 57 PM](/images/Screenshot-2026-06-09-at-2.03.57-PM.png)
+</Frame>
+
 3. Go to the customer's profile to:
-   - Manage the **"Pay with invoice"** setting via the company-invoice payment method and its [permissions](/admin/customer-management/companies/company-payment-method-permissions) (including the **None** option to disable a specific service entirely).
-   - Manage the customer's invoices and view transactions.
-   - Download invoices and receipts.
-   - Manage the customer's money balance (credits and day passes).
-   - Manage pending invoice items before the next invoice is issued.
-   - View the customer's payment methods and check whether they have a default one.
-   - Open the customer's payment history in Stripe via the **View in Stripe** button (available when the Stripe integration is connected).
-   - View or update the [customer's billing details](/admin/customer-management/users/billing-details).
-   - For companies, manage the billing email to send company invoices and receipts to an **additional recipient** apart from the company managers.
-   - Manage the **Auto-pay** setting.
-   - Enable and apply an alternative currency for this customer.
+
+- Manage the **"[Pay with invoice](/admin/billing/payments/pay-with-invoice)"** setting via the company-invoice payment method and its [permissions](/admin/customer-management/companies/company-payment-method-permissions) (including the **None** option to disable a specific service entirely).
+- [Manage the customer's invoices](/admin/billing/invoices/track-and-manage-invoices) and view [transactions](/admin/billing/payments/payment-gateway).
+- [Download invoices](/admin/billing/invoices/download-an-invoice) and [receipts](/admin/billing/payments/receipts).
+- Manage pending invoice items.
+- View the customer's payment methods and check whether they have a [default one](/admin/billing/payments/payment-gateway).
+- Open the customer's payment history in Stripe via the **View in Stripe** button (available when the [Stripe integration](/admin/integrations/payments/stripe/stripe)is connected).
+- View or update the [customer's billing details](/admin/customer-management/users/billing-details).
+- For companies, manage the billing email to send company invoices and receipts to an additional recipient apart from the company managers.
+- Manage the [**Auto-pay**](/admin/billing/subscriptions/control-invoice-auto-charge) setting.
+- Enable and apply an [alternative currency](/admin/billing/currencies) for this customer.
 
 ## How company managers view and manage their company billing
 
 Company managers go to **Locations \> Membership \>** the section with their company name **\> Billing**. On this page, they can:
 
-- View and pay company invoices.
+- View and [pay company invoices](/admin/billing/invoices/pay-for-invoice).
 - View transactions made with company payment methods.
-- Download invoices and receipts.
-- View their company's money balance (credits and day passes).
+- [Download invoices](/admin/billing/invoices/download-an-invoice) and [receipts](/admin/billing/payments/receipts).
+- [View their company's money balance](/admin/billing/invoices/customer-money-balance).
 - Check their current subscription details.
-- Check their upcoming invoice.
-- Add a payment method, save it as default, change the default payment method, or delete a payment method.
-- [Manage company payment method permissions](/admin/customer-management/companies/company-payment-method-permissions) for company cards, company invoice, credits, and day passes — including setting a service to **None** to disable that payment path entirely.
+- Check their [upcoming invoice](/admin/billing/invoices/upcoming-invoices).
+- [Add a payment method, save it as default, change the default payment method, or delete a payment method.](/admin/billing/payments/payment-gateway)
+- [Manage company payment method permissions](/admin/customer-management/companies/company-payment-method-permissions) for company cards, company invoice, credits, and day passes.
 - Manage company [billing details](/admin/customer-management/users/billing-details).
 - Manage the company billing email to send invoices and receipts to an additional recipient apart from the company managers.
 
@@ -45,10 +56,10 @@ Company managers go to **Locations \> Membership \>** the section with their com
 
 Individual users go to **Locations \> Membership \> Billing** under the "Personal" section. On this page, they can:
 
-- View and pay their invoices, and view transactions.
-- Download invoices and receipts.
-- View their money balance.
+- View and [pay their invoices](/admin/billing/invoices/pay-for-invoice), and view transactions.
+- [Download invoices](/admin/billing/invoices/download-an-invoice) and [receipts](/admin/billing/payments/receipts).
+- [View their money balance](/admin/billing/invoices/customer-money-balance).
 - Check their current subscription details.
-- Check their upcoming invoice.
-- Add a payment method, save as default, change the default payment method, or delete a payment method.
+- Check their [upcoming invoice](/admin/billing/invoices/upcoming-invoices).
+- [Add a payment method, save as default, change the default payment method, or delete a payment method.](/admin/billing/payments/payment-gateway)
 - Manage their [billing details](/admin/customer-management/users/billing-details).
