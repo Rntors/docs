@@ -2,29 +2,32 @@
 title: "VERI*FACTU in Spain"
 ---
 
-Enable eInvoicing for Spain to generate compliant invoices and submit invoice records to AEAT.
+Enable Spain eInvoicing to automatically generate compliant eInvoices and submit invoice records to AEAT.
 
 RNTOR supports VERI FACTU eInvoicing for Spain and helps you stay compliant by:
 
-- Automatically generating eInvoices and credit notes in the Spain-required format
-- Registering and storing invoice records and submitting them to AEAT
+- Automatically generating eInvoices and credit notes in the required format
+- Registering and storing invoice records, then submitting them to AEAT
 - Adding QR codes to invoice PDFs that customers receive
 - Tracking eInvoice sync status for issued invoices
+- Validating billing details before invoices are issued
 
 <Info>
-  This feature is currently in beta. Its functionality and appearance are subject to change, and it may not be fully stable.
+  This feature is currently in beta. Its functionality and appearance are subject to change, and it may not be fully stable. We welcome your feedback at [support@rntor.com](mailto:support@rntor.com).
 </Info>
 
 ## Prerequisites
+
+To enable eInvoicing, ensure the following requirements are completed.
 
 ### Complete location billing details
 
 Your location billing details must be complete and accurate.
 
 1. Go to **Location settings \> General page \> Billing details** tab.
-2. Fill in your location billing details:
+2. Fill in your location billing details.
    - Legal business name
-   - Address, city, postal code, and country
+   - Address: Country, Address line 1, City, and Postal code are mandatory
    - Tax ID
    - Contact details: Email is mandatory
 
@@ -44,26 +47,37 @@ Your location billing details must be complete and accurate.
 
 Each customer must also have accurate billing details.
 
-1. Go to **Location settings \> Customers** and manage the **Require billing details** setting.
-2. To review or update customer details manually, go to the **Customers** page, open the customer profile, and locate **Billing details**.
+1. Go to **Location settings \> Customers** and manage the **Require billing details** setting depending on your needs:
+   - Enable this requirement for both individual users and companies.
+   - Or only for companies, if you need to generate eInvoices only for companies.
+   - New customers will be prompted to fill out their billing details at the first payment.
+   - Existing customers missing billing details will be prompted to update their details during their next payment.
+2. To review or update customer details manually:
+   - Go to the **Customers** page, open each customer profile, and locate the **Billing details** section.
+   - Alternatively, ask customers to update billing details on their own under **Membership \> Billing**.
 
 #### Requirements for companies
 
 For companies, complete billing details are required for eInvoices to be generated and synced.
 
-If company billing details are incomplete or invalid, invoices may remain in **Draft** status with a warning and cannot be issued.
+If a company billing profile is incomplete or invalid, invoices for that company will remain in **Draft** status with a warning and cannot be issued.
 
 #### Requirements for individual users
 
 For individual members, only fill in billing details if you want their invoices to be generated as eInvoices and synced as well.
 
+- If you do not want to generate eInvoices for individual members, leave their billing details, especially **Legal business name** and **Tax ID**, empty.
+- If at least one of these fields is filled for an individual member, RNTOR will attempt to sync their invoices as eInvoices.
+
 ## Enable eInvoicing
 
 1. Go to **Location settings \> Billing**.
 2. In the **Invoices** tab, enable the **eInvoicing** switch.
-3. In the registration section, click **Start verification process**.
-4. Complete the registration form with company and legal representative details.
-5. Your billing details and signed agreement will be submitted for verification. Verification may take a few business days.
+3. In the **VERI FACTU registration** section, click **Start verification process**.
+4. Complete the registration form with your company and legal representative billing details, and sign the agreement authorizing invoice record submission to AEAT.
+5. Your billing details and signed agreement will be submitted for verification.
+   - Verification may take a few business days. You can monitor it from the registration status.
+   - If prompted, click **Restart verification** to update billing details or take any required action.
 
 <Frame caption="Enable eInvoicing in Billing">
   ![Enable eInvoicing in Billing](/images/einvoicing/enable-einvoicing-billing.png)
@@ -71,15 +85,16 @@ For individual members, only fill in billing details if you want their invoices 
 
 ## How eInvoicing works
 
-After eInvoicing is enabled:
+After eInvoicing is enabled and the location is verified:
 
-- Invoices for customers with valid billing details are converted into compliant eInvoices.
-- Customers continue receiving invoice PDFs with a QR code linking to the invoice record.
-- Credit notes are also submitted if their original invoice was successfully synced.
+- All invoices for customers with valid billing details are automatically converted into compliant eInvoices, registered in the Spain eInvoicing system, and submitted to AEAT.
+- In parallel, customers continue receiving standard PDF invoices, now including a QR code linking to the invoice record.
 
 <Frame caption="QR code on invoice PDF">
   ![QR code on invoice PDF](/images/einvoicing/verifactu-qr-invoice-pdf.png)
 </Frame>
+
+- Credit notes are also submitted if their original invoice was successfully synced.
 
 ## Track eInvoice syncing
 
@@ -89,10 +104,18 @@ Each invoice has the eInvoice sync status indicated.
   ![eInvoice synced status](/images/einvoicing/einvoice-synced-status.png)
 </Frame>
 
-If an eInvoice fails to sync, the invoice will not be issued. The system displays **eInvoice sync failed** and shows a warning near the affected invoice.
+If an eInvoice fails to sync, for example because of invalid or missing customer billing details:
+
+- The invoice will not be issued.
+- The system will display:
+  - **eInvoice sync failed** status
+  - A warning next to the affected invoice
+  - A warning in the customer billing details area when details must be updated
 
 <Frame caption="eInvoice sync failed example">
   ![eInvoice sync failed example](/images/einvoicing/einvoice-sync-failed.png)
 </Frame>
 
-If prompted, update the customer's billing details and click **Issue** again.
+If prompted, update the customer's billing details or complete any required actions, and click **Issue** again.
+
+You can also see eInvoice sync status for all invoices from the **Invoices** page.
