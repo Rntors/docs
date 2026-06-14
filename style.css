@@ -1,53 +1,67 @@
-/* Arabic pages: keep Mintlify layout LTR, only make article text RTL */
-html[data-current-path^="/ar/"] {
+/* Arabic pages marker */
+html[data-current-path^="/ar/"],
+html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* Main article/content only */
+/* Flip Mintlify page columns without breaking layout */
+html[data-current-path^="/ar/"] main > div,
+html.rntor-arabic-docs main > div {
+  direction: rtl;
+}
+
+/* Keep article readable RTL */
 html[data-current-path^="/ar/"] article,
-html[data-current-path^="/ar/"] article .prose {
+html[data-current-path^="/ar/"] article .prose,
+html.rntor-arabic-docs article,
+html.rntor-arabic-docs article .prose {
   direction: rtl;
   text-align: right;
 }
 
-/* Headings and paragraphs inside article */
-html[data-current-path^="/ar/"] article h1,
-html[data-current-path^="/ar/"] article h2,
-html[data-current-path^="/ar/"] article h3,
-html[data-current-path^="/ar/"] article h4,
-html[data-current-path^="/ar/"] article p,
-html[data-current-path^="/ar/"] article li {
+/* Keep left/right docs sidebars readable */
+html[data-current-path^="/ar/"] aside,
+html.rntor-arabic-docs aside {
   direction: rtl;
   text-align: right;
 }
 
-/* Lists inside article */
+/* Reset inner content cards/images so they don't get weird */
+html[data-current-path^="/ar/"] article img,
+html[data-current-path^="/ar/"] article iframe,
+html[data-current-path^="/ar/"] article video,
+html.rntor-arabic-docs article img,
+html.rntor-arabic-docs article iframe,
+html.rntor-arabic-docs article video {
+  direction: ltr;
+}
+
+/* Lists */
 html[data-current-path^="/ar/"] article ul,
-html[data-current-path^="/ar/"] article ol {
+html[data-current-path^="/ar/"] article ol,
+html.rntor-arabic-docs article ul,
+html.rntor-arabic-docs article ol {
   direction: rtl;
   text-align: right;
   padding-right: 1.5rem;
   padding-left: 0;
 }
 
-/* Tables inside article */
-html[data-current-path^="/ar/"] article table {
+/* Tables */
+html[data-current-path^="/ar/"] article table,
+html.rntor-arabic-docs article table {
   direction: rtl;
   text-align: right;
 }
 
 /* Keep code readable */
-html[data-current-path^="/ar/"] article pre,
-html[data-current-path^="/ar/"] article code,
-html[data-current-path^="/ar/"] article kbd {
+html[data-current-path^="/ar/"] pre,
+html[data-current-path^="/ar/"] code,
+html[data-current-path^="/ar/"] kbd,
+html.rntor-arabic-docs pre,
+html.rntor-arabic-docs code,
+html.rntor-arabic-docs kbd {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
-}
-
-/* Optional: Arabic text inside sidebars, but do not flip sidebar layout */
-html[data-current-path^="/ar/"] aside a,
-html[data-current-path^="/ar/"] aside button,
-html[data-current-path^="/ar/"] aside span {
-  text-align: right;
 }
