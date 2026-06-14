@@ -1,44 +1,53 @@
-/* Arabic docs text direction only — do not flip Mintlify layout containers */
+/* Arabic pages: keep Mintlify layout LTR, only make article text RTL */
+html[data-current-path^="/ar/"] {
+  direction: ltr;
+}
+
+/* Main article/content only */
 html[data-current-path^="/ar/"] article,
-html[data-current-path^="/ar/"] .prose,
-html[data-current-path^="/ar/"] [class*="content"],
-html[data-current-path^="/ar/"] [class*="markdown"] {
+html[data-current-path^="/ar/"] article .prose {
   direction: rtl;
   text-align: right;
 }
 
-/* Arabic sidebar/nav text only */
-html[data-current-path^="/ar/"] aside a,
-html[data-current-path^="/ar/"] aside button,
-html[data-current-path^="/ar/"] aside span,
-html[data-current-path^="/ar/"] nav a,
-html[data-current-path^="/ar/"] nav button,
-html[data-current-path^="/ar/"] nav span {
+/* Headings and paragraphs inside article */
+html[data-current-path^="/ar/"] article h1,
+html[data-current-path^="/ar/"] article h2,
+html[data-current-path^="/ar/"] article h3,
+html[data-current-path^="/ar/"] article h4,
+html[data-current-path^="/ar/"] article p,
+html[data-current-path^="/ar/"] article li {
   direction: rtl;
   text-align: right;
 }
 
-/* Lists */
+/* Lists inside article */
 html[data-current-path^="/ar/"] article ul,
-html[data-current-path^="/ar/"] article ol,
-html[data-current-path^="/ar/"] .prose ul,
-html[data-current-path^="/ar/"] .prose ol {
+html[data-current-path^="/ar/"] article ol {
+  direction: rtl;
+  text-align: right;
   padding-right: 1.5rem;
   padding-left: 0;
 }
 
-/* Tables */
-html[data-current-path^="/ar/"] article table,
-html[data-current-path^="/ar/"] .prose table {
+/* Tables inside article */
+html[data-current-path^="/ar/"] article table {
   direction: rtl;
   text-align: right;
 }
 
 /* Keep code readable */
-html[data-current-path^="/ar/"] pre,
-html[data-current-path^="/ar/"] code,
-html[data-current-path^="/ar/"] kbd {
+html[data-current-path^="/ar/"] article pre,
+html[data-current-path^="/ar/"] article code,
+html[data-current-path^="/ar/"] article kbd {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
+}
+
+/* Optional: Arabic text inside sidebars, but do not flip sidebar layout */
+html[data-current-path^="/ar/"] aside a,
+html[data-current-path^="/ar/"] aside button,
+html[data-current-path^="/ar/"] aside span {
+  text-align: right;
 }
