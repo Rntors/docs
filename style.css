@@ -1,37 +1,43 @@
-html[data-current-path^="/ar/"] {
-  direction: rtl;
-}
-
-html[data-current-path^="/ar/"] body,
-html[data-current-path^="/ar/"] main,
+/* Arabic docs text direction only — do not flip Mintlify layout containers */
 html[data-current-path^="/ar/"] article,
-html[data-current-path^="/ar/"] aside,
-html[data-current-path^="/ar/"] nav,
-html[data-current-path^="/ar/"] mdx-content,
-html[data-current-path^="/ar/"] #content,
-html[data-current-path^="/ar/"] #content-area,
-html[data-current-path^="/ar/"] #sidebar,
-html[data-current-path^="/ar/"] #sidebar-content,
-html[data-current-path^="/ar/"] .prose {
+html[data-current-path^="/ar/"] .prose,
+html[data-current-path^="/ar/"] [class*="content"],
+html[data-current-path^="/ar/"] [class*="markdown"] {
   direction: rtl;
   text-align: right;
 }
 
-html[data-current-path^="/ar/"] ul,
-html[data-current-path^="/ar/"] ol {
+/* Arabic sidebar/nav text only */
+html[data-current-path^="/ar/"] aside a,
+html[data-current-path^="/ar/"] aside button,
+html[data-current-path^="/ar/"] aside span,
+html[data-current-path^="/ar/"] nav a,
+html[data-current-path^="/ar/"] nav button,
+html[data-current-path^="/ar/"] nav span {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Lists */
+html[data-current-path^="/ar/"] article ul,
+html[data-current-path^="/ar/"] article ol,
+html[data-current-path^="/ar/"] .prose ul,
+html[data-current-path^="/ar/"] .prose ol {
   padding-right: 1.5rem;
   padding-left: 0;
 }
 
-html[data-current-path^="/ar/"] table {
+/* Tables */
+html[data-current-path^="/ar/"] article table,
+html[data-current-path^="/ar/"] .prose table {
   direction: rtl;
   text-align: right;
 }
 
+/* Keep code readable */
 html[data-current-path^="/ar/"] pre,
 html[data-current-path^="/ar/"] code,
-html[data-current-path^="/ar/"] kbd,
-html[data-current-path^="/ar/"] code-block {
+html[data-current-path^="/ar/"] kbd {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
