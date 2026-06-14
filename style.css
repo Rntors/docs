@@ -4,16 +4,87 @@ html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* Arabic text direction */
-html[data-current-path^="/ar/"] article,
-html[data-current-path^="/ar/"] article .prose,
-html.rntor-arabic-docs article,
-html.rntor-arabic-docs article .prose {
-  direction: rtl;
-  text-align: right;
+/* =========================
+   DESKTOP LAYOUT ONLY
+   ========================= */
+
+@media (min-width: 1024px) {
+  /* Main sidebar: right side, aligned with docs container, not stuck to edge */
+  html[data-current-path^="/ar/"] nav#sidebar,
+  html.rntor-arabic-docs nav#sidebar {
+    left: auto !important;
+    right: max(1.5rem, calc((100vw - 1120px) / 2)) !important;
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  /* Reserve space on the right for the sidebar */
+  html[data-current-path^="/ar/"] main#content-container,
+  html.rntor-arabic-docs main#content-container {
+    padding-left: 0 !important;
+    padding-right: 21rem !important;
+  }
+
+  /* Put "On this page" on the LEFT, keep article in the middle */
+  html[data-current-path^="/ar/"] main#content-container > div,
+  html.rntor-arabic-docs main#content-container > div {
+    flex-direction: row !important;
+    justify-content: center !important;
+  }
 }
 
-/* Article text */
+/* =========================
+   SIDEBAR RTL TEXT
+   ========================= */
+
+html[data-current-path^="/ar/"] #sidebar-content,
+html.rntor-arabic-docs #sidebar-content {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 1rem !important;
+  padding-left: 2rem !important;
+}
+
+html[data-current-path^="/ar/"] #navigation-items,
+html.rntor-arabic-docs #navigation-items {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[data-current-path^="/ar/"] #navigation-items a,
+html[data-current-path^="/ar/"] #navigation-items button,
+html.rntor-arabic-docs #navigation-items a,
+html.rntor-arabic-docs #navigation-items button {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Sidebar group headers */
+html[data-current-path^="/ar/"] .sidebar-group-header,
+html[data-current-path^="/ar/"] .sidebar-title,
+html.rntor-arabic-docs .sidebar-group-header,
+html.rntor-arabic-docs .sidebar-title {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* =========================
+   ARTICLE RTL
+   ========================= */
+
+html[data-current-path^="/ar/"] article,
+html.rntor-arabic-docs article {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[data-current-path^="/ar/"] article .prose,
+html.rntor-arabic-docs article .prose {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Force text elements inside article to RTL */
 html[data-current-path^="/ar/"] article h1,
 html[data-current-path^="/ar/"] article h2,
 html[data-current-path^="/ar/"] article h3,
@@ -22,6 +93,11 @@ html[data-current-path^="/ar/"] article h5,
 html[data-current-path^="/ar/"] article h6,
 html[data-current-path^="/ar/"] article p,
 html[data-current-path^="/ar/"] article li,
+html[data-current-path^="/ar/"] article blockquote,
+html[data-current-path^="/ar/"] article figcaption,
+html[data-current-path^="/ar/"] article td,
+html[data-current-path^="/ar/"] article th,
+html[data-current-path^="/ar/"] article span,
 html.rntor-arabic-docs article h1,
 html.rntor-arabic-docs article h2,
 html.rntor-arabic-docs article h3,
@@ -29,9 +105,14 @@ html.rntor-arabic-docs article h4,
 html.rntor-arabic-docs article h5,
 html.rntor-arabic-docs article h6,
 html.rntor-arabic-docs article p,
-html.rntor-arabic-docs article li {
-  direction: rtl;
-  text-align: right;
+html.rntor-arabic-docs article li,
+html.rntor-arabic-docs article blockquote,
+html.rntor-arabic-docs article figcaption,
+html.rntor-arabic-docs article td,
+html.rntor-arabic-docs article th,
+html.rntor-arabic-docs article span {
+  direction: rtl !important;
+  text-align: right !important;
 }
 
 /* Lists */
@@ -39,96 +120,57 @@ html[data-current-path^="/ar/"] article ul,
 html[data-current-path^="/ar/"] article ol,
 html.rntor-arabic-docs article ul,
 html.rntor-arabic-docs article ol {
-  direction: rtl;
-  text-align: right;
-  padding-right: 1.5rem;
-  padding-left: 0;
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 1.5rem !important;
+  padding-left: 0 !important;
 }
 
 /* Tables */
 html[data-current-path^="/ar/"] article table,
 html.rntor-arabic-docs article table {
-  direction: rtl;
-  text-align: right;
+  direction: rtl !important;
+  text-align: right !important;
 }
 
-/* Keep code readable */
+/* Keep images/cards normal */
+html[data-current-path^="/ar/"] article img,
+html[data-current-path^="/ar/"] article iframe,
+html[data-current-path^="/ar/"] article video,
+html.rntor-arabic-docs article img,
+html.rntor-arabic-docs article iframe,
+html.rntor-arabic-docs article video {
+  direction: ltr !important;
+}
+
+/* Keep code readable LTR */
 html[data-current-path^="/ar/"] article pre,
 html[data-current-path^="/ar/"] article code,
 html[data-current-path^="/ar/"] article kbd,
 html.rntor-arabic-docs article pre,
 html.rntor-arabic-docs article code,
 html.rntor-arabic-docs article kbd {
-  direction: ltr;
-  text-align: left;
+  direction: ltr !important;
+  text-align: left !important;
   unicode-bidi: embed;
 }
 
-/* Desktop Arabic layout */
-@media (min-width: 1024px) {
-  /* Move main sidebar to the right */
-  html[data-current-path^="/ar/"] nav#sidebar,
-  html.rntor-arabic-docs nav#sidebar {
-    right: max(1.5rem, calc((100vw - 1280px) / 2)) !important;
-    left: auto !important;
-    direction: rtl;
-    text-align: right;
-  }
+/* =========================
+   ON THIS PAGE - LEFT COLUMN
+   ========================= */
 
-  /* Reserve space on the right so sidebar does NOT overlap content */
-  html[data-current-path^="/ar"] main#content-container,
-  html.rntor-arabic-docs main#content-container {
-    padding-left: 0 !important;
-    padding-right: 21rem !important;
-  }
-
-  /* Keep the content and "On this page" layout stable */
-  html[data-current-path^="/ar/"] main#content-container > div,
-  html.rntor-arabic-docs main#content-container > div {
-    flex-direction: row-reverse !important;
-  }
-}
-
-/* Sidebar content */
-html[data-current-path^="/ar/"] #sidebar-content,
-html.rntor-arabic-docs #sidebar-content {
-  padding-right: 1rem !important;
-  padding-left: 2rem !important;
-  direction: rtl;
-  text-align: right;
-}
-
-html[data-current-path^="/ar/"] #navigation-items,
-html.rntor-arabic-docs #navigation-items {
-  direction: rtl;
-  text-align: right;
-}
-
-html[data-current-path^="/ar/"] #navigation-items a,
-html[data-current-path^="/ar/"] #navigation-items button,
-html.rntor-arabic-docs #navigation-items a,
-html.rntor-arabic-docs #navigation-items button {
-  direction: rtl;
+html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
+html.rntor-arabic-docs main#content-container aside:not(#sidebar) {
+  direction: rtl !important;
   text-align: right !important;
 }
 
-/* Top navigation tabs */
-html[data-current-path^="/ar/"] header nav:has(a[href*="api-reference"]),
-html.rntor-arabic-docs header nav:has(a[href*="api-reference"]),
-html[data-current-path^="/ar/"] header div:has(> a[href*="api-reference"]),
-html.rntor-arabic-docs header div:has(> a[href*="api-reference"]) {
-  direction: ltr;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-html[data-current-path^="/ar/"] header nav:has(a[href*="api-reference"]) a,
-html.rntor-arabic-docs header nav:has(a[href*="api-reference"]) a,
-html[data-current-path^="/ar/"] header div:has(> a[href*="api-reference"]) a,
-html.rntor-arabic-docs header div:has(> a[href*="api-reference"]) a {
-  direction: rtl;
-  text-align: right;
+html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) a,
+html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) span,
+html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) button,
+html.rntor-arabic-docs main#content-container aside:not(#sidebar) a,
+html.rntor-arabic-docs main#content-container aside:not(#sidebar) span,
+html.rntor-arabic-docs main#content-container aside:not(#sidebar) button {
+  direction: rtl !important;
+  text-align: right !important;
 }
