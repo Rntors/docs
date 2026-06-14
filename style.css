@@ -64,28 +64,40 @@ html.rntor-arabic-docs nav#sidebar {
   /* Restore article/content width close to English layout */
 html[data-current-path^="/ar/"] #content-area,
 html.rntor-arabic-docs #content-area {
-  width: 920px !important;
-  max-width: 920px !important;
-  flex: 0 0 920px !important;
-  transform: translateX(-100px) !important;
+  width: 1120px !important;
+  max-width: 1120px !important;
+  flex: 0 0 1120px !important;
+  transform: translateX(-190px) !important;
 }
 
-html[data-current-path^="/ar/"] article,
-html.rntor-arabic-docs article {
+html[data-current-path^="/ar/"] #content-area article,
+html.rntor-arabic-docs #content-area article,
+html[data-current-path^="/ar/"] #content-area article > div,
+html.rntor-arabic-docs #content-area article > div,
+html[data-current-path^="/ar/"] #content-area article .prose,
+html.rntor-arabic-docs #content-area article .prose {
   width: 100% !important;
-  max-width: 920px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: none !important;
 }
 
-html[data-current-path^="/ar/"] article .prose,
-html.rntor-arabic-docs article .prose {
-  max-width: 920px !important;
+html[data-current-path^="/ar/"] #content-area article .prose > *,
+html.rntor-arabic-docs #content-area article .prose > *,
+html[data-current-path^="/ar/"] #content-area article > div > *,
+html.rntor-arabic-docs #content-area article > div > * {
+  max-width: 100% !important;
+}
+
+html[data-current-path^="/ar/"] #content-area figure,
+html.rntor-arabic-docs #content-area figure,
+html[data-current-path^="/ar/"] #content-area .not-prose,
+html.rntor-arabic-docs #content-area .not-prose {
   width: 100% !important;
+  max-width: 100% !important;
 }
 
-html[data-current-path^="/ar/"] article .prose > *,
-html.rntor-arabic-docs article .prose > * {
+html[data-current-path^="/ar/"] #content-area img,
+html.rntor-arabic-docs #content-area img {
+  width: 100% !important;
   max-width: 100% !important;
 }
 }
