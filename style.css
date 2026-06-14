@@ -263,7 +263,7 @@ html.rntor-arabic-docs main#content-container aside:not(#sidebar) button {
 @media (min-width: 1024px) {
   html[data-current-path^="/ar/"] #table-of-contents,
   html.rntor-arabic-docs #table-of-contents {
-transform: translateX(100px) !important;
+transform: translateX(60px) !important;
     direction: rtl !important;
     text-align: right !important;
   }
