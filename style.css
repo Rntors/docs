@@ -4,76 +4,16 @@ html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* =========================
-   MAIN SIDEBAR - RIGHT SIDE
-   ========================= */
-
-@media (min-width: 1024px) {
-  html[data-current-path^="/ar/"] nav#sidebar,
-  html.rntor-arabic-docs nav#sidebar {
-    left: auto !important;
-    right: max(2rem, calc((100vw - 1180px) / 2)) !important;
-    direction: rtl;
-    text-align: right;
-  }
-
-  html[data-current-path^="/ar/"] main#content-container,
-  html.rntor-arabic-docs main#content-container {
-    padding-left: 0 !important;
-    padding-right: 19rem !important;
-  }
-
-  html[data-current-path^="/ar/"] main#content-container > div,
-  html.rntor-arabic-docs main#content-container > div {
-    flex-direction: row-reverse !important;
-    justify-content: center !important;
-    gap: 3rem !important;
-  }
-}
-
-/* Sidebar content */
-html[data-current-path^="/ar/"] #sidebar-content,
-html.rntor-arabic-docs #sidebar-content {
-  direction: rtl;
-  text-align: right;
-  padding-right: 1rem !important;
-  padding-left: 1.5rem !important;
-}
-
-html[data-current-path^="/ar/"] #navigation-items,
-html.rntor-arabic-docs #navigation-items {
-  direction: rtl;
-  text-align: right;
-}
-
-html[data-current-path^="/ar/"] #navigation-items a,
-html[data-current-path^="/ar/"] #navigation-items button,
-html.rntor-arabic-docs #navigation-items a,
-html.rntor-arabic-docs #navigation-items button {
-  direction: rtl;
-  text-align: right !important;
-  justify-content: flex-start;
-}
-
-/* =========================
-   ARTICLE - CENTER + RTL
-   ========================= */
-
+/* Arabic text direction */
 html[data-current-path^="/ar/"] article,
-html.rntor-arabic-docs article {
-  direction: rtl !important;
-  text-align: right !important;
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 html[data-current-path^="/ar/"] article .prose,
+html.rntor-arabic-docs article,
 html.rntor-arabic-docs article .prose {
-  direction: rtl !important;
-  text-align: right !important;
+  direction: rtl;
+  text-align: right;
 }
 
+/* Article text */
 html[data-current-path^="/ar/"] article h1,
 html[data-current-path^="/ar/"] article h2,
 html[data-current-path^="/ar/"] article h3,
@@ -82,9 +22,6 @@ html[data-current-path^="/ar/"] article h5,
 html[data-current-path^="/ar/"] article h6,
 html[data-current-path^="/ar/"] article p,
 html[data-current-path^="/ar/"] article li,
-html[data-current-path^="/ar/"] article blockquote,
-html[data-current-path^="/ar/"] article td,
-html[data-current-path^="/ar/"] article th,
 html.rntor-arabic-docs article h1,
 html.rntor-arabic-docs article h2,
 html.rntor-arabic-docs article h3,
@@ -92,12 +29,9 @@ html.rntor-arabic-docs article h4,
 html.rntor-arabic-docs article h5,
 html.rntor-arabic-docs article h6,
 html.rntor-arabic-docs article p,
-html.rntor-arabic-docs article li,
-html.rntor-arabic-docs article blockquote,
-html.rntor-arabic-docs article td,
-html.rntor-arabic-docs article th {
-  direction: rtl !important;
-  text-align: right !important;
+html.rntor-arabic-docs article li {
+  direction: rtl;
+  text-align: right;
 }
 
 /* Lists */
@@ -118,44 +52,83 @@ html.rntor-arabic-docs article table {
   text-align: right;
 }
 
-/* Keep code readable LTR */
+/* Keep code readable */
 html[data-current-path^="/ar/"] article pre,
 html[data-current-path^="/ar/"] article code,
 html[data-current-path^="/ar/"] article kbd,
 html.rntor-arabic-docs article pre,
 html.rntor-arabic-docs article code,
 html.rntor-arabic-docs article kbd {
-  direction: ltr !important;
-  text-align: left !important;
+  direction: ltr;
+  text-align: left;
   unicode-bidi: embed;
 }
 
-/* =========================
-   ON THIS PAGE - LEFT SIDE
-   ========================= */
+/* Desktop Arabic layout */
+@media (min-width: 1024px) {
+  /* Move main sidebar to the right */
+  html[data-current-path^="/ar/"] nav#sidebar,
+  html.rntor-arabic-docs nav#sidebar {
+    right: max(1.5rem, calc((100vw - 1280px) / 2)) !important;
+    left: auto !important;
+    direction: rtl;
+    text-align: right;
+  }
 
-html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
-html.rntor-arabic-docs main#content-container aside:not(#sidebar) {
+  /* Reserve space on the right so sidebar does NOT overlap content */
+  html[data-current-path^="/ar"] main#content-container,
+  html.rntor-arabic-docs main#content-container {
+    padding-left: 0 !important;
+    padding-right: 21rem !important;
+  }
+
+  /* Keep the content and "On this page" layout stable */
+  html[data-current-path^="/ar/"] main#content-container > div,
+  html.rntor-arabic-docs main#content-container > div {
+    flex-direction: row-reverse !important;
+  }
+}
+
+/* Sidebar content */
+html[data-current-path^="/ar/"] #sidebar-content,
+html.rntor-arabic-docs #sidebar-content {
+  padding-right: 1rem !important;
+  padding-left: 2rem !important;
   direction: rtl;
   text-align: right;
 }
 
-html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) a,
-html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) span,
-html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) button,
-html.rntor-arabic-docs main#content-container aside:not(#sidebar) a,
-html.rntor-arabic-docs main#content-container aside:not(#sidebar) span,
-html.rntor-arabic-docs main#content-container aside:not(#sidebar) button {
+html[data-current-path^="/ar/"] #navigation-items,
+html.rntor-arabic-docs #navigation-items {
   direction: rtl;
   text-align: right;
 }
 
-/* Images/videos should keep normal geometry */
-html[data-current-path^="/ar/"] article img,
-html[data-current-path^="/ar/"] article iframe,
-html[data-current-path^="/ar/"] article video,
-html.rntor-arabic-docs article img,
-html.rntor-arabic-docs article iframe,
-html.rntor-arabic-docs article video {
+html[data-current-path^="/ar/"] #navigation-items a,
+html[data-current-path^="/ar/"] #navigation-items button,
+html.rntor-arabic-docs #navigation-items a,
+html.rntor-arabic-docs #navigation-items button {
+  direction: rtl;
+  text-align: right !important;
+}
+
+/* Top navigation tabs */
+html[data-current-path^="/ar/"] header nav:has(a[href*="api-reference"]),
+html.rntor-arabic-docs header nav:has(a[href*="api-reference"]),
+html[data-current-path^="/ar/"] header div:has(> a[href*="api-reference"]),
+html.rntor-arabic-docs header div:has(> a[href*="api-reference"]) {
   direction: ltr;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+html[data-current-path^="/ar/"] header nav:has(a[href*="api-reference"]) a,
+html.rntor-arabic-docs header nav:has(a[href*="api-reference"]) a,
+html[data-current-path^="/ar/"] header div:has(> a[href*="api-reference"]) a,
+html.rntor-arabic-docs header div:has(> a[href*="api-reference"]) a {
+  direction: rtl;
+  text-align: right;
 }
