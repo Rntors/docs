@@ -4,32 +4,50 @@ html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* Keep content centered, only swap the two side columns */
-html[data-current-path^="/ar/"] main > div,
-html.rntor-arabic-docs main > div {
-  direction: ltr;
-}
-
-/* Left sidebar -> move to right */
-html[data-current-path^="/ar/"] main > div > aside:first-of-type,
-html.rntor-arabic-docs main > div > aside:first-of-type {
-  order: 3;
+/* Move main docs sidebar to the RIGHT */
+html[data-current-path^="/ar/"] nav#sidebar,
+html.rntor-arabic-docs nav#sidebar {
+  right: 0 !important;
+  left: auto !important;
   direction: rtl;
   text-align: right;
 }
 
-/* Article stays in the middle */
-html[data-current-path^="/ar/"] main > div > article,
-html.rntor-arabic-docs main > div > article {
-  order: 2;
+/* Sidebar inner spacing */
+html[data-current-path^="/ar/"] #sidebar-content,
+html.rntor-arabic-docs #sidebar-content {
+  padding-right: 1rem !important;
+  padding-left: 2rem !important;
   direction: rtl;
   text-align: right;
 }
 
-/* On this page sidebar -> move to left */
-html[data-current-path^="/ar/"] main > div > aside:last-of-type,
-html.rntor-arabic-docs main > div > aside:last-of-type {
-  order: 1;
+/* Sidebar navigation text/icons */
+html[data-current-path^="/ar/"] #navigation-items,
+html.rntor-arabic-docs #navigation-items {
+  direction: rtl;
+  text-align: right;
+}
+
+html[data-current-path^="/ar/"] #navigation-items a,
+html[data-current-path^="/ar/"] #navigation-items button,
+html.rntor-arabic-docs #navigation-items a,
+html.rntor-arabic-docs #navigation-items button {
+  direction: rtl;
+  text-align: right !important;
+}
+
+/* Move "On this page" column to the LEFT by changing the content grid direction */
+html[data-current-path^="/ar/"] main#content-container > div[class*="box-border"],
+html.rntor-arabic-docs main#content-container > div[class*="box-border"] {
+  flex-direction: row !important;
+}
+
+/* Keep article/content centered and RTL */
+html[data-current-path^="/ar/"] article,
+html[data-current-path^="/ar/"] article .prose,
+html.rntor-arabic-docs article,
+html.rntor-arabic-docs article .prose {
   direction: rtl;
   text-align: right;
 }
@@ -69,7 +87,7 @@ html.rntor-arabic-docs article table {
   text-align: right;
 }
 
-/* Keep code readable */
+/* Keep code readable LTR */
 html[data-current-path^="/ar/"] article pre,
 html[data-current-path^="/ar/"] article code,
 html[data-current-path^="/ar/"] article kbd,
