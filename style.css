@@ -35,7 +35,7 @@ html.rntor-arabic-docs header span {
    DESKTOP LAYOUT
    ========================= */
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px)   { 
   /* Move main sidebar to the right, aligned with docs layout */
 html[data-current-path^="/ar/"] nav#sidebar,
 html.rntor-arabic-docs nav#sidebar {
@@ -244,6 +244,7 @@ html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
 html.rntor-arabic-docs main#content-container aside:not(#sidebar) {
   direction: rtl !important;
   text-align: right !important;
+  transform: translateX(180px) !important;
 }
 
 html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) a,
