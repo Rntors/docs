@@ -282,13 +282,13 @@ transform: translateX(90px) !important;
     justify-content: flex-end !important;
   }
 
- /* Flip sidebar chevron arrows on Arabic pages */
-html[data-current-path^="/ar/"] nav#sidebar svg[class*="chevron"],
-html[data-current-path^="/ar/"] #sidebar-content svg[class*="chevron"],
-html[data-current-path^="/ar/"] #navigation-items svg[class*="chevron"],
-html.rntor-arabic-docs nav#sidebar svg[class*="chevron"],
-html.rntor-arabic-docs #sidebar-content svg[class*="chevron"],
-html.rntor-arabic-docs #navigation-items svg[class*="chevron"] {
+/* Force flip all chevrons in Arabic sidebar */
+html[data-current-path^="/ar/"] nav#sidebar [class*="chevron"],
+html[data-current-path^="/ar/"] #sidebar-content [class*="chevron"],
+html[data-current-path^="/ar/"] #navigation-items [class*="chevron"],
+html.rntor-arabic-docs nav#sidebar [class*="chevron"],
+html.rntor-arabic-docs #sidebar-content [class*="chevron"],
+html.rntor-arabic-docs #navigation-items [class*="chevron"] {
   transform: scaleX(-1) !important;
   transform-origin: center !important;
 }
