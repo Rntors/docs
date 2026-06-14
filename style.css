@@ -283,10 +283,9 @@ transform: translateX(90px) !important;
   }
 
   /* Flip sidebar chevrons only on Arabic pages */
-html[data-current-path^="/ar/"] #navigation-items a svg:last-of-type:not(:first-of-type),
-html[data-current-path^="/ar/"] #navigation-items button svg:last-of-type:not(:first-of-type),
-html.rntor-arabic-docs #navigation-items a svg:last-of-type:not(:first-of-type),
-html.rntor-arabic-docs #navigation-items button svg:last-of-type:not(:first-of-type) {
+html[data-current-path^="/ar/"] #navigation-items a svg:first-of-type:not(:last-of-type),
+html[data-current-path^="/ar/"] #navigation-items button svg:first-of-type:not(:last-of-type),
+html.rntor-arabic-docs #navigation-items a svg:first-of-type:not(:last-of-type),
+html.rntor-arabic-docs #navigation-items button svg:first-of-type:not(:last-of-type) {
   transform: rotate(180deg) !important;
-}
 }
