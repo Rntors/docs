@@ -4,10 +4,10 @@ html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* Move main docs sidebar to the RIGHT */
+/* Move main docs sidebar to the RIGHT, but not stuck to the screen edge */
 html[data-current-path^="/ar/"] nav#sidebar,
 html.rntor-arabic-docs nav#sidebar {
-  right: 0 !important;
+  right: max(1.5rem, calc((100vw - 1120px) / 2)) !important;
   left: auto !important;
   direction: rtl;
   text-align: right;
@@ -22,7 +22,7 @@ html.rntor-arabic-docs #sidebar-content {
   text-align: right;
 }
 
-/* Sidebar navigation text/icons */
+/* Sidebar navigation */
 html[data-current-path^="/ar/"] #navigation-items,
 html.rntor-arabic-docs #navigation-items {
   direction: rtl;
@@ -37,13 +37,13 @@ html.rntor-arabic-docs #navigation-items button {
   text-align: right !important;
 }
 
-/* Move "On this page" column to the LEFT by changing the content grid direction */
+/* Keep content centered while swapping side columns */
 html[data-current-path^="/ar/"] main#content-container > div[class*="box-border"],
 html.rntor-arabic-docs main#content-container > div[class*="box-border"] {
   flex-direction: row !important;
 }
 
-/* Keep article/content centered and RTL */
+/* Main article RTL */
 html[data-current-path^="/ar/"] article,
 html[data-current-path^="/ar/"] article .prose,
 html.rntor-arabic-docs article,
@@ -57,12 +57,16 @@ html[data-current-path^="/ar/"] article h1,
 html[data-current-path^="/ar/"] article h2,
 html[data-current-path^="/ar/"] article h3,
 html[data-current-path^="/ar/"] article h4,
+html[data-current-path^="/ar/"] article h5,
+html[data-current-path^="/ar/"] article h6,
 html[data-current-path^="/ar/"] article p,
 html[data-current-path^="/ar/"] article li,
 html.rntor-arabic-docs article h1,
 html.rntor-arabic-docs article h2,
 html.rntor-arabic-docs article h3,
 html.rntor-arabic-docs article h4,
+html.rntor-arabic-docs article h5,
+html.rntor-arabic-docs article h6,
 html.rntor-arabic-docs article p,
 html.rntor-arabic-docs article li {
   direction: rtl;
@@ -97,4 +101,19 @@ html.rntor-arabic-docs article kbd {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
+}
+
+/* Arabic top navigation */
+html[data-current-path^="/ar/"] header nav:has(a[href*="api-reference"]),
+html.rntor-arabic-docs header nav:has(a[href*="api-reference"]) {
+  direction: rtl;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+html[data-current-path^="/ar/"] header nav:has(a[href*="api-reference"]) a,
+html.rntor-arabic-docs header nav:has(a[href*="api-reference"]) a {
+  direction: rtl;
+  text-align: right;
 }
