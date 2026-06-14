@@ -40,7 +40,7 @@ html.rntor-arabic-docs header span {
 html[data-current-path^="/ar/"] nav#sidebar,
 html.rntor-arabic-docs nav#sidebar {
   left: auto !important;
-  right: max(0.75rem, calc((100vw - 1180px) / 2 - 116px)) !important;
+  right: max(0.75rem, calc((100vw - 1180px) / 2 - 122px)) !important;
   direction: rtl !important;
   text-align: right !important;
 }
