@@ -264,5 +264,21 @@ html.rntor-arabic-docs main#content-container aside:not(#sidebar) button {
   html[data-current-path^="/ar/"] #table-of-contents,
   html.rntor-arabic-docs #table-of-contents {
     transform: translateX(220px) !important;
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  html[data-current-path^="/ar/"] #table-of-contents *,
+  html.rntor-arabic-docs #table-of-contents * {
+    direction: rtl !important;
+    text-align: right !important;
+    unicode-bidi: plaintext !important;
+  }
+
+  html[data-current-path^="/ar/"] #table-of-contents a,
+  html[data-current-path^="/ar/"] #table-of-contents button,
+  html.rntor-arabic-docs #table-of-contents a,
+  html.rntor-arabic-docs #table-of-contents button {
+    justify-content: flex-end !important;
   }
 }
