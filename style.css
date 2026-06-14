@@ -1,19 +1,40 @@
-/* Keep Mintlify layout exactly as-is */
+/* Arabic pages marker */
 html[data-current-path^="/ar/"],
 html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* Only Arabic content text */
-html[data-current-path^="/ar/"] article,
-html[data-current-path^="/ar/"] article .prose,
-html.rntor-arabic-docs article,
-html.rntor-arabic-docs article .prose {
+/* Keep content centered, only swap the two side columns */
+html[data-current-path^="/ar/"] main > div,
+html.rntor-arabic-docs main > div {
+  direction: ltr;
+}
+
+/* Left sidebar -> move to right */
+html[data-current-path^="/ar/"] main > div > aside:first-of-type,
+html.rntor-arabic-docs main > div > aside:first-of-type {
+  order: 3;
   direction: rtl;
   text-align: right;
 }
 
-/* Headings, paragraphs, list items */
+/* Article stays in the middle */
+html[data-current-path^="/ar/"] main > div > article,
+html.rntor-arabic-docs main > div > article {
+  order: 2;
+  direction: rtl;
+  text-align: right;
+}
+
+/* On this page sidebar -> move to left */
+html[data-current-path^="/ar/"] main > div > aside:last-of-type,
+html.rntor-arabic-docs main > div > aside:last-of-type {
+  order: 1;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Article text */
 html[data-current-path^="/ar/"] article h1,
 html[data-current-path^="/ar/"] article h2,
 html[data-current-path^="/ar/"] article h3,
@@ -30,7 +51,7 @@ html.rntor-arabic-docs article li {
   text-align: right;
 }
 
-/* Lists inside article */
+/* Lists */
 html[data-current-path^="/ar/"] article ul,
 html[data-current-path^="/ar/"] article ol,
 html.rntor-arabic-docs article ul,
@@ -41,7 +62,7 @@ html.rntor-arabic-docs article ol {
   padding-left: 0;
 }
 
-/* Tables inside article */
+/* Tables */
 html[data-current-path^="/ar/"] article table,
 html.rntor-arabic-docs article table {
   direction: rtl;
@@ -58,14 +79,4 @@ html.rntor-arabic-docs article kbd {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
-}
-
-/* Sidebar text only, no layout flip */
-html[data-current-path^="/ar/"] aside a,
-html[data-current-path^="/ar/"] aside button,
-html[data-current-path^="/ar/"] aside span,
-html.rntor-arabic-docs aside a,
-html.rntor-arabic-docs aside button,
-html.rntor-arabic-docs aside span {
-  text-align: right;
 }
