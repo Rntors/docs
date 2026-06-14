@@ -244,7 +244,6 @@ html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
 html.rntor-arabic-docs main#content-container aside:not(#sidebar) {
   direction: rtl !important;
   text-align: right !important;
-  transform: translateX(180px) !important;
 }
 
 html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar) a,
