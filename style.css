@@ -282,13 +282,11 @@ transform: translateX(90px) !important;
     justify-content: flex-end !important;
   }
 
-/* Force flip all chevrons in Arabic sidebar */
-html[data-current-path^="/ar/"] nav#sidebar [class*="chevron"],
-html[data-current-path^="/ar/"] #sidebar-content [class*="chevron"],
-html[data-current-path^="/ar/"] #navigation-items [class*="chevron"],
-html.rntor-arabic-docs nav#sidebar [class*="chevron"],
-html.rntor-arabic-docs #sidebar-content [class*="chevron"],
-html.rntor-arabic-docs #navigation-items [class*="chevron"] {
+/* Flip only sidebar expand arrow wrapper */
+html[data-current-path^="/ar/"] #navigation-items button > span:last-child,
+html.rntor-arabic-docs #navigation-items button > span:last-child,
+html[data-current-path^="/ar/"] #navigation-items button > div:last-child,
+html.rntor-arabic-docs #navigation-items button > div:last-child {
   transform: scaleX(-1) !important;
   transform-origin: center !important;
 }
