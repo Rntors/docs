@@ -1,16 +1,10 @@
-/* Arabic pages marker */
+/* Keep Mintlify layout exactly as-is */
 html[data-current-path^="/ar/"],
 html.rntor-arabic-docs {
   direction: ltr;
 }
 
-/* Flip Mintlify page columns without breaking layout */
-html[data-current-path^="/ar/"] main > div,
-html.rntor-arabic-docs main > div {
-  direction: rtl;
-}
-
-/* Keep article readable RTL */
+/* Only Arabic content text */
 html[data-current-path^="/ar/"] article,
 html[data-current-path^="/ar/"] article .prose,
 html.rntor-arabic-docs article,
@@ -19,24 +13,24 @@ html.rntor-arabic-docs article .prose {
   text-align: right;
 }
 
-/* Keep left/right docs sidebars readable */
-html[data-current-path^="/ar/"] aside,
-html.rntor-arabic-docs aside {
+/* Headings, paragraphs, list items */
+html[data-current-path^="/ar/"] article h1,
+html[data-current-path^="/ar/"] article h2,
+html[data-current-path^="/ar/"] article h3,
+html[data-current-path^="/ar/"] article h4,
+html[data-current-path^="/ar/"] article p,
+html[data-current-path^="/ar/"] article li,
+html.rntor-arabic-docs article h1,
+html.rntor-arabic-docs article h2,
+html.rntor-arabic-docs article h3,
+html.rntor-arabic-docs article h4,
+html.rntor-arabic-docs article p,
+html.rntor-arabic-docs article li {
   direction: rtl;
   text-align: right;
 }
 
-/* Reset inner content cards/images so they don't get weird */
-html[data-current-path^="/ar/"] article img,
-html[data-current-path^="/ar/"] article iframe,
-html[data-current-path^="/ar/"] article video,
-html.rntor-arabic-docs article img,
-html.rntor-arabic-docs article iframe,
-html.rntor-arabic-docs article video {
-  direction: ltr;
-}
-
-/* Lists */
+/* Lists inside article */
 html[data-current-path^="/ar/"] article ul,
 html[data-current-path^="/ar/"] article ol,
 html.rntor-arabic-docs article ul,
@@ -47,7 +41,7 @@ html.rntor-arabic-docs article ol {
   padding-left: 0;
 }
 
-/* Tables */
+/* Tables inside article */
 html[data-current-path^="/ar/"] article table,
 html.rntor-arabic-docs article table {
   direction: rtl;
@@ -55,13 +49,23 @@ html.rntor-arabic-docs article table {
 }
 
 /* Keep code readable */
-html[data-current-path^="/ar/"] pre,
-html[data-current-path^="/ar/"] code,
-html[data-current-path^="/ar/"] kbd,
-html.rntor-arabic-docs pre,
-html.rntor-arabic-docs code,
-html.rntor-arabic-docs kbd {
+html[data-current-path^="/ar/"] article pre,
+html[data-current-path^="/ar/"] article code,
+html[data-current-path^="/ar/"] article kbd,
+html.rntor-arabic-docs article pre,
+html.rntor-arabic-docs article code,
+html.rntor-arabic-docs article kbd {
   direction: ltr;
   text-align: left;
   unicode-bidi: embed;
+}
+
+/* Sidebar text only, no layout flip */
+html[data-current-path^="/ar/"] aside a,
+html[data-current-path^="/ar/"] aside button,
+html[data-current-path^="/ar/"] aside span,
+html.rntor-arabic-docs aside a,
+html.rntor-arabic-docs aside button,
+html.rntor-arabic-docs aside span {
+  text-align: right;
 }
