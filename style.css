@@ -5,13 +5,30 @@ html.rntor-arabic-docs {
 }
 
 /* =========================
-   TOP BAR RTL ONLY
-   Do not touch the docs tabs nav
+   TOP BAR + DOCS TABS RTL
    ========================= */
 
-html[data-current-path^="/ar/"] header > div:first-child,
-html.rntor-arabic-docs header > div:first-child {
-  direction: rtl;
+/* Flip the top header area for Arabic only */
+html[data-current-path^="/ar/"] header,
+html.rntor-arabic-docs header {
+  direction: rtl !important;
+}
+
+/* Search input should read RTL */
+html[data-current-path^="/ar/"] header input,
+html.rntor-arabic-docs header input {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Header links/text */
+html[data-current-path^="/ar/"] header a,
+html[data-current-path^="/ar/"] header button,
+html[data-current-path^="/ar/"] header span,
+html.rntor-arabic-docs header a,
+html.rntor-arabic-docs header button,
+html.rntor-arabic-docs header span {
+  direction: rtl !important;
 }
 
 /* =========================
@@ -19,7 +36,7 @@ html.rntor-arabic-docs header > div:first-child {
    ========================= */
 
 @media (min-width: 1024px) {
-  /* Main sidebar: move to right, aligned with docs container */
+  /* Move main sidebar to the right, aligned with docs layout */
   html[data-current-path^="/ar/"] nav#sidebar,
   html.rntor-arabic-docs nav#sidebar {
     left: auto !important;
@@ -28,14 +45,14 @@ html.rntor-arabic-docs header > div:first-child {
     text-align: right !important;
   }
 
-  /* Give the right sidebar its space, without shrinking content too much */
+  /* Reserve right space for sidebar so it does not overlap content */
   html[data-current-path^="/ar/"] main#content-container,
   html.rntor-arabic-docs main#content-container {
     padding-left: 0 !important;
-    padding-right: 18rem !important;
+    padding-right: 20rem !important;
   }
 
-  /* Keep "On this page" on the left and content in the middle */
+  /* Keep "On this page" on the left, article in the center */
   html[data-current-path^="/ar/"] main#content-container > div,
   html.rntor-arabic-docs main#content-container > div {
     flex-direction: row !important;
@@ -43,9 +60,9 @@ html.rntor-arabic-docs header > div:first-child {
     gap: 3rem !important;
   }
 
-  /* Make the article column closer to English width */
-  html[data-current-path^="/ar/"] main#content-container > div > div:has(article),
-  html.rntor-arabic-docs main#content-container > div > div:has(article) {
+  /* Restore article/content width close to English layout */
+  html[data-current-path^="/ar/"] #content-area,
+  html.rntor-arabic-docs #content-area {
     width: 760px !important;
     max-width: 760px !important;
     flex: 0 0 760px !important;
@@ -61,7 +78,7 @@ html.rntor-arabic-docs header > div:first-child {
 }
 
 /* =========================
-   SIDEBAR RTL TEXT
+   RIGHT SIDEBAR RTL
    ========================= */
 
 html[data-current-path^="/ar/"] #sidebar-content,
@@ -100,8 +117,14 @@ html.rntor-arabic-docs .sidebar-title {
 }
 
 /* =========================
-   ARTICLE RTL
+   CENTER ARTICLE RTL
    ========================= */
+
+html[data-current-path^="/ar/"] #content-area,
+html.rntor-arabic-docs #content-area {
+  direction: rtl !important;
+  text-align: right !important;
+}
 
 html[data-current-path^="/ar/"] article,
 html[data-current-path^="/ar/"] article .prose,
@@ -109,8 +132,10 @@ html.rntor-arabic-docs article,
 html.rntor-arabic-docs article .prose {
   direction: rtl !important;
   text-align: right !important;
+  unicode-bidi: isolate !important;
 }
 
+/* Force all article text to RTL */
 html[data-current-path^="/ar/"] article h1,
 html[data-current-path^="/ar/"] article h2,
 html[data-current-path^="/ar/"] article h3,
@@ -137,13 +162,13 @@ html.rntor-arabic-docs article td,
 html.rntor-arabic-docs article th {
   direction: rtl !important;
   text-align: right !important;
-  unicode-bidi: plaintext;
+  unicode-bidi: plaintext !important;
 }
 
-/* Inline spans inside article text */
+/* Inline text */
 html[data-current-path^="/ar/"] article span,
 html.rntor-arabic-docs article span {
-  unicode-bidi: plaintext;
+  unicode-bidi: plaintext !important;
 }
 
 /* Lists */
@@ -164,7 +189,7 @@ html.rntor-arabic-docs article table {
   text-align: right !important;
 }
 
-/* Keep images/cards normal width */
+/* Keep images/cards/media normal */
 html[data-current-path^="/ar/"] article img,
 html[data-current-path^="/ar/"] article iframe,
 html[data-current-path^="/ar/"] article video,
@@ -183,11 +208,11 @@ html.rntor-arabic-docs article code,
 html.rntor-arabic-docs article kbd {
   direction: ltr !important;
   text-align: left !important;
-  unicode-bidi: embed;
+  unicode-bidi: embed !important;
 }
 
 /* =========================
-   ON THIS PAGE - LEFT COLUMN
+   ON THIS PAGE - LEFT SIDE
    ========================= */
 
 html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
@@ -205,9 +230,3 @@ html.rntor-arabic-docs main#content-container aside:not(#sidebar) button {
   direction: rtl !important;
   text-align: right !important;
 }
-
-/* IMPORTANT:
-   Do not add any CSS targeting:
-   header nav:has(a[href*="api-reference"])
-   because that moves the top docs tabs.
-*/
