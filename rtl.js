@@ -1,19 +1,25 @@
 (function () {
-  function applyRTL() {
-    var isArabic = window.location.pathname.startsWith('/ar/') || window.location.pathname === '/ar';
-    document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
-    document.documentElement.setAttribute('lang', isArabic ? 'ar' : 'en');
+  function applyRTLClass() {
+    var isArabic =
+      window.location.pathname.startsWith('/ar/') ||
+      window.location.pathname === '/ar';
+
+    document.documentElement.classList.toggle('rntor-arabic-docs', isArabic);
   }
-  applyRTL();
-  window.addEventListener('popstate', applyRTL);
+
+  applyRTLClass();
+
+  window.addEventListener('popstate', applyRTLClass);
+
   var originalPushState = history.pushState;
   history.pushState = function () {
     originalPushState.apply(this, arguments);
-    applyRTL();
+    applyRTLClass();
   };
+
   var originalReplaceState = history.replaceState;
   history.replaceState = function () {
     originalReplaceState.apply(this, arguments);
-    applyRTL();
+    applyRTLClass();
   };
 })();
