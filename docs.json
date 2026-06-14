@@ -763,5 +763,6 @@
   },
   "api": {
     "baseUrl": "https://api.rntor.com/v1"
-  }
+  },
+  "styling": {}
 }
