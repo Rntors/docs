@@ -37,12 +37,13 @@ html.rntor-arabic-docs header span {
 
 @media (min-width: 1024px) {
   /* Move main sidebar to the right, aligned with docs layout */
-  html[data-current-path^="/ar/"] nav#sidebar,
-  html.rntor-arabic-docs nav#sidebar {
-    left: auto !important;
-    right: max(2rem, calc((100vw - 1180px) / 2)) !important;
-    direction: rtl !important;
-    text-align: right !important;
+html[data-current-path^="/ar/"] nav#sidebar,
+html.rntor-arabic-docs nav#sidebar {
+  left: auto !important;
+  right: max(0.75rem, calc((100vw - 1180px) / 2 - 28px)) !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
   }
 
   /* Reserve right space for sidebar so it does not overlap content */
