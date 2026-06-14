@@ -35,15 +35,14 @@ html.rntor-arabic-docs header span {
    DESKTOP LAYOUT
    ========================= */
 
-@media (min-width: 1024px)   { 
+@media (min-width: 1024px) {
   /* Move main sidebar to the right, aligned with docs layout */
-html[data-current-path^="/ar/"] nav#sidebar,
-html.rntor-arabic-docs nav#sidebar {
-  left: auto !important;
-  right: max(0.75rem, calc((100vw - 1180px) / 2 - 138px)) !important;
-  direction: rtl !important;
-  text-align: right !important;
-}
+  html[data-current-path^="/ar/"] nav#sidebar,
+  html.rntor-arabic-docs nav#sidebar {
+    left: auto !important;
+    right: max(0.75rem, calc((100vw - 1180px) / 2 - 138px)) !important;
+    direction: rtl !important;
+    text-align: right !important;
   }
 
   /* Reserve right space for sidebar so it does not overlap content */
@@ -61,45 +60,51 @@ html.rntor-arabic-docs nav#sidebar {
     gap: 3rem !important;
   }
 
-  /* Restore article/content width close to English layout */
-html[data-current-path^="/ar/"] #content-area,
-html.rntor-arabic-docs #content-area {
-  width: 1120px !important;
-  max-width: 1120px !important;
-  flex: 0 0 1120px !important;
-  transform: translateX(-190px) !important;
-}
+  /* Main content width */
+  html[data-current-path^="/ar/"] #content-area,
+  html.rntor-arabic-docs #content-area {
+    width: 1120px !important;
+    max-width: 1120px !important;
+    flex: 0 0 1120px !important;
+    transform: translateX(-190px) !important;
+  }
 
-html[data-current-path^="/ar/"] #content-area article,
-html.rntor-arabic-docs #content-area article,
-html[data-current-path^="/ar/"] #content-area article > div,
-html.rntor-arabic-docs #content-area article > div,
-html[data-current-path^="/ar/"] #content-area article .prose,
-html.rntor-arabic-docs #content-area article .prose {
-  width: 100% !important;
-  max-width: none !important;
-}
+  html[data-current-path^="/ar/"] #content-area article,
+  html.rntor-arabic-docs #content-area article,
+  html[data-current-path^="/ar/"] #content-area article > div,
+  html.rntor-arabic-docs #content-area article > div,
+  html[data-current-path^="/ar/"] #content-area article .prose,
+  html.rntor-arabic-docs #content-area article .prose {
+    width: 100% !important;
+    max-width: none !important;
+  }
 
-html[data-current-path^="/ar/"] #content-area article .prose > *,
-html.rntor-arabic-docs #content-area article .prose > *,
-html[data-current-path^="/ar/"] #content-area article > div > *,
-html.rntor-arabic-docs #content-area article > div > * {
-  max-width: 100% !important;
-}
+  html[data-current-path^="/ar/"] #content-area article .prose > *,
+  html.rntor-arabic-docs #content-area article .prose > *,
+  html[data-current-path^="/ar/"] #content-area article > div > *,
+  html.rntor-arabic-docs #content-area article > div > * {
+    max-width: 100% !important;
+  }
 
-html[data-current-path^="/ar/"] #content-area figure,
-html.rntor-arabic-docs #content-area figure,
-html[data-current-path^="/ar/"] #content-area .not-prose,
-html.rntor-arabic-docs #content-area .not-prose {
-  width: 100% !important;
-  max-width: 100% !important;
-}
+  html[data-current-path^="/ar/"] #content-area figure,
+  html.rntor-arabic-docs #content-area figure,
+  html[data-current-path^="/ar/"] #content-area .not-prose,
+  html.rntor-arabic-docs #content-area .not-prose {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
-html[data-current-path^="/ar/"] #content-area img,
-html.rntor-arabic-docs #content-area img {
-  width: 100% !important;
-  max-width: 100% !important;
-}
+  html[data-current-path^="/ar/"] #content-area img,
+  html.rntor-arabic-docs #content-area img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Move "On this page" closer to the content */
+  html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
+  html.rntor-arabic-docs main#content-container aside:not(#sidebar) {
+    transform: translateX(180px) !important;
+  }
 }
 
 /* =========================
