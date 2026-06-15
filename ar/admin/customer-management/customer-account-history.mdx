@@ -1,3 +1,73 @@
 ---
-title: "سجل حساب العميل"
+title: " سجل حساب العميل "
 ---
+
+يحتوي كل ملف عميل على جدول زمني متسلسل للتغييرات الرئيسية على دور عضويته وإعدادات فوترته واشتراكاته. ويوفر مصدراً واحداً للحقيقة لعلاقاتك مع العملاء.
+
+- جدول زمني كامل لرحلة العميل، من تسجيله الأولي وحتى التغييرات في دور عضويته.
+- تغييرات إعدادات الفوترة التي تؤثر مباشرةً على رسوم العميل.
+- المساءلة وإمكانية التحقق من أي مسؤول قام بإجراء معين، مثل إنشاء اشتراك للعميل أو إلغائه، في حالة وجود أخطاء.
+
+## الوصول إلى سجل حساب العميل
+
+1. انتقل إلى صفحة **Customers** \> تبويب "Members" أو "Nonmembers".
+2. افتح ملف المستخدم أو الشركة المطلوب.
+3. تحقق من سجل حساب العميل ضمن حقل "Internal notes".
+4. لرؤية التاريخ والوقت الدقيقين لحدث معين، حرّك مؤشر الماوس فوق الطابع الزمني بجواره.
+
+<Frame>
+  ![Screenshot 2026 06 08 At 11 50 21 PM](/images/Screenshot-2026-06-08-at-11.50.21-PM.png)
+</Frame>
+
+<Info>
+  يتم عرض سجل الحساب الشامل ابتداءً من تاريخ إصدار هذه الميزة. لا تظهر أحداث الحساب التي وقعت قبل هذا التاريخ.
+</Info>
+
+## الأحداث الشائعة ومعانيها
+
+### دور العميل
+
+| الحدث | المعنى |
+| --- | --- |
+| **Customer was created as a nonmember.** | قام المسؤول [بإضافة غير عضو](/admin/customer-management/users/nonmembers). |
+| **Customer was created as a member.** | قام المسؤول [بدعوة مستخدم](/admin/customer-management/users/members#invite-a-member) أو [إنشاء شركة](/admin/customer-management/companies/set-up-companies). |
+| **Customer was created. \> Customer became a nonmember.** | قام المستخدم بشراء أو حجز شيء وأصبح [غير عضو](/admin/customer-management/users/nonmembers). |
+| **Customer was created. \> Customer signed up for a subscription. \> Customer became a member.** | قام المستخدم [بالتسجيل](/admin/billing/plans/immediate-plan-sign-ups) في اشتراك وأصبح [عضواً](/admin/customer-management/users/members). |
+| **Customer was created. \> Administrator moved customer to members.** | وافق المسؤول على [طلب الانضمام](/admin/customer-management/users/requests-to-join) الخاص بالمستخدم أو على دعوة مستخدم إلى الشركة. |
+| **Administrator moved customer to members.** | قام المسؤول [بدعوة أو إعادة دعوة غير عضو](/admin/customer-management/users/members) إلى المجتمع أو [استعادة شركة](/admin/customer-management/companies/delete-a-company#restore-a-company). |
+| **Administrator moved customer to nonmembers.** | قام المسؤول [بإزالة عضو](/admin/customer-management/users/remove-users) أو [شركة](/admin/customer-management/companies/delete-a-company) من المجتمع. |
+| **Customer became a nonmember.** | تمت إزالة الشركة التي ينتمي إليها المستخدم مع أعضائها، فأصبح المستخدم تلقائياً غير عضو. |
+| **Customer requested to join as a member.** | قدّم المستخدم [طلب انضمام](/admin/customer-management/users/requests-to-join) إلى الموقع كعضو. |
+| **Customer canceled the request to join as a member.** | ألغى المستخدم طلب الانضمام المعلق الخاص به للانضمام إلى الموقع كعضو. |
+| **Administrator approved the request for customer to join as a member.** | وافق المسؤول على طلب المستخدم للانضمام إلى الموقع كعضو. |
+| **Administrator rejected the request for customer to join as a member.** | رفض المسؤول طلب المستخدم للانضمام إلى الموقع كعضو. |
+
+### إدارة الشركة
+
+| الحدث | المعنى |
+| --- | --- |
+| **Administrator changed the company name.** | قام المسؤول بتعديل اسم الشركة. |
+| **Administrator added/removed a user to/from company.** | قام المسؤول بإضافة أو إزالة عضو موجود من/إلى الشركة. |
+| **Administrator made a user a company manager/company member.** | غيّر المسؤول دور المستخدم داخل الشركة. |
+| **User was added to company.** | <ul><li>قام المستخدم بالتسجيل في اشتراك شركة وتمت إضافته تلقائياً إلى الشركة كمدير، أو</li><li>قام المسؤول بدعوة مستخدم مباشرةً إلى الشركة أو وافق على دعوة مستخدم إلى الشركة.</li></ul> |
+| **User was removed from company.** | تمت إزالة الشركة، وتمت إزالة المستخدم منها تلقائياً. |
+| **User became a company member.** | تمت إزالة الشركة، وفقد المستخدم تلقائياً دور مدير الشركة فيها. |
+
+### الاشتراك وإعدادات الفوترة
+
+| الحدث | المعنى |
+| --- | --- |
+| **Customer signed up for a subscription. \> The subscription was created for customer.** | قام المستخدم [بالتسجيل](/admin/billing/plans/immediate-plan-sign-ups) في اشتراك شخصي أو اشتراك شركة. |
+| **Administrator created a subscription for customer.** | قام المسؤول [بإنشاء اشتراك](/admin/billing/subscriptions/set-up-subscriptions) لمستخدم أو شركة. |
+| **The subscription for customer started.** | بدأ الاشتراك وفقاً لتاريخ البدء المحدد. |
+| **Administrator canceled the subscription for customer.** | قام المسؤول [بإلغاء الاشتراك](/admin/billing/subscriptions/cancel-a-subscription). |
+| **The subscription was canceled for customer.** | تمت إزالة العميل من المجتمع، وتم إلغاء اشتراكه تلقائياً. |
+| **Administrator enabled/disabled Auto-pay for customer.** | غيّر المسؤول [إعداد Auto-pay](/admin/billing/subscriptions/control-invoice-auto-charge) للعميل، مما قد يكون قد أثّر على ما إذا تم تحصيل الفواتير تلقائياً. |
+
+### حقوق المسؤول
+
+| الحدث | المعنى |
+| --- | --- |
+| **Administrator made user an administrator/revoked the administrator rights from a user.** | قام المسؤول بتفعيل أو تعطيل [دور "Administrator"](/admin/administration/administrators/administrators) لمستخدم. |
+| **Administrator moved a user to nonmembers and revoked the administrator rights from the user.** | قام المسؤول [بإزالة](/admin/customer-management/users/remove-users) مسؤول آخر من المجتمع، وفقد تلقائياً صلاحيات المسؤول الخاصة به. |
+| **Customer became a nonmember and lost the administrator rights.** | تمت إزالة الشركة التي ينتمي إليها المسؤول من المجتمع مع أعضائها، ففقد المستخدم تلقائياً صلاحياته كمسؤول وأصبح غير عضو. |

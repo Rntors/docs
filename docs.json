@@ -578,6 +578,16 @@
                 "pages": [
                   "ar/admin/overview",
                   {
+                    "group": "Noor AI",
+                    "icon": "sparkles",
+                    "pages": [
+                      "ar/admin/noor-ai/ask-noor-ai",
+                      "ar/admin/noor-ai/bulk-create-resources-products-events-and-benefits",
+                      "ar/admin/noor-ai/promote-products-events-and-benefits",
+                      "ar/admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets"
+                    ]
+                  },
+                  {
                     "group": "إدارة العملاء",
                     "icon": "users",
                     "pages": [
@@ -611,71 +621,389 @@
                     "group": "الفوترة",
                     "icon": "circle-dollar",
                     "pages": [
-                      "ar/admin/billing/overview"
+                      "ar/admin/billing/set-up-billing",
+                      {
+                        "group": "الخطط",
+                        "pages": [
+                          "ar/admin/billing/plans/set-up-plans",
+                          "ar/admin/billing/plans/immediate-plan-sign-ups",
+                          "ar/admin/billing/plans/applications-for-plans",
+                          "ar/admin/billing/plans/virtual-office-and-mailing"
+                        ]
+                      },
+                      {
+                        "group": "العقود",
+                        "pages": [
+                          "ar/admin/billing/contracts/set-up-contracts",
+                          "ar/admin/billing/contracts/templates",
+                          "ar/admin/billing/contracts/esignature",
+                          "ar/admin/billing/contracts/external-signature"
+                        ]
+                      },
+                      {
+                        "group": "الاشتراكات",
+                        "pages": [
+                          "ar/admin/billing/subscriptions/set-up-subscriptions",
+                          "ar/admin/billing/subscriptions/billing-cycle-anchor",
+                          "ar/admin/billing/subscriptions/advance-invoicing",
+                          "ar/admin/billing/subscriptions/control-invoice-issuance",
+                          "ar/admin/billing/subscriptions/control-invoice-auto-charge",
+                          "ar/admin/billing/subscriptions/edit-a-subscription",
+                          "ar/admin/billing/subscriptions/cancel-a-subscription"
+                        ]
+                      },
+                      {
+                        "group": "الفواتير",
+                        "pages": [
+                          "ar/admin/billing/invoices/set-up-invoicing",
+                          "ar/admin/billing/invoices/issue-invoices",
+                          "ar/admin/billing/invoices/track-and-manage-invoices",
+                          "ar/admin/billing/invoices/invoice-statuses",
+                          "ar/admin/billing/invoices/pending-invoice-items",
+                          "ar/admin/billing/invoices/upcoming-invoices",
+                          "ar/admin/billing/invoices/edit-invoices",
+                          "ar/admin/billing/invoices/credit-notes",
+                          "ar/admin/billing/invoices/prorate-an-invoice",
+                          "ar/admin/billing/invoices/record-invoice-payments",
+                          "ar/admin/billing/invoices/pay-for-invoice",
+                          "ar/admin/billing/invoices/payment-retries-and-reminders",
+                          "ar/admin/billing/invoices/resend-an-invoice",
+                          "ar/admin/billing/invoices/invoice-due-date",
+                          "ar/admin/billing/invoices/customer-money-balance",
+                          "ar/admin/billing/invoices/download-an-invoice",
+                          "ar/admin/billing/invoices/void-an-invoice",
+                          "ar/admin/billing/invoices/delete-an-invoice",
+                          "ar/admin/billing/invoices/proforma-invoices",
+                          "ar/admin/billing/invoices/qr-bill",
+                          "ar/admin/billing/invoices/accounting",
+                          {
+                            "group": "الفوترة الإلكترونية",
+                            "pages": [
+                              "ar/admin/billing/invoices/einvoicing/overview",
+                              "ar/admin/billing/invoices/einvoicing/ksef-in-poland",
+                              "ar/admin/billing/invoices/einvoicing/peppol-in-belgium",
+                              "ar/admin/billing/invoices/einvoicing/veri-factu-in-spain"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "المدفوعات",
+                        "pages": [
+                          "ar/admin/billing/payments/payment-methods",
+                          "ar/admin/billing/payments/payment-gateway",
+                          "ar/admin/billing/payments/external",
+                          "ar/admin/billing/payments/pay-with-invoice",
+                          "ar/admin/billing/payments/create-one-off-payments",
+                          "ar/admin/billing/payments/refunds",
+                          "ar/admin/billing/payments/receipts",
+                          "ar/admin/billing/payments/pci-dss-compliance"
+                        ]
+                      },
+                      {
+                        "group": "الرصيد وتصاريح اليوم",
+                        "pages": [
+                          "ar/admin/billing/credits-and-day-passes/credits",
+                          "ar/admin/billing/credits-and-day-passes/day-passes",
+                          "ar/admin/billing/credits-and-day-passes/packages",
+                          "ar/admin/billing/credits-and-day-passes/manage-credit-balance",
+                          "ar/admin/billing/credits-and-day-passes/manage-day-pass-balance",
+                          "ar/admin/billing/credits-and-day-passes/scheduled-transactions",
+                          "ar/admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes"
+                        ]
+                      },
+                      {
+                        "group": "الخصومات",
+                        "pages": [
+                          "ar/admin/billing/discounts/coupons-and-promo-codes",
+                          "ar/admin/billing/discounts/apply-discounts-to-bookings-and-purchases",
+                          "ar/admin/billing/discounts/discounts-with-plan"
+                        ]
+                      },
+                      {
+                        "group": "الضرائب",
+                        "pages": [
+                          "ar/admin/billing/taxes/set-up-taxes",
+                          "ar/admin/billing/taxes/custom-tax-rates"
+                        ]
+                      },
+                      "ar/admin/billing/currencies"
                     ]
                   },
                   {
                     "group": "إدارة الموارد",
                     "icon": "box",
                     "pages": [
-                      "ar/admin/resource-management/overview"
+                      "ar/admin/resource-management/overview",
+                      {
+                        "group": "الموارد",
+                        "pages": [
+                          "ar/admin/resource-management/resources/set-up-resources",
+                          "ar/admin/resource-management/resources/set-up-pricing",
+                          "ar/admin/resource-management/resources/dynamic-pricing",
+                          "ar/admin/resource-management/resources/applications-for-bookings",
+                          "ar/admin/resource-management/resources/hourly-desk-bookings",
+                          "ar/admin/resource-management/resources/manage-bookings",
+                          "ar/admin/resource-management/resources/exclusive-resource-access",
+                          "ar/admin/resource-management/resources/overlapping-resources",
+                          "ar/admin/resource-management/resources/manage-resource-rentals-with-assignments",
+                          "ar/admin/resource-management/resources/rental-applications-or-immediate-sign-ups",
+                          "ar/admin/resource-management/resources/hybrid-offices",
+                          "ar/admin/resource-management/resources/troubleshoot-issues-with-room-bookings"
+                        ]
+                      },
+                      {
+                        "group": "الطوابق",
+                        "pages": [
+                          "ar/admin/resource-management/floors/set-up-floor-plans",
+                          "ar/admin/resource-management/floors/use-floor-plans",
+                          "ar/admin/resource-management/floors/manage-floor-plans"
+                        ]
+                      },
+                      {
+                        "group": "شاشة الغرف",
+                        "pages": [
+                          "ar/admin/resource-management/room-display/set-up-room-display",
+                          "ar/admin/resource-management/room-display/use-room-display",
+                          "ar/admin/resource-management/room-display/troubleshoot-issues-with-room-display"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "التفاعل",
                     "icon": "handshake",
                     "pages": [
-                      "ar/admin/engagement/overview"
+                      "ar/admin/engagement/feed",
+                      "ar/admin/engagement/chats",
+                      {
+                        "group": "الفعاليات",
+                        "pages": [
+                          "ar/admin/engagement/events/set-up-events",
+                          "ar/admin/engagement/events/check-in-event-attendees"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "الخدمة",
                     "icon": "handshake-angle",
                     "pages": [
-                      "ar/admin/service/overview"
+                      {
+                        "group": "المتجر",
+                        "pages": [
+                          "ar/admin/service/shop/set-up-shop",
+                          "ar/admin/service/shop/manage-orders",
+                          "ar/admin/service/shop/manage-product-availability",
+                          "ar/admin/service/shop/manage-one-off-services"
+                        ]
+                      },
+                      {
+                        "group": "المزايا",
+                        "pages": [
+                          "ar/admin/service/benefits/set-up-benefits",
+                          "ar/admin/service/benefits/manage-benefit-applications"
+                        ]
+                      },
+                      {
+                        "group": "الزوار",
+                        "pages": [
+                          "ar/admin/service/visitors/set-up-visitors",
+                          "ar/admin/service/visitors/track-and-manage-visits",
+                          "ar/admin/service/visitors/collect-contacts-of-walk-ins-with-reception",
+                          "ar/admin/service/visitors/customize-reception",
+                          "ar/admin/service/visitors/troubleshoot-issues-with-reception"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "الدعم",
                     "icon": "life-ring",
                     "pages": [
-                      "ar/admin/support/overview"
+                      "ar/admin/support/tickets",
+                      "ar/admin/support/guides"
                     ]
                   },
                   {
                     "group": "التحليلات والتقارير",
                     "icon": "chart-column",
                     "pages": [
-                      "ar/admin/analytics-reports/overview"
+                      "ar/admin/analytics-reports/dashboards",
+                      "ar/admin/analytics-reports/reports",
+                      "ar/admin/analytics-reports/export-invoices-for-accounting",
+                      "ar/admin/analytics-reports/track-occupancy",
+                      "ar/admin/analytics-reports/track-membership-growth",
+                      "ar/admin/analytics-reports/track-sales"
                     ]
                   },
                   {
                     "group": "الموقع",
                     "icon": "building",
                     "pages": [
-                      "ar/admin/location/overview"
+                      "ar/admin/location/information",
+                      "ar/admin/location/schedule",
+                      "ar/admin/location/visibility"
                     ]
                   },
                   {
                     "group": "عام",
                     "icon": "gear",
                     "pages": [
-                      "ar/admin/general/overview"
+                      "ar/admin/general/privacy-policy",
+                      "ar/admin/general/terms-of-use",
+                      "ar/admin/general/mail-from-and-footer",
+                      "ar/admin/general/users",
+                      {
+                        "group": "بوابة الويب للأعضاء",
+                        "pages": [
+                          "ar/admin/general/member-web-portal/get-started",
+                          "ar/admin/general/member-web-portal/customize-member-web-portal",
+                          "ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal",
+                          "ar/admin/general/member-web-portal/customize-landing-page",
+                          "ar/admin/general/member-web-portal/troubleshoot-issues-with-accessing-member-web-portal",
+                          "ar/admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration"
+                        ]
+                      },
+                      {
+                        "group": "تطبيق الجوال للأعضاء",
+                        "pages": [
+                          "ar/admin/general/member-mobile-app/get-started",
+                          "ar/admin/general/member-mobile-app/customize-member-mobile-app",
+                          "ar/admin/general/member-mobile-app/prepare-your-apple-developer-account",
+                          "ar/admin/general/member-mobile-app/maintain-member-mobile-app",
+                          "ar/admin/general/member-mobile-app/troubleshoot-issues-with-accessing-member-mobile-app"
+                        ]
+                      },
+                      "ar/admin/general/customize-emails",
+                      "ar/admin/general/language",
+                      "ar/admin/general/supported-languages",
+                      "ar/admin/general/media-formats",
+                      "ar/admin/general/content-sorting"
                     ]
                   },
-                  "ar/admin/lem-ai",
                   {
                     "group": "التكاملات",
                     "icon": "puzzle-piece",
                     "pages": [
-                      "ar/admin/integrations/overview"
+                      "ar/admin/integrations/set-up-integrations",
+                      {
+                        "group": "المدفوعات",
+                        "pages": [
+                          "ar/admin/integrations/payments/overview",
+                          {
+                            "group": "Stripe",
+                            "pages": [
+                              "ar/admin/integrations/payments/stripe/stripe",
+                              "ar/admin/integrations/payments/stripe/troubleshoot-stripe-payments",
+                              "ar/admin/integrations/payments/stripe/accept-invoice-payments-with-bank-debits"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "التحكم بالوصول",
+                        "pages": [
+                          "ar/admin/integrations/access-control/set-up-access-control"
+                        ]
+                      },
+                      {
+                        "group": "المحاسبة",
+                        "pages": [
+                          "ar/admin/integrations/accounting/xero",
+                          "ar/admin/integrations/accounting/quickbooks-online"
+                        ]
+                      },
+                      {
+                        "group": "الحجوزات",
+                        "pages": [
+                          "ar/admin/integrations/bookings/google-calendar",
+                          "ar/admin/integrations/bookings/calendly",
+                          "ar/admin/integrations/bookings/hubspot-meeting-scheduler"
+                        ]
+                      },
+                      {
+                        "group": "الأسواق الإلكترونية",
+                        "pages": [
+                          "ar/admin/integrations/marketplaces/liquidspace",
+                          "ar/admin/integrations/marketplaces/integrate-with-marketplaces"
+                        ]
+                      },
+                      {
+                        "group": "Wi-Fi",
+                        "pages": [
+                          "ar/admin/integrations/wifi/ironwifi"
+                        ]
+                      },
+                      {
+                        "group": "التواصل",
+                        "pages": [
+                          "ar/admin/integrations/communication/mailchimp",
+                          "ar/admin/integrations/communication/twilio"
+                        ]
+                      },
+                      {
+                        "group": "الأتمتة",
+                        "pages": [
+                          "ar/admin/integrations/automation/zapier"
+                        ]
+                      },
+                      {
+                        "group": "التحليلات",
+                        "pages": [
+                          "ar/admin/integrations/analytics/google-analytics",
+                          "ar/admin/integrations/analytics/meta-pixel"
+                        ]
+                      },
+                      {
+                        "group": "الطباعة",
+                        "pages": [
+                          "ar/admin/integrations/printing/ezeep-blue"
+                        ]
+                      }
                     ]
                   },
                   {
                     "group": "الإدارة",
                     "icon": "user",
                     "pages": [
-                      "ar/admin/administration/overview"
+                      {
+                        "group": "حسابك",
+                        "pages": [
+                          {
+                            "group": "الإشعارات",
+                            "pages": [
+                              "ar/admin/administration/your-account/notifications/set-up-notifications",
+                              "ar/admin/administration/your-account/notifications/push-notifications",
+                              "ar/admin/administration/your-account/notifications/integration-failures"
+                            ]
+                          },
+                          "ar/admin/administration/your-account/language"
+                        ]
+                      },
+                      {
+                        "group": "المسؤولون",
+                        "pages": [
+                          "ar/admin/administration/administrators/administrators",
+                          "ar/admin/administration/administrators/permissions",
+                          "ar/admin/administration/administrators/owner"
+                        ]
+                      },
+                      {
+                        "group": "الفوترة",
+                        "pages": [
+                          "ar/admin/administration/billing/rntor-subscription",
+                          "ar/admin/administration/billing/pre-onboarding-tips",
+                          "ar/admin/administration/billing/onboarding",
+                          "ar/admin/administration/billing/make-changes-to-rntor-subscription",
+                          "ar/admin/administration/billing/active-users",
+                          "ar/admin/administration/billing/partner-referral-program"
+                        ]
+                      },
+                      "ar/admin/administration/locations",
+                      "ar/admin/administration/api-and-webhooks",
+                      "ar/admin/administration/test-environment",
+                      "ar/admin/administration/contact-support"
                     ]
                   }
                 ]
@@ -688,14 +1016,19 @@
                     "group": "الحساب",
                     "icon": "circle-user",
                     "pages": [
-                      "ar/member/account/overview"
+                      "ar/member/account/language",
+                      "ar/member/account/notifications",
+                      "ar/member/account/privacy"
                     ]
                   },
                   {
                     "group": "الحجوزات",
                     "icon": "calendar-check",
                     "pages": [
-                      "ar/member/bookings/overview"
+                      "ar/member/bookings/book-a-room",
+                      "ar/member/bookings/book-a-desk",
+                      "ar/member/bookings/book-a-parking-space",
+                      "ar/member/bookings/book-equipment"
                     ]
                   },
                   "ar/member/events",
@@ -706,7 +1039,8 @@
                     "group": "الزوار",
                     "icon": "id-card",
                     "pages": [
-                      "ar/member/visitors/overview"
+                      "ar/member/visitors/preregister-and-approve-visit-requests",
+                      "ar/member/visitors/check-in-and-check-out"
                     ]
                   }
                 ]
