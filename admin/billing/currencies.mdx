@@ -1,3 +1,95 @@
 ---
 title: "Currencies"
 ---
+
+You can add alternative currencies in addition to your main location currency and assign them to all or specific customers. All invoices or purchases for those customers will be automatically converted.
+
+Use alternative currencies when:
+
+- Your main location pricing is set in a stable currency, but customers need to pay in your local currency.
+- Specific customers, such as foreigners, require payments in a different currency.
+
+## Add an alternative currency
+
+1. Go to **Location settings** > **Billing** > **Currencies** tab.
+
+2. In the **Alternative currencies** section, press `Add currency`.
+
+<Frame>
+  <img src="/images/placeholders/billing-currencies-list.png" alt="Billing currencies tab showing alternative currencies and default alternative currency" />
+</Frame>
+
+3. Select the currency.
+
+4. Choose how the exchange rate is updated:
+
+   - Turn on **Auto-update rate** and select a **Provider**. Rates are updated automatically based on the provider’s data.
+   - Leave **Auto-update rate** off and update the rate manually when needed.
+
+<Frame>
+  <img src="/images/placeholders/billing-new-currency-modal.png" alt="New currency modal with currency, auto-update rate, provider, and exchange rate fields" />
+</Frame>
+
+## Apply an alternative currency
+
+### To all customers
+
+1. Go to **Location settings** > **Billing** > **Currencies** tab.
+
+2. [Add an alternative currency](#add-an-alternative-currency).
+
+3. Select it as the **Default alternative currency**.
+
+<Info>
+  The default alternative currency will apply to all customers who register after you set it. Your existing customers won’t be affected. If necessary, [apply it manually](#to-specific-customers) in their profiles.
+</Info>
+
+<Frame>
+  <img src="/images/placeholders/billing-default-alternative-currency.png" alt="Default alternative currency field in the Billing currencies tab" />
+</Frame>
+
+### To specific customers
+
+1. Go to the [Customers page](/admin/customer-management/users) and open the customer’s profile.
+
+2. On the right-hand panel, enable **Alternative currency** and choose the currency.
+
+<Frame>
+  <img src="/images/placeholders/customer-profile-alternative-currency.png" alt="Customer profile with alternative currency enabled in the right-hand billing panel" />
+</Frame>
+
+## How alternative currency works
+
+### One-off purchases
+
+- Customers see prices for all resources and services in your main currency, for example USD.
+
+<Frame>
+  <img src="/images/placeholders/resources-main-currency-prices.png" alt="Resources listed with prices in the main location currency" />
+</Frame>
+
+- When they start a booking or make a purchase, the amount is automatically converted using the current exchange rate.
+
+- At checkout, customers see the converted amount in the alternative currency, for example EUR.
+
+<Frame>
+  <img src="/images/placeholders/booking-checkout-alternative-currency.png" alt="Booking checkout showing the converted amount in the alternative currency" />
+</Frame>
+
+- Receipt breakdown displays the amounts in the alternative currency, too.
+
+### Invoices
+
+- Invoice drafts appear in the main currency.
+
+- When the invoice is issued, the system converts the amounts using the exchange rate at that moment.
+
+- After issuance, the invoice breakdown and PDF appear in the alternative currency, for example EUR.
+
+<Frame>
+  <img src="/images/placeholders/invoice-alternative-currency-pdf.png" alt="Invoice PDF showing totals in the alternative currency" />
+</Frame>
+
+<Info>
+  If you turned off the **Auto-update rate**, be sure to update the exchange rate manually before issuing the invoice.
+</Info>
