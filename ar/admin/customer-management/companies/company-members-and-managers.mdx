@@ -1,3 +1,63 @@
 ---
 title: "أعضاء الشركة ومديروها"
 ---
+
+يمكن تجميع مستخدميك في شركات. يمكن أن تحوي الشركة عدداً غير محدود من أعضاء الشركة ومديريها.
+
+ستساعدك هذه المقالة على فهم الفرق بين هاتين المجموعتين من المستخدمين وتوفر نظرة عن قرب على ما يمكنهم القيام به.
+
+<Info>
+  لمعرفة كيفية إدارة أعضاء الشركة ومديريها، يرجى الاطلاع على مستند [إعداد الشركات](/admin/customer-management/companies/set-up-companies).
+</Info>
+
+## من هو عضو الشركة
+
+عضو الشركة هو مستخدم ينتمي إلى شركة معينة، ويمكنه التفاعل مع جميع الموارد المعيّنة لشركته، ومشاركة مزايا اشتراك الشركة، لكنه لا يستطيع الوصول إلى فوترة الشركة أو إدارتها.
+
+فيما يلي مثال على أعضاء الشركة داخل الشركة:
+
+![Screenshot 2026 06 07 At 7 34 40 PM 1](/images/Screenshot-2026-06-07-at-7.34.40-PM-1.png)
+
+## من هو مدير الشركة
+
+مدير الشركة هو مستخدم من الشركة مسؤول عن فوترة الشركة، ويستلم فواتير الشركة ويدفعها، ويمكنه إدارة طرق الدفع وإعدادات الشركة الأخرى.
+
+فيما يلي مثال على مدير الشركة المختار داخل الشركة:
+
+![Screenshot 2026 06 07 At 7 34 40 PM 1](/images/Screenshot-2026-06-07-at-7.34.40-PM-1.png)
+
+## ما الذي يمكن لمدير الشركة وعضوها القيام به
+
+### الأذونات المتعلقة بالاشتراك
+
+| الأذونات | مدير الشركة | عضو الشركة |
+| --- | --- | --- |
+| استخدام اعتمادات الشركة، والتحقق من رصيد الاعتمادات والمعاملات | ✓ | نعم، [إذا تم تفعيله](/admin/customer-management/companies/company-payment-method-permissions) بواسطة مدير الشركة |
+| استخدام تذاكر اليوم الخاصة بالشركة، والتحقق من رصيد تذاكر اليوم والمعاملات | ✓ | نعم، [إذا تم تفعيله](/admin/customer-management/companies/company-payment-method-permissions) بواسطة مدير الشركة |
+| استخدام [خصومات اشتراك](/admin/billing/discounts/discounts-with-plan) الشركة | ✓ | ✓ |
+| [الحصول على إذن الوصول](/admin/integrations/access-control/set-up-access-control) إلى المساحة استناداً إلى مجموعة وصول في اشتراك الشركة | ✓ | ✓ |
+| الوصول إلى [الموارد المعيّنة](/admin/resource-management/resources/manage-resource-rentals-with-assignments) للشركة | ✓ | ✓ |
+
+### أذونات إدارة أعضاء الشركة الآخرين
+
+| الأذونات | مدير الشركة | عضو الشركة |
+| --- | --- | --- |
+| [دعوة أعضاء جدد إلى الشركة](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers) | ✓ | ✗ |
+| [حذف أعضاء ومديرين آخرين من الشركة](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers) | ✓ | ✗ |
+| إنشاء حجوزات [الغرفة](/member/bookings/book-a-room)/[المكتب](/member/bookings/book-a-desk)/[موقف السيارات](/member/bookings/book-a-parking-space) لأعضاء الشركة | ✓ | ✗ |
+
+### الأذونات المتعلقة بالفوترة
+
+| الأذونات | مدير الشركة | عضو الشركة |
+| --- | --- | --- |
+| استخدام طريقة دفع ["Company invoice"](/admin/billing/payments/pay-with-invoice) لتضمين الدفعات في فاتورة الشركة | نعم، إذا تم [تفعيله](/admin/billing/payments/pay-with-invoice) من قِبل المسؤول في اشتراك الشركة | نعم، إذا تم [تفعيله](/admin/customer-management/companies/company-payment-method-permissions) من قِبل مدير الشركة |
+| [إدارة خيارات "Pay with invoice" للشركة](/admin/billing/payments/pay-with-invoice) | نعم، إذا تم [تفعيله](/admin/billing/payments/pay-with-invoice) من قِبل المسؤول في اشتراك الشركة | ✗ |
+| إجراء الدفعات ببطاقة الشركة | ✓ | فقط إذا [تم تفعيله](/admin/customer-management/billing) من قِبل مدير الشركة |
+| [شراء حزم الاعتمادات للشركة](/admin/billing/credits-and-day-passes/packages) | ✓ | فقط إذا [سمح مدير الشركة باستخدام بطاقة الشركة](/admin/customer-management/billing) لشراء حزم الاعتمادات |
+| عرض المعاملات التي تمت ببطاقة الشركة | ✓ | ✗ |
+| عرض و[دفع فواتير الشركة](/admin/billing/invoices/pay-for-invoice) وتلقّيها | ✓ | ✗ |
+| عرض تفاصيل اشتراك الشركة | ✓ | ✗ |
+| [إدارة طرق دفع الشركة](/admin/billing/payments/payment-gateway) | ✓ | ✗ |
+| [إدارة أذونات طرق دفع الشركة](/admin/customer-management/companies/company-payment-method-permissions) | ✓ | ✗ |
+| [إضافة تفاصيل فوترة الشركة](/admin/customer-management/billing-details) | ✓ | ✗ |
+| [إضافة البريد الإلكتروني لفوترة الشركة](/admin/customer-management/billing) | ✓ | ✗ |
