@@ -1,17 +1,18 @@
+---
 
 title: "Set up billing"
-description: "Configure billing details, subscriptions, invoices, taxes, and currencies for your location."
------------------------------------------------------------------------------------------------------------
+description: "Configure billing details, subscription settings, invoice settings, taxes, and currencies in RNTOR."
+------------------------------------------------------------------------------------------------------------------
 
-Set up core billing configurations for your location, including billing details, subscriptions, invoices, taxes, and currencies, so RNTOR can issue correct invoices and receipts.
+Set up core billing configurations for your location, including billing details, subscription, invoice, tax, and currency settings to issue correct invoices and receipts.
 
-Configure billing settings for your location to generate accurate invoices, receipts, subscriptions, payments, and accounting records.
+Configure billing settings for your location to generate correct invoices and receipts.
 
 <Frame caption="Configure location billing">
   <iframe
     className="w-full aspect-video rounded-xl"
     src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID"
-    title="Configure location billing"
+    title="Configure location billing in RNTOR"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
   />
@@ -19,136 +20,129 @@ Configure billing settings for your location to generate accurate invoices, rece
 
 ## Add billing details
 
-1. Go to **Location settings > General > Billing details**.
+1. Tap the **(...)** next to the location name > **Location settings > General > Billing details** tab.
 
-2. Fill out your location billing details:
+2. Fill out your space's **Legal business name**, **Address**, **Tax ID**, and **Contact details**.
 
-   * Legal business name
-   * Address
-   * Tax ID
-   * Contact email
+   They will appear on all invoices and receipts to your customers to help them recognize your business.
 
-   These details appear on invoices and receipts issued from this location and may be used for tax and eInvoicing compliance.
-
-3. If your country requires additional billing or bank account information, complete the relevant fields before issuing invoices.
+3. If your business is located in a country that requires additional bank or payment details, fill out the relevant billing fields or invoice footer. You can also [configure QR-bill invoices](/admin/billing/invoices).
 
 <Frame caption="Location billing details">
   ![Location billing details](/images/billing/location-billing-details.png)
 </Frame>
 
 <Note>
-  Changes to billing details apply to newly issued invoices and receipts. Previously issued invoices remain unchanged.
+  Changes to billing details apply only to newly issued invoices and receipts. Previously issued invoices will remain unchanged.
 </Note>
 
 ## Configure subscriptions settings
 
-1. Go to **Location settings > Billing > Subscriptions**.
-2. Choose how subscription billing should run for your location.
-3. Set the **Billing cycle anchor** to define when recurring subscription invoices are generated.
-4. Configure whether members should be automatically removed or updated when their subscription ends, fails, or changes status.
+1. Go to **Location settings > Billing > Subscriptions** tab.
 
-<Frame caption="Subscription billing settings">
-  ![Subscription billing settings](/images/billing/subscription-settings.png)
+<Frame caption="Subscriptions settings">
+  ![Subscriptions settings](/images/billing/subscriptions-settings.png)
 </Frame>
+
+2. [Set your **Billing cycle anchor**](/admin/billing/subscriptions).
+
+3. [Manage **Auto-remove members**](/admin/billing/subscriptions).
 
 ## Configure invoice settings
 
-1. Go to **Location settings > Billing > Invoices**.
-
-2. If your country supports eInvoicing, enable **eInvoicing** and complete the required verification flow.
-
-3. Choose the **Invoice type** used for invoices issued from this location:
-
-   * **Invoice** — standard invoice title for issued invoices and invoice emails.
-   * **Proforma invoice** — invoice and email title used before final issuance or payment.
-   * **VAT invoice** — invoice title used when VAT invoices are required.
-   * **Tax invoice** — invoice title used when tax invoices are required in your country.
-
-4. Choose the **Numbering scheme** for invoices:
-
-   * **Customer** — each customer has their own invoice sequence.
-   * **Location** — invoices issued from this location share one invoice sequence.
-
-5. Use **Advance invoicing** to define how many days before the next subscription period an invoice should be issued.
-
-6. Set the **Payment due** period to define how many days customers have to pay after invoice issuance.
-
-7. Manage **Payment retries and reminders** to control failed-payment reminders and retry behavior.
-
-8. Fill in the **Footer** field to add additional details at the bottom of invoices and receipts, such as payment instructions or bank transfer information.
-
-9. Fill in **Accounting email** if invoices and receipts should also be sent to your finance or accounting inbox.
+1. Go to **Location settings > Billing > Invoices** tab.
 
 <Frame caption="Invoice settings">
   ![Invoice settings](/images/billing/invoice-settings.png)
 </Frame>
 
-<Info>
-  eInvoicing availability depends on your billing country and configured compliance provider.
-</Info>
+2. If your country is Belgium or Spain, you can enable [eInvoicing](/admin/billing/invoices/einvoicing/veri-factu-in-spain).
+
+3. Choose the **Invoice type**:
+
+   * **Invoice** — all invoices and related emails will be titled **Invoice**.
+   * **Proforma invoice** — all invoices and related emails will be titled **Proforma invoice**.
+   * **VAT invoice** — all invoices and related emails will be titled **VAT invoice**.
+   * **Tax invoice** — all invoices and related emails will be titled **Tax invoice**.
+
+4. In the **Numbering scheme**, choose how invoice numbers are generated for your location:
+
+   <Note>
+     This setting also affects contract titles, which follow the same numbering scheme.
+   </Note>
+
+   * **Customer** — each customer will have their own invoice prefix. Invoices for every customer will be numbered sequentially within their individual series.
+   * **Location** — invoices within the location will share the same prefix and be numbered sequentially across all customers. The invoice prefix is generated automatically when the location is created.
+
+5. Use the **Advance invoicing** field to schedule how many days before their subscription renewal date customers should receive invoices. It is useful if you want customers to receive and settle invoices earlier than their next subscription period begins.
+
+6. Specify the **Payment due** number of days after the invoice issuance date. RNTOR automatically calculates and sets the due date for each invoice. You can [customize the payment due](/admin/billing/invoices).
+
+7. Manage [Payment retries and reminders](/admin/billing/invoices).
+
+8. Fill in the **Footer** field to add extra details appearing at the bottom of all invoice and receipt PDFs. For example, your bank account if you accept manual transfers.
+
+9. In the **Accounting email** field, add your accounting system's inbox email. All invoices and receipts from this location will be sent to this email. [Integrate with your accounting app](/admin/integrations).
 
 ## Configure taxes
 
-1. Go to **Location settings > Billing > Taxes**.
-2. Enable taxes if your location must charge tax on invoices, receipts, bookings, subscriptions, packages, or other purchases.
-3. Choose the tax type required for your country.
-4. Set the tax rate.
-5. Choose whether prices are tax-inclusive or tax-exclusive.
+1. Go to **Location settings > Billing > Taxes** tab.
 
-<Frame caption="Tax settings">
-  ![Tax settings](/images/billing/tax-settings.png)
+<Frame caption="Taxes settings">
+  ![Taxes settings](/images/billing/taxes-settings.png)
 </Frame>
 
-<Note>
-  Make sure your tax settings match your legal and accounting requirements before issuing invoices.
-</Note>
+2. [Enable and configure tax settings](/admin/billing/taxes).
 
 ## Configure currencies
 
-1. Go to **Location settings > Billing > Currencies**.
-2. Select the main currency for your location.
-3. Add alternative currencies if you need to sell selected services, packages, or bookings in additional currencies.
-4. Choose a default alternative currency only if you want it applied to new customers automatically.
+1. Go to **Location settings > Billing > Currencies** tab.
 
-<Frame caption="Currency settings">
-  ![Currency settings](/images/billing/currency-settings.png)
+<Frame caption="Currencies settings">
+  ![Currencies settings](/images/billing/currencies-settings.png)
 </Frame>
 
+2. If needed, [add alternative currency(-ies)](/admin/billing/currencies) alongside your main location currency.
+
+   You can then apply them to convert invoices and purchases for all or specific customers.
+
+3. Select a **Default alternative currency** to apply to all new customers. This setting affects only users who register after the change.
+
 <Note>
-  If you only need alternative currencies for specific customers, keep the default alternative currency empty and apply the currency directly to those customers when needed.
+  If you only need to apply the alternative currency to specific customers, keep the **Default alternative currency** not selected.
 </Note>
 
 ## FAQs
 
 <AccordionGroup>
-  <Accordion title="Our billing details have changed. How do we update invoices going forward?">
-    To update billing details for invoices sent to your customers:
+  <Accordion title="Our billing details have changed. How to update them in the system so that new billing details appear on invoices?">
+    To update billing details on invoices sent to your customers:
 
 ```
-1. Go to **Location settings > General > Billing details**.
-2. Update your legal business name, address, tax ID, or contact details.
-3. Go to **Location settings > Billing > Invoices**.
-4. Update invoice footer or accounting email settings if needed.
+1. Go to **Location settings > General > Billing details** tab.
+2. Update your legal business name, address, or tax ID.
+3. Go to **Location settings > Billing > Invoices** tab.
+4. Update the invoice **Footer**, if needed.
 
-Once updated, newly issued invoices and receipts will use the new billing details. Previously issued invoices remain unchanged.
+To update billing details on invoices from RNTOR to you:
+
+1. As an owner, go to **Network settings > Billing** page.
+2. In the **Billing details** section, click **Edit**.
+
+Once edited, all future invoices will reflect your updated billing details.
 ```
 
   </Accordion>
 
   <Accordion title="Why do some users not receive invoices automatically?">
-    A member or customer may not receive an invoice automatically for several reasons:
+    There are several reasons why a member might not receive their invoice:
 
 ```
-- **Email delivery issue:** The email address may be incorrect, inactive, or blocked.
-- **Spam or junk folder:** The invoice email may have been delivered but filtered by the customer’s email provider.
-- **Payment collection paused:** If payment collection is paused, invoices may not be issued or sent automatically.
-- **Missing company manager:** If the invoice is issued to a company, make sure the company has an assigned manager or billing contact.
-- **Incomplete billing details:** Some invoice or eInvoicing flows require complete customer billing details before issuance.
+- **Email delivery issues:** The email address on file may be incorrect, or the invoice email may be blocked by spam filters. Double-check that the member's email is accurate and active.
+- **Spam or junk folder:** Invoices might be delivered, but end up in the member's spam or junk folder. Encourage members to check these folders and mark the sender as safe.
+- **Paused payment collection:** [Payment collection may be paused](/admin/billing/subscriptions) for the customer's subscription, which means their invoices will not be auto-issued.
+- **No company manager assigned:** If the invoice is meant to be sent to a company, make sure a [company manager](/admin/customer-management/users/members) has been assigned. Without one, the invoice is generated but not delivered to anyone.
 ```
 
-  </Accordion>
-
-  <Accordion title="Do billing detail changes affect old invoices?">
-    No. Billing detail changes apply to future invoices and receipts only. Issued invoices should keep the billing details they had at the time of issuance.
   </Accordion>
 </AccordionGroup>
