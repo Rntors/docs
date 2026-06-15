@@ -1,3 +1,138 @@
 ---
 title: "إعداد الفوترة"
 ---
+
+---
+
+## title: "إعداد الفوترة" description: "قم بتكوين تفاصيل الفوترة، وإعدادات الاشتراك، وإعدادات الفواتير، والضرائب، والعملات في RNTOR."
+
+قم بإعداد تكوينات الفوترة الأساسية لموقعك، بما في ذلك تفاصيل الفوترة، والاشتراك، والفواتير، والضرائب، وإعدادات العملة لإصدار فواتير وإيصالات صحيحة.
+
+قم بتكوين إعدادات الفوترة لموقعك لإنشاء فواتير وإيصالات صحيحة.
+
+<Frame caption="تكوين فوترة الموقع">
+  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID" title="Configure location billing in RNTOR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+</Frame>
+
+## إضافة تفاصيل الفوترة
+
+1. اضغط على **(...)** بجوار اسم الموقع \> **إعدادات الموقع \> عام \> تبويب تفاصيل الفوترة**.
+
+2. املأ **الاسم القانوني للنشاط التجاري**، و**العنوان**، و**الرقم الضريبي**، و**تفاصيل الاتصال** الخاصة بمساحتك.
+
+ستظهر هذه التفاصيل على جميع الفواتير والإيصالات المرسلة إلى عملائك لمساعدتهم على التعرف على نشاطك التجاري.
+
+3. إذا كان نشاطك التجاري في بلد يتطلب تفاصيل بنكية أو دفع إضافية، فاملأ حقول الفوترة ذات الصلة أو تذييل الفاتورة. يمكنك أيضًا [تكوين فواتير QR-bill](/admin/billing/invoices).
+
+<Frame caption="تفاصيل فوترة الموقع">
+  ![Location billing details](/images/billing/location-billing-details.png)
+</Frame>
+
+<Note>
+  تنطبق التغييرات في تفاصيل الفوترة فقط على الفواتير والإيصالات الصادرة حديثًا. ستظل الفواتير الصادرة سابقًا دون تغيير.
+</Note>
+
+## تكوين إعدادات الاشتراكات
+
+1. انتقل إلى **إعدادات الموقع \> الفوترة \> تبويب الاشتراكات**.
+
+<Frame caption="إعدادات الاشتراكات">
+  ![Subscriptions settings](/images/billing/subscriptions-settings.png)
+</Frame>
+
+2. [اضبط **نقطة بداية دورة الفوترة**](/admin/billing/subscriptions).
+
+3. [قم بإدارة **الإزالة التلقائية للأعضاء**](/admin/billing/subscriptions).
+
+## تكوين إعدادات الفواتير
+
+1. انتقل إلى **إعدادات الموقع \> الفوترة \> تبويب الفواتير**.
+
+<Frame caption="إعدادات الفواتير">
+  ![Invoice settings](/images/billing/invoice-settings.png)
+</Frame>
+
+2. إذا كان بلدك هو بلجيكا أو إسبانيا، يمكنك تمكين [الفوترة الإلكترونية](/admin/billing/invoices/einvoicing/veri-factu-in-spain).
+
+3. اختر **نوع الفاتورة**:
+
+\* **فاتورة** — ستحمل جميع الفواتير ورسائل البريد الإلكتروني المرتبطة بها عنوان **فاتورة**. \* **فاتورة مبدئية** — ستحمل جميع الفواتير ورسائل البريد الإلكتروني المرتبطة بها عنوان **فاتورة مبدئية**. \* **فاتورة ضريبة القيمة المضافة** — ستحمل جميع الفواتير ورسائل البريد الإلكتروني المرتبطة بها عنوان **فاتورة ضريبة القيمة المضافة**. \* **فاتورة ضريبية** — ستحمل جميع الفواتير ورسائل البريد الإلكتروني المرتبطة بها عنوان **فاتورة ضريبية**.
+
+4. في **نظام الترقيم**، اختر كيفية إنشاء أرقام الفواتير لموقعك:
+
+<Note>
+  يؤثر هذا الإعداد أيضًا على عناوين العقود، التي تتبع نظام الترقيم نفسه.
+</Note>
+
+\* **العميل** — سيكون لكل عميل بادئة فاتورة خاصة به. سيتم ترقيم الفواتير لكل عميل تسلسليًا ضمن سلسلته الفردية. \* **الموقع** — ستشترك الفواتير داخل الموقع في البادئة نفسها وسيتم ترقيمها تسلسليًا عبر جميع العملاء. يتم إنشاء بادئة الفاتورة تلقائيًا عند إنشاء الموقع.
+
+5. استخدم حقل **الفوترة المسبقة** لجدولة عدد الأيام قبل تاريخ تجديد الاشتراك التي يجب أن يتلقى فيها العملاء الفواتير. يكون هذا مفيدًا إذا كنت ترغب في أن يتلقى العملاء الفواتير ويسددوها قبل بدء فترة اشتراكهم التالية.
+
+6. حدد عدد أيام **استحقاق الدفع** بعد تاريخ إصدار الفاتورة. تحسب RNTOR تلقائيًا تاريخ الاستحقاق لكل فاتورة وتضبطه. يمكنك [تخصيص استحقاق الدفع](/admin/billing/invoices).
+
+7. قم بإدارة [إعادة محاولات الدفع والتذكيرات](/admin/billing/invoices).
+
+8. املأ حقل **التذييل** لإضافة تفاصيل إضافية تظهر في أسفل جميع ملفات PDF للفواتير والإيصالات. على سبيل المثال، حسابك البنكي إذا كنت تقبل التحويلات اليدوية.
+
+9. في حقل **البريد الإلكتروني للمحاسبة**، أضف عنوان البريد الإلكتروني الخاص بنظام المحاسبة لديك. سيتم إرسال جميع الفواتير والإيصالات من هذا الموقع إلى هذا البريد الإلكتروني. [التكامل مع تطبيق المحاسبة الخاص بك](/admin/integrations).
+
+## تكوين الضرائب
+
+1. انتقل إلى **إعدادات الموقع \> الفوترة \> تبويب الضرائب**.
+
+<Frame caption="إعدادات الضرائب">
+  ![Taxes settings](/images/billing/taxes-settings.png)
+</Frame>
+
+2. [قم بتمكين وتكوين إعدادات الضرائب](/admin/billing/taxes).
+
+## تكوين العملات
+
+1. انتقل إلى **إعدادات الموقع \> الفوترة \> تبويب العملات**.
+
+<Frame caption="إعدادات العملات">
+  ![Currencies settings](/images/billing/currencies-settings.png)
+</Frame>
+
+2. إذا لزم الأمر، [أضف عملة (عملات) بديلة](/admin/billing/currencies) إلى جانب عملة موقعك الرئيسية.
+
+يمكنك بعد ذلك تطبيقها لتحويل الفواتير والمشتريات لجميع العملاء أو لعملاء محددين.
+
+3. حدد **العملة البديلة الافتراضية** لتطبيقها على جميع العملاء الجدد. يؤثر هذا الإعداد فقط على المستخدمين الذين يسجلون بعد التغيير.
+
+<Note>
+  إذا كنت تحتاج فقط إلى تطبيق العملة البديلة على عملاء محددين، فاترك **العملة البديلة الافتراضية** غير محددة.
+</Note>
+
+## الأسئلة الشائعة
+
+<AccordionGroup>
+  <Accordion title="لقد تغيرت تفاصيل الفوترة الخاصة بنا. كيف نقوم بتحديثها في النظام بحيث تظهر تفاصيل الفوترة الجديدة على الفواتير؟">
+    لتحديث تفاصيل الفوترة على الفواتير المرسلة إلى عملائك:
+
+    ```text
+    1. Go to **Location settings > General > Billing details** tab.
+    2. Update your legal business name, address, or tax ID.
+    3. Go to **Location settings > Billing > Invoices** tab.
+    4. Update the invoice **Footer**, if needed.
+    
+    To update billing details on invoices from RNTOR to you:
+    
+    1. As an owner, go to **Network settings > Billing** page.
+    2. In the **Billing details** section, click **Edit**.
+    
+    Once edited, all future invoices will reflect your updated billing details.
+    ```
+  </Accordion>
+
+  <Accordion title="لماذا لا يتلقى بعض المستخدمين الفواتير تلقائيًا؟">
+    هناك عدة أسباب قد تجعل العضو لا يستلم فاتورته:
+
+    ```text
+    - **Email delivery issues:** The email address on file may be incorrect, or the invoice email may be blocked by spam filters. Double-check that the member's email is accurate and active.
+    - **Spam or junk folder:** Invoices might be delivered, but end up in the member's spam or junk folder. Encourage members to check these folders and mark the sender as safe.
+    - **Paused payment collection:** [Payment collection may be paused](/admin/billing/subscriptions) for the customer's subscription, which means their invoices will not be auto-issued.
+    - **No company manager assigned:** If the invoice is meant to be sent to a company, make sure a [company manager](/admin/customer-management/users/members) has been assigned. Without one, the invoice is generated but not delivered to anyone.
+    ```
+  </Accordion>
+</AccordionGroup>
