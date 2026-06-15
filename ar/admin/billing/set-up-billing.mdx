@@ -13,10 +13,10 @@ title: "إعداد الفوترة"
 
 ستظهر هذه المعلومات على جميع الفواتير والإيصالات المرسلة إلى عملائك لمساعدتهم على التعرف على نشاطك التجاري.
 
-3. إذا كان نشاطك التجاري يقع في بلد يتطلب تفاصيل بنكية أو تفاصيل دفع إضافية، فاملأ حقول الفوترة ذات الصلة أو تذييل الفاتورة. يمكنك أيضًا [تكوين فواتير QR-bill](/admin/billing/invoices).
+3. إذا كان نشاطك التجاري يقع في بلد يتطلب تفاصيل بنكية أو تفاصيل دفع إضافية، فاملأ حقول الفوترة ذات الصلة أو تذييل الفاتورة. يمكنك أيضًا [تكوين فواتير QR-bill](/admin/billing/invoices/qr-bill).
 
-<Frame caption="Location billing details">
-  ![لقطة شاشة 2026 06 15 الساعة 2:04:47 مساءً](/images/Screenshot-2026-06-15-at-2.04.47-PM.png)
+<Frame>
+  ![Screenshot 2026 06 15 At 2 23 51 PM](/images/Screenshot-2026-06-15-at-2.23.51-PM.png)
 </Frame>
 
 <Note>
@@ -28,45 +28,43 @@ title: "إعداد الفوترة"
 1. انتقل إلى علامة التبويب **Location settings \> Billing \> Subscriptions**.
 
 <Frame caption="Subscriptions settings">
-  ![Subscriptions settings](/images/billing/subscriptions-settings.png)
+  ![Screenshot 2026 06 15 At 2 31 33 PM](/images/Screenshot-2026-06-15-at-2.31.33-PM.png)
 </Frame>
 
-2. [حدد **Billing cycle anchor** الخاص بك](/admin/billing/subscriptions).
-3. [إدارة **Auto-remove members**](/admin/billing/subscriptions).
+2. [حدد **Billing cycle anchor** الخاص بك](/admin/billing/subscriptions/billing-cycle-anchor).
+3. [إدارة **Auto-remove members**](/admin/customer-management/users/remove-users#auto-remove-members).
 
 ## تكوين إعدادات الفواتير
 
 1. انتقل إلى علامة التبويب **Location settings \> Billing \> Invoices**.
 
 <Frame caption="Invoice settings">
-  ![Invoice settings](/images/billing/invoice-settings.png)
+  ![Screenshot 2026 06 15 At 3 03 02 PM](/images/Screenshot-2026-06-15-at-3.03.02-PM.png)
 </Frame>
 
-2. إذا كانت دولتك هي بلجيكا أو إسبانيا، فيمكنك تمكين [eInvoicing](/admin/billing/invoices/einvoicing/veri-factu-in-spain).
-3. اختر **Invoice type**:
-
-\* **Invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان **Invoice**. \* **Proforma invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان **Proforma invoice**. \* **VAT invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان **VAT invoice**. \* **Tax invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان **Tax invoice**.
-
-4. في **Numbering scheme**، اختر كيفية إنشاء أرقام الفواتير لموقعك:
-
-<Note>
-  يؤثر هذا الإعداد أيضًا على عناوين العقود، التي تتبع نفس نظام الترقيم.
-</Note>
-
-\* **Customer** — سيكون لكل عميل بادئة فاتورة خاصة به. سيتم ترقيم الفواتير لكل عميل بشكل تسلسلي ضمن سلسلته الفردية. \* **Location** — ستشترك الفواتير داخل الموقع في نفس البادئة وسيتم ترقيمها بشكل تسلسلي عبر جميع العملاء. يتم إنشاء بادئة الفاتورة تلقائيًا عند إنشاء الموقع.
-
-5. استخدم حقل **Advance invoicing** لجدولة عدد الأيام التي يجب أن يتلقى فيها العملاء الفواتير قبل تاريخ تجديد اشتراكهم. وهو مفيد إذا كنت تريد أن يتلقى العملاء فواتيرهم ويسددوها قبل بدء فترة اشتراكهم التالية.
-6. حدد عدد أيام **Payment due** بعد تاريخ إصدار الفاتورة. تحسب RNTOR تلقائيًا تاريخ استحقاق كل فاتورة وتحدده. يمكنك [تخصيص استحقاق الدفع](/admin/billing/invoices).
-7. إدارة [Payment retries and reminders](/admin/billing/invoices).
+2. إذا كانت دولتك هي بلجيكا أو إسبانيا، فيمكنك تمكين [eInvoicing](/admin/billing/invoices/einvoicing/overview).
+3. اختر "Invoice type":
+   - **Invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان "Invoice".
+   - [**Proforma invoice**](/admin/billing/invoices/proforma-invoices) — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان "Proforma invoice".
+   - **VAT invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان "VAT invoice".\
+     يُحدد افتراضيًا إذا كانت دولة موقعك هي المملكة المتحدة.
+   - **Tax invoice** — ستحمل جميع الفواتير والرسائل الإلكترونية ذات الصلة عنوان "Tax invoice".\
+     يُحدد افتراضيًا إذا كانت دولة موقعك هي أستراليا أو كندا.
+4. في "Numbering scheme"، اختر كيفية إنشاء أرقام الفواتير لموقعك: **ملاحظة:** يؤثر هذا الإعداد أيضًا على عناوين العقود، التي تتبع نفس نظام الترقيم.
+   - Customer — سيكون لكل عميل بادئة فاتورة خاصة به. سيتم ترقيم الفواتير لكل عميل بشكل تسلسلي ضمن سلسلته الفردية.
+   - Location — ستشترك الفواتير داخل الموقع في نفس البادئة وسيتم ترقيمها بشكل تسلسلي عبر جميع العملاء. يتم إنشاء بادئة الفاتورة تلقائيًا عند إنشاء الموقع.
+5. استخدم حقل [**Advance invoicing**](/admin/billing/subscriptions/advance-invoicing) لجدولة عدد الأيام التي يجب أن يتلقى فيها العملاء الفواتير قبل تاريخ تجديد اشتراكهم. وهو مفيد إذا كنت تريد أن يتلقى العملاء فواتيرهم ويسددوها قبل بدء فترة اشتراكهم التالية.
+6. حدد عدد أيام **Payment due** بعد تاريخ إصدار الفاتورة. تحسب RNTOR تلقائيًا تاريخ استحقاق كل فاتورة وتحدده. يمكنك [تخصيص استحقاق الدفع](/admin/billing/invoices/invoice-due-date) للفواتير الفردية.
+7. إدارة [Payment retries and reminders](/admin/billing/invoices/payment-retries-and-reminders).
 8. املأ حقل **Footer** لإضافة تفاصيل إضافية تظهر في أسفل جميع ملفات PDF للفواتير والإيصالات. على سبيل المثال، حسابك المصرفي إذا كنت تقبل التحويلات اليدوية.
-9. في حقل **Accounting email**، أضف البريد الإلكتروني الوارد لنظام المحاسبة الخاص بك. سيتم إرسال جميع الفواتير والإيصالات من هذا الموقع إلى هذا البريد الإلكتروني. [تكامل مع تطبيق المحاسبة الخاص بك](/admin/integrations).
+9. في حقل **Accounting email**، أضف البريد الإلكتروني الوارد لنظام المحاسبة الخاص بك. سيتم إرسال جميع الفواتير والإيصالات من هذا الموقع إلى هذا البريد الإلكتروني. [التكامل مع تطبيق المحاسبة الخاص بك](/admin/billing/invoices/accounting).
 
 ## تكوين الضرائب
 
 1. انتقل إلى علامة التبويب **Location settings \> Billing \> Taxes**.
 
 <Frame caption="Taxes settings">
-  ![Taxes settings](/images/billing/taxes-settings.png)
+  ![Screenshot 2026 06 15 At 3 22 36 PM](/images/Screenshot-2026-06-15-at-3.22.36-PM.png)
 </Frame>
 
 2. [تمكين وتكوين إعدادات الضرائب](/admin/billing/taxes).
@@ -76,12 +74,10 @@ title: "إعداد الفوترة"
 1. انتقل إلى علامة التبويب **Location settings \> Billing \> Currencies**.
 
 <Frame caption="Currencies settings">
-  ![Currencies settings](/images/billing/currencies-settings.png)
+  ![Screenshot 2026 06 15 At 3 30 32 PM](/images/Screenshot-2026-06-15-at-3.30.32-PM.png)
 </Frame>
 
-2. إذا لزم الأمر، [أضف عملة (عملات) بديلة](/admin/billing/currencies) إلى جانب عملة موقعك الرئيسية.
-
-يمكنك بعد ذلك تطبيقها لتحويل الفواتير والمشتريات لجميع العملاء أو لعملاء محددين.
+2. إذا لزم الأمر، [**أضف عملة (عملات) بديلة**](/admin/billing/currencies) إلى جانب عملة موقعك الرئيسية. يمكنك بعد ذلك تطبيقها لتحويل الفواتير والمشتريات لجميع العملاء أو لعملاء محددين.
 
 3. حدد **Default alternative currency** لتطبيقها على جميع العملاء الجدد. يؤثر هذا الإعداد فقط على المستخدمين الذين يسجلون بعد التغيير.
 
@@ -95,29 +91,25 @@ title: "إعداد الفوترة"
   <Accordion title="Our billing details have changed. How to update them in the system so that new billing details appear on invoices?">
     لتحديث تفاصيل الفوترة على الفواتير المرسلة إلى عملائك:
 
-    ```text
-    1. Go to **Location settings > General > Billing details** tab.
-    2. Update your legal business name, address, or tax ID.
-    3. Go to **Location settings > Billing > Invoices** tab.
-    4. Update the invoice **Footer**, if needed.
-    
-    To update billing details on invoices from RNTOR to you:
-    
-    1. As an owner, go to **Network settings > Billing** page.
-    2. In the **Billing details** section, click **Edit**.
-    
-    Once edited, all future invoices will reflect your updated billing details.
-    ```
+    1. انتقل إلى علامة التبويب **Location** **settings** \> **General** \> "Billing details".
+    2. قم بتحديث الاسم القانوني للنشاط التجاري أو العنوان أو الرقم الضريبي.
+    3. انتقل إلى علامة التبويب **Location** **settings** \> **Billing \>** "Invoices".
+    4. قم بتحديث "Footer" الفاتورة، إذا لزم الأمر.
+
+    لتحديث تفاصيل الفوترة على الفواتير المرسلة من Spacebring إليك:
+
+    1. بصفتك مالكًا، انتقل إلى صفحة **Merchant settings \> Billing**.
+    2. في قسم "Billing details"، انقر على `Edit`.
+
+    بمجرد التحرير، ستعكس جميع الفواتير المستقبلية تفاصيل الفوترة المحدثة الخاصة بك.​ ​
   </Accordion>
 
   <Accordion title="Why do some users not receive invoices automatically?">
     هناك عدة أسباب قد تمنع العضو من تلقي فاتورته:
 
-    ```text
-    - **Email delivery issues:** The email address on file may be incorrect, or the invoice email may be blocked by spam filters. Double-check that the member's email is accurate and active.
-    - **Spam or junk folder:** Invoices might be delivered, but end up in the member's spam or junk folder. Encourage members to check these folders and mark the sender as safe.
-    - **Paused payment collection:** [Payment collection may be paused](/admin/billing/subscriptions) for the customer's subscription, which means their invoices will not be auto-issued.
-    - **No company manager assigned:** If the invoice is meant to be sent to a company, make sure a [company manager](/admin/customer-management/users/members) has been assigned. Without one, the invoice is generated but not delivered to anyone.
-    ```
+    - **Email delivery issues:** قد يكون عنوان البريد الإلكتروني المسجل غير صحيح، أو قد يتم حظر بريد الفاتورة بواسطة عوامل تصفية البريد العشوائي. تحقق مرة أخرى من أن البريد الإلكتروني للعضو دقيق ونشط.
+    - **Spam or junk folder:** قد يتم تسليم الفواتير، لكنها تنتهي في مجلد البريد العشوائي أو غير الهام للعضو. شجع الأعضاء على التحقق من هذه المجلدات ووضع علامة على المرسل كآمن.
+    - **Paused payment collection:** [**قد يتم إيقاف تحصيل المدفوعات مؤقتًا**](/admin/billing/subscriptions/control-invoice-issuance) لاشتراك العميل، مما يعني أنه لن يتم إصدار فواتيره تلقائيًا.
+    - **No company manager assigned:** إذا كان من المفترض إرسال الفاتورة إلى شركة، فتأكد من تعيين [**مدير شركة**](https://www.spacebring.com/docs/customer-management/company-members-and-managers). بدون ذلك، يتم إنشاء الفاتورة ولكن لا يتم تسليمها إلى أي شخص.
   </Accordion>
 </AccordionGroup>
