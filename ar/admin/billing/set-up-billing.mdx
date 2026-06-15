@@ -1,3 +1,154 @@
----
+
 title: "إعداد الفوترة"
----
+description: "تكوين تفاصيل الفوترة والاشتراكات والفواتير والضرائب والعملات لموقعك."
+-----------------------------------------------------------------------------------------------------------
+
+أعدّ تكوينات الفوترة الأساسية لموقعك، بما في ذلك تفاصيل الفوترة والاشتراكات والفواتير والضرائب والعملات، حتى يتمكن RNTOR من إصدار فواتير وإيصالات صحيحة.
+
+كوّن إعدادات الفوترة لموقعك لإنشاء فواتير وإيصالات واشتراكات ومدفوعات وسجلات محاسبية دقيقة.
+
+<Frame caption="Configure location billing">
+  <iframe
+    className="w-full aspect-video rounded-xl"
+    src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID"
+    title="Configure location billing"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+## إضافة تفاصيل الفوترة
+
+1. انتقل إلى **Location settings > General > Billing details**.
+
+2. املأ تفاصيل فوترة موقعك:
+
+   * الاسم القانوني للنشاط التجاري
+   * العنوان
+   * الرقم الضريبي
+   * بريد التواصل الإلكتروني
+
+   تظهر هذه التفاصيل على الفواتير والإيصالات الصادرة من هذا الموقع وقد تُستخدم للامتثال الضريبي والفوترة الإلكترونية.
+
+3. إذا كانت دولتك تتطلب معلومات فوترة أو معلومات حساب مصرفي إضافية، فأكمل الحقول ذات الصلة قبل إصدار الفواتير.
+
+<Frame caption="Location billing details">
+  ![Location billing details](/images/billing/location-billing-details.png)
+</Frame>
+
+<Note>
+  تنطبق التغييرات في تفاصيل الفوترة على الفواتير والإيصالات الصادرة حديثاً. الفواتير الصادرة سابقاً تبقى دون تغيير.
+</Note>
+
+## تكوين إعدادات الاشتراكات
+
+1. انتقل إلى **Location settings > Billing > Subscriptions**.
+2. اختر كيف يجب أن تعمل فوترة الاشتراك لموقعك.
+3. اضبط **Billing cycle anchor** لتحديد متى يتم إنشاء فواتير الاشتراك المتكررة.
+4. كوّن ما إذا كان يجب إزالة الأعضاء تلقائياً أو تحديثهم عند انتهاء اشتراكهم أو فشله أو تغيير حالته.
+
+<Frame caption="Subscription billing settings">
+  ![Subscription billing settings](/images/billing/subscription-settings.png)
+</Frame>
+
+## تكوين إعدادات الفاتورة
+
+1. انتقل إلى **Location settings > Billing > Invoices**.
+
+2. إذا كانت دولتك تدعم الفوترة الإلكترونية، فعّل **eInvoicing** وأكمل تدفق التحقق المطلوب.
+
+3. اختر **Invoice type** المستخدم للفواتير الصادرة من هذا الموقع:
+
+   * **Invoice** — عنوان الفاتورة القياسي للفواتير الصادرة ورسائل البريد الإلكتروني للفواتير.
+   * **Proforma invoice** — عنوان الفاتورة والبريد الإلكتروني المستخدم قبل الإصدار النهائي أو الدفع.
+   * **VAT invoice** — عنوان الفاتورة المستخدم عندما تكون فواتير ضريبة القيمة المضافة مطلوبة.
+   * **Tax invoice** — عنوان الفاتورة المستخدم عندما تكون الفواتير الضريبية مطلوبة في دولتك.
+
+4. اختر **Numbering scheme** للفواتير:
+
+   * **Customer** — لكل عميل تسلسل فواتير خاص به.
+   * **Location** — تشترك الفواتير الصادرة من هذا الموقع في تسلسل فواتير واحد.
+
+5. استخدم **Advance invoicing** لتحديد عدد الأيام قبل فترة الاشتراك التالية التي يجب فيها إصدار الفاتورة.
+
+6. اضبط فترة **Payment due** لتحديد عدد الأيام المتاحة للعملاء للدفع بعد إصدار الفاتورة.
+
+7. أدِر **Payment retries and reminders** للتحكم في تذكيرات الدفع الفاشل وسلوك إعادة المحاولة.
+
+8. املأ حقل **Footer** لإضافة تفاصيل إضافية في أسفل الفواتير والإيصالات، مثل تعليمات الدفع أو معلومات التحويل المصرفي.
+
+9. املأ **Accounting email** إذا كان يجب إرسال الفواتير والإيصالات أيضاً إلى صندوق بريد المالية أو المحاسبة.
+
+<Frame caption="Invoice settings">
+  ![Invoice settings](/images/billing/invoice-settings.png)
+</Frame>
+
+<Info>
+  يعتمد توفر الفوترة الإلكترونية على بلد الفوترة ومزود الامتثال المُكوَّن.
+</Info>
+
+## تكوين الضرائب
+
+1. انتقل إلى **Location settings > Billing > Taxes**.
+2. فعّل الضرائب إذا كان يجب على موقعك فرض ضريبة على الفواتير أو الإيصالات أو الحجوزات أو الاشتراكات أو الحزم أو المشتريات الأخرى.
+3. اختر نوع الضريبة المطلوب لدولتك.
+4. اضبط معدل الضريبة.
+5. اختر ما إذا كانت الأسعار شاملة الضريبة أم غير شاملة.
+
+<Frame caption="Tax settings">
+  ![Tax settings](/images/billing/tax-settings.png)
+</Frame>
+
+<Note>
+  تأكد من أن إعدادات الضرائب الخاصة بك تتوافق مع متطلباتك القانونية والمحاسبية قبل إصدار الفواتير.
+</Note>
+
+## تكوين العملات
+
+1. انتقل إلى **Location settings > Billing > Currencies**.
+2. حدد العملة الرئيسية لموقعك.
+3. أضف عملات بديلة إذا كنت بحاجة إلى بيع خدمات أو حزم أو حجوزات معينة بعملات إضافية.
+4. اختر عملة بديلة افتراضية فقط إذا كنت تريد تطبيقها تلقائياً على العملاء الجدد.
+
+<Frame caption="Currency settings">
+  ![Currency settings](/images/billing/currency-settings.png)
+</Frame>
+
+<Note>
+  إذا كنت بحاجة فقط إلى عملات بديلة لعملاء محددين، فاترك العملة البديلة الافتراضية فارغة وطبّق العملة مباشرةً على هؤلاء العملاء عند الحاجة.
+</Note>
+
+## الأسئلة الشائعة
+
+<AccordionGroup>
+  <Accordion title="تغيرت تفاصيل الفوترة لدينا. كيف نحدّث الفواتير من الآن فصاعداً؟">
+    لتحديث تفاصيل الفوترة للفواتير المرسلة إلى عملائك:
+
+```
+1. Go to **Location settings > General > Billing details**.
+2. Update your legal business name, address, tax ID, or contact details.
+3. Go to **Location settings > Billing > Invoices**.
+4. Update invoice footer or accounting email settings if needed.
+
+Once updated, newly issued invoices and receipts will use the new billing details. Previously issued invoices remain unchanged.
+```
+
+  </Accordion>
+
+  <Accordion title="لماذا لا يستلم بعض المستخدمين الفواتير تلقائياً؟">
+    قد لا يستلم العضو أو العميل فاتورة تلقائياً لعدة أسباب:
+
+```
+- **Email delivery issue:** The email address may be incorrect, inactive, or blocked.
+- **Spam or junk folder:** The invoice email may have been delivered but filtered by the customer’s email provider.
+- **Payment collection paused:** If payment collection is paused, invoices may not be issued or sent automatically.
+- **Missing company manager:** If the invoice is issued to a company, make sure the company has an assigned manager or billing contact.
+- **Incomplete billing details:** Some invoice or eInvoicing flows require complete customer billing details before issuance.
+```
+
+  </Accordion>
+
+  <Accordion title="هل تؤثر تغييرات تفاصيل الفوترة على الفواتير القديمة؟">
+    لا. تنطبق تغييرات تفاصيل الفوترة على الفواتير والإيصالات المستقبلية فقط. يجب أن تحتفظ الفواتير الصادرة بتفاصيل الفوترة التي كانت لديها وقت الإصدار.
+  </Accordion>
+</AccordionGroup>

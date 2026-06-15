@@ -1,3 +1,65 @@
 ---
-title: "الفوترة"
+title: "الفوترة "
 ---
+
+يمكن للعملاء الوصول إلى بيانات وإعدادات الفوترة الخاصة بهم وإدارتها في بوابة العميل، بينما لا يمكن إدارة بعض الجوانب إلا من قِبل المسؤولين من لوحة تحكم المسؤول.
+
+## كيف يعرض المسؤولون فوترة العميل ويديرونها
+
+لعرض بيانات وإعدادات فوترة العميل وإدارتها، ينتقل المسؤولون إلى **Customers** \> افتح ملف المستخدم أو الشركة.
+
+1. بالنسبة للشركات، انقر على **(…)** في أعلى اليمين \> `Edit` لتحديث اسم الشركة وشعارها وتفاصيل الاتصال.
+
+<Frame>
+  ![Screenshot 2026 06 09 At 2 00 29 PM](/images/Screenshot-2026-06-09-at-2.00.29-PM.png)
+</Frame>
+
+2. افتح **subscription** الخاص بالعميل لـ:
+
+- [تعديله](/admin/billing/subscriptions/edit-a-subscription) بناءً على شروط العقد الجديدة.
+- [إيقاف جمع المدفوعات](/admin/billing/subscriptions/control-invoice-issuance) للعميل.
+- عرض [الفاتورة القادمة](/admin/billing/invoices/upcoming-invoices).
+
+<Frame>
+  ![Screenshot 2026 06 09 At 2 03 57 PM](/images/Screenshot-2026-06-09-at-2.03.57-PM.png)
+</Frame>
+
+3. انتقل إلى ملف العميل لـ:
+
+- إدارة إعداد **"[Pay with invoice](/admin/billing/payments/pay-with-invoice)"** عبر طريقة دفع فاتورة الشركة و[الصلاحيات](/admin/customer-management/companies/company-payment-method-permissions) الخاصة بها (بما في ذلك خيار **None** لتعطيل خدمة محددة بالكامل).
+- [إدارة فواتير العميل](/admin/billing/invoices/track-and-manage-invoices) وعرض [المعاملات](/admin/billing/payments/payment-gateway).
+- [تنزيل الفواتير](/admin/billing/invoices/download-an-invoice) و[الإيصالات](/admin/billing/payments/receipts).
+- إدارة عناصر الفاتورة المعلقة.
+- عرض طرق الدفع الخاصة بالعميل والتحقق مما إذا كانت لديهم [طريقة افتراضية](/admin/billing/payments/payment-gateway).
+- فتح سجل مدفوعات العميل في Stripe عبر زر **View in Stripe** (متاح عند توصيل [تكامل Stripe](/admin/integrations/payments/stripe/stripe)).
+- عرض أو تحديث [تفاصيل فوترة العميل](/admin/customer-management/billing-details).
+- بالنسبة للشركات، إدارة البريد الإلكتروني للفوترة لإرسال فواتير وإيصالات الشركة إلى مستلم إضافي إلى جانب مديري الشركة.
+- إدارة إعداد [**Auto-pay**](/admin/billing/subscriptions/control-invoice-auto-charge).
+- تفعيل وتطبيق [عملة بديلة](/admin/billing/currencies) لهذا العميل.
+
+## كيف يعرض مديرو الشركة فوترة شركتهم ويديرونها
+
+ينتقل مديرو الشركة إلى **Locations \> Membership \>** القسم الذي يحمل اسم شركتهم **\> Billing**. في هذه الصفحة، يمكنهم:
+
+- عرض و[دفع فواتير الشركة](/admin/billing/invoices/pay-for-invoice).
+- عرض المعاملات التي تمت بطرق دفع الشركة.
+- [تنزيل الفواتير](/admin/billing/invoices/download-an-invoice) و[الإيصالات](/admin/billing/payments/receipts).
+- [عرض الرصيد المالي لشركتهم](/admin/billing/invoices/customer-money-balance).
+- التحقق من تفاصيل اشتراكهم الحالي.
+- التحقق من [فاتورتهم القادمة](/admin/billing/invoices/upcoming-invoices).
+- [إضافة طريقة دفع، أو حفظها كافتراضية، أو تغيير طريقة الدفع الافتراضية، أو حذف طريقة دفع.](/admin/billing/payments/payment-gateway)
+- [إدارة صلاحيات طرق دفع الشركة](/admin/customer-management/companies/company-payment-method-permissions) لبطاقات الشركة، وفاتورة الشركة، والأرصدة، وتذاكر اليوم الواحد.
+- إدارة [تفاصيل الفوترة](/admin/customer-management/billing-details) للشركة.
+- إدارة البريد الإلكتروني للفوترة الخاص بالشركة لإرسال الفواتير والإيصالات إلى مستلم إضافي إلى جانب مديري الشركة.
+
+## كيف يعرض المستخدمون الأفراد فوترتهم ويديرونها
+
+ينتقل المستخدمون الأفراد إلى **Locations \> Membership \> Billing** ضمن قسم "Personal". في هذه الصفحة، يمكنهم:
+
+- عرض و[دفع فواتيرهم](/admin/billing/invoices/pay-for-invoice)، وعرض المعاملات.
+- [تنزيل الفواتير](/admin/billing/invoices/download-an-invoice) و[الإيصالات](/admin/billing/payments/receipts).
+- [عرض رصيدهم المالي](/admin/billing/invoices/customer-money-balance).
+- التحقق من تفاصيل اشتراكهم الحالي.
+- التحقق من [فاتورتهم القادمة](/admin/billing/invoices/upcoming-invoices).
+- [إضافة طريقة دفع، أو حفظها كافتراضية، أو تغيير طريقة الدفع الافتراضية، أو حذف طريقة دفع.](/admin/billing/payments/payment-gateway)
+- إدارة [تفاصيل الفوترة](/admin/customer-management/billing-details) الخاصة بهم.
