@@ -1,3 +1,147 @@
 ---
 title: "إعداد الخطط"
 ---
+```mdx
+---
+
+الخطط هي خيارات عضوية أو حزم خدمات يمكن للعملاء الاشتراك فيها، عادةً على أساس طويل الأجل أو متكرر. تشمل الأمثلة الشائعة في مساحات العمل المشتركة Hot desk unlimited، أو Hot desk (10 days)، أو Flex membership.
+
+باستخدام الخطط، يمكنك:
+
+- هيكلة خيارات العضوية وعرضها على العملاء
+- السماح للعملاء بالتسجيل فورًا أو تقديم طلبات
+- إعداد عملاء جدد للاشتراكات بسرعة، باستخدام الخطط كقوالب.
+
+## إعداد الخطط
+
+1. انتقل إلى **Billing** > **Plans**.
+
+2. انقر على `Create plan`.
+
+<Frame>
+  <img src="/images/placeholders/plans-list-create-plan.png" alt="Plans page with a Create plan button" />
+</Frame>
+
+### تكوين الخطة
+
+- **Name** — يظهر على فواتير العملاء.
+
+- **Cycle** — الفترة الزمنية لصلاحية الخطة ومدى تكرار تجديد الاشتراك. الخيارات المتاحة: أسبوع واحد، شهر واحد، 3 أشهر، 6 أشهر، أو سنة واحدة.
+
+- **Description** — التفاصيل الموجهة للعملاء حول ما هو مدرج.
+
+- **Price** — رسوم دورة واحدة.
+
+- **Setup fee** — رسوم لمرة واحدة تُضاف إلى أول فاتورة للعميل.
+
+<Info>
+  رسوم الإعداد خاضعة للضريبة ولكنها لا تتأثر بالخصومات أو التناسب الزمني للفاتورة.
+</Info>
+
+- [**Custom tax rate**](/admin/locations/set-up-billing#configure-taxes) — يتجاوز معدل الضريبة الافتراضي للموقع لهذه الخطة.
+
+- **Minimum commitment** — الحد الأدنى الإلزامي لعدد الدورات التي يمكن للعميل الاشتراك فيها.
+
+- [**Credits**](/admin/customer-management/billing) — أرصدة قابلة للانتهاء يتلقاها العميل في كل دورة للحجوزات أو المشتريات.
+
+- [**Day passes**](/admin/customer-management/billing) — تذاكر يومية قابلة للانتهاء يتلقاها العميل في كل دورة لحجز Hot desks.
+
+- [**Discounts**](/admin/engagement/promotions) — قدم خصومات على خدمات معينة للأعضاء المشتركين في هذه الخطة.
+
+- **Sign-up** — تحكم في ما إذا كان بإمكان العملاء رؤية هذه الخطة والاشتراك فيها، وكيفية ذلك.
+
+### إعداد التسجيل
+
+| Setting | Outcome |
+|---|---|
+| تمكين مع نوع **Immediate** | يمكن للعملاء رؤية هذه الخطة و[التسجيل على الفور](/admin/customer-management/users/members) دون تدخل المسؤول. |
+| تمكين مع نوع **Request** | يمكن للعملاء رؤية هذه الخطة و[تقديم طلب](/admin/customer-management/requests) للتسجيل. يقوم المسؤولون بمعالجة الطلبات كتذاكر دعم. مفيد إذا كنت لا تسمح للعملاء الجدد بأن يصبحوا أعضاء بشكل مستقل. |
+| تعطيل **Sign-up** | يجب أن تظل الخطة مرئية فقط للمسؤولين من أجل [إنشاء الاشتراكات](/admin/customer-management/billing). |
+
+- [**Access**](/admin/integrations/access-control) — مجموعة التحكم في الوصول. تظهر إذا كان لديك [التكامل مع نظام التحكم في الوصول](/admin/integrations/access-control).
+
+- **Printing** — مجموعة الوصول إلى الطباعة.
+
+- **Exclusive access** — يتمتع العملاء على هذه الخطة بوصول حصري لرؤية الموارد أو حجزها.
+
+3. اضغط على `Save`.
+
+<Info>
+  الخطط مصممة للوصول بدون مورد مخصص. تُكوَّن المكاتب المخصصة أو المكاتب الخاصة أو الإيجارات الأخرى — سواء كانت طويلة الأجل أو متكررة أو الوصول بالساعة أو اليومي — في [Resources](/admin/resource-management/resources).
+</Info>
+
+## الخطوات التالية
+
+بعد إنشاء خططك:
+
+- يمكن للعملاء استكشاف الخطط المتاحة و[التسجيل](/admin/customer-management/users/members) أو [تقديم الطلبات](/admin/customer-management/requests)، اعتمادًا على إعداداتك.
+
+<Frame>
+  <img src="/images/placeholders/customer-plans-sign-up.png" alt="Customer portal showing available plans and plan sign-up" />
+</Frame>
+
+- يمكن للمسؤولين بسرعة [إعداد أعضاء جدد للاشتراكات](/admin/customer-management/billing)، باستخدام الخطط كقوالب جاهزة بأسعار ومزايا ووصول محددة مسبقًا.
+
+## تحرير أو حذف خطة
+
+1. انتقل إلى **Billing** > **Plans**.
+
+2. اضغط على زر القائمة `...` بجوار [الخطة التي أُنشئت مسبقًا](#set-up-plans) واضغط `Edit` أو `Delete`.
+
+<Frame>
+  <img src="/images/placeholders/plans-edit-delete-menu.png" alt="Plans page showing the Edit and Delete actions in the plan menu" />
+</Frame>
+
+<Info>
+  حذف خطة لا يؤثر على الاشتراكات النشطة. إذا كان لدى أعضائك هذه الخطة محددة في اشتراكهم، فستستمر في العمل بالنسبة لهم.
+</Info>
+
+<Warning>
+  حذف خطة لا رجعة فيه ولا يمكن التراجع عنه. بدلاً من حذف خطة بالكامل، يمكنك [تعطيل خاصية **Sign-up**](#sign-up-setting) لجعل من المستحيل على المستخدمين شراء الخطة بأنفسهم. في الوقت نفسه، سيظل المسؤولون قادرين على اختيار هذه الخطة لإنشاء الاشتراكات يدويًا.
+</Warning>
+
+## الأسئلة الشائعة
+
+<AccordionGroup>
+  <Accordion title="How to create a custom plan for one customer?">
+    ابدأ في [إنشاء الاشتراك](/admin/customer-management/billing) لعميلك، احتفظ بـ **Custom** في حقل **Product**، واكتب يدويًا اسم الخطة والسعر والبدلات الأخرى.
+  </Accordion>
+
+  <Accordion title="How can I copy the link to all public plans?">
+    انتقل إلى **Billing** > **Plans** > اضغط على القائمة `...` في أعلى اليمين > **Copy link to all public plans**.
+
+    <Frame>
+      <img src="/images/placeholders/plans-copy-public-link.png" alt="Plans page showing Copy link to all public plans action" />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Can I offer discounts for plans?">
+    لتقديم خصومات مستهدفة على خطط معينة أو لعملاء محددين، أنشئ [كوبونات وأكواد ترويجية](/admin/engagement/promotions) من نوع **Subscription items**.
+
+    طبقها مباشرة عند [إنشاء الاشتراكات](/admin/customer-management/billing) للمستخدمين والشركات، أو شارك [الكود الترويجي](/admin/engagement/promotions) مع العملاء لاسترداد الخصم بأنفسهم عند التسجيل.
+  </Accordion>
+
+  <Accordion title="How to offer a package of hours for booking rooms?">
+    يمكنك استخدام أي من الخيارات التالية:
+
+    - [**Create a membership plan with credits**](/admin/customer-management/billing): هذا مثالي للحزم المتكررة. يشترك العملاء في خطة ويتلقون تلقائيًا عددًا محددًا من الأرصدة القابلة للانتهاء في كل دورة لاستخدامها في الحجوزات.
+    - [**Create a credit package**](/admin/service/credits): هذا هو الأفضل للمشتريات لمرة واحدة. يمكن للعملاء شراء حزمة لمرة واحدة من الأرصدة في أي وقت واستخدامها للحجوزات.
+  </Accordion>
+
+  <Accordion title="Do changes to the plan affect existing members' subscriptions?">
+    تنطبق التغييرات على الخطة فقط على الاشتراكات المستقبلية الجديدة وعلى الأعضاء الحاليين الذين تم تمكين **Auto-update from plan** في اشتراكهم.
+
+    لتطبيق تغييرات الخطة على الأعضاء الحاليين، لديك خياران:
+
+    - [**Edit their subscriptions**](/admin/customer-management/billing) بشكل فردي وتطبيق التغييرات يدويًا، أو
+    - قم بتشغيل **Auto-update from plan** في اشتراكات العملاء الحاليين، ثم قم بإجراء تغيير على الخطة. بهذه الطريقة، سيتم تطبيقها تلقائيًا على الأعضاء الحاليين أيضًا.
+  </Accordion>
+
+  <Accordion title="How to raise the price for all customers who are subscribed to the plan?">
+    تأكد من [تمكين إعداد **Auto-update from plan**](/admin/customer-management/billing) في جميع اشتراكات عملائك النشطة الذين لديهم تلك الخطة. ثم قم بتحرير الخطة حسب الحاجة.
+
+    - ستنطبق أي تغييرات تُجرى على الأسعار أو الأرصدة أو التذاكر اليومية تلقائيًا على اشتراكاتهم مع بداية دورة الفوترة التالية.
+    - تنطبق التغييرات على الخصومات والوصول إلى الأبواب والوصول الحصري إلى الموارد على الفور.
+  </Accordion>
+</AccordionGroup>
+```
