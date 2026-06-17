@@ -291,38 +291,35 @@ html.rntor-arabic-docs #navigation-items button > div:last-child {
   transform-origin: center !important;
 }
 }
-/* =========================
-   FIX ARABIC BULLET LIST MARKERS
-   ========================= */
-
-html[data-current-path^="/ar/"] article ul,
-html[data-current-path^="/ar/"] article ol,
-html.rntor-arabic-docs article ul,
-html.rntor-arabic-docs article ol {
+/* Fix Arabic prose bullets */
+html[data-current-path^="/ar/"] #content-area .prose ul,
+html.rntor-arabic-docs #content-area .prose ul {
   direction: rtl !important;
   text-align: right !important;
+  padding-right: 1.75rem !important;
+  padding-left: 0 !important;
   list-style-position: outside !important;
-  padding-inline-start: 0 !important;
-  padding-inline-end: 2rem !important;
-  margin-inline-start: 0 !important;
-  margin-inline-end: 0 !important;
 }
 
-html[data-current-path^="/ar/"] article ul > li,
-html[data-current-path^="/ar/"] article ol > li,
-html.rntor-arabic-docs article ul > li,
-html.rntor-arabic-docs article ol > li {
+html[data-current-path^="/ar/"] #content-area .prose ul > li,
+html.rntor-arabic-docs #content-area .prose ul > li {
   direction: rtl !important;
   text-align: right !important;
   unicode-bidi: isolate !important;
-  padding-inline-start: 0 !important;
-  padding-inline-end: 0.25rem !important;
+  position: relative !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
-html[data-current-path^="/ar/"] article ul > li::marker,
-html[data-current-path^="/ar/"] article ol > li::marker,
-html.rntor-arabic-docs article ul > li::marker,
-html.rntor-arabic-docs article ol > li::marker {
+/* Native browser bullet */
+html[data-current-path^="/ar/"] #content-area .prose ul > li::marker,
+html.rntor-arabic-docs #content-area .prose ul > li::marker {
   direction: rtl !important;
-  unicode-bidi: isolate !important;
+}
+
+/* Mintlify custom bullet */
+html[data-current-path^="/ar/"] #content-area .prose ul > li::before,
+html.rntor-arabic-docs #content-area .prose ul > li::before {
+  left: auto !important;
+  right: -1.25rem !important;
 }
