@@ -290,3 +290,75 @@ html.rntor-arabic-docs #navigation-items button > div:last-child {
   transform: scaleX(-1) !important;
   transform-origin: center !important;
 }
+
+/* =========================
+   ARABIC RTL LISTS + ACCORDIONS
+   ========================= */
+
+/* Fix bullets/numbers position in Arabic articles */
+html[data-current-path^="/ar/"] article ul,
+html[data-current-path^="/ar/"] article ol,
+html.rntor-arabic-docs article ul,
+html.rntor-arabic-docs article ol {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 1.75rem !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+html[data-current-path^="/ar/"] article li,
+html.rntor-arabic-docs article li {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-right: 0.25rem !important;
+  padding-left: 0 !important;
+}
+
+html[data-current-path^="/ar/"] article li::marker,
+html.rntor-arabic-docs article li::marker {
+  direction: rtl !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Fix Accordion / FAQ direction in Arabic pages */
+html[data-current-path^="/ar/"] article [data-radix-accordion-trigger],
+html[data-current-path^="/ar/"] article [data-radix-accordion-content],
+html[data-current-path^="/ar/"] article button[aria-expanded],
+html[data-current-path^="/ar/"] article details,
+html[data-current-path^="/ar/"] article summary,
+html.rntor-arabic-docs article [data-radix-accordion-trigger],
+html.rntor-arabic-docs article [data-radix-accordion-content],
+html.rntor-arabic-docs article button[aria-expanded],
+html.rntor-arabic-docs article details,
+html.rntor-arabic-docs article summary {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Accordion text inside */
+html[data-current-path^="/ar/"] article [data-radix-accordion-trigger] *,
+html[data-current-path^="/ar/"] article [data-radix-accordion-content] *,
+html[data-current-path^="/ar/"] article button[aria-expanded] *,
+html[data-current-path^="/ar/"] article details *,
+html[data-current-path^="/ar/"] article summary *,
+html.rntor-arabic-docs article [data-radix-accordion-trigger] *,
+html.rntor-arabic-docs article [data-radix-accordion-content] *,
+html.rntor-arabic-docs article button[aria-expanded] *,
+html.rntor-arabic-docs article details *,
+html.rntor-arabic-docs article summary * {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Move accordion chevron to the left side visually */
+html[data-current-path^="/ar/"] article [data-radix-accordion-trigger],
+html[data-current-path^="/ar/"] article button[aria-expanded],
+html[data-current-path^="/ar/"] article summary,
+html.rntor-arabic-docs article [data-radix-accordion-trigger],
+html.rntor-arabic-docs article button[aria-expanded],
+html.rntor-arabic-docs article summary {
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+}
