@@ -386,15 +386,20 @@ html.rntor-arabic-docs #pagination > a:last-child svg {
   transform: none !important;
   rotate: 180deg !important;
 }
-/* Nested links inside Arabic "On this page" */
-html[data-current-path^="/ar/"]
-main#content-container aside:not(#sidebar) a[style*="padding-left"],
-html.rntor-arabic-docs
-main#content-container aside:not(#sidebar) a[style*="padding-left"] {
+/* Arabic nested links inside "On this page" */
+html[data-current-path^="/ar/"] #table-of-contents a[style*="padding-left"],
+html.rntor-arabic-docs #table-of-contents a[style*="padding-left"] {
+  display: block !important;
+  width: 100% !important;
+
   direction: rtl !important;
-  justify-content: flex-start !important;
   text-align: right !important;
+
   padding-left: 0 !important;
   padding-right: 1rem !important;
+
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
   transform: none !important;
 }
