@@ -355,3 +355,33 @@ summary[data-component-part="accordion-button"]
   transform: scaleX(-1) !important;
   transform-origin: center !important;
 }
+/* Arabic previous / next page navigation */
+html[data-current-path^="/ar/"] #pagination,
+html.rntor-arabic-docs #pagination {
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+  direction: rtl !important;
+}
+
+/* Remove the English auto-margin and control spacing ourselves */
+html[data-current-path^="/ar/"] #pagination > a,
+html.rntor-arabic-docs #pagination > a {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-direction: row-reverse !important;
+  gap: 0.75rem !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Previous page: right side, arrow points right */
+html[data-current-path^="/ar/"] #pagination > a:first-child svg,
+html.rntor-arabic-docs #pagination > a:first-child svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Next page: left side, arrow points left */
+html[data-current-path^="/ar/"] #pagination > a:last-child svg,
+html.rntor-arabic-docs #pagination > a:last-child svg {
+  transform: rotate(0deg) !important;
+}
