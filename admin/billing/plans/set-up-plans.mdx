@@ -1,6 +1,9 @@
 ---
 title: "Set up plans"
 ---
+
+Create and manage membership plans for long-term or recurring access without a dedicated resource rental
+
 Plans are membership options or packages of services that customers can subscribe to, usually on a long-term or recurring basis. Common examples in coworking spaces include Hot desk unlimited, Hot desk (10 days), or Flex membership.
 
 With plans, you can:
@@ -11,82 +14,69 @@ With plans, you can:
 
 ## Set up plans
 
-1. Go to **Billing** > **Plans**.
-
+1. Go to **Billing** \> **Plans**.
 2. Click `Create plan`.
 
 <Frame>
-  <img src="/images/placeholders/plans-list-create-plan.png" alt="Plans page with a Create plan button" />
+  ![Screenshot 2026 06 16 At 6 39 27 PM](/images/Screenshot-2026-06-16-at-6.39.27-PM.png)
 </Frame>
 
 ### Plan configuration
 
 - **Name** — appears on customer invoices.
-
 - **Cycle** — the interval of plan validity and how often the subscription renews. Available options: 1 week, 1 month, 3 months, 6 months, or 1 year.
-
 - **Description** — customer-facing details of what is included.
-
 - **Price** — the fee for 1 cycle.
-
 - **Setup fee** — one-time charge to add to the customer’s first invoice.
 
 <Info>
   The setup fee is taxable but is not affected by discounts or invoice proration.
 </Info>
 
-- [**Custom tax rate**](/admin/locations/set-up-billing#configure-taxes) — overrides the location’s default tax rate for this plan.
-
+- [**Custom tax rate**](/admin/billing/taxes/custom-tax-rates) — overrides the location’s default tax rate for this plan.
 - **Minimum commitment** — the mandatory minimum number of cycles a customer can subscribe for.
-
-- [**Credits**](/admin/customer-management/billing) — expiring credits the customer will receive each cycle for bookings or purchases.
-
-- [**Day passes**](/admin/customer-management/billing) — expiring day passes the customer will receive each cycle for booking hot desks.
-
-- [**Discounts**](/admin/engagement/promotions) — offer discounts on certain services to members subscribed to this plan.
-
+- [**Credits**](/admin/billing/credits-and-day-passes/credits) — expiring credits the customer will receive each cycle for bookings or purchases.
+- [**Day passes**](/admin/billing/credits-and-day-passes/day-passes) — expiring day passes the customer will receive each cycle for booking hot desks.
+- [**Discounts**](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases) — offer discounts on certain services to members subscribed to this plan.
 - **Sign-up** — control whether and how customers can see and sign up for this plan.
 
 ### Sign-up setting
 
 | Setting | Outcome |
-|---|---|
-| Enable with **Immediate** type | Customers can see this plan and [sign up immediately](/admin/customer-management/users/members) without admin involvement. |
-| Enable with **Request** type | Customers can see this plan and [submit a request](/admin/customer-management/requests) to sign up. Administrators process requests as support tickets. Useful if you don’t allow new customers to become your members independently. |
-| Disable **Sign-up** | The plan should remain visible only for administrators for [creating subscriptions](/admin/customer-management/billing). |
+| --- | --- |
+| Enable with **Immediate** type | Customers can see this plan and [sign up immediately](/admin/billing/plans/immediate-plan-sign-ups#how-users-sign-up-for-plans) without admin involvement. |
+| Enable with **Request** type | Customers can see this plan and [submit a request](/admin/billing/plans/applications-for-plans#how-users-apply-for-a-plan) to sign up. Administrators process requests as support tickets. Useful if you don’t allow new customers to become your members independently. |
+| Disable **Sign-up** | The plan should remain visible only for administrators for [creating subscriptions](/admin/billing/subscriptions/set-up-subscriptions). |
 
 - [**Access**](/admin/integrations/access-control) — access control group. Appears if you have the [integration with the access control system](/admin/integrations/access-control).
-
-- **Printing** — printing access group.
-
+- [**Printing**](/admin/integrations/printing/ezeep-blue) — printing access group.
 - **Exclusive access** — customers on this plan have exclusive access to see or book resources.
 
 3. Tap `Save`.
 
 <Info>
-  Plans are designed for access without a dedicated resource. Dedicated desks, offices, or other rentals — whether long-term, recurring, or hourly or daily access — are configured in [Resources](/admin/resource-management/resources).
+  Plans are designed for access without a dedicated resource. Dedicated desks, offices, or other rentals — whether long-term, recurring, or hourly or daily access — are configured in [Resources](/admin/resource-management/resources/set-up-pricing).
 </Info>
 
 ## What’s next
 
 After creating your plans:
 
-- Customers can explore available plans and [sign up](/admin/customer-management/users/members) or [submit requests](/admin/customer-management/requests), depending on your settings.
+- Customers can explore available plans and [sign up](/admin/billing/plans/immediate-plan-sign-ups) or [submit requests](/admin/billing/plans/applications-for-plans), depending on your settings.
 
 <Frame>
-  <img src="/images/placeholders/customer-plans-sign-up.png" alt="Customer portal showing available plans and plan sign-up" />
+  ![Screenshot 2026 06 17 At 5 57 23 AM](/images/Screenshot-2026-06-17-at-5.57.23-AM.png)
 </Frame>
 
-- Administrators can quickly [set up new members for subscriptions](/admin/customer-management/billing), using plans as ready-made templates with predefined pricing, benefits, and access.
+- Administrators can quickly [set up new members for subscriptions](/admin/billing/subscriptions/set-up-subscriptions), using plans as ready-made templates with predefined pricing, benefits, and access.
 
 ## Edit or delete a plan
 
-1. Go to **Billing** > **Plans**.
-
-2. Press the menu button `...` next to the preliminary [created plan](#set-up-plans) and tap `Edit` or `Delete`.
+1. Go to **Billing** \> **Plans**.
+2. Press the menu button `...` next to the preliminary [created plan](/admin/billing/plans/set-up-plans) and tap `Edit` or `Delete`.
 
 <Frame>
-  <img src="/images/placeholders/plans-edit-delete-menu.png" alt="Plans page showing the Edit and Delete actions in the plan menu" />
+  ![Screenshot 2026 06 17 At 6 05 41 AM](/images/Screenshot-2026-06-17-at-6.05.41-AM.png)
 </Frame>
 
 <Info>
@@ -94,35 +84,35 @@ After creating your plans:
 </Info>
 
 <Warning>
-  Deleting a plan is irreversible and cannot be undone. Instead of completely deleting a plan, you can [disable the **Sign-up** property](#sign-up-setting) to make it impossible for users to purchase the plan by themselves. Meanwhile, administrators will still be able to choose this plan for creating subscriptions manually.
+  Deleting a plan is irreversible and cannot be undone. Instead of completely deleting a plan, you can [disable the **Sign-up** property](/admin/billing/plans/set-up-plans) to make it impossible for users to purchase the plan by themselves. Meanwhile, administrators will still be able to choose this plan for creating subscriptions manually.
 </Warning>
 
 ## FAQs
 
 <AccordionGroup>
   <Accordion title="How to create a custom plan for one customer?">
-    Start [creating the subscription](/admin/customer-management/billing) for your customer, keep **Custom** in the **Product** field, and manually type the plan name, price, and other allowances.
+    Start [creating the subscription](/admin/billing/subscriptions/set-up-subscriptions) for your customer, keep **Custom** in the **Product** field, and manually type the plan name, price, and other allowances.
   </Accordion>
 
   <Accordion title="How can I copy the link to all public plans?">
-    Go to **Billing** > **Plans** > press the menu `...` top right > **Copy link to all public plans**.
+    Go to **Billing** \> **Plans** \> press the menu `...` top right \> **Copy link to all public plans**.
 
     <Frame>
-      <img src="/images/placeholders/plans-copy-public-link.png" alt="Plans page showing Copy link to all public plans action" />
+      ![Screenshot 2026 06 17 At 6 08 40 AM](/images/Screenshot-2026-06-17-at-6.08.40-AM.png)
     </Frame>
   </Accordion>
 
   <Accordion title="Can I offer discounts for plans?">
-    To offer targeted discounts on specific plans or for selected customers, create [coupons and promo codes](/admin/engagement/promotions) of **Subscription items** type.
+    To offer targeted discounts on specific plans or for selected customers, create [coupons and promo codes](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#create-promo-codes) of **Subscription items** type.
 
-    Apply them directly when [creating subscriptions](/admin/customer-management/billing) for users and companies, or share the [promo code](/admin/engagement/promotions) with customers to redeem the discount on their own when they sign up.
+    [Apply them](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases) directly when creating subscriptions for users and companies, or share the [promo code](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#create-promo-codes) with customers to redeem the discount on their own when they sign up.
   </Accordion>
 
   <Accordion title="How to offer a package of hours for booking rooms?">
     You can use any of the following options:
 
-    - [**Create a membership plan with credits**](/admin/customer-management/billing): This is ideal for recurring packages. Customers subscribe to a plan and automatically receive a set number of expiring credits each cycle to use for bookings.
-    - [**Create a credit package**](/admin/service/credits): This is best for one-off purchases. Customers can buy a one-off package of credits at any time and use them for bookings.
+    - [**Create a membership plan with credits**](/admin/billing/plans/set-up-plans): This is ideal for recurring packages. Customers subscribe to a plan and automatically receive a set number of expiring credits each cycle to use for bookings.
+    - [**Create a credit package**](/admin/billing/credits-and-day-passes/packages): This is best for one-off purchases. Customers can buy a one-off package of credits at any time and use them for bookings.
   </Accordion>
 
   <Accordion title="Do changes to the plan affect existing members' subscriptions?">
@@ -130,15 +120,17 @@ After creating your plans:
 
     To apply plan changes to existing members, you have two options:
 
-    - [**Edit their subscriptions**](/admin/customer-management/billing) individually and apply changes manually, or
+    - [**Edit their subscriptions**](/admin/billing/subscriptions/edit-a-subscription) individually and apply changes manually, or
     - Turn on **Auto-update from plan** in existing customers’ subscriptions, then make a change to the plan. This way, it will automatically apply to existing members, too.
   </Accordion>
 
   <Accordion title="How to raise the price for all customers who are subscribed to the plan?">
-    Ensure the [**Auto-update from plan** setting is enabled](/admin/customer-management/billing) in all your customers’ active subscriptions who have that plan. Then, edit the plan as needed.
+    Ensure the [**Auto-update from plan** setting is enabled](/admin/billing/subscriptions/edit-a-subscription) in all your customers’ active subscriptions who have that plan. Then, edit the plan as needed.
 
     - Any changes made to pricing, credits, or day passes will apply automatically to their subscriptions with the start of the next billing cycle.
     - Changes to discounts, door access, and exclusive resource access apply immediately.
   </Accordion>
 </AccordionGroup>
+
+```text
 ```

@@ -186,8 +186,7 @@
                         "group": "Discounts",
                         "pages": [
                           "admin/billing/discounts/coupons-and-promo-codes",
-                          "admin/billing/discounts/apply-discounts-to-bookings-and-purchases",
-                          "admin/billing/discounts/discounts-with-plan"
+                          "admin/billing/discounts/apply-discounts-to-bookings-and-purchases"
                         ]
                       },
                       {
