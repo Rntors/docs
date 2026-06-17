@@ -1,9 +1,7 @@
 ---
-title: البدء
+title: "البدء"
 description: "أعد إعداد تكامل المطور الخاص بك في Rntor خلال دقائق"
 ---
-
-
 
 يرشدك هذا الدليل إلى إعداد أول تكامل لك مع Rntor. بنهايته، ستحصل على بيانات اعتماد API واشتراك webhook فعّال.
 
@@ -24,8 +22,16 @@ description: "أعد إعداد تكامل المطور الخاص بك في Rnt
 3. اختر علامة التبويب **Developers**
 
 <Frame>
-  <img src="/images/developer-light.png" alt="Developers Tab" className="block dark:hidden" />
-  <img src="/images/developer-dark.png" alt="Developers Tab" className="hidden dark:block" />
+  <img
+    alt="Developers Tab"
+    className="block dark:hidden"
+    src="/images/developer-light.png"
+  />
+  <img
+    alt="Developers Tab"
+    className="hidden dark:block"
+    src="/images/developer-dark.png"
+  />
 </Frame>
 
 ## الخطوة 2: إنشاء بيانات اعتماد API
@@ -42,6 +48,7 @@ description: "أعد إعداد تكامل المطور الخاص بك في Rnt
 </Warning>
 
 ستتلقى:
+
 - **Client ID**: `rntor_` متبوعاً بـ 24 حرفاً (آمن للتخزين، يُستخدم في الطلبات)
 - **Client Secret**: `sk_` متبوعاً بـ 40 حرفاً (احتفظ به سراً، يُستخدم للمصادقة)
 
@@ -79,7 +86,7 @@ ngrok http 3000
 
 1. أن نقطة النهاية الخاصة بك تتلقى طلب POST
 2. أن الحمولة تحتوي على البيانات المتوقعة
-3. أن التحقق من التوقيع يمر بنجاح (انظر [الأمان](/webhooks/security))
+3. أن التحقق من التوقيع يمر بنجاح (انظر [الأمان](/ar/webhooks/security))
 
 ```javascript Example: Logging Received Webhooks
 app.post('/webhooks/rntor', (req, res) => {
@@ -99,6 +106,7 @@ app.post('/webhooks/rntor', (req, res) => {
   <Card title="أمان Webhook" icon="shield" href="/webhooks/security">
     طبّق التحقق من التوقيع لتأمين نقاط النهاية الخاصة بك
   </Card>
+
   <Card title="مصادقة API" icon="key" href="/api-reference/authentication">
     تعرّف على كيفية مصادقة طلبات API الخاصة بك
   </Card>
@@ -109,7 +117,7 @@ app.post('/webhooks/rntor', (req, res) => {
 تخضع جميع طلبات API لحدود معدل لضمان استقرار المنصة:
 
 | الحد | القيمة |
-|------|--------|
+| --- | --- |
 | الطلبات لكل دقيقة | 60 |
 | حد الدفعة | 10 طلبات |
 

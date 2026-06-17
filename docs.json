@@ -517,6 +517,44 @@
             ]
           },
           {
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Promotion",
+                "pages": [
+                  "guides/promotion/soft-opening-of-the-space",
+                  "guides/promotion/integrate-with-your-marketing-website",
+                  "guides/promotion/promote-member-web-portal-and-mobile-app",
+                  "guides/promotion/use-qr-codes",
+                  "guides/promotion/organize-trial-days",
+                  "guides/promotion/promote-self-served-bookings",
+                  "guides/promotion/use-coupons-and-promo-codes"
+                ]
+              },
+              {
+                "group": "Customer management & communication",
+                "pages": [
+                  "guides/customer-management-and-communication/onboard-members",
+                  "guides/customer-management-and-communication/offboard-members",
+                  "guides/customer-management-and-communication/strategies-for-efficient-communication",
+                  "guides/customer-management-and-communication/collect-general-user-consents"
+                ]
+              },
+              {
+                "group": "Revenue & space optimization",
+                "pages": [
+                  "guides/revenue-and-space-optimization/generate-additional-revenue",
+                  "guides/revenue-and-space-optimization/optimize-room-usage",
+                  "guides/revenue-and-space-optimization/rent-out-event-spaces",
+                  "guides/revenue-and-space-optimization/recurring-add-ons"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Guides"
+          },
+          {
             "tab": "API Reference",
             "groups": [
               {
@@ -537,6 +575,10 @@
             ]
           },
           {
+            "tab": "Webhook event types",
+            "href": "https://webhooks.rntor.com/"
+          },
+          {
             "tab": "Webhooks",
             "groups": [
               {
@@ -547,10 +589,6 @@
                 ]
               }
             ]
-          },
-          {
-            "tab": "Webhook event types",
-            "href": "https://webhooks.rntor.com/"
           },
           {
             "tab": "Support",
