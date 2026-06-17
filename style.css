@@ -323,3 +323,35 @@ html.rntor-arabic-docs #content-area .prose ul > li::before {
   left: auto !important;
   right: -1.25rem !important;
 }
+/* =========================
+   ARABIC FAQ ACCORDION RTL
+   ========================= */
+
+html[data-current-path^="/ar/"] #content-area button[aria-expanded],
+html.rntor-arabic-docs #content-area button[aria-expanded] {
+  direction: ltr !important; /* يحافظ على مكان السهم */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: right !important;
+}
+
+/* FAQ question text */
+html[data-current-path^="/ar/"] #content-area button[aria-expanded] > span:first-child,
+html[data-current-path^="/ar/"] #content-area button[aria-expanded] > div:first-child,
+html.rntor-arabic-docs #content-area button[aria-expanded] > span:first-child,
+html.rntor-arabic-docs #content-area button[aria-expanded] > div:first-child {
+  flex: 1 1 auto !important;
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Flip arrow only — keep its current position */
+html[data-current-path^="/ar/"] #content-area button[aria-expanded] > svg:last-child,
+html[data-current-path^="/ar/"] #content-area button[aria-expanded] > :last-child svg,
+html.rntor-arabic-docs #content-area button[aria-expanded] > svg:last-child,
+html.rntor-arabic-docs #content-area button[aria-expanded] > :last-child svg {
+  transform: scaleX(-1) !important;
+  transform-origin: center !important;
+}
