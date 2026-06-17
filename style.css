@@ -409,3 +409,83 @@ html.rntor-arabic-docs #table-of-contents svg:first-child {
   margin-right: 0 !important;
   margin-left: 0.5rem !important;
 }
+/* =========================
+   ARABIC SEARCH MODAL RTL
+   ========================= */
+
+/* Entire search modal */
+html[data-current-path^="/ar/"] [data-component-part="search-modal"],
+html.rntor-arabic-docs [data-component-part="search-modal"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Search input row */
+html[data-current-path^="/ar/"] [data-component-part="search-input-container"],
+html.rntor-arabic-docs [data-component-part="search-input-container"] {
+  direction: rtl !important;
+}
+
+/* Move search icon from left to right */
+html[data-current-path^="/ar/"] [data-component-part="search-input-container"] > svg,
+html.rntor-arabic-docs [data-component-part="search-input-container"] > svg {
+  left: auto !important;
+  right: 0.75rem !important;
+}
+
+/* Search input text */
+html[data-current-path^="/ar/"] [data-component-part="search-input"],
+html.rntor-arabic-docs [data-component-part="search-input"] {
+  direction: rtl !important;
+  text-align: right !important;
+  padding-left: 0 !important;
+  padding-right: 30px !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Keep Ask Assistant button on the left with correct spacing */
+html[data-current-path^="/ar/"] [data-component-part="search-ask-ai-button"],
+html.rntor-arabic-docs [data-component-part="search-ask-ai-button"] {
+  direction: rtl !important;
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Search list and section labels */
+html[data-current-path^="/ar/"] [data-component-part="search-list"],
+html[data-current-path^="/ar/"] [data-component-part="search-group-label"],
+html.rntor-arabic-docs [data-component-part="search-list"],
+html.rntor-arabic-docs [data-component-part="search-group-label"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Search result rows: icon on right, text after it */
+html[data-current-path^="/ar/"] [data-component-part="search-item"],
+html.rntor-arabic-docs [data-component-part="search-item"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Titles and breadcrumbs */
+html[data-current-path^="/ar/"] [data-component-part="search-item-title"],
+html[data-current-path^="/ar/"] [data-component-part="search-item-breadcrumbs"],
+html.rntor-arabic-docs [data-component-part="search-item-title"],
+html.rntor-arabic-docs [data-component-part="search-item-breadcrumbs"] {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Flip breadcrumb arrows */
+html[data-current-path^="/ar/"] [data-component-part="search-item-breadcrumbs"] svg,
+html.rntor-arabic-docs [data-component-part="search-item-breadcrumbs"] svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Footer: keyboard controls on right, Close on left */
+html[data-current-path^="/ar/"] [data-component-part="search-footer"],
+html.rntor-arabic-docs [data-component-part="search-footer"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
