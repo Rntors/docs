@@ -403,3 +403,8 @@ html.rntor-arabic-docs #table-of-contents a[style*="padding-left"] {
 
   transform: none !important;
 }
+/* Space between Arabic TOC icon and title */
+html[data-current-path^="/ar/"] #table-of-contents svg:first-child,
+html.rntor-arabic-docs #table-of-contents svg:first-child {
+  margin-right: 0.5rem !important;
+}
