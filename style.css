@@ -386,3 +386,9 @@ html.rntor-arabic-docs #pagination > a:last-child svg {
   transform: none !important;
   rotate: 180deg !important;
 }
+/* Move nested Arabic table-of-contents links slightly right */
+html[data-current-path^="/ar/"] #table-of-contents a[style*="padding-left"],
+html.rntor-arabic-docs #table-of-contents a[style*="padding-left"] {
+  padding-left: 0 !important;
+  transform: translateX(14px) !important;
+}
