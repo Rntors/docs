@@ -323,35 +323,35 @@ html.rntor-arabic-docs #content-area .prose ul > li::before {
   left: auto !important;
   right: -1.25rem !important;
 }
-/* =========================
-   ARABIC FAQ ACCORDION RTL
-   ========================= */
-
-html[data-current-path^="/ar/"] #content-area button[aria-expanded],
-html.rntor-arabic-docs #content-area button[aria-expanded] {
-  direction: ltr !important; /* يحافظ على مكان السهم */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
+/* Arabic FAQ accordion text */
+html[data-current-path^="/ar/"]
+summary[data-component-part="accordion-button"]
+[data-component-part="accordion-title-container"],
+html.rntor-arabic-docs
+summary[data-component-part="accordion-button"]
+[data-component-part="accordion-title-container"] {
+  direction: rtl !important;
   text-align: right !important;
 }
 
-/* FAQ question text */
-html[data-current-path^="/ar/"] #content-area button[aria-expanded] > span:first-child,
-html[data-current-path^="/ar/"] #content-area button[aria-expanded] > div:first-child,
-html.rntor-arabic-docs #content-area button[aria-expanded] > span:first-child,
-html.rntor-arabic-docs #content-area button[aria-expanded] > div:first-child {
-  flex: 1 1 auto !important;
+html[data-current-path^="/ar/"]
+summary[data-component-part="accordion-button"]
+[data-component-part="accordion-title"],
+html.rntor-arabic-docs
+summary[data-component-part="accordion-button"]
+[data-component-part="accordion-title"] {
   direction: rtl !important;
   text-align: right !important;
   unicode-bidi: plaintext !important;
 }
 
-/* Flip arrow only — keep its current position */
-html[data-current-path^="/ar/"] #content-area button[aria-expanded] > svg:last-child,
-html[data-current-path^="/ar/"] #content-area button[aria-expanded] > :last-child svg,
-html.rntor-arabic-docs #content-area button[aria-expanded] > svg:last-child,
-html.rntor-arabic-docs #content-area button[aria-expanded] > :last-child svg {
+/* Flip the caret without changing its position */
+html[data-current-path^="/ar/"]
+summary[data-component-part="accordion-button"]
+[data-component-part="accordion-caret-right"],
+html.rntor-arabic-docs
+summary[data-component-part="accordion-button"]
+[data-component-part="accordion-caret-right"] {
   transform: scaleX(-1) !important;
   transform-origin: center !important;
 }
