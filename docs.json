@@ -1084,6 +1084,44 @@
             ]
           },
           {
+            "tab": "الأدلة",
+            "groups": [
+              {
+                "group": "الترويج",
+                "pages": [
+                  "ar/guides/promotion/soft-opening-of-the-space",
+                  "ar/guides/promotion/integrate-with-your-marketing-website",
+                  "ar/guides/promotion/promote-member-web-portal-and-mobile-app",
+                  "ar/guides/promotion/use-qr-codes",
+                  "ar/guides/promotion/organize-trial-days",
+                  "ar/guides/promotion/promote-self-served-bookings",
+                  "ar/guides/promotion/use-coupons-and-promo-codes"
+                ]
+              },
+              {
+                "group": "إدارة العملاء والتواصل",
+                "pages": [
+                  "ar/guides/customer-management-and-communication/onboard-members",
+                  "ar/guides/customer-management-and-communication/offboard-members",
+                  "ar/guides/customer-management-and-communication/strategies-for-efficient-communication",
+                  "ar/guides/customer-management-and-communication/collect-general-user-consents"
+                ]
+              },
+              {
+                "group": "تحسين الإيرادات والمساحات",
+                "pages": [
+                  "ar/guides/revenue-and-space-optimization/generate-additional-revenue",
+                  "ar/guides/revenue-and-space-optimization/optimize-room-usage",
+                  "ar/guides/revenue-and-space-optimization/rent-out-event-spaces",
+                  "ar/guides/revenue-and-space-optimization/recurring-add-ons"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "الأدلة"
+          },
+          {
             "tab": "مرجع API",
             "groups": [
               {
