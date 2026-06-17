@@ -373,15 +373,16 @@ html.rntor-arabic-docs #pagination > a {
   direction: rtl !important;
   text-align: right !important;
 }
-
-/* Previous page: right side, arrow points right */
+/* Previous link arrow */
 html[data-current-path^="/ar/"] #pagination > a:first-child svg,
 html.rntor-arabic-docs #pagination > a:first-child svg {
-  transform: rotate(180deg) !important;
+  transform: none !important;
+  rotate: 0deg !important;
 }
 
-/* Next page: left side, arrow points left */
+/* Next link arrow */
 html[data-current-path^="/ar/"] #pagination > a:last-child svg,
 html.rntor-arabic-docs #pagination > a:last-child svg {
-  transform: rotate(0deg) !important;
+  transform: none !important;
+  rotate: 180deg !important;
 }
