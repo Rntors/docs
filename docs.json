@@ -715,8 +715,7 @@
                         "group": "الخصومات",
                         "pages": [
                           "ar/admin/billing/discounts/coupons-and-promo-codes",
-                          "ar/admin/billing/discounts/apply-discounts-to-bookings-and-purchases",
-                          "ar/admin/billing/discounts/discounts-with-plan"
+                          "ar/admin/billing/discounts/apply-discounts-to-bookings-and-purchases"
                         ]
                       },
                       {
