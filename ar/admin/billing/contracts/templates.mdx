@@ -69,17 +69,19 @@ title: "القوالب"
 <Info>
 إذا كان هناك عدة موقّعين من جانب العميل وجانب الموقع، رقمهم بشكل منفصل.
 
-**مثال صحيح:**
+**تسلسل العميل الصحيح:**
 
-`{customer.signatory.fullName}`, `{customer.signatory2.fullName}`
+<code>{'{customer.signatory.fullName}'}</code>, <code>{'{customer.signatory2.fullName}'}</code>
 
-`{location.signatory.fullName}`, `{location.signatory2.fullName}`
+**تسلسل الموقع الصحيح:**
+
+<code>{'{location.signatory.fullName}'}</code>, <code>{'{location.signatory2.fullName}'}</code>
 
 **مثال غير صحيح:**
 
-خلط تسلسلات موقّعي العميل والموقع:
+لا تخلط تسلسلات موقّعي العميل والموقع:
 
-`{customer.signatory.fullName}`, `{customer.signatory2.fullName}`, `{location.signatory3.fullName}` </Info>
+<code>{'{customer.signatory.fullName}'}</code>, <code>{'{customer.signatory2.fullName}'}</code>, <code>{'{location.signatory3.fullName}'}</code> </Info>
 
 ##### بنود العقد
 
