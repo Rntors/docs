@@ -1,6 +1,7 @@
 ---
 title: "Templates"
 ---
+
 Create and upload your contract templates with dynamic placeholders to automatically populate customer details for new agreements
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -69,21 +70,23 @@ If more than one person needs to sign on behalf of the location, you can add add
 <Info>
 If there are multiple signatories on both the customer and location sides, number them separately.
 
-**Correct example:**
+**Correct customer sequence:**
 
-`{customer.signatory.fullName}`, `{customer.signatory2.fullName}`
+<code>{'{customer.signatory.fullName}'}</code>, <code>{'{customer.signatory2.fullName}'}</code>
 
-`{location.signatory.fullName}`, `{location.signatory2.fullName}`
+**Correct location sequence:**
+
+<code>{'{location.signatory.fullName}'}</code>, <code>{'{location.signatory2.fullName}'}</code>
 
 **Incorrect example:**
 
-Mixing customer and location signatory sequences:
+Do not mix customer and location signatory sequences:
 
-`{customer.signatory.fullName}`, `{customer.signatory2.fullName}`, `{location.signatory3.fullName}` </Info>
+<code>{'{customer.signatory.fullName}'}</code>, <code>{'{customer.signatory2.fullName}'}</code>, <code>{'{location.signatory3.fullName}'}</code> </Info>
 
 ##### Contract items
 
-To list items such as plans or products included in a customer’s contract, you must place all placeholders related to contract items between the opening and closing tags: `{#items}` and `{/items}`.
+To list items such as plans or products included in a customer’s contract, place all placeholders related to contract items between the opening and closing tags: `{#items}` and `{/items}`.
 
 This tells the system where the list of items begins and ends.
 
