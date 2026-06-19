@@ -29,6 +29,12 @@ Your contract template can include placeholders (variables) that the system will
 * `{contract.issueDate}` — date the contract is issued
 * `{contract.startDate}` — start date of the contract
 * `{contract.endDate}` — end date of the contract
+* `{contract.expirationDate}` — deadline for signing the contract
+
+##### Contract details
+
+* `{contract.reference}` — unique reference assigned to the contract
+* `{notes}` — notes added to the contract
 
 ##### Customer details
 
@@ -49,6 +55,8 @@ If more than one person needs to sign on behalf of the customer, you can add add
 * **Second signatory:** `{customer.signatory2.fullName}`, `{customer.signatory2.email}`, `{customer.signatory2.phoneNumber}`, `{customer.signatory2.signature}`, `{customer.signatory2.signature_date}`
 * **Third signatory:** `{customer.signatory3.fullName}`, `{customer.signatory3.email}`, `{customer.signatory3.phoneNumber}`, `{customer.signatory3.signature}`, `{customer.signatory3.signature_date}`
 
+You can continue numbering additional customer signatories sequentially, such as `{customer.signatory4.fullName}`, `{customer.signatory5.fullName}`, and beyond. The same numbering pattern applies to `email`, `phoneNumber`, `signature`, and `signature_date`.
+
 ##### Location details
 
 * `{location.legalName}` — location legal business name
@@ -67,6 +75,8 @@ If more than one person needs to sign on behalf of the location, you can add add
 
 * **Second signatory:** `{location.signatory2.fullName}`, `{location.signatory2.email}`, `{location.signatory2.phoneNumber}`, `{location.signatory2.signature}`, `{location.signatory2.signature_date}`
 
+You can continue numbering additional location signatories sequentially, such as `{location.signatory3.fullName}`, `{location.signatory4.fullName}`, and beyond. The same numbering pattern applies to `email`, `phoneNumber`, `signature`, and `signature_date`.
+
 <Info>
 If there are multiple signatories on both the customer and location sides, number them separately.
 
@@ -84,7 +94,6 @@ Do not mix customer and location signatory sequences:
 
 <code>{customer.signatory.fullName}</code>, <code>{customer.signatory2.fullName}</code>, <code>{location.signatory3.fullName}</code> </Info>
 
-
 ##### Contract items
 
 To list items such as plans or products included in a customer’s contract, place all placeholders related to contract items between the opening and closing tags: `{#items}` and `{/items}`.
@@ -100,6 +109,17 @@ This tells the system where the list of items begins and ends.
 * `{coupon}` — discount coupon percentage or amount, if applied
 * `{/items}` — closing tag
 * `{items.total}` — total undiscounted price for all items in the contract combined. Place it outside the item tags.
+* `{subtotal}` — total undiscounted price for all items in the contract
+* `{grandTotal}` — final total amount for the contract
+* `{total}` — final contract total when placed outside the `{#items}` and `{/items}` loop
+
+<Info>
+The meaning of `{total}` depends on where it is placed:
+
+* Inside the `{#items}` loop, it represents the undiscounted total for the current item.
+* Outside the loop, it represents the final total for the contract.
+
+  </Info>
 
 ##### Example 1
 
