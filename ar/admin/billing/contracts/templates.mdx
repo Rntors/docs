@@ -1,20 +1,20 @@
 ---
 title: "القوالب"
 ---
-أنشئ ورفع قوالب العقود الخاصة بك مع متغيرات ديناميكية لتعبئة تفاصيل العملاء تلقائيًا في الاتفاقيات الجديدة
-------------------------------------------------------------------------------------------------------------------------------------------------
 
-ارفع قوالب العقود الخاصة بك لكي [تنشئ وتصدر العقود](https://www.spacebring.com/docs/billing/contracts) للعملاء الجدد بسرعة.
+أنشئ وارفع قوالب العقود الخاصة بك مع متغيرات ديناميكية لتعبئة تفاصيل العملاء تلقائيًا في الاتفاقيات الجديدة
+
+ارفع قوالب العقود الخاصة بك لكي [تنشئ وتصدر العقود](/admin/billing/contracts/set-up-contracts) للعملاء الجدد بسرعة.
 
 ## إنشاء قالب عقد
 
 لديك خياران لإنشاء القوالب:
 
-* استخدم [قالبنا النموذجي](https://docs.google.com/document/d/1uYF7AnMMPodAybTWTdJfD3iMGUODUqUwqS7Nd2BvvNo/edit?usp=sharing) وخصصه.
-* استخدم القالب (القوالب) الخاصة بك.
+- استخدم [قالبنا النموذجي](https://docs.google.com/document/d/1uYF7AnMMPodAybTWTnJfD3iMGUODUqUwqS7Nd2BvvNo/edit?usp=sharing) وخصصه.
+- استخدم القالب (القوالب) الخاص بك.
 
 <Info>
-يجب أن تكون قوالب العقود بتنسيق Microsoft Word.
+  يجب أن تكون قوالب العقود بتنسيق Microsoft Word.
 </Info>
 
 ### إنشاء قالبك الخاص باستخدام المتغيرات
@@ -25,108 +25,85 @@ title: "القوالب"
 
 ##### تواريخ العقد
 
-* `{contract.issueDate}` — تاريخ إصدار العقد
-* `{contract.startDate}` — تاريخ بدء العقد
-* `{contract.endDate}` — تاريخ انتهاء العقد
-* `{contract.expirationDate}` — الموعد النهائي لتوقيع العقد
-
-##### تفاصيل العقد
-
-* `{contract.reference}` — المرجع الفريد المخصص للعقد
-* `{notes}` — الملاحظات المضافة إلى العقد
+- `{contract.issueDate}` — تاريخ إصدار العقد
+- `{contract.startDate}` — تاريخ بدء العقد
+- `{contract.endDate}` — تاريخ انتهاء العقد
 
 ##### تفاصيل العميل
 
-* `{customer.legalName}` — الاسم القانوني للنشاط التجاري للمستخدم أو الشركة
-* `{customer.businessAddress}` — عنوان الفوترة الخاص بالعميل
-* `{customer.taxId}` — الرقم الضريبي للعميل
+- `{customer.legalName}` — الاسم القانوني للنشاط التجاري للمستخدم أو الشركة
+- `{customer.businessAddress}` — عنوان الفوترة الخاص بالعميل
+- `{customer.taxId}` — الرقم الضريبي للعميل
 
 ##### الموقّع عن العميل
 
-* `{customer.signatory.fullName}` — الاسم الكامل للشخص الذي يوقع نيابةً عن العميل
-* `{customer.signatory.email}` — عنوان البريد الإلكتروني للموقّع
-* `{customer.signatory.phoneNumber}` — رقم هاتف الموقّع
-* `{customer.signatory.signature}` — مكان التوقيع الرقمي
-* `{customer.signatory.signature_date}` — تاريخ توقيع العميل
+- `{customer.signatory.fullName}` — الاسم الكامل للشخص الذي يوقع نيابةً عن العميل
+- `{customer.signatory.email}` — عنوان البريد الإلكتروني للموقّع
+- `{customer.signatory.phoneNumber}` — رقم هاتف الموقّع
+- `{customer.signatory.signature}` — مكان التوقيع الرقمي
+- `{customer.signatory.signature_date}` — تاريخ توقيع العميل
 
 إذا كان هناك أكثر من شخص يحتاج إلى التوقيع نيابةً عن العميل، يمكنك إضافة متغيرات موقّعين إضافية عن طريق ترقيمها بالتسلسل بعد المتغيرات الأصلية:
 
-* **الموقّع الثاني:** `{customer.signatory2.fullName}`, `{customer.signatory2.email}`, `{customer.signatory2.phoneNumber}`, `{customer.signatory2.signature}`, `{customer.signatory2.signature_date}`
-* **الموقّع الثالث:** `{customer.signatory3.fullName}`, `{customer.signatory3.email}`, `{customer.signatory3.phoneNumber}`, `{customer.signatory3.signature}`, `{customer.signatory3.signature_date}`
-
-يمكنك متابعة ترقيم موقّعي العميل الإضافيين بالتسلسل، مثل `{customer.signatory4.fullName}`, `{customer.signatory5.fullName}`، وما بعدها. ينطبق نفس نمط الترقيم على `email` و`phoneNumber` و`signature` و`signature_date`.
+- **الموقّع الثاني:** `{customer.signatory2.fullName}`, `{customer.signatory2.email}`, `{customer.signatory2.phoneNumber}`, `{customer.signatory2.signature}`, `{customer.signatory2.signature_date}`
+- **الموقّع الثالث:** `{customer.signatory3.fullName}`, `{customer.signatory3.email}`, `{customer.signatory3.phoneNumber}`, `{customer.signatory3.signature}`, `{customer.signatory3.signature_date}`
 
 ##### تفاصيل الموقع
 
-* `{location.legalName}` — الاسم القانوني للنشاط التجاري للموقع
-* `{location.businessAddress}` — عنوان الفوترة للموقع
-* `{location.taxId}` — الرقم الضريبي للموقع
+- `{location.legalName}` — الاسم القانوني للنشاط التجاري للموقع
+- `{location.businessAddress}` — عنوان الفوترة للموقع
+- `{location.taxId}` — الرقم الضريبي للموقع
 
 ##### الموقّع عن الموقع
 
-* `{location.signatory.fullName}` — الاسم الكامل للمسؤول أو المالك الذي يوقع نيابةً عن الموقع
-* `{location.signatory.email}` — عنوان البريد الإلكتروني للموقّع
-* `{location.signatory.phoneNumber}` — رقم هاتف الموقّع
-* `{location.signatory.signature}` — مكان التوقيع الرقمي
-* `{location.signatory.signature_date}` — تاريخ التوقيع
+- `{location.signatory.fullName}` — الاسم الكامل للمسؤول أو المالك الذي يوقع نيابةً عن الموقع
+- `{location.signatory.email}` — عنوان البريد الإلكتروني للموقّع
+- `{location.signatory.phoneNumber}` — رقم هاتف الموقّع
+- `{location.signatory.signature}` — مكان التوقيع الرقمي
+- `{location.signatory.signature_date}` — تاريخ التوقيع
 
 إذا كان هناك أكثر من شخص يحتاج إلى التوقيع نيابةً عن الموقع، يمكنك إضافة متغيرات موقّعين إضافية عن طريق ترقيمها بالتسلسل بعد المتغيرات الأصلية:
 
-* **الموقّع الثاني:** `{location.signatory2.fullName}`, `{location.signatory2.email}`, `{location.signatory2.phoneNumber}`, `{location.signatory2.signature}`, `{location.signatory2.signature_date}`
-
-يمكنك متابعة ترقيم موقّعي الموقع الإضافيين بالتسلسل، مثل `{location.signatory3.fullName}`, `{location.signatory4.fullName}`، وما بعدها. ينطبق نفس نمط الترقيم على `email` و`phoneNumber` و`signature` و`signature_date`.
+- **الموقّع الثاني:** `{location.signatory2.fullName}`, `{location.signatory2.email}`, `{location.signatory2.phoneNumber}`, `{location.signatory2.signature}`, `{location.signatory2.signature_date}`
 
 <Info>
-إذا كان هناك عدة موقّعين من جانب العميل وجانب الموقع، رقمهم بشكل منفصل.
+  إذا كان هناك عدة موقّعين من جانب العميل وجانب الموقع، رقّمهم بشكل منفصل.
 
-**تسلسل العميل الصحيح:**
+  **تسلسل العميل الصحيح:**
 
-<code>{'{customer.signatory.fullName}'}</code>, <code>{'{customer.signatory2.fullName}'}</code>
+  `{customer.signatory.fullName}`, `{customer.signatory2.fullName}`
 
-**تسلسل الموقع الصحيح:**
+  **تسلسل الموقع الصحيح:**
 
-<code>{'{location.signatory.fullName}'}</code>, <code>{'{location.signatory2.fullName}'}</code>
+  `{location.signatory.fullName}`, `{location.signatory2.fullName}`
 
-**مثال غير صحيح:**
+  **مثال غير صحيح:**
 
-لا تخلط تسلسلات موقّعي العميل والموقع:
+  لا تخلط تسلسلات موقّعي العميل والموقع:
 
-<code>{'{customer.signatory.fullName}'}</code>, <code>{'{customer.signatory2.fullName}'}</code>, <code>{'{location.signatory3.fullName}'}</code> </Info>
+  `{customer.signatory.fullName}`, `{customer.signatory2.fullName}`, `{location.signatory3.fullName}`
+</Info>
 
 ##### بنود العقد
 
-لإدراج بنود مثل الخطط أو المنتجات المدرجة في عقد العميل، يجب وضع جميع المتغيرات المتعلقة ببنود العقد بين علامتي الفتح والإغلاق: `{#items}` و `{/items}`.
+لإدراج بنود مثل الخطط أو المنتجات المدرجة في عقد العميل، ضع جميع المتغيرات المتعلقة ببنود العقد بين علامتي الفتح والإغلاق: `{#items}` و `{/items}`.
 
 يخبر ذلك النظام بمكان بداية ونهاية قائمة البنود.
 
-* `{#items}` — علامة الفتح
-* `{title}` — عنوان الخطة أو فئة المورد
-* `{price}` — سعر الوحدة للخطة أو المورد
-* `{quantity}` — كمية الخطة أو المورد
-* `{tax}` — نسبة الضريبة للخطة أو المورد
-* `{total}` — السعر الإجمالي قبل الخصم لهذا البند المحدد (السعر × الكمية)
-* `{coupon}` — نسبة كوبون الخصم أو مبلغه، إن وُجد
-* `{/items}` — علامة الإغلاق
-* `{items.total}` — السعر الإجمالي قبل الخصم لجميع البنود في العقد مجتمعة. ضعه خارج علامات البنود.
-* `{subtotal}` — السعر الإجمالي قبل الخصم لجميع البنود في العقد
-* `{grandTotal}` — المبلغ الإجمالي النهائي للعقد
-* `{total}` — الإجمالي النهائي للعقد عند وضعه خارج حلقة `{#items}` و `{/items}`
-
-<Info>
-يعتمد معنى `{total}` على مكان وضعه:
-
-* داخل حلقة `{#items}`، يمثل الإجمالي قبل الخصم للبند الحالي.
-* خارج الحلقة، يمثل الإجمالي النهائي للعقد.
-
-  </Info>
+- `{#items}` — علامة الفتح
+- `{title}` — عنوان الخطة أو فئة المورد
+- `{price}` — سعر الوحدة للخطة أو المورد
+- `{quantity}` — كمية الخطة أو المورد
+- `{tax}` — نسبة الضريبة للخطة أو المورد
+- `{total}` — السعر الإجمالي قبل الخصم لهذا البند المحدد (السعر × الكمية)
+- `{coupon}` — نسبة كوبون الخصم أو مبلغه، إن وُجد
+- `{/items}` — علامة الإغلاق
+- `{items.total}` — السعر الإجمالي قبل الخصم لجميع البنود في العقد مجتمعة. ضعه خارج علامات البنود.
 
 ##### مثال 1
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-items-example.png"
-  alt="Contract template table showing item placeholders for title, price, quantity, tax, total, and grand total"
-/>
+  ![Screenshot 2026 06 19 At 5 26 48 PM](/images/Screenshot-2026-06-19-at-5.26.48-PM.png)
 </Frame>
 
 ##### مثال 2
@@ -135,39 +112,28 @@ title: "القوالب"
 
 ## رفع قالب
 
-1. انتقل إلى صفحة **إعدادات الموقع > الفوترة** وافتح علامة التبويب **العقود**.
-
+1. انتقل إلى صفحة **إعدادات الموقع \> الفوترة** وافتح علامة التبويب **العقود**.
 2. فعّل مفتاح **العقود**.
-
 3. في قسم **القوالب**، انقر على `Create template`.
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-settings.png"
-  alt="Location billing settings showing Contracts enabled and the Create template button"
-/>
+  ![Screenshot 2026 06 19 At 8 57 15 PM](/images/Screenshot-2026-06-19-at-8.57.15-PM.png)
 </Frame>
 
 4. اضغط على `Upload file`، وارفع القالب، وأضف عنوانه.
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-upload.png"
-  alt="New contract template screen showing the Upload file action and template title field"
-/>
+  ![Screenshot 2026 06 19 At 9 15 59 PM](/images/Screenshot-2026-06-19-at-9.15.59-PM.png)
 </Frame>
 
 5. انتقل إلى علامة التبويب **معاينة** لرؤية كيف سيبدو العقد النهائي بالضبط.
 
 <Info>
-تستخدم المعاينة قيم متغيرات عشوائية لتوضيح التنسيق، لكن سيتم استبدال هذه المتغيرات بمعلومات العميل والموقع الفعلية عند إنشاء عقد لعميل محدد.
+  تستخدم المعاينة قيم متغيرات عشوائية لتوضيح التنسيق، لكن سيتم استبدال هذه المتغيرات بمعلومات العميل والموقع الفعلية عند إنشاء عقد لعميل محدد.
 </Info>
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-preview.png"
-  alt="Contract template preview showing placeholder values populated with sample information"
-/>
+  ![Screenshot 2026 06 19 At 9 16 24 PM](/images/Screenshot-2026-06-19-at-9.16.24-PM.png)
 </Frame>
 
 6. اضغط `Create`.
@@ -177,20 +143,15 @@ title: "القوالب"
 ## إدارة قالب
 
 1. انقر على زر القائمة **(...)** بجوار القالب المطلوب.
-
 2. اختر إجراءً:
-
-   * `Edit` — تغيير عنوان القالب أو استبدال مستند القالب بإصدار جديد.
-   * `Duplicate` — إنشاء قالب مشابه بسرعة لإجراء تعديلات طفيفة.
-   * `Delete` — حذف القالب إذا لم يعد مطلوبًا.
+   - `Edit` — تغيير عنوان القالب أو استبدال مستند القالب بإصدار جديد.
+   - `Duplicate` — إنشاء قالب مشابه بسرعة لإجراء تعديلات طفيفة.
+   - `Delete` — حذف القالب إذا لم يعد مطلوبًا.
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-actions.png"
-  alt="Contract template menu showing Edit, Duplicate, and Delete actions"
-/>
+  ![Screenshot 2026 06 19 At 9 18 43 PM](/images/Screenshot-2026-06-19-at-9.18.43-PM.png)
 </Frame>
 
 <Warning>
-حذف القالب لا يمكن التراجع عنه.
+  حذف القالب لا يمكن التراجع عنه.
 </Warning>
