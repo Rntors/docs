@@ -3,19 +3,18 @@ title: "Templates"
 ---
 
 Create and upload your contract templates with dynamic placeholders to automatically populate customer details for new agreements
-------------------------------------------------------------------------------------------------------------------------------------------------
 
-Upload your contract templates to quickly [create and issue contracts](https://www.spacebring.com/docs/billing/contracts) for new customers.
+Upload your contract templates to quickly [create and issue contracts](/admin/billing/contracts/set-up-contracts) for new customers.
 
 ## Create a contract template
 
 You have two options for creating templates:
 
-* Use our [sample template](https://docs.google.com/document/d/1uYF7AnMMPodAybTWTdJfD3iMGUODUqUwqS7Nd2BvvNo/edit?usp=sharing) and customize it.
-* Use your own template(s).
+- Use our [sample template](https://docs.google.com/document/d/1uYF7AnMMPodAybTWTnJfD3iMGUODUqUwqS7Nd2BvvNo/edit?usp=sharing) and customize it.
+- Use your own template(s).
 
 <Info>
-Contract templates must be in a Microsoft Word format.
+  Contract templates must be in a Microsoft Word format.
 </Info>
 
 ### Create your own template with placeholders
@@ -26,73 +25,64 @@ Your contract template can include placeholders (variables) that the system will
 
 ##### Contract dates
 
-* `{contract.issueDate}` — date the contract is issued
-* `{contract.startDate}` — start date of the contract
-* `{contract.endDate}` — end date of the contract
-* `{contract.expirationDate}` — deadline for signing the contract
-
-##### Contract details
-
-* `{contract.reference}` — unique reference assigned to the contract
-* `{notes}` — notes added to the contract
+- `{contract.issueDate}` — date the contract is issued
+- `{contract.startDate}` — start date of the contract
+- `{contract.endDate}` — end date of the contract
 
 ##### Customer details
 
-* `{customer.legalName}` — legal business name of the user or company
-* `{customer.businessAddress}` — customer’s billing address
-* `{customer.taxId}` — customer’s tax ID
+- `{customer.legalName}` — legal business name of the user or company
+- `{customer.businessAddress}` — customer’s billing address
+- `{customer.taxId}` — customer’s tax ID
 
 ##### Customer signatory
 
-* `{customer.signatory.fullName}` — full name of the person signing for the customer
-* `{customer.signatory.email}` — signatory’s email address
-* `{customer.signatory.phoneNumber}` — signatory’s phone number
-* `{customer.signatory.signature}` — place for digital signature
-* `{customer.signatory.signature_date}` — customer’s signature date
+- `{customer.signatory.fullName}` — full name of the person signing for the customer
+- `{customer.signatory.email}` — signatory’s email address
+- `{customer.signatory.phoneNumber}` — signatory’s phone number
+- `{customer.signatory.signature}` — place for digital signature
+- `{customer.signatory.signature_date}` — customer’s signature date
 
 If more than one person needs to sign on behalf of the customer, you can add additional signatory placeholders by numbering them sequentially after the original placeholders:
 
-* **Second signatory:** `{customer.signatory2.fullName}`, `{customer.signatory2.email}`, `{customer.signatory2.phoneNumber}`, `{customer.signatory2.signature}`, `{customer.signatory2.signature_date}`
-* **Third signatory:** `{customer.signatory3.fullName}`, `{customer.signatory3.email}`, `{customer.signatory3.phoneNumber}`, `{customer.signatory3.signature}`, `{customer.signatory3.signature_date}`
-
-You can continue numbering additional customer signatories sequentially, such as `{customer.signatory4.fullName}`, `{customer.signatory5.fullName}`, and beyond. The same numbering pattern applies to `email`, `phoneNumber`, `signature`, and `signature_date`.
+- **Second signatory:** `{customer.signatory2.fullName}`, `{customer.signatory2.email}`, `{customer.signatory2.phoneNumber}`, `{customer.signatory2.signature}`, `{customer.signatory2.signature_date}`
+- **Third signatory:** `{customer.signatory3.fullName}`, `{customer.signatory3.email}`, `{customer.signatory3.phoneNumber}`, `{customer.signatory3.signature}`, `{customer.signatory3.signature_date}`
 
 ##### Location details
 
-* `{location.legalName}` — location legal business name
-* `{location.businessAddress}` — location billing address
-* `{location.taxId}` — location tax ID
+- `{location.legalName}` — location legal business name
+- `{location.businessAddress}` — location billing address
+- `{location.taxId}` — location tax ID
 
 ##### Location signatory
 
-* `{location.signatory.fullName}` — full name of the administrator or owner signing for the location
-* `{location.signatory.email}` — signatory’s email address
-* `{location.signatory.phoneNumber}` — signatory’s phone number
-* `{location.signatory.signature}` — place for digital signature
-* `{location.signatory.signature_date}` — signature date
+- `{location.signatory.fullName}` — full name of the administrator or owner signing for the location
+- `{location.signatory.email}` — signatory’s email address
+- `{location.signatory.phoneNumber}` — signatory’s phone number
+- `{location.signatory.signature}` — place for digital signature
+- `{location.signatory.signature_date}` — signature date
 
 If more than one person needs to sign on behalf of the location, you can add additional signatory placeholders by numbering them sequentially after the original placeholders:
 
-* **Second signatory:** `{location.signatory2.fullName}`, `{location.signatory2.email}`, `{location.signatory2.phoneNumber}`, `{location.signatory2.signature}`, `{location.signatory2.signature_date}`
-
-You can continue numbering additional location signatories sequentially, such as `{location.signatory3.fullName}`, `{location.signatory4.fullName}`, and beyond. The same numbering pattern applies to `email`, `phoneNumber`, `signature`, and `signature_date`.
+- **Second signatory:** `{location.signatory2.fullName}`, `{location.signatory2.email}`, `{location.signatory2.phoneNumber}`, `{location.signatory2.signature}`, `{location.signatory2.signature_date}`
 
 <Info>
-If there are multiple signatories on both the customer and location sides, number them separately.
+  If there are multiple signatories on both the customer and location sides, number them separately.
 
-**Correct customer sequence:**
+  **Correct customer sequence:**
 
-<code>{customer.signatory.fullName}</code>, <code>{customer.signatory2.fullName}</code>
+  `{customer.signatory.fullName}`, `{customer.signatory2.fullName}`
 
-**Correct location sequence:**
+  **Correct location sequence:**
 
-<code>{location.signatory.fullName}</code>, <code>{location.signatory2.fullName}</code>
+  `{location.signatory.fullName}`, `{location.signatory2.fullName}`
 
-**Incorrect example:**
+  **Incorrect example:**
 
-Do not mix customer and location signatory sequences:
+  Do not mix customer and location signatory sequences:
 
-<code>{customer.signatory.fullName}</code>, <code>{customer.signatory2.fullName}</code>, <code>{location.signatory3.fullName}</code> </Info>
+  `{customer.signatory.fullName}`, `{customer.signatory2.fullName}`, `{location.signatory3.fullName}`
+</Info>
 
 ##### Contract items
 
@@ -100,34 +90,20 @@ To list items such as plans or products included in a customer’s contract, pla
 
 This tells the system where the list of items begins and ends.
 
-* `{#items}` — opening tag
-* `{title}` — title of the plan or resource tier
-* `{price}` — unit price for the plan or resource
-* `{quantity}` — quantity of the plan or resource
-* `{tax}` — tax rate for the plan or resource
-* `{total}` — total undiscounted price for this specific item (Price × Quantity)
-* `{coupon}` — discount coupon percentage or amount, if applied
-* `{/items}` — closing tag
-* `{items.total}` — total undiscounted price for all items in the contract combined. Place it outside the item tags.
-* `{subtotal}` — total undiscounted price for all items in the contract
-* `{grandTotal}` — final total amount for the contract
-* `{total}` — final contract total when placed outside the `{#items}` and `{/items}` loop
-
-<Info>
-The meaning of `{total}` depends on where it is placed:
-
-* Inside the `{#items}` loop, it represents the undiscounted total for the current item.
-* Outside the loop, it represents the final total for the contract.
-
-  </Info>
+- `{#items}` — opening tag
+- `{title}` — title of the plan or resource tier
+- `{price}` — unit price for the plan or resource
+- `{quantity}` — quantity of the plan or resource
+- `{tax}` — tax rate for the plan or resource
+- `{total}` — total undiscounted price for this specific item (Price × Quantity)
+- `{coupon}` — discount coupon percentage or amount, if applied
+- `{/items}` — closing tag
+- `{items.total}` — total undiscounted price for all items in the contract combined. Place it outside the item tags.
 
 ##### Example 1
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-items-example.png"
-  alt="Contract template table showing item placeholders for title, price, quantity, tax, total, and grand total"
-/>
+  ![Screenshot 2026 06 19 At 5 26 48 PM](/images/Screenshot-2026-06-19-at-5.26.48-PM.png)
 </Frame>
 
 ##### Example 2
@@ -136,39 +112,28 @@ The meaning of `{total}` depends on where it is placed:
 
 ## Upload a template
 
-1. Go to the **Location settings > Billing** page and open the **Contracts** tab.
-
+1. Go to the **Location settings \> Billing** page and open the **Contracts** tab.
 2. Enable the **Contracts** switch.
-
 3. In the **Templates** section, click `Create template`.
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-settings.png"
-  alt="Location billing settings showing Contracts enabled and the Create template button"
-/>
+  ![Screenshot 2026 06 19 At 8 57 15 PM](/images/Screenshot-2026-06-19-at-8.57.15-PM.png)
 </Frame>
 
 4. Press `Upload file`, upload the template, and add its title.
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-upload.png"
-  alt="New contract template screen showing the Upload file action and template title field"
-/>
+  ![Screenshot 2026 06 19 At 9 15 59 PM](/images/Screenshot-2026-06-19-at-9.15.59-PM.png)
 </Frame>
 
 5. Switch to the **Preview** tab to see exactly how the final contract will look.
 
 <Info>
-The preview uses random placeholder values to demonstrate formatting, but actual customer and location information will replace these placeholders when creating a contract for a specific customer.
+  The preview uses random placeholder values to demonstrate formatting, but actual customer and location information will replace these placeholders when creating a contract for a specific customer.
 </Info>
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-preview.png"
-  alt="Contract template preview showing placeholder values populated with sample information"
-/>
+  ![Screenshot 2026 06 19 At 9 16 24 PM](/images/Screenshot-2026-06-19-at-9.16.24-PM.png)
 </Frame>
 
 6. Press `Create`.
@@ -178,20 +143,15 @@ Once created, you can select the necessary template when [creating contracts](ht
 ## Manage a template
 
 1. Click the **(...)** menu button next to the necessary template.
-
 2. Choose an action:
-
-   * `Edit` — change the template title or replace the template document with a new version.
-   * `Duplicate` — quickly create a similar template for minor adjustments.
-   * `Delete` — delete the template if it’s no longer needed.
+   - `Edit` — change the template title or replace the template document with a new version.
+   - `Duplicate` — quickly create a similar template for minor adjustments.
+   - `Delete` — delete the template if it’s no longer needed.
 
 <Frame>
-<img
-  src="/images/placeholders/contracts-template-actions.png"
-  alt="Contract template menu showing Edit, Duplicate, and Delete actions"
-/>
+  ![Screenshot 2026 06 19 At 9 18 43 PM](/images/Screenshot-2026-06-19-at-9.18.43-PM.png)
 </Frame>
 
 <Warning>
-Deleting a template is irreversible.
+  Deleting a template is irreversible.
 </Warning>
