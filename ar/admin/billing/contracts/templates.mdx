@@ -28,6 +28,12 @@ title: "القوالب"
 * `{contract.issueDate}` — تاريخ إصدار العقد
 * `{contract.startDate}` — تاريخ بدء العقد
 * `{contract.endDate}` — تاريخ انتهاء العقد
+* `{contract.expirationDate}` — الموعد النهائي لتوقيع العقد
+
+##### تفاصيل العقد
+
+* `{contract.reference}` — المرجع الفريد المخصص للعقد
+* `{notes}` — الملاحظات المضافة إلى العقد
 
 ##### تفاصيل العميل
 
@@ -48,6 +54,8 @@ title: "القوالب"
 * **الموقّع الثاني:** `{customer.signatory2.fullName}`, `{customer.signatory2.email}`, `{customer.signatory2.phoneNumber}`, `{customer.signatory2.signature}`, `{customer.signatory2.signature_date}`
 * **الموقّع الثالث:** `{customer.signatory3.fullName}`, `{customer.signatory3.email}`, `{customer.signatory3.phoneNumber}`, `{customer.signatory3.signature}`, `{customer.signatory3.signature_date}`
 
+يمكنك متابعة ترقيم موقّعي العميل الإضافيين بالتسلسل، مثل `{customer.signatory4.fullName}`, `{customer.signatory5.fullName}`، وما بعدها. ينطبق نفس نمط الترقيم على `email` و`phoneNumber` و`signature` و`signature_date`.
+
 ##### تفاصيل الموقع
 
 * `{location.legalName}` — الاسم القانوني للنشاط التجاري للموقع
@@ -65,6 +73,8 @@ title: "القوالب"
 إذا كان هناك أكثر من شخص يحتاج إلى التوقيع نيابةً عن الموقع، يمكنك إضافة متغيرات موقّعين إضافية عن طريق ترقيمها بالتسلسل بعد المتغيرات الأصلية:
 
 * **الموقّع الثاني:** `{location.signatory2.fullName}`, `{location.signatory2.email}`, `{location.signatory2.phoneNumber}`, `{location.signatory2.signature}`, `{location.signatory2.signature_date}`
+
+يمكنك متابعة ترقيم موقّعي الموقع الإضافيين بالتسلسل، مثل `{location.signatory3.fullName}`, `{location.signatory4.fullName}`، وما بعدها. ينطبق نفس نمط الترقيم على `email` و`phoneNumber` و`signature` و`signature_date`.
 
 <Info>
 إذا كان هناك عدة موقّعين من جانب العميل وجانب الموقع، رقمهم بشكل منفصل.
@@ -98,6 +108,17 @@ title: "القوالب"
 * `{coupon}` — نسبة كوبون الخصم أو مبلغه، إن وُجد
 * `{/items}` — علامة الإغلاق
 * `{items.total}` — السعر الإجمالي قبل الخصم لجميع البنود في العقد مجتمعة. ضعه خارج علامات البنود.
+* `{subtotal}` — السعر الإجمالي قبل الخصم لجميع البنود في العقد
+* `{grandTotal}` — المبلغ الإجمالي النهائي للعقد
+* `{total}` — الإجمالي النهائي للعقد عند وضعه خارج حلقة `{#items}` و `{/items}`
+
+<Info>
+يعتمد معنى `{total}` على مكان وضعه:
+
+* داخل حلقة `{#items}`، يمثل الإجمالي قبل الخصم للبند الحالي.
+* خارج الحلقة، يمثل الإجمالي النهائي للعقد.
+
+  </Info>
 
 ##### مثال 1
 
