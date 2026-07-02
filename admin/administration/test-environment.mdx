@@ -1,44 +1,44 @@
 ---
 title: "Test environment"
 ---
+
 Set up an isolated sandbox environment to safely test Spacebring settings and build API integrations without affecting your live network data
 
 The Test environment add-on lets you get an isolated sandbox to safely experiment with settings and build integrations without impacting your main network and data.
 
 ## Set up test environment
 
-1. [Sign up for the Test environment add-on](TEST_ENVIRONMENT_ADDON_LINK) from Network settings > Billing.
+1. [Sign up for the Test environment add-on](/admin/administration/billing/make-changes-to-rntor-subscription) from Network settings \> Billing.
 2. Enter the name, timezone, and currency for your sandbox, then confirm your upgrade.
-3. The test environment is created instantly. Click ` settings > Billing.
-2. Enter the name, timezone, and currency for your sandbox, then confirm your upgrade.
-3. The test environment is created instantly. Click `Open test environment` to begin testing and development.
+3. The test environment is created instantly. Click \` settings \> Billing.
+4. Enter the name, timezone, and currency for your sandbox, then confirm your upgrade.
+5. The test environment is created instantly. Click `Open test environment` to begin testing and development.
 
 ## How test environment works
 
 The test environment fully mirrors the functionality of the main environment, with a few exceptions:
 
-- You can connect [Stripe](STRIPE_LINK), [Mollie](MOLLIE_LINK) integrations, as well as a sandbox [PayPal](PAYPAL_LINK) account to the test environment. Other integrations are not available for connection.
+- You can connect [Stripe](STRIPE_LINK) integrations to the test environment. Other integrations are not available for connection.
 - Setting up a custom domain is disabled.
 - All email subjects, invoices, receipts, and credit note PDFs include a `[TEST]` prefix and a disclaimer stating they are non-fiscal documents generated for testing purposes only.
-- The test environment uses the DropboxSign sandbox for [eSignatures](ESIGNATURES_LINK). Contracts sent for eSignature explicitly state that they are not legally binding.
+- The test environment uses the BoldSign sandbox for [eSignatures](/admin/billing/contracts/esignature). Contracts sent for eSignature explicitly state that they are not legally binding.
 
 <Frame>
-  <img
-    src="/images/administration/test-environment/test-environment.png"
-    alt="Spacebring Test environment"
-  />
+  ![Screenshot 2026 07 02 At 11 51 07 PM](/images/Screenshot-2026-07-02-at-11.51.07-PM.png)
 </Frame>
 
 ## Access to API in test environment
 
-When operating in the test environment, Spacebring [API credentials](API_CREDENTIALS_LINK) are accessible to you at no additional cost. This allows you to freely build your custom integrations. These credentials are valid for the test environment only.
+When operating in the test environment, Rntor [API credentials](/admin/administration/api-and-webhooks) are accessible to you at no additional cost. This allows you to freely build your custom integrations. These credentials are valid for the test environment only.
 
-Once you have completed your testing or integration development, contact our support team to [cancel your Test environment](CANCEL_TEST_ENVIRONMENT_LINK) add-on and [purchase the standard API add-on](STANDARD_API_ADDON_LINK) for your live network. This will allow you to authenticate and deploy your integrations against your live network and data.
+Once you have completed your testing or integration development, contact our support team to [cancel your Test environment](/admin/administration/billing/make-changes-to-rntor-subscription#cancel-or-downgrade-your-subscription) add-on and [purchase the standard API add-on](/admin/administration/billing/make-changes-to-rntor-subscription) for your live network. This will allow you to authenticate and deploy your integrations against your live network and data.
 
 ## Switching environments
 
 To toggle between your live and test networks:
 
-1. Click the (...) next to your network name in the top left of the admin portal.
+1. Click on your network name in the top left of the admin portal.
 2. In the the **Network** dropdown, select your desired environment.
+
+```text
 ```

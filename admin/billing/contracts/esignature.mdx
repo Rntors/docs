@@ -1,63 +1,42 @@
 ---
 title: "Esignature"
 ---
-Enable and issue contracts for eSignature, understand how customers receive and sign contracts electronically
-----------------------------------------------------------------------------------------------------------------------------
+
+## Enable and issue contracts for eSignature, understand how customers receive and sign contracts electronically
 
 The eSignature allows you to send contracts to customers and let them sign electronically — without any manual paperwork or back-and-forth.
 
 <Info>
-Starting from **April 1, 2026**, eSignature moves to a usage-based paid model. Charges are applied automatically based on the total number of contracts issued for eSignature. [Pricing](https://www.spacebring.com/pricing)
+  Starting from **May 1, 2026**, eSignature moves to a usage-based paid model. Charges are applied automatically based on the total number of contracts issued for eSignature. [Pricing](https://www.rntor.com/en/pricing)
 </Info>
-
-<Frame>
-<iframe
-  width="100%"
-  height="420"
-  src="https://www.youtube.com/embed/MnpoVvUMa1U"
-  title="How to use electronic signatures in Spacebring"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-/>
-</Frame>
 
 ## Enable eSignature
 
-1. Go to the **Location settings > Billing** page and open the **Contracts** tab.
-
+1. Go to the **Location settings \> Billing** page and open the **Contracts** tab.
 2. Enable the **eSignature** switch.
 
 <Frame>
-<img
-  src="/images/placeholders/esignature-settings.png"
-  alt="Location billing settings showing Contracts and eSignature enabled"
-/>
+  ![Screenshot 2026 06 19 At 8 57 15 PM 1](/images/Screenshot-2026-06-19-at-8.57.15-PM-1.png)
 </Frame>
 
-3. Make sure your contract template(s) contain the `{customer.signatory.signature}` [placeholder](https://www.spacebring.com/docs/billing/contracts/templates#supported-placeholders), along with any other placeholders you need. This tells the system where the customer should sign.
+3. Make sure your contract template(s) contain the `{customer.signatory.signature}` [placeholder](/admin/billing/contracts/templates), along with any other placeholders you need. This tells the system where the customer should sign.
 
 ## Issue contracts for eSignature
 
-1. Go to **Billing > Contracts** to [create a contract](https://www.spacebring.com/docs/billing/contracts#create-a-contract) for a certain customer.
-
+1. Go to **Billing \> Contracts** to [create a contract](/admin/billing/contracts/set-up-contracts#create-a-contract) for a certain customer.
 2. Add signatories. You can add:
-
-   * Both customer and location signatories.
-   * Customer signatories only, if no signature is required from your side.
-
+   - Both customer and location signatories.
+   - Customer signatories only, if no signature is required from your side.
 3. Drag and drop the signatories to define the signing order.
 
 <Info>
-Signing is sequential — each person receives the contract for signature only after the previous signatory has completed their signature.
+  Signing is sequential — each person receives the contract for signature only after the previous signatory has completed their signature.
 </Info>
 
 4. Once created, open the contract and click `Issue for eSignature`.
 
 <Frame>
-<img
-  src="/images/placeholders/esignature-issue-contract.png"
-  alt="Contract details page showing the Issue for eSignature button"
-/>
+  ![Screenshot 2026 06 20 At 3 29 33 PM](/images/Screenshot-2026-06-20-at-3.29.33-PM.png)
 </Frame>
 
 ## How customers receive and sign contracts electronically
@@ -65,69 +44,55 @@ Signing is sequential — each person receives the contract for signature only a
 After issuing the contract:
 
 1. The first signatory receives the contract by email and clicks `Open contract`.
-
 2. They are taken to an online signing page where they can read the contract and click `Click to sign`.
 
 <Frame>
-<img
-  src="/images/placeholders/esignature-signing-page.png"
-  alt="Online contract signing page showing the Click to sign field"
-/>
+  ![Online contract signing page showing the Click to sign field](/images/placeholders/esignature-signing-page.png)
 </Frame>
 
 3. They can draw, type, or upload their signature.
 
 <Frame>
-<img
-  src="/images/placeholders/esignature-add-signature.png"
-  alt="Add your signature window showing Draw, Type, and Upload options"
-/>
+  ![Add your signature window showing Draw, Type, and Upload options](/images/placeholders/esignature-add-signature.png)
 </Frame>
 
 4. Proceed with confirming the signature.
-
 5. If you added multiple signatories, the next signatory receives the same email after the previous signatory has signed. They complete the signature using the same steps.
 
 After all required signatures are collected:
 
-* The contract is automatically marked as **Signed** in Rntor.
-* The finalized document is updated with all signatures shortly after completion.
+- The contract is automatically marked as **Signed** in Rntor.
+- The finalized document is updated with all signatures shortly after completion.
 
 Depending on your contract settings:
 
-* If **Create subscription from contract** was enabled, the customer’s subscription is automatically created and activated.
-* If **Issue invoice from contract** was enabled, the invoice is automatically generated and issued.
+- If **Create subscription from contract** was enabled, the customer’s subscription is automatically created and activated.
+- If **Issue invoice from contract** was enabled, the invoice is automatically generated and issued.
 
 ## FAQs
 
 <AccordionGroup>
-<Accordion title="Is eSignature legal in my country?">
+  <Accordion title="Is eSignature legal in my country?">
+    Spacebring uses Dropbox Sign for electronic signatures. You can check the legal recognition of eSignatures in your country on the [Dropbox Sign website](https://sign.dropbox.com/esignature-legality/australia).
+  </Accordion>
 
-Spacebring uses Dropbox Sign for electronic signatures. You can check the legal recognition of eSignatures in your country on the [Dropbox Sign website](https://sign.dropbox.com/esignature-legality/australia).
+  <Accordion title="Why didn't I get the eSignature email to sign the contract?">
+    If you didn’t receive the eSignature email, keep in mind that when there are multiple signatories, contract signing is sequential.
 
-</Accordion>
+    The contract is sent to the first signatory in your selected order, followed by the next signatory, and so on. If the previous signatory has not signed yet, the document will not appear in the next signatory’s inbox.
 
-<Accordion title="Why didn't I get the eSignature email to sign the contract?">
+    If the previous signatory has already signed and you still don’t see the email, check the following:
 
-If you didn’t receive the eSignature email, keep in mind that when there are multiple signatories, contract signing is sequential.
+    - When issuing the contract, make sure you click `Issue with eSignature`, not only `Issue`.
+    - Make sure the signatories’ email addresses were entered correctly.
+    - Check the Spam or Junk folders in case the contract email was filtered.
+    - Check any other email filters configured in the recipient’s inbox.
+  </Accordion>
 
-The contract is sent to the first signatory in your selected order, followed by the next signatory, and so on. If the previous signatory has not signed yet, the document will not appear in the next signatory’s inbox.
+  <Accordion title="How to prevent signatures from jumping to a new page?">
+    To keep signatures in their designated positions and avoid an additional page appearing at the end of the document, include both the signature and signature-date placeholders together:
 
-If the previous signatory has already signed and you still don’t see the email, check the following:
-
-* When issuing the contract, make sure you click `Issue with eSignature`, not only `Issue`.
-* Make sure the signatories’ email addresses were entered correctly.
-* Check the Spam or Junk folders in case the contract email was filtered.
-* Check any other email filters configured in the recipient’s inbox.
-
-</Accordion>
-
-<Accordion title="How to prevent signatures from jumping to a new page?">
-
-To keep signatures in their designated positions and avoid an additional page appearing at the end of the document, include both the signature and signature-date placeholders together:
-
-* `{customer.signatory.signature}` and `{customer.signatory.signature_date}`
-* `{company.signatory.signature}` and `{company.signatory.signature_date}` if applicable
-
-</Accordion>
+    - `{customer.signatory.signature}` and `{customer.signatory.signature_date}`
+    - `{company.signatory.signature}` and `{company.signatory.signature_date}` if applicable
+  </Accordion>
 </AccordionGroup>
