@@ -106,8 +106,7 @@
                         "pages": [
                           "admin/billing/contracts/set-up-contracts",
                           "admin/billing/contracts/templates",
-                          "admin/billing/contracts/esignature",
-                          "admin/billing/contracts/external-signature"
+                          "admin/billing/contracts/esignature"
                         ]
                       },
                       {

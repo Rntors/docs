@@ -1,5 +1,5 @@
 ---
-title: "Esignature"
+title: "Signatures "
 ---
 
 ## Enable and issue contracts for eSignature, understand how customers receive and sign contracts electronically
@@ -47,13 +47,13 @@ After issuing the contract:
 2. They are taken to an online signing page where they can read the contract and click `Click to sign`.
 
 <Frame>
-  ![Online contract signing page showing the Click to sign field](/images/placeholders/esignature-signing-page.png)
+  ![Whats App Image 2026 07 22 At 15 42 08](/images/WhatsApp-Image-2026-07-22-at-15.42.08.jpeg)
 </Frame>
 
 3. They can draw, type, or upload their signature.
 
 <Frame>
-  ![Add your signature window showing Draw, Type, and Upload options](/images/placeholders/esignature-add-signature.png)
+  ![Whats App Image 2026 07 22 At 15 41 19](/images/WhatsApp-Image-2026-07-22-at-15.41.19.jpeg)
 </Frame>
 
 4. Proceed with confirming the signature.
@@ -69,14 +69,54 @@ Depending on your contract settings:
 - If **Create subscription from contract** was enabled, the customer’s subscription is automatically created and activated.
 - If **Issue invoice from contract** was enabled, the invoice is automatically generated and issued.
 
+## **Manage external signatures**
+
+if a customer needs to sign the contract manually (physically), you can manually record and upload the signed document into the system.
+
+## Mark the contract as signed
+
+Once the customer signs the contract manually, follow these steps:
+
+1. Go to **Customers** \> open the customer profile \> **Contracts** page. Alternatively, go to **Billing \> Contracts** and use the filters to find the necessary contract.
+
+<Frame>
+  ![Screenshot 2026 07 22 At 3 52 03 PM](/images/Screenshot-2026-07-22-at-3.52.03-PM.png)
+</Frame>
+
+2. Open the necessary contract.
+3. In the **Signatories** section, press the **(...)** menu next to the signatory’s name and select `Mark as signed`.
+
+<Frame>
+  ![Screenshot 2026 07 22 At 3 57 30 PM](/images/Screenshot-2026-07-22-at-3.57.30-PM.png)
+</Frame>
+
+4. Press `Upload signed PDF` to upload the final signed document.
+
+<Frame>
+  ![Screenshot 2026 07 22 At 4 01 32 PM](/images/Screenshot-2026-07-22-at-4.01.32-PM.png)
+</Frame>
+
+When the contract is marked as signed by all signatories:
+
+- The contract status changes to **Signed**.
+- The system automatically creates the customer’s subscription on the selected start date.
+- The system [notifies](https://www.spacebring.com/docs/member/account/notifications) the customer.
+
+If any signatory declines the contract:
+
+1. Press the **(...)** menu next to the signatory’s name.
+2. Select `Mark as declined`.
+
+The contract status changes to **Declined**, and the customer’s subscription is not created.
+
 ## FAQs
 
 <AccordionGroup>
   <Accordion title="Is eSignature legal in my country?">
-    Spacebring uses Dropbox Sign for electronic signatures. You can check the legal recognition of eSignatures in your country on the [Dropbox Sign website](https://sign.dropbox.com/esignature-legality/australia).
+    RNTOR uses BoldSign as its eSignature provider. Electronic signatures are legally recognized in most countries, but the specific requirements, accepted signature types, and validity for particular document types vary by jurisdiction. Before relying on eSignature for a given contract, check BoldSign's country-by-country legality guide: [https://boldsign.com/electronic-signature-legality/](https://boldsign.com/electronic-signature-legality/). For regulated documents or cross-border agreements, we recommend obtaining independent legal advice to confirm that an electronic signature satisfies the applicable local requirements.Why didn't I get the eSignature email to sign the contract? 
   </Accordion>
 
-  <Accordion title="Why didn't I get the eSignature email to sign the contract?">
+  <Accordion>
     If you didn’t receive the eSignature email, keep in mind that when there are multiple signatories, contract signing is sequential.
 
     The contract is sent to the first signatory in your selected order, followed by the next signatory, and so on. If the previous signatory has not signed yet, the document will not appear in the next signatory’s inbox.
