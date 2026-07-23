@@ -1,3 +1,233 @@
 ---
-title: "Set up subscriptions"
+title: "Subscriptions"
+description: "Learn how to set up customer subscriptions and automate memberships, leases, and recurring billing"
 ---
+
+A subscription defines the terms of a customer's membership or lease and automates the entire experience for your member. It allows you to:
+
+- Automatically issue recurring invoices and collect payments.
+- [Provide physical access to your space.](#replace-access-link)
+- Auto-allocate credits, day passes, and discounts with the selected frequency.
+- Assign resources (e.g., desks or offices) to members who rent them and automate your inventory management.
+- Allow members to add one-time purchases to their next [invoice](#replace-invoice-link), and more.
+
+<Frame>
+  <iframe
+    className="w-full aspect-video rounded-xl"
+    src="https://www.youtube.com/embed/REPLACE_VIDEO_ID"
+    title="Subscriptions explained"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+## Create a subscription
+
+1. Go to **Customers** > select a user or a company.
+
+2. Open their profile > locate the **Subscriptions** section > press **Create**.
+
+   - Alternatively, go to the **Billing > Subscriptions** page > press **Create**.
+
+<Frame>
+  <img
+    src="/images/billing/subscriptions/create-subscription.png"
+    alt="Create a subscription from a customer profile"
+  />
+</Frame>
+
+<Info>
+  If customer billing details are required on invoices and receipts in your country, [add them](#replace-customer-billing-details-link) in the customer profile before creating the subscription. This ensures they're included on the first invoice.
+</Info>
+
+Configure the subscription:
+
+1. **Cycle** – how often the subscription renews, the customer is billed, and credits or day passes are issued.
+
+<Info>
+  The selected cycle determines which plans/tiers are available for subscription items. For example, if you choose the **Month** cycle, weekly or annual plans/tiers won't appear in the **Product** dropdown.
+</Info>
+
+2. **Start date** — the date when the subscription becomes active. All future renewals follow this date unless **First day of the month** is selected as the [billing cycle anchor](#replace-billing-cycle-anchor-link).
+
+<Info>
+  If the subscription start date is set to a past date, the system will generate an invoice only for the most recent cycle, based on the billing cycle anchor.
+</Info>
+
+3. **End renewal:**
+
+   - **Never** — the subscription renews indefinitely until [canceled or an End date is set](#replace-cancel-subscription-link).
+   - **On date** — select an end date or use the cycle shortcut to prefill it.
+
+4. **Items** — add one or more products to the subscription and determine if this item is **Recurring** or **One-off**:
+
+   - **Recurring item:** Use these for ongoing charges like rent or membership fees.
+   - **One-off item:** Use these for deposits, additional services or one-time setup charges. These only appear on the first invoice.
+
+**Recurring item:**
+
+- **Product** — there are two product types:
+
+  - [**Resources**](#replace-resources-link) (desks, offices, etc.) — used when a customer rents a specific dedicated resource.
+
+    - **Tier** — pricing option for the resource.
+    - **Entire resource/Quantity** — choose whether the customer rents the entire resource or a number of seats. Automatically assigns the resource or seats to the customer.
+
+  - [**Membership plans**](#replace-membership-plans-link) — used for access without a dedicated resource.
+
+    - **Quantity** — number of plans (e.g., 3 hot desk memberships for a team).
+
+- **Start date:**
+
+  - **Subscription default** — the product activates on the subscription's start date.
+  - **Custom** — set a specific future start date for this product. Use this option to schedule future service changes or expansions, or to manage a trial period.
+
+<Info>
+  The item start date can't be earlier than the subscription start date.
+</Info>
+
+- **End date:**
+
+  - **Subscription default** — the product ends when the subscription ends.
+  - **Custom** — set a specific end date for this product. Use this option to schedule future service changes or to manage a trial period.
+
+- **Auto-update from plan/tier** — enable to automatically sync and apply any plan/tier changes to the subscription.
+- **Unit price** — price for one seat, plan, or the entire resource (if **Entire resource** enabled) for one subscription cycle.
+- **Setup fee** — a one-time setup fee that is included in the customer's first invoice.
+- [**Custom tax rate**](#replace-custom-tax-rate-link) — enable to set a custom tax rate for this subscription item if the default location tax doesn't apply.
+- [**Coupon**](#replace-coupon-link) — apply a temporary or permanent discount for this subscription item.
+- [**Expiring credits**](#replace-expiring-credits-link) — the number of credits issued per seat, plan, or the entire resource (if **Entire resource** enabled) for one subscription cycle.
+- [**Expiring day passes**](#replace-expiring-day-passes-link) — the number of expiring day passes issued per seat, plan, or the entire resource (if **Entire resource** enabled) for one subscription cycle.
+- [**Minimum commitment**](#replace-minimum-commitment-link) — enable to set a minimum subscription period before the customer can request cancellation.
+- [**Discounts > Granted coupons**](#replace-granted-coupons-link) — give the members on this plan discount coupons for the necessary services.
+- [**Access**](#replace-access-control-link) — tap on the > sign to grant access to certain doors for the duration of the customer's subscription.
+- [**Printing**](#replace-printing-link) — tap on the > sign to grant access to an ezeep Blue group for the duration of the customer's subscription.
+
+<Info>
+  The setup fee is subject to tax but is not affected by discounts or invoice proration.
+</Info>
+
+**One-off item:**
+
+- **Product** — one-time fees, deposits, and other one-time charges that should apply to the first invoice.
+- **Quantity** — number of products.
+- **Unit price** — price for one product.
+- [**Custom tax rate**](#replace-one-off-custom-tax-rate-link) — enable to set a custom tax rate for this subscription item if the default location tax doesn't apply.
+
+5. [**Advance invoicing**](#replace-advance-invoicing-link) — control how many days before the renewal date the customer's invoices are automatically generated and issued.
+
+6. **Billing cycle anchor** — determines the subscription renewal date. By default, it is set to your [location's billing cycle anchor](#replace-location-billing-cycle-anchor-link), but you can choose a different option if needed.
+
+   - **Subscription start date** — the subscription renews on its specified start date. The first invoice, credits, and day passes are issued in full.
+   - **First day of the month** — the subscription renewals align with the 1st of each month. If the selected start date is not the 1st, the first invoice, credits, and day passes are [prorated](#replace-proration-link) accordingly.
+
+<Tip>
+  Choose the **Subscription start date** option to avoid proration for 3-month, 6-month, or yearly subscriptions, if needed.
+</Tip>
+
+<Tip>
+  Check the **Preview** section to see the period and amount of the first invoices and adjust the **Billing cycle anchor** if needed.
+</Tip>
+
+7. **Issue first invoice** — determines how the first subscription invoice will be issued.
+
+   - **Automatically** — the first invoice will be issued automatically:
+
+     - Immediately with the subscription creation, if the start date is today or in the past.
+     - On the subscription start date, if it is set for a future date.
+
+   - **Manually** — the first invoice will be generated as a draft for administrators to review, edit, and issue it manually.
+
+<Frame>
+  <img
+    src="/images/billing/subscriptions/issue-first-invoice.png"
+    alt="Issue first invoice options"
+  />
+</Frame>
+
+8. After configuring the subscription, click **Create**.
+
+## Issue first invoice setting
+
+1. The **Issue first invoice** setting applies only to the invoice for the first subscription cycle. If you need to stop future automatic issuance for this customer, use [**Pause payment collection**](#replace-pause-payment-collection-link).
+
+2. If **Issue first invoice** is set to **Automatically** and a customer has a [**default payment method**](#replace-default-payment-method-link), the invoice will be charged automatically to that method.
+
+3. If the subscription start date is in the future, **Automatically** is selected by default. In this case, the first invoice stays in draft until the subscription begins. Administrators can find and manage it from the customer's profile > **Billing** page > [**Upcoming invoice**](#replace-upcoming-invoice-link):
+
+   - Edit it, add invoice items
+   - Issue it earlier if needed
+   - Delete it if the customer has already paid, etc.
+
+## How subscriptions work
+
+1. Customers view their subscription details on the **Membership > Billing** page > **Subscriptions** section.
+
+   - Individual members check it in the **Personal** section on the **Membership** page.
+   - Company managers check it in the section with their company name on the **Membership** page.
+
+<Frame>
+  <img
+    src="/images/billing/subscriptions/customer-membership-billing.png"
+    alt="Customer subscription details on the Membership Billing page"
+  />
+</Frame>
+
+2. The first invoice arrives according to the **Issue first invoice** configuration. All future invoices are issued automatically with each subscription renewal. Customers receive invoices via push, email, and in-app [**notifications**](#replace-notifications-link).
+
+3. Customers receive credits, day passes, discounts, and access with each subscription renewal until the [**subscription ends or is canceled**](#replace-subscription-end-link).
+
+## Track and manage subscriptions
+
+Administrators can track and manage all customer subscriptions on the **Billing > Subscriptions** page:
+
+- Filter subscriptions by **Status:**
+
+  - **Active** — the subscription is currently live
+  - **Incomplete** — the subscription is waiting for contract signing or purchase completion
+  - **Scheduled** — the subscription is confirmed and set to start on a future date
+  - **Canceled** — the subscription has ended or was canceled
+
+- Filter subscriptions by **Customer** to view their current active subscription(s) and the history of previous ones.
+- Filter subscriptions by **Plan** to see all subscriptions that include a specific plan.
+- Filter subscriptions by **Create date** to see subscriptions created on, before, after, or between specific dates.
+- From here, you can also create, edit, and cancel subscriptions, [**control payment collection**](#replace-control-payment-collection-link), view [**upcoming invoices**](#replace-upcoming-invoices-link) and more.
+
+<Frame>
+  <img
+    src="/images/billing/subscriptions/subscriptions-list.png"
+    alt="Subscriptions list in the admin dashboard"
+  />
+</Frame>
+
+You can also track successful and failed subscription payments through [**notifications**](#replace-payment-notifications-link) and on the **Billing > Invoices** page.
+
+## Multiple subscriptions
+
+You can set up one or multiple subscriptions for a customer. Multiple subscriptions allow you to:
+
+- Allocate credits with a different frequency than subscription renewal (e.g., bill annually but allocate credits monthly).
+- Set up plans with different cycles for the same customer (e.g., an annual membership plus a monthly subscription).
+- Switch a member to a subscription with a different cycle (e.g., from a monthly to a 3-month plan).
+- Mix billing cycles within a company (e.g., annual billing for some members and monthly for others).
+- Generate separate invoices for different subscriptions.
+
+### FAQs
+
+<AccordionGroup>
+  <Accordion title="How do I collect a deposit or a one-off setup fee with a subscription?">
+    Add a **One-off item** during subscription creation. It will be included in the first invoice and removed from the subscription once issued. If you prefer to charge the deposit separately, you can create and issue a [**one-off invoice**](#replace-one-off-invoice-link) from the customer's profile.
+  </Accordion>
+
+  <Accordion title="How do I collect payment for several months upfront with a subscription?">
+    To charge a customer for multiple months in advance:
+
+    1. **Create the subscription** and set **Issue first invoice** to **Manually**.
+    2. In the customer's profile, go to the **Invoices** page, and open the generated draft invoice.
+    3. Add invoice items for the months you want to charge upfront > issue the invoice.
+
+    To prevent the customer from being charged again during the prepaid period, [**pause payment collection**](#replace-prepaid-pause-payment-link) in the customer's subscription until the specific prepaid end date.
+
+    The customer will not receive invoices during this period and the regular monthly billing will start automatically after the specified **Resume date**.
+  </Accordion>
+</AccordionGroup>
