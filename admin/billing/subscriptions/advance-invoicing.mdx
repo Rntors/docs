@@ -1,3 +1,74 @@
 ---
 title: "Advance invoicing"
 ---
+description: "Set up advance invoicing to automatically generate customer invoices before their subscription renewal"
+---
+
+Advance invoicing allows you to issue invoices to customers for upcoming subscription period before their subscription renewal date.
+
+This is useful for the following scenarios:
+
+- Use for specific members, who use payment methods like direct debit, that require more time to process before the start of the new billing period.
+- Offer all members an extended timeframe to complete their payments on time before the next subscription period.
+
+You can configure a default setting for the entire location or set a custom value for specific customers.
+
+## Setting the default (location level)
+
+1. Go to **Location settings** > **Billing** page > **Invoices** tab.
+
+2. In the **Advance invoicing** section, set the number of days before the subscription renewal date that the upcoming invoices should be automatically created and issued to your customers.
+
+<Frame>
+  <img
+    src="/images/billing/advance-invoicing/location-default.png"
+    alt="Configure the default advance invoicing value in location settings"
+  />
+</Frame>
+
+This takes effect immediately for all existing and new subscriptions.
+
+## Setting a custom value (subscription level)
+
+1. Go to **Customers** > open the necessary customer profile.
+
+2. Press the **(...)** button near the subscription > **Edit**.
+
+3. In the **Advance invoicing** section, select **Custom** option > set how many days in advance all subsequent invoices will be automatically generated and sent. You can immediately check the **Preview** section to confirm when the customer will be billed.
+
+<Frame>
+  <img
+    src="/images/billing/advance-invoicing/subscription-custom-value.png"
+    alt="Configure a custom advance invoicing value for a subscription"
+  />
+</Frame>
+
+<Info>
+  If you update the advance invoicing value, the change applies automatically to the existing upcoming invoices and all new invoices.
+</Info>
+
+## How advance invoicing works with bookings
+
+When advance invoicing is enabled, the advance invoicing date determines which bookings are bundled together. The billing period is handled as follows:
+
+1. Bookings paid with the [**Invoice payment method**](#replace-invoice-payment-method-link) that took place **before** the advance invoicing date are bundled into the upcoming advance invoice that is about to be issued. The upcoming invoice will include the main plan/subscription payment, and all bookings that happened before the advance invoicing date.
+
+2. Bookings paid with the [**Invoice payment method**](#replace-invoice-payment-method-link) that take place **after** the advance invoicing date cannot be added to the upcoming invoice. Instead, they are held and included in a separate, subsequent invoice.
+
+For example: If a customer’s billing cycle anchor is set to 1st of the month, and the advance invoicing date is set to 10, then:
+
+- Main invoice (issued on the 21st): Includes the main subscription amount plus all bookings from the 1st to the 20th of the month (e.g., bookings from the 4th and 7th).
+
+- Subsequent invoice (issued on the 1st): Includes any bookings after the 20th, as they occurred after the main invoice was already generated.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How to issue invoices on a specific date?">
+    To issue all invoices on a specific date (e.g., the 25th of the month):
+
+    1. The [**Billing cycle anchor**](#replace-billing-cycle-anchor-link) must be set to “First day of the month.”
+
+    2. Set the Advance invoicing value to the number of days between the 25th and the 1st (e.g., setting the value to 7 days will issue the invoice on the 25th for the upcoming month).
+  </Accordion>
+</AccordionGroup>
