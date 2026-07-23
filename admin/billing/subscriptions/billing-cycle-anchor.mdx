@@ -1,3 +1,66 @@
 ---
 title: "Billing cycle anchor"
+description: "Set up a billing cycle anchor to define customers’ subscription renewal and billing dates, and manage first-cycle proration"
 ---
+
+The billing cycle anchor determines the date when a customer’s subscription renews and whether proration applies to the first subscription cycle.
+
+The location billing cycle anchor you set defines a default anchor for all new subscriptions. However, when creating a subscription for each specific customer, you can select a different billing cycle anchor if needed.
+
+<Frame>
+  <iframe
+    className="w-full aspect-video rounded-xl"
+    src="https://www.youtube.com/embed/REPLACE_VIDEO_ID"
+    title="Understand billing cycle anchor"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</Frame>
+
+## Set location default billing cycle anchor
+
+1. Click **(...)** next to the location name > **Location settings** > **Billing** > **Subscriptions** tab.
+
+2. In the **Billing cycle anchor** field, select one of the two values:
+
+<Frame>
+  <img
+    src="/images/billing/billing-cycle-anchor/location-default.png"
+    alt="Set the default billing cycle anchor in location settings"
+  />
+</Frame>
+
+### Subscription start date
+
+If **Subscription start date** is selected as the billing cycle anchor, the subscription renews, and the customer is billed on the date they subscribed.
+
+- The first subscription cycle is not prorated.
+- The customer receives the first invoice with the full price and the full number of credits and day passes.
+
+### First day of the month
+
+If **First day of the month** is selected as the billing cycle anchor, the subscription renews, and the customer is billed on the first day of each month, regardless of the subscription start date. As a result:
+
+- If the customer subscribes on a date other than the first day of the month, the first subscription cycle is incomplete.
+- The customer receives a prorated invoice and a prorated number of credits and day passes for the first cycle.
+- The subscription renews on the first day of each subsequent month with the full invoice price and full credits and day pass numbers. [Understand how proration works](#replace-proration-link).
+
+<Info>
+  A subscription inherits a billing cycle anchor at the moment of creation. If you change the location billing cycle anchor, it will apply only to future subscriptions, but the existing ones will continue to renew according to their current billing cycle anchor.
+</Info>
+
+## Set billing cycle anchor for an individual subscription
+
+When [creating a subscription](#replace-create-subscription-link) for a customer, you can:
+
+- Keep the default location billing cycle anchor.
+- Change the billing cycle anchor specifically for that customer’s subscription.
+
+<Frame>
+  <img
+    src="/images/billing/billing-cycle-anchor/individual-subscription.png"
+    alt="Set the billing cycle anchor for an individual subscription"
+  />
+</Frame>
+
+For example, your location billing cycle anchor might be **First day of the month** to align monthly subscription renewals across all customers. Meanwhile, for 3-month, 6-month, or yearly subscriptions, you may want to choose the **Subscription start date** option to avoid first-cycle proration.
