@@ -47,13 +47,13 @@ After issuing the contract:
 2. They are taken to an online signing page where they can read the contract and click `Click to sign`.
 
 <Frame>
-  ![Whats App Image 2026 07 22 At 15 42 08](/images/WhatsApp-Image-2026-07-22-at-15.42.08.jpeg)
+  ![Whats App Image 2026 07 22 At 15 42 08](/images/WhatsApp-Image-2026-07-22-at-15.42.08.jpeg "Whats App Image 2026 07 22 At 15 42 08")
 </Frame>
 
 3. They can draw, type, or upload their signature.
 
 <Frame>
-  ![Whats App Image 2026 07 22 At 15 41 19](/images/WhatsApp-Image-2026-07-22-at-15.41.19.jpeg)
+  ![Whats App Image 2026 07 22 At 15 41 19](/images/WhatsApp-Image-2026-07-22-at-15.41.19.jpeg "Whats App Image 2026 07 22 At 15 41 19")
 </Frame>
 
 4. Proceed with confirming the signature.
@@ -80,20 +80,20 @@ Once the customer signs the contract manually, follow these steps:
 1. Go to **Customers** \> open the customer profile \> **Contracts** page. Alternatively, go to **Billing \> Contracts** and use the filters to find the necessary contract.
 
 <Frame>
-  ![Screenshot 2026 07 22 At 3 52 03 PM](/images/Screenshot-2026-07-22-at-3.52.03-PM.png)
+  ![Screenshot 2026 07 22 At 3 52 03 PM](/images/Screenshot-2026-07-22-at-3.52.03-PM.png "Screenshot 2026 07 22 At 3 52 03 PM")
 </Frame>
 
 2. Open the necessary contract.
 3. In the **Signatories** section, press the **(...)** menu next to the signatory’s name and select `Mark as signed`.
 
 <Frame>
-  ![Screenshot 2026 07 22 At 3 57 30 PM](/images/Screenshot-2026-07-22-at-3.57.30-PM.png)
+  ![Screenshot 2026 07 22 At 3 57 30 PM](/images/Screenshot-2026-07-22-at-3.57.30-PM.png "Screenshot 2026 07 22 At 3 57 30 PM")
 </Frame>
 
 4. Press `Upload signed PDF` to upload the final signed document.
 
 <Frame>
-  ![Screenshot 2026 07 22 At 4 01 32 PM](/images/Screenshot-2026-07-22-at-4.01.32-PM.png)
+  ![Screenshot 2026 07 22 At 4 01 32 PM](/images/Screenshot-2026-07-22-at-4.01.32-PM.png "Screenshot 2026 07 22 At 4 01 32 PM")
 </Frame>
 
 When the contract is marked as signed by all signatories:
@@ -113,26 +113,33 @@ The contract status changes to **Declined**, and the customer’s subscription i
 
 <AccordionGroup>
   <Accordion title="Is eSignature legal in my country?">
-    RNTOR uses BoldSign as its eSignature provider. Electronic signatures are legally recognized in most countries, but the specific requirements, accepted signature types, and validity for particular document types vary by jurisdiction. Before relying on eSignature for a given contract, check BoldSign's country-by-country legality guide: [https://boldsign.com/electronic-signature-legality/](https://boldsign.com/electronic-signature-legality/). For regulated documents or cross-border agreements, we recommend obtaining independent legal advice to confirm that an electronic signature satisfies the applicable local requirements.Why didn't I get the eSignature email to sign the contract? 
+    RNTOR uses BoldSign as its eSignature provider. Electronic signatures are legally recognized in most countries, but the specific requirements, accepted signature types, and validity for particular document types vary by jurisdiction. Before relying on eSignature for a given contract, check BoldSign's country-by-country legality guide: [https://boldsign.com/electronic-signature-legality/](https://boldsign.com/electronic-signature-legality/). For regulated documents or cross-border agreements, we recommend obtaining independent legal advice to confirm that an electronic signature satisfies the applicable local requirements.
   </Accordion>
 
-  <Accordion>
-    If you didn’t receive the eSignature email, keep in mind that when there are multiple signatories, contract signing is sequential.
+  <Accordion title="Why didn't I get the eSignature email to sign the contract?">
+    When a contract has more than one signatory, RNTOR signs sequentially through BoldSign in the signatory order defined on the contract. Only the current signer receives the signing email; the next signer is emailed automatically after the previous signer completes signing. If an earlier signatory has not signed yet, the document will not appear in later signers' inboxes.
 
-    The contract is sent to the first signatory in your selected order, followed by the next signatory, and so on. If the previous signatory has not signed yet, the document will not appear in the next signatory’s inbox.
+    If the previous signatory has already signed and you still don't see the email:
 
-    If the previous signatory has already signed and you still don’t see the email, check the following:
-
-    - When issuing the contract, make sure you click `Issue with eSignature`, not only `Issue`.
-    - Make sure the signatories’ email addresses were entered correctly.
-    - Check the Spam or Junk folders in case the contract email was filtered.
-    - Check any other email filters configured in the recipient’s inbox.
+    - Confirm the contract was issued with **Issue with eSignature** (not just **Issue**). Only that action sends the request to BoldSign.
+    - On the contract page, verify the signatory's email address is spelled correctly.
+    - Check that the previous signatory's status on the contract is **Signed** — if it is still **Pending**, the next email has not been triggered yet.
+    - Look in your spam/junk folder and any inbox rules or filters that could divert the message.
   </Accordion>
 
   <Accordion title="How to prevent signatures from jumping to a new page?">
-    To keep signatures in their designated positions and avoid an additional page appearing at the end of the document, include both the signature and signature-date placeholders together:
+    To keep signatures in their designated positions and prevent an additional signature page, include both the signature and signature-date placeholders for every selected signatory:
 
-    - `{customer.signatory.signature}` and `{customer.signatory.signature_date}`
-    - `{company.signatory.signature}` and `{company.signatory.signature_date}` if applicable
+    `{customer.signatory.signature}`<br />`{customer.signatory.signature_date}`
+
+    `{location.signatory.signature}`<br />`{location.signatory.signature_date}`
+
+    For additional signatories, use the numbered placeholders:
+
+    `{customer.signatory2.signature}`<br />`{customer.signatory2.signature_date}`
+
+    `{location.signatory2.signature}`<br />`{location.signatory2.signature_date}`
+
+    Always include each signature and its corresponding signature-date placeholder together.
   </Accordion>
 </AccordionGroup>
