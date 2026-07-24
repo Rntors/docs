@@ -1,3 +1,124 @@
 ---
 title: "Credit notes"
+sidebarTitle: "Credit notes"
+description: "Issue credit notes to formally reduce paid or unpaid invoice totals, process refunds to customers, and correct billing errors, overcharges, or canceled services"
 ---
+
+Issue credit notes to formally reduce paid or unpaid invoice totals, process refunds to customers, and correct billing errors, overcharges, or canceled services.
+
+Credit notes are official documents to formally reduce the amount of an invoice typically due to a refund, error, or discount.
+
+You may need to issue a credit note in the following cases:
+
+- Correcting data entry errors or overcharges.
+- Handling canceled services or inventory issues.
+- Applying negotiated discounts after an invoice is issued.
+- Recording overpayments to be applied to future bills.
+
+## Issue a credit note
+
+- Administrators can issue a credit note to invoices with the [**Unpaid and Paid status**](#replace-unpaid-and-paid-status-link).
+- Credit notes are also created automatically from payment refunds if [**Credit notes on refunds**](#replace-credit-notes-on-refunds-link) is enabled.
+
+To issue a credit note, administrators:
+
+1. Go to **Billing > Invoices** > use filters to easily find and open the necessary invoice.
+2. In the **Credit notes** section, press **Create**.
+
+{/* Replace with the RNTOR New credit note screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/credit-notes/create-credit-note.png"
+    alt="Create a new credit note in RNTOR"
+  />
+</Frame>
+
+3. Select a reason and set an effective date.
+4. Tick the specific invoice item for which you want to issue a credit note.
+
+   - If needed, adjust the **Quantity** or amount in the **Credit amount** field.
+
+5. If it's a **Paid** invoice, select the credit option to define how to process the credit:
+
+   - **Customer balance** — adds the credit to the customer's internal [**money balance**](#replace-money-balance-link) for future invoices.
+   - **Credit outside of RNTOR** — use for refunds handled externally (e.g., cash).
+   - **Refund to card** — process the refund back to the original payment method.
+
+<Info>
+  You can add multiple credit options to split the total credit amount between different destinations.
+
+  If the invoice was already refunded previously, you can select that existing refund as a credit option to link it to the credit note.
+</Info>
+
+- **Internal note** — add any internal comments for record-keeping.
+
+<Info>
+  The credit note amount must be less or equal the total invoice amount, and cannot be negative.
+</Info>
+
+<Warning>
+  Credit notes for **Unpaid** invoices sync to [**Xero**](#replace-xero-link) and [**QuickBooks Online**](#replace-quickbooks-online-link). Credit notes for **Paid** invoices do not sync and must be recorded manually in your accounting software.
+</Warning>
+
+## Understand credit note totals
+
+- **Adjustment total** — total credit amount applied to the invoice.
+- **Current amount remaining** — invoice balance before the credit note is applied.
+- **Adjusted amount remaining** — invoice balance due after the credit note is applied.
+- **Amount to credit** — total amount to be credited *(visible only on “Paid” invoices).*
+
+{/* Replace with the RNTOR credit note totals screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/credit-notes/credit-note-totals.png"
+    alt="Credit note totals and adjusted invoice balance in RNTOR"
+  />
+</Frame>
+
+## How credit notes appear on invoices
+
+- Unpaid invoices — the credit note reflects on the invoice PDF and reduces the total balance.
+- Paid invoices — the credit note does not appear on the invoice PDF.
+- In-app view — both administrators and users can see credit note details by opening the invoice inside RNTOR.
+
+## How users are notified and pay credited invoices
+
+Users receive an [**email and push notification**](#replace-credit-note-notifications-link) when a credit note is issued.
+
+- Unpaid invoices — users can pay the remaining balance, which is automatically reduced by the credit note.
+- Paid invoices — no further payment is possible as the invoice was already settled.
+
+## How credit notes reflect in Analytics
+
+- Use the **Credit notes** custom report in **Analytics** to view credit note analytics or export all credit notes in bulk.
+- In the [**Invoices report**](#replace-invoices-report-link), credit notes are reflected in the **Pre-payment adjustment** and **Post-payment adjustment** columns.
+- Transactions for credit notes are not created and are not reflected in the [**Transactions report**](#replace-transactions-report-link). Only transactions for the final part of the invoice payment are recorded.
+
+## Void a credit note
+
+You can void a credit note only if the invoice it was applied to still has an **Unpaid** status. To do so, open the necessary credit note, click the **(...)** menu top right > **Void**.
+
+Once voided, the credit note is marked as **Voided** and the invoice amount due is updated accordingly.
+
+{/* Replace with the RNTOR void credit note screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/credit-notes/void-credit-note.png"
+    alt="Void a credit note in RNTOR"
+  />
+</Frame>
+
+<Warning>
+  Voiding a credit note is irreversible.
+</Warning>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do taxes and coupons apply to credit notes?">
+    If the original invoice included a coupon or tax, the credit note will also reflect these amounts proportionally. This ensures that your financial records are accurate, with the credit note correctly reflecting the money that should be paid.
+  </Accordion>
+</AccordionGroup>
