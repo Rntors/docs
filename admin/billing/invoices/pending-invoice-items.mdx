@@ -1,3 +1,65 @@
 ---
 title: "Pending invoice items"
+sidebarTitle: "Pending invoice items"
+description: "Learn how pending invoice items are created and billed for customers with or without subscriptions"
 ---
+
+Whenever a customer, or an administrator on their behalf, makes a booking or purchase using the [**Invoice payment method**](#replace-invoice-payment-method-link), it is recorded as a pending invoice item. How and when pending invoice items are billed depends on:
+
+- Whether the customer has a subscription
+- Whether the **Add to subscription invoices** is enabled
+- The booking date in relation to the subscription period.
+
+## Access pending invoice items
+
+You can find these items in the customer's profile > locate **Pending invoice items** section:
+
+{/* Replace with the RNTOR Pending invoice items screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/pending-invoice-items/customer-pending-invoice-items.png"
+    alt="Pending invoice items section in a customer profile in RNTOR"
+  />
+</Frame>
+
+## How pending invoice items are billed
+
+### Customer has a subscription with Add to subscription invoices enabled
+
+In this case, pending invoice items are automatically consolidated into subscription invoices.
+
+1. All purchases with **Invoice** appear in **Pending invoice items**.
+2. Bookings for dates within the current period and other purchases (shop products, event tickets, credit packages) are added to the [**Upcoming invoice**](#replace-upcoming-invoice-link).
+
+   - When the upcoming invoice is issued, these items are billed and disappear from **Pending invoice items**.
+
+3. Bookings for dates in future subscription periods remain in **Pending invoice items**. They are billed with subscription invoices issued after the booking takes place.
+
+**Example:** If the current cycle is April 2 – May 1, and a booking is made for June 13:
+
+1. The booking first appears in **Pending invoice items**.
+2. On June 2, the period begins in which this booking takes place, so it is added to the **Upcoming invoice**.
+3. On July 2, the invoice is issued and includes:
+
+   - Subscription fees for July 2 – August 1.
+   - All bookings between June 2 – July 1.
+
+<Tip>
+  This logic gives customers the flexibility to reschedule or cancel their future bookings. Changes are automatically reflected in the current invoice. If cancelled according to the rescheduling policy, the pending item is removed and no charge is applied.
+</Tip>
+
+<Info>
+  Bookings paid via the payment gateway are still charged immediately at checkout.
+</Info>
+
+### Customer has no subscription or Add to subscription invoices is disabled
+
+1. All purchases with **Invoice** appear in **Pending invoice items**.
+2. They are not billed automatically. The administrator must manually create and issue invoices with them when needed.
+3. Administrator clicks **Create invoice** under pending invoice items to create a draft invoice.
+4. Edit it, if needed, and issue.
+
+<Info>
+  You can delete pending invoice items, if needed. Deleting a scheduled invoice item won't cancel the booking, order, or ticket itself. It will only remove the charge for it.
+</Info>
