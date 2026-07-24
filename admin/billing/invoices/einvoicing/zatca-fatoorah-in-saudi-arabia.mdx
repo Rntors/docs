@@ -1,3 +1,175 @@
 ---
 title: "ZATCA Fatoorah in Saudi Arabia"
+sidebarTitle: "ZATCA Fatoorah in Saudi Arabia"
+description: "Enable ZATCA Fatoorah eInvoicing for Saudi Arabia to automatically generate compliant invoices and submit them for real-time clearance"
 ---
+
+Enable ZATCA Fatoorah eInvoicing for Saudi Arabia to automatically generate compliant eInvoices and submit them for real-time clearance.
+
+RNTOR supports ZATCA Fatoorah eInvoicing for Saudi Arabia and helps you stay compliant by:
+
+- Automatically generating eInvoices and credit notes in the format required by the Zakat, Tax and Customs Authority (ZATCA).
+- Submitting them for real-time clearance through ZATCA’s FATOORA platform.
+- Adding ZATCA QR codes to the PDF invoices sent to customers, allowing them to verify invoices using the ZATCA app.
+- Tracking the synchronization status of every eInvoice.
+
+<Info>
+  This feature is currently in beta. Its functionality and appearance are subject to change, and it may not be fully stable. We welcome your feedback at support@rntor.com.
+</Info>
+
+## Prerequisites
+
+To enable eInvoicing, ensure the following requirements are completed.
+
+### Complete location billing details
+
+Your location’s billing details, tax, and currency must be complete and accurate.
+
+1. Go to **Location settings > General > Billing details**.
+
+2. Complete your location’s billing details:
+
+   - **Legal business name**
+   - **Address** — select Saudi Arabia as the country, then enter Address line 1, Address line 2 such as the building number with a maximum of four digits, City, State/Province, and a five-digit Postal code.
+   - **Tax ID (VAT)** — must contain exactly 15 digits and start and end with `3`.
+   - **Contact details** — an email address is mandatory.
+
+3. Enter your **Commercial registration number (CRN)** issued by the Ministry of Commerce. This is required for ZATCA Fatoorah eInvoicing alongside your VAT number.
+
+4. Go to **Location settings > Billing > Taxes**.
+
+   - Set the **Tax type** to **VAT**.
+   - Enter **15%** in the **Tax rate** field, as required by ZATCA.
+
+5. Go to **Location settings > Billing > Currencies**.
+
+   - Ensure your main location currency is set to **SAR, Saudi Riyal**.
+   - If your primary location currency is different, [**add SAR, Saudi Riyal as an alternative currency**](#replace-alternative-currency-link) and apply it to all customer profiles for which you want to generate eInvoices.
+
+<Info>
+  Only invoices issued in SAR can be synchronized with ZATCA’s FATOORA platform.
+</Info>
+
+{/* Replace with the RNTOR location billing details screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/zatca-fatoorah/location-billing-details.png"
+    alt="Complete the Saudi Arabian location billing details required for ZATCA Fatoorah in RNTOR"
+  />
+</Frame>
+
+### Complete customer billing details
+
+Each customer must also have accurate billing details.
+
+1. Go to **Location settings > Customers** and configure the [**Require billing details**](#replace-require-billing-details-link) setting based on your needs:
+
+   - Enable this requirement for both individual users and companies.
+   - Alternatively, enable it only for companies if you only need to generate eInvoices for companies.
+   - When **Require billing details** is enabled for a customer type, new customers will be prompted to complete their billing details during their first payment.
+   - Existing customers with incomplete billing details will be prompted to update them during their next payment.
+
+2. To review or update customer details manually:
+
+   - Go to **Customers**, open the customer profile, and locate the [**Billing details**](#replace-customer-billing-details-link) section on the right-side panel. Administrators can complete any missing billing details there.
+   - Alternatively, ask customers to update their own billing details under [**Membership > Billing**](#replace-membership-billing-link).
+
+### Requirements for companies
+
+Complete billing details are required for company eInvoices to be generated and submitted.
+
+If a company’s billing details are incomplete or invalid, its invoices will remain in **Draft** status with a warning and cannot be issued.
+
+### Requirements for individual users
+
+For individual members, complete their billing details only if you want their invoices to be generated as eInvoices and submitted to ZATCA’s FATOORA platform.
+
+- If you do not want to generate eInvoices for individual members, leave their billing details—especially the **Legal business name** and **Tax ID**—empty.
+- If at least one of these fields is completed for an individual member, RNTOR will attempt to synchronize their invoices as eInvoices with ZATCA’s FATOORA platform.
+
+## Enable eInvoicing
+
+1. Go to **Location settings > Billing > Invoices**.
+
+2. Enable the **eInvoicing** switch.
+
+3. In the **ZATCA registration** section, click **Start verification process**.
+
+4. Follow the instructions in the registration form to configure your ZATCA Fatoorah eInvoicing credentials.
+
+   - For **Invoice type**, select **Standard only** or **Standard + Simplified**. RNTOR synchronizes standard invoices only.
+
+5. Your registration will be submitted to ZATCA for verification.
+
+   - You can monitor the process using **Track verification status**, which opens the ZATCA FATOORA portal.
+   - Verification may take some time. Once approved, your registration status will change to **Verified**.
+   - If verification fails, click **Restart verification** to try again.
+
+{/* Replace with the RNTOR eInvoicing and ZATCA registration screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/zatca-fatoorah/enable-einvoicing.png"
+    alt="Enable eInvoicing and track ZATCA Fatoorah verification in RNTOR"
+  />
+</Frame>
+
+## How eInvoicing works
+
+After eInvoicing is enabled:
+
+- All invoices for customers with valid billing details are automatically generated in the ZATCA-compliant eInvoice format.
+- During issuance, invoices are also submitted to ZATCA’s FATOORA platform for real-time clearance.
+- After clearance is confirmed, customers receive the standard PDF invoice containing a ZATCA QR code that they can scan using the ZATCA app or a compatible scanner to verify the invoice.
+
+{/* Replace with the RNTOR ZATCA-compliant invoice PDF screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/zatca-fatoorah/zatca-invoice-pdf.png"
+    alt="ZATCA-compliant invoice PDF with a verification QR code generated by RNTOR"
+  />
+</Frame>
+
+- Credit notes are also submitted to ZATCA when the original invoice was successfully cleared.
+- When eInvoicing is enabled, voiding invoices and credit notes is not supported because ZATCA does not allow it. Instead, you can:
+
+  - [**Issue a credit note**](#replace-issue-credit-note-link) to correct the invoice.
+  - If necessary, issue a credit note for the full invoice amount to cancel it.
+
+## Track eInvoice syncing
+
+Each invoice displays its eInvoice synchronization status.
+
+{/* Replace with the RNTOR successfully synced eInvoice screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/zatca-fatoorah/einvoice-synced.png"
+    alt="Successfully synchronized eInvoice status displayed in RNTOR"
+  />
+</Frame>
+
+If an eInvoice fails to synchronize—for example, because the customer’s billing details are missing or invalid:
+
+- The invoice will not be issued.
+- RNTOR will display:
+
+  - An **eInvoice sync failed** status.
+  - A red warning triangle next to the affected invoice.
+  - A red warning triangle next to the customer’s name on the **Customers** page.
+
+{/* Replace with the RNTOR failed eInvoice synchronization screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/zatca-fatoorah/einvoice-sync-failed.png"
+    alt="Failed ZATCA eInvoice synchronization warning and correction action in RNTOR"
+  />
+</Frame>
+
+If prompted, update the customer’s billing details or complete any other required actions, then click **Issue again**.
+
+You can also view the eInvoice synchronization status for all invoices in the [**Invoices report**](#replace-invoices-report-link).
+```
