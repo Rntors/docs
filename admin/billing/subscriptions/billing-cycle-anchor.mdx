@@ -64,3 +64,24 @@ When [creating a subscription](#replace-create-subscription-link) for a customer
 </Frame>
 
 For example, your location billing cycle anchor might be **First day of the month** to align monthly subscription renewals across all customers. Meanwhile, for 3-month, 6-month, or yearly subscriptions, you may want to choose the **Subscription start date** option to avoid first-cycle proration.
+
+## How proration for the last subscription cycle works
+
+When an administrator [**sets an end date**](#replace-set-subscription-end-date-link) that creates a shorter final cycle, the last cycle is prorated automatically. On the final renewal, the customer receives a prorated invoice and a prorated number of credits and day passes for that incomplete cycle.
+
+<Info>
+  For weekly plans, the last subscription cycle is prorated whenever it is shorter than a full week.
+</Info>
+
+## How the proration coefficient is calculated
+
+The calculation of the proration coefficient depends on the subscription cycle.
+
+| Subscription cycle | Coefficient calculation | Example |
+| --- | --- | --- |
+| **Month** | Days remaining in the month divided by the total number of days in the month. | A subscription starts on Jan 15 (today). Since January has 31 days and 14 days have passed, the coefficient is **(31 - 14) / 31 = 0.548**. |
+| **3 months, 6 months, or Year** | Days remaining in the current period divided by the total number of days in the past period. | A 3-month subscription starts on Mar 20 (today). Since 12 days remain in the current period and the past period has 90 days, the coefficient is **12 / 90 = 0.133**. |
+
+The proration coefficient is then multiplied by the full membership price. Any applicable taxes you’ve set **are not** included in this amount.
+
+Both the invoice total and any applicable credits and day passes are adjusted proportionally based on the proration coefficient.
