@@ -1,3 +1,245 @@
 ---
 title: "Upcoming invoices"
+sidebarTitle: "Upcoming invoices"
+description: "Learn how to manage a customer's upcoming subscription invoice, add extra charges, apply discounts, record advance payments or issue it early"
 ---
+
+Learn how to manage a customer's upcoming subscription invoice, add extra charges, apply discounts, record advance payments or issue it early.
+
+For customers with active subscriptions, an upcoming invoice appears in their profile. It is a preview of the invoice for the next subscription period.
+
+The upcoming invoice includes:
+
+- Subscription items for the next period, such as plans or resource rentals.
+- Purchases made with the [**Invoice payment method**](#replace-invoice-payment-method-link), if they are configured to be added to subscription invoices.
+
+Administrators can manage and modify the upcoming invoice before it is issued.
+
+## Access upcoming invoice
+
+1. Go to the **Customers** page.
+2. Select a company or user.
+3. Click on the subscription and press **View upcoming invoice**.
+
+{/* Replace with the RNTOR subscription screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/upcoming-invoices/access-upcoming-invoice.png"
+    alt="Access a customer's upcoming invoice in RNTOR"
+  />
+</Frame>
+
+## Add extra one-time charges
+
+1. Open the **Upcoming invoice** and click **Create item**.
+2. Add a **Custom** item or select one of your [**pre-created one-off services**](#replace-one-off-services-link).
+
+{/* Replace with the RNTOR Create item screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/upcoming-invoices/add-one-time-charge.png"
+    alt="Add an extra one-time charge to an upcoming invoice in RNTOR"
+  />
+</Frame>
+
+## Modify or remove invoice items
+
+To change items that originate from the customer's subscription, such as a plan or resource rental, you must modify the subscription itself:
+
+1. [**Edit the customer's subscription**](#replace-edit-customer-subscription-link) directly in their profile.
+2. Modify or remove subscription items.
+3. See the **Upcoming invoice** immediately reflect the changes.
+
+### Other invoice items
+
+- Items added by [**Pay with invoice**](#replace-pay-with-invoice-link) can be removed, but not modified.
+- Other non-subscription items can be edited or removed directly in the upcoming invoice.
+
+## Apply a discount or credit
+
+### Apply a discount
+
+1. [**Create a coupon**](#replace-create-coupon-link) for **Subscription items** with the required discount amount or percentage.
+2. Edit the customer's subscription and [**apply the coupon**](#replace-apply-coupon-link) to the relevant subscription item.
+3. See the upcoming invoice reflecting the discount.
+
+{/* Replace with the RNTOR discounted upcoming invoice screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/upcoming-invoices/apply-discount.png"
+    alt="Apply a discount to an upcoming invoice in RNTOR"
+  />
+</Frame>
+
+### Apply a balance to reduce invoice total
+
+You may need to apply a balance if:
+
+- The customer overpaid or underpaid a previous invoice.
+- You want to apply a refund, discount, or credit to the next invoice total.
+
+To apply a balance:
+
+1. Go to the customer's profile.
+2. Adjust the [**Money balance**](#replace-money-balance-link).
+3. See the upcoming invoice reflecting the applied balance. It will be applied automatically when the invoice is issued.
+
+{/* Replace with the RNTOR applied balance screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/upcoming-invoices/apply-balance.png"
+    alt="Apply a customer's money balance to an upcoming invoice in RNTOR"
+  />
+</Frame>
+
+## Issue upcoming invoice earlier
+
+By default, the upcoming invoice is automatically issued:
+
+- On the subscription renewal date, or
+- A set number of days before renewal if you enabled [**Advance invoicing**](#replace-advance-invoicing-link).
+
+If you need to issue it earlier:
+
+1. Open the **Upcoming invoice**.
+2. Click **Create** to generate a draft.
+3. Edit the draft if needed, for example, adjust the **Payment due date**.
+4. Click **Issue** or **Issue and charge**.
+
+{/* Replace with the RNTOR issue upcoming invoice screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/upcoming-invoices/issue-invoice-earlier.png"
+    alt="Create and issue an upcoming invoice earlier in RNTOR"
+  />
+</Frame>
+
+## Record a customer's payment for the upcoming invoice
+
+You have two options depending on your accounting workflow.
+
+### Issue now and record payment
+
+1. Open the **Upcoming invoice**.
+2. Click **Create**, then **Issue**.
+3. In the **Payments** section, [**record the customer's payment**](#replace-record-customer-payment-link).
+
+### Add the payment to apply on issuance date
+
+If the invoice must be issued in the correct accounting period:
+
+1. Go to the customer's profile.
+2. Press **Adjust balance** near the **Money balance** and [**add a payment**](#replace-add-payment-link).
+3. The upcoming invoice will reflect the applied balance and will be issued on the scheduled date with 0 amount remaining to pay.
+
+## Prevent upcoming invoice issuance
+
+There are several ways to prevent the next subscription invoice from being issued, depending on your situation.
+
+### Pause payment collection
+
+If the customer temporarily doesn't need to pay or pauses their subscription:
+
+1. Open the customer's subscription.
+2. [**Pause payment collection**](#replace-pause-payment-collection-link) in it.
+3. Choose to generate their subscription invoice as a draft or immediately void it.
+4. Optionally, set a [**Resume date**](#replace-resume-date-link).
+
+### Delete a single upcoming invoice
+
+If you need to completely and immediately delete the upcoming invoice, and the **Pause payment collection** solution doesn't work for you:
+
+1. Open the **Upcoming invoice**.
+2. Click **Create** to generate a draft.
+3. Then, click **(...)** in the top-right corner and select **Delete**.
+
+{/* Replace with the RNTOR delete upcoming invoice screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/upcoming-invoices/delete-upcoming-invoice.png"
+    alt="Delete a single upcoming invoice in RNTOR"
+  />
+</Frame>
+
+<Warning>
+  Completely deleting an upcoming invoice is irreversible and less recommended.
+</Warning>
+
+<Tip>
+  Consider applying a [**100% discount**](#replace-full-discount-link) or a [**full amount credit**](#replace-full-amount-credit-link) instead of completely deleting or voiding the upcoming invoice. This will generate the invoice with a 0 total while keeping a record of the adjustment.
+</Tip>
+
+### Stop all further invoices
+
+If the customer is canceling their subscription and should not receive any further invoices:
+
+1. Go to the customer's profile.
+2. Open their subscription.
+3. Either:
+
+   - [**Schedule an end date**](#replace-schedule-end-date-link), or
+   - [**Cancel the subscription**](#replace-cancel-subscription-link) immediately.
+
+<Info>
+  If the subscription is in its final cycle, no upcoming invoice is generated.
+</Info>
+
+## FAQs
+
+<AccordionGroup>
+  <Accordion title="Why might an upcoming invoice not be visible?">
+    1. The invoice was already issued. If an administrator has manually issued the upcoming invoice, it will no longer appear as an upcoming invoice. Instead, such invoices are moved to the **Invoices** page in the customer's profile.
+
+    2. If the current subscription period is final, no future invoices are generated.
+  </Accordion>
+
+  <Accordion title="Can I disable automatic charging or issuing of the upcoming invoice?">
+    Yes. If you want the system to generate the upcoming invoice automatically, but not automatically charge the customer's payment method, and let them submit a payment by themselves:
+
+    1. Open the customer's profile.
+    2. [**Disable Auto-pay**](#replace-disable-auto-pay-link) in the right-hand panel.
+
+    The invoice will still be generated, but the customer will have to submit payment manually.
+
+    On the other hand, you may need to prevent automatic invoice issuance if:
+
+    - A customer pauses their membership.
+    - A customer temporarily does not need to pay.
+
+    To stop automatic invoice issuance:
+
+    1. Open the customer's subscription.
+    2. [**Pause payment collection**](#replace-pause-payment-collection-link) in it.
+    3. Choose to generate the invoice as a draft so you can manually issue it, or select to immediately void it.
+    4. You can also set a **Resume date** so future invoices are automatically issued again.
+  </Accordion>
+
+  <Accordion title="Can customers check their upcoming invoice?">
+    Yes. Members and [**company managers**](#replace-company-managers-link) can check their upcoming invoice as follows:
+
+    1. Go to the **Membership** page.
+    2. Open **Billing** in the personal or company section.
+    3. Press on the **Upcoming invoice**.
+
+    {/* Replace with the RNTOR member portal screenshot */}
+
+    <Frame>
+      <img
+        src="/images/billing/upcoming-invoices/customer-upcoming-invoice.png"
+        alt="View an upcoming invoice from the RNTOR member portal"
+      />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="What happens if an upcoming invoice has been issued but a customer makes more payments with 'Invoice'?">
+    The system will generate a new **Upcoming invoice**. It will not repeat items that were already billed.
+
+    For example, if January's invoice is issued in December and the customer later makes additional purchases using the [**Invoice payment method**](#replace-invoice-payment-method-link), one more upcoming invoice will be generated and include only those new payments.
+  </Accordion>
+</AccordionGroup>
