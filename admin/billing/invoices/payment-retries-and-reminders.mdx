@@ -1,3 +1,133 @@
 ---
 title: "Payment retries and reminders"
+sidebarTitle: "Payment retries and reminders"
+description: "Enable automatic charge retry attempts and email reminders for customers’ failed invoice payments, or resend invoices manually"
 ---
+
+Enable automatic charge retry attempts and email reminders for customers’ failed invoice payments, or resend invoices manually. Understand how they work and which notifications customers receive.
+
+RNTOR lets you automate payment retries and reminders for invoices to ensure a higher payment success rate.
+
+## Manage payment retries and reminders
+
+Administrators can manage automatic payment retries and reminders in a location:
+
+1. Go to **Location settings > Billing > Invoices** tab.
+2. Toggle the **Payment retries and reminders** switch on or off.
+
+{/* Replace with the RNTOR Payment retries and reminders settings screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/payment-retries-and-reminders/settings.png"
+    alt="Enable payment retries and reminders in RNTOR location billing settings"
+  />
+</Frame>
+
+<Info>
+  Payment retries and reminders are enabled for all locations by default.
+</Info>
+
+## How payment retries and reminders work
+
+Whenever an attempt to pay an invoice fails, RNTOR schedules up to 2 automatic retries or reminders depending on the situation.
+
+Retries and reminders are scheduled when:
+
+- A subscription issues a recurring [**invoice**](#replace-recurring-invoice-link) to the customer.
+- A manual attempt to pay the invoice initiated by the customer or administrator fails.
+- An auto-charge fails for a customer with **Auto-pay** enabled.
+- A customer has no [**default payment method**](#replace-default-payment-method-link) at the time of an auto-charge attempt.
+
+<Info>
+  Payment retries and reminders work for all invoices, both subscription and one-off.
+</Info>
+
+## Retry and reminder schedule and notifications
+
+Each notification links to the invoice page, where the customer can view full details, the invoice PDF, and pay.
+
+1. The first retry or reminder happens 3 days after the initial payment attempt.
+
+   - If it succeeds:
+
+     - The customer receives an email with a receipt.
+     - The administrator gets a notification about a successful invoice payment.
+
+   - If it fails:
+
+     - The customer receives an email and a push notification asking them to add a valid payment method.
+     - The administrator gets a notification about a failed invoice payment.
+     - A second retry is scheduled.
+
+   - If the customer doesn’t have a [**default payment method**](#replace-default-payment-method-link) or [**Auto-pay**](#replace-auto-pay-link) is disabled:
+
+     - The customer gets a payment reminder instead of a retry.
+
+2. The second retry or reminder happens 3 days after the first retry.
+
+   - The same outcomes apply as above.
+   - No more automatic retries or reminders are scheduled.
+   - If an additional reminder is needed, administrators can manually [**resend the invoice**](#replace-resend-invoice-link) or try to [**charge it**](#replace-charge-invoice-link) again.
+
+<Info>
+  If the administrator or customer tries to pay the invoice manually after the first failed attempt, the next retry will be rescheduled to 3 days after the latest failed attempt. If the manual attempt succeeds, no further retries are triggered.
+</Info>
+
+<Info>
+  If no **Auto-pay** or manual payment attempt is made, automatic retries and reminders won’t be triggered. For example, if you manually issue an invoice but no one attempts to pay it, the system will not schedule any retries or reminders.
+</Info>
+
+Example of an unsuccessful retry email:
+
+{/* Replace with the RNTOR unsuccessful retry email screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/payment-retries-and-reminders/unsuccessful-retry-email.png"
+    alt="Unsuccessful invoice payment retry email in RNTOR"
+  />
+</Frame>
+
+Example of a payment reminder email for customers with no [**default payment method**](#replace-default-payment-method-link) or with [**Auto-pay**](#replace-auto-pay-link) turned off:
+
+{/* Replace with the RNTOR payment reminder email screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/payment-retries-and-reminders/payment-reminder-email.png"
+    alt="Invoice payment reminder email in RNTOR"
+  />
+</Frame>
+
+## Send a manual reminder
+
+Even after the automatic retries and reminders run their course, you can resend an unpaid invoice at any time to nudge the customer:
+
+1. Go to **Billing > Invoices** and tap the necessary invoice.
+2. Press **Resend invoice** in the top-right corner to send the invoice to the customer again.
+
+{/* Replace with the RNTOR Resend invoice screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/payment-retries-and-reminders/resend-invoice.png"
+    alt="Manually resend an unpaid invoice to a customer in RNTOR"
+  />
+</Frame>
+
+When you resend an invoice, the user receives a push notification and an email invoice payment reminder with the invoice attached.
+
+{/* Replace with the RNTOR manually resent invoice email screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/payment-retries-and-reminders/manual-reminder-email.png"
+    alt="Manually resent invoice payment reminder email in RNTOR"
+  />
+</Frame>
+
+<Info>
+  Only unpaid invoices show the **Resend invoice** button. For paid invoices, this button is replaced by **Send receipt**, which emails the customer both the invoice and receipt PDFs.
+</Info>
+```
