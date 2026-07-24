@@ -1,3 +1,66 @@
 ---
 title: "QR-bill"
+sidebarTitle: "QR-bill"
+description: "Add QR codes to invoices for compliance and fast mobile banking payments in Switzerland and Liechtenstein"
 ---
+
+Add QR codes to invoices for compliance and fast mobile banking payments in Switzerland and Liechtenstein.
+
+A QR bill is an invoice with a payment part and receipt designed for compliance with local requirements while simplifying the manual payment process.
+
+The embedded QR code contains all necessary payment information—such as the recipient’s account, reference number, and amount—allowing customers to pay invoices faster and safer through online banking or mobile apps.
+
+<Warning>
+  QR-bill is only available in Switzerland and Liechtenstein for invoices issued in EUR or CHF.
+</Warning>
+
+## Add QR code to invoices
+
+To add QR code to invoices, follow these steps:
+
+1. Go to **Location settings > General** page > **Billing details** tab.
+2. Fill in the Legal business name (if you haven’t already).
+3. Enter your IBAN / QR-IBAN in the **Account** field.
+
+{/* Replace with the RNTOR Billing details and Account field screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/qr-bill/add-qr-bill-account.png"
+    alt="Add an IBAN or QR-IBAN to location billing details in RNTOR"
+  />
+</Frame>
+
+Once you add this billing details, our system lets us generate and include the QR-bill codes on all subsequent invoices you issue to your customers.
+
+The generated invoice includes all the usual information along with the payment receipt, scannable QR code, payment info required for standardized, fast payment processing.
+
+{/* Replace with the RNTOR invoice with QR-bill screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/qr-bill/invoice-with-qr-code.png"
+    alt="Invoice containing a QR-bill payment part and receipt in RNTOR"
+  />
+</Frame>
+
+<Info>
+  RNTOR supports QR bill for invoices and proforma invoices as well.
+</Info>
+
+## How users pay a QR bill
+
+For customers who prefer to pay manually instead of using being [**auto-charged**](#replace-auto-charge-link), the QR code offers a convenient and faster way to complete the payment. Users can follow these steps:
+
+1. Open their bank’s mobile app or online banking platform.
+2. Select the option to scan or pay a QR bill.
+3. Use their phone to scan the QR code on the invoice.
+4. Verify that the payment details, such as amount and recipient, are correct.
+5. Confirm the payment. Depending on the bank, users may need to approve the transaction via your banking app.
+
+Users can also complete the payment offline by providing the QR bill and payment details to the teller at their bank branch, or at ATMs of certain banks, for example.
+
+<Warning>
+  Payment made using the QR code is processed externally, so the invoice status is **not automatically marked as paid**. Administrators can [**record external invoice payments**](#replace-record-external-invoice-payments-link) and [**add an internal note**](#replace-add-internal-note-link) to indicate the source of payment for proper record-keeping.
+</Warning>
+```
