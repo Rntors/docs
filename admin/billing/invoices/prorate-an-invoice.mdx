@@ -1,3 +1,58 @@
 ---
 title: "Prorate an invoice"
+sidebarTitle: "Prorate an invoice"
+description: "Understand how the system calculates invoice proration to automatically issue partial invoices, credits and day passes to customers for incomplete subscription cycles"
 ---
+
+RNTOR allows you to prorate invoices for the first and last subscription cycles.
+
+## How proration for the first cycle works
+
+If the billing cycle anchor is set to **First day of the month** and the subscription starts on any day other than the first of the month, the first invoice and credits/day passes are prorated. This ensures customer subscriptions renew on the first day of the month, helping standardize renewals and simplify your revenue tracking and accounting.
+
+To enable proration for the first subscription cycle:
+
+1. [**Set Billing cycle anchor**](#replace-billing-cycle-anchor-link) to the **First day of the month** option.
+
+{/* Replace with the RNTOR Billing cycle anchor screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/prorate-an-invoice/billing-cycle-anchor.png"
+    alt="Set the billing cycle anchor to the first day of the month in RNTOR"
+  />
+</Frame>
+
+2. An administrator [**creates a subscription**](#replace-create-subscription-link) for a customer, or a customer [**signs up for a plan**](#replace-sign-up-for-plan-link) and selects the subscription start date.
+3. If the subscription start date is other than the first of the month, the customer receives a prorated invoice and a prorated number of credits/day passes for the first incomplete period.
+4. The subscription automatically renews on the first day of the month in all subsequent cycles (unless a subscription ends within the current billing period).
+
+<Info>
+  When customers [**sign up**](#replace-customer-sign-up-link) by themselves, and the start date isn't the first of the month, the subscription **Renewal** is automatically enabled for them and cannot be disabled. To set a subscription end date, customers must contact an administrator.
+</Info>
+
+## How proration for the last subscription cycle works
+
+If the subscription end date creates a shorter final cycle, the invoice and credits are automatically prorated.
+
+1. Administrators [**set an end date**](#replace-set-subscription-end-date-link) for the customer’s subscription.
+2. If a subscription end date creates a shorter final cycle, proration for the last subscription cycle automatically applies.
+3. On the final subscription renewal, customers receive a prorated invoice and a prorated number of credits/day passes for the last incomplete cycle.
+
+<Info>
+  For weekly plans, the last subscription cycle is prorated whenever it is shorter than a full week.
+</Info>
+
+## How proration coefficient is calculated
+
+The calculation of the proration coefficient depends on the subscription cycle.
+
+| Subscription cycle | Coefficient calculation | Example |
+| --- | --- | --- |
+| Month | Days remaining in the month / total days in the month. | Subscription starts on Jan 15 (today). Since January has 31 days and 14 days have passed, the coefficient is **(31-14) / 31 = 0.548.** |
+| 3 months<br />6 months<br />Year | Days remaining in the current period / total days in the past period. | 3-months subscription starts on Mar 20 (today). Since 12 days remain in the current period and the past period has 90 days, the coefficient is **12 / 90 = 0.133.** |
+
+The proration coefficient is then multiplied by the full membership price. Any applicable taxes you’ve set **are not** included in this amount.
+
+Both the invoice total and any applicable credits and day passes are adjusted proportionally based on the proration coefficient.
+```
