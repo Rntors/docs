@@ -146,7 +146,7 @@
                           {
                             "group": "eInvoicing",
                             "pages": [
-                              "admin/billing/invoices/einvoicing/overview",
+                              "admin/billing/invoices/einvoicing/untitled-page",
                               "admin/billing/invoices/einvoicing/ksef-in-poland",
                               "admin/billing/invoices/einvoicing/peppol-in-belgium",
                               "admin/billing/invoices/einvoicing/veri-factu-in-spain"
