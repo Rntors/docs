@@ -1,3 +1,131 @@
 ---
 title: "Customer money balance"
+sidebarTitle: "Customer money balance"
+description: "Manage customer money balances to record prepayments, overpayments, refunds, underpayments, or specific charges and automatically apply them to future invoices"
 ---
+
+Manage customer money balances to record prepayments, overpayments, or refunds to their next invoice.
+
+The customer’s money balance provides an easy way to record the customer’s prepayments, over- and underpayments, refunds, or specific charges and automatically apply them towards their next invoice.
+
+## Manage customer’s money balance
+
+Administrators can view and manage the customer’s money balance in the customer’s profile.
+
+{/* Replace with the RNTOR customer money balance screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/customer-money-balance/customer-profile-balance.png"
+    alt="Customer money balance displayed in a customer profile in RNTOR"
+  />
+</Frame>
+
+There are two ways to make adjustments to the customer’s money balance.
+
+### Automatic increase by issuing a credit note
+
+- If you [**issue a credit note**](#replace-issue-credit-note-link) on an invoice with **Paid** status and choose **Customer balance** in the **Add credit option** property, it will automatically add the credit amount to the customer’s money balance, which will be applied to their next invoice.
+- If you [**issue a credit note**](#replace-issue-credit-note-link) for an invoice that already has an applied balance, and the total credit amount *(credit note amount + previously applied balance)* becomes greater than the invoice’s total, the difference is automatically added to the customer’s **Money balance** to be applied to their next invoice.
+
+### Manual adjustments by administrator
+
+Administrators can also manually adjust the customer’s balance to add or deduct funds.
+
+1. Navigate to the customer’s profile.
+2. Next to the **Money balance**, click **Adjust balance** and select the adjustment type.
+3. Enter the **Amount** to be added or deducted.
+4. Type a reason in the **Internal note** field. This helps your administrator team track and recognize this adjustment later.
+
+{/* Replace with the RNTOR Adjust money balance screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/customer-money-balance/adjust-money-balance.png"
+    alt="Manually add or deduct funds from a customer’s money balance in RNTOR"
+  />
+</Frame>
+
+Money balance can be positive or negative.
+
+| Balance | Positive (>0) | Negative (<0) |
+| --- | --- | --- |
+| **Meaning** | The customer has a credit with you. | The customer owes you money. |
+| **Use when** | • A customer makes a prepayment or accidentally overpays an invoice *(e.g., via bank transfer).*<br /><br />• You need to apply a refund or discount to the customer’s next invoice for canceled services or service issues. | • A customer underpays an invoice.<br /><br />• You need to apply a penalty or a specific charge to the customer’s next invoice. |
+| **Impact on next invoice** | Decreases the amount due on their next invoice. | Increases the amount due on their next invoice. |
+
+<Info>
+  Customers don’t receive notifications about adjustments made to their balance.
+</Info>
+
+## How money balance works
+
+When the customer’s next invoice is issued, the money balance is automatically applied to its total post-tax amount due. It is reflected on the invoice as **Applied balance**.
+
+{/* Replace with the RNTOR invoice applied balance screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/customer-money-balance/applied-balance-invoice.png"
+    alt="Customer money balance applied to an invoice in RNTOR"
+  />
+</Frame>
+
+If the money balance is higher than the invoice total, the invoice will be fully covered, and the remaining balance will roll over to cover subsequent invoices.
+
+<Warning>
+  Applied balances on invoices do not currently sync to [**QuickBooks Online**](#replace-quickbooks-online-link) or [**Xero**](#replace-xero-link). To ensure your records are accurate, please adjust these invoices manually within your QuickBooks Online or Xero dashboard.
+</Warning>
+
+## Track balance adjustments
+
+All changes to the customer’s money balance are recorded on the **Adjustments** page. To locate it, press the **(...)** menu button > **View adjustments**.
+
+{/* Replace with the RNTOR View adjustments screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/customer-money-balance/view-adjustments.png"
+    alt="Open the customer money balance adjustments history in RNTOR"
+  />
+</Frame>
+
+The adjustments history includes:
+
+- Automatic increases with credit notes
+- Manual adjustments by administrators
+- Automatic application of the balance to invoices
+
+{/* Replace with the RNTOR Adjustments history screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/customer-money-balance/adjustments-history.png"
+    alt="Customer money balance adjustments history in RNTOR"
+  />
+</Frame>
+
+## How customers view their money balance
+
+1. Customers go to the **Membership** page in the member web portal or mobile app.
+2. In the personal or company section, open the **Billing** page.
+3. Check **Money balance**.
+
+{/* Replace with the RNTOR customer Billing money balance screenshot */}
+
+<Frame>
+  <img
+    src="/images/billing/customer-money-balance/customer-billing-balance.png"
+    alt="Customer money balance displayed on the Billing page in RNTOR"
+  />
+</Frame>
+
+## FAQs
+
+<AccordionGroup>
+  <Accordion title="When is it best to use the money balance, and when a credit note?">
+    - It’s best to [**issue a credit note**](#replace-issue-credit-note-link) when you need to reduce an already issued invoice.
+    - The money balance is ideal to record a credit or debit to apply to the customer’s next invoice(s).
+  </Accordion>
+</AccordionGroup>
+```
