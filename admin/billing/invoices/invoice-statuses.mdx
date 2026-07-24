@@ -1,3 +1,43 @@
 ---
 title: "Invoice statuses"
+sidebarTitle: "Invoice statuses"
+description: "Understand invoice and invoice payment statuses"
 ---
+
+Invoice statuses in RNTOR show the invoice's current state in the billing process.
+
+{/* Replace with the RNTOR invoice status flow image */}
+
+<Frame>
+  <img
+    src="/images/billing/invoice-statuses/invoice-status-flow.png"
+    alt="Invoice status flow from draft to issued, paid, or voided in RNTOR"
+  />
+</Frame>
+
+## Invoice statuses
+
+RNTOR has the following invoice statuses:
+
+| Status | Description |
+| --- | --- |
+| **Draft** | The invoice has been created but is not issued yet. Draft invoices only get their number once they are issued. |
+| **Issued** | The invoice has been issued but is not paid yet. |
+| **Paid** | The invoice has been [**paid**](#replace-paid-invoice-link)—either online by the customer or recorded as paid externally by an administrator. |
+| **Voided** | The invoice has been [**voided**](#replace-void-invoice-link) by an administrator. |
+
+## Invoice payment statuses
+
+Issued and paid invoices, in turn, display their payment statuses:
+
+| Status | Description |
+| --- | --- |
+| **Unpaid** | The invoice has been issued but is not paid yet. |
+| **Pending** | The **Pending** status appears when:<br /><br />- The customer has opened the payment page but hasn’t entered the payment details yet.<br />- The payment attempt was made and is currently being processed by the customer’s bank.<br /><br />Depending on the outcome, the status will update to **Paid**, **Unpaid**, or **Failed**. |
+| **Failed** | The payment was declined by the payment gateway for some reason, e.g., an insufficient balance or an issue with the customer’s bank. The **Failed** status appears for failed auto-charge attempts and is marked with a red triangle. |
+| **Refunded/Partially refunded** | An administrator issued a full or partial refund for this invoice. |
+| **Disputed** | The customer disputed the payment with their bank. |
+
+<Tip>
+  Payment processing time depends on the customer’s bank and the payment gateway. In some cases—especially with [**direct debits**](#replace-direct-debits-link)—processing the invoice payment can take several days. If an invoice remains in the **Pending** status for an extended period, check your payment gateway dashboard for more detailed information on the status or ask the customer to contact their bank.
+</Tip>
