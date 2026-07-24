@@ -132,7 +132,6 @@
                           "admin/billing/invoices/upcoming-invoices",
                           "admin/billing/invoices/edit-invoices",
                           "admin/billing/invoices/credit-notes",
-                          "admin/billing/invoices/prorate-an-invoice",
                           "admin/billing/invoices/customer-money-balance",
                           "admin/billing/invoices/record-invoice-payments",
                           "admin/billing/invoices/payment-retries-and-reminders",
