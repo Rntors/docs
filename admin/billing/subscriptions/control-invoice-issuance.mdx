@@ -10,40 +10,29 @@ Pausing payment collection is useful when you need to:
 - Temporarily stop invoicing and charging a customer—for example, when they pause their membership for a month or two.
 - Permanently disable automatic invoice issuance for a specific customer.
 
-## Control invoice issuance
+## Control invoice issuance 
 
 ### When creating a new subscription
 
-1. Go to the **Customers** page > open the customer’s profile.
-
-2. Click to [**create a subscription**](#replace-create-subscription-link) for them.
-
-3. If they shouldn’t receive invoices from the very first invoice, set [**Issue first invoice > Manually**](#replace-issue-first-invoice-link) during subscription creation.
+1. Go to the **Customers** page \> open the customer’s profile.
+2. Click to [**create a subscription**](/admin/billing/subscriptions/set-up-subscriptions) for them.
+3. If they shouldn’t receive invoices from the very first invoice, set [**Issue first invoice \> Manually**](/admin/billing/subscriptions/set-up-subscriptions) during subscription creation.
 
 <Frame>
-  <img
-    src="/images/billing/control-invoice-issuance/issue-first-invoice-manually.png"
-    alt="Set the first subscription invoice to be issued manually"
-  />
+  ![Chat GPT Image Jul 25, 2026, 10 45 24 PM](/images/ChatGPT-Image-Jul-25,-2026,-10_45_24-PM.png "Chat GPT Image Jul 25, 2026, 10 45 24 PM")
 </Frame>
 
 4. Save the subscription.
-
-5. Go to the customer’s profile > **Invoices** page and manage their first invoice (e.g., edit, add a deposit or setup fee, or delete it).
-
-6. If their subsequent invoices should also not be automatically issued, click **(...)** next to the subscription > **Pause payment collection**.
+5. Go to the customer’s profile \> **Invoices** page and manage their first invoice (e.g., edit, add a deposit or setup fee, or delete it).
+6. If their subsequent invoices should also not be automatically issued, click **(...)** next to the subscription \> **Pause payment collection**.
 
 ### For an existing subscription
 
-1. Go to the **Customers** page > open the customer’s profile.
-
-2. Click **(...)** next to their subscription > **Pause payment collection**.
+1. Go to the **Customers** page \> open the customer’s profile.
+2. Click **(...)** next to their subscription \> **Pause payment collection**.
 
 <Frame>
-  <img
-    src="/images/billing/control-invoice-issuance/pause-payment-collection-action.png"
-    alt="Pause payment collection for an existing subscription"
-  />
+  ![Screenshot 2026 07 25 At 10 33 31 PM 1](/images/Screenshot-2026-07-25-at-10.33.31-PM-1.png "Screenshot 2026 07 25 At 10 33 31 PM 1")
 </Frame>
 
 <Info>
@@ -55,43 +44,31 @@ Pausing payment collection is useful when you need to:
 When selecting **Pause payment collection**, you can configure:
 
 1. **Invoice behavior**
-
    - **Mark as draft** — the system will generate an invoice for each subscription period, but keep it in **Draft**. Administrators can then issue, edit, or delete the invoices as needed.
-
    - **Void instantly** — the system will generate each invoice, but immediately void it. The customer receives no notifications about issuance or voiding.
-
 2. **Resume date**
-
    - **Disabled** — automatic invoice issuance remains paused indefinitely for this customer until you manually resume payment collection.
-
    - **Enabled** — set a date after which all the customer’s subsequent invoices will resume being auto-issued.
 
 <Frame>
-  <img
-    src="/images/billing/control-invoice-issuance/pause-payment-collection-settings.png"
-    alt="Configure invoice behavior and resume date when pausing payment collection"
-  />
+  ![Screenshot 2026 07 25 At 10 43 11 PM](/images/Screenshot-2026-07-25-at-10.43.11-PM.png "Screenshot 2026 07 25 At 10 43 11 PM")
 </Frame>
 
 <Info>
-  Pausing payment collection will also disable [**Pay with invoice**](#replace-pay-with-invoice-link) for the customer.
+  Pausing payment collection will also disable [**Pay with invoice**](/admin/billing/payments/pay-with-invoice) for the customer.
 </Info>
 
 <Info>
   Pausing payment collection stops invoice issuance and charging, but does not affect the customer’s access to their subscription.
 </Info>
 
-## Resume payment collection
+## Resume payment collection  
 
-1. Go to the **Customers** page > open the customer’s profile.
-
-2. Click **(...)** next to their subscription > **Resume payment collection**.
+1. Go to the **Customers** page \> open the customer’s profile.
+2. Click **(...)** next to their subscription \> **Resume payment collection**.
 
 Automatic invoice issuance will restart beginning with the customer’s next subscription renewal date.
 
 <Frame>
-  <img
-    src="/images/billing/control-invoice-issuance/resume-payment-collection-action.png"
-    alt="Resume automatic payment collection for a subscription"
-  />
+  ![Screenshot 2026 07 25 At 10 50 23 PM](/images/Screenshot-2026-07-25-at-10.50.23-PM.png "Screenshot 2026 07 25 At 10 50 23 PM")
 </Frame>
