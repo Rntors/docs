@@ -12,8 +12,8 @@ With the help of Auto-pay, invoices are charged automatically to the default pay
 **Auto-pay** functions if the following conditions are fulfilled:
 
 1. Your location has [**Stripe**](/admin/integrations/payments/stripe/stripe) payment gateway connected. **Other payment gateways** do not currently support automatic invoice charges.
-2. A customer has a recurring [**subscription**](#replace-subscription-link).
-3. A customer has a [**default payment method**](#replace-default-payment-method-link).
+2. A customer has a recurring [**subscription**](/admin/billing/subscriptions/set-up-subscriptions).
+3. A customer has a [**default payment method**](/admin/billing/payments/payment-methods).
 
 <Info>
   The customer’s payment method is automatically set as default after the first invoice payment, or can be manually added and set as default.
@@ -45,7 +45,7 @@ Auto-pay is enabled for each customer by default, without requiring any addition
 
     You can always manually retry the charge for the invoice once again:
 
-    1. Go to the customer profile and ensure they have a [**payment method added**](#replace-payment-method-link).
+    1. Go to the customer profile and ensure they have a [**payment method added**](/admin/billing/payments/payment-methods).
     2. Then, open the unpaid invoice and click **Charge** to retry the payment instantly.
   </Accordion>
 </AccordionGroup>
