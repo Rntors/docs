@@ -11,25 +11,19 @@ As your members’ needs evolve, you can update their subscriptions at any time:
 
 ## Edit a subscription
 
-1. Go to **Customers** > open the customer’s profile.
-
-2. Press **(...)** next to the relevant subscription > **Edit**.
+1. Go to **Customers** \> open the customer’s profile.
+2. Press **(...)** next to the relevant subscription \> **Edit**.
 
 <Frame>
-  <img
-    src="/images/billing/edit-subscription/edit-subscription-action.png"
-    alt="Open the Edit action for a customer subscription"
-  />
+  ![Open the Edit action for a customer subscription](/images/billing/edit-subscription/edit-subscription-action.png)
 </Frame>
 
 The exact steps depend on:
 
 - When the change should take effect:
-
   - Immediately
   - On the next renewal date
   - On a specific future date
-
 - Whether the customer is staying on the same billing cycle or switching to a different one.
 
 ## Subscriptions with the same cycle
@@ -45,50 +39,34 @@ If you want changes to take effect on a specific date or month, follow these ste
 1. Click the existing subscription item.
 
 <Frame>
-  <img
-    src="/images/billing/edit-subscription/select-existing-subscription-item.png"
-    alt="Select an existing subscription item to schedule a change"
-  />
+  ![Select an existing subscription item to schedule a change](/images/billing/edit-subscription/select-existing-subscription-item.png)
 </Frame>
 
 2. Set its **End date** to **Custom**.
-
 3. Choose the date until which the current subscription item should remain active.
 
 <Frame>
-  <img
-    src="/images/billing/edit-subscription/custom-item-end-date.png"
-    alt="Set a custom end date for the current subscription item"
-  />
+  ![Set a custom end date for the current subscription item](/images/billing/edit-subscription/custom-item-end-date.png)
 </Frame>
 
 4. Add a new subscription item.
-
 5. Set up the updated subscription details, and set its **Start date** to **Custom**.
-
 6. Choose when the change should take effect (e.g., the day after the old item’s end date).
 
 <Frame>
-  <img
-    src="/images/billing/edit-subscription/custom-new-item-start-date.png"
-    alt="Set a custom start date for the new subscription item"
-  />
+  ![Set a custom start date for the new subscription item](/images/billing/edit-subscription/custom-new-item-start-date.png)
 </Frame>
 
 #### Add new products to a subscription
 
 1. Click to add a new subscription item.
-
 2. Select the new plan or resource, and set its **Start date** to **Custom**.
-
 3. Choose when the new product should take effect.
 
 #### Remove products from a subscription
 
 1. Click on a subscription item.
-
 2. Set its **End date** to **Custom**.
-
 3. Choose when the product should be removed from the customer’s subscription.
 
 #### Custom item start and end date rules
@@ -96,15 +74,10 @@ If you want changes to take effect on a specific date or month, follow these ste
 When editing subscription item start and end dates, keep the following rules in mind:
 
 - An existing item’s end date can’t be set earlier than the last day of the current subscription period.
-
-- A new item’s start date can’t be set earlier than the first day of the next subscription period. [How to apply an immediate change](#apply-an-immediate-change)
-
+- A new item’s start date can’t be set earlier than the first day of the next subscription period. [How to apply an immediate change](/admin/billing/subscriptions/edit-a-subscription#apply-an-immediate-change)
 - If the next period has also already been invoiced (by advance invoicing or manually by an administrator):
-
   - The existing item’s end date can’t be earlier than the last day of the next period.
-
   - The new item’s start date can’t be earlier than the first day of the period after next.
-
 - If you set an item’s start or end date to mid-cycle, charges are prorated.
 
 ### Schedule changes for the next renewal date
@@ -112,11 +85,10 @@ When editing subscription item start and end dates, keep the following rules in 
 If the subscription products remain the same, and you only need to update the price, credit, or day pass allowance, tax rate, or apply a discount coupon starting from the next renewal:
 
 1. Click the existing subscription item and edit it directly.
-
 2. These changes will take effect at the next subscription renewal by default.
 
 <Warning>
-  If the customer rents a specific resource (such as a desk, office, parking space, or equipment) and you need to change it to a different resource, change quantity, or remove it starting from the next renewal, [schedule the change](#schedule-changes-for-a-specific-future-date) instead of editing the existing item directly. Otherwise, the changes will apply immediately.
+  If the customer rents a specific resource (such as a desk, office, parking space, or equipment) and you need to change it to a different resource, change quantity, or remove it starting from the next renewal, [schedule the change](/admin/billing/subscriptions/edit-a-subscription#schedule-changes-for-a-specific-future-date) instead of editing the existing item directly. Otherwise, the changes will apply immediately.
 </Warning>
 
 ### Apply an immediate change
@@ -124,53 +96,39 @@ If the subscription products remain the same, and you only need to update the pr
 If you need to apply changes to the customer’s subscription to take effect immediately today, follow these steps:
 
 1. Edit the existing subscription item, or add/remove a subscription item.
-
 2. If adding a new item, keep the item’s **Start date** set to **Subscription default**.
-
    - Resource assignment, discounts, door, printing, and exclusive resource access are updated immediately.
-
    - Price, credits, and day passes are updated since the next cycle.
-
 3. If pricing, credits, or day passes must change immediately:
-
-   - If it’s an upgrade, [issue a one-off invoice](#replace-one-off-invoice-link) for the remaining part of the month, or add an extra charge to the [upcoming invoice](#replace-upcoming-invoice-link).
-
-   - If it’s a downgrade, [issue a credit note](#replace-credit-note-link) for the current month’s invoice to refund the necessary amount.
-
-   - Manually add or deduct [credits](#replace-credits-link) or [day passes](#replace-day-passes-link) in the customer’s profile.
+   - If it’s an upgrade, [issue a one-off invoice](/admin/billing/invoices/issue-invoices) for the remaining part of the month, or add an extra charge to the [upcoming invoice](/admin/billing/invoices/upcoming-invoices).
+   - If it’s a downgrade, [issue a credit note](/admin/billing/invoices/credit-notes) for the current month’s invoice to refund the necessary amount.
+   - Manually add or deduct [credits](/admin/billing/credits-and-day-passes/credits) or [day passes](/admin/billing/credits-and-day-passes/day-passes) in the customer’s profile.
 
 ## Subscriptions with different cycles
 
 If a customer wants to switch to a subscription with a different billing cycle (for example, from monthly to annual), you should schedule the old subscription to end and create a new subscription. It is not possible to directly change a subscription’s billing cycle.
 
-1. Click **(...)** next to the necessary subscription > **Edit**.
-
+1. Click **(...)** next to the necessary subscription \> **Edit**.
 2. Set **End renewal** to **On date** and choose the date until which the current subscription should remain active.
-
 3. Save the change.
-
 4. In the **Subscriptions** section, click **Create** to set up a new subscription.
-
 5. Set the date when the new subscription should take effect.
 
 <Frame>
-  <img
-    src="/images/billing/edit-subscription/create-replacement-subscription.png"
-    alt="Create a new subscription with a different billing cycle"
-  />
+  ![Create a new subscription with a different billing cycle](/images/billing/edit-subscription/create-replacement-subscription.png)
 </Frame>
 
 ## Other changes
 
 | Change | How it takes effect |
 | --- | --- |
-| Start date | Can only be changed if the subscription has yet to start and the first invoice hasn’t been issued. Otherwise, [cancel the subscription](#replace-cancel-subscription-link) and recreate it. |
-| [End renewal](#replace-end-renewal-link) | Can be set or changed at any time. End date can’t be earlier than the last date of the current subscription period. To end immediately, [cancel the subscription](#replace-cancel-subscription-link). |
+| Start date | Can only be changed if the subscription has yet to start and the first invoice hasn’t been issued. Otherwise, [cancel the subscription](/admin/billing/subscriptions/cancel-a-subscription) and recreate it. |
+| [End renewal](/admin/billing/subscriptions/cancel-a-subscription) | Can be set or changed at any time. End date can’t be earlier than the last date of the current subscription period. To end immediately, [cancel the subscription](/admin/billing/subscriptions/cancel-a-subscription). |
 | Commitment period | Reflects immediately. |
 | Auto-update from plan | Takes effect immediately and defines if all the subsequent plan changes apply to this subscription. |
-| One-off item | When adding a one-off item to an existing subscription, the charge applies to the [upcoming invoice](#replace-upcoming-invoice-link). The item will be automatically removed from the subscription once the invoice is issued. |
-| [Advance invoicing](#replace-advance-invoicing-link) | Takes effect immediately and affects all the next subscription invoices. |
-| [Pause payment collection](#replace-pause-payment-collection-link) | Takes effect immediately and affects all the next subscription invoices. |
+| One-off item | When adding a one-off item to an existing subscription, the charge applies to the [upcoming invoice](/admin/billing/invoices/upcoming-invoices). The item will be automatically removed from the subscription once the invoice is issued. |
+| [Advance invoicing](/admin/billing/subscriptions/advance-invoicing) | Takes effect immediately and affects all the next subscription invoices. |
+| [Pause payment collection](/admin/billing/subscriptions/control-invoice-issuance) | Takes effect immediately and affects all the next subscription invoices. |
 
 ## FAQs
 
@@ -179,9 +137,7 @@ If a customer wants to switch to a subscription with a different billing cycle (
     You may get an error when adding a subscription item with another date because of the following rules:
 
     - A new item’s start date cannot be set earlier than the first day of the next subscription period. If the next period has already been invoiced, the new item’s start date can’t be earlier than the first day of the period after next.
-
     - If you want to schedule a change (like switching plans or resources), you must end the current item and add the new one with a start date that follows the end date of the previous item.
-
     - Subscription item dates must fall within the general subscription period; to schedule a change, set an end date for the specific item only, not the entire subscription.
 
     If you try to add a subscription item outside these rules, the system will show an error.
@@ -197,7 +153,6 @@ If a customer wants to switch to a subscription with a different billing cycle (
     You can schedule their subscription change as follows:
 
     1. Add a new subscription item for the desired percentage of surcharge to their subscription.
-
     2. Set this item’s **Start date** to **Custom** and choose the necessary date. ([Detailed guide](#schedule-changes-for-a-specific-future-date))
 
     This subscription item will take effect on the selected start date, increasing their subscription fee until they re-sign another commitment and you remove it.
