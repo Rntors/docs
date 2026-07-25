@@ -9,28 +9,27 @@ The location billing cycle anchor you set defines a default anchor for all new s
 
 ## Set location default billing cycle anchor
 
-1. Click **(...)** next to the location name > **Location settings** > **Billing** > **Subscriptions** tab.
-
+1. Click **(...)** next to the location name \> **Location settings** \> **Billing** \> **Subscriptions** tab.
 2. In the **Billing cycle anchor** field, select one of the two values:
 
 <Frame>
-  <img src="https://mintlify.s3.us-west-1.amazonaws.com/rntor/images/billing/billing-cycle-anchor/location-default.png" alt="Set the default billing cycle anchor in location settings" />
+  ![Set the default billing cycle anchor in location settings](https://mintlify.s3.us-west-1.amazonaws.com/rntor/images/billing/billing-cycle-anchor/location-default.png)
 </Frame>
 
 ### Subscription start date
 
 If **Subscription start date** is selected as the billing cycle anchor, the subscription renews, and the customer is billed on the date they subscribed.
 
-* The first subscription cycle is not prorated.
-* The customer receives the first invoice with the full price and the full number of credits and day passes.
+- The first subscription cycle is not prorated.
+- The customer receives the first invoice with the full price and the full number of credits and day passes.
 
 ### First day of the month
 
 If **First day of the month** is selected as the billing cycle anchor, the subscription renews, and the customer is billed on the first day of each month, regardless of the subscription start date. This standardizes renewals on the first of the month and simplifies revenue tracking and accounting. As a result:
 
-* If the customer subscribes on a date other than the first day of the month, the first subscription cycle is incomplete.
-* The customer receives a prorated invoice and a prorated number of credits and day passes for the first cycle. [See how the proration coefficient is calculated](#how-the-proration-coefficient-is-calculated).
-* The subscription renews on the first day of each subsequent month with the full invoice price and full credits and day pass numbers.
+- If the customer subscribes on a date other than the first day of the month, the first subscription cycle is incomplete.
+- The customer receives a prorated invoice and a prorated number of credits and day passes for the first cycle. [See how the proration coefficient is calculated](/admin/billing/subscriptions/billing-cycle-anchor#how-the-proration-coefficient-is-calculated).
+- The subscription renews on the first day of each subsequent month with the full invoice price and full credits and day pass numbers.
 
 <Info>
   When customers [sign up](/docs/admin/billing/plans/immediate-plan-sign-ups) by themselves and the start date isn't the first of the month, **Renewal** is automatically enabled and cannot be disabled. To set a subscription end date, customers must contact an administrator.
@@ -42,20 +41,20 @@ If **First day of the month** is selected as the billing cycle anchor, the subsc
 
 ## Set billing cycle anchor for an individual subscription
 
-When [creating a subscription](/docs/admin/billing/subscriptions/set-up-subscriptions#create-a-subscription) for a customer, you can:
+When [creating a subscription](/admin/billing/subscriptions/set-up-subscriptions#create-a-subscription) for a customer, you can:
 
-* Keep the default location billing cycle anchor.
-* Change the billing cycle anchor specifically for that customer's subscription.
+- Keep the default location billing cycle anchor.
+- Change the billing cycle anchor specifically for that customer's subscription.
 
 <Frame>
-  <img src="https://mintlify.s3.us-west-1.amazonaws.com/rntor/images/billing/billing-cycle-anchor/individual-subscription.png" alt="Set the billing cycle anchor for an individual subscription" />
+  ![Set the billing cycle anchor for an individual subscription](https://mintlify.s3.us-west-1.amazonaws.com/rntor/images/billing/billing-cycle-anchor/individual-subscription.png)
 </Frame>
 
 For example, your location billing cycle anchor might be **First day of the month** to align monthly subscription renewals across all customers. Meanwhile, for 3-month, 6-month, or yearly subscriptions, you may want to choose the **Subscription start date** option to avoid first-cycle proration.
 
 ## How proration for the last subscription cycle works
 
-When an administrator [sets an end date](/docs/admin/billing/subscriptions/cancel-a-subscription#how-to-schedule-subscription-end-date) that creates a shorter final cycle, the last cycle is prorated automatically. On the final renewal, the customer receives a prorated invoice and a prorated number of credits and day passes for that incomplete cycle.
+When an administrator [sets an end date](/admin/billing/subscriptions/cancel-a-subscription#how-to-schedule-subscription-end-date) that creates a shorter final cycle, the last cycle is prorated automatically. On the final renewal, the customer receives a prorated invoice and a prorated number of credits and day passes for that incomplete cycle.
 
 <Info>
   For weekly plans, the last subscription cycle is prorated whenever it is shorter than a full week.
@@ -73,4 +72,6 @@ The calculation of the proration coefficient depends on the subscription cycle.
 The proration coefficient is then multiplied by the full membership price. Any applicable taxes you've set **are not** included in this amount.
 
 Both the invoice total and any applicable credits and day passes are adjusted proportionally based on the proration coefficient.
+
+```text
 ```
