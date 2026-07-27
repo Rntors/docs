@@ -173,8 +173,6 @@
                           "admin/billing/credits-and-day-passes/credits",
                           "admin/billing/credits-and-day-passes/day-passes",
                           "admin/billing/credits-and-day-passes/packages",
-                          "admin/billing/credits-and-day-passes/manage-credit-balance",
-                          "admin/billing/credits-and-day-passes/manage-day-pass-balance",
                           "admin/billing/credits-and-day-passes/scheduled-transactions",
                           "admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes"
                         ]
