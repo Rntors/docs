@@ -36,20 +36,26 @@ html.rntor-arabic-docs header span {
    ========================= */
 
 @media (min-width: 1024px) {
-  /* Move main sidebar to the right, aligned with docs layout */
+  /*
+   * Mintlify now renders the sidebar as a sticky flex item.
+   * Reorder the column itself; left/right offsets no longer move it
+   * from one side of the flex row to the other.
+   */
   html[data-current-path^="/ar/"] #sidebar,
   html.rntor-arabic-docs #sidebar {
+    order: 2 !important;
     left: auto !important;
-    right: max(0.75rem, calc((100vw - 1180px) / 2 - 138px)) !important;
+    right: auto !important;
     direction: rtl !important;
     text-align: right !important;
   }
 
-  /* Reserve right space for sidebar so it does not overlap content */
+  /* Mirror the content gutter after moving the navigation to the right */
   html[data-current-path^="/ar/"] main#content-container,
   html.rntor-arabic-docs main#content-container {
-    padding-left: 0 !important;
-    padding-right: 20rem !important;
+    order: 1 !important;
+    padding-left: 20rem !important;
+    padding-right: 0 !important;
   }
 
   /* Keep "On this page" on the left, article in the center */
@@ -66,7 +72,7 @@ html.rntor-arabic-docs header span {
     width: 1120px !important;
     max-width: 1120px !important;
     flex: 0 0 1120px !important;
-    transform: translateX(-190px) !important;
+    transform: translateX(-222px) !important;
   }
 
   html[data-current-path^="/ar/"] #content-area article,
@@ -263,7 +269,7 @@ html.rntor-arabic-docs main#content-container aside:not(#sidebar) button {
 @media (min-width: 1024px) {
   html[data-current-path^="/ar/"] #table-of-contents,
   html.rntor-arabic-docs #table-of-contents {
-transform: translateX(90px) !important;
+    transform: translateX(58px) !important;
     direction: rtl !important;
     text-align: right !important;
   }
