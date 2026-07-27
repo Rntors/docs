@@ -1,3 +1,73 @@
 ---
 title: "Payment gateway"
+description: "Learn how customers make online payments, track transactions, and manage saved payment methods"
 ---
+
+Connect a supported payment gateway to let customers pay online for bookings, event tickets, shop orders, packages, subscriptions, and invoices.
+
+See [Payments integrations](/admin/integrations/payments/overview) to connect and configure a gateway.
+
+## How customers make payments
+
+1. During a booking or purchase, the customer selects a saved payment method or **New payment method**.
+2. For a new payment method, RNTOR opens the connected gateway's secure payment flow.
+3. The customer completes the payment using an option supported by that gateway.
+4. RNTOR records a transaction and updates its status.
+5. After a successful payment, the customer receives confirmation and can access the related invoice and receipt.
+
+Customers can review their billing activity from **Membership > Billing**. Administrators can review location transactions from **Billing > Transactions**.
+
+## Track transactions
+
+Use **Billing > Transactions** to review monetary, credit, and day-pass activity.
+
+### Transaction statuses
+
+| Status | Meaning |
+| --- | --- |
+| **Paid** | The payment completed successfully. |
+| **Pending** | The payment was started but is not complete, or an administrator created an external booking awaiting payment. |
+| **Processing** | The gateway or customer's bank is still confirming the payment. |
+| **Canceled** | The payment was not completed or a pending external transaction was canceled. |
+| **Failed** | The gateway declined or could not complete the payment. |
+| **Refunded** | The full paid amount was refunded. |
+| **Partially refunded** | Part of the paid amount was refunded. |
+
+Use filters to narrow transactions by status, type, customer, location, or date. For accounting exports, see [Reports](/admin/analytics-reports/reports).
+
+## Manage saved payment methods
+
+Saved payment methods are handled by the connected gateway. RNTOR displays only the reusable payment method details required for recognition, such as the brand and last four digits.
+
+### Add a payment method
+
+Customers can add a payment method from **Membership > Billing > Payment methods**.
+
+Administrators can add one for a customer:
+
+1. Go to **Customers**.
+2. Open the customer profile.
+3. In **Payment methods**, click **Add**.
+4. Complete the gateway flow and save.
+
+### Set a default payment method
+
+The default payment method is used for eligible automatic invoice charges.
+
+Customers or administrators can open the menu beside a saved method and select **Set as default**.
+
+### Change the default payment method
+
+1. Add the replacement payment method.
+2. Set the new method as default.
+3. Delete the previous method if it is no longer needed.
+
+### Delete a payment method
+
+Open the menu beside the saved method and select **Delete**.
+
+A customer with an active subscription may need to set another payment method as default before deleting the current default. Administrators can also disable subscription **Auto-pay** when invoices should no longer be charged automatically.
+
+<Info>
+  Availability of cards, bank debits, wallets, automatic charges, and refunds depends on the connected payment gateway and its configuration.
+</Info>
