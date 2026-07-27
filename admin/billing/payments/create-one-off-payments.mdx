@@ -3,9 +3,9 @@ title: "Create one-off payments"
 description: "Quickly charge custom one-off payments to the customer's card or record external ad-hoc transactions"
 ---
 
-Sometimes, you need to charge a customer outside of standard [online payments](/admin/billing/payments/payment-gateway) and [recurring subscription invoices](/admin/billing/subscriptions). In these cases, you have two options:
+Sometimes, you need to charge a customer outside of standard [online payments](/admin/billing/payments/payment-gateway) and [recurring subscription invoices](/admin/billing/subscriptions/set-up-subscriptions). In these cases, you have two options:
 
-* Create and [issue a one-off invoice](/admin/billing/invoices/issue) for the customer to pay
+* Create and [issue a one-off invoice](/admin/billing/invoices/issue-invoices) for the customer to pay
 * Create a one-off payment to immediately charge the customer's card or record an externally received payment.
 
 ## Create a one-off payment
@@ -24,7 +24,7 @@ Follow these steps to create and process a one-off payment:
    * **Quantity** — how many units of the service/product.
    * **Unit price** — the price per unit.
    * **Currency** — leave the default location currency or select an [alternative currency](/admin/billing/currencies).
-   * **Tax rate** — leave the default location tax percentage or enter a [custom tax rate](/admin/billing/taxes/custom-tax-rates).
+   * **Tax rate** — leave the default location tax percentage or enter a [custom tax rate](/admin/billing/taxes/set-up-taxes/custom-tax-rates).
    * **Payment method** — choose the customer's [saved payment method](/admin/billing/payments/payment-methods), or select [**External**](/admin/billing/payments/external) if you've already received the money via another method (like cash) and just need to record the transaction.
 4. Enter the customer's [billing details](/admin/customer-management/billing-details), if they haven't yet. Billing details fields appear depending on the [**Require billing details** setting.](/admin/customer-management/billing-details)
 5. Confirm the payment.
@@ -40,7 +40,7 @@ Once you create a one-off payment:
 </Frame>
 
 * If you selected a customer's card, the charge will be initiated to that card, and you can [check its status](/admin/billing/payments/payment-gateway) on the transaction (whether it succeeded or failed).
-* If you selected **External** as the payment method, the transaction will be recorded as an [external payment.](/admin/administration/billing/make-changes-to-spacebring-subscription#update-your-payment-or-billing-information)
+* If you selected **External** as the payment method, the transaction will be recorded as an [external payment.](/admin/administration/billing/make-changes-to-rntor-subscription#update-your-payment-or-billing-information)
 
 2. The payment will appear in **Analytics** with the **Custom** type, allowing you to track these specific charges.
 
