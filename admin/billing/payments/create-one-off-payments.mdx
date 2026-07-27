@@ -1,3 +1,54 @@
 ---
-title: "Create one off payments"
+title: "Create one-off payments"
+description: "Charge a customer for an ad hoc product or service without creating a booking, order, or subscription"
 ---
+
+Create a one-off payment when you need to charge a customer for an item that is not represented by a booking, event ticket, shop order, package, or subscription.
+
+Examples include printing, damages, replacement access cards, additional services, and other ad hoc charges.
+
+## Create a one-off payment
+
+1. Go to **Customers**.
+2. Open the customer profile.
+3. Open the actions menu and select **Create payment**.
+4. Enter a description of the product or service.
+5. Enter the quantity, unit price, tax, and discount if applicable.
+6. Choose the payment method:
+   - A saved payment method to charge the customer online.
+   - **External** when payment was collected outside RNTOR.
+   - **Invoice** when the charge should be billed later.
+7. Review the total and confirm.
+
+The available methods depend on the customer's payment settings and your connected [payment gateway](/admin/billing/payments/payment-gateway).
+
+## Charge a saved payment method
+
+Select an eligible saved card or bank account to charge the customer immediately.
+
+After a successful charge:
+
+- RNTOR records a paid transaction.
+- An invoice and [receipt](/admin/billing/payments/receipts) are generated.
+- The customer can access the documents from their billing history.
+
+If the payment fails, review the transaction status and the gateway response before retrying.
+
+## Record an external one-off payment
+
+Choose **External** when you already collected the amount outside RNTOR. RNTOR records the transaction and generates the related invoice and receipt without processing money through the connected gateway.
+
+## Add the charge to an invoice
+
+Choose the customer's personal or company invoice when the amount should be paid later.
+
+Depending on the customer's configuration, the item is either:
+
+- Added to an upcoming subscription invoice, or
+- Saved under [Pending invoice items](/admin/billing/invoices/pending-invoice-items).
+
+See [Pay with invoice](/admin/billing/payments/pay-with-invoice) for configuration details.
+
+## Review one-off payments
+
+Administrators can review the transaction from **Billing > Transactions** or the customer's profile. Use [Reports](/admin/analytics-reports/reports) to export one-off payment data for reconciliation.
