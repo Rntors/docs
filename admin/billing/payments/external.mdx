@@ -1,3 +1,50 @@
 ---
 title: "External"
+description: "Record payments collected outside RNTOR and manage paid or pending external bookings"
 ---
+
+Use the **External** payment method when an administrator creates a booking for a customer and the payment is collected outside RNTOR, such as by cash, bank transfer, or an external card terminal.
+
+The External payment method is available only to administrators for room, desk, parking, and equipment bookings.
+
+## Create a booking with External
+
+1. Go to **Resources** and open the relevant Rooms, Desks, Parking, or Equipment page.
+2. Select the resource and booking time.
+3. Select the customer in **Booker**. Create a nonmember profile first if necessary.
+4. Complete the booking details and apply a coupon if applicable.
+5. Select **External** as the payment method.
+6. Choose the payment status:
+   - **Paid** — payment has already been collected outside RNTOR.
+   - **Pending** — the resource is reserved while payment is still outstanding.
+7. Complete any required [billing details](/admin/customer-management/billing-details).
+8. Confirm the booking.
+
+## Paid external bookings
+
+When the status is **Paid**:
+
+- The booking is confirmed and secured on the calendar.
+- RNTOR generates an invoice and [receipt](/admin/billing/payments/receipts).
+- The customer can view the booking and its payment documents in their account.
+- The transaction is included in billing and analytics.
+
+## Pending external bookings
+
+When the status is **Pending**:
+
+- The booking remains tentative while you wait for payment.
+- The transaction remains pending until an administrator changes it.
+- The held time appears on the relevant resource schedule.
+
+After collecting payment:
+
+1. Open the booking.
+2. In **Payment**, change the status to **Paid**.
+3. RNTOR confirms the booking and generates the invoice and receipt.
+
+If the customer does not pay, change the status to **Canceled**. RNTOR cancels the transaction and removes the booking from the resource calendar.
+
+## External payments in analytics
+
+External bookings appear in the relevant booking, invoice, and transaction analytics. Use the [Reports](/admin/analytics-reports/reports) page to export detailed records and filter by payment method or status.
