@@ -10,10 +10,10 @@ There are three ways an invoice gets paid: the system charges it automatically, 
 
 ## Automatic payment
 
-When a subscription issues a recurring [**invoice**](#replace-recurring-invoice-link), the system charges it automatically as long as all of the following are true:
+When a subscription issues a recurring [**invoice**](/admin/billing/invoices/issue-invoices), the system charges it automatically as long as all of the following are true:
 
-- The customer has a [**default payment method**](#replace-default-payment-method-link) on file.
-- [**Auto-pay**](#replace-auto-pay-link) is turned on for the customer.
+- The customer has a [**default payment method**](/admin/billing/payments/payment-methods) on file.
+- [**Auto-pay**](/admin/billing/subscriptions/control-invoice-auto-charge) is turned on for the customer.
 - Your connected payment gateway supports Auto-pay.
 
 The customer receives an email confirming the payment. It includes the invoice details and the invoice and receipt PDFs attached.
@@ -32,15 +32,15 @@ The customer receives an email confirming the payment. It includes the invoice d
 When Auto-pay can’t charge an invoice, the customer pays it manually. This happens when:
 
 - The customer has no default payment method on file.
-- [**Auto-pay**](#replace-auto-pay-link) is turned off for them.
-- Your connected [**payment gateway**](#replace-payment-gateway-link) doesn’t support Auto-pay.
+- [**Auto-pay**](/admin/billing/subscriptions/control-invoice-auto-charge) is turned off for them.
+- Your connected [**payment gateway**](/admin/billing/payments/payment-gateway) doesn’t support Auto-pay.
 
 When the invoice is issued, the customer is notified by email, push, and a persistent widget. Each notification links to the invoice page, where they can view the full details, open the invoice PDF, and pay.
 
 The customer can also pay from the member portal or mobile app at any time:
 
 - To pay a personal invoice, go to **Membership > Billing > Invoices**, select the unpaid invoice, and choose a payment method.
-- To pay a company invoice, [**company managers**](#replace-company-managers-link) go to **Membership > Billing > Invoices** under the company name, select the unpaid invoice, and choose a payment method.
+- To pay a company invoice, [**company managers**](/admin/customer-management/companies/company-members-and-managers) go to **Membership > Billing > Invoices** under the company name, select the unpaid invoice, and choose a payment method.
 
 {/* Replace with the RNTOR customer invoice payment screenshot */}
 
@@ -53,7 +53,7 @@ The customer can also pay from the member portal or mobile app at any time:
 
 ## Record payments as an administrator
 
-Administrators can record a full or partial payment against an invoice—either by charging the customer’s [**saved payment method**](#replace-saved-payment-method-link) or by logging a payment received outside RNTOR. This keeps your financial records accurate and auditable.
+Administrators can record a full or partial payment against an invoice—either by charging the customer’s [**saved payment method**](/admin/billing/payments/payment-methods) or by logging a payment received outside RNTOR. This keeps your financial records accurate and auditable.
 
 ### Use cases
 
@@ -77,7 +77,7 @@ Administrators can record a full or partial payment against an invoice—either 
 
 3. Enter the amount and select the payment method:
 
-   - Select the customer’s [**saved payment method**](#replace-saved-payment-method-link) to charge them now.
+   - Select the customer’s [**saved payment method**](/admin/billing/payments/payment-methods) to charge them now.
    - Select **External** if the customer already paid with cash, check, or bank transfer.
 
 {/* Replace with the RNTOR New payment modal screenshot */}
@@ -92,7 +92,7 @@ Administrators can record a full or partial payment against an invoice—either 
 4. Press **Charge**.
 
 <Info>
-  You can charge the invoice only if the customer has a [**saved payment method**](#replace-saved-payment-method-link).
+  You can charge the invoice only if the customer has a [**saved payment method**](/admin/billing/payments/payment-methods).
 </Info>
 
 The payment then appears in the **Payments** section, and the invoice balance updates automatically.
