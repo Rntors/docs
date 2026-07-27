@@ -1,75 +1,85 @@
 ---
 title: "External"
-description: "Record offline payments for bookings and create bookings with paid or pending status"
+description: "Record offline payments for bookings with the External payment method and create bookings with the paid or pending status"
 ---
 
-Use **External** when you create a booking for a customer and collect payment outside RNTOR, such as cash, bank transfer, or an external terminal.
+There may be instances where you'll need to make a booking for a user and accept payment externally. RNTOR supports these situations with the **External** payment method.
 
-The member portal is intended for self-service booking, so consider promoting self-served bookings whenever administrator assistance is unnecessary.
+<Tip>
+  The member web portal and mobile app are designed to empower users to make bookings effortlessly on their own without needing administrator assistance. [Promote self-served bookings](/guides/promote-self-served-bookings) for a more efficient user experience.
+</Tip>
 
-## Make bookings with the External payment method
+## Make bookings with the **External** payment method
 
-External is available only to administrators for room, desk, parking, and equipment bookings.
+The **External** payment method is available only to administrators in RNTOR and only for room, desk, parking space, and equipment bookings.
 
-1. Go to **Resources** and choose **Rooms**, **Desks**, **Parking**, or **Equipment**.
-2. Select the resource and booking time.
-3. Find the customer in **Booker**.
+To make such bookings, administrators do the following:
 
-<Frame>
-  <img src="" alt="Booker field in the booking modal." />
-</Frame>
-
-4. If the user has no profile, select **New nonmember**, enter their details, and create the profile.
+1. Navigate to **Resources** > select **Rooms, Desks,** **Parking,** or **Equipment** page.
+2. Select a resource the user wants to book.
+3. Find the customer in the **Booker** field.
 
 <Frame>
-  <img src="" alt="New nonmember form." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-1.png)" />
 </Frame>
 
-5. Complete the booking details.
-6. Select an eligible coupon if needed.
-7. Choose **External** and set the status:
-   - **Paid** — the customer has already paid outside RNTOR.
-   - **Pending** — the customer has reserved the resource but has not paid.
-8. Add required [billing details](/admin/customer-management/billing-details).
+4. If the user is not a member or a nonmember yet, find the **New nonmember** option. Fill in the user details and press **Create**. This will create a [nonmember](/admin/customer-management/users/nonmembers) profile for the user automatically.
+
+<Frame>
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-2.png)" />
+</Frame>
+
+5. Fill out the other booking details.
+6. If the user is eligible for any discount, [select a coupon](/admin/billing/discounts/redeem-for-bookings) in the **Coupon** section. The discounted price will be displayed immediately.
+7. Choose the **External** payment method and select a **Status** based on the payment stage:
+   * **Paid** — the customer has already paid outside of the system.
+   * **Pending** — the customer hasn't paid yet, but only reserved the booking.
+8. Enter the customer's [billing details](/admin/customer-management/billing-details), if they haven't yet. Billing details fields appear depending on the [**Require billing details** setting.](/admin/customer-management/billing-details)
 9. Confirm the booking.
 
 <Frame>
-  <img src="" alt="External payment selection with Paid and Pending statuses." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-3.png)" />
 </Frame>
 
 ### Understand paid external bookings
 
-When you select **Paid**, RNTOR treats the payment as completed:
+When you select **Paid** status during creation, RNTOR treats the transaction as finalized and confirmed.
 
-- The booking is confirmed and secured on the calendar.
-- RNTOR immediately generates an [invoice](/admin/billing/invoices/track-and-manage-invoices) and [receipt](/admin/billing/payments/receipts).
-- The customer can see the booking in their account.
+* The booking is secured on the calendar with a solid color. In the **Bookings** list, the status appears as **Confirmed**.
 
 <Frame>
-  <img src="" alt="confirmed booking in calendar and list views." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-4.png)" />
 </Frame>
+
+* The system immediately generates an [invoice](/admin/billing/invoices/download) and [receipt](/admin/billing/payments/receipts) for the customer.
+* The customer receives a [notification](/member/account/notifications) about the booking created for them and can view this booking on their **Account** page.
 
 ### Manage pending external bookings
 
-A **Pending** external booking remains tentative while the resource is held.
+If you select "Pending," the booking is created with **Tentative** status, allowing you to hold the resource while waiting for payment.
+
+* You can differentiate pending bookings on the **Rooms** calendar and the **Bookings** list to track outstanding payments.
 
 <Frame>
-  <img src="" alt="tentative booking displayed in the calendar." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-5.png)" />
 </Frame>
 
-After the customer pays—or if payment will not be received—open the booking and change **Payment > Status** to **Paid** or **Canceled**.
+* Once you receive the payment (or if the customer fails to pay), update the status:
+  * Open the booking > in the **Payment** section, change **Status** to **Paid** or "Canceled."
 
 <Frame>
-  <img src="" alt="booking payment status control." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-6.png)" />
 </Frame>
 
-- **Paid:** RNTOR confirms the booking and generates the invoice and receipt.
-- **Canceled:** RNTOR cancels the transaction and booking and releases the reserved time.
+* **If Paid**: The booking is automatically confirmed, and an invoice and receipt are generated.
+* **If Canceled**: The transaction and booking are marked as canceled and automatically removed from the calendar.
 
 ## How external bookings reflect in Analytics
 
-External bookings are included in the relevant invoices, payments, rooms, desks, equipment, and parking analytics. Related [reports](/admin/analytics-reports/reports) identify the payment type as **External** and the payment status as **Paid** or **Pending**.
+Bookings made with the **External** payment method are included in the **Invoices**, **Payments**, **Rooms**, **Desks**, **Equipment**, and **Parking** dashboards in **Analytics**. [Explore Analytics](/admin/analytics-reports/dashboards)
+
+The **Invoices**, **Invoice items**, **Transactions**, and **Bookings** [reports](/admin/analytics-reports/reports) also include these bookings, reflecting their payment type as **External**, and payment status as **Paid** or **Pending**.
 
 <Frame>
-  <img src="" alt="analytics filtered by External payment type." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-external-7.png)" />
 </Frame>
