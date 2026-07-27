@@ -37,8 +37,8 @@ html.rntor-arabic-docs header span {
 
 @media (min-width: 1024px) {
   /* Move main sidebar to the right, aligned with docs layout */
-  html[data-current-path^="/ar/"] nav#sidebar,
-  html.rntor-arabic-docs nav#sidebar {
+  html[data-current-path^="/ar/"] #sidebar,
+  html.rntor-arabic-docs #sidebar {
     left: auto !important;
     right: max(0.75rem, calc((100vw - 1180px) / 2 - 138px)) !important;
     direction: rtl !important;
