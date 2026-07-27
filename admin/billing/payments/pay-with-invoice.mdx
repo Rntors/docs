@@ -1,72 +1,119 @@
 ---
 title: "Pay with invoice"
-description: "Let eligible customers add bookings and purchases to a personal or company invoice instead of paying immediately"
+description: "Enable customers to include purchases in personal or company invoices instead of paying immediately"
 ---
 
-**Pay with invoice** lets customers complete eligible bookings and purchases without immediate payment. RNTOR saves the charges as invoice items and bills them later.
-
-For companies, team purchases can be consolidated into a company invoice.
+**Pay with invoice** lets customers complete eligible bookings and purchases without paying immediately. Charges are collected and billed later. For companies, team expenses can be consolidated into one company invoice.
 
 ## Enable Pay with invoice
 
-1. Go to **Customers** and open a member, nonmember, or company profile.
-2. Find **Payment methods** in the profile panel.
-3. Open the menu beside **Personal invoice** or **Company invoice** and select **Edit**.
-4. Choose which services can be paid by invoice.
+1. Go to **Customers > Members** or **Nonmembers**.
+2. Open a user or company profile and find **Payment methods**.
+3. Press **(…) > Edit** beside **Personal invoice** or **Company invoice**.
+4. For an individual, choose the services that can be paid by personal invoice.
 5. For a company, choose who can use the company invoice for each service:
-   - **None** — invoice payment is unavailable.
-   - **Company managers** — only company managers can use it.
-   - **Company members** — company managers and members can use it.
-6. Save the changes.
+   - **None**
+   - **Company managers**
+   - **Company members**
 
-Pay with invoice is disabled by default. Company permissions can also affect which members may use the company payment method.
+<Frame caption="Image placeholder — Pay with invoice permissions">
+  **Image placeholder:** personal and company invoice permissions.
+</Frame>
 
-## Configure how invoice payments are billed
+Pay with invoice is disabled by default. Company managers may later manage permissions that RNTOR allows them to control.
 
-For customers without a subscription, payments by invoice remain [pending invoice items](/admin/billing/invoices/pending-invoice-items) until an administrator invoices them.
+## Configure how payments with invoice are billed
 
-For a customer with a subscription:
+Payments by nonmembers and members without subscriptions become [pending invoice items](/admin/billing/invoices/pending-invoice-items). For a member with subscriptions:
 
 1. Open the customer profile.
-2. Open the subscription.
-3. Configure **Add to subscription invoices**.
+2. Open the relevant subscription.
+3. Manage **Add to subscription invoices**.
+
+<Frame caption="Image placeholder — Add to subscription invoices">
+  **Image placeholder:** subscription billing settings.
+</Frame>
+
+If the customer has multiple subscriptions, enable the switch only on the subscription that should collect these purchases, or disable it everywhere to bill them separately.
 
 ### Add to subscription invoices
 
-When enabled, eligible payments are consolidated into subscription invoices.
+When enabled:
 
-- Purchases and bookings in the current billing period can appear on the upcoming subscription invoice.
-- Future-dated bookings are assigned according to their booking date and the subscription invoicing schedule.
-- The invoice combines subscription items and eligible additional purchases.
+- Purchases and bookings within the current subscription period are added to the [upcoming invoice](/admin/billing/invoices/upcoming-invoices).
+- Future bookings are assigned to the appropriate future subscription invoice.
+- The resulting invoice combines subscription items and eligible extra purchases.
 
-Review the result in [Upcoming invoices](/admin/billing/invoices/upcoming-invoices).
+<Frame caption="Image placeholder — consolidated upcoming invoice">
+  **Image placeholder:** subscription invoice with additional purchases.
+</Frame>
 
 ### Bill separately
 
-When **Add to subscription invoices** is disabled, payments remain pending invoice items until an administrator creates a separate invoice.
+When disabled, payments remain as **Pending invoice items** until an administrator creates a separate invoice. They are not invoiced automatically.
 
-Use this option when subscription charges and one-off purchases must appear on different invoices.
+<Frame caption="Image placeholder — pending invoice items">
+  **Image placeholder:** customer pending invoice items.
+</Frame>
 
-## How customers pay with invoice
+## How Pay with invoice works
 
-1. The customer selects an eligible booking, ticket, shop product, or package.
+1. The customer chooses the service.
 2. At checkout, they select **Personal invoice** or **Company invoice**.
-3. RNTOR confirms the purchase according to its rules and creates the related invoice item.
-4. The item is either added to an upcoming subscription invoice or kept as pending, based on the customer's configuration.
 
-## Book for a customer with Invoice
+<Frame caption="Image placeholder — Invoice at checkout">
+  **Image placeholder:** personal and company invoice payment methods.
+</Frame>
 
-Administrators can select a customer's available personal or company invoice when creating a booking on their behalf.
+Only customers for whom this method is enabled can see and use it.
 
-The customer's invoice-payment permissions still determine whether a personal or company invoice is appropriate.
+## Book for customers with the Invoice payment method
 
-## Manage pending invoice items
+1. Go to **Resources > Rooms, Desks, Parking**, or **Equipment**.
+2. Select the resource and complete the booking details.
+3. Find the customer in **Booker**.
 
-1. Go to **Billing > Invoices > Pending invoice items**.
-2. Filter by customer if needed.
-3. Select the items to bill.
-4. Create the invoice.
-5. Review or [edit the invoice](/admin/billing/invoices/edit-invoices).
-6. Select **Issue** to send it for payment, or **Issue and charge** when an eligible saved payment method is available.
+<Frame caption="Image placeholder — select customer for invoice booking">
+  **Image placeholder:** Booker dropdown.
+</Frame>
 
-Learn more in [Pending invoice items](/admin/billing/invoices/pending-invoice-items).
+4. For a new customer, select **New nonmember** and enter their details.
+5. Under **Payment**, select **Personal invoice** or **Company invoice**, then book.
+
+<Frame caption="Image placeholder — book with Invoice">
+  **Image placeholder:** booking modal with Invoice selected.
+</Frame>
+
+6. If **Add to subscription invoices** is enabled, the booking is assigned automatically.
+7. Otherwise, it becomes a pending invoice item.
+
+### Manage pending invoice items
+
+1. Open the customer profile and add any required [billing details](/admin/customer-management/billing-details).
+2. Find **Pending invoice items**.
+3. Press **Create invoice**.
+
+<Frame caption="Image placeholder — create invoice from pending items">
+  **Image placeholder:** Create invoice button below pending items.
+</Frame>
+
+4. [Edit the draft](/admin/billing/invoices/edit-invoices) if needed.
+5. Press **Issue**, or **Issue and charge** when a saved method is available.
+
+<Info>
+  Pending items accumulated for the customer are issued together. Review the full set before creating the invoice.
+</Info>
+
+## FAQs
+
+<Accordion title="Can a user book multiple dates with one payment?">
+  Users cannot select several dates as one checkout. Enable **Pay with invoice** so multiple bookings accumulate on a consolidated invoice, or create the bookings for the customer and choose **Invoice** each time.
+</Accordion>
+
+<Accordion title="Can an administrator purchase an event ticket or package for a customer?">
+  Administrators can create resource bookings on a customer’s behalf. Availability of admin-created event tickets or packages depends on the corresponding RNTOR workflow.
+</Accordion>
+
+<Accordion title="How do I book and issue an invoice for a nonmember company?">
+  Create the company manager as an individual nonmember, enter the company’s billing details in that profile, then create the booking and select **Personal invoice**. The invoice uses the billing details saved for that nonmember.
+</Accordion>
