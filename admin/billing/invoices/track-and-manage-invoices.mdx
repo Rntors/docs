@@ -10,23 +10,19 @@ You can see a comprehensive list of all invoices across all customers on the ded
 
 To view all the invoices, follow these steps:
 
-1. Go to **Billing > Invoices** on the left-side panel.
+1. Go to **Billing \> Invoices** on the left-side panel.
 2. Use the filters at the top of the page to quickly find and manage the necessary invoices:
-
-   * **Status** – See all invoices of the specific status: Draft, Issued, Paid, or Voided.
-   * **Customer** – See all invoices of a specific company or individual member.
-   * **Issue date** – See all invoices issued within a date range.
-   * **Create date** – See all invoices created within a date range, including drafts.
+   - **Status** – See all invoices of the specific status: Draft, Issued, Paid, or Voided.
+   - **Customer** – See all invoices of a specific company or individual member.
+   - **Issue date** – See all invoices issued within a date range.
+   - **Create date** – See all invoices created within a date range, including drafts.
 
 Alternatively, you can use the **Search** field to search for a specific invoice by its number.
 
 {/* Replace with the RNTOR invoices list screenshot */}
 
 <Frame>
-  <img
-    src="/images/billing/track-and-manage-invoices/invoices-list.png"
-    alt="View and filter all invoices in RNTOR"
-  />
+  ![Screenshot 2026 07 27 At 3 28 51 PM](/images/Screenshot-2026-07-27-at-3.28.51-PM.png "Screenshot 2026 07 27 At 3 28 51 PM")
 </Frame>
 
 <Info>
@@ -37,12 +33,12 @@ Alternatively, you can use the **Search** field to search for a specific invoice
 
 By clicking on a specific invoice on the **Invoices** page, you can quickly manage it:
 
-| Invoice status          | Available actions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Invoice status | Available actions |
+| --- | --- |
 | **For issued invoices** | See the invoice details<br />[Download PDF](/admin/billing/invoices/download-an-invoice)<br />[Resend an invoice](/admin/billing/invoices/payment-retries-and-reminders#send-a-manual-reminder) to the customer<br />[Record invoice payments](/admin/billing/invoices/record-invoice-payments#record-payments-as-an-administrator)<br />[Void an invoice](/admin/billing/invoices/void-an-invoice#void-an-unpaid-invoice)<br />Add an internal note<br />[Charge an invoice](/admin/billing/invoices/record-invoice-payments#create-invoice-payments)<br />[Edit invoices with credit notes](/admin/billing/invoices/credit-notes) |
-| **For draft invoices**  | See the invoice details<br />[Edit an invoice](/admin/billing/invoices/edit-invoices#edit-a-draft-invoice)<br />Issue or [issue and charge an invoice](/admin/billing/invoices/issue-invoices#manual-one-off-invoices)<br />[Delete an invoice](/admin/billing/invoices/void-an-invoice#delete-a-draft-invoice)<br />Add an internal note                                                                                                                                                                                                                                                                                           |
-| **For paid invoices**   | See the invoice details<br />[Download PDF](/admin/billing/invoices/download-an-invoice)<br />[Download receipt PDF](/admin/billing/payments/receipts)<br />[Send a receipt](/admin/billing/payments/receipts) to the customer<br />[Refund an invoice](/admin/billing/payments/refunds)<br />Add an internal note<br />[Edit invoices with credit notes](/admin/billing/invoices/credit-notes)                                                                                                                                                                                                                                     |
-| **For voided invoices** | See the invoice details<br />[Download PDF](/admin/billing/invoices/download-an-invoice)<br />Add an internal note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **For draft invoices** | See the invoice details<br />[Edit an invoice](/admin/billing/invoices/edit-invoices#edit-a-draft-invoice)<br />Issue or [issue and charge an invoice](/admin/billing/invoices/issue-invoices#manual-one-off-invoices)<br />[Delete an invoice](/admin/billing/invoices/void-an-invoice#delete-a-draft-invoice)<br />Add an internal note |
+| **For paid invoices** | See the invoice details<br />[Download PDF](/admin/billing/invoices/download-an-invoice)<br />[Download receipt PDF](/admin/billing/payments/receipts)<br />[Send a receipt](/admin/billing/payments/receipts) to the customer<br />[Refund an invoice](/admin/billing/payments/refunds)<br />Add an internal note<br />[Edit invoices with credit notes](/admin/billing/invoices/credit-notes) |
+| **For voided invoices** | See the invoice details<br />[Download PDF](/admin/billing/invoices/download-an-invoice)<br />Add an internal note |
 
 <Info>
   Notifications about invoice payments appear on the **Notifications** page by default. If you don't see notifications about invoice payments, [manage your notification settings](/admin/administration/your-account/notifications/set-up-notifications).
@@ -58,14 +54,11 @@ Although RNTOR automates [payment retries and reminders](/admin/billing/invoices
 {/* Replace with the RNTOR unpaid invoices screenshot */}
 
 <Frame>
-  <img
-    src="/images/billing/track-and-manage-invoices/unpaid-invoices.png"
-    alt="Track unpaid and overdue invoices by due date in RNTOR"
-  />
+  ![Screenshot 2026 07 27 At 3 29 32 PM](/images/Screenshot-2026-07-27-at-3.29.32-PM.png "Screenshot 2026 07 27 At 3 29 32 PM")
 </Frame>
 
-* Black color indicates the invoice is still within the payment terms.
-* Red color highlights overdue invoices.
+- Black color indicates the invoice is still within the payment terms.
+- Red color highlights overdue invoices.
 
 3. Click on the invoice and use the [**Resend invoice**](/admin/billing/invoices/payment-retries-and-reminders#send-a-manual-reminder) button to send the customer a reminder about the due invoice payment.
 4. The customer will receive an [automatic payment reminder via email](/admin/billing/invoices/payment-retries-and-reminders#retry-and-reminder-schedule-and-notifications).
@@ -75,7 +68,7 @@ Although RNTOR automates [payment retries and reminders](/admin/billing/invoices
 Invoice payments can fail due to various reasons, such as insufficient funds, the customer's bank restrictions, or issues with the payment gateway. To promptly notice failed invoice payments and reduce the risk of missed payments, follow these steps:
 
 1. [Enable automatic payment retries and reminders](/admin/billing/invoices/payment-retries-and-reminders#manage-payment-retries-and-reminders).
-2. [Enable notifications](/admin/administration/your-account/notifications/set-up-notifications) about invoice **Payments failed** on the **Account > Notifications** page in RNTOR.
+2. [Enable notifications](/admin/administration/your-account/notifications/set-up-notifications) about invoice **Payments failed** on the **Account \> Notifications** page in RNTOR.
 3. Once you notice a notification about a failed invoice payment, tap on it to view the details.
 4. [Contact the customer via chat](/admin/engagement/chats) to assist them in resolving the issue.
 5. [Resend the invoice](/admin/billing/invoices/payment-retries-and-reminders#send-a-manual-reminder) to the customer if an additional reminder is needed after 2 automatic ones.
@@ -84,13 +77,10 @@ Invoice payments can fail due to various reasons, such as insufficient funds, th
 
 In RNTOR, you can add internal notes to any invoice at any time for record-keeping and tracking. You can use internal notes on voided invoices for audit purposes, leave internal notes to improve team collaboration, and add internal notes when processing external invoice payments to specify the payment source or other key details.
 
-To add an internal note, go to **Billing > Invoices**, open the relevant invoice, and enter your note in the **Internal note** field. Internal notes are visible only to administrators and are also included in the [**Invoices report**](/admin/analytics-reports/reports).
+To add an internal note, go to **Billing \> Invoices**, open the relevant invoice, and enter your note in the **Internal note** field. Internal notes are visible only to administrators and are also included in the [**Invoices report**](/admin/analytics-reports/reports).
 
 {/* Replace with the RNTOR invoice internal note screenshot */}
 
 <Frame>
-  <img
-    src="/images/billing/track-and-manage-invoices/internal-note.png"
-    alt="Add an internal note to an invoice in RNTOR"
-  />
+  ![Chat GPT Image Jul 27, 2026, 03 39 32 PM](/images/ChatGPT-Image-Jul-27,-2026,-03_39_32-PM.png "Chat GPT Image Jul 27, 2026, 03 39 32 PM")
 </Frame>
