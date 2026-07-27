@@ -3,14 +3,14 @@ title: "Payment methods"
 description: "Understand the available payment methods: credits, day passes, invoices, saved cards and bank accounts, and admin-only free and external methods"
 ---
 
-When making a booking or purchase, users can choose from different payment methods. The options available to administrators differ slightly because administrators can also use **Free** and **External** payments for specific scenarios.
+When making a booking or purchase, users can use different payment methods. The payment methods available for administrators slightly differ. Administrators have exclusive access to certain methods like **Free** and **External** payments, which are designed for specific scenarios.
 
-| Payment method | Admin portal | Member portal |
+| Payment method | Available in admin portal | Available in member portal |
 | --- | :---: | :---: |
 | **Free** | ✓ | |
 | **External** | ✓ | |
-| **Credits** | ✓ | ✓ (members only) |
-| **Day passes** | ✓ | ✓ (members only) |
+| **Credits** | ✓ | ✓ (only for members) |
+| **Day passes** | ✓ | ✓ (only for members) |
 | **Invoice** | ✓ | ✓ |
 | **Saved payment method** (card or bank account) | ✓ | ✓ |
 | **New payment method** | | ✓ |
@@ -21,75 +21,93 @@ When making a booking or purchase, users can choose from different payment metho
 
 ## Free payment method
 
-- **Free** is available only in the admin portal to administrators with permission to manage bookings.
-- It lets an administrator book a resource for themselves or a customer without collecting money, credits, or day passes.
+- The **Free** payment method is exclusively available in admin portal to administrators [with the Bookings permission](/admin/administration/administrators/permissions).
+- It allows administrators to make bookings for themselves or for customers for free, without any monetary or credit deduction.
 
 ## External payment method
 
-- [External](/admin/billing/payments/external) is available only to administrators booking on behalf of customers.
-- Use it to record a payment collected outside RNTOR.
+- The [External payment method](/admin/billing/payments/external) is exclusively available to administrators in admin portal when making bookings for customers.
+- It serves to record payments received outside of RNTOR.
 
 ## Credits
 
-- [Credits](/admin/billing/credits-and-day-passes/credits) appear for bookings, event tickets, and shop orders when:
+- The [Credits payment method](/admin/billing/credits-and-day-passes/credits) is available for members for bookings, event tickets, and shop orders if:
   - Credits are enabled for the location.
-  - The service has a credit price.
-  - The member has personal or company credits.
-- Administrators can also spend a member’s available credits while booking for them.
+  - The service has a credit price set.
+  - The member has been allocated or purchased credits.
+- Administrators can also use credits when making a booking for a member who has credits.
 
-There are two credit balances:
+There are two types of credits:
 
-- **Personal credits** belong to an individual member.
-- **Company credits** may be used by company managers and permitted company members, subject to [company payment method permissions](/admin/customer-management/companies/company-payment-method-permissions).
+- **Personal credits** are usable by individual members.
+- **Company credits** are usable by company members and managers. For company members, this permission is subject to [company payment method permissions](/admin/customer-management/companies/company-payment-method-permissions).
 
 ## Day passes
 
-- [Day passes](/admin/billing/credits-and-day-passes/day-passes) appear for eligible hot-desk bookings when:
+- The [Day Passes payment method](/admin/billing/credits-and-day-passes/day-passes) appears for members for hot desk bookings if:
   - Day passes are enabled for the location.
-  - The selected desk accepts day passes.
-  - The member has personal or company day passes.
-- Administrators can also use a member’s available day passes while booking for them.
+  - The specific hot desk has the **Day Passes** option enabled.
+  - The member has a personal or company subscription with day passes.
+- Administrators can also use day passes when making a booking for a member who has day passes.
 
-Day passes can be **personal** or **company** balances. Company-member access follows the company’s payment method permissions.
+There are two types of day passes:
+
+- **Personal day passes** are usable by individual members.
+- **Company day passes** are usable by company members and managers. For company members, this permission is subject to [company settings](/admin/customer-management/companies/company-payment-method-permissions).
 
 ## Invoice
 
-- **Invoice** adds the payment to an invoice instead of collecting it immediately.
-- Customers can use it for eligible bookings and purchases only when [Pay with invoice](/admin/billing/payments/pay-with-invoice) is enabled.
-- Administrators can select Invoice when booking for a customer.
+- The **Invoice** payment method allows including payments in an invoice rather than immediate payment.
+- Customers can use the **Invoice** payment method for bookings, event tickets, shop orders, and credit package purchases if they have [Pay with invoice](/admin/billing/payments/pay-with-invoice) enabled.
+- Administrators can use the [Invoice payment method](/admin/billing/payments/pay-with-invoice) when making a booking for any customer.
 
-The available invoice types are:
+There are two types of the **Invoice** payment method:
 
-- **Personal invoice** for an individual customer.
-- **Company invoice** for company managers and permitted company members.
+- **Personal invoice** is usable by individual customers.
+- **Company invoice** is usable by company members and managers. For company members, this permission is subject to [company settings](/admin/customer-management/companies/company-payment-method-permissions).
 
 ## New payment method
 
-- **New payment method** appears in the member portal when:
+- The **New payment method** option is available to all users in the member web portal and mobile app if:
   - A [payment gateway](/admin/billing/payments/payment-gateway) is connected.
-  - The resource or service has a monetary price.
-- It lets the user enter new payment details for an immediate transaction.
+  - The resource or service has the **Money** switch enabled with a monetary price set.
+- It allows users to enter new payment details for immediate transactions.
 
 ## Saved payment method
 
 ### Saved credit card
 
-- A saved card appears after the user has paid with it or added it manually, provided the connected gateway supports reusable payment methods.
-- Administrators can use an eligible saved card to book for the customer, [pay an invoice](/admin/billing/invoices/record-invoice-payments), or [create a one-off payment](/admin/billing/payments/create-one-off-payments).
+- The saved credit card appears for users for all types of payments if:
+  - They have made at least one previous payment or [manually added](/admin/billing/payments/payment-gateway#add-a-payment-method) their card details.
+  - Your connected payment gateway [supports saving payment methods](/admin/billing/payments/payment-gateway#manage-payment-methods).
+- Administrators can also use customers’ saved cards for making a booking on behalf of a customer, charging the customer’s invoices, or [creating one-off payments](/admin/billing/payments/create-one-off-payments) in RNTOR.
 
 ### Saved bank account
 
-- A saved bank account can appear for invoice payments when the connected gateway supports bank debits and the customer has linked an account.
-- Administrators can use an eligible saved bank account to charge the customer’s invoices.
+- A saved bank account appears specifically for invoice payments if:
+  - You have a payment gateway connected that supports saved bank accounts.
+  - The customer has made at least one previous payment or [manually added](/admin/billing/payments/payment-gateway#add-a-payment-method) their bank account details.
+- Administrators can also use customers’ saved bank accounts for charging the customer’s invoices.
 
 ## FAQs
 
-<Accordion title="Which payment methods can an administrator use when booking for a customer?">
-  For a **member**, the available methods can include **Free**, **External**, personal or company credits, personal or company day passes, personal or company invoice, and saved payment methods.
+<Accordion title="When I am making a booking on behalf of a customer, which payment methods are available to me as an administrator?">
+  When booking on behalf of a member, administrators can use the following payment methods:
 
-  For a **nonmember**, the available methods can include **Free**, **External**, **Personal invoice**, and saved payment methods. The exact list depends on permissions, balances, pricing, and connected integrations.
+  - [External](/admin/billing/payments/external)
+  - Member’s personal or company credits
+  - Member’s personal or company day passes
+  - Member’s personal or company invoice
+  - Member’s saved payment methods
+
+  When booking on behalf of a nonmember, the following payment methods are available for administrators:
+
+  - [External](/admin/billing/payments/external)
+  - [Personal invoice](/admin/billing/payments/pay-with-invoice)
+  - Nonmember’s saved payment methods
 </Accordion>
 
-<Accordion title="How do I let employees or staff book resources for free?">
-  Add them as administrators and grant the permission required to manage bookings. When they create a room, desk, parking, or equipment booking in the admin portal, **Free** appears as a payment method.
+<Accordion title="How do I let my employees/staff book rooms or other resources for free?">
+  1. [Add them as an administrator](/admin/administration/administrators/administrators) with the [Bookings permission](/admin/administration/administrators/permissions).
+  2. When administrators book a room, desk, or other resource, they have a **Free** payment method.
 </Accordion>
