@@ -1,3 +1,230 @@
 ---
-title: "Give and apply discounts "
+title: "Give and apply discounts"
+description: "Learn how to give members automatic discounts through plans and subscriptions, apply coupons to specific customers' bookings and subscriptions, and create and share promo codes for targeted or broad promotions"
 ---
+
+Once you [create discount coupons](/admin/billing/discounts/coupons-and-promo-codes), you can give discounts to customers with membership plans and subscriptions, apply them directly to specific customers' bookings or subscriptions, or generate promo codes to share with targeted customers or use in marketing campaigns.
+
+## Give discounts with plans and subscriptions
+
+You can give your members discounts on specific products and services as part of their membership. These discounts are then automatically applied for them at checkout.
+
+### Give a discount to a specific member or company
+
+To give a discount to a specific member or company, grant coupons directly in their subscription.
+
+1. Go to **Customers** and open the user or company profile.
+2. [Open their existing subscription](/admin/billing/subscriptions/edit-a-subscription) or [create a new one](/admin/billing/subscriptions/set-up-subscriptions).
+3. Open the subscription item.
+4. Locate the **Discounts** section and, in the **Granted coupons** field, select the discounts to give the customer.
+5. Press **Save** twice.
+
+<Info>
+  This is different from applying a [coupon directly to a subscription item's price](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#to-subscriptions), which discounts that item itself (e.g., the rent for a desk or office). **Granted coupons** doesn't discount the item — it makes the customer eligible for automatic discounts on other eligible products and bookings at checkout.
+</Info>
+
+### Give a discount to all subscribers of a plan or resource tier
+
+To give the same discount to every member who signs up for a plan or resource tier, add coupons to it directly.
+
+1. Open the plan or resource tier you want to include discounts with:
+   * **For a plan** — go to **Billing** > **Plans** and open the [plan](/admin/billing/plans/set-up-plans).
+   * **For an office, desk, or other resource** — offices, desks, and other resources are rented through a [resource tier](/admin/resource-management/resources/set-up-pricing#set-up-pricing-for-resource-rentals) rather than a plan, so open the resource on its **Resources** page (for example, **Offices** or **Desks**) and edit the tier you want.
+2. Locate the **Discounts** section.
+3. In the **Granted coupons** field, select the discounts that members on this plan or resource tier are eligible for.
+
+<Frame>
+  <img src="" alt="Billing Discounts Discounts With Plan Set Coupons In Plans" />
+</Frame>
+
+### How granted coupons apply at checkout
+
+* Customers see full, standard prices for all products in the member portal.
+* When a customer proceeds to checkout, if they have a coupon for that product in their subscription, it is automatically applied and the discount and discounted total is shown before the customer confirms payment.
+
+<Frame>
+  <img src="" alt="Billing Discounts Discounts With Plan How Coupons Apply At Checkout" />
+</Frame>
+
+Customers can also:
+
+* Select to apply a different coupon if they have a few.
+* Enter a promo code. If a promo code is entered, it takes priority over any coupon and replaces it for that transaction. The promo code and the granted coupon do not combine; only the promo code discount applies.
+
+<Info>
+  If a customer has active subscriptions with multiple coupons applicable to the same product at the same location — for example, both a personal and a company subscription — the best available coupon across all their subscriptions is automatically applied at checkout to ensure they pay the lowest price.
+</Info>
+
+<Tip>
+  Granted coupons work only in the location where the customer holds the subscription. If their discount must be valid in another location as well, [create a promo code](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#create-promo-codes) in that location and share it with the member.
+</Tip>
+
+## Apply discounts to specific customers' bookings and subscriptions
+
+### To bookings
+
+To apply a discount when making a booking for the customer:
+
+1. Go to the **Rooms**, **Desks**, **Parking**, or **Equipment** page and start a booking.
+2. Select the customer in the **Booker** field.
+3. Select a coupon in the **Coupon** field.
+4. Review the discounted price and confirm the booking.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+### To subscriptions
+
+To apply a discount to the customer's subscription price:
+
+1. Go to **Customers** and open the user or company profile.
+2. [Open their existing subscription](/admin/billing/subscriptions/edit-a-subscription) or [create a new one](/admin/billing/subscriptions/set-up-subscriptions).
+3. Click the subscription item to apply the discount to.
+4. Choose a coupon in the **Coupon** field. Press **Save** twice.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+<Info>
+  You can apply a different coupon to each item within a subscription — discount only one specific item, or apply different discounts to different items.
+</Info>
+
+## Create promo codes
+
+A promo code is a unique code — for example, *SUMMER20* — linked to a coupon. You can create and share promo codes with specific customers or distribute it broadly for a promotion or marketing campaign.
+
+To create a promo code:
+
+1. Go to **Billing** > **Discounts**.
+2. Select the coupon the promo code should be linked to.
+3. Click **Create promo code**.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+4. Configure the promo code properties.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+|                               |                                                                                                                                                                                                                                                                              |
+| :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Code**                      | The code customers enter at checkout to redeem the discount.                                                                                                                                                                                                                 |
+| **Expiration**                | Enable if the promo code should be valid only until a specific date. The expiration date is the last day the code can be redeemed, though customers can apply it to bookings scheduled after that date.                                                                      |
+| **Limited by first purchase** | Enable to make the promo code valid only for customers making their first purchase of this product type at the location.                                                                                                                                                     |
+| **Limited redemption**        | Enable to limit how many times the promo code can be redeemed across all customers. The promo code redemption limit cannot exceed the coupon's redemption limit. The limit applies to transactions — if the limit is 5, the promo code can be used for 5 separate purchases. |
+
+<Info>
+  Once created, a promo code cannot be edited. [Archive the promo code](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#archive-a-promo-code) and create a new one if changes are needed.
+</Info>
+
+5. Share the promo code directly with customers or publish it in your marketing campaign. Customers enter it at checkout to redeem the discount.
+
+<Tip>
+  Explore the [most common discount scenarios](/guides/promotion/use-coupons-and-promo-codes) and setup examples.
+</Tip>
+
+### How customers apply promo codes
+
+Customers can apply promo codes in the member portal during checkout:
+
+1. Start a booking, subscription sign-up, or other purchase.
+2. Enter the promo code in the **Promo code** field.
+3. Review the discounted price and confirm payment.
+
+<Frame>
+  <img src="" alt="Billing Discounts Redeem For Bookings How Users Apply Promo Codes" />
+</Frame>
+
+Once a coupon or promo code is applied, the discount appears in transaction and invoice details, as well as on invoice and receipt PDFs.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+<Info>
+  Only customers without an active subscription can apply promo codes during subscription sign-up. For customers with an existing subscription, only administrators can [apply coupons](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#apply-discounts-to-specific-customers-bookings-and-subscriptions) to their subscription items directly.
+</Info>
+
+## Track coupon and promo code usage
+
+To see how many times each discount has been redeemed, who redeemed it, and when:
+
+1. Go to **Billing** > **Discounts**.
+2. Open a coupon or promo code to view:
+
+* Total redemptions
+* Customer name
+* Product the coupon or promo code was applied to
+* Redemption date
+
+<Frame>
+  <img src="" alt="Billing Discounts Redeem For Bookings Track Coupon And Promo Code Usage" />
+</Frame>
+
+<Info>
+  For broader analytics, export the [****Invoice items** report**](/admin/analytics-reports/reports) to analyze discount usage. The report provides information about all the discount applications.
+</Info>
+
+## Delete a coupon
+
+Delete a coupon when you no longer want the discount to be redeemable. For this:
+
+1. Go to **Billing** > **Discounts**.
+2. Click **(...)** next to the coupon > **Delete**.
+
+<Frame>
+  <img src="" alt="Coupons And Promo Codes Delete A Coupon" />
+</Frame>
+
+Once deleted, the coupon will no longer be available to use for both administrators and customers who had it in their subscription.
+
+## Archive a promo code
+
+Archive a promo code when a promotion ends or the discount is no longer available. For this:
+
+1. Go to **Billing** > **Discounts**.
+2. Select the coupon associated with the promo code.
+3. Click **(...)** next to the promo code > **Archive**.
+
+<Frame>
+  <img src="" alt="Coupons And Promo Codes Archive A Promo Code" />
+</Frame>
+
+Once archived, the promo code will no longer be valid to redeem discounts.
+
+**FAQs**
+
+<Accordion title="Why is the user seeing the 'Promo code is not valid' error?">
+  This error typically appears for one of the following reasons:
+
+  * The code might have been entered with a typo or extra spaces. Please double-check it.
+  * The promo code might be **Limited by first purchases**, and the user might have already purchased this product type previously. You can verify the user's previous purchases in their profile under **Customers**.
+  * The promo code might be redeemable for product types different from what the user is trying to purcase. Check the promo code and its associated coupon to confirm its eligible products types.
+  * The coupon might be limited to specific items, and the selected item is not eligible. Review the **Applicable items** section for the relevant coupon.
+  * The promo code might have expired. Check its expiration date.
+  * The promo code or associated coupon might have reached the redemption limit.
+  * The promo code might have been archived or the associated coupon was deleted.
+
+  You can verify the promo code settings on the **Billing > Discounts** page.
+</Accordion>
+
+<Accordion title="How does a discount for subscription items take effect?">
+  * For new subscriptions, the discount takes effect on the subscription start date and applies to their first subscription payment.
+  * For existing subscriptions, the discount takes effect on the next renewal date.
+
+  The discount duration is determined by the [coupon's "Duration type](/admin/billing/discounts/coupons-and-promo-codes) and begins when the discount takes effect.
+
+  If the coupon's **Duration type** is other than "Once," the discount is applied to subsequent subscription invoices for the defined period.
+
+  * For coupons with the **Repeating** duration type applied to a non-monthly subscription, the discount applies to all invoices generated during the configured number of months.
+
+  Examples:
+
+  * A coupon with a **3-month** duration applied to a yearly subscription discounts only the first yearly invoice, since only one invoice is generated during that period. The discount applies to the full yearly subscription price, not a prorated 3-month amount.
+  * A coupon with a **3-month** duration applied to a weekly subscription discounts all 13 weekly invoices generated within the first 3 months.
+</Accordion>
