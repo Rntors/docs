@@ -1,52 +1,49 @@
 ---
 title: "PCI DSS compliance"
-description: "Understand how card data is protected when customers pay through a connected payment gateway"
+description: "Understand how card data is protected and determine your PCI DSS responsibilities"
 ---
 
-PCI DSS (Payment Card Industry Data Security Standard) is the global security standard for protecting credit and debit card data. It applies to cardholder data, not to payment methods such as ACH or SEPA bank debits.
+PCI DSS (Payment Card Industry Data Security Standard) is a global standard for protecting credit and debit card data. It does not govern ACH, SEPA, or other non-card payment methods.
 
-RNTOR uses connected third-party payment gateways to collect and process sensitive payment details. Customers enter card data in the gateway's secure payment flow rather than directly in RNTOR.
+RNTOR uses connected third-party payment processors to collect and process sensitive payment details. The exact PCI DSS scope and validation requirements depend on the gateway, your transaction volume, and how your organization handles payment data.
 
-## How card data is handled
+## RNTOR and payment card data
 
-RNTOR does not display full card numbers or security codes to location administrators. Sensitive cardholder data is handled by the payment processor you connect, such as Stripe.
+RNTOR does not expose full card numbers or CVV/CVC values to location administrators. Sensitive account data is entered through and managed by the third-party payment processor you connect.
 
-RNTOR may display limited reference details returned by the gateway, such as:
+RNTOR may retain limited non-sensitive references returned by the processor, such as:
 
 - Card brand
-- Last four digits
+- Last four digits of the Primary Account Number
 - Expiration month and year
-- Gateway payment-method reference
+- Processor payment-method reference
 
-These details help customers and administrators recognize a saved payment method without exposing the complete card number.
-
-See [Payment gateway](/admin/billing/payments/payment-gateway) and [PCI DSS security requirements](https://www.pcisecuritystandards.org/standards/pci-dss/) for more information.
-
-## Determine your compliance responsibilities
-
-Your own PCI DSS responsibilities depend on factors including:
-
-- The connected payment gateway.
-- How and where customers enter payment details.
-- Your annual card transaction volume.
-- Whether staff handle card data outside the gateway's secure flow.
-- Any other systems or terminals used by your organization.
-
-Follow the compliance guidance provided by your payment processor. For Stripe, review the [Stripe integration](/admin/integrations/payments/stripe/stripe) and Stripe's PCI guidance.
+These details let users recognize a saved method without revealing the full card number.
 
 <Warning>
-  Do not enter full card numbers, CVV/CVC codes, or other sensitive authentication data into RNTOR notes, support tickets, custom fields, or messages.
+  Do not state that your organization or RNTOR has a specific PCI certification level unless you have the current supporting assessment or attestation.
 </Warning>
 
-## Practical security steps
+## Determine your PCI compliance level
 
-- Give billing and customer access only to staff who need it.
-- Use individual administrator accounts instead of shared logins.
-- Remove administrator access promptly when a person leaves your organization.
-- Protect administrator devices and do not leave signed-in sessions on public devices.
-- Enable strong authentication for RNTOR and the payment-gateway account.
-- Keep written payment-data retention and incident-response procedures.
-- Include relevant payment processing and data-retention information in your privacy policy and terms.
-- Review the connected gateway's PCI documentation and complete any required self-assessment questionnaire.
+Your responsibilities can depend on:
 
-Your payment processor or a qualified security assessor can help determine the exact PCI DSS level and validation requirements for your organization.
+- Annual card transaction volume
+- Card-present versus card-not-present transactions
+- The connected payment processor
+- Whether staff ever receive or handle card data outside the processor’s secure flow
+- Other terminals, websites, or systems used by your organization
+
+Follow the current compliance instructions from your connected processor and consult a qualified security assessor when necessary. See the [PCI Security Standards Council](https://www.pcisecuritystandards.org/) for official standards and resources.
+
+## Practical compliance steps
+
+- Limit billing and customer-data access to essential personnel.
+- Use named administrator accounts rather than shared logins.
+- Remove administrator access immediately when a person leaves the organization.
+- Do not use administrator accounts on public or shared devices.
+- Use strong authentication for RNTOR and the payment processor.
+- Never place full card numbers or CVV/CVC values in notes, support tickets, custom fields, or messages.
+- Document payment-data retention and incident-response procedures.
+- Include relevant payment handling and retention practices in your terms and privacy policy.
+- Complete any self-assessment questionnaire required by your payment processor.
