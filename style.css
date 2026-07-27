@@ -70,13 +70,13 @@ html.rntor-arabic-docs header span {
 
   html[data-current-path^="/ar/"] #content-area,
   html.rntor-arabic-docs #content-area {
-    transform: none !important;
+    transform: translateX(-80px) !important;
   }
   
   /* Move "On this page" closer to the content */
   html[data-current-path^="/ar/"] main#content-container aside:not(#sidebar),
   html.rntor-arabic-docs main#content-container aside:not(#sidebar) {
-    transform: translateX(180px) !important;
+    transform: translateX(80px) !important;
   }
 }
 
