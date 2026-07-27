@@ -3,7 +3,7 @@ title: "Payment gateway"
 description: "Learn how users make payments online, add, remove, and set default payments methods, and understand transaction statuses"
 ---
 
-With the [payment gateway connected](/admin/integrations/payments) to the location, users can make online payments for all products and services.
+With the [payment gateway connected](/admin/integrations/payments/overview) to the location, users can make online payments for all products and services.
 
 ## How users make payments
 
@@ -11,7 +11,7 @@ With the [payment gateway connected](/admin/integrations/payments) to the locati
    <Frame>
   <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-payment-gateway-3.png)" />
 </Frame>
-2. In case of the **New payment method** option, users are redirected to the payment page of the payment gateway. There, they can see all the [payment methods your payment gateway supports](/admin/integrations/payments) and complete the payment.
+2. In case of the **New payment method** option, users are redirected to the payment page of the payment gateway. There, they can see all the [payment methods your payment gateway supports](/admin/integrations/payments/overview) and complete the payment.
    <Frame>
   <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-payment-gateway-3.png)" />
 </Frame>
@@ -36,7 +36,7 @@ Administrators can track and manage all transactions on the **Billing** > **Tran
   | Pending            | <ul><li>The user has opened the payment page but still needs to complete the payment. The transaction remains **Pending** for 15 minutes. If the customer doesn't pay within this window, the transaction automatically moves to **Canceled** status.</li><li>The administrator created a booking using an **External** payment method and set the status to **Pending**. The transaction will remain **Pending** until an administrator updates it to **Paid** or **Canceled**.</li></ul> |
   | Processing         | The payment attempt has been completed by the user, and the user's bank must confirm the payment.                                                                                                                                                                                                                                                                                                                                                                                          |
   | Canceled           | <ul><li>The user opened and closed the payment page without completing the payment within 15 minutes.</li><li>The administrator manually [<u>updated the transaction status from **Pending** to **Canceled**</u>](/admin/billing/payments/external).</li></ul>                                                                                                                                                                                                                                   |
-  | Failed             | The payment was initiated by the user but was declined by the payment gateway for some reason, e.g., an insufficient balance or an issue with the user's bank. [<u>Troubleshoot failed transactions</u>](/admin/integrations/payments/stripe/troubleshoot-failed-payments)                                                                                                                                                                                                                       |
+  | Failed             | The payment was initiated by the user but was declined by the payment gateway for some reason, e.g., an insufficient balance or an issue with the user's bank. [<u>Troubleshoot failed transactions</u>](/admin/integrations/payments/stripe/troubleshoot-stripe-payments)                                                                                                                                                                                                                       |
 * Filter transactions by **Type** to see payments for specific product types or transactions of a specific kind:
   * **Money:** Subscription, Invoice, Package, Booking, Ticket, Order, Custom.
   * **Credits:** Administrator · Added, Administrator · Deducted, Booking, Ticket, Order, Purchased, Refund, Subscription · Added, Subscription · Expired.
@@ -46,7 +46,7 @@ Administrators can track and manage all transactions on the **Billing** > **Tran
 
 ## Manage payment methods
 
-If you have a [Stripe](/admin/integrations/payments/stripe), [WayForPay](/admin/integrations/payments/wayforpay), [Tap](/admin/integrations/payments/tap), or [plata by mono](/admin/integrations/payments/plata-by-mono) payment gateway connected, customers can have their payment methods saved for quick and automatic payments.
+If you have a [Stripe](/admin/integrations/payments/stripe/stripe), [WayForPay](/admin/integrations/payments/overview), [Tap](/admin/integrations/payments/overview), or [plata by mono](/admin/integrations/payments/overview) payment gateway connected, customers can have their payment methods saved for quick and automatic payments.
 
 ### Add a payment method
 
@@ -77,12 +77,12 @@ Administrators can also add a payment method for a customer, if needed:
 Administrators can use customers' saved payment methods for:
 
 * Making a booking on behalf of a customer
-* [Charging customer invoices](/admin/billing/invoicing/charge-an-invoice)
+* [Charging customer invoices](/admin/billing/invoices/record-invoice-payments)
 * [Creating one-off payments to charge the customer.](/admin/billing/payments/create-one-off-payments)
 
 ### Set a default payment method
 
-The default payment method is used for [automatic invoice charges](/admin/billing/subscriptions/invoice-auto-charge) by subscription. The user's payment method is automatically saved as the default one once they pay at least one invoice using it, but it can also be set as default manually.
+The default payment method is used for [automatic invoice charges](/admin/billing/subscriptions/set-up-subscriptions/control-invoice-auto-charge) by subscription. The user's payment method is automatically saved as the default one once they pay at least one invoice using it, but it can also be set as default manually.
 
 Customers can set their payment method as default by following these steps:
 
@@ -138,7 +138,7 @@ Customers with an active subscription can't delete their default payment method.
 Administrators, however, can delete a customer's default payment method even when the customer has an active subscription. This permission is available only to administrators.
 
 <Tip>
-  To stop automatic charges for the customer, you can also [disable "Auto-pay](/admin/billing/subscriptions/invoice-auto-charge)" instead of deleting their payment method. When **Auto-pay** is disabled, the customer will not be charged automatically, despite having a default payment method on file. They will receive invoices instead and can pay them manually.
+  To stop automatic charges for the customer, you can also [disable "Auto-pay](/admin/billing/subscriptions/set-up-subscriptions/control-invoice-auto-charge)" instead of deleting their payment method. When **Auto-pay** is disabled, the customer will not be charged automatically, despite having a default payment method on file. They will receive invoices instead and can pay them manually.
 </Tip>
 
 **FAQ​s**
