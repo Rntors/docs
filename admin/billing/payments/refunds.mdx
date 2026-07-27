@@ -1,3 +1,66 @@
 ---
 title: "Refunds"
+description: "Configure automatic refunds, issue full or partial refunds, and track refunded transactions"
 ---
+
+Refund behavior depends on the service policy, transaction type, and connected payment gateway.
+
+RNTOR can return money, credits, or day passes when an eligible booking or purchase is canceled. Administrators can also issue full or partial monetary refunds manually.
+
+## Configure automatic refunds
+
+Where supported by the connected gateway:
+
+1. Go to **Integrations** and open the connected payment gateway.
+2. Enable **Automatic refunds**.
+3. Configure the cancellation, rescheduling, and refund conditions for the relevant resources and services.
+4. Save the settings.
+
+Automatic refunds apply only when the cancellation meets the configured policy. Gateway support may vary.
+
+## Issue a refund manually in RNTOR
+
+Administrators can issue a refund as an exception to the automatic policy, for a past purchase, or for an invoice that customers cannot cancel themselves.
+
+### Booking, ticket, or shop order
+
+1. Open the customer's booking, ticket, or order from their profile or the relevant module.
+2. To cancel it, select **Cancel** and confirm whether to refund.
+3. To refund without canceling, open **Payment**, select **Refund**, enter the amount, and confirm.
+
+### Invoice payment
+
+1. Go to **Billing > Invoices**.
+2. Open the invoice and its **Payment** section.
+3. Open the payment menu and select **Refund**.
+4. Enter the amount and confirm.
+
+You can also open the payment from **Billing > Transactions** and select **Refund**.
+
+Partial refunds are available for eligible monetary transactions. Credit and day-pass adjustments are recorded as separate refund transactions.
+
+## Refund through the gateway dashboard
+
+If a gateway does not support initiating refunds from RNTOR:
+
+1. Find the transaction in **Billing > Transactions**.
+2. Open its receipt and copy the transaction or receipt reference.
+3. Find the payment in the gateway dashboard.
+4. Issue the refund there.
+5. Confirm whether the gateway automatically synchronizes the refund back to RNTOR.
+
+For Stripe configuration and troubleshooting, see [Stripe](/admin/integrations/payments/stripe/stripe).
+
+## Track refunded transactions
+
+A monetary transaction displays **Refunded** or **Partially refunded** after RNTOR records the refund. The receipt is updated with the refunded amount.
+
+- Customers can review refunds from their billing transactions.
+- Administrators can review them under **Billing > Transactions**.
+- [Reports](/admin/analytics-reports/reports) include refund amounts for reconciliation.
+
+Credit and day-pass refunds create dedicated transactions so the original use and the returned balance remain visible.
+
+<Note>
+  The payment gateway completes the transfer of funds. Processing time and final success depend on the gateway and the customer's bank.
+</Note>
