@@ -9,10 +9,7 @@ Invoice statuses in RNTOR show the invoice's current state in the billing proces
 {/* Replace with the RNTOR invoice status flow image */}
 
 <Frame>
-  <img
-    src="/images/billing/invoice-statuses/invoice-status-flow.png"
-    alt="Invoice status flow from draft to issued, paid, or voided in RNTOR"
-  />
+  ![Chat GPT Image Jul 27, 2026, 04 08 45 PM](/images/ChatGPT-Image-Jul-27,-2026,-04_08_45-PM.png "Chat GPT Image Jul 27, 2026, 04 08 45 PM")
 </Frame>
 
 ## Invoice statuses
@@ -23,8 +20,8 @@ RNTOR has the following invoice statuses:
 | --- | --- |
 | **Draft** | The invoice has been created but is not issued yet. Draft invoices only get their number once they are issued. |
 | **Issued** | The invoice has been issued but is not paid yet. |
-| **Paid** | The invoice has been [**paid**](#replace-paid-invoice-link)—either online by the customer or recorded as paid externally by an administrator. |
-| **Voided** | The invoice has been [**voided**](#replace-void-invoice-link) by an administrator. |
+| **Paid** | The invoice has been [**paid**](/admin/billing/invoices/record-invoice-payments)—either online by the customer or recorded as paid externally by an administrator. |
+| **Voided** | The invoice has been [**voided**](/admin/billing/invoices/void-an-invoice) by an administrator. |
 
 ## Invoice payment statuses
 
@@ -39,5 +36,5 @@ Issued and paid invoices, in turn, display their payment statuses:
 | **Disputed** | The customer disputed the payment with their bank. |
 
 <Tip>
-  Payment processing time depends on the customer’s bank and the payment gateway. In some cases—especially with [**direct debits**](#replace-direct-debits-link)—processing the invoice payment can take several days. If an invoice remains in the **Pending** status for an extended period, check your payment gateway dashboard for more detailed information on the status or ask the customer to contact their bank.
+  Payment processing time depends on the customer’s bank and the payment gateway. In some cases—especially with [**direct debits**](/admin/integrations/payments/stripe/accept-invoice-payments-with-bank-debits)—processing the invoice payment can take several days. If an invoice remains in the **Pending** status for an extended period, check your payment gateway dashboard for more detailed information on the status or ask the customer to contact their bank.
 </Tip>
