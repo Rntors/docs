@@ -541,9 +541,10 @@
                 "group": "Revenue & space optimization",
                 "pages": [
                   "guides/revenue-and-space-optimization/generate-additional-revenue",
+                  "guides/revenue-and-space-optimization/recurring-add-ons",
+                  "guides/revenue-and-space-optimization/create-a-catalog-of-reusable-fees-and-charges",
                   "guides/revenue-and-space-optimization/optimize-room-usage",
-                  "guides/revenue-and-space-optimization/rent-out-event-spaces",
-                  "guides/revenue-and-space-optimization/recurring-add-ons"
+                  "guides/revenue-and-space-optimization/rent-out-event-spaces"
                 ]
               }
             ]
