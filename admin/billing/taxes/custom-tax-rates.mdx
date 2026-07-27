@@ -1,3 +1,73 @@
 ---
 title: "Custom tax rates"
+description: "Configure custom tax percentages for specific plans, members' subscription items, invoice items, events, or shop products "
 ---
+
+You can customize tax rates for certain plans, subscription items, invoice items, shop products, and events.
+
+<Info>
+  Before managing custom tax rates, [enable taxes](/admin/billing/taxes/set-up-taxes) for your location.
+</Info>
+
+## Set custom tax rate for plans
+
+To set a different tax rate for a plan, enable **Custom tax rate** and set the rate in the **Tax rate** field when [creating](/admin/billing/plans/set-up-plans) or [editing](/admin/billing/plans/set-up-plans#edit-or-delete-a-plan) a plan. ​
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+All new users who subscribe to this plan will be charged a custom tax for their subscription payments. To apply custom tax to existing members as well, [edit their subscriptions.](/admin/billing/subscriptions/edit-a-subscription)
+
+<Info>
+  To disable tax for a particular plan, another resource, or service, set the tax rate to 0.
+</Info>
+
+## Set custom tax rate for subscription items
+
+To set a different tax rate for certain members' or companies' subscriptions or subscription items, follow these steps:
+
+1. [Create](/admin/billing/subscriptions/set-up-subscriptions) or [edit](/admin/billing/subscriptions/edit-a-subscription) a subscription for the member or company.
+2. Select the necessary item in the subscription.
+3. Enable **Custom tax rate** in it and set the rate in the **Tax rate** field.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+4. If you need to set a different tax rate for the whole subscription, set a custom tax rate for each subscription item.
+
+## Set custom tax rate for invoice items
+
+If you need to add some one-off invoice items with a different tax rate, do the following:
+
+1. Go to RNTOR > **Customers** > select a user or a company > **Billing** > **Invoices**.
+2. Select an existing draft or upcoming invoice, or tap the **Create invoice** button top right to create a new one.
+3. Press **Create item** and fill in the **Tax rate** field > **Create**.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+4. Send the invoice by pressing **Issue** or [charging it](/admin/billing/invoices/edit-invoices).
+
+## Set custom tax rate for shop products
+
+To set a different tax rate for some shop products, do the following:
+
+1. [Create](/admin/service/shop/set-up-shop) or [edit](/admin/service/shop/set-up-shop#edit-or-delete-a-product) a product on the **Shop** page.
+2. Upon creating the product option, enable **Custom tax rate** and set the rate in the **Tax rate** field.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+## Set custom tax rate for events
+
+To set a different tax rate for an event, enable **Custom tax rate** and set the rate in the **Tax rate** field when [creating](/admin/engagement/events/set-up-events) or [editing](/admin/engagement/events/set-up-events#edit-an-event) an event.
+
+## How custom taxes work
+
+The custom tax rate applies only to payments for the particular service it is set for.
+
+To illustrate, if the user has a custom tax rate set for their subscription, it is only applicable to their subscription payments. For other services, the location tax applies, or another custom tax if it is set for the specific resource or service the user is purchasing.
