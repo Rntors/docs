@@ -1,117 +1,234 @@
 ---
 title: "Refunds"
-description: "Configure automatic refunds, define refund policies, and issue full or partial refunds"
+description: "Configure automatic refunds for cancellations, set refund policies for all products, and learn how to manually issue partial and full refunds to customers"
 ---
 
-RNTOR supports automatic and administrator-initiated refunds according to the payment method and connected gateway.
+RNTOR supports automatic and admin-initiated refunds for the following payment methods:
 
-| Payment method | Automatic refund | Admin-initiated in RNTOR |
-| --- | :---: | :---: |
-| **Credits** | ✓ | ✓ |
-| **Day passes** | ✓ | ✓ |
-| **External** | — | ✓ |
-| **Supported gateway payment** | If enabled | ✓ |
-| **Other gateways** | — | Use the gateway dashboard |
+| **Payment method**                                                                                                                          | **Automatic refund**                               | **Admin-initiated refund via RNTOR** |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------- |
+| Credits                                                                                                                                     | ✓<br />Enabled by default                          | ✓                                         |
+| External                                                                                                                                    | *X*                                                | ✓                                         |
+| [Stripe](/admin/integrations/payments/stripe)<br />[KakaoPay](/admin/integrations/payments/kakaopay)<br />[WayForPay](/admin/integrations/payments/wayforpay) | ✓<br />Yes, if enabled in the integration settings | ✓                                         |
+| [Other payment gateways](/admin/integrations/payments)                                                                                            | *X*                                                | *X*                                       |
+
+You can enable or disable and set conditions for automatic refunds by setting the rescheduling or refund policy for each resource and service.
+
+For all other payment gateways, refunds must be handled manually via the gateway's dashboard.
+
+You can initiate a refund for a credit transaction, or [manually add the credits](/admin/billing/credits-and-day-passes/credits#add-credits) to the user's balance.
 
 ## Configure automatic refunds
 
-1. Open **Integrations** for the location.
-2. Open the connected payment gateway.
-3. Enable **Automatic refunds**, when supported.
+To enable automatic refunds:
+
+1. In RNTOR, click the **(...)** menu next to the location name on the left-side panel.
+2. Go to **Integrations** > open your payment gateway's page ([Stripe](/admin/integrations/payments/stripe), [WayForPay](/admin/integrations/payments/wayforpay), or [KakaoPay](/admin/integrations/payments/kakaopay)).
+3. Toggle on **Automatic refunds**.
 
 <Frame>
-  <img src="" alt="gateway Automatic refunds switch." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-1.png)" />
 </Frame>
 
-4. Configure:
-   - **Rescheduling policy** for rooms, desks, parking, and equipment.
-   - **Refund policy** for events and shop products.
+4. Configure the refund conditions to control when automatic refunds are allowed when customers cancel by themselves:
+
+* **Rescheduling policy** — for rooms, desks, parking, and equipment
+* **Refund policy** — for events and shop products.
 
 ### Set rescheduling policy
 
-1. Go to **Resources** and add or edit a resource.
-2. Under **Rescheduling policy**, select:
-   - **Before the start**
-   - A **specific time** before the booking
-   - **No refund**
+1. Go to RNTOR > **Resources** > **Rooms**, **Desks**, **Parking**, or **Equipment**.
+2. Add a new resource or edit an existing one.
+3. In the **Rescheduling policy** section, choose one of the following:
+   * **Before the start** — automatically refund if canceled any time before the booking start.
+   * **Specific time** (1 hour, 2 days, etc.) — automatically refund only if canceled the selected time before the booking start.
+   * **No refund** – no automatic refunds upon cancellation.
 
 <Frame>
-  <img src="" alt="resource rescheduling policy options." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-2.gif)" />
 </Frame>
 
-Customers see the policy before purchase and when canceling.
+<Info>
+  Users see the rescheduling policy on the resource information page and during booking.
+</Info>
 
 ### Set refund policy
 
-For an event, open **Engagement > Events**, add or edit the event, and configure **Refund policy**.
+To set the refund policy for events:
+
+1. Go to RNTOR > **Engagement** > **Events**.
+2. [Add a new event](/admin/engagement/events) or [edit an existing one](/admin/engagement/events#edit-an-event).
+3. Choose the necessary property in the **Refund policy** section.
 
 <Frame>
-  <img src="" alt="event refund policy." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-3.gif)" />
 </Frame>
 
-For a shop product, open **Service > Shop**, add or edit the product, and choose the applicable refund rule.
+To set the refund policy for shop products:
+
+1. Go to RNTOR > **Services** > **Shop**.
+2. [Add a new product](/admin/service/shop/set-up-shop) or [edit an existing one](/admin/service/shop/set-up-shop#edit-or-delete-a-product).
+3. Choose the necessary property in the **Refund policy** section:
+   * **No refund**
+   * **Only if the order status is New** ([Understand order statuses](/admin/service/shop/manage-orders))
 
 <Frame>
-  <img src="" alt="shop product refund policy." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-4.png)" />
 </Frame>
+
+Customers are informed about the rescheduling/refund policy of the resource, event, or shop product:
+
+* On the resource information page
+* During the purchase process
+* When they click the **Cancel** button.
 
 ## Issue refunds manually via RNTOR
 
-Administrators can issue eligible full or partial refunds to override a policy, refund a past purchase, or refund an invoice.
+Administrators can manually issue full or partial refunds from the RNTOR web portal for external payments or payments processed via Stripe, WayForPay, or KakaoPay—regardless of the rescheduling or refund policy, or automatic refund settings.
 
-For a booking, event ticket, or shop order:
+You may want to issue refunds manually via RNTOR:
 
-1. Open the purchase from the customer profile or its module.
-2. Open **Payment > Refund**.
-3. Enter the amount and confirm.
+* If you have disabled automatic refunds.
+* To override a rescheduling or refund policy as an exception.
+* To refund for a past event, booking, or order.
+* To refund an invoice (users cannot cancel invoices themselves).
 
-For an invoice:
+You may want to issue refunds manually via RNTOR:
 
-1. Go to **Billing > Invoices** and open the invoice.
-2. Open the payment and select **Refund**.
-3. Enter the amount and confirm.
+* If you have disabled automatic refunds.
+* To override a rescheduling or refund policy as an exception.
+* To refund for a past event, booking, or order.
+* To refund an invoice (users cannot cancel invoices themselves).
+
+To initiate a refund for a booking, event ticket, or shop order:
+
+1. Open the user's booking, event ticket, or shop order:
+   * Either from the customer's profile on the **Customers** page.
+   * Or from the **Rooms, Desks, Parking, Equipment, Events**, or **Shop** page.
+2. If you want to cancel the booking, ticket, or order, click **Cancel** > confirm the cancellation > confirm issuing a refund.
+3. If you want to refund it without cancelling, click on the **Payment** section > **Refund** > input the amount you want to refund and confirm.
 
 <Frame>
-  <img src="" alt="Refund action and amount modal." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-5.gif)" />
 </Frame>
 
-## Issue refunds via the payment gateway dashboard
+<Info>
+  Partial refunds are supported for monetary transactions only.
+</Info>
 
-If the gateway cannot initiate refunds from RNTOR:
+To initiate a refund for an invoice:
 
-1. Find the transaction under **Billing > Transactions**.
-2. Copy its gateway reference.
-3. Locate it in the gateway dashboard.
-4. Issue the refund there.
-5. Confirm whether the gateway synchronizes the result back to RNTOR.
+1. Go to **Billing > Invoices** page > filter by company or user > open the necessary invoice.
+2. Click on the **Payment** section or the **(...)** menu next to the payment > **Refund** > input the amount you want to refund and confirm.
+
+<Frame>
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-6.png)" />
+</Frame>
+
+Alternatively, to initiate a refund for any payment:
+
+1. Go to **Billing > Transactions** page > **Money** tab > filter by company or user > open the necessary transaction.
+2. Click **Refund** > input the amount you want to refund and confirm.
+
+<Frame>
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-7.png)" />
+</Frame>
+
+## Issue refunds via payment gateway dashboard
+
+For payment gateways that don't support automatic refunds or refund initiation via RNTOR, admins can refund manually from the payment gateway's dashboard:
+
+1. Set up relevant alerts on the [**Notifications**](/admin/administration/your-account/notifications/set-up-notifications) page to be notified of cancellations.
+2. Find the receipt number in RNTOR:
+   * Go to **Billing** > **Transactions** > **Money** tab filter by company or user.
+   * Open the necessary transaction > **View receipt PDF** > copy the receipt number.
+3. Go to your payment gateway's dashboard.
+4. Locate the transaction by its number and issue the refund.
+
+<Tip>
+  If you're using Stripe, you can go directly to the transaction's page in your Stripe dashboard by clicking the **View in Stripe** button on the transaction in RNTOR.
+</Tip>
+
+<Info>
+  Refunds made via the Stripe dashboard automatically sync to the corresponding transactions in RNTOR.
+</Info>
 
 ## See refunded transactions
 
 ### Monetary transactions
 
-Open **Billing > Transactions > Money** and filter by customer. A completed refund appears as **Refunded** or **Partially refunded**, and the receipt shows the refunded amount.
+After confirming the cancellation, a pop-up message **Refund initiated** appears to the user or administrator (depending on who initiates it).
+
+The original transaction will reflect a **Refunded** or **Partially refunded** status, and the refund details can be found in the **Refunds** section.
 
 <Frame>
-  <img src="" alt="Money transactions with refund status." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-8.png)" />
 </Frame>
+
+The receipt PDF will also update to reflect the refund:
+
+<Frame>
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-9.png)" />
+</Frame>
+
+* Users can see refunded transactions in the member web portal or mobile app on the **Membership** > **Billing** > **Transactions** page.
+* Administrators see refunded transactions on the **Billing** > **Transactions** page > **Money** tab.
+* The [**Transactions** report](/admin/analytics-reports/reports) reflects refunds in the **Amount refunded** column.
 
 ### Credit and day pass transactions
 
-Open the corresponding **Credits** or **Day passes** transaction tab. The refund appears as a dedicated transaction and restores the eligible balance.
+For any credit or day pass transaction, the system maintains a transparent audit trail. Every booking modification, shortening, or cancellation that results in a refund triggers the creation of a separate, dedicated **Refund** transaction. This ensures that the original purchase and the subsequent adjustment are documented as distinct line items.
 
 <Frame>
-  <img src="" alt="credit/day-pass refund transaction." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-refunds-10.png)" />
 </Frame>
+
+* Users can view refunded credit or day pass transactions in the member web portal or mobile app under **Locations > Membership > Credits/Day passes > Transactions**.
+* Administrators can see refunded credit or day pass transactions on the **Billing** > **Transactions** page > **Credits** or **Day passes** tab.
+
+**Notes**
+
+* Refunds are processed by the payment gateways (Stripe, WayForPay, or KakaoPay). Customers receive funds once the gateway completes the refund.
+* RNTOR initiates refunds but is not responsible for their completion. Refunds may fail due to payment gateway issues.
+* The transaction status in RNTOR stays as **Refunded** and does not update.
+* To verify the final refund status, check the transaction in the gateway's dashboard directly.
 
 ## Tips
 
-- Consider refunding with [credits](/admin/billing/credits-and-day-passes/credits) when appropriate.
-- Offer a [coupon or promo code](/admin/billing/discounts/coupons-and-promo-codes) to encourage a future purchase.
+Before issuing a monetary refund, consider offering alternatives to retain customers:
 
-## FAQs
+* Offer a refund in [credits](/admin/billing/credits-and-day-passes/credits) instead of money. No transaction fees apply, and users can spend them on your services.
+* Give a [promo code](/admin/billing/discounts/give-and-apply-discounts#create-promo-codes) with the appropriate discount to encourage future purchases.
 
-<Accordion title="How can I check whether a customer will receive a refund after cancellation?">
-  Customers see the applicable policy during purchase and again before they confirm cancellation. After cancellation, administrators can check **Billing > Transactions** and open the Money, Credits, or Day passes tab. Users can check the corresponding transaction section under **Membership**.
+**FAQs**
 
-  Credit and day-pass returns are normally immediate. Monetary refund timing depends on the gateway and the customer’s bank.
+<Accordion title="How can I check if a customer will get a refund for their cancellation?">
+  Customers are always informed about the rescheduling/refund policy of the resource, event, or shop product at two key points:
+
+  1. When they are making a purchase.
+  2. When they click the **Cancel** button.
+
+  If the user has already made a cancellation, both the users and administrators can check the transaction status. Administrators follow these steps:
+
+  1. Go to the **Billing** > **Transactions** page > depending on the payment method used, click on the **Money**, **Credits**, or **Day passes** tab.
+  2. Filter by company or user > check the relevant transaction to see whether it has been refunded.
+
+  Users follow these steps:
+
+  1. Go to the **Membership** page.
+  2. Depending on the payment method used, go to the relevant section:
+     * **Billing** > **Transactions** (for monetary payments)
+     * **Credits** > **Transactions**
+     * **Day passes** > **Transactions**.
+  3. Check the relevant transaction to see whether it has been refunded.
+
+  If it has been refunded, please keep in mind that while credit and day pass refunds are instant, for monetary transactions, the actual time it takes for the customer to receive the refund depends on your payment gateway (Stripe, WayForPay, or KakaoPay).
+
+  If the transaction wasn't refunded due to your [rescheduling](/admin/billing/payments/refunds)/[refund policy](/admin/billing/payments/refunds), [**Automatic refunds** setting](/admin/billing/payments/refunds) is disabled, or your payment gateway does not support automatic refunds, you can proceed with [issuing a refund manually](/admin/billing/payments/refunds) to this user.
+</Accordion>
+
+<Accordion title="Why don't I see a Refund button to issue a refund to a customer via RNTOR?">
+  The **Refund** button in RNTOR is only available if the payment gateway integration you use supports refunds directly from RNTOR: [Stripe](/admin/integrations/payments/stripe), [WayForPay](/admin/integrations/payments/wayforpay), or [KakaoPay](/admin/integrations/payments/kakaopay).
+
+  For [other payment gateways](/admin/integrations/payments) that don't support refund initiation via RNTOR, the **Refund** button isn't available. You'll need to [issue the refund manually from the payment gateway's dashboard](/admin/billing/payments/refunds#issue-refunds-via-payment-gateway-dashboard) instead.
 </Accordion>
