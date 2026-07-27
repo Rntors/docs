@@ -1,106 +1,157 @@
 ---
 title: "Receipts"
-description: "Access receipt PDFs for online and external payments and understand their breakdown"
+description: "Access receipt PDFs for customers' online and external payments, learn how users receive and access receipts, and understand the receipt breakdowns"
 ---
 
-RNTOR generates receipts for successful online and external payments, including:
+RNTOR generates receipts for all user payments—both online (via payment gateway) and external. This includes:
 
-- One-off bookings, shop orders, and event tickets.
-- Invoice payments.
+* One-off purchases: bookings, shop orders, event tickets
+* Invoice payments
 
-Online-payment receipts are emailed to users and remain available in the member portal. Administrators can access receipts from the admin portal and export transaction data for accounting.
+Receipts are sent to users by email after they complete the payment. Users can also view or download them anytime in the member web portal or mobile app.
+
+Administrators can access all receipts via the admin web portal and export them in bulk for accounting purposes.
 
 ## What a receipt looks like
 
-A receipt confirms a successful payment.
+A receipt is a document that confirms a successful payment.
 
 <Frame>
-  <img src="" alt="full RNTOR receipt PDF." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-1.png)" />
 </Frame>
 
-It can include:
+Each receipt includes:
 
-- **Receipt number**
-- **Invoice number**, when applicable
-- **Date paid**
-- Location logo, legal business name, and address
-- Customer name, legal business name, and address
-- Item description, quantity, and unit amount
-- Tax rate and tax amount
-- Discount
-- Subtotal and total
-- Surcharge
-- Credit note
-- **Amount paid**
-- Refund date and refunded amount
-- **Total refunded**
-- **Payment method**
-- Location footer
+* **Receipt number** — matches the ID in the [**Transactions** report](/admin/analytics-reports/reports).
+* **Invoice number** (if applicable)
+* **Date paid**
+* [**Your space logo**](/admin/general/member-web-portal/customize-member-web-portal)
+* [**Legal business name and address of the location**](/admin/billing/set-up-billing) (if added)
+* **Name, [legal business name, and address of the customer](/admin/customer-management/billing-details)** (if added)
+* **Description** of the purchased item
+* **Quantity** of the purchased item
+* **Unit amount** — price per unit
+* [**Tax**](/admin/billing/taxes) percentage for each item (if applicable)
+* **Amount** — Quantity *x* Unit amount
+* **Discount** (if applicable)
+* **Subtotal** — Sum of all Amounts minus any discounts
+* **Total excluding tax** — sum of all Amounts minus discounts and taxes
+* **Tax** — percentage and amount of tax for all items
+* **Total** — total value after taxes
+* **Surcharge** (if applicable)
+* [**Credit note**](/admin/billing/invoices/credit-notes) (if applicable)
+* **Amount paid** — Total minus any credit note (if applicable)
+* **Refunded on \\\[Date\\]** — [amount refunded](/admin/billing/payments/refunds) after payment (if applicable)
+* **Total refunded** — total amount of all refunds
+* **Payment method** the customer used
+* [**Footer**](/admin/billing/set-up-billing) — optional details appearing on all invoices and receipts (if added).
 
-Tax presentation follows [tax settings](/admin/billing/taxes/set-up-taxes). Once created, a receipt is not changed; updates to billing details or item names affect future receipts only.
+<Info>
+  If your location tax option is **Inclusive**, you can choose whether to display amounts with or without tax on the invoice and receipt breakdown by configuring the [**Display tax-exclusive prices** setting](/admin/billing/taxes). Some EU countries require all amounts to be shown exclusive of tax. If your tax option is **Exclusive**, the invoice and receipt breakdown will always show amounts without tax, regardless of this setting.
+</Info>
+
+<Info>
+  Once a receipt is created, it cannot be modified. Any updates to billing details, customer name, or resources and services will only be reflected in receipts for future payments.
+</Info>
 
 ## How users get and access receipts
 
-After an online payment, the user receives an email with the available invoice and receipt PDFs.
+Once a user completes an online payment, they receive an email confirmation with a downloadable invoice and receipt PDFs attached.
 
 <Frame>
-  <img src="" alt="email with invoice and receipt attachments." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-2.png)" />
 </Frame>
 
-Users can also:
+Users can also view or download receipts anytime in the member web portal or mobile app. For this, users:
 
-1. Go to **Membership > Billing > Transactions**.
-2. Open the successful transaction.
-3. Select **View receipt PDF** or **Download receipt PDF**.
+1. Go to the **Locations** > **Membership**.
+2. Click **Billing** under the **Personal** or company section > **Transactions**.
+3. Open the successful transaction, and tap **View receipt PDF** or **Download receipt PDF**.
 
 <Frame>
-  <img src="" alt="receipt actions in member billing." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-3.png)" />
 </Frame>
 
-Alternatively, users can open a booking, ticket, or order from **Account** and download its receipt from **Payment**.
+Alternatively:
+
+1. Go to the **Account** page by pressing a button with your profile image, initials, or the user icon on the app's main page.
+2. Choose **Bookings**, **Tickets**, or **Orders**.
+3. Open the specific booking, ticket, or order. In the **Payment** section, tap **Download receipt PDF**.
 
 <Frame>
-  <img src="" alt="receipt action inside booking, ticket, or order." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-4.png)" />
 </Frame>
+
+<Info>
+  To locate the receipt for an invoice, users follow the first option.
+</Info>
 
 ## How administrators access receipts
 
-1. Go to **Billing > Transactions > Money**.
-2. Find and open the transaction.
-3. Select **Send receipt**, **View receipt PDF**, or **Download receipt PDF**.
+1. Go to **Billing** > **Transactions** page > **Money** tab > filter by company or user.
+2. Open a transaction and tap **Send receipt**, **View receipt PDF**, or **Download receipt PDF**.
+
+<Tip>
+  You may want to click **Send receipt** if a customer missed the email and is asking you to provide a receipt confirming their payment.
+</Tip>
 
 <Frame>
-  <img src="" alt="transaction receipt actions in admin portal." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-5.png)" />
 </Frame>
 
-Administrators can also open the related invoice, booking, ticket, or order and use its **Payment** section.
+Alternatively:
+
+1. Open the user's invoice, booking, event ticket, or shop order:
+   * Either from the customer's profile on the **Customers** page.
+   * Or from the **Invoices**, **Rooms, Desks, Parking, Equipment, Events**, or **Shop** page.
+2. Tap **Download receipt PDF** or click on the **Payment** section to send, view, or download the receipt.
 
 <Frame>
-  <img src="" alt="Payment section with receipt actions." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-6.png)" />
 </Frame>
 
-Use [Reports](/admin/analytics-reports/reports) to export transactions for accounting.
+<Tip>
+  You can also [export all receipts in bulk](/admin/analytics-reports/export-invoices-for-accounting) for accounting purposes using the **Transactions** custom report in **Analytics**.
+</Tip>
 
 ## Receipts for external payments
 
-When an administrator creates a paid [External](/admin/billing/payments/external) booking or [records an external invoice payment](/admin/billing/invoices/record-invoice-payments), RNTOR also generates a receipt. It is not emailed automatically merely because the external payment was recorded.
+When an administrator makes a booking for the customer with an [**External** payment method](/admin/billing/payments/external) or [marks their invoice as paid externally](/admin/billing/invoices/record-invoice-payments), RNTOR generates a receipt for such a payment as well. This ensures you can always provide customers with a document confirming their payment.
+
+The receipts for external payments aren't automatically sent to the user by email, but are available to both the user and the administrator, like any other receipt:
 
 ### Users
 
-1. Go to **Membership > Billing > Transactions**.
-2. Open the transaction.
-3. Select **View receipt PDF** or **Download receipt PDF**.
+1. Go to **Membership** > **Billing > Transactions** page.
+2. Open the relevant transaction and click **View receipt PDF** or **Download receipt PDF**.
 
 <Frame>
-  <img src="" alt="external transaction receipt in member portal." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-7.png)" />
 </Frame>
+
+Alternatively, users:
+
+1. Go to **Account** > **Bookings** page.
+2. Open the specific booking.
+3. In the **Payment** section, tap **Download receipt PDF**.
 
 ### Administrators
 
-1. Go to **Billing > Transactions > Money**.
-2. Open the transaction.
-3. Send, view, download, or open the related invoice.
+1. Go to the **Billing** > **Transactions** page > **Money** tab > filter by company or user.
+2. Open the relevant transaction and take the necessary action:
+
+* Click **Send receipt** to email the receipt to the user.
+* Click **View receipt PDF** to view the receipt.
+* Click **Download receipt PDF** to print or save a local copy, if requested by the customer.
+* Click **Open invoice** to view the invoice for the transaction.
 
 <Frame>
-  <img src="" alt="external receipt actions in admin portal." />
+  <img src="" alt="Upload the matching RNTOR screenshot (images/billing-payments-receipts-8.png)" />
 </Frame>
+
+Alternatively, administrators:
+
+1. Open the user's invoice or booking:
+   * Either from the customer's profile on the **Customers** page.
+   * Or from the **Invoices**, **Rooms, Desks, Parking,** or **Equipment** page.
+2. Tap **Download receipt PDF** or click on the **Payment** section to send, view, or download the receipt.
