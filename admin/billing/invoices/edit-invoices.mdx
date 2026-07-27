@@ -21,10 +21,10 @@ You may need to edit an invoice to adjust invoice items, amount, billing details
 4. Manually created custom items can also be edited directly. Click **(...) > Edit** next to it.
 5. To add an item, click **Create item**.
 
-   - Select a [**one-off product or service from the Product list**](#replace-product-list-link).
+   - Select a [**one-off product or service from the Product list**](/admin/service/shop/manage-one-off-services).
    - Or add a **Custom** item.
 
-6. [**Manage the Payment due**](#replace-payment-due-date-link) date in the right-side panel.
+6. [**Manage the Payment due**](/admin/billing/invoices/invoice-due-date) date in the right-side panel.
 
 {/* Replace with the RNTOR draft invoice screenshot */}
 
@@ -44,7 +44,7 @@ You may need to edit an invoice to adjust invoice items, amount, billing details
 To update your space’s billing details:
 
 1. Tap the **(...)** next to the location name > **Location settings**.
-2. Go to the **General > Billing details** tab to [**update your billing details**](#replace-location-billing-details-link).
+2. Go to the **General > Billing details** tab to [**update your billing details**](/admin/billing/set-up-billing).
 3. Go to the **Billing > Invoices** tab to update **Footer**.
 4. Issue the invoice. It will reflect the updated details.
 
@@ -56,19 +56,19 @@ To update a customer’s billing details:
 
 1. Go to **Customers >** customer profile.
 2. In the right-side panel, locate the **Billing details** section > click **Edit**.
-3. [**Add or update the customer’s billing details**](#replace-customer-billing-details-link).
+3. [**Add or update the customer’s billing details**](/admin/customer-management/billing-details).
 4. Issue the invoice. It will reflect the updated details.
 
 ### Apply a discount
 
-The administrator or customer should apply a discount when creating a [**subscription**](#replace-create-subscription-link), [**booking**](#replace-create-booking-link), or another purchase, rather than adding a discount inside the invoice later. This ensures the discount is automatically reflected on the invoice. If needed:
+The administrator or customer should apply a discount when creating a [**subscription**](/admin/billing/subscriptions/set-up-subscriptions), [**booking**](/admin/resource-management/resources/manage-bookings), or another purchase, rather than adding a discount inside the invoice later. This ensures the discount is automatically reflected on the invoice. If needed:
 
 1. **Delete the draft invoice.**
 2. Recreate the booking/subscription, and apply a coupon during creation.
 
 If the draft invoice is already created and you can’t recreate it:
 
-1. In the customer’s profile, add the discount amount to [**Money balance**](#replace-money-balance-link).
+1. In the customer’s profile, add the discount amount to [**Money balance**](/admin/billing/invoices/customer-money-balance).
 2. It will appear as **Applied balance** on the invoice and reduce the amount due.
 
 {/* Replace with the RNTOR applied balance screenshot */}
@@ -95,7 +95,7 @@ Once an invoice is issued or paid, it becomes a finalized financial record and c
 ### Edit invoice items, amount, or apply a discount
 
 1. Open the issued or paid invoice.
-2. In the **Credit notes** section, create [**a credit note**](#replace-create-credit-note-link).
+2. In the **Credit notes** section, create [**a credit note**](/admin/billing/invoices/credit-notes).
 3. Adjust the amount or quantity for specific or all items and specify the reason.
 
    - For paid invoices, this creates a proper correction record.
@@ -105,17 +105,17 @@ Once an invoice is issued or paid, it becomes a finalized financial record and c
 
 For an unpaid invoice:
 
-1. [**Void this invoice**](#replace-void-invoice-link).
-2. Update [**customer**](#replace-customer-billing-details-link) or [**location**](#replace-location-billing-details-link) billing details.
+1. [**Void this invoice**](/admin/billing/invoices/void-an-invoice).
+2. Update [**customer**](/admin/customer-management/billing-details) or [**location**](/admin/billing/set-up-billing) billing details.
 3. [**Duplicate**](#duplicate-invoice) or recreate the invoice and issue it.
 4. The new invoice will include updated billing details.
 
 For a paid invoice:
 
 1. Open the invoice.
-2. In the **Credit notes** section, create [**a credit note**](#replace-create-credit-note-link) for the full amount.
+2. In the **Credit notes** section, create [**a credit note**](/admin/billing/invoices/credit-notes) for the full amount.
 3. Choose **Customer balance** as a credit option.
-4. Update [**customer**](#replace-customer-billing-details-link) or [**location**](#replace-location-billing-details-link) billing details.
+4. Update [**customer**](/admin/customer-management/billing-details) or [**location**](/admin/billing/set-up-billing) billing details.
 5. [**Duplicate**](#duplicate-invoice) or recreate the invoice.
 6. The system will apply the balance and set the new invoice total to 0 and mark it as paid immediately once issued.
 7. The updated billing details will appear on the new invoice.
@@ -132,7 +132,7 @@ You may encounter situations such as:
 
 It’s important to remember that once an invoice is marked as **Paid**, it cannot be reverted to **Unpaid** status. Here is what you can do instead:
 
-1. [**Issue a credit note**](#replace-create-credit-note-link) for this invoice.
+1. [**Issue a credit note**](/admin/billing/invoices/credit-notes) for this invoice.
 2. Select the appropriate credit option.
 3. If needed, [**duplicate**](#duplicate-invoice) or recreate the invoice and issue it.
 4. Record the payment or let the customer pay correctly.
@@ -172,7 +172,7 @@ To duplicate a one-off invoice:
   <Accordion title="How do I add bookings/products to a customer's invoice?">
     When managing a customer’s invoice, the method to add charges depends on the specific category of the product or service. Follow these guidelines to ensure the invoice is accurate:
 
-    - **Bookings** — to add a booking to an invoice, make a booking on the **Resources** page, select the customer as a booker, and [**choose the Invoice payment method**](#replace-invoice-payment-method-link).
+    - **Bookings** — to add a booking to an invoice, make a booking on the **Resources** page, select the customer as a booker, and [**choose the Invoice payment method**](/admin/billing/payments/pay-with-invoice).
     - **One-off products or services from Shop** — open an existing draft or upcoming invoice > press **Create item >** in the **Product** section, select the necessary product.
     - **Event tickets** — it is not possible for an administrator to add event tickets to the customer’s invoice at this time. Customers can only purchase them themselves.
     - **Other charges** — add any custom fees to the customer’s invoice by pressing **Create item** and selecting **Custom** in the **Product** field.
