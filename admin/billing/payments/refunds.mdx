@@ -1,66 +1,117 @@
 ---
 title: "Refunds"
-description: "Configure automatic refunds, issue full or partial refunds, and track refunded transactions"
+description: "Configure automatic refunds, define refund policies, and issue full or partial refunds"
 ---
 
-Refund behavior depends on the service policy, transaction type, and connected payment gateway.
+RNTOR supports automatic and administrator-initiated refunds according to the payment method and connected gateway.
 
-RNTOR can return money, credits, or day passes when an eligible booking or purchase is canceled. Administrators can also issue full or partial monetary refunds manually.
+| Payment method | Automatic refund | Admin-initiated in RNTOR |
+| --- | :---: | :---: |
+| **Credits** | ✓ | ✓ |
+| **Day passes** | ✓ | ✓ |
+| **External** | — | ✓ |
+| **Supported gateway payment** | If enabled | ✓ |
+| **Other gateways** | — | Use the gateway dashboard |
 
 ## Configure automatic refunds
 
-Where supported by the connected gateway:
+1. Open **Integrations** for the location.
+2. Open the connected payment gateway.
+3. Enable **Automatic refunds**, when supported.
 
-1. Go to **Integrations** and open the connected payment gateway.
-2. Enable **Automatic refunds**.
-3. Configure the cancellation, rescheduling, and refund conditions for the relevant resources and services.
-4. Save the settings.
+<Frame caption="Image placeholder — Automatic refunds">
+  **Image placeholder:** gateway Automatic refunds switch.
+</Frame>
 
-Automatic refunds apply only when the cancellation meets the configured policy. Gateway support may vary.
+4. Configure:
+   - **Rescheduling policy** for rooms, desks, parking, and equipment.
+   - **Refund policy** for events and shop products.
 
-## Issue a refund manually in RNTOR
+### Set rescheduling policy
 
-Administrators can issue a refund as an exception to the automatic policy, for a past purchase, or for an invoice that customers cannot cancel themselves.
+1. Go to **Resources** and add or edit a resource.
+2. Under **Rescheduling policy**, select:
+   - **Before the start**
+   - A **specific time** before the booking
+   - **No refund**
 
-### Booking, ticket, or shop order
+<Frame caption="Image placeholder — resource rescheduling policy">
+  **Image placeholder:** resource rescheduling policy options.
+</Frame>
 
-1. Open the customer's booking, ticket, or order from their profile or the relevant module.
-2. To cancel it, select **Cancel** and confirm whether to refund.
-3. To refund without canceling, open **Payment**, select **Refund**, enter the amount, and confirm.
+Customers see the policy before purchase and when canceling.
 
-### Invoice payment
+### Set refund policy
 
-1. Go to **Billing > Invoices**.
-2. Open the invoice and its **Payment** section.
-3. Open the payment menu and select **Refund**.
-4. Enter the amount and confirm.
+For an event, open **Engagement > Events**, add or edit the event, and configure **Refund policy**.
 
-You can also open the payment from **Billing > Transactions** and select **Refund**.
+<Frame caption="Image placeholder — event refund policy">
+  **Image placeholder:** event refund policy.
+</Frame>
 
-Partial refunds are available for eligible monetary transactions. Credit and day-pass adjustments are recorded as separate refund transactions.
+For a shop product, open **Service > Shop**, add or edit the product, and choose the applicable refund rule.
 
-## Refund through the gateway dashboard
+<Frame caption="Image placeholder — shop refund policy">
+  **Image placeholder:** shop product refund policy.
+</Frame>
 
-If a gateway does not support initiating refunds from RNTOR:
+## Issue refunds manually via RNTOR
 
-1. Find the transaction in **Billing > Transactions**.
-2. Open its receipt and copy the transaction or receipt reference.
-3. Find the payment in the gateway dashboard.
+Administrators can issue eligible full or partial refunds to override a policy, refund a past purchase, or refund an invoice.
+
+For a booking, event ticket, or shop order:
+
+1. Open the purchase from the customer profile or its module.
+2. Open **Payment > Refund**.
+3. Enter the amount and confirm.
+
+For an invoice:
+
+1. Go to **Billing > Invoices** and open the invoice.
+2. Open the payment and select **Refund**.
+3. Enter the amount and confirm.
+
+<Frame caption="Image placeholder — manual refund">
+  **Image placeholder:** Refund action and amount modal.
+</Frame>
+
+## Issue refunds via the payment gateway dashboard
+
+If the gateway cannot initiate refunds from RNTOR:
+
+1. Find the transaction under **Billing > Transactions**.
+2. Copy its gateway reference.
+3. Locate it in the gateway dashboard.
 4. Issue the refund there.
-5. Confirm whether the gateway automatically synchronizes the refund back to RNTOR.
+5. Confirm whether the gateway synchronizes the result back to RNTOR.
 
-For Stripe configuration and troubleshooting, see [Stripe](/admin/integrations/payments/stripe/stripe).
+## See refunded transactions
 
-## Track refunded transactions
+### Monetary transactions
 
-A monetary transaction displays **Refunded** or **Partially refunded** after RNTOR records the refund. The receipt is updated with the refunded amount.
+Open **Billing > Transactions > Money** and filter by customer. A completed refund appears as **Refunded** or **Partially refunded**, and the receipt shows the refunded amount.
 
-- Customers can review refunds from their billing transactions.
-- Administrators can review them under **Billing > Transactions**.
-- [Reports](/admin/analytics-reports/reports) include refund amounts for reconciliation.
+<Frame caption="Image placeholder — refunded monetary transaction">
+  **Image placeholder:** Money transactions with refund status.
+</Frame>
 
-Credit and day-pass refunds create dedicated transactions so the original use and the returned balance remain visible.
+### Credit and day pass transactions
 
-<Note>
-  The payment gateway completes the transfer of funds. Processing time and final success depend on the gateway and the customer's bank.
-</Note>
+Open the corresponding **Credits** or **Day passes** transaction tab. The refund appears as a dedicated transaction and restores the eligible balance.
+
+<Frame caption="Image placeholder — refunded credit or day pass">
+  **Image placeholder:** credit/day-pass refund transaction.
+</Frame>
+
+## Tips
+
+- Consider refunding with [credits](/admin/billing/credits-and-day-passes/credits) when appropriate.
+- Offer a [coupon or promo code](/admin/billing/discounts/coupons-and-promo-codes) to encourage a future purchase.
+
+## FAQs
+
+<Accordion title="How can I check whether a customer will receive a refund after cancellation?">
+  Customers see the applicable policy during purchase and again before they confirm cancellation. After cancellation, administrators can check **Billing > Transactions** and open the Money, Credits, or Day passes tab. Users can check the corresponding transaction section under **Membership**.
+
+  Credit and day-pass returns are normally immediate. Monetary refund timing depends on the gateway and the customer’s bank.
+</Accordion>
