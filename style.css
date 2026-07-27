@@ -59,13 +59,14 @@ html.rntor-arabic-docs header span {
     padding-right: 0 !important;
   }
 
-  /* Keep "On this page" on the left, article in the center */
-  html[data-current-path^="/ar/"] main#content-container > div,
-  html.rntor-arabic-docs main#content-container > div {
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 3rem !important;
-  }
+ html[data-current-path^="/ar/"] main#content-container > div,
+html.rntor-arabic-docs main#content-container > div {
+  width: calc(100% + 20rem) !important;
+  max-width: none !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 3rem !important;
+}
 
  /* Match the native English content width */
 html[data-current-path^="/ar/"] #content-area,
