@@ -1,3 +1,85 @@
 ---
 title: "Payment methods"
+description: "Understand the payment methods available to customers and administrators in RNTOR"
 ---
+
+RNTOR displays the payment methods that are available for a booking or purchase based on the customer, service settings, location configuration, and connected [payment gateway](/admin/billing/payments/payment-gateway).
+
+## Free
+
+The **Free** payment method is available to administrators when they create a booking for a customer. Use it when no payment, credits, day passes, or invoice item should be created.
+
+## External
+
+The **External** payment method lets administrators record a payment collected outside RNTOR. It is available for administrator-created resource bookings.
+
+Learn how paid and pending external bookings work in [External payments](/admin/billing/payments/external).
+
+## Credits
+
+Credits can be used for bookings, event tickets, and shop orders when:
+
+- Credits are enabled for the location.
+- The service has a credit price.
+- The member or their company has enough credits.
+
+Administrators can also use a member's available credits when booking on their behalf. Learn more about [credits](/admin/billing/credits-and-day-passes/credits).
+
+## Day passes
+
+Day passes can be used for eligible hot-desk bookings when:
+
+- Day passes are enabled for the location.
+- The desk accepts day passes.
+- The member or their company has available day passes.
+
+Administrators can also use a member's available day passes when booking on their behalf. Learn more about [day passes](/admin/billing/credits-and-day-passes/day-passes).
+
+## Invoice
+
+The Invoice payment method adds the charge to an invoice instead of collecting payment immediately. Customers can use it only for the services enabled in their personal or company payment permissions.
+
+- **Personal invoice** is used by an individual customer.
+- **Company invoice** is used by eligible company managers and members, according to the company's permissions.
+
+See [Pay with invoice](/admin/billing/payments/pay-with-invoice) for setup and billing behavior.
+
+## New payment method
+
+The **New payment method** option is available when a payment gateway is connected and the selected service has a monetary price. It lets customers enter new payment details and complete the payment through the connected gateway.
+
+## Saved payment method
+
+Customers can reuse payment methods supported and securely saved by the connected gateway.
+
+### Saved credit card
+
+A saved card becomes available after it is added manually or successfully used for a payment. Administrators can use an eligible saved card to:
+
+- Create a booking for the customer.
+- Charge an invoice.
+- [Create a one-off payment](/admin/billing/payments/create-one-off-payments).
+
+### Saved bank account
+
+A saved bank account may be available for invoice payments when the connected gateway supports bank debits. Administrators can use an eligible saved bank account to charge the customer's invoices.
+
+## Payment methods available to administrators
+
+When booking for a member, an administrator may see:
+
+- Free
+- External
+- Personal or company credits
+- Personal or company day passes
+- Personal or company invoice
+- The customer's saved payment methods
+
+When booking for a nonmember, an administrator may see:
+
+- Free
+- External
+- Personal invoice
+- The customer's saved payment methods
+
+The exact options depend on the customer's balances, permissions, service settings, and connected integrations.
