@@ -1,3 +1,68 @@
 ---
 title: "Discounts"
+description: "Overview of the RNTOR discount system, how to create coupons, and the ways to use, apply and share them"
 ---
+
+Discounts help you attract new customers, increase loyalty and retention, and drive demand for your products and services. RNTOR lets you create discounts with flexible custom rules and use them in the way that fits your goal.
+
+<Frame>
+  <iframe src="https://www.youtube.com/embed/Iov2QXTOz7s" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+</Frame>
+
+Two key concepts to understand:
+
+* **Coupon** — represents the discount and its rules: what products it applies to, the discount percentage or amount, how long it lasts, and how many times it can be used.
+* **Promo code** — a unique code word (e.g., *SUMMER20*) linked to a coupon. Administrators share promo codes with specific customers or in promotions. Customers enter the code in the member portal at checkout to redeem the discount (coupon).
+
+## Create coupons
+
+1. Go to **Billing** > **Discounts**.
+2. Click **Create coupon** and configure its properties.
+
+|                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| :------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Redeemable for**                    | Choose the product type(s) the discount applies to: <ul><li>Room bookings</li><li>Conference room bookings</li><li>Event space bookings</li><li>Meeting room bookings</li><li>Phone booth bookings</li><li>Studio bookings</li><li>Station bookings</li><li>Hot desk bookings</li><li>Dedicated desk bookings</li><li>Parking bookings</li><li>Equipment bookings</li><li>Event tickets</li><li>Shop products</li><li>Packages</li><li>Subscription items (discounts for membership plans or resource plans)</li></ul> |
+| **Apply to specific items**           | Enable if the discount should apply only to selected items. Select the items from the dropdown.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Discount type**                     | Fixed amount or Percentage.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Percentage**, % or **Fixed amount** | Depending on the selected discount type, enter the discount percent or amount.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Applicable to credits**             | Available only for **Percentage** discounts. Enable if  the discount should apply to both monetary and credit payments.                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Duration type**                     | Applicable only to **Subscription items**. Defines how long the discount applies to subscription invoices: <ul><li>**Forever** — applies indefinitely until the administrator removes the coupon from the subscription</li><li>**Once** — applies only to the first subscription invoice generated after the coupon is applied</li><li>**Repeating** — applies to all subscription invoices generated during the selected period.</li></ul>                                                                            |
+| **Duration in months**                | Available only for the **Repeating** duration type. Defines the number of months the discount will apply to subscription invoices.                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Limited redemption**                | Enable to limit how many times the coupon can be redeemed across all customers. The limit applies to transactions, not seats or items — if the limit is 5, the coupon can be applied to 5 separate transactions.                                                                                                                                                                                                                                                                                                       |
+
+<Info>
+  Choose the right **Redeemable for** type so discounts apply as expected:
+
+  * For short-term (hourly, daily) bookings, create coupons redeemable for the relevant **Bookings** (e.g., room, meeting room, hot desk).
+  * For long-term subscriptions (weekly, monthly, and longer) for plans or resource rentals, create coupons redeemable for **Subscription items**.
+
+  If one discount should be valid for both, select both types in the **Redeemable for** field.
+</Info>
+
+<Info>
+  Once created, a coupon cannot be edited. If **Apply to specific items** was enabled during creation, only the applicable items can be modified later. You can [delete a coupon](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#delete-a-coupon) and create a new one.
+</Info>
+
+## What's next
+
+Once you have created discount coupons, you can put them to work in three ways:
+
+<Columns cols={3}>
+  <Column>
+    <Card title="Membership discounts" href="/docs/billing/discounts/give-and-apply#give-discounts-with-plans-and-subscriptions">
+      Include coupons in plans and subscriptions so that eligible members pay a reduced rate for products and services.
+    </Card>
+  </Column>
+
+  <Column>
+    <Card title="Targeted discounts" href="/docs/billing/discounts/give-and-apply#apply-discounts-to-specific-customers-bookings-and-subscriptions">
+      Apply coupons directly to specific customers' bookings or subscriptions, or share promo codes with targeted customers.
+    </Card>
+  </Column>
+
+  <Column>
+    <Card title="Promotions and campaigns" href="/docs/billing/discounts/give-and-apply#create-promo-codes">
+      Use promo codes in your promotions and marketing campaigns.
+    </Card>
+  </Column>
+</Columns>
