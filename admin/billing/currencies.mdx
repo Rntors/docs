@@ -1,86 +1,93 @@
 ---
 title: "Currencies"
+description: "Configure alternative currency conversions and let members pay for services in a different currency"
 ---
 
 You can add alternative currencies in addition to your main location currency and assign them to all or specific customers. All invoices or purchases for those customers will be automatically converted.
 
 Use alternative currencies when:
 
-- Your main location pricing is set in a stable currency, but customers need to pay in your local currency.
-- Specific customers, such as foreigners, require payments in a different currency.
+* Your main location pricing is set in a stable currency, but customers need to pay in your local currency.
+* Specific customers (e.g, foreigners) require payments in a different currency. ​
 
 ## Add an alternative currency
 
-1. Go to **Location settings** \> **Billing** \> **Currencies** tab.
-2. In the **Alternative currencies** section, press `Add currency`.
+1. Go to **Location settings** > **Billing >** **Currencies** tab.
+2. In the **Alternative currencies** section, press **Add currency**.
 
 <Frame>
-  ![Screenshot 2026 06 15 At 11 07 17 PM](/images/Screenshot-2026-06-15-at-11.07.17-PM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
 3. Select the currency.
 4. Choose how the exchange rate is updated:
-   - Turn on **Auto-update rate** and select a **Provider**. Rates are updated automatically based on the provider’s data.
-   - Leave **Auto-update rate** off and update the rate manually when needed.
+   * Turn on **Auto-update rate** and select a **Provider**. Rates are updated once per hour based on the provider's data. Available providers:
+     * **Central Bank of Argentina (BCRA)** — for conversions to and from ARS (Argentine peso).
+     * **Central Bank of Chile (BCCH)** — for conversions to and from CLP (Chilean peso) and CLF (Unidad de Fomento).
+     * **National Bank of Georgia (NBG)** — for conversions to and from GEL (Georgian lari).
+     * **National Bank of Ukraine (NBU)** — for conversions to and from UAH (Ukrainian hryvnia).
+     * **European Central Bank (ECB)** — converts between any two supported currencies via EUR.
+     * **fastForex** — deprecated, can't be selected for new currencies.
+   * Leave **Auto-update rate** off and update the rate manually when needed.
 
 <Frame>
-  ![Screenshot 2026 06 15 At 11 10 13 PM](/images/Screenshot-2026-06-15-at-11.10.13-PM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
 ## Apply an alternative currency
 
 ### To all customers
 
-1. Go to **Location settings** \> **Billing** \> **Currencies** tab.
-2. Add an alternative currency.
+1. Go to **Location settings** > **Billing >** **Currencies** tab.
+2. [Add an alternative currency.](#add-an-alternative-currency)
 3. Select it as the **Default alternative currency**.
 
 <Info>
-  The default alternative currency will apply to all customers who register after you set it. Your existing customers won’t be affected. If necessary, apply it manually in their profiles.
+  The default alternative currency will apply to all customers who register after you set it. Your existing customers won't be affected. If necessary, [apply it manually](#to-specific-customers) in their profiles.
 </Info>
 
 <Frame>
-  ![Screenshot 2026 06 15 At 11 21 14 PM](/images/Screenshot-2026-06-15-at-11.21.14-PM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
 ### To specific customers
 
-1. Go to the [Customers page](/admin/customer-management/users) and open the customer’s profile.
+1. Go to the **Customers** page > open the customer's profile.
 2. On the right-hand panel, enable **Alternative currency** and choose the currency.
 
 <Frame>
-  ![Screenshot 2026 06 15 At 11 40 04 PM](/images/Screenshot-2026-06-15-at-11.40.04-PM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
 ## How alternative currency works
 
 ### One-off purchases
 
-- Customers see prices for all resources and services in your main currency, for example USD.
+* Customers see prices for all resources and services in your main currency (e.g., USD).
 
 <Frame>
-  ![Screenshot 2026 06 15 At 11 54 44 PM](/images/Screenshot-2026-06-15-at-11.54.44-PM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
-- When they start a booking or make a purchase, the amount is automatically converted using the current exchange rate.
-- At checkout, customers see the converted amount in the alternative currency, for example EUR.
+* When they start a booking or make a purchase, the amount is automatically converted using the current exchange rate.
+* At checkout, customers see the converted amount in the alternative currency (e.g., EUR).
 
 <Frame>
-  ![Screenshot 2026 06 16 At 7 41 44 AM](/images/Screenshot-2026-06-16-at-7.41.44-AM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
-- Receipt breakdown displays the amounts in the alternative currency, too.
+* Receipt breakdown displays the amounts in the alternative currency, too.
 
 ### Invoices
 
-- Invoice drafts appear in the main currency.
-- When the invoice is issued, the system converts the amounts using the exchange rate at that moment.
-- After issuance, the invoice breakdown and PDF appear in the alternative currency, for example EUR.
+* Invoice drafts appear in the main currency.
+* When the invoice is issued, the system converts the amounts using the exchange rate at that moment.
+* After issuance, the invoice breakdown and PDF appear in the alternative currency (e.g., EUR).
 
 <Frame>
-  ![Screenshot 2026 06 16 At 9 23 36 AM](/images/Screenshot-2026-06-16-at-9.23.36-AM.png)
+  <img src="" alt="Upload screenshot" />
 </Frame>
 
-<Info>
+<Tip>
   If you turned off the **Auto-update rate**, be sure to update the exchange rate manually before issuing the invoice.
-</Info>
+</Tip>
