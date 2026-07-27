@@ -1,73 +1,108 @@
 ---
 title: "Payment gateway"
-description: "Learn how customers make online payments, track transactions, and manage saved payment methods"
+description: "Learn how users make payments online, manage saved payment methods, and understand transaction statuses"
 ---
 
-Connect a supported payment gateway to let customers pay online for bookings, event tickets, shop orders, packages, subscriptions, and invoices.
+With a [payment gateway connected](/admin/integrations/payments/overview), users can pay online for supported products and services.
 
-See [Payments integrations](/admin/integrations/payments/overview) to connect and configure a gateway.
+## How users make payments
 
-## How customers make payments
+1. At checkout, the user selects a **saved payment method** or **New payment method**.
 
-1. During a booking or purchase, the customer selects a saved payment method or **New payment method**.
-2. For a new payment method, RNTOR opens the connected gateway's secure payment flow.
-3. The customer completes the payment using an option supported by that gateway.
-4. RNTOR records a transaction and updates its status.
-5. After a successful payment, the customer receives confirmation and can access the related invoice and receipt.
+<Frame caption="Image placeholder — choosing a payment method">
+  **Image placeholder:** payment selection during checkout.
+</Frame>
 
-Customers can review their billing activity from **Membership > Billing**. Administrators can review location transactions from **Billing > Transactions**.
+2. For a new method, RNTOR opens the gateway’s secure payment page, where the user chooses from the methods supported by that gateway.
+
+<Frame caption="Image placeholder — payment gateway checkout">
+  **Image placeholder:** hosted payment page.
+</Frame>
+
+3. RNTOR creates a transaction for every initiated payment.
+   - Users check it under **Membership > Billing > Transactions**.
+   - Administrators check all location transactions under **Billing > Transactions**.
+4. After a successful payment, the user sees confirmation and receives the available invoice and receipt by email.
 
 ## Track transactions
 
-Use **Billing > Transactions** to review monetary, credit, and day-pass activity.
+Administrators can track and manage transactions from **Billing > Transactions**.
 
-### Transaction statuses
+<Frame caption="Image placeholder — Billing > Transactions">
+  **Image placeholder:** transactions page with filters.
+</Frame>
+
+- Switch between the **Money**, **Credits**, and **Day passes** tabs.
+- Filter by **Status**:
 
 | Status | Meaning |
 | --- | --- |
-| **Paid** | The payment completed successfully. |
-| **Pending** | The payment was started but is not complete, or an administrator created an external booking awaiting payment. |
-| **Processing** | The gateway or customer's bank is still confirming the payment. |
-| **Canceled** | The payment was not completed or a pending external transaction was canceled. |
+| **Paid** | Payment completed successfully. |
+| **Pending** | The customer has not completed checkout yet, or an External booking is waiting for payment. |
+| **Processing** | The payment was submitted and is awaiting confirmation from the gateway or bank. |
+| **Canceled** | Checkout expired or an administrator canceled a pending external transaction. |
 | **Failed** | The gateway declined or could not complete the payment. |
-| **Refunded** | The full paid amount was refunded. |
-| **Partially refunded** | Part of the paid amount was refunded. |
 
-Use filters to narrow transactions by status, type, customer, location, or date. For accounting exports, see [Reports](/admin/analytics-reports/reports).
+- Filter by **Type** to isolate subscriptions, invoices, packages, bookings, tickets, orders, custom payments, and credit/day-pass activity.
+- Filter by **Customer** or **Create date** for reconciliation.
 
-## Manage saved payment methods
+## Manage payment methods
 
-Saved payment methods are handled by the connected gateway. RNTOR displays only the reusable payment method details required for recognition, such as the brand and last four digits.
+When supported by the connected gateway, customers can save payment methods for faster checkout and automatic invoice payments.
 
 ### Add a payment method
 
-Customers can add a payment method from **Membership > Billing > Payment methods**.
+Customers:
 
-Administrators can add one for a customer:
+1. Go to **Membership > Billing**.
+2. Open the personal or company section.
+3. Under **Payment methods**, press **Add** and enter the details through the gateway.
 
-1. Go to **Customers**.
-2. Open the customer profile.
-3. In **Payment methods**, click **Add**.
-4. Complete the gateway flow and save.
+<Frame caption="Image placeholder — member adds a payment method">
+  **Image placeholder:** member billing payment methods.
+</Frame>
+
+Administrators:
+
+1. Go to **Customers** and open the customer profile.
+2. In **Payment methods**, press **Add**.
+
+<Frame caption="Image placeholder — administrator adds a payment method">
+  **Image placeholder:** customer profile payment methods.
+</Frame>
+
+3. Complete the secure gateway flow and save.
+
+Administrators can use saved methods to create bookings, [charge invoices](/admin/billing/invoices/record-invoice-payments), and [create one-off payments](/admin/billing/payments/create-one-off-payments).
 
 ### Set a default payment method
 
-The default payment method is used for eligible automatic invoice charges.
+The default method is used for eligible subscription invoice auto-charges.
 
-Customers or administrators can open the menu beside a saved method and select **Set as default**.
+1. Open **Membership > Billing** or the customer profile.
+2. Press **(…)** beside the saved method.
+3. Select **Set as default**.
 
-### Change the default payment method
+### Change a default payment method
 
 1. Add the replacement payment method.
-2. Set the new method as default.
-3. Delete the previous method if it is no longer needed.
+2. Press **(…)** beside it and select **Set as default**.
+3. Delete the old method if it is no longer needed.
 
 ### Delete a payment method
 
-Open the menu beside the saved method and select **Delete**.
+Customers or administrators press **(…)** beside the method and select **Delete**.
 
-A customer with an active subscription may need to set another payment method as default before deleting the current default. Administrators can also disable subscription **Auto-pay** when invoices should no longer be charged automatically.
+<Frame caption="Image placeholder — delete a payment method">
+  **Image placeholder:** payment method actions menu.
+</Frame>
 
-<Info>
-  Availability of cards, bank debits, wallets, automatic charges, and refunds depends on the connected payment gateway and its configuration.
-</Info>
+#### Delete a default payment method
+
+A customer with an active subscription must add another method and make it default before deleting the current default. An administrator can instead disable subscription [Auto-pay](/admin/billing/subscriptions/control-invoice-auto-charge) when invoices should no longer be charged automatically.
+
+## FAQs
+
+<Accordion title="How can I check which payment gateway processed a payment?">
+  Go to **Analytics & reports > Reports**, create a **Transactions** report, select the date range and status, then download it. Check the **Payment type** field for the relevant transaction.
+</Accordion>
