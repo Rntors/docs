@@ -1,3 +1,146 @@
 ---
-title: "Set up taxes"
+title: "Taxes"
+description: "Configure your location's tax type, rate, and inclusive or exclusive tax option, and understand how tax is applied"
 ---
+
+Automatically apply your fixed tax rate to all monetary prices in the location.
+
+## Enable taxes
+
+Set a default tax rate for all monetary prices in a location:
+
+1. Go to **Location settings** > **Billing** > **Taxes** tab.
+2. Toggle on the **Taxes** switch.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+3. **Tax type** — determines tax name on invoices and receipts.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+4. **Tax rate** — the percentage of tax that will apply to all prices and invoices, except for those with a [custom tax rate.](/admin/billing/taxes/custom-tax-rates)
+5. **Tax option**
+   * **Inclusive** tax is a part of the price. If you choose the inclusive tax option, set prices for all resources and services with the tax included (gross).
+   * **Exclusive** tax applies on top of the price. If you select the exclusive tax option, set prices for all resources and services excluding the tax (net).
+6. **Display tax-exclusive prices** — this setting is useful if your tax option is **Inclusive**, but your country's regulations require invoice and receipt line items to show amounts excluding tax. This requirement applies in some EU countries.
+   * Enable to display all line item amounts on invoices and receipts excluding tax.
+   * Disable to display all line item amounts on invoices and receipts including tax.
+
+<Info>
+  If your tax option is **Exclusive**, line item amounts on the invoices and receipts are always shown excluding tax, regardless of this setting.
+</Info>
+
+An example of an invoice with tax-inclusive amounts:
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+An example of the same invoice with tax-exclusive amounts:
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+6. The tax will be auto-saved and applied to all future purchases unless the [custom tax rate](/admin/billing/taxes/custom-tax-rates) is set for specific products and services.
+
+## Edit taxes
+
+Change the default tax rate for all monetary prices in a location:
+
+1. Go to **Location settings** > **Billing** > **Taxes** tab.
+2. Change your tax type, tax rate, or select another tax option.
+
+## Disable taxes
+
+Disable a default tax rate for all monetary prices in a location.
+
+1. Go to **Location settings** > **Billing** > **Taxes** tab.
+2. Disable the **Taxes** switch.
+
+<Info>
+  Changes to the tax rate, tax option, or disabling the **Taxes** switch apply only to new purchases and newly issued invoices or receipts. Changing the tax type, however, updates all invoices and receipts, both past and future.
+</Info>
+
+## How taxes work
+
+* Users see the price with the tax included in the checkout.
+* All taxes are applied to prices automatically. A tax breakdown is available on all [invoices](/admin/billing/invoices/download-an-invoice) and [receipts](/admin/billing/payments/receipts).
+* If the taxes in the whole location are enabled, you can [set custom tax rates](/admin/billing/taxes/custom-tax-rates) for certain plans, subscription items, invoice items, shop products, and events.
+
+## How discounts affect taxes
+
+Discounts are subtracted from the original price of an item—i.e., the price you enter for the item—*before* taxes are calculated.
+
+After the discount is applied, the system (re-)calculates the taxable amount and tax amount from the remaining, discounted price. Since applying a discount reduces the taxable amount, the new taxable amount is explicitly indicated in brackets next to the tax on the invoice or receipt.
+
+### Inclusive tax example
+
+In the case of an inclusive tax, the discount is subtracted from the original (tax-inclusive) amount. Then, taxable and tax amounts are recalculated based on the new, discounted amount.
+
+Examples of calculations after a discount application:
+
+| Invoice/receipt properties                                | Example 1 | Example 2 |
+| --------------------------------------------------------- | --------- | --------- |
+| Original item amount (tax-inclusive)                      | \$100.00  | \$100.00  |
+| Discount                                                  | \$50.00   | 10%       |
+| Discount amount                                           | \$50.00   | \$10.00   |
+| New discounted amount (Original amount - Discount amount) | \$50.00   | \$90.00   |
+| Tax rate (Applies to the new discounted amount)           | 10% incl. | 10% incl. |
+| New taxable amount                                        | \$45.45   | \$81.82   |
+| New tax amount                                            | \$4.55    | \$8.18    |
+| **Total**                                                 | \$50.00   | \$90.00   |
+
+Example of an invoice before a discount:
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+Example of an invoice after a discount:
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+<Info>
+  If you're using **Inclusive** tax with the option to **Display tax-exclusive prices** enabled, the Unit amount and Amount will also be adjusted on the invoice and receipt breakdown to reflect tax recalculations after the discount is applied.
+</Info>
+
+### Exclusive tax example
+
+In the case of an exclusive tax, the discount is subtracted from the original (tax-exclusive) amount. Then, taxable and tax amounts are calculated based on the new, discounted amount and added on top.
+
+Examples of calculations after a discount application:
+
+| Invoice/receipt properties                                | Example 1 | Example 2 |
+| --------------------------------------------------------- | --------- | --------- |
+| Invoice item original amount (tax-exclusive)              | \$100.00  | \$100.00  |
+| Discount                                                  | \$50.00   | 10%       |
+| Discount amount                                           | \$50.00   | \$10.00   |
+| New discounted amount (Original amount - Discount amount) | \$50.00   | \$90.00   |
+| Tax rate (Applies to the new discounted amount)           | 10% excl. | 10% excl. |
+| New taxable amount                                        | \$50.00   | \$90.0    |
+| New tax amount                                            | \$5.00    | \$9.0     |
+| **Total**                                                 | \$55.00   | \$99.00   |
+
+Example of an invoice before a discount:
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+Example of an invoice after a discount:
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+### Notes
+
+* A discount modifies the item’s price. It's not a separate item, so it doesn't have its own tax breakdown and other attributes that invoice items have.
+* Since tax is applied to the invoice item amount *after* the discount, the discount amount always stays the same, regardless of tax settings.
