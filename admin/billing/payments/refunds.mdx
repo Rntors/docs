@@ -9,8 +9,8 @@ RNTOR supports automatic and admin-initiated refunds for the following payment m
 | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------- |
 | Credits                                                                                                                                     | ✓<br />Enabled by default                          | ✓                                         |
 | External                                                                                                                                    | *X*                                                | ✓                                         |
-| [Stripe](/admin/integrations/payments/stripe)<br />[KakaoPay](/admin/integrations/payments/kakaopay)<br />[WayForPay](/admin/integrations/payments/wayforpay) | ✓<br />Yes, if enabled in the integration settings | ✓                                         |
-| [Other payment gateways](/admin/integrations/payments)                                                                                            | *X*                                                | *X*                                       |
+| [Stripe](/admin/integrations/payments/stripe/stripe)<br />[KakaoPay](/admin/integrations/payments/overview)<br />[WayForPay](/admin/integrations/payments/overview) | ✓<br />Yes, if enabled in the integration settings | ✓                                         |
+| [Other payment gateways](/admin/integrations/payments/overview)                                                                                            | *X*                                                | *X*                                       |
 
 You can enable or disable and set conditions for automatic refunds by setting the rescheduling or refund policy for each resource and service.
 
@@ -23,7 +23,7 @@ You can initiate a refund for a credit transaction, or [manually add the credits
 To enable automatic refunds:
 
 1. In RNTOR, click the **(...)** menu next to the location name on the left-side panel.
-2. Go to **Integrations** > open your payment gateway's page ([Stripe](/admin/integrations/payments/stripe), [WayForPay](/admin/integrations/payments/wayforpay), or [KakaoPay](/admin/integrations/payments/kakaopay)).
+2. Go to **Integrations** > open your payment gateway's page ([Stripe](/admin/integrations/payments/stripe/stripe), [WayForPay](/admin/integrations/payments/overview), or [KakaoPay](/admin/integrations/payments/overview)).
 3. Toggle on **Automatic refunds**.
 
 <Frame>
@@ -57,7 +57,7 @@ To enable automatic refunds:
 To set the refund policy for events:
 
 1. Go to RNTOR > **Engagement** > **Events**.
-2. [Add a new event](/admin/engagement/events) or [edit an existing one](/admin/engagement/events#edit-an-event).
+2. [Add a new event](/admin/engagement/events/set-up-events) or [edit an existing one](/admin/engagement/events/set-up-events#edit-an-event).
 3. Choose the necessary property in the **Refund policy** section.
 
 <Frame>
@@ -198,7 +198,7 @@ For any credit or day pass transaction, the system maintains a transparent audit
 Before issuing a monetary refund, consider offering alternatives to retain customers:
 
 * Offer a refund in [credits](/admin/billing/credits-and-day-passes/credits) instead of money. No transaction fees apply, and users can spend them on your services.
-* Give a [promo code](/admin/billing/discounts/give-and-apply-discounts#create-promo-codes) with the appropriate discount to encourage future purchases.
+* Give a [promo code](/admin/billing/discounts/coupons-and-promo-codes#create-promo-codes) with the appropriate discount to encourage future purchases.
 
 **FAQs**
 
@@ -228,7 +228,7 @@ Before issuing a monetary refund, consider offering alternatives to retain custo
 </Accordion>
 
 <Accordion title="Why don't I see a Refund button to issue a refund to a customer via RNTOR?">
-  The **Refund** button in RNTOR is only available if the payment gateway integration you use supports refunds directly from RNTOR: [Stripe](/admin/integrations/payments/stripe), [WayForPay](/admin/integrations/payments/wayforpay), or [KakaoPay](/admin/integrations/payments/kakaopay).
+  The **Refund** button in RNTOR is only available if the payment gateway integration you use supports refunds directly from RNTOR: [Stripe](/admin/integrations/payments/stripe/stripe), [WayForPay](/admin/integrations/payments/overview), or [KakaoPay](/admin/integrations/payments/overview).
 
-  For [other payment gateways](/admin/integrations/payments) that don't support refund initiation via RNTOR, the **Refund** button isn't available. You'll need to [issue the refund manually from the payment gateway's dashboard](/admin/billing/payments/refunds#issue-refunds-via-payment-gateway-dashboard) instead.
+  For [other payment gateways](/admin/integrations/payments/overview) that don't support refund initiation via RNTOR, the **Refund** button isn't available. You'll need to [issue the refund manually from the payment gateway's dashboard](/admin/billing/payments/refunds#issue-refunds-via-payment-gateway-dashboard) instead.
 </Accordion>
