@@ -1,3 +1,159 @@
 ---
 title: "Day passes"
+description: "Set up day passes payment method for hot desks, sell day passes with recurring subscriptions or one-time packages, and manually manage member day pass balances"
 ---
+
+Day passes are a payment method for booking hot desks. With the help of day passes you can:
+
+* Sell flexible access plans, such as "10 day passes per month" or a "20 day passes per 3 months".
+* Sell one-off day pass packages
+* Let the system handle automatic member balance reduction upon each booking
+* Give expiring or non-expiring day passes to customers as a promotion.
+
+<Frame>
+  <iframe src="https://www.youtube.com/embed/VvuSnlePVBE" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+</Frame>
+
+## Set up day passes
+
+1. Click the **(...)** menu next to your location name on the left-side panel.
+2. Go to **Location settings** > **Resources** > **Desks**.
+3. Enable **Day passes** and [configure **Usage limit**.](/admin/resource-management/overview#desks)
+4. If you have multiple locations, [set cross-location day pass](/admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes) usage.
+5. Go to the **Desks** page and [add your hot desks.](/admin/resource-management/overview#desks)
+   * Enable the **Day passes** switch to let members book this desk with day passes.
+   * [Set monetary price](/admin/resource-management/resources/set-up-pricing) for nonmember bookings or if members run out of day passes.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+<Info>
+  Only resources with the **Hot desk** type can be booked with day passes.
+</Info>
+
+## Sell day passes to customers
+
+### With recurring plans
+
+1. [Create](/admin/billing/plans/set-up-plans) or [edit](/admin/billing/plans/set-up-plans#edit-or-delete-a-plan) a plan.
+2. Add a specific number of day passes to it.
+3. Once users [sign up for a plan with day passes](/admin/billing/plans/immediate-plan-sign-ups) or administrators [create a subscription](/admin/billing/subscriptions/set-up-subscriptions) for them, they receive day passes to their balance.
+4. They use day passes to book a hot desk on the **Desks** page on the dates they visit the space. The system automatically reduces their balance.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+5. Any unused day passes expire at renewal and the new balance accrues.
+6. If a subscription ends or is canceled, all remaining day passes expire.
+
+### One-time packages
+
+Offer to purchase non-recurring day pass packages for customers who need additional or occasional usage.
+
+1. Create standalone [**packages**](/admin/billing/credits-and-day-passes/packages).
+2. Members can discover and purchase them on **Membership > Day passes.**
+3. They receive day passes immediately upon purchase and can use them until the package expiration date (if there is any).
+
+<Info>
+  1 day pass is the cost of 1 desk booking regardless of duration.
+</Info>
+
+<Info>
+  Only members can receive, purchase and book with day passes. Nonmembers book and pay for the hot desks with money.
+</Info>
+
+## View customer's day pass balance
+
+1. Go to the **Customers** page.
+2. Open the user or company profile.
+3. Locate the **Day pass balance** section.
+   * See the customer's current balance
+   * Review day pass expiration details below.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+## Add day passes
+
+1. Open the user or company profile.
+2. In the **Day pass balance** section, click **Adjust balance**.
+3. **Adjustment type** — choose **Add**.
+4. **Expiration**
+   * Choose **Never** to give non-expiring day passes, or
+   * Select a specific expiration date
+5. Enter the amount.
+6. Optionally, add a **Memo** to help the customer identify the adjustment.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+The customer will get a [notification](/member/account/notifications) about the added day passes.
+
+## Deduct day passes
+
+1. Open the user or company profile.
+2. In the **Day pass balance** section, click **Adjust balance**.
+3. **Adjustment type** — choose **Deduct**.
+4. Enter the amount.
+5. Optionally, add a **Memo** to help the customer recognize the deduction.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+<Info>
+  If a customer has expiring and non-expiring day passes or day passes with different expiration dates, the system will deduct day passes with the earliest expiration date first.
+</Info>
+
+The customer will get a [notification](/member/account/notifications) about the day pass deduction.
+
+## Track day pass usage history
+
+Both administrators and members can view day pass transaction history to track additions and usage.
+
+Administrators:
+
+1. Go to the **Customers** page.
+2. Open the user or company profile.
+3. Next to the **Day pass balance** section > click **(...)** > **View transactions**.
+
+Members:
+
+1. Go to the **Membership** page.
+2. Under the personal or company section, select **Day passes > Transactions**.
+
+<Frame>
+  <img src="" alt="Upload screenshot" />
+</Frame>
+
+**FAQs**
+
+<Accordion title="How can users book one day pass?">
+  If a user customer to book one day pass for a specific date, they must book a hot desk directly on the **Desks** page and pay the required monetary amount. Meanwhile, if they want to buy multiple day passes, they can:
+
+  * Sign up for a recurring plan with day passes, or
+  * Purchase a one-off package of day passes.
+</Accordion>
+
+<Accordion title="For a user with an annual 'Unlimited day pass' subscription, do I still need to assign 365 day passes?">
+  It depends on whether you want to give the user a dedicated desk or allow flexible access:
+
+  1. **Dedicated desk:** [Assign one seat to the customer](/admin/resource-management/resources/manage-resource-rentals-with-assignments) in the **Assignments** section of their subscription. This desk becomes theirs exclusively, reducing overall desk availability. They won't need to book it daily, and others won't be able to use it.
+  2. **Flexible access:** Provide the customer with 365 day passes in their subscription and ask to check in by booking a desk each day they visit, using one pass from their balance. This allows the desk to stay available for others when they're not using it.
+</Accordion>
+
+<Accordion title="Can I manage member's expired day passes?">
+  When a member's subscription expires, managing their day passes becomes not possible because day passes are directly tied to an active subscription. Once the subscription ends, day passes expire as well.
+
+  To regain day passes, your member can [re-subscribe](/admin/billing/plans/immediate-plan-sign-ups) to a plan that includes them, or you can [create a subscription](/admin/billing/subscriptions/set-up-subscriptions) for them.
+</Accordion>
+
+<Accordion title="How can I give a promotion for one-time use, free trial day or a discounted desk booking to new customers?">
+  You can invite this customer as a member and add one or a few day passes for free to their balance.
+
+  Alternatively, [**create a coupon and promo code**](/guides/promotion/use-coupons-and-promo-codes) and enable the **Limited by first purchase** setting, then add the desired discount for all or a specific desk in your app. Give the promo code to the customer. They can [**redeem their discount**](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases) directly at checkout when booking a desk in your member portal.
+</Accordion>
