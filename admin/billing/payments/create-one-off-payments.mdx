@@ -1,54 +1,50 @@
 ---
 title: "Create one-off payments"
-description: "Charge a customer for an ad hoc product or service without creating a booking, order, or subscription"
+description: "Quickly charge custom one-off payments or record external ad-hoc transactions"
 ---
 
-Create a one-off payment when you need to charge a customer for an item that is not represented by a booking, event ticket, shop order, package, or subscription.
+When you need to charge outside standard checkout and recurring subscription invoices, you can:
 
-Examples include printing, damages, replacement access cards, additional services, and other ad hoc charges.
+- [Create and issue a one-off invoice](/admin/billing/invoices/issue-invoices) for the customer to pay later.
+- Create a one-off payment to charge a saved method immediately or record money already collected externally.
 
 ## Create a one-off payment
 
-1. Go to **Customers**.
-2. Open the customer profile.
-3. Open the actions menu and select **Create payment**.
-4. Enter a description of the product or service.
-5. Enter the quantity, unit price, tax, and discount if applicable.
-6. Choose the payment method:
-   - A saved payment method to charge the customer online.
-   - **External** when payment was collected outside RNTOR.
-   - **Invoice** when the charge should be billed later.
-7. Review the total and confirm.
+1. Go to **Billing > Transactions** and press **Create payment**.
 
-The available methods depend on the customer's payment settings and your connected [payment gateway](/admin/billing/payments/payment-gateway).
+<Frame caption="Image placeholder — Create payment">
+  **Image placeholder:** Create payment button on Billing > Transactions.
+</Frame>
 
-## Charge a saved payment method
+2. Select the customer.
+3. Enter:
+   - **Description**
+   - **Quantity**
+   - **Unit price**
+   - **Currency**, including an [alternative currency](/admin/billing/currencies) when applicable
+   - **Tax rate**, including a [custom tax rate](/admin/billing/taxes/custom-tax-rates) when applicable
+   - **Payment method** — an eligible saved method or [External](/admin/billing/payments/external)
+4. Enter required [billing details](/admin/customer-management/billing-details).
+5. Confirm the payment.
 
-Select an eligible saved card or bank account to charge the customer immediately.
+## How creating one-off payments works
 
-After a successful charge:
+After confirmation:
 
-- RNTOR records a paid transaction.
-- An invoice and [receipt](/admin/billing/payments/receipts) are generated.
-- The customer can access the documents from their billing history.
+1. RNTOR creates the transaction in the customer profile and creates its invoice.
 
-If the payment fails, review the transaction status and the gateway response before retrying.
+<Frame caption="Image placeholder — one-off payment transaction">
+  **Image placeholder:** customer transaction and related invoice.
+</Frame>
 
-## Record an external one-off payment
+- For a saved method, RNTOR initiates the charge and displays whether it succeeds or fails.
+- For **External**, RNTOR records an externally collected payment.
+2. Analytics and reports identify the transaction as a **Custom** payment.
 
-Choose **External** when you already collected the amount outside RNTOR. RNTOR records the transaction and generates the related invoice and receipt without processing money through the connected gateway.
+## Best practices
 
-## Add the charge to an invoice
+A one-off payment is useful when:
 
-Choose the customer's personal or company invoice when the amount should be paid later.
-
-Depending on the customer's configuration, the item is either:
-
-- Added to an upcoming subscription invoice, or
-- Saved under [Pending invoice items](/admin/billing/invoices/pending-invoice-items).
-
-See [Pay with invoice](/admin/billing/payments/pay-with-invoice) for configuration details.
-
-## Review one-off payments
-
-Administrators can review the transaction from **Billing > Transactions** or the customer's profile. Use [Reports](/admin/analytics-reports/reports) to export one-off payment data for reconciliation.
+1. A disputed payment must be charged again.
+2. An urgent service or last-minute upgrade requires immediate payment.
+3. You need to record a small ad-hoc fee or supplemental service not covered by normal invoicing.
