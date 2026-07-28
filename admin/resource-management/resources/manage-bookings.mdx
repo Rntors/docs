@@ -1,78 +1,181 @@
 ---
-title: "Manage bookings"
+title: "Bookings"
+description: "Learn how administrators book rooms, desks, offices, parking, equipment, and make recurring bookings; how users and administrators edit and cancel bookings, and how the system processes refunds and extra charges"
 ---
 
-Administrators can create, edit, and cancel bookings for customers or themselves across rooms, desks, offices, parking, and equipment.
+Administrators can create, edit, and cancel bookings for customers or themselves in the admin portal.
 
 ## Create a booking
 
-1. Open the relevant resource page.
-2. Select the date, time, duration, and quantity.
-3. Add an optional **title**, **memo**, or discount.
-4. Choose the customer in **Booker**.
-5. Select the payment method.
-6. Choose whether to notify the booker and invitees.
-7. Confirm the booking.
+1. Open the relevant resource page — **Rooms**, **Desks**, **Offices**, **Parking**, or **Equipment**.
+2. Start creating a booking.
+3. Choose the booking date, time, and number of seats. Optionally, add a title, memo, or apply a coupon discount.
+4. Choose the customer in the **Booker** field.
+5. Choose the [payment method](/admin/billing/payments/payment-methods) to charge the customer for the booking.
+6. If you book for another customer or add invitees, choose whether to notify them about the booking.
+
+<Info>
+  Administrators can also record bookings for past dates.
+</Info>
 
 <Frame>
+  <img src="" alt="Resource Management Resources Manage Bookings Create Booking" width="1935" height="1415" data-path="images/resource-management-resources-manage-bookings-create-booking.png" />
 </Frame>
-
-Administrators can also record bookings for past dates.
 
 ### Create a recurring booking
 
-1. Start a new booking.
-2. Open **Repeat** and choose a suggested pattern or **Custom**.
-3. Set the end date, number of occurrences, or leave the recurrence open-ended when supported.
-4. Select the booker and confirm.
+When a customer needs to book the same resource on a recurring schedule — for example, every Friday from 3:00 PM to 6:00 PM — you can create a recurring booking for them:
+
+1. Start creating a booking.
+2. Under the **Repeat** settings, choose one of the suggested recurrence patterns, or select **Custom** to set your own recurrence pattern.
+3. In the **End repeat** field, choose:
+
+* **On date** — to set a specific final booking date, or
+* **Never** — to set an open-ended recurrence.
+* For **Custom** recurrences, you can also choose **After number of occurrences** to schedule a specific number of recurring bookings.
+
+4. Choose the customer for whom you're booking in the **Booker** field.
 
 <Frame>
+  <img src="" alt="Resource Management Resources Manage Bookings Recurring Bookings" width="1584" height="1178" data-path="images/resource-management-resources-manage-bookings-recurring-bookings.png" />
 </Frame>
 
-Recurring bookings can be created with the payment options shown in the booking form. If a recurring charge is not available, create the reservation using **Free**, then invoice the customer or adjust their credits or day passes separately.
+<Tip>
+  Administrators can currently make recurring bookings only with the **Free** payment method. Users can make recurring bookings only for completely free resources.
+
+  If you need to charge the customer, create a recurring booking on their behalf with the **Free** method, then [issue an invoice](/admin/billing/invoices/issue-invoices#manual-one-off-invoices) for it, or deduct from their [credit](/admin/billing/credits-and-day-passes/credits#deduct-credits) or [day pass](/admin/billing/credits-and-day-passes/day-passes#deduct-day-passes) balance manually.
+</Tip>
 
 ## Edit a booking
 
-Open the booking from **Resources**, **Bookings**, or the customer profile. Select **(…) → Edit**, update the details, and save.
+To edit a booking, users and administrators follow these steps:
 
-- Administrators with the **Bookings** permission can edit customer bookings.
-- Customers can edit only within the resource’s rescheduling rules.
-- If a change increases the price, RNTOR collects the difference.
-- If it reduces the price, the configured refund policy applies.
+1. Open the relevant booking from the **Resources, Bookings,** or customer profile page.
+2. Click **(...)** in the top right corner > **Edit**.
+3. Make your changes and save. If the booking was made for another customer or has invitees, choose whether to notify them about the change.
 
 <Frame>
+  <img src="" alt="" width="2410" height="976" data-path="images/resource-management-bookings-edit-a-booking-1.png" />
 </Frame>
+
+Booking editing permissions differ for users and administrators.
+
+### How users edit bookings
+
+| Payment method/Change               | Credits, day passes, invoice, or free resource                                                                                                             | Payment gateway                                                                                                            |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Reschedule (change start date/time) | Up to a specific time before the booking starts, based on the resource's [rescheduling policy.](/admin/billing/payments/refunds)                                 | Up to a specific time before the booking starts, based on the resource's [rescheduling policy](/admin/billing/payments/refunds). |
+| Extend                              | Anytime before or during the booking, with an extra charge.                                                                                                | Can't extend. The prepaid amount is fixed. Create one more booking instead.                                                |
+| Shorten                             | Up to a specific time before the booking starts, based on the resource's [rescheduling policy](/admin/billing/payments/refunds), with a refund.                  | Can't shorten. The prepaid amount is fixed.                                                                                |
+| Change number of seats/items        | Up to a specific time before the booking starts, based on the resource's [rescheduling policy](/admin/billing/payments/refunds), with an extra charge or refund. | Can't change. The prepaid amount is fixed.                                                                                 |
+
+### How administrators edit bookings
+
+| Payment method/Change               | Credits, day passes, invoice, free resource                                   | Payment gateway, External                                                   |
+| ----------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Reschedule (change start date/time) | Anytime before, during, or after the booking.                                 | Anytime before, during, or after the booking.                               |
+| Extend                              | Anytime before, during, or after the booking, with an extra charge.           | Can't extend. The prepaid amount is fixed. Create one more booking instead. |
+| Shorten                             | Anytime before, during, or after the booking, with a refund.                  | Can't shorten. The prepaid amount is fixed.                                 |
+| Change number of seats/items        | Anytime before, during, or after the booking, with an extra charge or refund. | Can't change. The prepaid amount is fixed.                                  |
+
+**Notes**
+
+* If an administrator created a booking for a user, the user cannot edit it, regardless of the payment method.
+* Both users and administrators can edit the booking title, memo, and invitees at any time—before, during, or after the booking.
+* Every booking modification triggers a dedicated transaction to handle additional charges or refunds. This approach allows both users and administrators to audit booking history and associated costs with ease.
+* When editing or canceling a recurring booking, administrators can choose to apply the change to `This occurrence` only, or to `This and future` bookings.
 
 ## Track bookings
 
-Go to **Resources → Bookings** to view all reservations. Filter by date, status, resource type, customer, or location.
+There are several ways to track all bookings:
 
-Common statuses include **Tentative**, **Confirmed**, **Pending**, **Canceled**, and **Failed**. Booking colors help distinguish resource types and status on calendar views.
+* Enable [admin notifications](/admin/administration/your-account/notifications/set-up-notifications) to receive alerts whenever a new booking is created or canceled.
+* Go to the **Resources > Bookings** page to view a comprehensive list of all resource bookings in one place.
+  * Filter by date to see all bookings on, before, or after a specific date.
+  * Filter bookings by status.
+  * Filter by resource type to see bookings for a specific type of resource, such as rooms, desks, offices, parking, or equipment.
+  * Filter by a specific resource to see all bookings for that individual resource only.
+  * Filter by user to view all bookings of a specific customer.
+
+### Booking statuses
+
+|               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tentative** | <ul><li>The booking is awaiting an [external payment.](/admin/billing/payments/external#manage-pending-external-bookings)</li><li>Payment for the booking was started via payment gateway and is being [processed](/admin/billing/payments/payment-gateway#track-transactions) or customer hasn't completed the payment yet.</li><li>The booking is made for a future subscription period with a [scheduled credit or day pass transaction](/admin/billing/credits-and-day-passes/scheduled-transactions).</li><li>The booking is free and requires a [check-in](/admin/resource-management/room-display/use-room-display#how-abandoned-booking-protection-works) on Room display before the start.</li></ul>                                                                                                                                            |
+| **Confirmed** | The booking is fully secured.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Canceled**  | <ul><li>The booking was canceled by the customer or administrator.</li><li>The booking was awaiting an [external payment](/admin/billing/payments/external#manage-pending-external-bookings), but the payment was not settled and was canceled by admin.</li><li>Payment for the booking was [started via payment gateway](/admin/billing/payments/payment-gateway#track-transactions) but wasn't completed, and was abandoned or canceled by the customer.</li><li>The booking was made with a [scheduled credit or day pass transaction](/admin/billing/credits-and-day-passes/scheduled-transactions) and the charge was unsuccessful.</li><li>The booking required a [check-in](/admin/resource-management/room-display/use-room-display#how-abandoned-booking-protection-works) on Room display and was auto-canceled due to no check-in.</li></ul> |
+
+* To track bookings for specific resource types, go to their dedicated pages. From there, you can filter by date to see bookings for today or any specific day:
+  * **Rooms:** Go to **Resources > Rooms >** **Calendar**
+  * **Desks:** Go to **Resources > Desks >** **Bookings**
+  * **Offices:** Go to **Resources > Offices >** **Bookings**
+  * **Parking:** Go to **Resources > Parking >** **Bookings**
+  * **Equipment:** Go to **Resources > Equipment >** **Timeline**.
+
+### Booking colors
+
+When viewing room bookings on a calendar, you can identify the user type and booking status by the booking colors and style:
+
+* Blue - the booking of an administrator.
+* Green - the booking of a member.
+* Yellow - the booking of a nonmember.
+* Outlined booking with transparent background - booking in tentative status.
+
+<Frame>
+  <img src="" alt="" width="2058" height="1445" data-path="images/resource-management-rooms-3.png" />
+</Frame>
+
+* Click any booking to check more details about it.
+
+<Frame>
+  <img src="" alt="" width="1364" height="827" data-path="images/resource-management-rooms-4.png" />
+</Frame>
 
 ## Cancel a booking
 
-Open the booking, select **(…) → Cancel**, review any refund, and confirm. Notification and refund behavior follow the resource and payment settings.
+To cancel a booking, users and administrators follow these steps:
 
-## Troubleshoot booking issues
+1. Open the relevant booking from the **Resources, Bookings,** or customer profile page.
+2. Click **(...)** in the top right corner > **Cancel**.
 
-<AccordionGroup>
-  <Accordion title="The customer cannot see a resource">
-    Check the resource **Visibility**, the selected location, the customer role, and any exclusive-access restriction.
-  </Accordion>
+Bookings can be canceled at any time, however, the refund depends on the resource's rescheduling policy and the payment method used.
 
-  <Accordion title="The customer can see the resource but cannot book it">
-    Compare **Booking** permission with **Visibility**. The customer may need to submit an [application](/admin/resource-management/resources/applications-for-bookings).
-  </Accordion>
+| Bookings                                                                                      | Monetary                                                                                                                                                                                                                                                                                                                                                                                                                 | Credit                                                   |
+| :-------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------- |
+| Canceled according to the [**resource’s rescheduling policy**](/admin/billing/payments/refunds)     | <ul><li>If [**Stripe**](/admin/billing/payments/refunds) or **KakaoPay** payment gateways are connected and refunds enabled, [**the refund is automatic**](/admin/billing/payments/refunds).</li><li>If another payment gateway is connected, administrators can [**manually refund**](/admin/billing/payments/refunds) bookings via the payment gateway dashboard.</li></ul> | [**The refund is automatic**](/admin/billing/payments/refunds) |
+| Canceled not according to the [**resrouce’s rescheduling policy**](/admin/billing/payments/refunds) | The booking is not refunded.                                                                                                                                                                                                                                                                                                                                                                                             | The booking is not refunded.                             |
 
-  <Accordion title="A time slot is unavailable">
-    Check existing bookings, operating hours, minimum notice, booking duration, capacity, parent-child overlap, and active rental assignments.
-  </Accordion>
+**FAQs**
 
-  <Accordion title="The payment failed">
-    Open the transaction for the failure reason, verify the customer’s payment method, and follow the guidance in [Payment gateway](/admin/billing/payments/payment-gateway).
-  </Accordion>
+<Accordion title="How can I check a recurring booking's schedule?">
+  Opening a booking shows its recurrence details if it is part of a recurring series:
 
-  <Accordion title="The customer cannot edit or cancel">
-    Review the resource’s rescheduling and cancellation deadline. Administrators can manage the booking from the admin portal when permitted.
-  </Accordion>
-</AccordionGroup>
+  <Frame>
+    <img src="" alt="Resource Management Resources Manage Bookings Create A Recurring Booking View Schedule" width="2559" height="729" data-path="images/resource-management-resources-manage-bookings-create-a-recurring-booking-view-schedule.png" />
+  </Frame>
+</Accordion>
+
+<Accordion title="Can I book an office?">
+  Office resources are designed primarily for long-term rental assignments, but short-term bookings are also possible in certain cases:
+
+  * **Assigned offices** — If an entire office is assigned to a customer for rental, that member or company can book it for free on a daily basis (e.g. a hybrid office for a company, where company members book seats daily).
+  * **Unassigned offices** — If an office is not assigned, you as an administrator can manually book it for any interested customer.
+    * Office bookings are always full-day only — hourly booking is not available.
+    * Office bookings always use the **Free** payment method — you can issue a separate invoice to the customer for office usage as needed.
+    * Customers cannot book unassigned offices for a day — they can only subscribe for a long-term rental. Only administrators can make  office bookings for a day for  customers on request.
+    * Customers cannot book unassigned offices for a day — they can only subscribe for a long-term rental. Only administrators can make daily office bookings for  customers on request.
+    * Customers cannot book unassigned offices for a day — they can only subscribe for a long-term rental. Only administrators can make daily office bookings for  customers on request.
+</Accordion>
+
+<Accordion title="My customer can't book a desk with day passes">
+  This desk must be not a **Hot desk** type or the **Day passes** switch is turned off in its settings. To allow booking it with day passes:
+
+  1. Go to **Resources > Desks.**
+  2. Start editing this specific desk.
+  3. Verify it is set to the **Hot desk** type. Only hot desks can be booked with day passes.
+  4. Verify it has the **Day passes** switch enabled.
+</Accordion>
+
+<Accordion title="Why do I get &#x22;Another booking already exists at the same time&#x22; when scheduling a recurring booking?">
+  This error means that on one or more dates in the recurring series, there is already a booking scheduled for that resource at that time. To identify the conflicting booking, go to **Analytics**, generate a **Bookings** report, and filter it by the specific resource. This will show all existing bookings for that resource so you can find which one overlaps with your recurring series.
+</Accordion>
