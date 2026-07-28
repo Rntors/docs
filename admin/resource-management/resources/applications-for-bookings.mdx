@@ -1,48 +1,115 @@
 ---
 title: "Applications for bookings"
+description: "Set up booking permission levels to require applications instead of immediate bookings, understand how customers apply and how to process booking applications"
 ---
 
-Use booking applications when customers should be able to discover a resource but an administrator must approve the reservation.
+RNTOR empowers users to handle their bookings and payments independently. However, you can control access by customizing booking permissions for specific resources.
 
 ## Prerequisites
 
-1. Enable the **Support** page.
-2. Make Support visible to applicants so they can read administrator replies.
-3. Enable booking notifications for the administrators responsible for applications.
+To ensure proper management of booking applications, make sure to fulfill the following requirements:
+
+1. [Enable the](/admin/support/tickets) [**Support**](/admin/support/tickets) [page](/admin/support/tickets).
+2. [Set the **Support** page visibility to **Public**](/admin/location/visibility) so applicants can see administrators' responses.
+3. Enable [admin notifications](/admin/administration/your-account/notifications/set-up-notifications) to receive a push or email whenever users book or apply for resources.
 
 ## Understand booking permissions
 
-Each resource has two controls:
+You can set booking permissions for all resources:
 
-- **Visibility** defines who can see it.
-- **Booking** defines who can book it immediately.
+* Rooms
+* Desks
+* Parking lots
+* Offices
+* Equipment
 
-When **Booking** is more restricted than **Visibility**, customers outside the immediate-booking group can submit an application instead.
+Booking permissions are defined by two settings:
 
-## Configure applications
+* **Visibility** – Who can *see* the resource
+* **Booking** – Who can *book* the resource immediately
 
-1. Open the resource settings.
-2. Set the required **Visibility** level.
-3. Choose a narrower **Booking** level.
-4. Save the resource.
+If the **Booking** level is lower than the **Visibility** level, users outside of the allowed group are restricted from creating bookings and can only apply for them. To understand and use the visibility settings, check [this article](/admin/location/visibility).
+
+### Booking permission levels
+
+| **Administrators**                | Only administrators can make bookings immediately; other users can apply.                                                                                                                                       |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Location members**              | Administrators and location members can make bookings immediately; other users can apply.                                                                                                                       |
+| **Network members**               | Administrators, location members, and network members can make bookings immediately; external users can apply.                                                                                                  |
+| **Public**                        | All users can make bookings immediately.                                                                                                                                                                        |
+| **Members with exclusive access** | Administrators and members who are subscribed to a plan that explicitly includes these resources (via the [**Exclusive access** setting](/admin/billing/plans/set-up-plans)) can make bookings immediately; other users can apply. |
+
+For example, if **Visibility** is set to **Public** and **Booking** is set to **Location members**, everyone can see this resource, but only members and administrators can book it immediately. Nonmembers can apply for the booking. [Understand user roles](/admin/customer-management/users/user-roles)
+
+<Info>
+  The **Booking** permission is set as **Public** by default.
+</Info>
+
+## Configure booking permissions
+
+1. Go to **Resources** > **Rooms, Desks, Offices**, **Parking,** or **Equipment**.
+2. Add or edit a resource that requires administrator verification and configure the **Visibility** and **Booking** permissions.
 
 <Frame>
+  <img src="" alt="" width="1089" height="869" data-path="images/resource-management-bookings-applications-for-bookings-1.png" />
 </Frame>
 
-## Customer experience
+3. Once the permissions are configured, press `Save`.
 
-The customer opens the resource, selects the desired date and time, and submits an application with the requested details. RNTOR creates a support request so the customer and administrators can continue the conversation.
+## How users apply for a booking
+
+1. Go to the page with the necessary resource.
+2. Select the resource, date, and time,  optionally leave a comment, and press **Apply**.
 
 <Frame>
+  <img src="" alt="Resource Management Bookings Applications For Bookings How Users Apply For A Booking" width="2816" height="1518" data-path="images/resource-management-bookings-applications-for-bookings-how-users-apply-for-a-booking.png" />
 </Frame>
 
-## Manage applications
+<Warning>
+  If the **Support** page is disabled, the **Apply** button is greyed out. If **Support** is enabled but not **Public**, users can submit applications but won’t see ticket updates or admin replies.
+</Warning>
 
-Administrators open **Support → Tickets**, review the requested schedule, and reply to the applicant. After agreeing on the details, create the booking for the customer and select the correct [payment method](/admin/billing/payments/payment-methods).
+## How administrators manage booking applications
+
+1. Once the user submits a booking application, a new ticket appears on the **Support** page. Via the support ticket, you can request verification documents or communicate with the user.
+
+<Frame>
+  <img src="" alt="" width="1626" height="869" data-path="images/resource-management-bookings-applications-for-bookings-4.png" />
+</Frame>
+
+2. If the booking is approved, proceed in your preferred way:
+
+* If the **Booking** permission for this resource is set to **Location members** or **Network members**, you can click on the user's name in the support ticket to invite them as a member and let them book and pay on their own.
+* Invite the user as a member and [book on their behalf using the “Invoice” payment method.](/admin/billing/payments/pay-with-invoice#book-for-customers-with-the-invoice-payment-method)
+* Keep the user as a nonmember and [book on their behalf using the “Invoice” payment method.](/admin/billing/payments/pay-with-invoice#book-for-customers-with-the-invoice-payment-method)
 
 ## Best practices
 
-- Explain approval criteria in the resource description.
-- Assign applications to a responsible administrator.
-- Confirm availability before promising the requested time.
-- Keep payment and cancellation terms in the ticket conversation.
+Restricting booking permissions is perfect for:
+
+* Podcast or recording studios, massage rooms, beauty workstations, or costly equipment that require a background check and should not be available for instant booking by nonmembers.
+* Resources with flexible or irregular schedules, like conference halls or event venues, where availability must be confirmed.
+* Resources with conditional pricing structures.
+* Any resources that should only be accessible after admin approval rather than immediate booking by certain user groups.
+
+**FAQ**
+
+<Accordion title="Why did a customer submit a support ticket/booking request instead of immediately booking?">
+  If the customer submitted a booking application, it means that the **Booking** permission of the resource they booked is set to require approval rather than allowing immediate booking. To check and adjust it:
+
+  1. Go to the **Resources** page > **Rooms, Desks, Offices, Parking,** or **Equipment**, based on what the user booked.
+  2. Click **(...)** > **Edit** next to the necessary resource.
+  3. Find the **Booking** permission section and adjust it, as needed, to allow users to book immediately.
+</Accordion>
+
+<Accordion title="Why is one of my resources available for applications only and not for bookings, even though I didn’t change its 'Booking' permission?">
+  Please remember that the **Visibility** and **Booking** permissions are interconnected, and the **Booking** permission cannot allow a lower user role than the **Visibility** permission. For example, a room cannot be visible only to members but bookable by the public.
+
+  That's why, when you edit one of these permissions, the other may automatically adjust to maintain this hierarchy. For instance, if you temporarily set the room's **Visibility** to "Administrators," the **Booking** permission automatically adjusts to match. However, if you later revert the **Visibility** to include members or the public, the **Booking** permission does not update automatically. It remains set to **Administrators** unless manually changed.
+
+  To avoid such issues, always review and update both the **Visibility** and **Booking** permissions together to ensure they align with your desired settings.
+</Accordion>
+
+<Accordion title="Do users receive replies to their support tickets via email?">
+  All users by default have email notifications **enabled** for support ticket comments ([see which email notifications users receive](/member/account/notifications)). A certain user can only have them disabled in case they manually disabled that specific type of email notifications.
+</Accordion>
