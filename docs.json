@@ -237,13 +237,7 @@
                     "pages": [
                       "admin/engagement/feed",
                       "admin/engagement/chats",
-                      {
-                        "group": "Events",
-                        "pages": [
-                          "admin/engagement/events/set-up-events",
-                          "admin/engagement/events/check-in-event-attendees"
-                        ]
-                      }
+                      "admin/engagement/events/set-up-events"
                     ]
                   },
                   {
@@ -799,13 +793,7 @@
                     "pages": [
                       "ar/admin/engagement/feed",
                       "ar/admin/engagement/chats",
-                      {
-                        "group": "الفعاليات",
-                        "pages": [
-                          "ar/admin/engagement/events/set-up-events",
-                          "ar/admin/engagement/events/check-in-event-attendees"
-                        ]
-                      }
+                      "ar/admin/engagement/events/set-up-events"
                     ]
                   },
                   {
