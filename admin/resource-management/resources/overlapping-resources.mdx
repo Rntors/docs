@@ -1,33 +1,45 @@
 ---
 title: "Overlapping resources"
+description: "Link overlapping parent-child resources to automatically synchronize calendar availability and prevent overbooking when a main room or its smaller sections are reserved"
 ---
 
-Link resources that represent the same physical area in different configurations. For example, a large room can be divided into two smaller rooms, or a full event space can contain several individual rooms and desks.
+Link overlapping resources to automatically manage their availability and eliminate manual calendar cross-checking. This is useful in the following cases:
 
-## Configure parent and child resources
+* Link a large room to its two halves so booking the **Big room** blocks both halves, and vice versa.
+* Automatically block individual rooms and desks when the entire space or an event hall is reserved. ​
 
-1. Create every booking configuration as a separate resource.
-2. Decide which room is the **parent** and which resources are its **children**.
-3. Edit each child resource.
-4. Select the larger room in **Parent room**.
-5. Save.
+## Configure parent-child resources
 
-| Scenario | Parent resource | Child resources |
-| --- | --- | --- |
-| Split meeting room | Full room | Room A and Room B |
-| Entire venue | Full-space room | Individual rooms and desks |
+To set up linked resources, first create each option as a separate resource and then define their relationship.
 
-Only a room can be selected as a parent.
+1. Create separate resources for every booking configuration you offer.
+2. Determine which room acts as the parent and which rooms or desks are the children.
 
-<Frame>
-</Frame>
+| Scenario   | Parent resource    | Child resource(s)                 |
+| ---------- | ------------------ | --------------------------------- |
+| Split room | Full room          | Room half A, Room half B          |
+| Full space | Full space booking | Every individual desk/room inside |
 
-## How synchronized availability works
+<Info>
+  Only a room can be designated as a parent resource.
+</Info>
 
-- Booking the parent blocks all linked children for the same time.
-- Booking any child blocks the parent for the overlapping time.
-- Other children remain available unless their own space or capacity overlaps.
-- Canceling the booking releases the synchronized block.
+3. [Open the settings](/admin/resource-management/resources/set-up-resources) for each **child** resource (e.g., a desk or a half-room).
+4. Find the **Parent room** field and select the corresponding larger room from the dropdown menu.
 
 <Frame>
+  <img src="" alt="" width="985" height="795" data-path="images/resource-management-bookings-link-overlapping-resources-1.png" />
 </Frame>
+
+## How linked resources work
+
+Once linked, RNTOR automatically synchronizes availability between the parent and child resources to ensure you never overbook a physical area.
+
+* When the parent room is booked, all of its linked child resources are automatically blocked for that specific date and time slot.
+
+<Frame>
+  <img src="" alt="" width="1263" height="906" data-path="images/resource-management-bookings-link-overlapping-resources-2.png" />
+</Frame>
+
+* When a child resource is booked, the parent room is automatically blocked. However, "fellow" child resources (other children linked to the same parent) remain available for booking.
+* If the main booking is rescheduled or canceled, the associated blocks on the linked resources are updated or removed automatically, keeping your resource availability accurate in real-time.
