@@ -1,62 +1,89 @@
 ---
 title: "Use Room display"
+description: "Understand how Room display app uses color indicators to show live room availability, enable ad-hoc QR code bookings, use a check-in feature to automatically cancel abandoned room bookings, and troubleshoot Room display issues"
 ---
 
-Room display helps customers understand room availability at a glance and act without administrator assistance.
+Room display helps customers see room availability at a glance, make instant bookings via QR code, and prevents abandoned bookings with a check-in feature.
 
-## Availability indicators
+## How room display availability indicators work
 
-| Display color | Meaning |
-| --- | --- |
-| **Green** | The room is available long enough for the minimum booking duration. |
-| **Yellow** | The room will become available soon. |
-| **Red** | The room is occupied or unavailable for the near-term period. |
+Room display signals room availability by tinting the background color of the tablet.
 
-The display can show the current booking, progress, and upcoming reservations. Booking titles follow each customer’s privacy settings.
+| **Tablet color** | **Explanation**                                                                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Green            | The room is available for booking. The free time until the next booking is longer than the minimum booking duration set for this room. |
+| Yellow           | A meeting room will become available in less than 60 minutes.                                                                          |
+| Red              | The room is unavailable for the next 60 minutes.                                                                                       |
 
-## Ad-hoc bookings with QR code
+The display also shows the current and upcoming bookings. Bookings include the full name of the booker, booking title, and time. This helps users understand when the room will be free.
 
-A unique QR code links directly to the room’s booking calendar. The customer scans it, signs in if needed, chooses an available time, and confirms the booking.
+<Info>
+  Room display respects users' [privacy settings](/admin/customer-management/users/manage-user-account). If a user selects **Administrators** for their **Booking title visibility**, their booking title will not appear on the display.
+</Info>
 
-<Frame>
-</Frame>
-
-## Abandoned-booking protection
-
-For eligible free rooms, enable **Check in** in the room settings.
-
-- **Early check in** controls how soon before the start the button appears.
-- **Abandoned threshold** controls how long RNTOR waits after the start before canceling a no-show.
-- A successful check-in changes the booking from **Tentative** to **Confirmed**.
+## How users make ad-hoc bookings with a QR code
 
 <Frame>
+  <img src="" alt="" width="1648" height="940" data-path="images/resource-management-room-display-use-room-display-1.png" />
 </Frame>
+
+Room display shows a unique QR code for the room in the bottom-left corner of the screen.
+
+By scanning the QR code, users are taken to the room’s booking calendar in the member web portal or mobile app, where they can book the room instantly. ​
+
+[Video](https://www.loom.com/embed/6f484a0b9d874535a7afeb5583d939ff)
+
+## How abandoned booking protection works
+
+To prevent no-shows, Room display supports a check-in feature for totally free rooms (with **Money** and **Credits** pricing disabled).
+
+When a booking is made for a room, it is initially created in a **Tentative** status. The booking remains **Tentative** until the user checks in via Room display.
+
+When [creating](/admin/resource-management/resources/set-up-resources) or [editing](/admin/resource-management/resources/set-up-resources) a free room in RNTOR, you can enable and configure **Check in** to prevent abandoned bookings:
+
+* **Abandoned threshold** — defines in how much time after the booking start the booking is auto-removed if nobody checks in. If the threshold is reached without a check-in, the booking status automatically changes to **Canceled**.
+* **Early check in** — defines how much time before the booking start the **Check in** button appears and users can check in. Once a user arrives and checks in, the booking status automatically changes to "Confirmed."
 
 <Frame>
+  <img src="" alt="" width="1198" height="735" data-path="images/resource-management-room-display-use-room-display-2.png" />
 </Frame>
 
-## Troubleshoot Room display
+Before the meeting, the **Check in** button appears on the room display based on the **Early check in** time you set (e.g., 10 minutes before the booking starts).
 
-<AccordionGroup>
-  <Accordion title="The room does not appear during setup">
-    Confirm that the room belongs to the selected location, is enabled, and the administrator has access to it.
-  </Accordion>
+<Frame>
+  <img src="" alt="Check In on room display on on RNTOR's coworking space management platform" width="1690" height="1296" data-path="images/resource-management-room-display-use-room-display-3.png" />
+</Frame>
 
-  <Accordion title="The display shows outdated availability">
-    Check the tablet’s internet connection, reopen the app, and verify that the booking appears in the RNTOR calendar.
-  </Accordion>
+If the user taps **Check in**, the booking is confirmed, and a confirmation message appears on the screen.
 
-  <Accordion title="The QR code does not open the correct room">
-    Confirm the tablet is assigned to the intended room, then log out and activate Room display again.
-  </Accordion>
+<Frame>
+  <img src="" alt="Check In on room display on RNTOR's coworking space management platform" width="1690" height="1296" data-path="images/resource-management-room-display-use-room-display-4.png" />
+</Frame>
 
-  <Accordion title="The Check in button is missing">
-    Verify that the room is completely free, check-in protection is enabled, and the current time falls inside the early check-in window.
-  </Accordion>
+If no check-in happens, after the **Abandoned threshold** time passes (e.g., 5 minutes after the booking starts), the booking is automatically removed from the calendar, freeing up the room for others.
 
-  <Accordion title="A booking was canceled automatically">
-    The abandoned threshold elapsed before check-in. Review the room’s check-in timing and the booking activity.
-  </Accordion>
-</AccordionGroup>
+## Troubleshoot issues with Room display
 
-No videos are embedded on this page.
+If you are having trouble enabling or using the Room display app, here are the most common reasons and how to fix them:
+
+<Accordion title="1. Poor Internet connection">
+  If bookings don't appear on the room display or you've faced an issue accessing it, the tablet might have a weak or unstable internet connection. Reconnect the tablet to Wi-Fi or connect to a different network.
+</Accordion>
+
+<Accordion title="2. Logged in with the wrong email address">
+  To set up Room display for a room in a specific location, you need to be logged in with an [administrator account](/admin/administration/administrators/administrators) for that location.
+
+  [Log out of the app](/admin/resource-management/room-display/set-up-room-display) and log back in with an administrator account that has access to the correct location.
+</Accordion>
+
+<Accordion title="3. Outdated app version">
+  Make sure you're using the latest version of the room display app. The new version of the Room display might be available to install. Check the App Store or Google Play for updates, or simply click on the `Update` button.
+</Accordion>
+
+<Accordion title="4. Your RNTOR subscription is not active">
+  [Check your RNTOR subscription](/admin/administration/billing/rntor-subscription) status to make sure it is active and not suspended.
+</Accordion>
+
+<Accordion title="5. The device doesn't meet technical requirements">
+  Ensure your tablet device meets the [requirements](/admin/resource-management/room-display/set-up-room-display) to install the Room display app.
+</Accordion>
