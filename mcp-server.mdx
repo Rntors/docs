@@ -35,7 +35,7 @@ Add RNTOR as a custom connector in Claude:
 2. Enter **RNTOR** as the connector name and use the RNTOR MCP server URL:
 
 ```text
-https://iwdewzswethsnvwvpind.supabase.co/functions/v1/mcp
+https://mcp.rntor.com/mcp
 ```
 
 3. When prompted, sign in and authorize access to your RNTOR network.
@@ -50,10 +50,14 @@ For ChatGPT, or another AI assistant, add RNTOR as a custom connector:
 2. Enter the RNTOR server URL:
 
 ```text
-https://iwdewzswethsnvwvpind.supabase.co/functions/v1/mcp
+https://mcp.rntor.com/mcp
 ```
 
 3. When prompted, authorize access to your RNTOR network.
+
+<Note>
+  **Backward compatibility:** the legacy server URL `https://iwdewzswethsnvwvpind.supabase.co/functions/v1/mcp` still works for existing connections. New connections should use `https://mcp.rntor.com/mcp`.
+</Note>
 
 You can connect RNTOR to any MCP-compatible assistant.
 
