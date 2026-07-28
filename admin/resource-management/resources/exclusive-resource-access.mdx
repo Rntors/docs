@@ -1,29 +1,38 @@
 ---
 title: "Exclusive resource access"
+description: "Restrict specific resources so only specific eligible members can see or book them"
 ---
 
-Use exclusive access for premium rooms, trained-member facilities, private company areas, or any resource that should not be available to everyone.
+Use exclusive access to:
 
-## Configure exclusive access
+* Grant access to specialized facilities (e.g., a podcast studio or gym) only to customers who have completed required training.
+* Offer premium resources as an exclusive perk for high-tier plans.
+* Manage different resource pools for different membership levels.
 
-1. Open the relevant resource settings.
-2. Set its **Visibility** and **Booking** access level.
-3. Save the resource.
-4. Grant access through a plan, subscription item, or individual customer subscription.
+## Configure exclusive access to resources
+
+Setting up exclusive access is a two-step process: first, you define the resource's restrictions, and then you grant access to specific customers or plans.
+
+1. Navigate to the resource settings (e.g., **Rooms**, **Desks**, or **Equipment**) and select the specific item.
+2. Locate the [**Visibility**](/admin/location/visibility) and [**Booking**](/admin/resource-management/resources/applications-for-bookings) fields to set your preferred restriction level.
 
 <Frame>
+  <img src="" alt="" width="1001" height="827" data-path="images/resource-management-bookings-exclusive-resource-access-1.png" />
 </Frame>
 
-### Grant access through a plan
+3. Grant members access to the exclusive resource using one of these methods:
 
-Edit the plan or resource tier, open **Exclusive access**, and select the resource. Customers receive access while their eligible subscription is active.
+* Grant access to all members on certain plan(s):
+  * [Edit the plan](/admin/billing/plans/set-up-plans#edit-or-delete-a-plan) or resource tier and select this resource in the **Exclusive access** section > **Resources** field.
+  * All customers who subscribe to this plan will automatically receive access.
+* Grant access to individual members:
+  * [Edit the customer's subscription](/admin/billing/subscriptions/edit-a-subscription) > open a subscription item.
+  * Select this resource in the **Exclusive access** section > **Resources** field.
+  * Use this option when access is based on personal qualifications rather than plan level.
 
-### Grant access to an individual
+## How users interact with exclusive resources
 
-Edit the customer’s subscription item and select the resource under **Exclusive access**. Use this for qualifications that apply to one person, such as studio training.
+Once configured, the availability of the resource updates automatically based on the customer's status.
 
-## Customer experience
-
-Eligible customers can see and book the resource according to its normal rules. Other customers either do not see it or cannot complete a booking, depending on the visibility configuration.
-
-Access updates automatically when the qualifying subscription starts, changes, expires, or is canceled.
+* Customers get access to see or book exclusive resources as soon as they subscribe to a designated plan or an administrator updates their subscription.
+* Customers without the required access level will either be unable to see the resource or prevented from making a booking.
