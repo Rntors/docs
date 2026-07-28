@@ -1,0 +1,65 @@
+---
+title: "Claude"
+sidebarTitle: "Claude"
+description: "Connect RNTOR to Claude as a custom MCP connector and ask about your authorized RNTOR data in plain language"
+---
+
+Connect RNTOR to Claude to give it access to the RNTOR networks permitted by your account and get answers directly in your Claude conversation.
+
+RNTOR uses a remote MCP server with OAuth sign-in. Add it to Claude as a custom connector, authorize your RNTOR account, and then ask about your account, networks, locations, resources, and recent bookings without opening the RNTOR admin dashboard.
+
+## Connect RNTOR in Claude
+
+<Steps>
+  <Step title="Open your connector settings">
+    In Claude, go to **Settings → Connectors** and choose to add a custom connector.
+  </Step>
+
+  <Step title="Add the RNTOR connector">
+    Enter **RNTOR** as the connector name and use this server URL:
+
+    ```text
+    https://iwdewzswethsnvwvpind.supabase.co/functions/v1/mcp
+    ```
+  </Step>
+
+  <Step title="Authorize your network">
+    When prompted, sign in to RNTOR and authorize access to your network. RNTOR follows your existing roles, permissions, and network scope.
+  </Step>
+
+  <Step title="Start asking">
+    Enable the RNTOR connector in your Claude conversation. Then describe the information you need in plain language.
+  </Step>
+</Steps>
+
+## What you can ask Claude
+
+Ask Claude about any of the following:
+
+- Your connected RNTOR account
+- Networks and locations
+- Resources and recent bookings
+
+For the complete list of available tools and example prompts, see [Supported tools](/mcp-server#supported-tools).
+
+Claude can also combine the available information in one request. For example, ask it to find your accessible locations and then list the meeting-room bookings for one of them.
+
+## Disconnect RNTOR from Claude
+
+You can disconnect RNTOR from Claude at any time to end its access.
+
+<Steps>
+  <Step title="Open your connectors">
+    In Claude, go to **Settings → Connectors**.
+  </Step>
+
+  <Step title="Find RNTOR">
+    Locate RNTOR in your connected or custom connectors.
+  </Step>
+
+  <Step title="Disconnect">
+    Disconnect the RNTOR connector to end its access to your RNTOR network.
+  </Step>
+</Steps>
+
+The Claude connector is powered by the RNTOR MCP server. You can also [connect RNTOR to ChatGPT or another MCP-compatible assistant](/mcp-server#connect-in-another-ai-assistant).
