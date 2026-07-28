@@ -577,6 +577,17 @@
             ]
           },
           {
+            "tab": "MCP",
+            "groups": [
+              {
+                "group": "Get started",
+                "pages": [
+                  "mcp-server"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Support",
             "href": "mailto:support@rntor.com"
           }
