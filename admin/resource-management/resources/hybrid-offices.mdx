@@ -1,35 +1,58 @@
 ---
 title: "Hybrid offices"
+description: "Set up corporate hybrid offices and let company users make daily bookings for office seats"
 ---
 
-Hybrid offices combine a long-term company rental with daily seat bookings for the company’s members.
+RNTOR supports a hybrid office solution for companies that have many company members and want to utilize the office space efficiently since not all of them work in the office every day. Hybrid office allows companies to:
 
-## Set up a hybrid office
+* Save on costs by renting a smaller office.
+* Provide company members with a convenient on-demand seat booking system.
+* Get a single consolidated invoice each month.
 
-1. Create an **Office** resource and set its seat capacity.
-2. Add the booking availability and duration rules.
-3. Create long-term rental pricing.
-4. Assign the entire office to the company through its subscription.
-5. Enable company members to book seats inside the assigned office.
+## How to add a hybrid office
+
+1. [Add an office](/admin/resource-management/resources/set-up-resources#offices).
+2. [Create a company](/admin/customer-management/companies/set-up-companies) that rents this office.
+3. [Assign the office](/admin/resource-management/resources/manage-resource-rentals-with-assignments) with the **Entire resource** switch to the company that rent it to make it visible to and bookable by exclusively the company members of this company.
+
+<Warning>
+  Make sure to assign the hybrid office with the [**Entire resource**](/admin/resource-management/resources/manage-resource-rentals-with-assignments) switch enabled. If you assign a specific number of seats within the office to the company, the seats will become permanently booked for the duration of the company subscription, and company members won't be able to make daily bookings of the office seats on demand.
+</Warning>
+
+4. Inform the company about their office and provide instructions on how to use it.
+
+## How a hybrid office works
+
+The hybrid office setup provides company members with the flexibility to decide on which days they work from the office and book seats for themselves on demand.
+
+Each company user can do the following:
+
+* Book a seat in the office for themselves for free on the desired day.
 
 <Frame>
+  <img src="" alt="Booking a hybrid office on RNTOR's coworking space management platform" width="1920" height="922" data-path="images/resource-management-rentals-hybrid-offices-1.png" />
 </Frame>
 
-## Company rental
-
-The company’s active subscription controls the assignment period. Because the office is assigned entirely, it is hidden from unrelated customers while the rental is active.
-
-## Member bookings
-
-Company members open the office calendar and reserve the number of seats they need. RNTOR calculates availability from the office capacity and overlapping member bookings.
+* See how many seats are booked for a particular day.
 
 <Frame>
+  <img src="" alt="" width="1725" height="529" data-path="images/resource-management-rentals-hybrid-offices-2.png" />
 </Frame>
 
-## Recommendations
+<Info>
+  Administrators cannot see the availability of seats in the hybrid office. Only the members of the assigned company can see it. If there is more than one company assigned, each of them will see the availability of the seats.
+</Info>
 
-- Set capacity to the actual number of usable seats.
-- Define the minimum and maximum booking duration.
-- Decide how far ahead members may reserve.
-- Use booking titles and notifications to help the company coordinate attendance.
-- Review the booking calendar and assignment timeline when changing the rental period.
+* Check which of their workmates are also going to work from the office, by following a few simple steps:
+
+1. Go to the **Offices** page > **Bookings** tab.
+
+<Frame>
+  <img src="" alt="" width="1731" height="528" data-path="images/resource-management-rentals-hybrid-offices-3.png" />
+</Frame>
+
+2. Check the bookings for the desired date.
+
+<Frame>
+  <img src="" alt="" width="1919" height="604" data-path="images/resource-management-rentals-hybrid-offices-4.png" />
+</Frame>
