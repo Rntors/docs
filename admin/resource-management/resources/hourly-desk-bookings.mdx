@@ -2,4 +2,33 @@
 title: "Hourly desk bookings"
 ---
 
-Coming soon.
+Configure one desk resource with several time-based price options so customers can choose hourly, half-day, or full-day access.
+
+## Prerequisites
+
+- Keep one shared desk resource instead of separate duplicates for each duration.
+- Review future bookings before deleting old desk resources.
+- Add the required [price tiers](/admin/resource-management/resources/set-up-pricing).
+
+## Enable hourly desk bookings
+
+1. Go to **Resources → Desks**.
+2. Create or edit the desk.
+3. Set the **availability increment**, **minimum time**, and **maximum time**.
+4. Add hourly, half-day, and full-day pricing options.
+5. Set the resource capacity.
+6. Save.
+
+<Frame>
+</Frame>
+
+## Customer experience
+
+Customers select the date, time, duration, and number of seats. RNTOR displays only the time slots where the requested quantity remains available.
+
+<Frame>
+</Frame>
+
+## Availability calculation
+
+Every reservation reduces capacity only for its booked time. A full-day reservation reduces availability for the entire day, while hourly reservations affect only overlapping time slots. This keeps all duration options synchronized without separate desk calendars.
