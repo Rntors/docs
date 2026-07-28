@@ -3,4 +3,77 @@ title: "Tickets"
 description: "Manage support tickets from members"
 ---
 
-Placeholder content.
+The **Support** page allows users to get answers to their questions and report issues or feedback.
+
+## Enable Support
+
+1. On the left-side panel, press the menu **(…)** next to your location name.
+2. Go to **Location settings \> Support**.
+3. Enable the switch and [manage the visibility](/admin/location/visibility) of the Support page.
+4. Configure [Noor AI agent behavior](/admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets) for Support.
+
+![Enable Support](/images/support/tickets-enable-support.png)
+
+Your users will discover the Support page and will be able to search for answers and create support tickets. Administrators with the **Support** permission receive [notifications](/admin/administration/your-account/notifications/set-up-notifications) about support tickets.
+
+Consider making Support your exclusive issue-reporting and feedback tool. This keeps requests in one place, makes follow-up transparent, and supports data-driven decisions in Analytics. If members give feedback verbally, encourage them to create a ticket. You can also print [QR codes](/guides/promotion/use-qr-codes) linking to Support and place them around your location.
+
+Add location [guides](/admin/support/guides) with helpful information and common questions. They appear at the top of Support so users can self-serve before contacting your team.
+
+## Manage support tickets
+
+1. New user tickets appear on **Support \> Tickets**, and administrators receive notifications.
+2. Each ticket has a unique number and issue type for workflows and analytics.
+
+| Ticket type | Meaning |
+| --- | --- |
+| Access | Keys, keycards, in-app unlocking, or space entry |
+| Account and billing | Membership, billing, payments, or account issues |
+| Bookings | Reserving rooms, desks, or other bookable resources |
+| Cleaning | Cleanliness, disinfection, or sanitary conditions |
+| Discrimination / harassment | Improper behavior or mistreatment |
+| Internet | Internet connection issues |
+| Mail and packages | Deliveries, mailbox, post, or shipment issues |
+| Noise and acoustics | Sound environment or loud-noise issues |
+| Printing | Printing software, hardware, or supplies |
+| Repair and maintenance | Broken facilities or location infrastructure |
+| Temperature and ventilation | Heating, cooling, smells, or air circulation |
+| Website and app | Marketing website, member web portal, or mobile app |
+| Other | Anything unrelated to the types above |
+
+3. Review the ticket description, then:
+   - Assign a responsible administrator.
+   - Reply to the user in a comment.
+   - Update the status using the **Status** control.
+
+![Manage a support ticket](/images/support/tickets-manage-ticket.png)
+
+| Status | Meaning |
+| --- | --- |
+| New | Request received but not acted on yet |
+| In progress | Request is being processed |
+| Solved | The issue has been resolved |
+| Closed | The ticket was a mistake, spam, or not a real issue |
+
+4. The requester and assignee are notified of new activity. The **Activity** section records creation, assignment, status changes, and comments.
+5. When resolved, update the status to **Solved**.
+   - For users, Solved and Closed tickets are archived after 30 days of inactivity.
+   - For administrators, they are hidden immediately by default; use the status filter to view them.
+
+![Solved and closed tickets](/images/support/tickets-statuses.png)
+
+### Find support tickets
+
+Find tickets on **Support \> Tickets** or from a specific user's **Support tickets** profile page.
+
+- Filter by **Type**, **Status**, **Requester**, and **Assignee**.
+- Search by ticket number, description keyword, requester, assignee, or status.
+- Check **Create date**, or open a ticket and hover over its timestamp for the exact date and time.
+
+![Find support tickets](/images/support/tickets-find.png)
+
+<AccordionGroup>
+  <Accordion title="When do I get 'Ticket reminders' notifications?">
+    Administrators receive reminders while a customer ticket remains in **New** status: once one day after creation and again three days after the first reminder. You can disable them on **Account \> Notifications**.
+  </Accordion>
+</AccordionGroup>
