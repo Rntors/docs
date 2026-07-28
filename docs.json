@@ -475,6 +475,7 @@
               {
                 "group": "Member experience",
                 "pages": [
+                  "member/overview",
                   "member/onboarding",
                   {
                     "group": "Account",
@@ -498,7 +499,6 @@
                   "member/events",
                   "member/shop",
                   "member/benefits",
-                  "member/support",
                   {
                     "group": "Visitors",
                     "icon": "id-card",
@@ -506,7 +506,8 @@
                       "member/visitors/preregister-and-approve-visit-requests",
                       "member/visitors/check-in-and-check-out"
                     ]
-                  }
+                  },
+                  "member/support"
                 ]
               }
             ]
@@ -1040,6 +1041,7 @@
               {
                 "group": "تجربة العضو",
                 "pages": [
+                  "ar/member/overview",
                   "ar/member/onboarding",
                   {
                     "group": "الحساب",
@@ -1063,7 +1065,6 @@
                   "ar/member/events",
                   "ar/member/shop",
                   "ar/member/benefits",
-                  "ar/member/support",
                   {
                     "group": "الزوار",
                     "icon": "id-card",
@@ -1071,7 +1072,8 @@
                       "ar/member/visitors/preregister-and-approve-visit-requests",
                       "ar/member/visitors/check-in-and-check-out"
                     ]
-                  }
+                  },
+                  "ar/member/support"
                 ]
               }
             ]

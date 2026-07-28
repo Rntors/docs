@@ -1,6 +1,76 @@
 ---
 title: "Notifications"
-description: "Manage your notification preferences."
+description: "Overview of the push and email notifications users receive, and how users can manage notification preferences"
 ---
 
-Coming soon.
+User notifications inform users about updates, reminders, and actions related to their account. They help users stay engaged, up-to-date, and prompted to act when needed.
+
+## How users receive and manage notifications
+
+### Push notifications
+
+Users receive all notifications as push notifications by default, except member invitations, confirmation emails, and emails to visitors.
+
+How users allow push notifications:
+
+- [From member mobile app](/admin/administration/your-account/notifications/set-up-notifications#push-notifications)
+- [From member web portal](/admin/administration/your-account/notifications/set-up-notifications#push-notifications)
+
+### Email notifications
+
+There are mandatory and optional email notifications.
+
+- Mandatory emails are always delivered and cannot be disabled.
+- Users can manage the optional ones via their **Account** page **\> Notifications**.
+
+![Image](/images/member-account-notifications-1.png)
+
+If enabled, users receive them via both email and push notifications. If disabled, they receive them only as push notifications.
+
+## Which notifications users receive
+
+Examples of the user notifications include (not limited to):
+
+| Notifications | Meaning | Sent as push | Sent via email |
+| :-- | :-- | :-- | :-- |
+| Booking invitations | <ul><li>Administrator or [<u>company manager</u>](/admin/customer-management/companies/company-members-and-managers) creates a booking for you</li><li>You're added as an invitee to a booking</li></ul> | If the booking creator chooses to notify you | If the booking creator chooses to notify you, and email notifications are enabled in your preferences<br />By default enabled ✓ |
+| Booking updates | Your booking's date, time, quantity/seats, title, memo, or recurrence is [<u>edited</u>](/admin/resource-management/resources/manage-bookings#edit-a-booking) by an administrator or company manager | If the editor chooses to notify you | If the editor chooses to notify you |
+| Booking start reminders | Reminder 5 minutes before the booking starts | ✓ | Optional By default disabled _X_ |
+| Booking end reminders | Reminder 5 minutes before the booking ends | ✓ | Optional By default disabled _X_ |
+| Subscription updates | <ul><li>Subscription created for you</li><li>Credits and day passes accrue or expire with subscription renewal</li><li>Reminder that your subscription ends in 1 day</li></ul> | ✓ | Optional By default enabled ✓ |
+| Community requests | Updates on your request to join the location | ✓ | Optional By default enabled ✓ |
+| Credit and day pass updates by admin | Credits granted or charged by administrator | ✓ | Optional By default disabled _X_ |
+| New feed posts | A new feed post | ✓ | Optional By default disabled _X_ |
+| Feed comments | New comments on a post you created or commented on | ✓ | Optional By default disabled _X_ |
+| Event reminders | Reminders about the event you joined 24 and 1 hour before | ✓ | Optional By default enabled ✓ |
+| Events canceled | The event you joined was canceled | ✓ | Optional By default enabled ✓ |
+| Visitor check-ins | Your visitor has arrived and [<u>checked in</u>](/member/visitors/check-in-and-check-out) through the Reception app | ✓ | Optional By default enabled ✓ |
+| Visit requests | A visitor [<u>requested a visit</u>](/member/visitors/check-in-and-check-out) with you | ✓ | Optional By default enabled ✓ |
+| New support tickets | Administrator creates a support ticket for you | ✓ | Optional By default enabled ✓ |
+| Support ticket comments | New comments on your support tickets | ✓ | Optional By default enabled ✓ |
+| Support ticket updates | Status/assignee updates to your support tickets | ✓ | Optional By default enabled ✓ |
+| Chat messages | A new chat message | ✓ | Optional By default enabled ✓ |
+| Member invitation | Administrator invited you to join the location as a member | _X_ | Mandatory<br />✓ |
+| Payment confirmation | Payment made via a payment gateway | _X_ | Mandatory<br />✓ |
+| Visit notifications | Visitor invitation, vist change, or cancellation emails | _X_ | Mandatory<br />✓ |
+| Other confirmation emails | Confirmation for booking, shop order, event joining, benefit application | _X_ | If set up by administrator |
+
+## Invoice-related user notifications
+
+Invoice notifications ensure timely payments, confirm transactions, remind users of upcoming charges, and alert them to failed payments.
+
+| Event | Notification | Sent as push | Sent via email |
+| :-- | :-- | :-- | :-- |
+| Upcoming subscription auto-invoice or auto-pay (3 days before renewal) | <ul><li>If a customer has a default payment method: `This is a friendly reminder that your invoice will become ready for payment on [Date]. Your [payment method] will be charged at that time. If you’d prefer to use a different payment method, go to Membership > Billing, add a new one, and set it as default.`</li><li>If a customer doesn't have a default payment method: `This is a friendly reminder that your invoice will become ready for payment on [Date].`</li><li>Includes an option to open and preview the invoice and update their default payment method.</li></ul> | _X_ | Mandatory<br />✓ |
+| Invoice issued | <ul><li>`Your invoice is ready for payment`.</li><li>Provides an option to open the invoice from the notification and pay, includes the invoice details, and a PDF attached.</li></ul> | ✓ | Mandatory<br />✓ |
+| Invoice paid (auto-charged, charged by administraror, or paid manually by user) | <ul><li>​`Your invoice payment to [Location] is processing.` and<br />​`We have successfully processed payment to [Location], and you may find your receipt attached.`</li><li>Includes the invoice details and invoice and receipt PDFs attached.</li></ul> | _X_ | Mandatory<br />✓ |
+| Invoice auto-charge failed | <ul><li>​`Invoice payment was unsuccessful. Please provide a valid payment method.`</li><li>Includes an option to open the invoice from the notification and pay with an alternative payment method.</li></ul> | ✓ | Mandatory<br />✓ |
+| Invoice resent to user by an administrator | <ul><li>​`This is a friendly reminder that your invoice is ready for payment.`</li><li>Provides an option to open the invoice from the notification and pay, includes the invoice details, and a PDF attached.</li></ul> | _X_ | Mandatory<br />✓ |
+| Automatic invoice payment retires and reminders (if enabled) | [<u>Understand payment retries and reminders</u>](/admin/billing/invoices/payment-retries-and-reminders) | _X_ | If set up by an administrator;<br />By default enabled <br />✓ |
+| Invoice voided | <ul><li>​`Your invoice is voided.`</li><li>Provides an option to open the invoice from the notification, includes the invoice details, and a PDF attached.</li></ul> | ✓ | ✓ |
+
+**FAQs**
+
+<Accordion title="Why does my member receive administrator notifications?">
+  RNTOR's [admin notifications](/admin/administration/your-account/notifications/set-up-notifications) are only sent to administrator accounts. To prevent your member from getting them, [remove their administrator role](/admin/customer-management/users/remove-users).
+</Accordion>
