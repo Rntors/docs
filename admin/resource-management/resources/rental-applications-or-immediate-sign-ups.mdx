@@ -1,37 +1,92 @@
 ---
 title: "Rental applications or immediate sign-ups"
+description: "Understand and set up applications or immediate sign-ups for long-term resource rentals"
 ---
 
-Choose whether customers can apply for a resource rental or sign up immediately without administrator approval.
+RNTOR provides a comprehensive system to organize long-term rentals of your offices, dedicated desks, and other resources.
+
+* Sign contracts with tenants
+* Automate rental payments
+* Auto-update resource availability — helping you track occupancy and plan sales.
+
+You can configure each resource to either collect rental applications or allow immediate sign-ups, depending on your business needs.
 
 ## Prerequisites
 
-- Add the resource and configure long-term [pricing tiers](/admin/resource-management/resources/set-up-pricing).
-- Confirm the resource visibility.
-- Prepare any plan, contract, deposit, or billing requirements.
+1. In the [settings](/admin/resource-management/resources/set-up-pricing) of each resource available for long-term rentals, enable the **Plans** switch and configure tiers.
+2. In each tier, set the sign-up **Type**:
+   * **Request** — if you need to verify tenants, sign contracts, or perform other checks before confirming a rental.
+   * **Immediate** — if you want to let customers sign up for office rental and pay immediately without verification.
+3. If choosing **Request**, [enable the](/admin/support/tickets) [**Support**](/admin/support/tickets) [page](/admin/support/tickets) and set it to **Public** visibility. Applications arrive and are processed as support tickets.
+4. [Integrate the necessary pages into your marketing site](/guides/promotion/integrate-with-your-marketing-website) so potential tenants can browse and apply or sign up instantly. ​
 
-## Enable rental applications
+## How applications for resources work
 
-1. Open the resource settings.
-2. Enable long-term rental pricing.
-3. Set the rental action to **Apply**.
-4. Add the instructions customers should see.
-5. Save.
+If a resource has the **Request** sign-up type:
 
-<Frame>
-</Frame>
-
-Customers select an available resource or tier and submit their details. Administrators review the request, agree on terms, and create the subscription and assignment.
-
-## Enable immediate sign-ups
-
-Select **Sign up** when eligible customers may start the rental themselves. Configure the start-date rules, billing interval, payment, and any required agreement.
+1. Customers browse available resources on the **Rooms, Desks, Offices, Parking,** and **Equipment** pages.
+2. Click **Subscribe** on a resource they’re interested in and choose a preferred start date, renewal, tier, and whether they want to rent it as an individual member or as a business.
+3. Then click **Apply**.
 
 <Frame>
+  <img src="" alt="" width="1082" height="787" data-path="images/resource-management-rentals-rental-applications-or-immediate-sign-ups-1.png" />
 </Frame>
 
-When sign-up succeeds, RNTOR creates the customer subscription and assigns the resource automatically.
+4. Each application appears as a new ticket in **Support** > **Tickets**.
 
-## Availability
+<Frame>
+  <img src="" alt="" width="1531" height="325" data-path="images/resource-management-rentals-rental-applications-or-immediate-sign-ups-2.png" />
+</Frame>
 
-Entire-resource assignments block the resource for other customers during the rental. Quantity assignments reduce the remaining capacity. Review [Assignments](/admin/resource-management/resources/manage-resource-rentals-with-assignments) to track occupancy.
+5. Administrators manage the request through the support ticket:
+   * Communicate with the applicant via ticket comments
+   * Answer questions, share additional photos
+   * Arrange a tour
+6. If rental is confirmed:
+   * Click the user's name in the ticket and press **Invite as member** to add them.
+   * If the tenant is a company, [create a company](/admin/customer-management/companies/set-up-companies) > [add this user and other company members](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers), or ask the user to invite their colleagues.
+   * [Issue a contract](/admin/billing/contracts/set-up-contracts) if necessary. If you enable the **Create subscription from contract** switch, a subscription will be created automatically. If a contract isn't required, simply [create a subscription](/admin/billing/subscriptions/set-up-subscriptions) for the customer.
+     * The customer will automatically receive and [pay invoices](/admin/billing/invoices/record-invoice-payments) for the rental.
+     * The entire resource (e.g., an entire office) or a selected number of seats (e.g., a dedicated desk) is assigned to the customer.
+
+<Tip>
+  To avoid missing applications, [enable notifications](/admin/administration/your-account/notifications/set-up-notifications) for new support tickets.
+</Tip>
+
+## How immediate sign-ups work
+
+If a resource has the **Immediate** sign-up type:
+
+1. New customers browse available resources on the **Rooms, Desks, Offices, Parking,** and **Equipment** pages, and click `Subscribe` when interested.
+2. [Complete the sign-up](/admin/billing/plans/immediate-plan-sign-ups) and make the first rental payment.
+
+<Frame>
+  <img src="" alt="" width="2272" height="1370" data-path="images/resource-management-rentals-rental-applications-or-immediate-sign-ups-3.png" />
+</Frame>
+
+3. Administrators receive a [notification](/admin/administration/your-account/notifications/set-up-notifications) about each new sign-up.
+4. A subscription is automatically created for the customer.
+   * The customer will receive and [pay invoices](/admin/billing/invoices/record-invoice-payments) for rental.
+   * The entire resource (e.g., an entire office) or a selected number of seats (e.g., a dedicated desk) is assigned to the customer. ​
+
+**FAQs**
+
+<Accordion title="How can I reserve a resource for a customer for a week or longer period of time?">
+  [Create a subscription](/admin/billing/subscriptions/set-up-subscriptions) for the customer with the required dates and add this resource as a product. This will automatically assign the resource to the customer for the selected time period and update its availability.
+</Accordion>
+
+<Accordion title="How do customers pay for rentals?">
+  Customers pay for rentals through a [recurring subscription](/admin/billing/subscriptions/set-up-subscriptions) with automatically issued invoices.
+</Accordion>
+
+<Accordion title="How do I allow interested customers to apply for already occupied offices?">
+  To maintain a waitlist of people who would like to rent an office when it becomes available, you can:
+
+  1. Disable the **Entire resource** switch in the current tenant's subscription for this office, and select the total number of seats instead in the **Quantity** field.
+  2. This will keep the office visible to all customers on the **Offices** page, but label it as **Fully occupied**.
+  3. Add your sales team's email address or a link to your waitlist form to the office description.
+
+  <Frame>
+    <img src="" alt="" width="2940" height="1148" data-path="images/resource-management-rentals-rental-applications-or-immediate-sign-ups-4.png" />
+  </Frame>
+</Accordion>
