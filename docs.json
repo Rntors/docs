@@ -550,7 +550,7 @@
             ]
           },
           {
-            "tab": "API Reference",
+            "tab": "API & webhooks",
             "groups": [
               {
                 "group": "Getting Started",
@@ -566,18 +566,9 @@
                 "openapi": {
                   "source": "//api-reference/openapi.yaml"
                 }
-              }
-            ]
-          },
-          {
-            "tab": "Webhook event types",
-            "href": "https://webhooks.rntor.com/"
-          },
-          {
-            "tab": "Webhooks",
-            "groups": [
+              },
               {
-                "group": "Getting started",
+                "group": "Webhooks",
                 "pages": [
                   "webhooks/introduction",
                   "webhooks/security"
@@ -1117,7 +1108,7 @@
             ]
           },
           {
-            "tab": "مرجع API",
+            "tab": "API وWebhooks",
             "groups": [
               {
                 "group": "البدء",
@@ -1133,24 +1124,15 @@
                 "openapi": {
                   "source": "//api-reference/openapi.yaml"
                 }
-              }
-            ]
-          },
-          {
-            "tab": "Webhooks",
-            "groups": [
+              },
               {
-                "group": "البدء",
+                "group": "Webhooks",
                 "pages": [
                   "ar/webhooks/introduction",
                   "ar/webhooks/security"
                 ]
               }
             ]
-          },
-          {
-            "tab": "أنواع أحداث Webhook",
-            "href": "https://webhooks.rntor.com/"
           },
           {
             "tab": "الدعم",
