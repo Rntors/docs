@@ -1,6 +1,125 @@
 ---
 title: "How visitors check in and check out"
-description: "Visitor check-in and check-out flow."
+description: "Learn how visitors can check in and check out via express code or self-registration on the Reception tablet, how administrators can register visitors on their behalf, and troubleshoot check-in issues"
 ---
 
-Coming soon.
+Once the **Visitors** module and the Reception app are [set up](/admin/service/visitors/set-up-visitors), members' visitors can check in when they arrive and check out when they leave.
+
+There are three ways a visitor can check in:
+
+- Express check-in – when a member [preregisters the visitor](/member/visitors/preregister-and-approve-visit-requests) and they use their visit code.
+- Self-registration – when a visitor was not preregistered and submits a visit request on the Reception tablet.
+- Admin registration – when an administrator registers the visitor and submits a visit request on their behalf upon arrival.
+
+## Express check-in for preregistered visitors
+
+1. When a member [registers a visitor](/member/visitors/preregister-and-approve-visit-requests), the visitor gets a [visit invitation email](/admin/general/customize-emails) with the visit details and a 6-digit visit code.
+2. When the visitor arrives at the space, they see the following information on the Reception tablet.
+
+![Check visitors in with the visitor display on RNTOR's coworking space management platform](/images/member-visitors-check-in-and-check-out-1.png)
+
+3. They click **Check in** and confirm that they have a visit code.
+
+![Check in on visitor display on RNTOR's coworking space management platform](/images/member-visitors-check-in-and-check-out-2.png)
+
+4. Enter the code.
+
+![on RNTOR's coworking space management platform](/images/member-visitors-check-in-and-check-out-3.png)
+
+5. If the visit code is valid, their visit is confirmed, and the host gets a [notification](/member/account/notifications) that their visitor has arrived.
+
+![Check in on visitor display on RNTOR's coworking space management platform](/images/member-visitors-check-in-and-check-out-4.png)
+
+<Tip>
+  If the visit code is lost, administrators or the host can always look it up on the **Visitors** page by opening the relevant visit.
+</Tip>
+
+## Self-registration for unregistered visitors
+
+Visitors who were not preregistered can register themselves at Reception to request visit from their host.
+
+1. On the Reception tablet, visitors select **No** when asked if they have a visit code.
+2. Proceed to create a visit request. Fill in the required details:
+
+![Image](/images/member-visitors-check-in-and-check-out-5.png)
+
+- First name
+- Last name
+- Email
+- Phone number (optional)
+- Search for and select the host (by name, email, phone, or company name, based on your [**Host search** settings](/admin/service/visitors/set-up-visitors))
+
+3. Once submitted, the host gets a notification that they have a visitor and can approve or reject the visit request.
+
+![Request a visit on RNTOR's coworking space management platform](/images/member-visitors-check-in-and-check-out-6.png)
+
+## Admin registration for unregistered visitors
+
+If a visitor cannot self-register, an administrator can assist them: create a visit request on their behalf upon arrival from the admin web portal.
+
+1. Administrators go to **Service \> Visitors** page in the admin web portal.
+2. Click **New request**, top right.
+
+![Image](/images/member-visitors-check-in-and-check-out-7.png)
+
+3. Enter the visitor's contact details and select the host member.
+4. Click `Request`.
+5. After submission, the host receives a notification about the visit request. They can [approve or reject](/member/visitors/preregister-and-approve-visit-requests) it.
+
+## How visitors check out
+
+If [**Check out** is enabled](/admin/service/visitors/set-up-visitors) in the **Visitors** module settings, visitors can check out at the Reception by entering the visit code.
+
+Checking out adds a timestamp to the visit and lets you [track visit durations.](/admin/service/visitors/track-and-manage-visits)
+
+![Check out on RNTOR's coworking space management platform](/images/member-visitors-check-in-and-check-out-8.png)
+
+## Troubleshoot issues with visitor check-in
+
+If a visitor encounters an issue while checking in with a visit code on the Reception app, most typically they will see **The code is not valid or expired** error message. Here's what may be going wrong and how to fix it.
+
+<Accordion title="1. Unstable Internet connection">
+  The check-in might not be successful due to a poor internet connection. Try reconnecting your tablet to Wi-Fi or switching to a different network.
+</Accordion>
+
+<Accordion title="2. Wrong location selected in the Reception app">
+  If your network has multiple locations, you might have mistakenly selected the wrong one when logging in to the Reception app. To fix this:
+
+  1. Close Reception by swiping it up and off the screen.
+  2. [Reopen it, log in again](/admin/service/visitors/set-up-visitors), and select the correct location from the dropdown menu.
+
+  ![Image](/images/member-visitors-check-in-and-check-out-9.png)
+</Accordion>
+
+<Accordion title="3. Visitor has already checked in">
+  Firstly, once a visitor has used their code to check in, the code becomes invalid as their visit was already recorded.
+
+  Secondly, if the visitor was not preregistered and [requested a visit](/member/visitors/check-in-and-check-out) via Reception and was approved by the host, the check-in happens automatically with approval — the visitor doesn't need to enter the code. The code that a visitor receives will be used only for [check-out.](/member/visitors/check-in-and-check-out)
+
+  To check if the visitor has already checked in:
+
+  1. Go to **RNTOR** \> **Service** \> **Visitors.**
+  2. Find the visit and check its status next to the visit date:
+
+  ![Image](/images/member-visitors-check-in-and-check-out-10.png)
+
+  - Empty circle - the visitor hasn't checked in.
+  - Green circle - visitor has already checked in.
+  - Purple circle - visitor has checked in and checked out.
+</Accordion>
+
+<Accordion title="4. Visit is created for another date or future time">
+  Checking in with the visit code only works for the chosen date and time. If the visit was registered for a different date or a future time, the check-in code will not be valid yet.
+
+  If necessary, ask the host to go to the **Visitors** page \> [edit this visit](/admin/service/visitors/track-and-manage-visits) and adjust the date or time.
+</Accordion>
+
+**FAQs**
+
+<Accordion title="Does the check-in code expire?">
+  The code is for one-time use and is valid on the visit day until the end of the day. When the visitor receives an email, it will include the details about the expiration date and time of the code. If the visit code is invalid or expired, the Reception app shows an error message on the tablet.
+</Accordion>
+
+<Accordion title="Do visitors agree to privacy policy?">
+  Each user who receives an invitation email receives a link to the member web portal. Once the link is opened, the user can see a welcome page and can press **Continue**. After that, the user can read the data and privacy information and press **Continue** which is considered as their agreement.
+</Accordion>
