@@ -1,5 +1,153 @@
 ---
-title: "Set up notifications"
+title: "Notifications"
+sidebarTitle: "Notifications"
 ---
 
-Coming soon.
+Receive real-time notifications about new bookings, sign-ups, invoices payments, and other users' actions and location updates that may require your attention. Choose how you prefer to get them, and keep track of everything that needs your attention in one place.
+
+## Configure notification preferences
+
+Admin notifications fall into two main categories:
+
+- Activities related to other users' accounts
+- Integration errors and disconnections
+
+Administrators can enable and disable notifications they prefer to receive as follows:
+
+1. Tap the **(...)** menu next to the network name in the top-left corner, then go to **Account**.
+
+![Image](/images/account-notifications-1.png)
+
+2. Go to **Notifications**.
+
+![Image](/images/account-notifications-2.png)
+
+3. Toggle the switches for the notifications you want to receive:
+
+| **Notification category** | **Notifications included** |
+| :-- | :-- |
+| Customers | Activities that require administrators actions on the **Customers** page: <ul><li>New requests to join</li><li>Company members removed</li><li>Users reported</li><li>User accounts deleted</li></ul> |
+| Contracts | <ul><li>New contracts signed by all parties</li></ul> |
+| Subscriptions | <ul><li>New purchases</li></ul> |
+| Invoices | <ul><li>Payments succeeded</li><li>Payments failed</li></ul> |
+| Packages | <ul><li>New purchases</li></ul> |
+| Resources | <ul><li>New bookings created by the selected users</li><li>Bookings canceled</li></ul> |
+| Visitors | <ul><li>New contacts left on Reception</li></ul> |
+| Feed | <ul><li>New posts and comments under the post you created or commented on</li></ul> |
+| Events | <ul><li>New attendees</li><li>Tickets canceled</li></ul> |
+| Shop | <ul><li>New orders</li><li>Orders canceled</li></ul> |
+| Benefits | <ul><li>New applications submitted</li></ul> |
+| Support | <ul><li>New tickets</li><li>Reminders about new tickets that await action</li><li>Updates on tickets assigned to you or commented by you</li></ul> |
+| Integrations | <ul><li>Failures of the integration connections</li></ul> |
+| Chats | <ul><li>New messages</li></ul> |
+
+For bookings, administrators can also choose whose bookings trigger notifications:
+
+- Administrators
+- Location members
+- Network members
+- Nonmembers
+
+<Info>
+  Nonmembers' and invoice activity notifications are enabled by default.
+</Info>
+
+<Info>
+  Administrators receive notifications only about user activities they can manage according to their [permissions](/admin/administration/administrators/permissions).
+</Info>
+
+## Enable push and email notifications
+
+Administrators receive enabled notifications through two channels:
+
+- **Push notifications** — turned on by default; you only need to grant permission on your device or browser.
+- **Email** — optional; turn it on to also receive notifications by email.
+
+### Push notifications
+
+By default, RNTOR sends all enabled admin notifications as push notifications to the admin web portal and admin mobile app. To receive them, you must grant notification permission on your device or browser.
+
+#### Desktop (admin web portal)
+
+Administrators must grant notification permissions for RNTOR in their browser settings. Follow the guidelines for your browser:
+
+- [Instructions for Google Chrome](https://support.google.com/chrome/answer/3220216?hl=en)
+- [Instructions for Safari browser](https://support.apple.com/guide/iphone/change-notification-settings-iph7c3d96bab/17.0/ios/17.0#:~:text=Receive%20Web%20Push%20notifications%20from%20web%20apps)
+
+![Image](/images/account-notifications-push-notifications-1.png)
+
+<Tip>
+  Keep your browser updated to the latest version for a seamless push notification experience. You can also add RNTOR to your home screen as a progressive web app for quick access and enable push notifications directly from there.
+</Tip>
+
+#### Phone (admin mobile app)
+
+To receive push notifications on your smartphone:
+
+1. Download the admin mobile app to your device from [App Store](https://rntor.com) or [Google Play](https://rntor.com).
+2. When you log in for the first time, allow push notifications in the pop-up window.
+3. If you didn't see the prompt, go to the **Account \> Notifications** page and tap **Push notifications**. This redirects you to configure push notifications in your device settings.
+
+![Image](/images/account-notifications-push-notifications-2.png)
+
+<Tip>
+  Keep the admin mobile app updated to the latest version for a seamless notification experience.
+</Tip>
+
+### Email notifications
+
+In addition to push notifications, you can choose to receive all enabled notifications by email. Go to the **Account \> Notifications** page and enable the **Emails** switch at the bottom.
+
+![Image](/images/account-notifications-4.png)
+
+<Info>
+  If an administrator logs out or disables push notifications in their browser or device, RNTOR cannot deliver push notifications to them. If email notifications are enabled, they will receive notifications by email instead.
+</Info>
+
+## Track notifications in your Inbox
+
+Enabled admin notifications appear in RNTOR on the **Inbox** page — your main page to stay up-to-date with everything happening in your admin and member portals.
+
+<Info>
+  The **Inbox** was previously called **Notifications**. It's the same feature under a new name and interface. All the same notifications still appear here and work exactly as before.
+</Info>
+
+![Account Notifications Track Notifications In Your Inbox](/images/account-notifications-track-notifications-in-your-inbox.png)
+
+- Each notification shows the name of the user or company, a description of their action, and the RNTOR service they interacted with (a resource, a plan, a product, and so on).
+- Click a notification to open the related item — a booking, an invoice, and so on — and manage it as needed.
+
+<Info>
+  Administrators receive notifications only about other users' bookings and actions. You won't receive notifications about your own actions.
+</Info>
+
+**FAQs**
+
+<Accordion title="I am not getting admin notifications about certain user activity. What should I do?">
+  1. Check your notification settings:
+     - Click the **(...)** menu next to your network name on the left-side panel.
+     - Go to **Account \> Notifications**.
+     - Ensure that notifications for the specific user activity and user group you're interested in are enabled.
+  2. If you're not receiving push notifications, check in your device or browser settings that you've allowed receiving notifications from RNTOR:
+     - For admin mobile app: follow guidelines by [Google](https://support.google.com/android/answer/9079661) or [Apple](https://support.apple.com/en-us/120681), depending on your device.
+     - For admin web portal: add RNTOR to your home screen as a progressive web app and [allow push notifications via your browser](/admin/administration/your-account/notifications/set-up-notifications#push-notifications).
+  3. If you are not receiving email notifications, go to the **Account \> Notifications** page and enable the **Emails** switch at the bottom.
+</Accordion>
+
+<Accordion title="How to set sending notifications about specific user activity to a certain email address?">
+  There are two ways to set sending notifications to a certain email address.
+
+  If the employee whose email address you want to notify is an administrator of your space:
+
+  1. [Invite them as an administrator](/admin/customer-management/users/members#invite-a-member) to RNTOR.
+  2. [Set their administrator permissions](/admin/administration/administrators/permissions), as needed, if your RNTOR plan allows for this feature.
+  3. Ask them to log in to RNTOR, navigate to the [**Account \> Notifications**](/admin/administration/your-account/notifications/set-up-notifications) page, enable the desired notifications, and then toggle on the **Emails** switch at the bottom of the page.
+
+  If you prefer not to invite the email address as an administrator to RNTOR, you can set up an automation using Zapier:
+
+  1. Create a [Zapier](https://zapier.com/app/assets/zaps) automation designed to send emails.
+  2. In the **Trigger** step, select RNTOR and choose the specific user activity event you wish to send notifications about.
+  3. In the **Action** step, select your preferred email application (e.g., Gmail, Outlook) and enter the dedicated email address where you want to receive notifications.
+
+  Once set up, this Zapier automation will automatically send an email notification to the specified address every time the chosen user activity occurs in RNTOR.
+</Accordion>

@@ -1,5 +1,54 @@
 ---
-title: "Owner"
+title: "Owners"
+sidebarTitle: "Owners"
 ---
 
-Coming soon.
+## Who is an owner
+
+The owner is responsible for managing the entire network and acting as a point of contact in your organization regarding the subscription with RNTOR.
+
+<Info>
+  A network can have multiple owners. At least one owner must always remain on a network, so the last remaining owner can't remove their own owner rights.
+</Info>
+
+## What an owner can do
+
+- Have full management access to all locations
+- Manage [payment and invoicing information](/admin/administration/billing/make-changes-to-rntor-subscription#update-your-payment-or-billing-information) for subscription to RNTOR
+- Grant and remove owner rights from other administrators
+- [Add and delete locations](/admin/administration/locations)
+- [Customize member web portal](/admin/general/member-web-portal/customize-member-web-portal) and [mobile app](/admin/general/member-mobile-app/customize-member-mobile-app)
+- Manage [privacy policy](/admin/general/privacy-policy), [terms of use](/admin/general/terms-of-use), [network language](/admin/general/language)
+- Enable and disable [**Chats**](/admin/engagement/chats), [Noor AI](/admin/noor-ai/ask-noor-ai)
+- Manage all network [users](/admin/customer-management/users/remove-users), add abusive users to the [blacklist](/admin/general/users#blacklist-users)
+- Connect network-level integrations ([Google Analytics](/admin/integrations/analytics/google-analytics), [Twilio](/admin/integrations/communication/twilio), [Meta Pixel](/admin/integrations/analytics/meta-pixel)).
+
+To manage network settings, owners click the network name top left \> go to **Network settings**.
+
+![Image](/images/administration-roles-owner-1.png)
+
+Other location [administrators](/admin/administration/administrators/administrators) can view **Network settings** but cannot make changes.
+
+![Image](/images/administration-roles-owner-2.png)
+
+## Grant or remove owner rights
+
+A network can have multiple owners. Any existing owner can grant owner rights to an administrator or remove owner rights from another owner.
+
+<Info>
+  You can grant owner rights only to [administrators](/admin/administration/administrators/administrators). [Add the user as an administrator](/admin/administration/administrators/administrators#assign-or-remove-administrator-role) first if they aren't one yet.
+</Info>
+
+To grant or remove owner rights:
+
+1. Click the network name top left \> go to **Network settings** \> **Administrators**.
+2. On this page, the **Owners** section lists all current owners, and the **Administrators** section lists all other administrators across your locations.
+3. Press the **(...)** menu next to a user:
+   - On an administrator, select **Make owner** to grant them owner rights. They'll get full access to all network settings and locations.
+   - On an owner, select **Remove owner rights** to revert them to an administrator. They keep their administrator access in the releavnt locations but lose owner rights.
+
+![Administration Roles Owner Grant Or Remove Owner Rights](/images/administration-roles-owner-grant-or-remove-owner-rights.png)
+
+<Tip>
+  Consider making an actual person an owner, not a general team inbox (e.g., [team@coworking.com](mailto:team@coworking.com)). The owner role allows for making changes and accessing your billing, so it is a good practice to encourage personal accountability.
+</Tip>

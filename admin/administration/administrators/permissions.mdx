@@ -2,4 +2,58 @@
 title: "Permissions"
 ---
 
-Coming soon.
+Sometimes, you don't want your entire team to have access to everything in RNTOR. Use the administrator permissions feature when you need to:
+
+- Restrict admin access to certain modules
+- Assign different responsibilities across your team
+- Prevent admins from viewing or editing sensitive information
+
+## Understand permissions
+
+| **Permission** | **Description** |
+| --- | --- |
+| Administrators | Administrators with this permission can invite and remove other users, grant administrator role to existing users, and manage all administrator permissions. |
+| Customers | Administrators with this permission can invite users who are non-administrators, remove nonmembers, and manage companies and membership requests. They can also handle billing details for all customers and manage the **Auto-pay** and **Auto-invoice** switches, control their credits and day passes balance and add notes. |
+| Billing | Administrators with this permission can manage and create subscriptions and contracts, issue and manage invoices, configure plans, credit packages, coupons and promo codes. |
+| Bookings | Administrators always regain read-only access to **Rooms, Desks, Offices, Parking**, and **Equipment** pages. Without this permission, they cannot create bookings in the admin web portal, manage users' bookings or issue refunds for bookings. |
+| Feed | Administrators always regain read-only access to the **Feed** page. Without this permission, they cannot edit, pin, or delete posts or delete users' comments. They also can't create posts from the admin web portal. |
+| Events | Administrators always regain read-only access to the **Events** page. Without this permission, they cannot create or manage events, manage users' tickets, or issue refunds for tickets. |
+| Shop | Administrators always regain access to view shop products and orders. Without this permission, they cannot create or manage products, manage users' orders, or issue refunds for orders. |
+| Benefits | Administrators always regain access to view benefits and applications. Without this permission, they cannot add or manage benefits. |
+| Support | Administrators always regain access to view all support tickets and guides. Without this permission, they cannot create and manage support tickets and guides. |
+| Analytics | Without this, administrators cannot access the **Analytics** page. |
+| Settings | Without this, administrators cannot access or make any changes to the **Location settings** and **Integrations.** They gain view-only access to **Plans**, **Credit packages**, **Discounts**, and **Resources**, but cannot edit or delete them. |
+
+### Key considerations
+
+1. If the owner [becomes an administrator](/admin/administration/administrators/owner), they regain access as an administrator with all permissions.
+2. Administrators only receive notifications about user activities in the modules they have permissions for. Administrators can [configure notifications](/admin/administration/your-account/notifications/set-up-notifications) they want to receive on the **Notifications** page, but they will only get the enabled notifications if they have a permission for the corresponding module. For example, an administrator will not receive notifications about invoice payments if they enable **Invoices** notifications while having no permission for **Billing.**
+
+## Customize permissions
+
+You can manage permissions upon [inviting a new administrator](/admin/customer-management/users/members#invite-a-member) or [editing them](/admin/administration/administrators/administrators).
+
+If you want to edit the existing permissions of the invited administrator, do the following:
+
+1. Go to RNTOR **\>** **Customers** \> open the administrator.
+2. Press the menu **(...)** top right \> select **Edit**.
+
+![Image](/images/administration-roles-permissions-1.png)
+
+3. Manage the necessary permissions and press **Save**.
+
+![Image](/images/administration-roles-permissions-2.png)
+
+## Best practices
+
+Administrators can have different roles in your space, and based on their responsibilities, they need access to specific pages only.
+
+We recommend you give the following permissions to such teammates:
+
+- Account manager: enable all permissions to invite members and create companies, manage subscriptions, and edit any content in the location if necessary.
+- ​Event manager: enable **Feed** and **Events** permissions. The administrator will be able only to manage feed posts, create new events, and handle new event registrations.
+- Accountant: enable the **Analytics** permission. The administrator will be able to access **Analytics** page and download custom reports on payments and invoices from there.
+
+<Info>
+  Customizing administrator permissions is available on the Pro plan and above in RNTOR legacy plans and on the new Business plan. ​ If you’re currently on a legacy plan, [upgrade your subscription to the Business plan](/admin/administration/billing/make-changes-to-rntor-subscription) to get this feature.
+</Info>

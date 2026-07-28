@@ -434,6 +434,7 @@
                       {
                         "group": "Your account",
                         "pages": [
+                          "admin/administration/your-account/language",
                           {
                             "group": "Notifications",
                             "pages": [
@@ -441,16 +442,15 @@
                               "admin/administration/your-account/notifications/push-notifications",
                               "admin/administration/your-account/notifications/integration-failures"
                             ]
-                          },
-                          "admin/administration/your-account/language"
+                          }
                         ]
                       },
                       {
                         "group": "Administrators",
                         "pages": [
                           "admin/administration/administrators/administrators",
-                          "admin/administration/administrators/permissions",
-                          "admin/administration/administrators/owner"
+                          "admin/administration/administrators/owner",
+                          "admin/administration/administrators/permissions"
                         ]
                       },
                       {
@@ -999,6 +999,7 @@
                       {
                         "group": "حسابك",
                         "pages": [
+                          "ar/admin/administration/your-account/language",
                           {
                             "group": "الإشعارات",
                             "pages": [
@@ -1006,16 +1007,15 @@
                               "ar/admin/administration/your-account/notifications/push-notifications",
                               "ar/admin/administration/your-account/notifications/integration-failures"
                             ]
-                          },
-                          "ar/admin/administration/your-account/language"
+                          }
                         ]
                       },
                       {
                         "group": "المسؤولون",
                         "pages": [
                           "ar/admin/administration/administrators/administrators",
-                          "ar/admin/administration/administrators/permissions",
-                          "ar/admin/administration/administrators/owner"
+                          "ar/admin/administration/administrators/owner",
+                          "ar/admin/administration/administrators/permissions"
                         ]
                       },
                       {
