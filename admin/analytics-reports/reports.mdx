@@ -3,4 +3,63 @@ title: "Reports"
 description: "Generate and view reports"
 ---
 
-Placeholder content.
+## Create a report
+
+Go to **Analytics**, press **Create report** in the top-right corner, and choose a report type.
+
+![Create a report](/images/analytics/reports-create.png)
+
+## Types of reports
+
+Administrators can generate these reports as CSV files:
+
+| Report type | Filters | Usage |
+| --- | --- | --- |
+| Users | Members; Nonmembers | Contact and billing information, subscriptions, company, and role |
+| Companies | Members; Nonmembers | Companies with subscription and billing details |
+| Subscriptions | Status | Past and active subscriptions, plan, dates, total, credits, and day passes |
+| Invoices | Issue/create date; customer; status | Numbers, notes, totals, taxes, balance, adjustments, dates, customer, and PDF |
+| Invoice items | Issue/create date; customer; status | Item type, description, gross/net/tax, discounts, status, dates, and customer |
+| Credit notes | Create date | Related invoice, reason, amounts, adjustments, dates, customer, and PDF |
+| Transactions | Money; credits; day passes; dates; customer; status; type | Date, type, description, amount, refunds/disputes, payment, customer, and receipt |
+| Bookings | Create/start date; resource type; resource | Resource, dates, duration, price, payment, and customer |
+| Event attendees | Joining time; event | Attendee contacts, event title, and ticket payment |
+| Orders | Creation time; product | Products, options, prices, and customer contacts |
+| Benefit applications | Application time; benefit | Comment, benefit, and customer contacts |
+| Visitors | Visits; contacts; registration time | Visit/contact dates and visitor, contact, and host details |
+| Support tickets | Creation time | Initial question, type, status, creation date, requester, and assignee |
+
+### Notes
+
+- The Subscriptions report includes all active subscriptions and comprehensive canceled/ended history from **November 29, 2024**, plus some earlier records.
+- Invoice and Invoice items reports include invoices for all payments from **December 9, 2025**. Earlier immediate one-off purchases generated receipts only.
+
+<AccordionGroup>
+  <Accordion title="How can I export the list of all users?">
+    Download the **Users** report. Use the Members and Nonmembers filters to include either group or both.
+  </Accordion>
+
+  <Accordion title="How can I export members with an active subscription?">
+    Download the **Subscriptions** report and keep only **Active** status.
+  </Accordion>
+
+  <Accordion title="How can I check average spend per customer?">
+    Export a paid **Transactions** report for the period. Sum the Amount column, count distinct purchasers, then divide total revenue by the number of unique customers.
+  </Accordion>
+
+  <Accordion title="How can I calculate room occupancy during work hours?">
+    Export a room **Bookings** report, sum booked duration, calculate available hours as number of rooms × work hours per day × working days, then divide booked by available hours and multiply by 100. You can also use [Occupancy](/admin/analytics-reports/track-occupancy).
+  </Accordion>
+
+  <Accordion title="How can I get a payment report for a particular client?">
+    Create an **Invoices** report for summaries or **Invoice items** for line-level detail, then filter by Customer.
+  </Accordion>
+
+  <Accordion title="Where can I check the net, gross, and tax breakdown?">
+    Create an **Invoice items** report.
+  </Accordion>
+
+  <Accordion title="Where can I check revenue by plan title?">
+    Create an **Invoice items** report and check plan titles in the Description column.
+  </Accordion>
+</AccordionGroup>
