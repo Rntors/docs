@@ -582,7 +582,8 @@
               {
                 "group": "Get started",
                 "pages": [
-                  "mcp-server"
+                  "mcp-server",
+                  "mcp-server/claude"
                 ]
               }
             ]
