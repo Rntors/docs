@@ -1,38 +1,87 @@
 ---
 title: "Dynamic pricing"
+description: "Configure automatic dynamic variation of prices for bookings based on demand to maximize revenue and occupancy"
 ---
 
-Dynamic pricing helps maximize resource revenue and occupancy by applying configured price variations to bookings.
+Dynamic pricing automatically adjusts the price of resource bookings based on its demand—helping you maximize revenue and optimize occupancy.
 
-## Prerequisites
+<Frame>
+  </Frame>
 
-- Set up the resource and its standard [booking price](/admin/resource-management/resources/set-up-pricing).
-- Confirm that money payments are enabled.
-- Decide which dates, days, or time ranges need a different rate.
+It automatically increases booking price during peak times, popular hours, or busy days of the week, and lowers price during low-demand periods to encourage discounted off-peak bookings.
+
+The system continuously analyzes booking demand and automatically varies prices within limits you define. You stay in control by setting clear maximum (“Delta above”) and minimum (“Delta below”) price adjustments from the initial base price.
 
 ## Configure dynamic pricing
 
-1. Open the resource settings.
-2. Go to **Pricing → Dynamic pricing**.
-3. Select **Add rule**.
-4. Choose the applicable days, dates, and time range.
-5. Enter the price adjustment.
-6. Save the rule and the resource.
+You can set dynamic pricing for rooms, desks, parking spaces, and equipment.
+
+1. In the **Resources** module, go to the necessary page (**Rooms**/**Desks**/**Equipment**/**Parking**).
+2. Create or [edit a resource](/admin/resource-management/resources/set-up-resources).
+3. Enable the "Dynamic pricing (beta)" toggle.
+4. Set your pricing deltas:
+   * **Delta above** – The maximum percentage the price can increase from the base price during high-demand periods.
+   * **Delta below** – The maximum percentage the price can decrease from the base price during low-demand periods.
 
 <Frame>
+  <img src="" alt="" width="1191" height="760" data-path="images/resource-management-bookings-dynamic-pricing-1.png" />
 </Frame>
 
-## How rules work
+### Example settings
 
-A rule affects only bookings that match its conditions. The customer sees the calculated price before confirming payment. If more than one rule could match the same booking, review their scope carefully to avoid unintended combinations.
+| **Setup**                                                                                                                                                                            | **Example**                                                         | **Result**                                  |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------ | :------------------------------------------ |
+| To both increase and decrease the price dynamically, set: <ul><li>Both **Delta above** and **Delta below** to positive percentages.</li></ul>                                        | Initial price = \$100<br />Delta above = 50%<br />Delta below = 20% | Maximum price = \$150 Minimum price = \$80  |
+| To only dynamically increase the price during high-demand periods and never decrease, set: <ul><li>**Delta above** to a positive percentage.</li><li>**Delta below** to 0%</li></ul> | Initial price = \$100<br />Delta above = 50%<br />Delta below = 0%  | Maximum price = \$150 Minimum price = \$100 |
+| To only dynamically decrease the price during low-demand periods and never increase, set: <ul><li>**Delta above** to 0%</li><li>**Delta below** to a positive percentage.</li></ul>  | Initial price = \$100<br />Delta above = 0%<br />Delta below = 20%  | Maximum price = \$100 Minimum price = \$80  |
 
-## Common uses
+Resources with dynamic pricing enabled display a “trending up” arrow on the **Resources** pages.
 
-- Increase prices during peak hours.
-- Offer lower rates during quiet periods.
-- Apply weekend or evening pricing.
-- Create special prices for seasonal dates.
+<Frame>
+  <img src="" alt="" width="1272" height="545" data-path="images/resource-management-bookings-dynamic-pricing-2.png" />
+</Frame>
 
-## Edit or remove a rule
+## What affects dynamic pricing
 
-Open the dynamic pricing list for the resource, choose the rule, and edit or delete it. Changes apply to new bookings; previously completed transactions are not recalculated.
+Dynamic pricing evaluates multiple factors and large data references to determine the most accurate rate for each booking, including:
+
+* Utilization rate
+* Time of day
+* Day of the week
+
+For example, if a meeting room is always fully booked on Wednesday but has a lower number of bookings on Thursday, its price will automatically be higher on Wednesday due to the high demand according to delta above you set.
+
+## How dynamic pricing works
+
+When a customer selects a date and time for their booking, the system automatically calculates the rate for their booking. This rate is shown on the booking page in the member web portal and mobile app.
+
+* **Example (peak demand):** If your meeting room is usually \$20/hour, on a high-demand Wednesday, the user will see a higher price, such as \$24/hour. This price is calculated based on the high occupancy rate and is capped by the delta above percentage you set.
+
+<Frame>
+  <img src="" alt="" width="1107" height="884" data-path="images/resource-management-bookings-dynamic-pricing-3.png" />
+</Frame>
+
+* **Example (off-peak demand):** Conversely, if you have low demand on a Thursday afternoon, the user may see a discounted price, such as \$18/hour, capped by your delta below setting.
+
+<Frame>
+  <img src="" alt="" width="1107" height="884" data-path="images/resource-management-bookings-dynamic-pricing-4.png" />
+</Frame>
+
+Dynamic pricing applies to:
+
+* Monetary and credit prices.
+* Bookings made with all [payment methods](/admin/billing/payments/payment-methods) except day passes (payment gateways, external payments, payments with **Invoice**, and credits).
+* Bookings made by members, nonmembers, and administrators.
+* All [price tiers](/admin/resource-management/resources/set-up-pricing) for the configured resource.
+
+Dynamic pricing does not apply to:
+
+* Bookings made with [day passes](/admin/billing/credits-and-day-passes/day-passes)
+* [Subscriptions](/admin/billing/plans/immediate-plan-sign-ups)
+
+If a booking is made with credits or an **Invoice** payment method and [rescheduled](/admin/resource-management/resources/manage-bookings#edit-a-booking), the price is recalculated and extra charged or refunded based on demand during the new selected time.
+
+## Best practices
+
+* Only enable dynamic pricing if your space or a specific resource is established and already has a history of bookings. If a new space or new resource has zero booking history, the system will calculate low demand, causing the price to always drop to the minimum delta below limit.
+* Dynamic pricing relies exclusively on data created and logged within RNTOR. Ensure all resource bookings—including those made manually by administrators or received via other platforms—are recorded in RNTOR's calendar. If external bookings are missed, the system will register low occupancy, leading to incorrectly low prices.
