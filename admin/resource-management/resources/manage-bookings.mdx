@@ -2,4 +2,77 @@
 title: "Manage bookings"
 ---
 
-Coming soon.
+Administrators can create, edit, and cancel bookings for customers or themselves across rooms, desks, offices, parking, and equipment.
+
+## Create a booking
+
+1. Open the relevant resource page.
+2. Select the date, time, duration, and quantity.
+3. Add an optional **title**, **memo**, or discount.
+4. Choose the customer in **Booker**.
+5. Select the payment method.
+6. Choose whether to notify the booker and invitees.
+7. Confirm the booking.
+
+<Frame>
+</Frame>
+
+Administrators can also record bookings for past dates.
+
+### Create a recurring booking
+
+1. Start a new booking.
+2. Open **Repeat** and choose a suggested pattern or **Custom**.
+3. Set the end date, number of occurrences, or leave the recurrence open-ended when supported.
+4. Select the booker and confirm.
+
+<Frame>
+</Frame>
+
+Recurring bookings can be created with the payment options shown in the booking form. If a recurring charge is not available, create the reservation using **Free**, then invoice the customer or adjust their credits or day passes separately.
+
+## Edit a booking
+
+Open the booking from **Resources**, **Bookings**, or the customer profile. Select **(…) → Edit**, update the details, and save.
+
+- Administrators with the **Bookings** permission can edit customer bookings.
+- Customers can edit only within the resource’s rescheduling rules.
+- If a change increases the price, RNTOR collects the difference.
+- If it reduces the price, the configured refund policy applies.
+
+<Frame>
+</Frame>
+
+## Track bookings
+
+Go to **Resources → Bookings** to view all reservations. Filter by date, status, resource type, customer, or location.
+
+Common statuses include **Tentative**, **Confirmed**, **Pending**, **Canceled**, and **Failed**. Booking colors help distinguish resource types and status on calendar views.
+
+## Cancel a booking
+
+Open the booking, select **(…) → Cancel**, review any refund, and confirm. Notification and refund behavior follow the resource and payment settings.
+
+## Troubleshoot booking issues
+
+<AccordionGroup>
+  <Accordion title="The customer cannot see a resource">
+    Check the resource **Visibility**, the selected location, the customer role, and any exclusive-access restriction.
+  </Accordion>
+
+  <Accordion title="The customer can see the resource but cannot book it">
+    Compare **Booking** permission with **Visibility**. The customer may need to submit an [application](/admin/resource-management/resources/applications-for-bookings).
+  </Accordion>
+
+  <Accordion title="A time slot is unavailable">
+    Check existing bookings, operating hours, minimum notice, booking duration, capacity, parent-child overlap, and active rental assignments.
+  </Accordion>
+
+  <Accordion title="The payment failed">
+    Open the transaction for the failure reason, verify the customer’s payment method, and follow the guidance in [Payment gateway](/admin/billing/payments/payment-gateway).
+  </Accordion>
+
+  <Accordion title="The customer cannot edit or cancel">
+    Review the resource’s rescheduling and cancellation deadline. Administrators can manage the booking from the admin portal when permitted.
+  </Accordion>
+</AccordionGroup>

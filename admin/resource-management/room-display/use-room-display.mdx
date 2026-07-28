@@ -2,4 +2,61 @@
 title: "Use Room display"
 ---
 
-Coming soon.
+Room display helps customers understand room availability at a glance and act without administrator assistance.
+
+## Availability indicators
+
+| Display color | Meaning |
+| --- | --- |
+| **Green** | The room is available long enough for the minimum booking duration. |
+| **Yellow** | The room will become available soon. |
+| **Red** | The room is occupied or unavailable for the near-term period. |
+
+The display can show the current booking, progress, and upcoming reservations. Booking titles follow each customer’s privacy settings.
+
+## Ad-hoc bookings with QR code
+
+A unique QR code links directly to the room’s booking calendar. The customer scans it, signs in if needed, chooses an available time, and confirms the booking.
+
+<Frame>
+</Frame>
+
+## Abandoned-booking protection
+
+For eligible free rooms, enable **Check in** in the room settings.
+
+- **Early check in** controls how soon before the start the button appears.
+- **Abandoned threshold** controls how long RNTOR waits after the start before canceling a no-show.
+- A successful check-in changes the booking from **Tentative** to **Confirmed**.
+
+<Frame>
+</Frame>
+
+<Frame>
+</Frame>
+
+## Troubleshoot Room display
+
+<AccordionGroup>
+  <Accordion title="The room does not appear during setup">
+    Confirm that the room belongs to the selected location, is enabled, and the administrator has access to it.
+  </Accordion>
+
+  <Accordion title="The display shows outdated availability">
+    Check the tablet’s internet connection, reopen the app, and verify that the booking appears in the RNTOR calendar.
+  </Accordion>
+
+  <Accordion title="The QR code does not open the correct room">
+    Confirm the tablet is assigned to the intended room, then log out and activate Room display again.
+  </Accordion>
+
+  <Accordion title="The Check in button is missing">
+    Verify that the room is completely free, check-in protection is enabled, and the current time falls inside the early check-in window.
+  </Accordion>
+
+  <Accordion title="A booking was canceled automatically">
+    The abandoned threshold elapsed before check-in. Review the room’s check-in timing and the booking activity.
+  </Accordion>
+</AccordionGroup>
+
+No videos are embedded on this page.

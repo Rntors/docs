@@ -2,4 +2,32 @@
 title: "Overlapping resources"
 ---
 
-Coming soon.
+Link resources that represent the same physical area in different configurations. For example, a large room can be divided into two smaller rooms, or a full event space can contain several individual rooms and desks.
+
+## Configure parent and child resources
+
+1. Create every booking configuration as a separate resource.
+2. Decide which room is the **parent** and which resources are its **children**.
+3. Edit each child resource.
+4. Select the larger room in **Parent room**.
+5. Save.
+
+| Scenario | Parent resource | Child resources |
+| --- | --- | --- |
+| Split meeting room | Full room | Room A and Room B |
+| Entire venue | Full-space room | Individual rooms and desks |
+
+Only a room can be selected as a parent.
+
+<Frame>
+</Frame>
+
+## How synchronized availability works
+
+- Booking the parent blocks all linked children for the same time.
+- Booking any child blocks the parent for the overlapping time.
+- Other children remain available unless their own space or capacity overlaps.
+- Canceling the booking releases the synchronized block.
+
+<Frame>
+</Frame>
