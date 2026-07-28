@@ -1,34 +1,73 @@
 ---
 title: "Hourly desk bookings"
+description: "Set up hourly, half-day, and full-day desk booking options, and learn how users book and how the system automatically calculates seat availability by time slot"
 ---
 
-Configure one desk resource with several time-based price options so customers can choose hourly, half-day, or full-day access.
+RNTOR solutions help you optimize desk usage and provide customers with flexible booking options. You can set up hourly, half-day, and full-day booking options for a single desk, each with customized pricing tiers.
 
 ## Prerequisites
 
-- Keep one shared desk resource instead of separate duplicates for each duration.
-- Review future bookings before deleting old desk resources.
-- Add the required [price tiers](/admin/resource-management/resources/set-up-pricing).
+* Make sure only one desk remains by removing any existing full-day or half-day bookings. For example, if you have **Open Space full-day** and **Open Space half-day** desks, leave only the **Open Space** desk.
+* Before deleting any resources used for hourly desk bookings, ensure you [download your customers' future bookings](/admin/analytics-reports/reports) associated with the resources you plan to delete.
+* Check [use cases on using price tiers](/admin/resource-management/resources/set-up-pricing) to learn how to set them up in the app further.
 
 ## Enable hourly desk bookings
 
-1. Go to **Resources → Desks**.
-2. Create or edit the desk.
-3. Set the **availability increment**, **minimum time**, and **maximum time**.
-4. Add hourly, half-day, and full-day pricing options.
-5. Set the resource capacity.
-6. Save.
+Administrators go to RNTOR and follow these steps to set up different pricing options for desks:
+
+1. Navigate to the **Resources** > **Desks** page.
+2. Start [editing](/admin/resource-management/resources/set-up-resources) one of your desks, or [create a new one](/admin/resource-management/resources/set-up-resources#desks) if necessary.
+3. Choose the availability increment (the smallest bookable time slot), minimum, and maximum booking time. For example, if your desk can be booked for a minimum of 1 hour, choose "1 hour" in the "Min time."
 
 <Frame>
+  <img src="" alt="" width="1000" height="768" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-1.png" />
 </Frame>
 
-## Customer experience
-
-Customers select the date, time, duration, and number of seats. RNTOR displays only the time slots where the requested quantity remains available.
+4. [Add price tiers](/admin/resource-management/resources/set-up-pricing) to define fees for hourly, half-day, and full-day bookings, and save your change.
 
 <Frame>
+  <img src="" alt="" width="1007" height="845" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-2.png" />
 </Frame>
 
-## Availability calculation
+5. If you have deleted any of your resources that had user bookings for future dates, [recreate those bookings](/member/bookings/book-a-desk) for your customers.
 
-Every reservation reduces capacity only for its booked time. A full-day reservation reduces availability for the entire day, while hourly reservations affect only overlapping time slots. This keeps all duration options synchronized without separate desk calendars.
+## How users view desk booking options
+
+Users can view desk booking options by navigating to **Locations** > **Desks**, selecting the desired desk, and checking the **Pricing** section.
+
+<Frame>
+  <img src="" alt="" width="1920" height="912" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-3.png" />
+</Frame>
+
+The price is automatically calculated and is based on the booking duration.
+
+<Frame>
+  <img src="" alt="" width="1920" height="912" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-4.png" />
+</Frame>
+
+## How desk availability works for hourly bookings
+
+When desks are set up for hourly bookings, their availability shows the maximum number of seats that can be booked at the same time in each time slot.
+
+For example:
+
+* Your desk has 10 seats in total.
+* 2 seats are booked for half a day from 8 AM to 2 PM.
+
+<Frame>
+  <img src="" alt="" width="1588" height="393" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-5.png" />
+</Frame>
+
+* The desk will still show 10 out of 10 seats available because users can still book all 10 seats—but only for the afternoon.
+
+<Frame>
+  <img src="" alt="" width="1562" height="497" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-6.png" />
+</Frame>
+
+* When a user selects the number of seats needed, the system displays only those slots where the required seats are available. This ensures there are no booking conflicts while making the best use of your available desks.
+
+<Frame>
+  <img src="" alt="" width="1485" height="817" data-path="images/resource-management-bookings-enable-hourly-desk-bookings-7.png" />
+</Frame>
+
+* When 1 or more seats are booked for the entire day, the total seat availability shows the reduced number accordingly.
