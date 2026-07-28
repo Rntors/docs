@@ -1,86 +1,83 @@
 ---
 title: "RNTOR MCP"
 sidebarTitle: "RNTOR MCP"
-description: "Connect ChatGPT, Claude, or another AI assistant to your RNTOR network through the Model Context Protocol and retrieve authorized coworking data in plain language"
+description: "Connect your AI assistant to your RNTOR network with the Model Context Protocol and retrieve authorized coworking data in plain language"
 ---
 
-Connect your AI assistant to RNTOR with the Model Context Protocol (MCP) and find information about your coworking network by asking in plain language.
+Connect your AI assistant to your RNTOR network with the Model Context Protocol (MCP) and get answers instantly by asking in plain language.
 
-RNTOR MCP connects your authorized RNTOR data to AI assistants such as ChatGPT and Claude using the [Model Context Protocol](https://modelcontextprotocol.io), an open standard for connecting AI assistants to external tools and platforms.
+RNTOR MCP connects your authorized RNTOR data directly to AI assistants such as Claude and ChatGPT using the [Model Context Protocol](https://modelcontextprotocol.io), an open standard for connecting AI assistants to external tools and platforms. Once connected, your AI assistant can access the RNTOR data permitted by your account and answer questions inside your conversation.
 
-Once connected, you can ask about the networks, locations, resources, and recent bookings your RNTOR account is permitted to access. RNTOR MCP uses your existing sign-in and permissions, so you do not need to create or manage an API key.
+Instead of navigating the admin dashboard to find information, describe what you need in plain language. Your AI assistant can find the relevant RNTOR data and use it together with other connected apps, such as drafting a follow-up message from booking information.
 
 ## What you can do with RNTOR MCP
 
-Ask your AI assistant to:
+Once connected, your AI assistant can look up information from across the RNTOR networks you are allowed to access:
 
-- Identify the signed-in RNTOR user and their available account context.
-- List the coworking networks the user can access.
-- Find locations within an accessible network.
-- Look up rooms, desks, offices, parking spaces, and other resources.
-- Review recent bookings by location, resource type, or date range.
+- **Account** — identify the connected RNTOR user and available account context.
+- **Networks and locations** — list accessible networks and their locations.
+- **Resources and bookings** — look up rooms, desks, offices, parking spaces, other resources, and recent bookings.
 
-For example:
+For example, you can ask:
 
-- “List the RNTOR networks I can access.”
-- “Show all locations in my live network.”
-- “Which meeting rooms are configured in the Downtown location?”
-- “List recent bookings for rooms this week.”
-- “Show the resources at Lake View and group them by type.”
+- “Which RNTOR account am I connected with?”
+- “List all live networks I can access.”
+- “Show the locations in my network.”
+- “List all meeting rooms at Lake View.”
+- “What room bookings are scheduled this week?”
 
 ## Connect RNTOR MCP
 
-Before connecting, make sure you have an active RNTOR account with access to at least one network. There are no API keys or hosting settings to configure.
-
-### Connect in ChatGPT
-
-1. Open your ChatGPT connector settings and choose to add a custom connector.
-2. Enter the RNTOR MCP server URL:
-
-```text
-https://iwdewzswethsnvwvpind.supabase.co/functions/v1/mcp
-```
-
-3. When prompted, sign in to RNTOR and authorize the connection.
-4. Enable the RNTOR connector in your conversation, then ask for the information you need.
+Before you connect, make sure you have an active RNTOR account with access to at least one network. There are no API keys, hosting, or technical configuration to set up.
 
 ### Connect in Claude
 
+Add RNTOR as a custom connector in Claude:
+
 1. In Claude, open **Settings → Connectors** and choose to add a custom connector.
+2. Enter the RNTOR MCP server URL shown below.
+3. When prompted, sign in to RNTOR and authorize access to your network.
+
+[See the complete Claude setup guide](/mcp-server/claude).
+
+### Connect in another AI assistant
+
+For ChatGPT or another MCP-compatible AI assistant, add RNTOR as a custom connector:
+
+1. Open the connector settings in your AI assistant and choose to add a custom connector.
 2. Enter the RNTOR MCP server URL:
 
 ```text
 https://iwdewzswethsnvwvpind.supabase.co/functions/v1/mcp
 ```
 
-3. When prompted, sign in to RNTOR and authorize the connection.
-4. Start a conversation, enable the RNTOR connector, and ask in plain language.
+3. When prompted, sign in to RNTOR and authorize access to your network.
 
-You can use the same server URL with another AI assistant that supports remote MCP servers and OAuth sign-in.
+Once connected, enable the RNTOR connector in your conversation and ask for the information you need in plain language.
 
 ## Supported tools
 
-These are the read-only tools currently available through RNTOR MCP.
+These read-only tools work together to retrieve information from the RNTOR networks your account can access.
 
 ### Account
 
 | Tool | Description | Example prompt |
 | --- | --- | --- |
-| `get_current_user` | Returns the signed-in RNTOR user's identity and accessible account context. | “Which RNTOR account am I connected with?” |
+| `get_current_user` | See the signed-in RNTOR user's identity and accessible account context. | “Which RNTOR account am I connected with?” |
 
 ### Networks and locations
 
 | Tool | Description | Example prompt |
 | --- | --- | --- |
-| `list_merchants` | Lists the active RNTOR networks the signed-in user can access, with live or test environment context. | “List all live networks I can access.” |
-| `list_locations` | Lists locations inside an accessible network. | “Show the locations in my network.” |
+| `list_merchants` | List the active RNTOR networks the signed-in user can access, including live or test environment context. | “List all live networks I can access.” |
+| `list_locations` | List locations inside an accessible network. | “Show the locations in my network.” |
 
 ### Resources and bookings
 
 | Tool | Description | Example prompt |
 | --- | --- | --- |
-| `list_resources` | Lists accessible resources and their resource types, optionally filtered by location or resource type. | “List all meeting rooms at Lake View.” |
-| `list_recent_bookings` | Lists recent accessible bookings, optionally filtered by location, resource type, or date range. | “What room bookings are scheduled this week?” |
+| `list_resources` | List accessible resources and their resource types, optionally filtered by location or resource type. | “List all meeting rooms at Lake View.” |
+| `list_recent_bookings` | List recent accessible bookings, optionally filtered by location, resource type, or date range. | “What room bookings are scheduled this week?” |
 
 RNTOR MCP tools are read-only. They retrieve information but cannot create, update, or delete anything in your RNTOR account. Additional data types and capabilities may be added in future updates.
 
@@ -88,16 +85,26 @@ RNTOR MCP tools are read-only. They retrieve information but cannot create, upda
 
 ### Access
 
-- You authorize the connection yourself through RNTOR sign-in; no API key is shared with the AI assistant.
-- You can disconnect RNTOR from your AI assistant at any time.
-- Every request runs as the signed-in user and follows the same RNTOR roles, permissions, network scope, and live or test environment boundaries.
+- You authorize the connection yourself through RNTOR sign-in, so there is no API key to manage in your AI client.
+- You can disconnect RNTOR from your AI assistant at any time to end its access.
+- Every request follows the signed-in user's RNTOR roles, permissions, network scope, and live or test environment boundaries.
 
 ### Data
 
-- The current tools are read-only, so the AI assistant cannot change data in your RNTOR account.
-- Your AI assistant can only retrieve data that your RNTOR account is already allowed to access.
-- Data returned to your AI assistant is handled according to that assistant's privacy policy and terms.
+- RNTOR MCP tools are read-only, so nothing in your RNTOR account can be changed.
+- Your AI assistant only receives data your RNTOR account is already allowed to access.
+- Data sent to the AI assistant is handled under that assistant's privacy policy and terms.
+
+## FAQs
+
+### Do I need an API key?
+
+No. Sign in to RNTOR and authorize the connection when your AI assistant prompts you.
+
+### Can RNTOR MCP change my account data?
+
+No. The currently supported tools are read-only and cannot create, update, or delete RNTOR data.
 
 <Note>
-  After RNTOR adds, removes, or renames MCP tools, refresh the connector in your AI assistant to load the latest tool list.
+  If RNTOR adds, removes, or renames MCP tools, refresh the connector in your AI assistant to load the latest tool list.
 </Note>
