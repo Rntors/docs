@@ -1,35 +1,43 @@
 ---
 title: "Export invoices for accounting"
-description: "Export invoices for your accounting workflow"
+description: "Learn how to export and bulk download invoices from RNTOR for your accounting software"
 ---
 
-If an automated accounting integration does not meet your needs, export invoice data as CSV and download invoice PDFs for import into your accounting software.
+If [automated integrations](/admin/billing/invoices/accounting) between RNTOR and your accounting platform don't meet your needs, you can easily export all invoices from RNTOR using custom reports and import them into your accounting software.
+
+RNTOR lets you export invoice data in CSV reports and download invoice PDFs.
 
 ## Export CSV reports
 
-| Report type | Purpose |
+CSV reports are ideal for bulk uploading invoice data into accounting software.
+
+| **Report type** | **Purpose** |
 | --- | --- |
-| Invoices | Consolidated invoice data with totals per invoice |
-| Invoice items | Detailed data for each invoice line item |
+| Invoices | Export consolidated invoice data with total amounts per invoice. |
+| Invoice items | Export detailed data for each individual line item within invoices. |
 
-See [Reports](/admin/analytics-reports/reports) for the exact fields.
+<Tip>
+  Learn more about the content of each report [here](/admin/analytics-reports/reports).
+</Tip>
 
-1. Go to **Analytics \> Create report**.
-2. Select **Invoices** or **Invoice items**, the time range, and payment status.
+To download a CSV report:
+
+1. Go to the **Analytics** page \> click **Create report** top right.
+2. Choose the necessary report type, time range, and payment status (e.g., filter to export only **Paid** invoices).
 3. Press **Download**.
-4. Upload or copy the invoice data into your accounting software.
+4. Upload or copy-paste invoice data into your accounting software.
 
-![Export invoice CSV](/images/analytics/export-invoices-csv.png)
+![Image](/images/analytics/analytics-export-invoices-for-your-accounting-app-1.png)
 
 ## Download invoice PDFs
 
-1. Go to **Analytics \> Create report**.
-2. Choose **Invoices**, select the time range and status, then press **Download**.
-3. Open the CSV in Google Sheets, Excel, or another compatible app.
+1. Go to **Analytics** \> press **Create report** top right.
+2. Choose the **Invoices** report type, select the necessary time range, and payment status \> press **Download**.
+3. Open the downloaded report in Google Sheets, Excel, or any other app that supports the CSV file format.
 4. Locate the **PDF** column.
 
-![Invoice PDF column](/images/analytics/export-invoices-pdf-column.png)
+![Image](/images/analytics/analytics-export-invoices-for-your-accounting-app-2.png)
 
-5. Click a URL to download one invoice.
-6. For a bulk download, select links in the PDF column and use your spreadsheet app's **Open links** action.
-7. Upload the downloaded PDFs to your accounting software.
+5. To download individual invoices, click on the URL in this column. The invoice PDF will be downloaded to your device.
+6. To mass download all invoices, select a range of links in the **PDF** column. Then, click the **(...)** \> **View more cell actions** \> use the **Open links** feature (available in [Google Sheets](https://support.google.com/docs/thread/5466717/keyboard-shortcut-to-open-a-spreadsheet-hyperlink-to-a-new-tab-but-stay-in-current-sheet-alt-ent?hl=en) and other apps that handle hyperlinks). All selected links will open simultaneously, and all invoices will be downloaded.
+7. Once exported, upload all invoice PDFs to your accounting software.

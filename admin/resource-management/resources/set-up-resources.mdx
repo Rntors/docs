@@ -12,17 +12,17 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
     To start using the **Rooms** module:
 
     1. In the left-side panel, click the menu **(...)** next to your location name
-    2. Go to **Location** **settings** > **Resources** > **Rooms** and toggle the **Rooms** switch on.
+    2. Go to **Location** **settings** \> **Resources** \> **Rooms** and toggle the **Rooms** switch on.
     3. **Page name** — choose the best fit.
     4. **Book ahead** — set how far in advance users can book rooms.
-           <Info>
-             The **Book ahead** limit also applies to recurring bookings. Every occurrence in a repeating booking must fall within the book-ahead window — if the series runs past it, the member portal shows the user up to which date they can book, and they have to adjust the **End repeat** setting of their recurring booking. Select **Unlimited** to let users book with no date limit and remove this restriction.
-           </Info>
+       <Info>
+         The **Book ahead** limit also applies to recurring bookings. Every occurrence in a repeating booking must fall within the book-ahead window — if the series runs past it, the member portal shows the user up to which date they can book, and they have to adjust the **End repeat** setting of their recurring booking. Select **Unlimited** to let users book with no date limit and remove this restriction.
+       </Info>
     5. **Book for free** — limit how many free bookings a user can have scheduled at the same time, if you have free rooms.
-       * One active
-       * Two active
-       * Three active
-       * Unlimited
+       - One active
+       - Two active
+       - Three active
+       - Unlimited
 
     The **Book for free** setting only applies if you have totally free rooms and only to bookings made by non-administrator users. With this setting, users will be able to make the next free bookings once their previous scheduled bookings have passed. [Optimize room usage](/guides/revenue-and-space-optimization/optimize-room-usage)
 
@@ -30,36 +30,36 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     ## Add rooms
 
-    1. Go to the **Resources** > **Rooms** page.
+    1. Go to the **Resources** \> **Rooms** page.
     2. Click **Add room** top right.
 
     ![Resource Management Rooms 2](/images/resource-management-rooms-2.png)
 
     3. Fill in the room details.
 
-    | **Section name**                   | **Meaning**                                                                                                                                                                                                                                                                               |
-    | :--------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Room photo**                     | 2x1 format.                                                                                                                                                                                                                                                                               |
-    | **Type**                           | <ul><li>Room</li><li>Conference room</li><li>Event space</li><li>Meeting room</li><li>Phone booth</li><li>Studio</li></ul>                                                                                                                                                                |
-    | **Name**                           | Room name and/or number.                                                                                                                                                                                                                                                                  |
-    | **Seating capacity**               | The number of people the room fits.                                                                                                                                                                                                                                                       |
-    | **Description**                    | Include any important information customers need to know.                                                                                                                                                                                                                                 |
-    | **Money**                          | The monetary price for hourly/daily bookings in your location currency. [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing)                                                                                                                                        |
-    | **Credits**                        | The credit price for hourly/daily bookings.                                                                                                                                                                                                                                               |
-    | **Dynamic pricing (beta)**         | Automatically adjusts room booking price based on demand within your defined range. [<u>Set dynamic pricing for resource</u>](/admin/resource-management/resources/dynamic-pricing)                                                                                                             |
-    | **Plans**                          | If you offer long-term rentals (weekly, monthly, etc.) of this room, enable the **Plans** switch and add tiers. <ul><li>Disable this switch if the room is only available for hourly/daily bookings.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
-    | **Availability increment**         | The frequency of available time for room booking. It shows up as a step on the booking.                                                                                                                                                                                                   |
-    | **Min & Max duration**             | Minimum & maximum duration limits for hourly/daily bookings. Applies to all users except administrators. <ul><li>To offer different limits for nonmembers, enable "**Public duration**," and set the min & max duration that will apply to them.</li></ul>                                |
-    | **Preparationtime**                | Buffer time that will be reserved between bookings.                                                                                                                                                                                                                                       |
-    | **Reschedulingpolicy**             | Select whether users can reschedule bookings for this room or cancel and get automatic refunds. [<u>Understand refunds</u>](/admin/billing/payments/refunds)                                                                                                                                    |
-    | **Custom schedule**                | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this room, independent of the location's overall schedule.                                                                                                                           |
-    | **Confirmation email**             | If you want to send a [<u>custom booking confirmation email</u>](/admin/general/customize-emails#booking-confirmations), select which users should receive it when making a booking, and paste your email text.                                                                                 |
-    | **Visibility**                     | Determine which user groups can see this room.                                                                                                                                                                                                                                            |
-    | **Booking**                        | Determine which groups of users can immediately book the room, while others can apply for a booking. <ul><li>[<u>Book a room</u>](/member/bookings/book-a-room)</li><li>[<u>Configure room booking permissions</u>](/admin/resource-management/resources/applications-for-bookings)</li></ul>   |
-    | **Parent room**                    | If this room overlaps with or is related to a larger space (e.g., it's half of a split room, or located within an Event hall), select that larger space as a **Parent room**. When the parent room is booked, this room is automatically blocked for booking, and vice versa.             |
-    | **Abandoned booking protection\*** | Automatically remove ghost bookings from the room's calendar if nobody checks in. Available only with [<u>Room display</u>](/admin/resource-management/room-display/set-up-room-display). *\*This option appears only if the room is totally free of charge.*                                                       |
-    | **Access**                         | Determine the access control group to which users are synced upon booking this room. <br />​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location.                                                          |
-    | **Calendar sync**                  | Sync booking for this room with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar)                                                                                                                                                                            |
+    | **Section name** | **Meaning** |
+    | :-- | :-- |
+    | **Room photo** | 2x1 format. |
+    | **Type** | <ul><li>Room</li><li>Conference room</li><li>Event space</li><li>Meeting room</li><li>Phone booth</li><li>Studio</li></ul> |
+    | **Name** | Room name and/or number. |
+    | **Seating capacity** | The number of people the room fits. |
+    | **Description** | Include any important information customers need to know. |
+    | **Money** | The monetary price for hourly/daily bookings in your location currency. [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
+    | **Credits** | The credit price for hourly/daily bookings. |
+    | **Dynamic pricing (beta)** | Automatically adjusts room booking price based on demand within your defined range. [<u>Set dynamic pricing for resource</u>](/admin/resource-management/resources/dynamic-pricing) |
+    | **Plans** | If you offer long-term rentals (weekly, monthly, etc.) of this room, enable the **Plans** switch and add tiers. <ul><li>Disable this switch if the room is only available for hourly/daily bookings.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
+    | **Availability increment** | The frequency of available time for room booking. It shows up as a step on the booking. |
+    | **Min & Max duration** | Minimum & maximum duration limits for hourly/daily bookings. Applies to all users except administrators. <ul><li>To offer different limits for nonmembers, enable "**Public duration**," and set the min & max duration that will apply to them.</li></ul> |
+    | **Preparationtime** | Buffer time that will be reserved between bookings. |
+    | **Reschedulingpolicy** | Select whether users can reschedule bookings for this room or cancel and get automatic refunds. [<u>Understand refunds</u>](/admin/billing/payments/refunds) |
+    | **Custom schedule** | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this room, independent of the location's overall schedule. |
+    | **Confirmation email** | If you want to send a [<u>custom booking confirmation email</u>](/admin/general/customize-emails#booking-confirmations), select which users should receive it when making a booking, and paste your email text. |
+    | **Visibility** | Determine which user groups can see this room. |
+    | **Booking** | Determine which groups of users can immediately book the room, while others can apply for a booking. <ul><li>[<u>Book a room</u>](/member/bookings/book-a-room)</li><li>[<u>Configure room booking permissions</u>](/admin/resource-management/resources/applications-for-bookings)</li></ul> |
+    | **Parent room** | If this room overlaps with or is related to a larger space (e.g., it's half of a split room, or located within an Event hall), select that larger space as a **Parent room**. When the parent room is booked, this room is automatically blocked for booking, and vice versa. |
+    | **Abandoned booking protection\*** | Automatically remove ghost bookings from the room's calendar if nobody checks in. Available only with [<u>Room display</u>](/admin/resource-management/room-display/set-up-room-display). _\*This option appears only if the room is totally free of charge._ |
+    | **Access** | Determine the access control group to which users are synced upon booking this room. <br />​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location. |
+    | **Calendar sync** | Sync booking for this room with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar) |
 
     <Tip>
       If you offer equipment rentals for meetings, events, or presentations—such as chairs, monitors, or whiteboards—[list them on the **Equipment** page](/admin/resource-management/resources/set-up-resources#equipment). Consider adding links to equipment in room descriptions to inform customers of available options and encourage upsells in addition to bookings.
@@ -73,8 +73,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To update the settings of a room, follow these steps:
 
-    1. Navigate to **Resources** > **Rooms.**
-    2. Find the room you need to edit and hover over it > click the menu **(...)** next to it > **Edit**.
+    1. Navigate to **Resources** \> **Rooms.**
+    2. Find the room you need to edit and hover over it \> click the menu **(...)** next to it \> **Edit**.
 
     ![Resource Management Edit A Resource 1](/images/resource-management-edit-a-resource-1.png)
 
@@ -89,8 +89,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To permanently delete a room from RNTOR, follow these steps:
 
-    1. Navigate to **Resources** > **Rooms.**
-    2. Find the necessary room and hover over it > click the menu **(...)** next to it > select **Delete** and confirm your choice.
+    1. Navigate to **Resources** \> **Rooms.**
+    2. Find the necessary room and hover over it \> click the menu **(...)** next to it \> select **Delete** and confirm your choice.
 
     ![Resource Management Delete A Resource 1](/images/resource-management-delete-a-resource-1.png)
 
@@ -122,19 +122,18 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
       3. The customer may have logged in with a different email. If they are a member and should see the room, check the email tied to their member profile on the **Customers** page.
     </Accordion>
   </Tab>
-
   <Tab title="Desks">
     Add and manage all workstations—such as hot desks, dedicated desks, or stations—on the **Desks** page.
 
     With desks, you can:
 
-    * Organize your workstations for a real-time occupancy tracking
-    * Offer short-term bookings (hourly or daily) and/or long-term rentals (subscriptions).
+    - Organize your workstations for a real-time occupancy tracking
+    - Offer short-term bookings (hourly or daily) and/or long-term rentals (subscriptions).
 
     ## Configure general desk settings
 
     1. In the left-side panel, click **(...)** next to your location name.
-    2. Go to **Location** **settings** > **Resources** > **Desks.**
+    2. Go to **Location** **settings** \> **Resources** \> **Desks.**
     3. Make sure the **Desks** switch is toggled on.
     4. **Page name** — choose the best fit.
     5. **Book ahead** — set how far in advance users can book desks.
@@ -145,48 +144,48 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     ## Set up desks
 
-    1. Go to **Resources** > **Desks**.
+    1. Go to **Resources** \> **Desks**.
     2. Click **Add desk** top right.
 
     ![Resource Management Desks 2](/images/resource-management-desks-2.png)
 
-    * **Desk photo** — 2x1 format.
-    * **Type**
-      * **Hot desk** — shared, not dedicated to a specific customer, bookable based on availability.
-      * **Dedicated desk** — can be reserved for a specific customer.
-      * **Station** — workspace, typically equipped with tools or furniture for job.
-    * **Name** — choose your naming approach:
-      * **Zones** (e.g., **Open Space**, **Lounge Zone**, or **Open space 1 floor** and **Open space 2 floor**) with total seating capacity to track occupancy by zone.
-      * **Numbered desks** (e.g., **Dedicated Desk 1**) to let users book/sign up for a specific desk. [Desk setup options](#desk-setup-options)
-    * **Seating capacity —** number of seats this desk or zone allows.
-    * **Description —** information customers need to know.
-    * **Money —** monetary price for hourly/daily bookings.
-      * Disable if the desk is only available for long-term rental.
-    * **Credits —** credit price for hourly/daily bookings.
-      * Disable if the desk is only available for long-term rental.
-    * **Day passes** **—** let members book this desk with [day passes payment method.](/admin/billing/credits-and-day-passes/day-passes) *Appears only for **Hot desk** type.*
-    * **Dynamic pricing —** automatically adjusts booking price based [on demand](/admin/resource-management/resources/dynamic-pricing)*.*
-    * **Plans —** enable if you offer long-term rentals (weekly, monthly, etc.) of this desk, and [add tiers.](/admin/resource-management/resources/set-up-pricing)
-      * Disable if the desk is only available for hourly/daily bookings.
-    * **Availability increment —** booking time step.
-    * **Min & Max duration —** booking duration limits. Applies to all users except administrators.
-    * **Public duration —** enable to set different booking duration limits for nonmembers.
-    * **Rescheduling policy —** select whether users can reschedule bookings or cancel and get automatic [refunds](/admin/billing/payments/refunds).
-    * **Custom schedule —** [custom working hours](/admin/location/schedule) for this desk.
-    * **Confirmation email —** send a [custom booking confirmation email](/admin/general/customize-emails). Select which users should receive it and paste the text.
-    * **Visibility —** define which user groups can see this desk.
-    * **Booking —** define which user groups can immediately [book the desk](/member/bookings/book-a-desk), while others can [apply for a booking](/admin/resource-management/resources/applications-for-bookings).
-    * **Parent room —** if this desk overlaps with or is related to a larger space (for example, located inside an Event hall), select that larger space to [link them.](/admin/resource-management/resources/overlapping-resources)
-    * **Access —** the access control group for users who book or rent this desk. *Appears if you have the [integration with the access control system](/admin/integrations/access-control/set-up-access-control).*
-    * **Calendar sync —** sync bookings for this desk with [Google Calendar.](/admin/integrations/bookings/google-calendar)
+    - **Desk photo** — 2x1 format.
+    - **Type**
+      - **Hot desk** — shared, not dedicated to a specific customer, bookable based on availability.
+      - **Dedicated desk** — can be reserved for a specific customer.
+      - **Station** — workspace, typically equipped with tools or furniture for job.
+    - **Name** — choose your naming approach:
+      - **Zones** (e.g., **Open Space**, **Lounge Zone**, or **Open space 1 floor** and **Open space 2 floor**) with total seating capacity to track occupancy by zone.
+      - **Numbered desks** (e.g., **Dedicated Desk 1**) to let users book/sign up for a specific desk. [Desk setup options](#desk-setup-options)
+    - **Seating capacity —** number of seats this desk or zone allows.
+    - **Description —** information customers need to know.
+    - **Money —** monetary price for hourly/daily bookings.
+      - Disable if the desk is only available for long-term rental.
+    - **Credits —** credit price for hourly/daily bookings.
+      - Disable if the desk is only available for long-term rental.
+    - **Day passes** **—** let members book this desk with [day passes payment method.](/admin/billing/credits-and-day-passes/day-passes) _Appears only for **Hot desk** type._
+    - **Dynamic pricing —** automatically adjusts booking price based [on demand](/admin/resource-management/resources/dynamic-pricing)_._
+    - **Plans —** enable if you offer long-term rentals (weekly, monthly, etc.) of this desk, and [add tiers.](/admin/resource-management/resources/set-up-pricing)
+      - Disable if the desk is only available for hourly/daily bookings.
+    - **Availability increment —** booking time step.
+    - **Min & Max duration —** booking duration limits. Applies to all users except administrators.
+    - **Public duration —** enable to set different booking duration limits for nonmembers.
+    - **Rescheduling policy —** select whether users can reschedule bookings or cancel and get automatic [refunds](/admin/billing/payments/refunds).
+    - **Custom schedule —** [custom working hours](/admin/location/schedule) for this desk.
+    - **Confirmation email —** send a [custom booking confirmation email](/admin/general/customize-emails). Select which users should receive it and paste the text.
+    - **Visibility —** define which user groups can see this desk.
+    - **Booking —** define which user groups can immediately [book the desk](/member/bookings/book-a-desk), while others can [apply for a booking](/admin/resource-management/resources/applications-for-bookings).
+    - **Parent room —** if this desk overlaps with or is related to a larger space (for example, located inside an Event hall), select that larger space to [link them.](/admin/resource-management/resources/overlapping-resources)
+    - **Access —** the access control group for users who book or rent this desk. _Appears if you have the [integration with the access control system](/admin/integrations/access-control/set-up-access-control)._
+    - **Calendar sync —** sync bookings for this desk with [Google Calendar.](/admin/integrations/bookings/google-calendar)
 
     ### Desk setup options
 
     **By zones** — if you want users to book desks without choosing a specific seat:
 
-    * Create each zone as a desk
-    * Set the seating capacity in each zone
-    * Users select the zone and book one or more seats.
+    - Create each zone as a desk
+    - Set the seating capacity in each zone
+    - Users select the zone and book one or more seats.
 
     If you use floor plans, desks will be reflected as follows:
 
@@ -194,39 +193,39 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     **Individual desks** — if you want users to choose a specific seat:
 
-    * Create each desk as a separate resource
-    * Set the seating capacity to 1
-    * Users select and book a specific seat they prefer.
+    - Create each desk as a separate resource
+    - Set the seating capacity to 1
+    - Users select and book a specific seat they prefer.
 
     If you have floor plans, desks will be reflected accordingly:
 
     ![Resource Management Desks 4](/images/resource-management-desks-4.png)
 
     <Tip>
-      [Bulk create desks](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) with the help of Lem AI.
+      [Bulk create desks](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) with the help of Noor AI.
     </Tip>
 
     ## What's next
 
     Once your desks are set up:
 
-    * Customers can discover them on the **Desks** page and [book](/member/bookings/book-a-desk) or [sign up for rental.](/admin/resource-management/resources/rental-applications-or-immediate-sign-ups)
-    * Administrators [receive notifications](/admin/administration/your-account/notifications/set-up-notifications) about new bookings and sign-ups on the **Notifications** page.
-    * The **Desks** page shows a real-time overview of desk occupancy across your space.
+    - Customers can discover them on the **Desks** page and [book](/member/bookings/book-a-desk) or [sign up for rental.](/admin/resource-management/resources/rental-applications-or-immediate-sign-ups)
+    - Administrators [receive notifications](/admin/administration/your-account/notifications/set-up-notifications) about new bookings and sign-ups on the **Notifications** page.
+    - The **Desks** page shows a real-time overview of desk occupancy across your space.
 
     ![Resource Management Desks 5](/images/resource-management-desks-5.png)
 
-    * Additionally:
-      * Track bookings by day on **Desks** > **Bookings** tab.
-      * View all bookings by period or customer on **Resources > Bookings**.
-      * Track all long-term desk rentals on **Resources** > [**Assignments**](/admin/analytics-reports/track-occupancy) [timeline.](/admin/analytics-reports/track-occupancy)
+    - Additionally:
+      - Track bookings by day on **Desks** \> **Bookings** tab.
+      - View all bookings by period or customer on **Resources \> Bookings**.
+      - Track all long-term desk rentals on **Resources** \> [**Assignments**](/admin/analytics-reports/track-occupancy) [timeline.](/admin/analytics-reports/track-occupancy)
 
     ## Edit a desk
 
     To update the settings of a desk, follow these steps:
 
-    1. Navigate to **Resources** > **Desks.**
-    2. Find the desk you need to edit and hover over it > click the menu **(...)** next to it > **Edit**.
+    1. Navigate to **Resources** \> **Desks.**
+    2. Find the desk you need to edit and hover over it \> click the menu **(...)** next to it \> **Edit**.
     3. Adjust the desk settings as needed.
     4. Press **Save** in the top right corner.
 
@@ -238,8 +237,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To permanently delete a desk from RNTOR, follow these steps:
 
-    1. Navigate to **Resources** > **Desks.**
-    2. Find the necessary desk and hover over it > click the menu **(...)** next to it > select **Delete** and confirm your choice.
+    1. Navigate to **Resources** \> **Desks.**
+    2. Find the necessary desk and hover over it \> click the menu **(...)** next to it \> select **Delete** and confirm your choice.
 
     <Warning>
       Deleting a desk is irreversible. All associated bookings will be permanently deleted without a refund and cannot be restored. Booking analytics for the deleted desk will also no longer be available.
@@ -248,7 +247,7 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
     **FAQs**
 
     <Accordion title="How can I block off desks from bookings for several days?">
-      To block only certain desks while keeping other resources available, mark the corresponding dates as closed in each desk's settings > **Custom schedule**.
+      To block only certain desks while keeping other resources available, mark the corresponding dates as closed in each desk's settings \> **Custom schedule**.
 
       If you are having an event in the space or holidays are coming, mark the corresponding dates as closed in your general [location schedule](/admin/location/schedule) so that all resources are unavailable for bookings on those dates.
     </Accordion>
@@ -258,14 +257,13 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
     </Accordion>
 
     <Accordion title="How to correctly configure a workspace for one-day booking?">
-      1. Go to **Resources > Desks** page > start adding a desk.
+      1. Go to **Resources \> Desks** page \> start adding a desk.
       2. Set the minimum and maximum time as "1 day". Set the daily price.
       3. Configure the other properties.
 
       Once done, your customers can book a desk at a daily price on the **Desks** page.
     </Accordion>
   </Tab>
-
   <Tab title="Offices">
     List all private offices available for long-term rentals on the **Offices** page. Customers can browse offices, apply, or sign up directly. Administrators can monitor availability and occupancy of all offices across the entire location using the timeline view.
 
@@ -274,46 +272,46 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
     To start using the **Offices** module:
 
     1. In the left-side panel, click the menu **(...)** next to your location name.
-    2. Go to **Location** **settings** > **Resources** > **Offices** and toggle the **Offices** switch on.
+    2. Go to **Location** **settings** \> **Resources** \> **Offices** and toggle the **Offices** switch on.
     3. **Book ahead** — set how far in advance customers who rent an office can book seats in it.
 
     ![Resource Management Offices 1](/images/resource-management-offices-1.png)
 
     ## Add offices
 
-    1. Go to the **Resources** > **Offices** page.
+    1. Go to the **Resources** \> **Offices** page.
     2. Click **Add office** top right.
 
     ![Resource Management Offices 2](/images/resource-management-offices-2.png)
 
     3. Fill in the office details.
 
-    | Section name         | Meaning                                                                                                                                                                                                                 |
-    | :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Office photo**     | 2x1 format.                                                                                                                                                                                                             |
-    | **Name**             | Office name and/or number.                                                                                                                                                                                              |
-    | **Seating capacity** | The number of people the office is designed to accommodate.                                                                                                                                                             |
-    | **Description**      | Include relevant details potential tenants may want to know before applying or signing up, such as office size, layout, and amenities.                                                                                  |
-    | **Plans**            | <ul><li>Disable this option if you do not want to publish office pricing. Customers will see the **Contact** button and can reach out to you.</li></ul>                                                                 |
-    | **Custom schedule**  | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this office, independent of the location's overall schedule.                                                       |
-    | **Visibility**       | Determine which user groups can see this office.                                                                                                                                                                        |
-    | **Access**           | Determine an access control group for customers signed up for this office. <br />​​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location. |
-    | **Calendar sync**    | Sync booking for this office with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar)                                                                                                        |
+    | Section name | Meaning |
+    | :-- | :-- |
+    | **Office photo** | 2x1 format. |
+    | **Name** | Office name and/or number. |
+    | **Seating capacity** | The number of people the office is designed to accommodate. |
+    | **Description** | Include relevant details potential tenants may want to know before applying or signing up, such as office size, layout, and amenities. |
+    | **Plans** | <ul><li>Disable this option if you do not want to publish office pricing. Customers will see the **Contact** button and can reach out to you.</li></ul> |
+    | **Custom schedule** | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this office, independent of the location's overall schedule. |
+    | **Visibility** | Determine which user groups can see this office. |
+    | **Access** | Determine an access control group for customers signed up for this office. <br />​​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location. |
+    | **Calendar sync** | Sync booking for this office with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar) |
 
     4. Press **Create**. The offices are visible on the **Offices** page in the member web portal and mobile app.
 
     ![Resource Management Offices 3](/images/resource-management-offices-3.png)
 
     <Tip>
-      [Bulk create offices](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) with the help of Lem AI.
+      [Bulk create offices](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) with the help of Noor AI.
     </Tip>
 
     ## Edit an office
 
     To update the settings of a office, follow these steps:
 
-    1. Navigate to **Resources** > **Offices.**
-    2. Find the office you need to edit and hover over it > click the menu **(...)** next to it > **Edit**.
+    1. Navigate to **Resources** \> **Offices.**
+    2. Find the office you need to edit and hover over it \> click the menu **(...)** next to it \> **Edit**.
     3. Adjust the office settings as needed.
     4. Press **Save** in the top right corner.
 
@@ -321,8 +319,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To permanently delete an office from RNTOR, follow these steps:
 
-    1. Navigate to **Resources** > **Offices.**
-    2. Find the necessary office and hover over it > click the menu **(...)** next to it > select **Delete** and confirm your choice.
+    1. Navigate to **Resources** \> **Offices.**
+    2. Find the necessary office and hover over it \> click the menu **(...)** next to it \> select **Delete** and confirm your choice.
 
     <Warning>
       Deleting an office is irreversible. All associated bookings will be permanently deleted and cannot be restored. Booking analytics for the deleted office will also no longer be available.
@@ -338,12 +336,11 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
       Assign the office by [maximum quantity](/admin/resource-management/resources/manage-resource-rentals-with-assignments#quantity-of-seatsspacesitems) instead of toggling **Entire resource** on. Once fully assigned, the office stays visible to other customers with a "Fully occupied" label.
     </Accordion>
   </Tab>
-
   <Tab title="Parking">
     Feature all your parking spaces for booking or rental on the **Parking** page. Depending on your configuration, customers can:
 
-    * Book parking spaces hourly or daily
-    * Subscribe to long-term parking space rentals (weekly, monthly, etc.)
+    - Book parking spaces hourly or daily
+    - Subscribe to long-term parking space rentals (weekly, monthly, etc.)
 
     Administrators get real-time visibility into the availability and occupancy of all parking lots.
 
@@ -352,39 +349,39 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
     To start using the **Parking** module:
 
     1. In the left-side panel, click the menu **(...)** next to your location name
-    2. Go to **Location** **settings** > **Resources** > **Parking** and toggle the **Parking** switch on.
+    2. Go to **Location** **settings** \> **Resources** \> **Parking** and toggle the **Parking** switch on.
     3. **Book ahead** — set how far in advance users can book parking lots.
 
     ![Resource Management Parking 1](/images/resource-management-parking-1.png)
 
     ## Add parking lots
 
-    1. Go to the **Resources** > **Parking** page.
+    1. Go to the **Resources** \> **Parking** page.
     2. Click the **Add parking lot** button.
 
     ![Add parking lots on RNTOR coworking space management platform](/images/resource-management-parking-2.png)
 
     3. Fill in the parking lot details.
 
-    | Section name                                   | Meaning                                                                                                                                                                                                                                                                                                             |
-    | :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-    | **Parking lot photo**                          | 2x1 format.                                                                                                                                                                                                                                                                                                         |
-    | **Name**                                       | Choose one of the following approaches: <ul><li>**Parking lots** (e.g., **Underground parking**) with total total number of parking spaces it allows.</li><li>**Numbered parking spaces** (e.g., "Parking Space #1, "Parking Space #2,") to let users book/sign up for a specific parking space.</li></ul>          |
-    | **Parking space quantity**                     | The number of parking spaces this parking lot allows.                                                                                                                                                                                                                                                               |
-    | **Description**                                | Include any important information customers need to know.                                                                                                                                                                                                                                                           |
-    | **Money**                                      | The monetary price for hourly/daily bookings in your location currency. <ul><li>Disable this switch if the parking lot is only available for long-term rental.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing)                                                                 |
-    | **Credits**                                    | The credit price for hourly/daily bookings. <ul><li>Disable this switch if the parking lot is only available for long-term rental.</li></ul>                                                                                                                                                                        |
-    | **Dynamicpricing (beta)Dynamicpricing (beta)** | Automatically adjusts parking lot price based on demand within your defined range. [<u>Set dynamic pricing for resource</u>](/admin/resource-management/resources/dynamic-pricing)                                                                                                                                        |
-    | **Plans**                                      | If you offer long-term rentals (weekly, monthly, etc.) of this parking lot, enable the **Plans** switch and add tiers. <ul><li>Disable this switch if the parking lot is only available for hourly/daily bookings.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing)             |
-    | **Availability increment**                     | The frequency of available time for parking space booking. It shows up as a step on booking.                                                                                                                                                                                                                        |
-    | **Min & Max duration**                         | Minimum & maximum duration limits for hourly/daily bookings. Applies to all users except administrators. <ul><li>To offer different limits for nonmembers, enable "**Public duration**," and set the min & max duration that will apply to them.</li></ul>                                                          |
-    | **Rescheduling policy**                        | Select whether users can reschedule bookings for this desk or cancel and get automatic refunds. [<u>Understand refunds</u>](/admin/billing/payments/refunds)                                                                                                                                                              |
-    | **Custom schedule**                            | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this parking lot, independent of the location's overall schedule.                                                                                                                                              |
-    | **Confirmation email**                         | If you want to send a [<u>custom booking confirmation email</u>](/admin/general/customize-emails#booking-confirmations), select which users should receive it when making a booking, and paste your email text.                                                                                                           |
-    | **Visibility**                                 | Determine which user groups can see this desk.                                                                                                                                                                                                                                                                      |
-    | **Booking**                                    | Determine which groups of users can immediately book the parking lot, while others can apply for a booking. <ul><li>[<u>Book a parking space</u>](/member/bookings/book-a-parking-space)</li><li>[<u>Configure parking booking permissions</u>](/admin/resource-management/resources/applications-for-bookings)</li></ul> |
-    | **Access**                                     | Determine the access control group to which users are synced upon booking this parking lot. <br />​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location.                                                                             |
-    | **Calendar sync**                              | Sync booking for this parking lot with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar)                                                                                                                                                                                               |
+    | Section name | Meaning |
+    | :-- | :-- |
+    | **Parking lot photo** | 2x1 format. |
+    | **Name** | Choose one of the following approaches: <ul><li>**Parking lots** (e.g., **Underground parking**) with total total number of parking spaces it allows.</li><li>**Numbered parking spaces** (e.g., "Parking Space #1, "Parking Space #2,") to let users book/sign up for a specific parking space.</li></ul> |
+    | **Parking space quantity** | The number of parking spaces this parking lot allows. |
+    | **Description** | Include any important information customers need to know. |
+    | **Money** | The monetary price for hourly/daily bookings in your location currency. <ul><li>Disable this switch if the parking lot is only available for long-term rental.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
+    | **Credits** | The credit price for hourly/daily bookings. <ul><li>Disable this switch if the parking lot is only available for long-term rental.</li></ul> |
+    | **Dynamicpricing (beta)Dynamicpricing (beta)** | Automatically adjusts parking lot price based on demand within your defined range. [<u>Set dynamic pricing for resource</u>](/admin/resource-management/resources/dynamic-pricing) |
+    | **Plans** | If you offer long-term rentals (weekly, monthly, etc.) of this parking lot, enable the **Plans** switch and add tiers. <ul><li>Disable this switch if the parking lot is only available for hourly/daily bookings.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
+    | **Availability increment** | The frequency of available time for parking space booking. It shows up as a step on booking. |
+    | **Min & Max duration** | Minimum & maximum duration limits for hourly/daily bookings. Applies to all users except administrators. <ul><li>To offer different limits for nonmembers, enable "**Public duration**," and set the min & max duration that will apply to them.</li></ul> |
+    | **Rescheduling policy** | Select whether users can reschedule bookings for this desk or cancel and get automatic refunds. [<u>Understand refunds</u>](/admin/billing/payments/refunds) |
+    | **Custom schedule** | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this parking lot, independent of the location's overall schedule. |
+    | **Confirmation email** | If you want to send a [<u>custom booking confirmation email</u>](/admin/general/customize-emails#booking-confirmations), select which users should receive it when making a booking, and paste your email text. |
+    | **Visibility** | Determine which user groups can see this desk. |
+    | **Booking** | Determine which groups of users can immediately book the parking lot, while others can apply for a booking. <ul><li>[<u>Book a parking space</u>](/member/bookings/book-a-parking-space)</li><li>[<u>Configure parking booking permissions</u>](/admin/resource-management/resources/applications-for-bookings)</li></ul> |
+    | **Access** | Determine the access control group to which users are synced upon booking this parking lot. <br />​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location. |
+    | **Calendar sync** | Sync booking for this parking lot with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar) |
 
     <Tip>
       Learn how users [book a parking space](/member/bookings/book-a-parking-space) and [sign up for a parking space.](/admin/resource-management/resources/rental-applications-or-immediate-sign-ups)
@@ -394,8 +391,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To update the settings of a parking lot, follow these steps:
 
-    1. Navigate to **Resources** > **Parking.**
-    2. Find the parking lot you need to edit and hover over it > click the menu **(...)** next to it > **Edit**.
+    1. Navigate to **Resources** \> **Parking.**
+    2. Find the parking lot you need to edit and hover over it \> click the menu **(...)** next to it \> **Edit**.
     3. Adjust the parking lot settings as needed.
     4. Press **Save** in the top right corner.
 
@@ -407,14 +404,13 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To permanently delete a parking lot from RNTOR, follow these steps:
 
-    1. Navigate to **Resources** > **Parking.**
-    2. Find the necessary parking lot and hover over it > click the menu **(...)** next to it > select **Delete** and confirm your choice.
+    1. Navigate to **Resources** \> **Parking.**
+    2. Find the necessary parking lot and hover over it \> click the menu **(...)** next to it \> select **Delete** and confirm your choice.
 
     <Warning>
       Deleting a parking lot is irreversible. All associated bookings will be permanently deleted without a refund and cannot be restored. Booking analytics for the deleted parking lot will also no longer be available.
     </Warning>
   </Tab>
-
   <Tab title="Equipment">
     Use the **Equipment** page to feature items such as screens, monitors, projectors, whiteboards, cameras, microphones, and any other equipment available for booking or rental.
 
@@ -423,39 +419,39 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
     To start using the **Equipment** module:
 
     1. In the left-side panel, click the menu **(...)** next to your location name.
-    2. Go to **Location** **settings** > **Resources** > **Equipment** and toggle the **Equipment** switch on.
+    2. Go to **Location** **settings** \> **Resources** \> **Equipment** and toggle the **Equipment** switch on.
     3. **Book ahead** — set how far in advance users can book equipment items.
 
     ![Resource Management Equipment 1](/images/resource-management-equipment-1.png)
 
     ## Add equipment
 
-    1. Go to the **Resources** > **Equipment** page .
+    1. Go to the **Resources** \> **Equipment** page .
     2. Click the **Add equipment** top right.
 
     ![Resource Management Equipment 2](/images/resource-management-equipment-2.png)
 
     3. Fill in the equipment details.
 
-    | Section name               | Meaning                                                                                                                                                                                                                                                                                                 |
-    | :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-    | **Equipment photo**        | 2x1 format. On the overview of all equipment items, the image will be cropped to a square and centered. When opening this specific equipment page, it'll show uncropped.                                                                                                                                |
-    | **Name**                   | Equipment name (e.g., **Whiteboard**, **Projector**).                                                                                                                                                                                                                                                   |
-    | **Quantity**               | The total number of available units of this equipment.                                                                                                                                                                                                                                                  |
-    | **Description**            | Include any essential information customers need to know.                                                                                                                                                                                                                                               |
-    | **Money**                  | The monetary price for hourly/daily bookings in your location currency. <ul><li>Disable this switch if you only offer long-term rentals of this equipment.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing)                                                         |
-    | **Credits**                | The credit price for hourly/daily bookings. <ul><li>Disable this switch if you only offer long-term rentals of this equipment.</li></ul>                                                                                                                                                                |
-    | **Dynamic pricing (beta)** | Automatically adjusts price for bookings based on demand within your defined range. [<u>Set dynamic pricing for resource</u>](/admin/resource-management/resources/dynamic-pricing)                                                                                                                           |
-    | **Plans**                  | If you offer long-term rentals (weekly, monthly, etc.) of this equipment, enable the **Plans** switch and add tiers. <ul><li>Disable this switch if this equipment is only available for hourly/daily bookings.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing)    |
-    | **Availability increment** | The frequency of available time for equipment booking. Defines the time slots for booking if rented hourly.                                                                                                                                                                                             |
-    | **Min & Max duration**     | Minimum & maximum duration limits for hourly/daily bookings. Applies to all users except administrators. <ul><li>To offer different limits for nonmembers, enable "**Public duration**," and set the min & max duration that will apply to them.</li></ul>                                              |
-    | **Rescheduling policy**    | Select whether users can reschedule bookings for this desk or cancel and get automatic refunds. [<u>Understand refunds</u>](/admin/billing/payments/refunds)                                                                                                                                                  |
-    | **Custom schedule**        | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this equipment, independent of the location's overall schedule.                                                                                                                                    |
-    | **Confirmation email**     | If you want to send a [<u>custom booking confirmation email</u>](/admin/general/customize-emails#booking-confirmations), select which users should receive it when making a booking, and paste your email text.                                                                                               |
-    | **Visibility**             | Determine which user groups can see this equipment.                                                                                                                                                                                                                                                     |
-    | **Booking**                | Determine which groups of users can immediately book the equipment, while others can apply for a booking. <ul><li>[<u>Book equipment</u>](/member/bookings/book-equipment)</li><li>[<u>Configure equipment booking permissions</u>](/admin/resource-management/resources/applications-for-bookings)</li></ul> |
-    | **Access**                 | Determine the access control group to which users are synced upon booking this equipment. <br />​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location.                                                                   |
-    | **Calendar sync**          | Sync booking for this equipment with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar)                                                                                                                                                                                     |
+    | Section name | Meaning |
+    | :-- | :-- |
+    | **Equipment photo** | 2x1 format. On the overview of all equipment items, the image will be cropped to a square and centered. When opening this specific equipment page, it'll show uncropped. |
+    | **Name** | Equipment name (e.g., **Whiteboard**, **Projector**). |
+    | **Quantity** | The total number of available units of this equipment. |
+    | **Description** | Include any essential information customers need to know. |
+    | **Money** | The monetary price for hourly/daily bookings in your location currency. <ul><li>Disable this switch if you only offer long-term rentals of this equipment.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
+    | **Credits** | The credit price for hourly/daily bookings. <ul><li>Disable this switch if you only offer long-term rentals of this equipment.</li></ul> |
+    | **Dynamic pricing (beta)** | Automatically adjusts price for bookings based on demand within your defined range. [<u>Set dynamic pricing for resource</u>](/admin/resource-management/resources/dynamic-pricing) |
+    | **Plans** | If you offer long-term rentals (weekly, monthly, etc.) of this equipment, enable the **Plans** switch and add tiers. <ul><li>Disable this switch if this equipment is only available for hourly/daily bookings.</li></ul> [<u>Set up pricing for resources</u>](/admin/resource-management/resources/set-up-pricing) |
+    | **Availability increment** | The frequency of available time for equipment booking. Defines the time slots for booking if rented hourly. |
+    | **Min & Max duration** | Minimum & maximum duration limits for hourly/daily bookings. Applies to all users except administrators. <ul><li>To offer different limits for nonmembers, enable "**Public duration**," and set the min & max duration that will apply to them.</li></ul> |
+    | **Rescheduling policy** | Select whether users can reschedule bookings for this desk or cancel and get automatic refunds. [<u>Understand refunds</u>](/admin/billing/payments/refunds) |
+    | **Custom schedule** | Set [<u>custom working hours</u>](/admin/location/schedule#configure-a-custom-schedule-for-a-resource) for this equipment, independent of the location's overall schedule. |
+    | **Confirmation email** | If you want to send a [<u>custom booking confirmation email</u>](/admin/general/customize-emails#booking-confirmations), select which users should receive it when making a booking, and paste your email text. |
+    | **Visibility** | Determine which user groups can see this equipment. |
+    | **Booking** | Determine which groups of users can immediately book the equipment, while others can apply for a booking. <ul><li>[<u>Book equipment</u>](/member/bookings/book-equipment)</li><li>[<u>Configure equipment booking permissions</u>](/admin/resource-management/resources/applications-for-bookings)</li></ul> |
+    | **Access** | Determine the access control group to which users are synced upon booking this equipment. <br />​Appears if you have the [<u>integration with the access control system</u>](/admin/integrations/access-control/set-up-access-control) connected in the location. |
+    | **Calendar sync** | Sync booking for this equipment with the selected [<u>Google Calendar.</u>](/admin/integrations/bookings/google-calendar) |
 
     <Tip>
       Learn how users [book equipment](/member/bookings/book-equipment) and [sign up for equipment.](/admin/resource-management/resources/rental-applications-or-immediate-sign-ups)
@@ -465,8 +461,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To update the settings of equipment, follow these steps:
 
-    1. Navigate to **Resources** > **Equipment.**
-    2. Find the equipment you need to edit and hover over it > click the menu **(...)** next to it > **Edit**.
+    1. Navigate to **Resources** \> **Equipment.**
+    2. Find the equipment you need to edit and hover over it \> click the menu **(...)** next to it \> **Edit**.
     3. Adjust the equipment settings as needed.
     4. Press **Save** in the top right corner.
 
@@ -478,8 +474,8 @@ description: "Add and configure your rooms, desks, offices, parking lots, and eq
 
     To permanently delete equipment from RNTOR, follow these steps:
 
-    1. Navigate to **Resources** > **Equipment.**
-    2. Find the necessary equipment and hover over it > click the menu **(...)** next to it > select **Delete** and confirm your choice.
+    1. Navigate to **Resources** \> **Equipment.**
+    2. Find the necessary equipment and hover over it \> click the menu **(...)** next to it \> select **Delete** and confirm your choice.
 
     <Warning>
       Deleting equipment is irreversible. All associated bookings will be permanently deleted without a refund and cannot be restored. Booking analytics for the deleted equipment will also no longer be available.
