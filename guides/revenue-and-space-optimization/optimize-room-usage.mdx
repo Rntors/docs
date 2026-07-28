@@ -1,3 +1,86 @@
 ---
 title: "Optimize room usage"
+sidebarTitle: "Optimize room usage"
+description: "Tips to optimize room usage and ensure fair room bookings by all customers"
 ---
+
+Smart room management ensures fair usage by all customers, guarantees that a room is available for everyone when needed, prevents over-exploitation by a few individuals, and makes finding and booking an available room effortless. This article provides practical recommendations for setting up rooms in RNTOR to achieve the most optimized usage.
+
+## Set booking duration limits
+
+Set **Min time** and **Max time** properties for each room when [adding](/admin/resource-management/resources/set-up-resources) or [editing it.](/admin/resource-management/resources/set-up-resources#edit-a-resource)
+
+This allows customers to book a room even for a quick 10-15 minute call, while preventing others from monopolizing it all day.
+
+For example, you might set a minimum booking duration of 15 minutes and a maximum of two hours.
+
+![Image](/images/guides-optimize-room-usage-1.png)
+
+## Limit active free bookings at a time
+
+If the usage of your Skype rooms, call booths, or meeting rooms is included in your members' subscriptions, you can limit how many active free bookings a user can hold scheduled at any given time.
+
+Navigate to **Location settings \> Rooms** page and [set up the **Book for free** property.](/admin/resource-management/resources/set-up-resources) You can choose from:
+
+- One active
+- Two active
+- Three active
+- Unlimited
+
+This feature ensures users can't book too many slots at once. The system will only allow them to hold a set number of scheduled bookings at a time, and they'll be able to book the next time slots once their previous meetings have passed.
+
+![Image](/images/guides-optimize-room-usage-2.png)
+
+## Implement credit system
+
+For finer control and a more direct way to limit usage, consider setting up a credit system instead of completely free bookings. This effectively gives each customer a specific usage allowance per month or week.
+
+1. [Enable credits](/admin/billing/credits-and-day-passes/credits) and set credit prices for each room.
+2. Set a specific number of credits in your membership plans.
+3. Members will automatically receive this amount (e.g., 10 credits) every week, month, or other period, depending on their plan cycle. They then use these credits to book rooms. [How credits work](/admin/billing/credits-and-day-passes/credits)
+
+This approach naturally sets a fair limit on usage and encourages responsible booking behavior. As an added benefit, this also lets you upsell customers with [credit packages](/admin/billing/credits-and-day-passes/packages) if they run out of credits given with their subscription.
+
+![Image](/images/guides-optimize-room-usage-3.png)
+
+## Use Room display
+
+Placing a [room display](/admin/resource-management/room-display/set-up-room-display) next to each room door offers dual benefits:
+
+- Require check-in for free bookings
+
+Combat "no-shows" by requiring members to check in via the Room display within a set grace period (5-15 minutes) of their booking start time. If they don't, the system automatically cancels the booking, freeing up the room for others. This tackles the common challenge of abandoned bookings. [How abandoned booking protection works](/admin/resource-management/room-display/use-room-display)
+
+- On-the-spot booking & availability
+
+Users can glance at the display to instantly see if a room is available and book it right then and there. This eliminates the need to book far in advance or spend time searching for an available room. [How users make ad-hoc bookings with a QR code](/admin/resource-management/room-display/use-room-display)
+
+![Check In on room display on on RNTOR's coworking space management platform](/images/guides-optimize-room-usage-4.png)
+
+## Use interactive floor plans
+
+For larger spaces or those spanning multiple floors, [interactive floor plans](/admin/resource-management/floors/set-up-floor-plans) are invaluable.
+
+They instantly show users where an available room is right now and on which floor. This means no more scheduling bookings far in advance or wandering around and endlessly searching – users can quickly find and book the nearest free room at the moment.
+
+![Image](/images/guides-optimize-room-usage-5.png)
+
+## Clearly communicate room booking policy
+
+Create a dedicated [location guide](/admin/support/guides) for your room booking policy. This ensures all users can easily see it in the member web portal or mobile app and are fully aware of the booking rules. Clearly communicated policies help foster a culture of respect for shared resources within your community.
+
+## Integrate with access control system
+
+If you use an [access control system](/admin/integrations/access-control/set-up-access-control), set up automated access granting for each room. This means a user can only access a room if they have an active booking for it. This crucial step prevents unauthorized usage and ensures only the rightful booker can enter.
+
+## Use data-driven insights for better room management
+
+To continually optimize your room management, regularly analyze your booking data. We recommend downloading and analyzing the [**Bookings** report](/admin/analytics-reports/reports) at least once a month.
+
+1. Go to the **Analytics** page, and click **Create report** top right.
+2. Choose the **Bookings** report type, filter, and sort it, as needed.
+3. This report allows you to easily identify the most frequently booked rooms, peak usage days and times, average booking durations, most frequent bookers, and other critical metrics that can inform your policy adjustments and future planning.
+
+![Image](/images/guides-optimize-room-usage-6.png)
+
+By implementing these strategies, you can ensure rooms are used efficiently and fairly in your space, and to the maximum benefit of all your customers.
