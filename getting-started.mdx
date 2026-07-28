@@ -1,116 +1,115 @@
 ---
-title: Getting Started
-description: "Set up your Rntor developer integration in minutes"
+title: "Start guide"
+description: "A step-by-step guide to help you with the initial setup of your network, location, resources, plans, and members in RNTOR"
+sidebarTitle: "Start guide"
 ---
 
+We’ve created this start guide to help you set up your location and build on the basics. Explore how to save time and provide excellent service to members with RNTOR.
 
+## Set up network
 
-This guide walks you through setting up your first Rntor integration. By the end, you'll have API credentials and a working webhook subscription.
+**Total time: 10 minutes**
 
-## Prerequisites
+You’ll need the following:
 
-<Check>
-  A Rntor merchant account with owner permissions
-</Check>
+- Your business’s brand materials, including a square logo and brand colors.
+- Access to your domain name’s control panel to set up a [custom domain](/admin/general/member-web-portal/custom-domain-for-your-member-web-portal).
+- Your privacy policy and terms of use text.
+- A description for the member web portal.
 
-<Check>
-  Access to Settings → Developers in your dashboard
-</Check>
+Steps to set up your network:
 
-## Step 1: Navigate to Developers
+1. Log in as an [owner](/admin/administration/administrators/owner) to RNTOR.
+2. On the left-side panel, click **(…)** next to your network name, then select **Network settings \> General**.
 
-1. Log in to your Rntor dashboard
-2. Go to **Settings** in the main navigation
-3. Select the **Developers** tab
+![Image](/images/getting-started-set-up-network-1.png)
 
-<Frame>
-  <img src="/images/developer-light.png" alt="Developers Tab" className="block dark:hidden" />
-  <img src="/images/developer-dark.png" alt="Developers Tab" className="hidden dark:block" />
-</Frame>
-
-## Step 2: Generate API Credentials
-
-API keys are used to authenticate your integration. While the REST API is coming soon, generating credentials now prepares you for immediate access when it launches.
-
-1. In the **API Keys** section, click **Generate New Key**
-2. Enter a descriptive name (e.g., "Production Integration" or "Zapier Connection")
-3. Review the default scopes
-4. Click **Generate**
+3. Set up a [custom domain](/admin/general/member-web-portal/custom-domain-for-your-member-web-portal), an email footer, [customize the look of your member web portal](/admin/general/member-web-portal/customize-member-web-portal), and add your policies.
 
 <Warning>
-  Your **Client Secret** is only shown once. Copy and store it securely immediately after generation.
+  Since you process personal data, applicable laws and app publishing platforms may require you to disclose your privacy practices and prohibit questionable content and behavior. Add a [privacy policy](/admin/general/privacy-policy) and [terms of use](/admin/general/terms-of-use), which appear in the member web portal and mobile app.
 </Warning>
 
-You'll receive:
-- **Client ID**: `rntor_` followed by 24 characters (safe to store, used in requests)
-- **Client Secret**: `sk_` followed by 40 characters (keep secret, used for authentication)
+## Set up locations
 
-```bash Example Credentials
-Client ID: rntor_abc123def456ghi789jkl012
-Client Secret: sk_mno345pqr678stu901vwx234yza567bcd890efg
-```
+**Total time: 15 minutes**
 
-## Step 3: Set Up Webhook Endpoints
+You’ll need the following:
 
-Webhooks let you receive real-time notifications when events occur in Rntor.
+- Basic location information such as name, address, description, contacts, and a photo or video.
+- Location guides, for example parking, pets, and printing instructions.
+- Your business’s billing and bank details.
+- Your local sales or VAT tax rate.
 
-1. Switch to the **Webhooks** tab
-2. The Svix webhook portal will load
-3. Click **Add Endpoint**
-4. Enter your endpoint URL (must be HTTPS)
-5. Select which events to subscribe to
+Steps to set up the locations:
 
-<Tip>
-  Start with a few key events like `booking.created` and `customer.created` to test your integration.
-</Tip>
+1. The owner needs to [add all locations](/admin/administration/locations).
+2. As an [administrator](/admin/administration/administrators/administrators), select the location on the left-side panel, click **(…)** next to it, and choose **Location settings**.
+3. Configure the general location settings, [billing](/admin/billing/set-up-billing), and enable the modules you need.
+4. Click **(…)** next to the location, select **Integrations**, and connect integrations such as a [payment gateway](/admin/integrations/payments/overview).
 
-### Testing Locally
+![Image](/images/getting-started-set-up-locations-1.png)
 
-For local development, use a tunneling service:
+## Set up resources
 
-```bash Using ngrok
-ngrok http 3000
-# Use the generated HTTPS URL as your webhook endpoint
-```
+**Total time: 1 hour**
 
-## Step 4: Verify Your First Webhook
+You’ll need the following:
 
-Once subscribed, trigger an event in Rntor (e.g., create a booking) and verify:
+- Cover photos for rooms, desks, offices, and any other services you provide.
+- Prices for your resources.
 
-1. Your endpoint receives the POST request
-2. The payload contains the expected data
-3. Signature verification passes (see [Security](/webhooks/security))
+Steps to set up the resources:
 
-```javascript Example: Logging Received Webhooks
-app.post('/webhooks/rntor', (req, res) => {
-  console.log('Received webhook:', req.body);
-  
-  const { event_type, _meta } = req.body;
-  console.log(`Event: ${event_type}`);
-  console.log(`Merchant: ${_meta.merchant_id}`);
-  
-  res.status(200).send('OK');
-});
-```
+1. Go to **Resources** and select the necessary page.
 
-## Next Steps
+![Image](/images/getting-started-set-up-resources-1.png)
 
-<CardGroup cols={2}>
-  <Card title="Webhook Security" icon="shield" href="/webhooks/security">
-    Implement signature verification to secure your endpoints
-  </Card>
-  <Card title="API Authentication" icon="key" href="/api-reference/authentication">
-    Learn how to authenticate your API requests
-  </Card>
-</CardGroup>
+- [Rooms](/admin/resource-management/resources/set-up-resources#rooms)
+- [Desks](/admin/resource-management/resources/set-up-resources#desks)
+- [Offices](/admin/resource-management/resources/set-up-resources#offices)
+- [Parking](/admin/resource-management/resources/set-up-resources#parking)
+- [Equipment](/admin/resource-management/resources/set-up-resources#equipment)
 
-## Rate Limits
+2. Create your resources and configure their availability, visibility, pricing, and booking or rental rules.
 
-All API requests are rate limited to ensure platform stability:
+## Set up plans & contracts
 
-| Limit | Value |
-|-------|-------|
-| Requests per minute | 60 |
-| Burst limit | 10 requests |
+**Total time: 30 minutes**
 
-Exceeding these limits returns a `429 Too Many Requests` response.
+You’ll need the following:
+
+- A list of recurring membership plans with titles, prices, and descriptions.
+- Contract templates for individual agreements with your customers.
+
+Steps to automate invoicing and subscriptions:
+
+1. Go to **Billing \> Plans** and [create plans](/admin/billing/plans/set-up-plans).
+2. [Add credit and day pass packages](/admin/billing/credits-and-day-passes/packages) and [discounts](/admin/billing/discounts/coupons-and-promo-codes) if necessary.
+3. [Upload contract templates](/admin/billing/contracts/templates).
+
+![Image](/images/getting-started-set-up-plans-and-contracts-1.png)
+
+4. Click **Member web portal** on the left-side panel to check how your services appear to members.
+
+## Invite members
+
+**Total time: 5 minutes per account**
+
+You’ll need a spreadsheet with members’ names, emails, and information about their subscriptions.
+
+Steps to invite members:
+
+1. [Create companies](/admin/customer-management/companies/set-up-companies).
+2. [Invite members](/admin/customer-management/users/members) using a mass invitation file.
+3. [Create subscriptions](/admin/billing/subscriptions/set-up-subscriptions).
+4. Introduce what the new member experience can do via Feed, newsletters, and by [promoting the member web portal and mobile app](/guides/promotion/promote-member-web-portal-and-mobile-app) on social media and your marketing website.
+
+## Explore docs & RNTOR
+
+Know what’s happening in your coworking space in real time from the RNTOR admin portal:
+
+- [Open RNTOR Admin](https://app.rntor.com)
+- [Explore RNTOR Docs](/introduction)
+
+Whenever you need help, find answers in our Docs or [contact support](/admin/administration/contact-support).

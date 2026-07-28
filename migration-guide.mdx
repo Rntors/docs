@@ -1,0 +1,190 @@
+---
+title: "Migrate to RNTOR"
+sidebarTitle: "Migration guide"
+description: "A step-by-step guide to migrating from Archie, Cobot, Coworks, OfficeRnD, Optix, Nexudus, Yardi Kube, or any other platform to RNTOR"
+hidden: true
+---
+
+Migrating to RNTOR is straightforward when you follow the right sequence. This guide covers the full process—from exporting your existing data to collecting your first payments through RNTOR. Throughout the process, the RNTOR support team is available to [help you](/admin/administration/contact-support) and answer your questions.
+
+## 1. Export your data
+
+Log in as an administrator to your old platform and export all relevant data:
+
+- Individual members and their contact details.
+- Company members.
+- Subscriptions and billing details for each member and company.
+- Upcoming bookings.
+- Your products: plans, resources, and any other services you offer, including their settings and pricing.
+
+Save everything in organized spreadsheets. You’ll use them when inviting members and recreating content in RNTOR.
+
+## 2. Set up RNTOR
+
+Before inviting members, complete your setup so members can book, pay, and engage the moment they log in. Follow the [Start guide](/getting-started) to configure:
+
+- **Network:** branding, custom domain, privacy policy, and terms of use.
+- **Location:** address, schedule, billing settings, and a connected payment gateway.
+- **Resources:** rooms, desks, offices, parking, and equipment.
+- **Plans and contracts:** membership plans with pricing and contract templates.
+
+Use [Noor AI bulk create](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) to mass-create resources, shop products, member benefits, or events in one go: upload the file with your items and settings, then ask Noor AI to create them.
+
+![Image](/images/migration-guide-set-up-rntor-1.png)
+
+Open your own member portal regularly while configuring RNTOR to verify how content and services appear to customers.
+
+![Image](/images/migration-guide-set-up-rntor-2.png)
+
+## 3. Communicate the transition to members
+
+Set up your communication channels before sending invitations, so members have all the context they need when they log in.
+
+- Send an announcement email a few days in advance.
+- In **Location settings \> Customers**, [customize member invitation emails](/admin/general/customize-emails) with a personal message.
+- In **Engagement \> Feed**, create and pin a welcome post highlighting key information about the new member portal.
+
+![Image](/images/migration-guide-communicate-transition-1.png)
+
+- In **Support \> Guides**, [add guides](/admin/support/guides) with essential information members are likely to need.
+
+![Image](/images/migration-guide-communicate-transition-2.png)
+
+## 4. Stop billing on your previous platform
+
+Complete this step before creating subscriptions in RNTOR to avoid double-charging members.
+
+1. One to two weeks before your next billing cycle, cancel all memberships or disable the invoicing schedule in your previous platform.
+2. Notify members that future invoices will come from RNTOR.
+
+## 5. Invite members and create subscriptions
+
+<Tabs>
+  <Tab title="Individual members">
+    1. Prepare a spreadsheet with members’ personal details:
+
+    | Column name | First name | Last name | Email | Phone number |
+    | --- | --- | --- | --- | --- |
+    | Required | Yes | Yes | Yes | No |
+
+    2. Prepare a second spreadsheet with each member’s subscription details: the membership plan or resource they subscribe to, plus any custom details or pricing.
+    3. Go to **Customers \> (…) \> Invite multiple users**, paste the member table, and send the mass invitation.
+    4. [Set a subscription](/admin/billing/subscriptions/set-up-subscriptions) for each member by assigning your pre-created plans and resources.
+
+    <Tip>
+      Set the subscription start date to when the member originally signed up—not the next billing date—to preserve accurate records. If the current period was already billed in your old platform, set **Issue first invoice \> Manually**. Delete that draft invoice; subsequent invoices will be issued automatically from the next renewal date.
+    </Tip>
+
+    5. [Add billing details](/admin/customer-management/billing-details) for each member, or ask members to add them after logging in.
+
+    If subscriptions use standard plan settings with no custom details or billing adjustments, select plans for each member and mass-create subscriptions directly from the invitation window.
+  </Tab>
+  <Tab title="Company members">
+    ### Set up company profiles and subscriptions
+
+    1. Prepare a spreadsheet with each company’s name and subscription details.
+    2. Go to **Customers \> (…) \> Create multiple companies**, paste your list, and mass-create company profiles.
+    3. [Set a subscription](/admin/billing/subscriptions/set-up-subscriptions) for each company by assigning pre-created plans and resources.
+    4. [Add billing details](/admin/customer-management/billing-details) for each company, or ask company managers to add them after logging in.
+
+    <Tip>
+      Set the original subscription start date and use **Issue first invoice \> Manually** when the current period was already billed on your previous platform.
+    </Tip>
+
+    ### Invite company members
+
+    1. Prepare a spreadsheet for each company’s member details:
+
+    | Column name | First name | Last name | Email | Phone number | Language | Company ID |
+    | --- | --- | --- | --- | --- | --- | --- |
+    | Required | Yes | Yes | Yes | No | No | No |
+
+    2. Get each company’s ID from **Analytics \> Companies report** and paste it into the spreadsheet to assign members automatically.
+    3. Go to **Customers \> (…) \> Invite multiple users** and paste the member table. Alternatively, open a company profile and use **Mass invite**.
+    4. Designate a company manager in each company profile. This person receives invoices and manages company billing.
+  </Tab>
+</Tabs>
+
+You can invite everyone at once or gradually over a few days. In either case, set a clear deadline to keep the migration coordinated.
+
+<Info>
+  Members receive an invitation email to activate their account. They immediately gain access to bookings, credits, discounts, access rights, and all plan entitlements. On the next subscription renewal date, RNTOR automatically issues their first invoice. [See the member onboarding experience](/member/onboarding).
+</Info>
+
+![Image](/images/migration-guide-member-onboarding-1.png)
+
+## 6. Migrate future bookings
+
+Transfer upcoming bookings using the method that best fits your situation.
+
+<Tabs>
+  <Tab title="Google Calendar">
+    **Best if:** your previous platform can connect to Google Calendar.
+
+    Prerequisites:
+
+    1. Connect your Google Calendar to the previous platform.
+    2. Create a separate Google calendar for each resource.
+    3. Ensure upcoming bookings are synced to the corresponding calendars.
+    4. [Add your resources](/admin/resource-management/resources/set-up-resources) to RNTOR.
+
+    Steps:
+
+    1. In RNTOR, go to **(…) next to location \> Integrations \> Google Calendar**.
+    2. Connect the same Google account and grant read/write access.
+    3. Edit each resource and link the corresponding Google calendar.
+    4. Enable two-way sync where supported.
+
+    All synchronized upcoming bookings appear in RNTOR. After those bookings have passed, you can [disconnect Google Calendar](/admin/integrations/bookings/google-calendar).
+  </Tab>
+  <Tab title="Zapier">
+    **Best if:** you want to import bookings from CSV, Airtable, Excel, Google Sheets, or Slack.
+
+    1. Log in to Zapier and create a new Zap.
+    2. Configure the source containing your bookings.
+    3. In the action step, select RNTOR and the booking creation action available to your account.
+
+    See the [Zapier integration guide](/admin/integrations/automation/zapier).
+  </Tab>
+  <Tab title="API">
+    **Best for:** large-scale or complex migrations when developers are available.
+
+    1. Enable [API & webhooks](/admin/administration/api-and-webhooks) for your network.
+    2. Use the [API documentation](/api) to build a booking transfer automation.
+
+    This approach provides full control for high-volume or complex migrations.
+  </Tab>
+  <Tab title="Manual">
+    **Best if:** you have a small number of upcoming bookings.
+
+    1. Invite members first.
+    2. Create each booking, select the correct user in **Booker**, and choose **Free** as the payment method.
+       - For nonmember bookings, select **New nonmember** and enter the customer’s details.
+    3. Customers receive a notification for bookings created for them.
+  </Tab>
+</Tabs>
+
+![Image](/images/migration-guide-future-bookings-1.png)
+
+## 7. Accept first invoice payments via RNTOR
+
+1. On each member’s next renewal date, RNTOR automatically issues and delivers their invoice through the enabled notification channels.
+2. Members [pay the invoice](/admin/billing/invoices/pay-for-invoice) with a supported payment method.
+3. When the connected payment gateway supports saved payment methods, the method can become the default for [automatic charging](/admin/billing/subscriptions/control-invoice-auto-charge) on future invoices.
+4. Monitor payments on the notifications and [Invoices](/admin/billing/invoices/track-and-manage-invoices) pages.
+
+## 8. Drive member adoption
+
+The technical migration is only half the job. Encourage members to use the new portal:
+
+- Give members extra [credits](/admin/billing/credits-and-day-passes/credits) or [day passes](/admin/billing/credits-and-day-passes/day-passes) to encourage their first self-served bookings.
+- Offer a temporary [discount](/admin/billing/discounts/coupons-and-promo-codes) on bookings or other purchases.
+- Generate [QR code stickers](/guides/promotion/use-qr-codes) for rooms, desks, the member portal, or other important pages and place them around the space.
+
+![Image](/images/migration-guide-drive-adoption-1.png)
+
+## FAQs
+
+<Accordion title="Can I migrate member credit balances?">
+  Credit balances cannot be transferred automatically. After migration, [manually add credits](/admin/billing/credits-and-day-passes/credits) to members’ accounts as needed.
+</Accordion>
