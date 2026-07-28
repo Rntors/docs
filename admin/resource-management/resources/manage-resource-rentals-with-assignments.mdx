@@ -1,41 +1,188 @@
 ---
 title: "Manage resource rentals with assignments"
+description: "Learn how to assign resources to customers for rental and track all rentals using the Assignments timeline"
 ---
 
-The **Assignments** timeline gives administrators one view of current and upcoming long-term rentals for offices, desks, parking, and other resources.
-
-## Assign a resource to a customer
-
-1. Open the customer profile.
-2. Create or edit the subscription.
-3. Add a subscription item.
-4. Choose the resource in **Product**.
-5. Select a configured tier or **Custom**.
-6. Choose whether the customer rents the **Entire resource** or a quantity.
-7. Save the subscription.
+The Assignments timeline gives you a visual overview of all current and upcoming long-term rentals for your resources—such as private offices or dedicated desks. Assignments are created automatically when a customer subscribes to a rental or when an administrator sets up a subscription on their behalf.
 
 <Frame>
+  </Frame>
+
+## Assign resources to customers for rental
+
+1. Go to the **Customers** page.
+2. Open the customer's profile.
+3. [Create](/admin/billing/subscriptions/set-up-subscriptions) or [edit](/admin/billing/subscriptions/edit-a-subscription) their subscription.
+4. Add a subscription item.
+5. In the ****Product**** field, select a resource (desk, office, etc.).
+6. In the ****Tier**** field, choose one of the tiers (pricing options) you added in this resource settings or choose **Custom** to set up the subscription details from scratch.
+7. Manage the ****Entire resource**** switch to choose the appropriate assignment type.
+
+<Frame>
+  <img src="" alt="" width="1844" height="771" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-1.png" />
 </Frame>
+
+<Info>
+  If you [configured long-term rental pricing](/admin/resource-management/resources/set-up-pricing) in resource settings, customers can also [apply or sign up](/admin/resource-management/resources/rental-applications-or-immediate-sign-ups) for a resource rental by themselves and be automatically assigned to the resource.
+</Info>
+
+​
 
 ### Entire resource
 
-Use this for a full office, meeting room, or complete parking area. The assigned resource becomes exclusive to that customer for the assignment period.
+Use it when:
 
-### Quantity of seats, spaces, or items
+* The customer rents the whole resource, such as:
+  * A private office
+  * A meeting room
+  * A parking lot rented entirely by one company
+* A company rents a full resource (e.g., an office or desk), and their company members book seats internally ([hybrid office setup](/admin/resource-management/resources/hybrid-offices)).
 
-Use quantity assignments for shared resources, such as three desks in a ten-seat zone. RNTOR reduces the displayed availability by the assigned quantity while keeping the remaining capacity available.
-
-Rooms can only be assigned as an entire resource.
-
-## Track rentals
-
-Go to **Resources → Assignments**. Each timeline bar identifies the customer and assignment period.
-
-- A thicker bar represents an entire-resource assignment.
-- A thinner bar represents a quantity assignment.
-- The quantity appears with the customer name when more than one unit is assigned.
+Entire resource assignment makes the resource only visible to the assigned customer and hides it from others.
 
 <Frame>
+  <img src="" alt="" width="1590" height="377" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-2.png" />
 </Frame>
 
-Use filters and the floor view to check future availability before creating or extending a rental.
+### Quantity of seats/spaces/items
+
+Use it when:
+
+* The customer rents part of a shared resource, such as:
+  * 1 dedicated desk in a 10-desk zone
+  * 3 parking spaces in a 20-space lot
+
+<Info>
+  With this assignment type, customers don't book their seat(s) during their subscription period; they're reserved for the customer.
+</Info>
+
+* You want the resource to remain visible to others even when fully occupied.
+  * In this case, leave the “Entire resource” option off and assign the maximum quantity instead.
+  * The resource will appear with the “Fully occupied” label, allowing others to express interest for future availability.
+
+<Frame>
+  <img src="" alt="" width="1602" height="456" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-3.png" />
+</Frame>
+
+How resources assigned by seats appear to others:
+
+* Users see the the reduced resource availability (e.g., 7/10 available).
+* When capacity reaches zero, it remains visible with a “Fully occupied” label.
+
+<Frame>
+  <img src="" alt="" width="1486" height="560" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-4.png" />
+</Frame>
+
+<Info>
+  Rooms can only be assigned entirely.
+</Info>
+
+## Track all rentals on the Assignments page
+
+1. Go to **Resources** > **Assignments.**
+2. The **Assignments** page gives you a consolidated overview of:
+   * Resources rented by customers
+   * Resources available for rental
+
+### How to read the Assignments timeline
+
+Each resource appears with one or more bars labeled with customer names.
+
+* Thicker bars indicate entire resource assignments.
+
+<Frame>
+  <img src="" alt="" width="1870" height="964" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-5.png" />
+</Frame>
+
+* Thinner bars indicate a [partial assignments](#quantity-of-seatsspacesitems).
+  * The number of seats is shown next to the custome name
+  * If no seat count appeaars on the thin bar, it means 1 seat is assigned.
+
+<Frame>
+  <img src="" alt="" width="1871" height="964" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-6.png" />
+</Frame>
+
+* Each resource shows its total capacity, so you can quickly assess remaining availability.
+
+<Frame>
+  <img src="" alt="" width="1883" height="947" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-7.png" />
+</Frame>
+
+* Unassigned resources appear without any bars.
+
+**Interactions:**
+
+* Hover over a bar to see the rental period. It is shown based on the customer's [subscription item dates](/admin/billing/subscriptions/set-up-subscriptions).
+  * For subscriptions with no end date set, the assignment shows as indefinite.
+* Click a bar to open the customer's profile and [manage the resource assignment](/admin/billing/subscriptions/edit-a-subscription) in their subscription.
+* Click a resource to view its details.
+
+**Filters:**
+
+* Use the date picker to check availability for a specific period.
+* Use the “Resource” dropdown to view all resources or filter resource of a specific type.
+
+<Frame>
+  <img src="" alt="" width="1579" height="826" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-8.png" />
+</Frame>
+
+<Info>
+  The **Assignments** page is for tracking long-term rentals only — it does not include bookings.
+</Info>
+
+### Floor plan view
+
+* If you have the [Floor plans add-on](/admin/resource-management/floors/use-floor-plans), switch to **Floors** to see the occupancy visually on floor plans.
+* Use **Date** or “Resource” filters to check availability for a specific period or a specific resource type.
+
+<Frame>
+  <img src="" alt="" width="1618" height="895" data-path="images/resource-management-rentals-track-resource-rentals-with-assignments-9.png" />
+</Frame>
+
+<Info>
+  You can also view real-time availability and current assignments for each resource directly on the **Resources** pages.
+</Info>
+
+**FAQs**
+
+<Accordion title="Why do I see the error 'Assignments conflict with other assignments' when creating a subscription for the customer?">
+  There are several reasons why you see this error message:
+
+  * One or more resources you've added to the customer's subscription are already assigned to another customer for the same dates or with a different assignment type (entire VS by seat).
+
+  To fix this:
+
+  1. Go to **Resources > Assignments.**
+  2. Find the resource in question to check:Tip:
+     * Which customer it's assigned to
+     * The assignment dates
+     * The type of assignment
+     * Wide bars = Entire resource assignments
+     * Narrow bars = Assignments by seats
+  3. To fix the conflict:
+     * Choose a different resource for your new customer.
+     * Go to the profile of the customer who currently rents this resource and remove this resource from their subscription items or adjust its dates.
+     * If the resource is assigned by seat, assign the resource to the new customer by seat as well.
+</Accordion>
+
+<Accordion title="How do I remove resource assignments?">
+  1. Go to the **Resources > Assignments** page or to **Rooms, Desks, Offices, Parking,** or **Equipment** pages.
+  2. Find the resource in question to check which customer it's assigned to.
+  3. Go to the **Customers** page.
+  4. Open the profile of the customer who currently rents this resource.
+  5. [Edit their subscription](/admin/billing/subscriptions/edit-a-subscription) and remove this resource from their subscription items, or adjust the item's rental dates to assign it to a new customer for other dates.
+</Accordion>
+
+<Accordion title="Can I view room and desk bookings on the Assignments timeline?">
+  One-off bookings, used for short-term or day-specific use, are not displayed on the **Assignments** timeline. These can be tracked on respective resource pages or through [analytics tools.](/admin/analytics-reports/dashboards)
+</Accordion>
+
+<Accordion title="Can I assign a resource to the customer on specific weekdays?">
+  If a customer rents an office, desks, room, or other resource on specific days of the week (for example, only on Mondays and Tuesdays), you can:
+
+  1. [Create a recurring booking](/admin/resource-management/resources/manage-bookings#create-a-recurring-booking) for that resource for the customer with the required schedule.
+  2. [Create a subscription](/admin/billing/subscriptions/set-up-subscriptions) to invoice the customer for rental.
+
+  * Do not select this resource as a subscription item — this would assign it to the customer every day.
+  * Instead, choose a plan or **Custom** option to  set up the charge only.
+</Accordion>
