@@ -1,21 +1,21 @@
 ---
 title: "Claude"
 sidebarTitle: "Claude"
-description: "Connect RNTOR to Claude as a custom MCP connector and ask about your authorized RNTOR data in plain language"
+description: "Connect RNTOR to Claude and get answers and information instantly by asking in the Claude conversation"
 ---
 
-Connect RNTOR to Claude to give it access to the RNTOR networks permitted by your account and get answers directly in your Claude conversation.
+Connect RNTOR to Claude to give it access to your RNTOR network, and get answers and information instantly by asking in the Claude conversation.
 
-RNTOR uses a remote MCP server with OAuth sign-in. Add it to Claude as a custom connector, authorize your RNTOR account, and then ask about your account, networks, locations, resources, and recent bookings without opening the RNTOR admin dashboard.
+Once connected, Claude can access your RNTOR network, so you can ask about your members, subscriptions, invoices, and more — right in the conversation, without opening the RNTOR admin dashboard.
 
 ## Connect RNTOR in Claude
 
 <Steps>
-  <Step title="Open your connector settings">
+  <Step title="Open your connectors">
     In Claude, go to **Settings → Connectors** and choose to add a custom connector.
   </Step>
 
-  <Step title="Add the RNTOR connector">
+  <Step title="Add RNTOR">
     Enter **RNTOR** as the connector name and use this server URL:
 
     ```text
@@ -23,26 +23,38 @@ RNTOR uses a remote MCP server with OAuth sign-in. Add it to Claude as a custom 
     ```
   </Step>
 
+  <Step title="Connect">
+    Click **Connect**.
+  </Step>
+
   <Step title="Authorize your network">
-    When prompted, sign in to RNTOR and authorize access to your network. RNTOR follows your existing roles, permissions, and network scope.
+    When prompted, sign in and authorize access to your RNTOR network.
   </Step>
 
   <Step title="Start asking">
-    Enable the RNTOR connector in your Claude conversation. Then describe the information you need in plain language.
+    Claude can now access your RNTOR network. Just name what you’re looking for in plain language, and Claude will answer.
   </Step>
 </Steps>
 
 ## What you can ask Claude
 
-Ask Claude about any of the following:
+Ask about any of the following, in plain language, and Claude finds the answer for you:
 
-- Your connected RNTOR account
-- Networks and locations
-- Resources and recent bookings
+- Network and locations
+- Members and companies
+- Plans and subscriptions
+- Resources and bookings
+- Invoices and contracts
+- Shop products and orders
+- Benefits and applications
+- Guides
 
-For the complete list of available tools and example prompts, see [Supported tools](/mcp-server#supported-tools).
+For the full list of tools Claude can use, see [Supported tools](/mcp-server#supported-tools).
 
-Claude can also combine the available information in one request. For example, ask it to find your accessible locations and then list the meeting-room bookings for one of them.
+Claude can also:
+
+- Combine these in a single request — for example, ask for a member’s subscription, recent invoices, and bookings together, and Claude pulls up all three.
+- Pass what it finds to your other connectors — for example, draft reminder emails for overdue invoices.
 
 ## Disconnect RNTOR from Claude
 
@@ -54,12 +66,12 @@ You can disconnect RNTOR from Claude at any time to end its access.
   </Step>
 
   <Step title="Find RNTOR">
-    Locate RNTOR in your connected or custom connectors.
+    Locate RNTOR in your list of connectors.
   </Step>
 
   <Step title="Disconnect">
-    Disconnect the RNTOR connector to end its access to your RNTOR network.
+    Disconnect the connector to immediately end its access to your RNTOR network.
   </Step>
 </Steps>
 
-The Claude connector is powered by the RNTOR MCP server. You can also [connect RNTOR to ChatGPT or another MCP-compatible assistant](/mcp-server#connect-in-another-ai-assistant).
+The Claude connector is powered by the RNTOR MCP server. You can also [connect RNTOR to ChatGPT or any other MCP-compatible assistant](/mcp-server#connect-in-another-ai-assistant) manually.
