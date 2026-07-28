@@ -1,25 +1,29 @@
 ---
 title: "Track occupancy"
-description: "Track location occupancy"
+description: "Monitor the real-time occupancy rate of all your resource types"
 ---
 
-Monitor occupancy for all resource types on the **Occupancy** page to coordinate with your sales team and lease available spaces.
+Monitor the occupancy rate for all resource types on the **Occupancy** page. It helps you better collaborate with the sales team to lease out your spaces.
 
 ## Track occupancy rates
 
-1. Go to **Analytics \> Occupancy**.
-2. Review:
-   - **Overall occupancy rate** — occupied desk and office seats, through bookings or long-term assignments, as a percentage of all available seats.
-   - **Occupancy rate for each resource type** — how each type is utilized today.
+1. Go to **Analytics** \> **Occupancy.**
+2. The **Occupancy** dashboard allows you to view:
+   - **Overall occupancy rate** — percentage of all desk and office seats that are currently occupied (either booked or rented (assigned) long-term) out of the total number of available seats in your space.
+   - **Occupancy rate for each resource type** — a breakdown of how each resource type is being utilized as of today.
 
-![Occupancy dashboard](/images/analytics/track-occupancy-dashboard.png)
+![Image](/images/analytics/analytics-track-occupancy-1.png)
 
-| Resource type | Calculated by | Calculation details |
+The occupancy rate for each resource type is calculated as follows:
+
+| Resource type | Occupancy is calculated by: | Calculation details |
 | --- | --- | --- |
-| Rooms | Hours per day | Booked hours as a percentage of all available hours for the day |
-| Desks | Seats | Booked or assigned seats as a percentage of all desk seats |
-| Offices | Seats | Booked or assigned seats as a percentage of all office seats |
-| Parking | Lots | Booked or assigned lots as a percentage of all parking lots |
-| Equipment | Items | Booked items as a percentage of all equipment items |
+| Rooms | Hours per day | The percentage of hours that are booked out of the total available hours for that day. |
+| Desks | Seats | The percentage of seats that are booked or assigned out of the total number of seats in your desks. |
+| Offices | Seats | The percentage of seats that are booked or assigned out of the total number of seats in your offices. |
+| Parking | Lots | The percentage of parking lots that are booked or assigned out of the total number of parking lots in your space. |
+| Equipment | Items | The percentage of equipment items that are booked out of the total number of equipment items in your space. |
 
-For rooms, seating capacity is not used. Occupancy is based on booked time versus all available hours in the [default or public location schedule](/admin/location/schedule). Custom room schedules are not applied.
+<Info>
+  For rooms, the occupancy calculation doesn't take seating capacity into consideration. Instead, it measures the percentage of hours a room is booked out of all available hours for the day, based on your [default or public location schedule.](/admin/location/schedule) [Custom schedules](/admin/location/schedule) for rooms are not applied to this calculation.
+</Info>

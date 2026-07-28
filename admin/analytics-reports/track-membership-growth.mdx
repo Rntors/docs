@@ -1,34 +1,50 @@
 ---
 title: "Track membership growth"
-description: "Monitor membership growth over time"
+description: "Monitor membership sales and community growth, and identify how many new members joined your space during a specific period"
 ---
 
-Track customer-base growth and new subscription purchases with custom **Subscriptions** and **Users** reports.
+You can track customer base growth and the number of new subscriptions purchased in a specific period using the custom **Subscriptions** and **Users** reports.
 
 ## Track subscription purchases
 
-1. Go to **Analytics** and press **Create report**.
-2. Select the [Subscriptions report](/admin/analytics-reports/reports) and choose statuses.
-3. Filter by **Create date** to count purchases or by **Start date** to count subscriptions that started in the period.
+To check how many new subscriptions have begun during the specified period, follow these steps:
 
-![Subscription growth report](/images/analytics/membership-subscriptions.png)
+1. Go to **Analytics** \> press **Create report** top right.
+2. Select the [**Subscriptions**](/admin/analytics-reports/reports) report type and filter it by status.
+3. Filter the report by **Create date** to see how many new subscriptions were purchased during a specific period or by **Start date** to see how many new subscriptions started during a specific period.
 
-You can also use the **Start date** and **Create date** filters on **Billing \> Subscriptions**.
+For instance, in the screenshot below, we can observe that 14 new subscriptions were purchased during July-November 2024, 7 of which are active and 7 have been canceled since.
 
-![Subscription filters](/images/analytics/membership-subscription-filters.png)
+![Image](/images/analytics/analytics-track-membership-growth-1.png)
+
+You can also track subscription purchases directly from the **Billing \> Subscriptions** page by using the **Start date** and **Create date** filters.
+
+![Analytics Track Membership Growth Track Subscription Purchases](/images/analytics/analytics-track-membership-growth-track-subscription-purchases.png)
 
 ## Track customer base growth
 
-1. Go to **Analytics** and press **Create report**.
-2. Select **Users** and include members, nonmembers, or both.
-3. Filter by **Create date** to count new customers during a period.
+In addition to subscription purchase analytics, you are empowered to track the growth of the customer base in your space. For this, follow these steps:
 
-![Customer growth report](/images/analytics/membership-users.png)
+1. Go to **Analytics** \> press **Create report** top right.
+2. Select the [**Users**](/admin/analytics-reports/reports) report type and include only members, only nonmembers or both in it to check the growth of the specific customer type.
+3. Filter the report by **Create date** to see how many new customers joined during a specific period.
 
-Use these results to identify trends and improve your membership offering.
+For example, in the screenshot below, we can observe that 9 new customers have joined your space during November 2024.
 
-<AccordionGroup>
-  <Accordion title="How can I check the average subscription duration for each customer?">
-    Download a **Subscriptions** report including Active, Ended, and Canceled subscriptions. Use Start Date with Renew Date for active subscriptions, End Date for ended subscriptions, or Delete Date for canceled subscriptions. Calculate each duration in Excel or Google Sheets, then average the results.
-  </Accordion>
-</AccordionGroup>
+![Image](/images/analytics/analytics-track-membership-growth-2.png)
+
+With these solutions, you can gain detailed insights into your membership sales and customer base growth over time, identify trends, and make informed decisions to improve your offerings.
+
+**FAQs**
+
+<Accordion title="How can I check the average subscription duration for each customer?">
+  To calculate the average subscription duration:
+
+  1. Go to **Analytics** \> click **Create report** top right.
+  2. Select [**Subscriptions**](/admin/analytics-reports/reports) as the report type.
+  3. To include both current and past members in your analysis, include "Active," "Ended," and **Canceled** statuses.
+  4. Find the **Start Date** column for the subscription's beginning.
+  5. Identify the subscription's **Renew Date** (for active subscriptions), **End Date** (for expired subscriptions), and **Delete Date** (for canceled subscriptions).
+  6. Using Google Sheets or Excel possibilities, calculate the duration in months for each subscription based on its relevant dates.
+  7. Once you have the duration for each, calculate the average across all the subscriptions you've included.
+</Accordion>
