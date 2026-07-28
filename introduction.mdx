@@ -1,50 +1,60 @@
 ---
-title: Introduction
-description: "Build integrations with Rntor's coworking and space management API"
+title: "Overview"
+description: "A quick overview of RNTOR software for coworking space management and its core capabilities"
+sidebarTitle: "Overview"
 ---
 
-<Frame>
-  <img src="/images/hero-light.png" alt="Rntor Developer Platform" className="block dark:hidden" />
-  <img src="/images/hero-dark.png" alt="Rntor Developer Platform" className="hidden dark:block" />
-</Frame>
+RNTOR helps you deliver superior member service with automated operations, built-in AI, and mobile-friendly experiences, while making it easy for members to sign up, book, pay, and get support.
 
-Build powerful integrations with Rntor's coworking and space management platform. Connect your applications to receive real-time updates and automate workflows.
+## Platform
 
-## Current Status
+RNTOR is designed as a dual-sided ecosystem: a command center for operators to manage the space, and a self-service portal for members to book your services.
+
+- [**Admin portal**](/admin/overview) — the backend platform for managing your space. It connects members, administrators, data, and infrastructure, powering billing, bookings, access, community, and operations from one source of truth.
+- [**Member portal**](/member/overview) — the branded frontend platform for members to use your services. Here, they browse and book inventory, pay for services, and connect with the broader community from any browser or supported mobile experience.
+
+## Core capabilities
+
+RNTOR covers multiple solutions to help you achieve efficient operations, faster service for your customers, and a better member experience across every location.
 
 <CardGroup cols={2}>
-  <Card title="Webhooks" icon="webhook" href="/webhooks/introduction">
-    Receive real-time notifications when events occur in your Rntor workspace. Get instant updates for bookings, customers, invoices, and more.
+  <Card title="Customer management" icon="users" href="/admin/customer-management/users/members">
+    Manage members, nonmembers, companies, roles, billing details, and account history.
   </Card>
-  <Card title="REST API" icon="code" href="/api-reference/authentication">
-    Full REST API for programmatic access to bookings, customers, resources, and more.
+
+  <Card title="Billing" icon="circle-dollar" href="/admin/billing/set-up-billing">
+    Automate subscriptions, invoices, payments, taxes, credits, day passes, and discounts.
+  </Card>
+
+  <Card title="Resource management" icon="box" href="/admin/resource-management/resources/set-up-resources">
+    Configure rooms, desks, offices, parking, equipment, bookings, rentals, and floor plans.
+  </Card>
+
+  <Card title="Engagement" icon="handshake" href="/admin/engagement/feed">
+    Keep your community active with Feed, events, chats, and targeted communication.
+  </Card>
+
+  <Card title="Service" icon="handshake-angle" href="/admin/service/shop/set-up-shop">
+    Offer shop products, member benefits, visitor experiences, and extra services.
+  </Card>
+
+  <Card title="Support" icon="life-ring" href="/admin/support/guides">
+    Publish guides, manage support tickets, and help customers find answers.
+  </Card>
+
+  <Card title="Noor AI" icon="sparkles" href="/admin/noor-ai/ask-noor-ai">
+    Use RNTOR's AI assistant to speed up everyday administrative work.
+  </Card>
+
+  <Card title="Analytics & reports" icon="chart-column" href="/admin/analytics-reports/dashboards">
+    Monitor occupancy, membership growth, sales, and operational performance.
   </Card>
 </CardGroup>
 
-## Platform Capabilities
+## Getting started
 
-Rntor provides APIs for managing:
+If you are onboarding your team or setting up RNTOR for the first time, the following resources will guide you through the process.
 
-- **Locations & Resources** - Meeting rooms, desks, offices, and equipment
-- **Bookings** - Reservations with conflict detection and recurring options
-- **Customers & Companies** - Member management with subscriptions and credits
-- **Invoicing** - Automated billing and payment tracking
-- **Events** - Community events with registration and check-in
-
-## Quick Start
-
-<CardGroup cols={3}>
-  <Card title="Getting Started" icon="rocket" href="/getting-started">
-    Set up your integration in minutes
-  </Card>
-  <Card title="Core Concepts" icon="book" href="/concepts">
-    Understand key platform concepts
-  </Card>
-  <Card title="Webhooks" icon="bell" href="/webhooks/introduction">
-    Receive real-time event notifications
-  </Card>
-</CardGroup>
-
-## Need Help?
-
-Contact us at [support@rntor.com](mailto:support@rntor.com)
+- [Guide for new customers](/getting-started)
+- [Migrate to RNTOR](/migration-guide)
+- [Member onboarding tips](/guides/customer-management-and-communication/onboard-members)
