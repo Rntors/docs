@@ -1,49 +1,41 @@
 ---
 title: "PCI DSS compliance"
-description: "Understand how card data is protected and determine your PCI DSS responsibilities"
+description: "Review RNTOR’s payment-card security approach and learn how credit card data is protected"
 ---
 
-PCI DSS (Payment Card Industry Data Security Standard) is a global standard for protecting credit and debit card data. It does not govern ACH, SEPA, or other non-card payment methods.
+PCI DSS (Payment Card Industry Data Security Standard) is a global security standard created to protect cardholder data. PCI DSS standards specifically govern the protection of credit and debit card data and do not apply to ACH, SEPA, or other payment methods.
 
-RNTOR uses connected third-party payment processors to collect and process sensitive payment details. The exact PCI DSS scope and validation requirements depend on the gateway, your transaction volume, and how your organization handles payment data.
+RNTOR uses a third-party service provider, such as Stripe, to manage and store sensitive payment data on behalf of customers. Here’s what this approach means and the steps you can take to determine and meet your own PCI compliance needs.
 
-## RNTOR and payment card data
+## RNTOR’s PCI compliance
 
-RNTOR does not expose full card numbers or CVV/CVC values to location administrators. Sensitive account data is entered through and managed by the third-party payment processor you connect.
+RNTOR does not collect, store, or process sensitive account data, such as full card numbers or CVV/CVC. Cardholder data is managed exclusively by the third-party service provider (TPSP) or payment processor—for example, Stripe—that you choose to connect to RNTOR.
 
-RNTOR may retain limited non-sensitive references returned by the processor, such as:
-
-- Card brand
-- Last four digits of the Primary Account Number
-- Expiration month and year
-- Processor payment-method reference
-
-These details let users recognize a saved method without revealing the full card number.
+RNTOR securely stores only limited payment-method details returned by the processor, such as the card brand, expiration date, and last four digits of the Primary Account Number (PAN), so administrators and customers can identify a saved payment method without exposing the complete card number.
 
 <Warning>
-  Do not state that your organization or RNTOR has a specific PCI certification level unless you have the current supporting assessment or attestation.
+  Your organization’s PCI DSS validation requirements depend on its payment setup, transaction volume, and payment processor. Do not claim a specific PCI DSS certification or compliance level without a current supporting assessment or attestation.
 </Warning>
 
 ## Determine your PCI compliance level
 
-Your responsibilities can depend on:
+Identifying your transaction volume will help you understand your PCI DSS responsibilities. For many RNTOR customers, card payments are card-not-present transactions processed by a third-party service provider.
 
-- Annual card transaction volume
-- Card-present versus card-not-present transactions
-- The connected payment processor
-- Whether staff ever receive or handle card data outside the processor’s secure flow
-- Other terminals, websites, or systems used by your organization
+To determine and meet your PCI DSS obligations, follow the current guidance from your TPSP or payment processor:
 
-Follow the current compliance instructions from your connected processor and consult a qualified security assessor when necessary. See the [PCI Security Standards Council](https://www.pcisecuritystandards.org/) for official standards and resources.
+- [Stripe PCI compliance](https://stripe.com/docs/security/guide)
+- [PayPal PCI compliance](https://www.paypal.com/us/brc/article/pci-compliance)
+- [Mercado Pago security](https://www.mercadopago.com.ar/developers/en/docs/security)
 
 ## Practical compliance steps
 
-- Limit billing and customer-data access to essential personnel.
-- Use named administrator accounts rather than shared logins.
-- Remove administrator access immediately when a person leaves the organization.
-- Do not use administrator accounts on public or shared devices.
-- Use strong authentication for RNTOR and the payment processor.
-- Never place full card numbers or CVV/CVC values in notes, support tickets, custom fields, or messages.
-- Document payment-data retention and incident-response procedures.
-- Include relevant payment handling and retention practices in your terms and privacy policy.
-- Complete any self-assessment questionnaire required by your payment processor.
+To further secure your payment environment with RNTOR, we recommend implementing the following measures:
+
+- Limit access to payment data to essential personnel. [Adjust administrator permissions](/admin/administration/administrators/permissions) to restrict customer and billing access on a need-to-know basis.
+- Do not give administrator or owner roles to shared email accounts to prevent unauthorized access.
+- Immediately remove users with administrator roles from the location if they leave your organization.
+- Do not log in as an administrator on devices accessible to the public. Physically secure devices used to access RNTOR as an administrator.
+- Never enter full card numbers or CVV/CVC values in notes, support tickets, custom fields, or messages.
+- Add relevant payment-data retention and operational procedures to your [Terms of use](/admin/general/terms-of-use) and [Privacy policy](/admin/general/privacy-policy).
+
+For more information about PCI compliance, visit the [PCI Security Standards Council website](https://www.pcisecuritystandards.org/).
