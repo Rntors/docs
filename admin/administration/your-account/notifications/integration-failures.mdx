@@ -2,4 +2,47 @@
 title: "Notifications about the integrations' failures"
 ---
 
-Coming soon.
+RNTOR informs you about integration failures due to various reasons with [admin notifications](/admin/administration/your-account/notifications/set-up-notifications).
+
+![Image](/images/account-notifications-integrations-failures-1.png)
+
+Administrators can receive notifications about the failures with the following integrations:
+
+- Google Calendar
+- Xero
+- QuickBooks Online
+
+| Integration | Error message | Description |
+| --- | --- | --- |
+| Google Calendar | _Google Calendar failed to create a booking because another one exists at \[time\]_ | This error occurs when Google Calendar attempts to create a booking for a time slot when another booking already exists. Check which booking was attempted to sync and which one exists in the app for that time. |
+| Google Calendar | _Google Calendar failed to create a recurring booking in \[resource name\]_ | Google Calendar integration currently doesn't support syncing recurring bookings to and from RNTOR. Create this recurring booking directly in RNTOR instead. |
+| Xero | _Xero failed to sync an invoice \[invoice number\] from \[location name\] due to an error "Account code '200' is not a valid code for this document_ | Your **Sales Account** in Xero is missing a value in the **Code** field. Go to the **Sales Account** in Xero and input "200" in the **Code** field. |
+| Xero | _Xero failed to sync an invoice \[invoice number\] from \[location name\] due to an error **You must specify an Account ID for the payment**_ | Your clearing account in Xero is missing a value in the **Account ID** field. Go to the clearing account in Xero and enter it in the **Account ID** field. |
+| Xero | _Xero failed to sync an invoice \[invoice number\] from \[location name\] due to an error "Organization is not subscribed to currency \[currency code\]"_ | The **Sales Account** in Xero is missing the currency of the invoice that was attempting to sync. Add the missing currency to your Xero account. |
+| Xero | _Xero failed to sync an invoice \[invoice number\] from \[location name\] due to an error **Bank account status invalid for payment creation**_ | The bank account the payments were synced to no longer exists. It may have been deleted, archived or edited in some way that disrupted the sync. You will need to correct this in Xero and remap the payments to the correct account. |
+| Xero | _Xero failed to sync an invoice/payment for the invoice \[invoice number\] from \[location name\] due to an error **A required Xero account is not selected or invalid**_ | The Xero integration requires a valid Xero account to be selected for each invoice item type (for syncing invoices) and for payments (for syncing invoice payments). Go to **Integrations \> Xero** in RNTOR and select or fix any missing or invalid accounts. |
+| QuickBooks Online | _Quickbooks Online failed to sync an invoice \[invoice number\] from \[location name\] due to an error "Business Validation Error: Make sure all your transactions have a sales tax rate before you save."_ | The invoice tax doesn't match the tax set in QuickBooks. Edit the existing sales tax rate or add a new one in QB in the **Taxes** menu, or [edit the tax rate](/admin/administration/your-account/notifications/set-up-notifications) in your app. |
+| QuickBooks Online | _Quickbooks Online failed to sync an invoice \[invoice number\] from \[location name\] due to an error "Subscription period has ended or canceled or there was a billing problem: You can't add data to Quickbooks Online Plus because your trial or subscription period ended, you canceled your subscription, or there was a billing problem. To update your subscription, click the gear icon and view your account information."_ | Your Quickbooks Online trial has expired, the subscription period has ended or been canceled, or there was a billing problem. Open your Quickbooks Online account, press on the gear icon top right, and select **Subscriptions and billing** from the Profile menu, check your trial or subscription details, and update it if necessary. |
+
+<Info>
+  Notifications regarding integration failures are sent only to the administrators of the locations where the error or disconnection occurred.
+</Info>
+
+## Resolve issues with integration connections
+
+While it's possible to connect various third-party products to your location, RNTOR is not responsible for errors or disconnections caused by other products. ​ Notifications about integration failures are provided to help you identify and address issues with the external product more quickly. To resolve integration issues, follow these steps based on the error description shown on the **Notifications** page in RNTOR: ​
+
+### Expired connection
+
+If your connection with a third-party product has expired:
+
+- Disconnect the integration in RNTOR.
+- Reconnect it using the updated account credentials for the product you're integrating.
+
+### Account configuration check
+
+Go to the third-party product's dashboard and ensure your account settings meet RNTOR's integration requirements. You can find them stated for each product RNTOR is integrated with in [our Help Center](/admin/integrations/set-up-integrations).
+
+### Contact third-party support
+
+If the issue persists or you have questions about how to resolve the issue that RNTOR flagged, contact the support team of the third-party product for assistance in resolving the issue with your account.
