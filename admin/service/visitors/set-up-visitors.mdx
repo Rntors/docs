@@ -1,8 +1,144 @@
----
-title: "Set up Visitors"
-description: "Configure visitor management at your location."
----
+# Visitors
 
-Set up the Visitors module to track guests at your location.
+> A step-by-step instruction to configure the Visitors module, enable visitor check-in and check-out, set up and customize the Reception app on the tablet, and troubleshoot issues with accessing the Reception app
 
-_Documentation coming soon._
+The Visitors add-on provides access to the **Visitors** module and **Reception** app.
+
+It is designed to register and track your members' visitors, streamline visitor check-in and check-out at your front desk, instantly notify hosts about their visitors' arrival, and collect contact details of walk-ins — all without a receptionist's involvement.
+
+This creates a professional first impression for visitors in your space and reduces your front-desk workload.
+
+## Who are visitors
+
+A visitor is anyone a member invites to your space — typically for meetings or personal visits. We recommend setting a policy in your space that requires members to register all their visitors for better tracking and a smoother arrival experience.
+
+Common cases:
+
+* Guests attending a meeting with a member.
+* Friends or family coming to see a member.
+
+<Warning>
+  Reception is only for checking in members' visitors — guests who come to see a member for free, without a booking. It is not designed for members, or customers and tenants who have a booking or subscription, to check in.
+</Warning>
+
+## Prerequisities
+
+1. Have a supported tablet device:
+   * A minimum screen size of 7 inches.
+   * Support Google Play (for Android) or the App Store (for iPadOS).
+   * Android 8.0 or above, iOS/iPadOS 15.1 or later
+2. If you haven't yet, [sign up for the Visitors add-on](/admin/administration/billing/make-changes-to-rntor-subscription) from **Network settings** > **Billing**.
+
+## Set up the Visitors module
+
+1. Press the menu **(...)** near the location name > go to **Location settings** > **Service** > **Visitors** tab.
+2. Enable the switch and [manage the visibility](/admin/location/visibility) of the **Visitors** page.
+3. **Host search** — configure how unregistered visitors can find their host on the Reception tablet:
+   * Full name (mandatory)
+   * Email address
+   * Phone number
+   * Company name (if the host is a member of any company)
+4. **Check out** — enable if you want visitors to check out and track visit durations.
+5. **Leave contacts** — enable if you want to use the Reception app for [collecting contacts of walk-ins](/admin/service/visitors/collect-contacts-of-walk-ins-with-reception), too.
+6. **Invitation** — enable if you want to [customize the visit invitation email](/admin/general/customize-emails) that visitors receive.
+
+![Set Up Visitors image 1](/images/service/set-up-visitors-1.png)
+
+Once enabled, your members will discover the **Visitors** page and can start [registering their visitors and approving visit requests](/member/visitors/preregister-and-approve-visit-requests).
+
+## Set up the Reception app
+
+### Log in to and set up Reception
+
+1. Download the Reception app to your tablet by following these links:
+   * Google Play: [https://app.rntor.com](https://app.rntor.com)
+   * App Store: [https://app.rntor.com](https://app.rntor.com)
+2. Open the app and press **Log in**.
+
+![Set Up Visitors image 2](/images/service/set-up-visitors-2.png)
+
+3. Log in with the account of an administrator for the location where you want to enable Reception.
+4. Select your network and relevant location.
+
+![Set Up Visitors image 3](/images/service/set-up-visitors-3.png)
+
+5. Once selected, the screen with the check-in and check-out options will appear for you to invite visitors for registration.
+
+![Set Up Visitors image 4](/images/service/set-up-visitors-4.png)
+
+6. To prevent strangers from shutting down the app and reopening your tablet, set up [Guided access](https://support.apple.com/en-us/HT202612) on iPad or [Screen pinning](https://support.google.com/android/answer/9455138?hl=en) on Android tablets.
+
+### Customize Reception
+
+The Reception app automatically reflects your network's branding to create a consistent and professional experience. The following branded elements are displayed:
+
+* The member web portal logo
+* The member web portal name
+* Accent color
+* The last [cover photo](/admin/location/information) of the location where the Reception app is used
+
+<Info>
+  If no cover photo is uploaded for the location, background color applies instead.
+</Info>
+
+![Enable Reception app on RNTOR](/images/service/set-up-visitors-5.png)
+
+To customize the appearance of the Reception app, you need to update your network settings.
+
+1. To change the name, logo, or accent color, the [owner](/admin/administration/administrators/owner) needs to go to **Network settings** > **General** > **Information** and **Branding** tabs.
+
+<Info>
+  Changes will apply to the member web portal and/or mobile app as well.
+</Info>
+
+2. To change the background of the Reception app, as an administrator, [upload a new cover photo](/admin/location/information) for the location where the Reception app is used.
+
+<Accordion title="Exit Reception app">
+  1) Turn off the [Guided access](https://support.apple.com/en-us/HT202612) on iPad or [Screen pinning](https://support.google.com/android/answer/9455138?hl=en) on Android.
+  2) Close the app by swiping it up and off the screen.
+</Accordion>
+
+<Accordion title="Log out of Reception app">
+  To log out from your current account on Reception:
+
+  1. Close Reception by swiping it up and off the screen.
+  2. Reopen it.
+  3. Tap the **(...)** button in the top right corner > **Log out**.
+
+
+![Set Up Visitors image 6](/images/service/set-up-visitors-6.png)
+
+</Accordion>
+
+## How Visitors solution works
+
+* **Preregistration of visitors and express check-in**: Members can [preregister their visitors](/member/visitors/preregister-and-approve-visit-requests) via the member web portal or mobile app. Visitors receive an invitation with a visit code by email, with which they [check in](/member/visitors/check-in-and-check-out) on the Reception app upon arrival.
+* **Self-service registration**: Unregistered visitors can register themselves on the tablet and [request a visit](/member/visitors/check-in-and-check-out). This prevents reception bottlenecks and allows members to approve or decline the visit from their own device.
+* **Automated host notifications**: When a visitor checks in or requests a visit, the host member receives an immediate push notification or email, ensuring they meet their guest promptly without a receptionist's manual coordination.
+* **Visitor check-out and duration tracking**: Visitors can [check out](/member/visitors/check-in-and-check-out) through the Reception app, allowing you to track visit durations and enforce visitor limits.
+* **Lead generation for walk-ins**: Apart from visitors, people interested in your space can leave their details using the [**Leave contacts**](/admin/service/visitors/collect-contacts-of-walk-ins-with-reception) feature on the Reception app. This helps you grow your lead base without relying on separate tools or manual follow-ups.
+* **Custom branded experience**: The Reception app [reflects your brand](/admin/service/visitors/set-up-visitors#customize-reception) by displaying your logo and location photo, delivering a professional experience from the moment a visitor arrives.
+
+## Troubleshoot issues with access to Reception app
+
+If you can't enable or access the Reception app, here are the most common reasons and how to fix them:
+
+<Accordion title="1. Poor Internet connection">
+  Try reconnecting your tablet to Wi-Fi or switching to a different network.
+</Accordion>
+
+<Accordion title="2. Logging in with the wrong email address">
+  Make sure you're logging in as an [administrator](/admin/administration/administrators/administrators) for the location where you want to use Reception. Only administrators can choose a network and location when logging in.
+</Accordion>
+
+<Accordion title="3. Outdated Reception app version">
+  Ensure you've installed the latest version of the Reception app from the [Google Play Store](https://app.rntor.com) or [App Store](https://app.rntor.com).
+</Accordion>
+
+<Accordion title="4. Your RNTOR subscription is not active or doesn't include the Visitors add-on">
+  [Check your subscription](/admin/administration/billing/rntor-subscription) status and the availability of the [Visitors add-on](/admin/service/visitors/set-up-visitors).
+</Accordion>
+
+<Accordion title="5. Device doesn't meet technical requirements">
+  Ensure your tablet meets the [requirements](/admin/service/visitors/set-up-visitors) for installing the Reception app.
+</Accordion>

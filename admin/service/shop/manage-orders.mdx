@@ -1,8 +1,70 @@
----
-title: "Manage orders"
-description: "View, process, and fulfill Shop orders."
----
+# Orders
 
-Track and manage orders placed through your Shop.
+> Process customers' shop orders, manage order statuses, cancel orders and manage refunds
 
-_Documentation coming soon._
+Administrators can track order revenue and manage orders by modifying their status and conducting a search for them.
+
+When the order is created, it appears on the **Service** > **Shop** page > **Orders** panel. Orders are sorted from newest to oldest.
+
+![Manage Orders image 1](/images/service/manage-orders-1.png)
+
+## Manage orders
+
+Once [a customer places an order](/member/shop), open it from the **Orders** panel to view its details:
+
+| **Value**    | **Description**                                                                                                                                                                                                                                                                                                                                                                                       |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Order number | Every order has a unique number within a location (e.g., #30).                                                                                                                                                                                                                                                                                                                                        |
+| Option       | The variation of the product.                                                                                                                                                                                                                                                                                                                                                                         |
+| Quantity     | The quantity of the ordered product options.                                                                                                                                                                                                                                                                                                                                                          |
+| Status       | The order's readiness, set by an administrator. There are four statuses: <ul><li>**New** - created but not processed yet. All new orders receive this status by default.</li><li>**In progress** - currently being processed.</li><li>**Completed** - successfully processed.</li><li>**Canceled** - canceled by an administrator, or the customer couldn't proceed because payment failed.</li></ul> |
+| Buyer        | The customer who placed the order.                                                                                                                                                                                                                                                                                                                                                                    |
+| Payment      | The payment method the customer chose.                                                                                                                                                                                                                                                                                                                                                                |
+
+<Tip>
+  [Configure the notifications](/admin/administration/your-account/notifications/set-up-notifications) to be instantly notified about new shop orders.
+</Tip>
+
+### Find and filter orders
+
+Filter orders on the **Orders** panel to find what you need:
+
+* Filter by **Status** to see **New**, **In progress**, **Completed**, or **Canceled** orders.
+* Filter by **Category** to see orders from a specific shop category.
+* Filter by **Product** to see orders that include a specific product.
+* Filter by **User** to see all orders of a specific customer.
+* Filter by **Create date** to see orders created on, before, after, or between specific dates.
+
+![Manage Orders image 2](/images/service/manage-orders-2.png)
+
+### Change an order's status
+
+Only administrators can change an order's status. Click the **Status** icon next to the order — or open the order and use the **Status** field — and choose the new status. The customer receives [a push notification](/member/account/notifications) when their order status changes.
+
+![Manage Orders image 3](/images/service/manage-orders-3.png)
+
+### Cancel an order and issue a refund
+
+To cancel an order — for example, if the product is out of stock or there is an issue with it — set its status to **Canceled**. You'll be asked to confirm whether the customer is eligible for a refund; canceling does not refund automatically. If you confirm, the refund is issued automatically. [Understand refunds](/admin/billing/payments/refunds)
+
+![Manage Orders image 4](/images/service/manage-orders-4.png)
+
+![Manage Orders image 5](/images/service/manage-orders-5.png)
+
+## View order status
+
+Users can view the status of their order by following these steps:
+
+1. Click on their profile picture in the bottom left corner to open the **Account** page.
+2. Go to the **Orders** section to view the status of their orders.
+
+![Manage Orders image 6](/images/service/manage-orders-6.png)
+
+## Check analytics on order statuses
+
+Get a consolidated overview of all orders with the specific status on the **Analytics** page.
+
+1. Open the **Analytics** page > choose **Shop** dashboard.
+2. Check the **Orders by status** graph and choose the specific time periods for the overview.
+
+![Manage Orders image 7](/images/service/manage-orders-7.png)

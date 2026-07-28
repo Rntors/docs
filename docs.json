@@ -248,26 +248,16 @@
                         "group": "Shop",
                         "pages": [
                           "admin/service/shop/set-up-shop",
-                          "admin/service/shop/manage-orders",
-                          "admin/service/shop/manage-product-availability",
-                          "admin/service/shop/manage-one-off-services"
+                          "admin/service/shop/manage-orders"
                         ]
                       },
-                      {
-                        "group": "Benefits",
-                        "pages": [
-                          "admin/service/benefits/set-up-benefits",
-                          "admin/service/benefits/manage-benefit-applications"
-                        ]
-                      },
+                      "admin/service/benefits/set-up-benefits",
                       {
                         "group": "Visitors",
                         "pages": [
                           "admin/service/visitors/set-up-visitors",
                           "admin/service/visitors/track-and-manage-visits",
-                          "admin/service/visitors/collect-contacts-of-walk-ins-with-reception",
-                          "admin/service/visitors/customize-reception",
-                          "admin/service/visitors/troubleshoot-issues-with-reception"
+                          "admin/service/visitors/collect-contacts-of-walk-ins-with-reception"
                         ]
                       }
                     ]
@@ -804,26 +794,16 @@
                         "group": "المتجر",
                         "pages": [
                           "ar/admin/service/shop/set-up-shop",
-                          "ar/admin/service/shop/manage-orders",
-                          "ar/admin/service/shop/manage-product-availability",
-                          "ar/admin/service/shop/manage-one-off-services"
+                          "ar/admin/service/shop/manage-orders"
                         ]
                       },
-                      {
-                        "group": "المزايا",
-                        "pages": [
-                          "ar/admin/service/benefits/set-up-benefits",
-                          "ar/admin/service/benefits/manage-benefit-applications"
-                        ]
-                      },
+                      "ar/admin/service/benefits/set-up-benefits",
                       {
                         "group": "الزوار",
                         "pages": [
                           "ar/admin/service/visitors/set-up-visitors",
                           "ar/admin/service/visitors/track-and-manage-visits",
-                          "ar/admin/service/visitors/collect-contacts-of-walk-ins-with-reception",
-                          "ar/admin/service/visitors/customize-reception",
-                          "ar/admin/service/visitors/troubleshoot-issues-with-reception"
+                          "ar/admin/service/visitors/collect-contacts-of-walk-ins-with-reception"
                         ]
                       }
                     ]
