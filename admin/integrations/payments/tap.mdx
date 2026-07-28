@@ -1,0 +1,62 @@
+---
+title: "Tap"
+description: "Configure the Tap integration with RNTOR"
+hidden: true
+---
+
+Tap integration allows you to receive payments in RNTOR.
+
+<Info>
+  🌍 Tap is available in Kuwait, Saudi Arabia, Bahrein, UAE, Qatar, and Oman.
+</Info>
+
+<Info>
+  Tap is a distinct company not affiliated with us. For any inquiries regarding Tap's solutions, services, or pricing, please reach out to Tap directly. We do not have the authority to provide information or support on behalf of Tap.
+</Info>
+
+## Connect Tap
+
+To activate Tap in RNTOR, go to RNTOR and do the following:
+
+1. Go to the **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-tap-1.png)
+
+2. Find the **Tap** integration page. _On this page, you'll also see two helpful buttons:_
+   - **About**: For general information about the integration.
+   - **Docs**: For detailed instructions on connecting and configuring.
+
+![Image](/images/integrations/payments-tap-2.png)
+
+3. Press **Connect**.
+
+To connect the integration, you need to find a Secret key from the settings of your Tap account. Generate your secret key in Tap following this [guide](https://developers.tap.company/reference/api-endpoint#api-credentials).
+
+<Warning>
+  To enable saving customers' cards for quick payments and [Auto-pay](/admin/billing/subscriptions/control-invoice-auto-charge), ask the Tap support team to enable the option `Save Card Feature` for your Tap account. If not enabled, customers will need to re-enter their card details for every payment and manually pay invoices.
+</Warning>
+
+## Configure Tap
+
+You can activate payments for the following:
+
+- Bookings
+- Event tickets
+- Shop products
+- Invoices
+- Credit packages
+
+## How Tap works
+
+The integration adds **New payment method** to the checkout section around member web portal and mobile app. Users selecting the **New payment method** are redirected to the Tap payment page and can use any of the payment methods you enabled for your account.
+
+<Tip>
+  Tap integration supports 18 payment methods in 8 countries. Check a full description of all supported payment methods [here](https://www.andcards.com/integrations/payments/tap).
+</Tip>
+
+## Disconnect Tap
+
+To disconnect Tap integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Tap.**
+2. Press **Disconnect** and confirm your choice.

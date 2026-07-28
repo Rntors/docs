@@ -3,4 +3,73 @@ title: "Accept invoice payments with bank debits"
 description: "Collect invoice payments through Stripe bank debits."
 ---
 
-Coming soon.
+To reduce processing costs and transaction fees, you can accept invoice payments via bank debits in RNTOR.
+
+<Info>
+  This functionality is available exclusively through [Stripe](/admin/integrations/payments/stripe/stripe) integration.
+</Info>
+
+## Enable bank debit payments
+
+To enable specific bank debit options in RNTOR, follow the steps below:
+
+1. Navigate to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Stripe**.
+2. In the **Payment configurations** section, press the menu **(...)** near the **Invoice payments** \> tap **Edit**.
+
+![Image](/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-1.png)
+
+3. You'll be redirected to your Stripe dashboard. Here, turn on the bank debits you want to allow customers to use to pay for invoices. Your Stripe account must be eligible to enable these payment methods.
+
+![Image](/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-2.png)
+
+The bank debit options supported by RNTOR include the following:
+
+| Bank debit | Country or region | Allows future auto-payments |
+| --- | --- | --- |
+| ACH Direct Debit | United States | ✓ |
+| Australia BECS Direct Debit | Australia | _✓_ |
+| Bacs Direct Debit | United Kingdom | _✓_ |
+| NZ BECS Direct Debit | New Zealand | _✓_ |
+| Pre-Authorized Debits | Canada | _✓_ |
+| SEPA Direct Debit | European countries | _✓_ |
+
+<Info>
+  SEPA direct debit transactions have a limit of 10,000 € each. For new users, there's an additional weekly limit of 10,000 €, which quickly increases as you process more SEPA direct debit payments. If you need higher limits, please [contact Stripe support](https://support.stripe.com/contact).
+</Info>
+
+## Add a bank account
+
+Once bank debit payments are enabled, bank accounts can be added to pay invoices directly. Funds will be withdrawn automatically for future invoice payments.
+
+### As a customer
+
+To set up bank debits from a bank account, an [individual member](/admin/customer-management/users/members) or a [company manager](/admin/customer-management/companies/company-members-and-managers) has two options:
+
+#### Pay an invoice using a bank debit
+
+When a customer pays at least one invoice using a bank debit method, it is automatically saved for auto-charging subsequent invoices.
+
+1. Go to **Membership** \> **Billing \> Invoices**.
+2. Open an unpaid invoice \> select **New payment method** and press **Pay**.
+3. Choose the desired bank debit option \> enter bank account details.
+4. Go to the **Billing** page \> see the bank account saved \> click **(...)** next to it \> **Set as default**.
+
+<Info>
+  If the customer pays the \_first\_​ invoice with their bank account, it will be saved as a default payment method automatically.
+</Info>
+
+![Image](/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-3.png)
+
+#### Manually add bank account details
+
+Customers can also [manually add their bank account details](/admin/billing/payments/payment-gateway) and [set it as a default](/admin/billing/payments/payment-gateway) payment method for invoice auto-pay.
+
+![Image](/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-4.png)
+
+<Info>
+  Only such direct debit options as ACH, Australia BECS, NZ BECS, PADs, and SEPA can be added manually. Bacs Direct Debit must be added by paying for an invoice.
+</Info>
+
+### As an administrator
+
+An administrator can [manually add customers' bank account details](/admin/billing/payments/payment-gateway) and [set them as a default](/admin/billing/payments/payment-gateway) payment method for invoice auto-pay.

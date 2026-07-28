@@ -1,0 +1,65 @@
+---
+title: "PayPal"
+description: "Configure the PayPal integration with RNTOR"
+hidden: true
+---
+
+PayPal payment gateway integration allows you to receive payments with RNTOR.
+
+<Info>
+  🌍 PayPal is available in more than [190 countries](https://www.paypal.com/ua/webapps/mpp/country-worldwide).
+</Info>
+
+<Info>
+  PayPal is a distinct company not affiliated with us. For any inquiries regarding PayPal's solutions, services, or pricing, please reach out to PayPal directly. We do not have the authority to provide information or support on behalf of PayPal.
+</Info>
+
+## Connect PayPal
+
+To connect PayPal, please follow the steps below.
+
+1. Obtain the [API credentials](https://developer.paypal.com/api/rest/#get-credentials) from your PayPal Dashboard:
+   1. Open [PayPal Dashboard](https://developer.paypal.com/dashboard/applications/live) and create a REST API application.
+   2. Open the newly created application and copy **Client ID** and `Secret` from the **API CREDENTIALS** section.
+2. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-paypal-1.png)
+
+3. Find the **PayPal** integration page. _On this page, you'll also see two helpful buttons:_
+
+![Image](/images/integrations/payments-paypal-2.png)
+
+- **About**: For general information about the integration.
+- **Docs**: For detailed instructions on connecting and configuring.
+
+4. Press **Connect**.
+5. Paste your **Client ID** and `Secret`, and press **Connect**.
+
+![Image](/images/integrations/payments-paypal-3.png)
+
+<Warning>
+  Your location's currency must be set to one of [PayPal's supported currencies](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/).
+</Warning>
+
+## How PayPal works
+
+The integration adds a new payment method **PayPal** to the **Payment** section in member web portal and mobile app. Users selecting the **PayPal** payment method are redirected to the PayPal payment page and fill in the payment details.
+
+![Accept payments with PayPal on RNTOR's coworking space management platform](/images/integrations/payments-paypal-4.png)
+
+You can set the payment methods available for your clients in your PayPal account, such as credit and debit cards, PayPal balance, etc. Your members can pay for rooms, desks, events, products, credits, and invoices.
+
+## Identify users' transactions in PayPal
+
+You can easily find users' transactions in the PayPal dashboard using the following unique identifiers:
+
+- ID — coincides with **Custom ID** in the PayPal dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the PayPal dashboard.
+- Description — the types of purchases users make, such as room bookings, desk bookings, **Shop** orders, etc.
+
+## Disconnect PayPal
+
+To disconnect PayPal integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **PayPal.**
+2. Press **Disconnect** and confirm your choice.

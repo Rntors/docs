@@ -343,13 +343,32 @@
                               "admin/integrations/payments/stripe/troubleshoot-stripe-payments",
                               "admin/integrations/payments/stripe/accept-invoice-payments-with-bank-debits"
                             ]
-                          }
+                          },
+                          "admin/integrations/payments/paypal",
+                          "admin/integrations/payments/mollie",
+                          "admin/integrations/payments/kakaopay",
+                          "admin/integrations/payments/payway",
+                          "admin/integrations/payments/freedom-pay",
+                          "admin/integrations/payments/plata-by-mono",
+                          "admin/integrations/payments/paystack",
+                          "admin/integrations/payments/mercado-pago",
+                          "admin/integrations/payments/wayforpay",
+                          "admin/integrations/payments/tap",
+                          "admin/integrations/payments/maya",
+                          "admin/integrations/payments/xendit"
                         ]
                       },
                       {
                         "group": "Access control",
                         "pages": [
-                          "admin/integrations/access-control/set-up-access-control"
+                          "admin/integrations/access-control/set-up-access-control",
+                          "admin/integrations/access-control/salto-ks",
+                          "admin/integrations/access-control/kisi",
+                          "admin/integrations/access-control/avigilon-alta",
+                          "admin/integrations/access-control/brivo",
+                          "admin/integrations/access-control/tapkey",
+                          "admin/integrations/access-control/luckey",
+                          "admin/integrations/access-control/integration-requirements"
                         ]
                       },
                       {
@@ -889,13 +908,32 @@
                               "ar/admin/integrations/payments/stripe/troubleshoot-stripe-payments",
                               "ar/admin/integrations/payments/stripe/accept-invoice-payments-with-bank-debits"
                             ]
-                          }
+                          },
+                          "ar/admin/integrations/payments/paypal",
+                          "ar/admin/integrations/payments/mollie",
+                          "ar/admin/integrations/payments/kakaopay",
+                          "ar/admin/integrations/payments/payway",
+                          "ar/admin/integrations/payments/freedom-pay",
+                          "ar/admin/integrations/payments/plata-by-mono",
+                          "ar/admin/integrations/payments/paystack",
+                          "ar/admin/integrations/payments/mercado-pago",
+                          "ar/admin/integrations/payments/wayforpay",
+                          "ar/admin/integrations/payments/tap",
+                          "ar/admin/integrations/payments/maya",
+                          "ar/admin/integrations/payments/xendit"
                         ]
                       },
                       {
                         "group": "التحكم بالوصول",
                         "pages": [
-                          "ar/admin/integrations/access-control/set-up-access-control"
+                          "ar/admin/integrations/access-control/set-up-access-control",
+                          "ar/admin/integrations/access-control/salto-ks",
+                          "ar/admin/integrations/access-control/kisi",
+                          "ar/admin/integrations/access-control/avigilon-alta",
+                          "ar/admin/integrations/access-control/brivo",
+                          "ar/admin/integrations/access-control/tapkey",
+                          "ar/admin/integrations/access-control/luckey",
+                          "ar/admin/integrations/access-control/integration-requirements"
                         ]
                       },
                       {

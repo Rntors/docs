@@ -1,0 +1,77 @@
+---
+title: "WayForPay"
+description: "Configure the WayForPay integration with RNTOR"
+hidden: true
+---
+
+WayForPay integration allows you to receive online payments in RNTOR.
+
+<Info>
+  🌍 WayForPay is available in Ukraine.
+</Info>
+
+<Info>
+  WayForPay is a distinct company not affiliated with us. For any inquiries regarding WayForPay's solutions, services, or pricing, please reach out to WayForPay directly. We do not have the authority to provide information or support on behalf of WayForPay.
+</Info>
+
+## Connect WayForPay
+
+To activate WayForPay go to RNTOR and do the following:
+
+1. Go to the **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-wayforpay-1.png)
+
+2. Find the **WayForPay** integration page. _On this page, you'll also see two helpful buttons:_
+
+![Image](/images/integrations/payments-wayforpay-2.png)
+
+- **About**: For general information about the integration.
+- **Docs**: For detailed instructions on connecting and configuring.
+
+3. Press **Connect**.
+4. Enter your **Merchant login** and **Merchant security key**. After that, press **Connect**.
+
+![Image](/images/integrations/payments-wayforpay-3.png)
+
+<Warning>
+  To enable saving customers' cards for quick payments and [Auto-pay](/admin/billing/subscriptions/control-invoice-auto-charge), ask the WayForPay support team to enable the option `робота з токенами` for your WayForPay account. If not enabled, customers will need to re-enter their card details for every payment and manually pay invoices.
+</Warning>
+
+## Configure WayForPay
+
+1. Select services for which customers should be able to pay via WayForPay:
+   - Bookings
+   - Event tickets
+   - Shop products
+   - Credit packages
+   - Invoices
+2. Enable or disable **Automatic refunds** to let users get automatic refunds for canceled bookings, tickets, and orders if eligible. [Understand refunds](/admin/billing/payments/refunds)
+
+![Image](/images/integrations/payments-wayforpay-4.png)
+
+<Info>
+  Automatic refunds are enabled by default as soon as the WayForPay integration is connected.
+</Info>
+
+## How WayForPay works
+
+- The integration adds the **New payment method** option to the [Payment methods](/admin/billing/payments/payment-methods) section around member web portal and mobile app. Users selecting the **New payment method** are redirected to the WayForPay payment page and can use any of the [payment methods](https://wayforpay.com/uk/payments) you enabled for your account.
+- Once users pay by card for the first time, the system saves it to the **Membership** \> **Billing** page for future quick payments.
+- Users can also [add](/admin/billing/payments/payment-gateway) or [delete](/admin/billing/payments/payment-gateway) their cards on the **Membership** \> **Billing** on their own.
+- The [default payment method](/admin/billing/payments/payment-gateway) is used for [Auto-pay](/admin/billing/subscriptions/control-invoice-auto-charge).
+
+## Identify users' transactions in WayForPay
+
+You can easily find users' transactions in the WayForPay dashboard using the following unique identifiers:
+
+- ID — coincides with **Order reference** in the WayForPay dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the WayForPay dashboard.
+- Description — the types of purchases users make, such as room bookings, desk bookings, **Shop** orders, etc.
+
+## Disconnect WayForPay
+
+To disconnect WayForPay integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **WayForPay**.
+2. Press **Disconnect** and confirm your choice.

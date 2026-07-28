@@ -3,4 +3,59 @@ title: "ezeep Blue"
 description: "Enable cloud printing with ezeep Blue."
 ---
 
-Coming soon.
+The integration of RNTOR with ezeep Blue allows you to automate the synchronization of members to the necessary ezeep Blue groups and grant them driverless access to printing in your space.
+
+<Info>
+  ezeep is a distinct company not affiliated with us. For any inquiries regarding ezeep's solutions, services, or pricing, please reach out to ezeep directly. We do not have the authority to provide information or support on behalf of ezeep.
+</Info>
+
+## Prerequisites
+
+1. Have an active RNTOR subscription.
+2. Have an active ezeep Blue account that supports setting groups. Create a group for each membership tier and configure printing access, policies, limits, and rules for each group in ezeep Blue.
+
+## Connect the ezeep Blue integration
+
+To enable ezeep Blue integration, have your ezeep Blue account and RNTOR ready. Then follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/printing-ezeep-blue-1.png)
+
+2. Find the **ezeep Blue** integration page. _On this page, you'll also see two helpful buttons:_
+   - **About**: For general information about the integration.
+   - **Docs**: For detailed instructions on connecting and configuring.
+
+![Image](/images/integrations/printing-ezeep-blue-2.png)
+
+3. Press **Connect** and permit to connect ezeep Blue with RNTOR.
+
+## Configure access to ezeep Blue for members
+
+The integration between RNTOR and ezeep Blue allows granting printing access to members based on their subscriptions. To set up member synchronization to the necessary ezeep Blue groups, do the following:
+
+1. Go to your ezeep Blue dashboard, connect printers, and create the necessary groups there.
+2. Navigate to **Billing** \> **Plans**.
+3. [Create a plan](/admin/billing/plans/set-up-plans) or [edit the existing plan](/admin/billing/plans/set-up-plans) and select the necessary ezeep Blue group in the **Printing** section.
+
+![Image](/images/integrations/printing-ezeep-blue-3.png)
+
+4. [Create a subscription](/admin/billing/subscriptions/set-up-subscriptions) with this plan for a user manually or let users [sign up for plans](/admin/billing/plans/set-up-plans) by themselves.
+5. To synchronize your current members to the appropriate ezeep Blue groups, select the ezeep Blue group in their subscription by [editing it.](/admin/billing/subscriptions/edit-a-subscription)
+
+![Image](/images/integrations/printing-ezeep-blue-4.png)
+
+## How ezeep Blue integration works
+
+When a user subscribes to a plan with the selected ezeep Blue group, they will be automatically synchronized to the corresponding group in your ezeep Blue dashboard in real-time with their full name and email. If a subscription is created for a company, all company members will be invited to use ezeep Blue.
+
+Upon synchronization, users will receive an email invitation from the ezeep Blue platform to create their account and with guidance on printing access.
+
+If a user's or company's subscription is canceled or expires, their access to ezeep Blue will be automatically revoked.
+
+## Disconnect the ezeep Blue integration
+
+To disable the ezeep Blue, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **ezeep Blue**.
+2. Press **Disconnect** and confirm your choice.

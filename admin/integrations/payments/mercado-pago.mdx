@@ -1,0 +1,61 @@
+---
+title: "Mercado Pago"
+description: "Configure the Mercado Pago integration with RNTOR"
+hidden: true
+---
+
+Mercado Pago payment gateway integration allows you to receive payments with RNTOR.
+
+<Info>
+  🌍 Mercado Pago is available in Argentina, Brazil, Chile, Colombia, México, Perú, and Uruguay.
+</Info>
+
+<Info>
+  Mercado Pago is a distinct company not affiliated with us. For any inquiries regarding Mercado Pago's solutions, services, or pricing, please reach out to Mercado Pago directly. We do not have the authority to provide information or support on behalf of Mercado Pago.
+</Info>
+
+## Connect Mercado Pago
+
+1. Get the **Access token** from your Mercado Pago Dashboard. [Locate Mercado Pago credentials](https://www.mercadopago.com.ar/developers/en/docs/checkout-api-orders/resources/credentials)
+2. Go to the RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-mercado-pago-1.png)
+
+3. Find the **Mercado Pago** integration page. _On this page, you'll also see two helpful buttons:_
+
+![Image](/images/integrations/payments-mercado-pago-2.png)
+
+- **About**: For general information about the integration.
+- **Docs**: For detailed instructions on connecting and configuring.
+
+4. Press **Connect**.
+5. Fill in your **Access token**, and choose your Mercado Pago account currency.
+
+![Image](/images/integrations/payments-mercado-pago-3.png)
+
+6. Confirm your choice and select what services the payments should go through \> **Save**.
+
+<Warning>
+  The currency set in your location must coincide with the currency of your Mercado Pago account.
+</Warning>
+
+## How Mercado Pago works
+
+![Accept payments with Mercado Pago on RNTOR's coworking space management platform](/images/integrations/payments-mercado-pago-4.png)
+
+The integration adds a new payment method **Mercado Pago** to the **Payment methods** section around member web portal and mobile apps. Members selecting the **Mercado Pago** payment method are redirected to the payment page and fill in their Mercado Pago card details or Mercado Pago Wallet details for payments. Only credit and debit cards are supported. Your members can pay for rooms, desks, events, products, credit packages, and invoices.
+
+## Identify users' transactions in Mercado Pago
+
+You can easily find users' transactions in the Mercado Pago dashboard using the following unique identifiers:
+
+- ID — coincides with **External Reference** in the Mercado Pago dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the Stripe dashboard.
+- Description — the types of purchases users make, such as room bookings, desk bookings, **Shop** orders, etc.
+
+## Disconnect Mercado Pago
+
+To disconnect Mercado Pago integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Mercado Pago.**
+2. Press **Disconnect** and confirm your choice.

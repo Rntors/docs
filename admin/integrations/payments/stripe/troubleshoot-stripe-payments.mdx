@@ -1,6 +1,55 @@
 ---
-title: "Troubleshoot Stripe payments"
-description: "Resolve common Stripe payment issues."
+title: "Troubleshoot failed payments"
+description: "Diagnose and resolve failed Stripe payments"
+sidebarTitle: "Troubleshoot failed payments"
 ---
 
-Coming soon.
+Integrating RNTOR with the Stripe gateway allows you to seamlessly accept payments for all products and services. When a user makes a booking or purchase and completes a payment, Stripe handles the transaction, and RNTOR updates the payment status accordingly. However, transaction success can be influenced by several factors, including the performance of the Stripe payment gateway, the user's bank, etc.
+
+If the transaction has been unsuccessful, you cannot find a specific payment, or need to understand the reason for a payment failure, follow these steps.
+
+<Info>
+  To troubleshoot payments, you need [administrator access](/admin/administration/administrators/administrators) to the RNTOR location where the payment has been initiated and access to your Stripe dashboard.
+</Info>
+
+## 1. Check the transaction status in RNTOR
+
+When the payment doesn't go through, it's essential to understand the reason for this to assist your customer. RNTOR reflects clear statuses for each transaction, helping you identify the next steps.
+
+To see the payment status:
+
+1. Go to the **Billing** \> **Transactions** page \> **Money** tab.
+2. Filter by company or user \> hover over the status near the necessary transaction.
+
+![Image](/images/integrations/payments-stripe-troubleshoot-stripe-payments-1.png)
+
+You will see one of the following statuses for each transaction:
+
+## 2. Check the transaction details in the Stripe dashboard
+
+If a payment has a status of "Failed," "Processing," or "Disputed," or if you need more information about the error or failure reason, the next step is to check your Stripe dashboard. To do this:
+
+1. Open the specific transaction in RNTOR.
+2. Click **View in Stripe**.
+
+This will take you directly to this transaction's page in your Stripe dashboard, where you can access detailed information about the payment status, error messages, and failure reasons.
+
+![Image](/images/integrations/payments-stripe-troubleshoot-stripe-payments-2.png)
+
+For example, errors such as **Your card does not support this type of purchase** often indicate restrictions set by the card issuer and require specific troubleshooting steps.
+
+Alternatively:
+
+1. Navigate to the **Analytics** page \> tap [**Create report**](/admin/analytics-reports/reports) at the top right corner \> create a report with **Transactions** type and download the report.
+2. By checking the amount, time, or status of the transaction, find the one you're looking for and copy its ID from the **ID** column.
+3. Go to your Stripe dashboard and use the copied transaction ID to find the specific payment and reveal more details about it.
+
+![Image](/images/integrations/payments-stripe-troubleshoot-stripe-payments-3.png)
+
+<Info>
+  In RNTOR, the transaction ID serves as the distinct identifier for the transaction. Always use this ID to search for transactions in Stripe, as user names or emails can sometimes be changed, making them unreliable search criteria.
+</Info>
+
+## 3. Reach out to the Stripe team for help
+
+If the previous steps have not clarified the payment issue, or if you encounter an error message from Stripe that you don't understand, it's time to contact Stripe support. Provide them with the transaction ID and ask for further assistance or clarification of the error message.

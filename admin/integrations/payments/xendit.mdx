@@ -1,0 +1,67 @@
+---
+title: "Xendit"
+description: "Configure the Xendit integration with RNTOR"
+hidden: true
+---
+
+Xendit integration allows you to receive payments in RNTOR.
+
+<Info>
+  🌍 Xendit is available in Indonesia, Malaysia, the Philippines, Singapore, Thailand, and Vietnam.
+</Info>
+
+<Info>
+  Xendit is a distinct company not affiliated with us. For any inquiries regarding Xendit's solutions, services, or pricing, please reach out to Xendit directly. We do not have the authority to provide information or support on behalf of Xendit.
+</Info>
+
+## Connect Xendit
+
+To activate Xendit, follow the next steps:
+
+1. Generate a Secret Key from your Xendit dashboard. [Learn more](https://docs.xendit.co/docs/api-keys)
+2. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Integrations Access Control Avigilon Alta 1](/images/integrations/payments-xendit-1.png)
+
+3. Find the **Xendit** integration page.
+
+![Integrations Payments Xendit Connect Xendit Integration Page](/images/integrations/payments-xendit-2.png)
+
+4. Press **Connect**.
+5. Paste your **Secret Key**, select your **Country**, and press **Connect**. The country must match your Xendit account's country of operation.
+
+![Integrations Payments Xendit Connect Xendit Credentials](/images/integrations/payments-xendit-3.png)
+
+<Warning>
+  Xendit supports payments in IDR, MYR, PHP, SGD, THB, USD, and VND. Your location's currency must be one of these — payments in any other currency are not supported.
+</Warning>
+
+6. Activate the payment channels you want to accept — such as e-wallets, bank transfers/virtual accounts, QR codes, and retail outlets — in your Xendit account. Refer to Xendit's [Available Payment Channels](https://docs.xendit.co/docs/available-payment-channels) documentation.
+
+## Configure Xendit
+
+You can activate payments for the following:
+
+- Bookings
+- Event tickets
+- Shop products
+- Credit packages
+- Invoices
+
+## How Xendit works
+
+The integration adds a **New payment method** to the checkout section around the member web portal and mobile app. Users selecting the **New payment method** are redirected to the Xendit checkout page, where they can pay using any of the payment channels you activated in your Xendit account.
+
+## Identify users' transactions in Xendit
+
+You can find users' transactions in the Xendit dashboard using the following unique identifiers:
+
+- Reference ID — coincides with the Booking/Event ticket/Order/Membership ID.
+- Time — coincides with the date and time of the transaction in the Xendit dashboard.
+
+## Disconnect Xendit
+
+To disconnect Xendit integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Xendit**.
+2. Press **Disconnect** and confirm your choice.

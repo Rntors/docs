@@ -1,0 +1,57 @@
+---
+title: "Integration requirements"
+description: "Configure the Integration requirements integration with RNTOR"
+hidden: true
+---
+
+Your app integrates with various access control systems. If you would like us to consider integration with your access control system, please ensure that it meets the integration requirements below. We strive to deliver the most seamless access experience for our customers.
+
+## 1. Login
+
+Users need an easy and transparent way to associate an access control system account with the location in the app.
+
+- Preferably OAuth2.
+- The system needs to return auth credentials with unlimited lifetime to prevent users from having to log in frequently (an access token without expiration or including a refresh token, which can be used to keep a user logged in for an unlimited amount of time).
+- A way to verify logged users' permission to the site, location, or account.
+
+## 2. Member sync
+
+Administrators want to save time by synchronizing member information (name, email) from the app into the access control system dashboard.
+
+- The unique identifier must be the user's email.
+- If users are added to sites or locations — endpoints get a list of sites and a single site by id.
+- We need the following endpoints:
+  - Get a list of users
+  - Search for a specific user
+  - Create a user
+  - Update a user
+
+## 3. Grant conditional access
+
+Typically, shared spaces want to grant time-restricted access automatically based on a membership **plan** (day/week/month/year) or a room/desk **booking**. Bookings can be as short as 15 minutes. Members can create multiple bookings for the same room.
+
+- Possibility to grant access to the specific user by template: add to a group with access to particular locks.
+- The endpoint to get a list of groups and a single group by id.
+- For time-restricted access (for a plan or a booking) — possibility to set a timeframe for a specific grant.
+- Multiple grants for a single user in a single group for different timeframes (in case of multiple bookings for different timeframes).
+
+## 4. In-app unlocking
+
+Members should have a seamless experience in a space and be able to unlock doors from their favorite application.
+
+- Get a list of locks
+- Get a lock by id
+- Unlock a lock
+- Avoiding login for members — unlocking on behalf of a user by admin credentials.
+
+## Integration request
+
+Please ensure that your system meets the above integration requirements and send the following information to [support@rntor.com](mailto:support@rntor.com):
+
+- General introduction of your access control system: how it works, how members unlock doors, and how administrators grant access without the integration.
+- Potential integration scheme.
+- Your API documentation reference with a detailed explanation of endpoints.
+- Your calculations of the market potential of the integration.
+- Your company brand guidelines (for the integration page in our application and on our website).
+
+Our team will review your request and get back to you as soon as possible.

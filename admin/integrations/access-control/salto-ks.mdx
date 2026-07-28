@@ -1,0 +1,206 @@
+---
+title: "Salto KS"
+description: "Configure the Salto KS integration with RNTOR"
+hidden: true
+---
+
+Integration with Salto KS access control solution allows you to automate granting customers temporary access to designated locks based on bookings and subscriptions.
+
+Users can unlock doors directly from your RNTOR's member mobile app.
+
+<Info>
+  Salto KS is a distinct company not affiliated with RNTOR. For any inquiries regarding Salto KS's solutions, services, or pricing, please reach out to Salto KS directly. We do not have the authority to provide information or support on behalf of Salto KS.
+</Info>
+
+## Prerequisites
+
+1. Set up your Salto KS account with all locks configured and added to access groups created exclusively for RNTOR.
+
+<Warning>
+  Reusing access groups created for other applications may cause errors.
+</Warning>
+
+2. Have access to the Salto KS administrator account.
+
+## Connect Salto KS integration
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+
+![Image](/images/integrations/access-control-salto-ks-1.png)
+
+2. Find the **Salto KS** integration page and click **Connect**.
+3. Give permission to connect Salto KS with RNTOR.
+4. Select a **Site**. You will see all Salto KS sites where you have an administrator role.
+5. Set the digital key **Visibility**. This controls which user roles can see the digital key option in your member mobile app.
+
+![Image](/images/integrations/access-control-salto-ks-2.png)
+
+<Info>
+  You can connect a separate Salto KS account to each location in RNTOR.
+</Info>
+
+## Configure Salto KS integration
+
+The integration allows granting access based on:
+
+- Subscription
+- Room booking
+- Desk booking
+- Office booking
+- Equipment booking
+- Parking booking
+
+### Access based on subscriptions
+
+**For future new members**
+
+1. For membership plans, open the [plan settings](/admin/billing/plans/set-up-plans) \> **Access** section \> select the appropriate Salto KS access group.
+2. For resource rentals, open the [resource settings](/admin/resource-management/resources/set-up-resources) \> **Access** section \> select the appropriate Salto KS access group.
+3. When you [create subscriptions](/admin/billing/subscriptions/set-up-subscriptions) for customers or customers [sign up](/admin/billing/plans/immediate-plan-sign-ups) by themselves, the user is automatically synced to the selected Salto KS access group for the duration of their subscription.
+
+##### **For existing members**
+
+1. [Open member's subscription](/admin/billing/subscriptions/edit-a-subscription) \> open a specific item.
+2. In the **Access** section, select the appropriate Salto KS access group.
+
+Adding or editing access takes effect immediately. ​
+
+![Image](/images/integrations/access-control-salto-ks-3.png)
+
+#### Access for resource bookings
+
+To automate access for resource bookings:
+
+1. Go to **Resources** \> **Rooms, Desks, Offices, Parking**, or **Equipment** page.
+2. Open the [resource settings](/admin/resource-management/resources/set-up-resources) and select the appropriate Salto KS access group in the **Access** section.
+
+![Image](/images/integrations/access-control-salto-ks-4.png)
+
+## How Salto KS integration works
+
+### Access based on subscriptions
+
+- When a user gets a subscription, they are synced to the assigned access group for the entire subscription period.
+- Company subscriptions grant access to all users within the company.
+- Customers are synced to the access group at midnight (00:00) on their subscription start date.
+- When a subscription expires or is canceled, access is automatically revoked.
+
+<Info>
+  Access remains active from the subscription start date until its end or cancellation date, regardless of the customer's invoice payment status. To revoke access, [schedule a subscription end](/admin/billing/subscriptions/edit-a-subscription), or [cancel it](/admin/billing/subscriptions/cancel-a-subscription).
+</Info>
+
+#### Access based on bookings
+
+- Users receive access to the assigned access group for the full duration of their booking.
+- Invitees to room bookings also receive access.
+- Users have a 30-minute grace period before and after the booking time:
+
+| Booking time | Access window |
+| --- | --- |
+| 12:00 PM - 4:00 PM | 11:30 AM - 4:30 PM |
+| 9:30 AM - 11:30 AM | 9:00 AM - 12:00 PM |
+
+### How users unlock doors
+
+**Existing users (already have Salto KS account)**
+
+Users who have previously had at least one booking or subscription with Salto KS access will see the **Get digital key** button at the top of the main page in the member mobile app.
+
+##### **New users (no prior access)**
+
+Users without prior access will not see the **Get digital key** button. It will appear only when they get the first booking (30 minutes before the booking), or subscription (on the subscription start date).
+
+##### **User journey**
+
+1. Users tap **Get digital key** at the top of the main **Locations** page.
+2. They see the **Activating digital key…** message. RNTOR redirects them to Salto KS and automatically authenticates them within a few seconds—no action required from users.
+3. Once authentication is complete, the button changes to **Unlock**.
+
+![Image](/images/integrations/access-control-salto-ks-5.png)
+
+4. When users want to open a door, they click **Unlock**.
+   - During the first unlock, the app will request them to grant Bluetooth permission.
+5. Then, the app prompts them: **Ready to unlock. Tap your phone on the lock reader.**
+6. The user taps the phone on the lock reader and sees the message: **Signal sent. Try opening the door.**
+
+![Image](/images/integrations/access-control-salto-ks-6.png)
+
+- If a user is not eligible to unlock this door, the lock will indicate this with a sound or a red LED.
+
+<Info>
+  Users can use the digital key only in the member mobile app, not in the member web portal. If you don't have the Member mobile apps add-on, you can still use the Salto KS integration with RNTOR to automate granting and revoking customer access. However, users will need to install the Salto KS app and use it to unlock doors.
+</Info>
+
+## Disconnect Salto KS
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page \> **Salto KS**.
+2. Press **Disconnect** and confirm your choice.
+
+<Warning>
+  When the integration is disconnected, access will not be granted for future bookings or subscriptions. Any access already granted remains active and must be revoked manually through the Salto KS dashboard.
+</Warning>
+
+## Troubleshoot Salto KS access issues
+
+Here are a few common errors you may encounter and how to resolve them:
+
+<Accordion title="Lock compatibility">
+  - Not all Salto KS locks support digital key unlocking. Test each of your locks individually.
+  - If a lock does not support digital keys, contact Salto KS for assistance.
+</Accordion>
+
+<Accordion title="Low-power locks">
+  - Some locks operate in low-energy (sleep) mode.
+  - In these cases, simply holding the phone near the reader may not work—users should firmly tap their phone on the reader.
+</Accordion>
+
+<Accordion title="Apple Wallet behavior on iOS smartphones">
+  - On iOS devices, tapping the phone on the lock may trigger Apple Wallet to open. This does not interfere with unlocking.
+  - If you want to prevent this behavior, the owner of your Apple Developer account can contact Apple to request suppression of Apple Wallet for your app.
+  - Apple may require additional information or agreements, so it's best for the account holder to handle this request directly.
+</Accordion>
+
+<Accordion title='"Enable Bluetooth and locaton permissions to unlock doors"'>
+  - During the first unlock using the digital key, the member portal or mobile app requests users to grant Bluetooth/Location permissions to unlock doors.
+  - If they reject any of these permissions, while clicking the **Unlock** button, the user will see the **Enable Bluetooth and locaton permissions to unlock doors** error message.
+  - To solve this, the user needs to navigate to their device settings \> select your member mobile app and enable the required permissions for it.
+</Accordion>
+
+<Accordion title='"Could not grant access"'>
+  Administrators may see a **Could not grant access** error in their members' profiles. This error occurs when the user's data fails to synchronize to Salto KS, and the user, therefore, doesn't receive access based on their subscription. The issue can happen due to the temporary unresponsiveness of the API on the side of Salto KS while syncing data.
+
+  To solve this issue:
+
+  1. Navigate to RNTOR \> **Customers** \> select the necessary customer.
+  2. Tap on the subscription in the **Subscription** section.
+  3. Scroll down and locate the **Access** section \> choose **Not selected** from the drop-down list \> press **Save**.
+
+  ![Image](/images/integrations/access-control-salto-ks-7.png)
+
+  4. Reopen the subscription \> in the **Access** section, select the necessary Salto KS access group again \> press **Save**.
+
+  After completing these steps, RNTOR will attempt to sync the users to the Salto KS dashboard again to grant the required access.
+</Accordion>
+
+**FAQs**
+
+<Accordion title="How do I manage access granting for company members who rotate coming to the space?">
+  To ensure that only the members who are actually coming in get access, follow these steps:
+
+  1. Do not assign an access group to the company's subscription. This prevents all company members from receiving access by default.
+  2. Include the required number of day passes in the [company's subscription.](/admin/billing/subscriptions/set-up-subscriptions) Company members need to [use these day passes to book a seat](/admin/billing/credits-and-day-passes/day-passes) when they plan to come in.
+  3. Assign an [access group in the desk settings](#access-for-resource-bookings). This ensures that only those company members who have an active desk booking for the current day will be granted access.
+
+  As a result, access will be automatically granted only to those who have booked a desk and are scheduled to come in that day—not the entire company.
+</Accordion>
+
+<Accordion title="How to set up access groups for different doors?">
+  To ensure a seamless flow for your members, create multiple access groups in Salto KS based on your space layout and then link them to the specific resources or plans in RNTOR:
+
+  - **Front door lock:** If you only have one main door, create a single access group and link it to all your resources and plans.
+  - **Front door lock and Private offices locks:** To give office tenants private access, create separate access groups for each individual office. Each group should include the **Front door** lock plus that **Specific office** lock. Link each unique group to its corresponding office resource.
+  - **Front door lock and locks for certain rooms:**
+    - Create groups for each **Room** \+ **Front door**. Link each room to the access groups you created for it so users only access the specific room they booked.
+    - To provide access to desks, open spaces, or lounges, you only need one access group containing the **Front door** lock.
+  - **Tiered access:** For members on different plans, create groups with the same locks but different time restrictions. Link these groups to the corresponding plans — for example, a "9 AM – 6 PM" group for regular members and a "24/7" group for those on exclusive plans.
+</Accordion>

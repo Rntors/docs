@@ -1,0 +1,95 @@
+---
+title: "plata by mono"
+description: "Configure the plata by mono integration with RNTOR"
+hidden: true
+---
+
+RNTOR allows accepting online payments with plata by mono.
+
+<Info>
+  🌍 plata by mono is available in Ukraine.
+</Info>
+
+<Info>
+  plata by mono payment gateway is developed by monobank, which is a distinct company not affiliated with us. For any inquiries regarding the monobank's solutions, services, or pricing, reach out to monobank directly. We do not have the authority to provide information or support on behalf of monobank.
+</Info>
+
+## Connect plata by mono
+
+To connect plata by mono for accepting payments, follow these steps:
+
+1. [Open an account with plata by mono.](https://www.monobank.ua/e-comm)
+
+<Warning>
+  To make sure plata by mono saves the card after each payment in the app, upon registration of your plata by mono account, please ask monobank support to enable the option `робота з токенами`.
+</Warning>
+
+2. Navigate to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-plata-by-mono-1.png)
+
+3. Find the **plata by mono** integration page. _On this page, you'll also see two helpful buttons:_
+
+- **About**: For general information about the integration.
+- **Docs**: For detailed instructions on connecting and configuring.
+
+![Image](/images/integrations/payments-plata-by-mono-2.png)
+
+4. Press **Connect** and enter your plata by mono account credentials.
+
+![Image](/images/integrations/payments-plata-by-mono-3.png)
+
+## Configure plata by mono
+
+You can activate payments for the following services:
+
+- Bookings
+- Event tickets
+- Shop products
+- Credit packages
+- Invoices
+
+## How plata by mono works
+
+- The integration adds a **New payment method** option to the [payment methods](/admin/billing/payments/payment-methods) section around member web portal and mobile app. Users selecting the **New payment method** option are redirected to the plata by mono payment page. They can use any of the payment methods you enabled for your plata by mono account.
+- Once users pay by card for the first time, the system saves the card to the **Membership \> Billing** page for future quick payments.
+- The [default payment method](/admin/billing/payments/payment-gateway) is used for [auto-pay](/admin/billing/subscriptions/control-invoice-auto-charge).
+
+## Identify users' transactions in plata by mono
+
+You can easily find users' transactions in the plata by mono dashboard using the following unique identifiers:
+
+- Transaction ID — coincides with `ID замовлення` in the plata by mono dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Description — the type of purchase the user makes, such as a room booking, desk booking, shop order, etc.
+
+## Migrate from WayForPay to plata by mono
+
+If you fully disconnect the WayForPay integration, the cards of your users saved in the app with WayForPay will be immediately deleted.
+
+<Tip>
+  You may consider not doing this before the 1st day of the month if all your members' invoices are auto-charged on this date.
+</Tip>
+
+To migrate to plata by mono seamlessly, follow these steps:
+
+1. Navigate to the **Integrations** page by pressing the menu **(...)** next to the location's name \> **WayForPay**.
+2. Disable payments with WayForPay for all the services in the app except for invoices.
+
+![Image](/images/integrations/payments-plata-by-mono-4.png)
+
+3. Navigate to the **Integrations** \> **plata by mono** \> connect your plata by mono account and enable payments with plata by mono for all the services except for invoices.
+
+![Image](/images/integrations/payments-plata-by-mono-5.png)
+
+4. As a result, users' invoices will continue to be auto-charged with their saved cards with WayForPay, while to make a payment for any other booking or purchase, users will have to select the **New payment method** option and enter their card details to pay with plata by mono for the first time. Upon the first payment with plata by mono, the system will save their card to the **Membership \> Billing** page.
+5. Now, that your users have their cards saved for plata by mono, disable invoice payments on the WayForPay integration page and enable invoice payments on the plata by mono integration page.
+6. To enable auto-pay for invoices with plata by mono, proceed in one of the following ways:
+   - Ask members to go to the **Membership \> Billing** page and [make their saved card a default one.](/admin/billing/payments/payment-gateway)
+   - Wait for members to receive the next invoice and pay for it manually with their card. After the first payment for an invoice, the card will automatically become a default one for invoice charges.
+
+## Disconnect plata by mono
+
+To disconnect plata by mono integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **plata by mono.**
+2. Press **Disconnect** and confirm your choice.

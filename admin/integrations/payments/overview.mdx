@@ -3,4 +3,115 @@ title: "Overview"
 description: "Payment integrations overview."
 ---
 
-Coming soon.
+RNTOR allows you to accept payments for all products and services. In order to make the payment process as simple as possible, you will need to connect to the payment gateway available in your country.
+
+### Available payment gateways
+
+Find an available payment gateway in your region:
+
+### North America
+
+| **Country** | **Payment gateway** |
+| --- | --- |
+| United States<br />Canada | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Mexico | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Mercado Pago](/admin/integrations/payments/mercado-pago)<br />[PayPal](/admin/integrations/payments/paypal) |
+
+### South America
+
+| **Country** | **Payment gateway** |
+| --- | --- |
+| Argentina<br />Chile<br />Colombia<br />Venezuela<br />Peru<br />Uruguay | [Mercado Pago](/admin/integrations/payments/mercado-pago)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Brazil | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Mercado Pago](/admin/integrations/payments/mercado-pago)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Ecuador | [PayPal](/admin/integrations/payments/paypal) |
+
+### Pacific
+
+| **Country** | **Payment gateway** |
+| --- | --- |
+| Australia<br />New Zealand | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[PayPal](/admin/integrations/payments/paypal) |
+
+### Europe
+
+| **Country** | **Payment gateway** |
+| --- | --- |
+| **European Union**<br />Austria<br />Belgium<br />Bulgaria<br />Croatia<br />Cyprus<br />Czech Republic<br />Denmark<br />Estonia<br />Finland<br />France<br />Germany<br />Greece<br />Hungary<br />Ireland<br />Italy<br />Latvia<br />Liechtenstein<br />Lithuania<br />Luxembourg<br />Malta<br />Netherlands<br />Poland<br />Portugal<br />Romania<br />Slovakia<br />Slovenia<br />Spain<br />Sweden | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Mollie](/admin/integrations/payments/mollie)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Ukraine | [WayForPay](/admin/integrations/payments/wayforpay)<br />[plata by mono](/admin/integrations/payments/plata-by-mono) |
+| Switzerland | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Mollie](/admin/integrations/payments/mollie)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Norway | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Mollie](/admin/integrations/payments/mollie)<br />[PayPal](/admin/integrations/payments/paypal) |
+| United Kingdom | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Mollie](/admin/integrations/payments/mollie)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Georgia | [PayPal](/admin/integrations/payments/paypal) |
+
+### Asia
+
+| **Country** | **Payment gateway** |
+| --- | --- |
+| India | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Indonesia<br />Singapore<br />Malaysia<br />Thailand | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[PayPal](/admin/integrations/payments/paypal)<br />[Xendit](/admin/integrations/payments/xendit) |
+| Philippines | [PayPal](/admin/integrations/payments/paypal)<br />[Maya](/admin/integrations/payments/maya)<br />[Xendit](/admin/integrations/payments/xendit) |
+| Vietnam | [Xendit](/admin/integrations/payments/xendit) |
+| Cambodia | [PayWay](/admin/integrations/payments/payway) |
+| United Arab Emirates | [Stripe](/admin/integrations/payments/stripe/stripe)<br />[Tap](/admin/integrations/payments/tap)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Saudi Arabia<br />Bahrain<br />Kuwait<br />Qatar<br />Oman | [Tap](/admin/integrations/payments/tap)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Kazakhstan | [Freedom Pay](/admin/integrations/payments/freedom-pay)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Republic of Korea | [KakaoPay](/admin/integrations/payments/kakaopay)<br />[PayPal](/admin/integrations/payments/paypal) |
+| Kyrgyzstan<br />Uzbekistan | [Freedom Pay](/admin/integrations/payments/freedom-pay) |
+
+### Africa
+
+| **Country** | **Payment gateway** |
+| --- | --- |
+| Côte d'Ivoire  <br />Ghana <br />Kenya <br />Nigeria <br />Rwanda <br />South Africa | [Paystack](/admin/integrations/payments/paystack) |
+
+## Supported payment methods
+
+Each payment gateway has its own list of supported payment methods.
+
+| **Payment gateway** | **Bank cards** | **Electronic wallets** | **Bank debits** | **Bank redirects and Vouchers** | **Buy now, pay later** | **Crypto payments** |
+| --- | --- | --- | --- | --- | --- | --- |
+| Stripe | ✓ | ✓<br />Apple Pay,<br />Google Pay, <br />GrabPay, <br />Revolut Pay | ✓<br />ACH, <br />Australia BECS,<br />Bacs, <br />NZ BECS, <br />PADs, <br />SEPA. | ✓ <br />Boleto, <br />iDEAL, <br />TWINT, <br />Bancontact,<br />BLIK, <br />EPS, <br />PayNow, <br />PromptPay, <br />Pay By Bank, <br />Przelewy24 | ✓<br />Klarna, <br />Billie, <br />Afterpay/Clearpay | ✓ |
+| WayForPay | ✓ | ✓<br />Apple Pay<br />Google Pay |  |  |  |  |
+| plata by mono | ✓ | ✓<br />Apple Pay<br />Google Pay |  |  |  |  |
+| KakaoPay | ✓ | ✓ |  |  |  |  |
+| PayWay | ✓ | ✓<br />ABA PAY<br />KHQR |  |  |  |  |
+| PayPal | ✓ | ✓<br />PayPal |  |  |  |  |
+| MercadoPago | ✓ | ✓ <br />Mercado Pago Wallet |  |  |  |  |
+| Freedom Pay | ✓ | ✓<br />Apple Pay<br />Google Pay<br />Samsung Pay<br />Qiwi<br />O!Money |  | ✓ |  |  |
+| Paystack | ✓ | ✓ |  | ✓ |  |  |
+| Tap | ✓<br />Visa<br />MasterCard<br />AmEx<br />Knet<br />Mada<br />Benefit<br />Fawry<br />Tabby | ✓<br />Apple Pay<br />Google Pay<br />CAREEM Pay<br />STC Pay<br />PayPal |  |  |  |  |
+| Mollie | ✓ | ✓<br />Google Pay |  |  |  |  |
+| Maya | ✓ | ✓<br />Maya, <br />GCash, <br />WeChat Pay, <br />ShopeePay,<br />more via QR Ph. |  |  |  |  |
+| Xendit | ✓ | ✓ | ✓<br />Bank transfers | ✓<br />QR codes, <br />Retail outlets |  |  |
+
+Certain product benefits are available only with specific payment gateways:
+
+| **Payment gateway** | **One-off payments** | **Saving payment methods** | **Auto-pay** | **Auto-refunds** |
+| --- | --- | --- | --- | --- |
+| Stripe | ✓ | ✓ | ✓ | ✓ |
+| WayForPay | ✓ | ✓ | ✓ | ✓ |
+| plata by mono | ✓ | ✓ | ✓ |  |
+| Tap | ✓ | ✓ | ✓ |  |
+| KakaoPay | ✓ |  |  | ✓ |
+| PayWay | ✓ |  |  |  |
+| Paystack | ✓ |  |  |  |
+| PayPal | ✓ |  |  |  |
+| MercadoPago | ✓ |  |  |  |
+| Freedom Pay | ✓ |  |  |  |
+| Mollie | ✓ |  |  |  |
+| Maya | ✓ |  |  |  |
+| Xendit | ✓ |  |  |  |
+
+### Before you begin
+
+Open a merchant account with the payment gateway of your choice. After completing the sign-up process, you will be able to obtain the necessary capabilities for its integration with RNTOR.
+
+### Connecting a payment gateway
+
+Once you have opened a merchant account, open RNTOR and go to the **Integrations** page by pressing the menu **(...)** near the location name to connect a payment gateway.
+
+### Restore saved and default payment methods
+
+When you disconnect a payment gateway integration for a location, please note the following impacts on your customers' saved and default payment methods:
+
+- **Saved payment methods**: All previously saved methods linked to the disconnected account will become unavailable for users. These will only be restored if the _same_ payment gateway account is reconnected.
+- **Reconnecting a different account**: If you connect a _different_ payment gateway account, users will need to [re-enter their payment details](/admin/billing/payments/payment-gateway) for future transactions and [auto-payments](/admin/billing/subscriptions/control-invoice-auto-charge).
+- **Default payment methods**: Regardless of which account is reconnected, all default payment methods will be removed and must be [set again by users](/admin/billing/payments/payment-gateway).

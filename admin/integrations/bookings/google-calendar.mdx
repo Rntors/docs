@@ -3,4 +3,123 @@ title: "Google Calendar"
 description: "Sync Rntor bookings with Google Calendar."
 ---
 
-Coming soon.
+The integration of RNTOR with Google Calendar allows for syncing future, new and updated bookings with a selected calendar in real-time.
+
+The integration allows syncing:
+
+- Room bookings
+- Desk bookings
+- Office bookings
+- Equipment booking
+- Parking bookings
+
+## Why sync bookings
+
+Syncing bookings between RNTOR and Google Calendar might be useful if:
+
+- You want to [integrate with the marketplace](/admin/integrations/marketplaces/integrate-with-marketplaces) (e.g., [LiquidSpace](/admin/integrations/marketplaces/liquidspace)).
+- You are migrating from another platform and need to quickly recreate all future bookings made in your previous software in RNTOR.
+
+<Tip>
+  To ensure complete control over bookings, payments, and communication with bookers, we highly recommend accepting all bookings directly through the member web portal and mobile app. This approach allows easy access to booking data, payments, and analytics, while also showcasing other services like desks and plans, and enabling new customers to create accounts and book conveniently.
+</Tip>
+
+## Prerequisites
+
+For accurate booking sync with Google Calendar, make sure to remember and complete the following:
+
+1. Have an active RNTOR subscription.
+2. Each resource can sync with only one Google Calendar. For example, a **Meeting room** resource can sync with a **Meeting room** Google Calendar.
+3. [Create separate calendars](https://support.google.com/calendar/answer/37095?hl=en) in your Google account and name them after your resources. For example, a calendar called "Meeting Room," "Hot Desk 1," or more specific names like **Meeting Room 1** or "Hot Desk A." Using clear and consistent names ensures easy identification.
+4. Bookings created in RNTOR should only be managed ([edited](/member/bookings/book-a-desk), [canceled](/admin/resource-management/resources/manage-bookings)) in RNTOR. Changes made to such bookings in Google Calendar won't be reflected in RNTOR.
+5. Bookings created in Google Calendar can only be managed from Google Calendar.
+
+## Connect the Google Calendar integration
+
+To connect the integration:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Google Calendar**. _On this page, you'll also see two helpful buttons:_
+   - **About**: For general information about the integration.
+   - **Docs**: For detailed instructions on connecting and configuring.
+
+![Image](/images/integrations/bookings-google-calendar-1.png)
+
+2. Press **Connect** and provide permission to read and write into your calendars.
+
+## Set up one-way sync
+
+To only sync new and updated bookings from RNTOR to Google Calendar, enable one-way Google Calendar sync:
+
+1. Go to **Resources \> Rooms, Desks, Offices, Equipment,** or **Parking**.
+2. Select a resource \> press the **(...)** menu next to it \> **Edit**.
+3. In the **Calendar sync** section, choose the calendar to sync bookings with.
+
+![Image](/images/integrations/bookings-google-calendar-2.png)
+
+### How the one-way sync works
+
+- All future, new, and updated bookings created for a resource in RNTOR will sync to the selected Google calendar.
+- Bookings made in this Google Calendar won't sync to RNTOR.
+
+![Image](/images/integrations/bookings-google-calendar-3.png)
+
+## Set up two-way sync
+
+To synchronize bookings from RNTOR to Google Calendar and vice versa, enable two-way Google Calendar sync.
+
+<Tip>
+  Use two-way sync to integrate with marketplaces or transfer all bookings from another platform to RNTOR.
+</Tip>
+
+For this:
+
+1. Go to **Resources \> Rooms, Desks, Offices, Equipment,** or **Parking** \> select a resource \> press the **(...)** menu next to it \> **Edit**.
+2. In the **Calendar sync** section, choose the calendar to sync bookings with.
+3. Enable **Two-way sync** switch \> **Save**.
+
+![Image](/images/integrations/bookings-google-calendar-4.png)
+
+### How the two-way sync works
+
+- All future, new, and updated bookings created in RNTOR will sync to the selected Google calendar.
+- All future, new, and updated bookings made in Google Calendar will also be synced to RNTOR.
+- For desk, office, and parking lot bookings, one booking in Google Calendar books 1 seat in the corresponding resource in RNTOR.
+
+![Image](/images/integrations/bookings-google-calendar-5.png)
+
+<Warning>
+  The Google Calendar integration currently doesn't support syncing recurring bookings, both to and from RNTOR. Only the first booking from the repeating event syncs. Create this recurring booking directly in RNTOR or in Google Calendar instead.
+</Warning>
+
+## Disconnect the Google Calendar integration
+
+To disconnect Google Calendar, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Google** **Calendar**.
+2. Press **Disconnect** and confirm your choice.
+
+<Warning>
+  After disconnecting Google Calendar, all bookings synced from Google Calendar are removed from RNTOR automatically.
+</Warning>
+
+**FAQ**
+
+<Accordion title="Why did Google Calendar fail to create a booking?">
+  If you received an error message in RNTOR stating that Google Calendar failed to create a booking, refer to [our article](/admin/administration/your-account/notifications/integration-failures) that describes why the error appeared and the necessary steps to follow.
+</Accordion>
+
+<Accordion title="How to remove the event created in Google Calendar from RNTOR?">
+  When you use two-way sync with Google Calendar, you need to manage all bookings created through Google Calendar directly in Google Calendar. If you no longer need Google Calendar sync, disconnect Google Calendar integration, and all bookings created by Google Calendar will be automatically removed.
+</Accordion>
+
+<Accordion title="Can users sync bookings to their calendar?">
+  Yes, users can add their bookings made in the member web portal or mobile app to their Google Calendar or Microsoft 365 Outlook upon making a successful booking.
+
+  ![Image](/images/integrations/bookings-google-calendar-6.png)
+
+  They are prompted to do it immediately once they have made a booking, but they can also always add a booking to their calendar later by going to the **Account** page \> **Bookings** \> opening the necessary booking.
+
+  ![Image](/images/integrations/bookings-google-calendar-7.png)
+
+  On the member mobile app, the **Add to calendar** button opens the default calendar on the user's device.
+</Accordion>

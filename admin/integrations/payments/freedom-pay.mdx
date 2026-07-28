@@ -1,0 +1,77 @@
+---
+title: "Freedom Pay"
+description: "Configure the Freedom Pay integration with RNTOR"
+hidden: true
+---
+
+Freedom Pay integration allows you to receive payments in RNTOR.
+
+<Info>
+  🌍 Freedom Pay is available only in Kazakhstan, Kyrgyzstan, and Uzbekistan.
+</Info>
+
+<Info>
+  Freedom Pay is a distinct company not affiliated with us. For any inquiries regarding Freedom Pay's solutions, services, or pricing, please reach out to Freedom Pay directly. We do not have the authority to provide information or support on behalf of Freedom Pay.
+</Info>
+
+## Connect Freedom Pay
+
+1. Have your Freedom Pay account ready and fully activated.
+2. Contact Freedom Pay support and request to enable the `pg_check_url` property for your account. It's required so your app can correctly update the payment status for all bookings.
+3. Connect integration: go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-freedom-pay-1.png)
+
+4. Find the **Freedom Pay** integration page. _On this page, you'll also see two helpful buttons:_
+
+![Image](/images/integrations/payments-freedom-pay-2.png)
+
+- **About**: For general information about the integration.
+- **Docs**: For detailed instructions on connecting and configuring.
+
+5. Press **Connect**.
+6. Fill out the following fields such as:
+   1. Merchant country. Select the country where you opened an account with Freedom Pay from the drop-down list.
+   2. Merchant ID. Usually looks like a set of digits, for example, `537623`.
+   3. Secret Key. Usually looks like a set of characters and digits, for example, `u7CfQFERDlRiub9O`.
+
+![Image](/images/integrations/payments-freedom-pay-3.png)
+
+7. Press **Connect** and configure accepting payments.
+
+<Tip>
+  You can find your credentials in the settings of your Freedom Pay store.
+</Tip>
+
+<Warning>
+  Enabling the `pg_check_url` property for your account is essential as this parameter is disabled for all accounts by default and is controlled only by Freedom Pay, and not us. If you don't contact Freedom Pay support to enable it, it may result in your users being charged for the deleted bookings.
+</Warning>
+
+## Configure Freedom Pay
+
+You can activate payments for the following:
+
+- Bookings
+- Event tickets
+- Shop
+- Invoices
+- Credit packages
+
+## How Freedom Pay Works
+
+The integration adds **New payment method** to the **Payments** section around member web portal and mobile apps. Members selecting the **New payment method** are redirected to the Freedom Pay payment page and can use any of the payment methods you enabled for your account.
+
+## Identify users' transactions in Freedom Pay
+
+You can easily find users' transaction in the Freedom Pay dashboard using the following unique identifiers:
+
+- ID — coincides with `Номер заказа` in the Freedom Pay dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the Freedom Pay dashboard.
+- Description — the types of purchases users make, such as room bookings, desk bookings, **Shop** orders, etc.
+
+## Disconnect Freedom Pay
+
+To disconnect FreedomPay integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **FreedomPay.**
+2. Press **Disconnect** and confirm your choice.

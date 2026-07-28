@@ -1,0 +1,76 @@
+---
+title: "PayWay"
+description: "Configure the PayWay integration with RNTOR"
+hidden: true
+---
+
+PayWay by ABA Bank is Cambodia's leading online payment gateway that supports credit and debit cards, ABA PAY, and KHQR. The integration allows you to receive payments in RNTOR.
+
+<Info>
+  🌍 PayWay is available in Cambodia.
+</Info>
+
+<Info>
+  PayWay by ABA Bank is a distinct company not affiliated with us. For any inquiries regarding PayWay's solutions, services, or pricing, please reach out to PayWay or ABA Bank directly. We do not have the authority to provide information or support on behalf of PayWay.
+</Info>
+
+## Connect PayWay
+
+To activate PayWay, follow the next steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Integrations 1](/images/integrations/payments-payway-1.png)
+
+2. Find the **PayWay** integration page and press **Connect**.
+
+![Integrations Payments Payway Connect Payway Integration Page](/images/integrations/payments-payway-2.png)
+
+3. Fill in the following fields from your PayWay merchant portal:
+
+- **Merchant ID**
+- **API Key**
+- **RSA Public Key**
+
+![Integrations Payments Payway Connect Payway Credentials](/images/integrations/payments-payway-3.png)
+
+4. Press **Connect**.
+
+## Configure PayWay
+
+Select the services customers should be able to pay for via PayWay:
+
+- Bookings
+- Event tickets
+- Shop products
+- Packages
+- Invoices
+
+## How PayWay works
+
+The integration adds the **PayWay** payment method to the **Payment methods** section around the member web portal and mobile app. Users selecting **PayWay** are redirected to PayWay's hosted checkout page, where they can pay with any of the payment options enabled on your PayWay merchant profile (ABA PAY, KHQR, cards, etc.).
+
+<Info>
+  PayWay supports **USD** and **KHR** only. KHR amounts are always whole numbers — PayWay does not accept KHR with decimals, so these amounts are rounded to the nearest whole number before payment.
+</Info>
+
+<Warning>
+  Each PayWay payment link works only once. If a customer opens the checkout page but doesn't finish paying, they can't return to it — after 15 minutes they'll need to start the payment again.
+</Warning>
+
+Payments are authorized as a hold on the customer's account and captured once the payment is confirmed. If the payment is rejected or the attempt expires, the hold is released instead of being charged.
+
+## Identify users' transactions in PayWay
+
+You can easily find users' transactions in the PayWay merchant portal using the following unique identifiers:
+
+- ID — the transaction ID. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the PayWay merchant portal.
+- Description — the types of purchases users make, such as room bookings, desk bookings, **Shop** orders, etc.
+
+## Disconnect PayWay
+
+To disconnect PayWay integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **PayWay**.
+2. Press **Disconnect** and confirm your choice.

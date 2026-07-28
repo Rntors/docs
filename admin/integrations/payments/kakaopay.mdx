@@ -1,0 +1,73 @@
+---
+title: "KakaoPay"
+description: "Configure the KakaoPay integration with RNTOR"
+hidden: true
+---
+
+KakaoPay integration allows receiving payments in RNTOR.
+
+<Info>
+  🌍 KakaoPay is available in South Korea.
+</Info>
+
+<Info>
+  KakaoPay is a distinct company not affiliated with us. For any inquiries regarding KakaoPay's solutions, services, or pricing, please reach out to KakaoPay directly. We do not have the authority to provide information or support on behalf of KakaoPay.
+</Info>
+
+## Connect KakaoPay
+
+To activate KakaoPay:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-kakaopay-1.png)
+
+2. Find the **KakaoPay** integration page. _On this page, you'll also see two helpful buttons:_
+
+![Image](/images/integrations/payments-kakaopay-2.png)
+
+- **About**: For general information about the integration.
+- **Docs**: For detailed instructions on connecting and configuring.
+
+3. Press **Connect**.
+4. Fill in your **Admin key** and "CID."
+
+![Image](/images/integrations/payments-kakaopay-3.png)
+
+5. Log in to your KakaoPay account and go to **My Application** \> **App Settings** \> **Platform**.
+6. In the **Web** section, add the following site domains: `https://rntor.com`, `https://api.rntor.com`
+
+## Configure KakaoPay
+
+1. Select services for which customers should be able to pay via KakaoPay:
+   - Bookings
+   - Event tickets
+   - Shop products
+   - Credit packages
+   - Invoices
+2. Enable or disable **Automatic refunds** to let users get automatic refunds for canceled bookings, tickets, and orders if eligible. [Understand refunds](/admin/billing/payments/refunds)
+
+![Image](/images/integrations/payments-kakaopay-4.png)
+
+<Info>
+  Automatic refunds are enabled by default as soon as the KakaoPay integration is connected.
+</Info>
+
+## How KakaoPay works
+
+The integration adds a new payment method **KakaoPay** to the **Payment methods** section around member web portal and mobile app. Users selecting the **KakaoPay** payment method are redirected to the KakaoPay application and can use any contained payment method.
+
+## Identify users' transactions in KakaoPay
+
+You can easily find users' transaction in the KakaoPay dashboard using the following unique identifiers:
+
+- ID — coincides with **Order ID** in the KakaoPay dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the Stripe dashboard.
+- Description — the types of purchases users make, such as room bookings, desk bookings, **Shop** orders, etc.
+
+## Disconnect KakaoPay
+
+To disconnect KakaoPay integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **KakaoPay.**
+2. Press **Disconnect** and confirm your choice.

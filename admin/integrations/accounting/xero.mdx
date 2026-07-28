@@ -3,4 +3,144 @@ title: "Xero"
 description: "Sync Rntor invoices and payments with Xero."
 ---
 
-Coming soon.
+Seamlessly sync all invoices and payments from RNTOR to Xero to automate revenue accounting and payment reconciliation.
+
+<Info>
+  Xero is a distinct company not affiliated with us. For any inquiries regarding Xero's solutions, services, or pricing, please reach out to Xero directly. We do not have the authority to provide information or support on behalf of Xero.
+</Info>
+
+## Prerequisites
+
+1. Have your Xero account ready.
+2. Set up the same [tax rates](/admin/billing/taxes/set-up-taxes) in Xero and RNTOR.
+3. Make sure your RNTOR invoice currency matches your Xero account currency.
+4. Set up your “Revenue” accounts in Xero for syncing **invoice items** from RNTOR.
+5. [Set up a clearing account](https://central.xero.com/s/article/Reconcile-payments-received-from-online-sales-AU-UK-US-GL) in Xero for syncing **invoice payments** from RNTOR. Fill in the **Code** field for it and check the **Enable payments to this account** box.
+
+## Connect Xero integration
+
+1. Click the menu **(...)** next to the location's name \> go to **Integrations**.
+
+![Image](/images/integrations/accounting-xero-1.png)
+
+2. Open the **Xero** integration page and click **Connect**.
+
+![Image](/images/integrations/accounting-xero-2.png)
+
+3. Grant access to your Xero organization.
+4. Select the same organization in the **Organization** dropdown.
+5. **Tax rates for invoice item sync** — select the same Xero tax rates as the ones you use in RNTOR. During sync, each invoice item's tax rate from RNTOR must match one of the Xero tax rates selected here.
+
+<Warning>
+  If an item's tax rate doesn't match any selected Xero tax rate, the invoice will fail to sync.
+</Warning>
+
+6. **Account for invoice payment sync** — select your Xero account where RNTOR should sync invoice payments.
+
+<Info>
+  Only accounts with 'Enable payments to this account' checked in Xero are available to select.
+</Info>
+
+7. **Accounts for invoice item sync** — for each product type, select your Xero account where RNTOR should sync invoice items for this product.
+
+<Info>
+  Only 'Revenue' accounts are available to select.
+</Info>
+
+<Warning>
+  It is required to select accounts for **all** invoice item types, even if you don't have some of these product types. Otherwise, invoice syncing to Xero will not work.
+</Warning>
+
+![Integrations Accounting Xero Connect Xero Integration Xero Page](/images/integrations/accounting-xero-3.png)
+
+## How Xero integration works
+
+Once the integration is connected, RNTOR syncs the following to Xero in real time:
+
+- Newly issued invoices
+- Invoice status updates
+- Invoice payments
+- Credit notes for unpaid invoices.
+
+<Info>
+  Applied balance, partial payments, credit notes for paid invoices, and refunds do not sync to Xero.
+</Info>
+
+<Info>
+  RNTOR syncs invoices for all purchase types, including subscriptions, bookings, shop orders, event tickets, and other one-time payments starting December 9, 2025. Before this date, immediate one-time payments (bookings, shop orders, event tickets, etc.) generated receipts only, which were not synced to Xero.
+</Info>
+
+### How invoices sync
+
+The integration maps RNTOR invoice data to Xero as follows:
+
+| **Data in Xero** | **Sync** |
+| --- | --- |
+| To | Company/user's name or legal business name |
+| Customer email | - |
+| Invoice date | ✓ |
+| Due date | ✓ |
+| Invoice no. | ✓ |
+| Currency | ✓ |
+| Account | Selected **Revenue** accounts |
+| Item description | Invoice item name in RNTOR |
+| Item quantity | ✓ |
+| Item price | ✓ |
+| Amount | ✓ |
+| Tax | Tax type (inclusive or exclusive), and tax rate. |
+| Attachment | Invoice PDF |
+| Status | ✓ |
+| The **Go to RNTOR** link directs to the related invoice in RNTOR. | ✓ |
+
+![Image](/images/integrations/accounting-xero-4.png)
+
+### How invoice statuses sync
+
+The integration syncs the following invoice statuses to Xero:
+
+| **Invoice status in RNTOR** | **Status in Xero** |
+| --- | --- |
+| Unpaid | Awaiting payment |
+| Paid | Paid |
+| Voided | Void |
+
+![Integrations Accounting Xero Invoice Statuses Sync](/images/integrations/accounting-xero-5.png)
+
+### How invoice payments sync
+
+When payments sync to your Xero clearing account, the following data is transferred:
+
+| **Data in RNTOR** | **Xero** |
+| --- | --- |
+| Transaction date | Payment date |
+| Invoice number | Reference Inv # |
+| Legal business name / Name | Contact |
+| Due date | Due date |
+| Paid amount | Payment amount |
+
+Invoice payment in RNTOR:
+
+![Image](/images/integrations/accounting-xero-6.png)
+
+Invoice payment in Xero:
+
+![Image](/images/integrations/accounting-xero-7.png)
+
+<Tip>
+  If you see an error saying Xero failed to sync an invoice, check [our help article](/admin/administration/your-account/notifications/integration-failures) for the cause and how to resolve it.
+</Tip>
+
+## Disconnect the Xero integration
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+2. Select **Xero** \> press **Disconnect** and confirm your choice.
+
+**FAQs**
+
+<Accordion title="Why is nothing syncing at all after I connected Xero?">
+  Ensure you have granted access to the correct Xero organization and selected that same organization in the **Organization** dropdown within RNTOR. Additionally, verify that your RNTOR currency matches Xero and that you have a **Sales** account in Xero with the code `200.`
+</Accordion>
+
+<Accordion title="Why are my invoices appearing in Xero, but not invoice payments?">
+  This happens if no **Account** is selected in your RNTOR Xero settings. While invoices sync automatically, invoice payments require you to select a clearing account in the **Account** dropdown. Also, ensure that this clearing account has **Enable payments to this account** enabled in Xero.
+</Accordion>

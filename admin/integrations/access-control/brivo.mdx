@@ -1,0 +1,185 @@
+---
+title: "Brivo"
+description: "Configure the Brivo integration with RNTOR"
+hidden: true
+---
+
+Brivo integration allows you to automate granting customers temporary access to designated locks. Users can unlock doors directly from the **Access** page in your member web portal or mobile app.
+
+<Info>
+  Brivo is a distinct company not affiliated with us. For any inquiries regarding Brivo solutions, services, or pricing, please reach out to Brivo directly. We do not have the authority to provide information or support on behalf of Brivo.
+</Info>
+
+## Prerequisites
+
+1. Set up your Brivo account.
+   - Add all the necessary locks under a single Site in Brivo.
+   - Create access groups in Brivo specifically for RNTOR and add all the necessary locks to them.
+
+<Warning>
+  Reusing access groups created for other applications may cause errors.
+</Warning>
+
+2. Have access credentials to your Brivo account and Brivo developer portal.
+
+## Connect Brivo integration
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+
+![Image](/images/integrations/access-control-brivo-1.png)
+
+2. Find the **Brivo** integration page and click **Connect**.
+
+![Image](/images/integrations/access-control-brivo-2.png)
+
+3. Log in to your Brivo account.
+
+<Info>
+  When logging in, in the **Username** field, enter your **Brivo Admin ID.**
+</Info>
+
+4. Upon logging in, press **Connect** in the **Account** section, and enter the API key from your Brivo developer portal.
+5. Configure the **Access** page [visibility](/admin/location/visibility).
+
+<Tip>
+  To allow [nonmembers](/admin/customer-management/users/nonmembers) to unlock doors when booking, set **Visibility** to **Public**.
+</Tip>
+
+6. Select the Brivo Site where your locks are added. Eligible users will see and unlock these locks via the **Access** page.
+
+![Image](/images/integrations/access-control-brivo-3.png)
+
+<Info>
+  You can connect a separate Brivo account to each location in RNTOR.
+</Info>
+
+## Configure Brivo integration
+
+The integration allows granting access based on:
+
+- Subscription
+- Room booking
+- Desk booking
+- Office booking
+- Equipment booking
+- Parking booking
+
+### Access for subscriptions
+
+#### For future new members
+
+1. For membership plans, open the [plan settings](/admin/billing/plans/set-up-plans) \> **Access** section \> select the appropriate Brivo access group.
+2. For resource rentals, open the [resource settings](/admin/resource-management/resources/set-up-resources) \> **Access** section \> select the appropriate Brivo access group.
+3. When you [create subscriptions](/admin/billing/subscriptions/set-up-subscriptions) for customers or customers [sign up](/admin/billing/plans/immediate-plan-sign-ups) by themselves, the user is automatically synced to the selected Brivo access group for the duration of their subscription.
+
+#### For existing members
+
+1. [Open member's subscription](/admin/billing/subscriptions/edit-a-subscription) \> open a specific item.
+2. In the **Access** section, select the appropriate Brivo access group.
+
+Adding or editing access takes effect immediately.
+
+![Image](/images/integrations/access-control-brivo-4.png)
+
+### Access for resource bookings
+
+To automate access for resource bookings:
+
+1. Go to **Resources** \> **Rooms, Desks, Offices, Parking**, or **Equipment** page.
+2. Open the [resource settings](/admin/resource-management/resources/set-up-resources) \> select the appropriate Brivo group in the **Access** section.
+
+![Image](/images/integrations/access-control-brivo-5.png)
+
+## How Brivo integration works
+
+### Access based on subscriptions
+
+- When a user gets a subscription, they are synced to the assigned access group for the entire subscription period.
+- Company subscriptions grant access to all users within the company.
+- Customers are synced to the access group at midnight (00:00) on their subscription start date.
+- When a subscription expires or is canceled, access is automatically revoked.
+
+<Info>
+  Access remains active from the subscription start date until its end or cancellation date, regardless of the customer's invoice payment status. To revoke access, [schedule a subscription end](/admin/billing/subscriptions/edit-a-subscription), or [cancel it](/admin/billing/subscriptions/cancel-a-subscription).
+</Info>
+
+### Access based on bookings
+
+- Users receive access to the assigned access group for the full duration of their booking.
+- Invitees to room bookings also receive access.
+- Users have a 30-minute grace period before and after the booking time:
+
+| Booking time | Access window |
+| --- | --- |
+| 12:00 PM - 4:00 PM | 11:30 AM - 4:30 PM |
+| 9:30 AM - 11:30 AM | 9:00 AM - 12:00 PM |
+
+### How users unlock doors
+
+1. Users who have an active subscription or booking open member web portal or mobile app.
+2. Go to the **Access** page.
+3. They see the locks they are eligible to access based on the access group in their booking or subscription.
+4. Tap the lock to unlock the door.
+
+![Image](/images/integrations/access-control-brivo-6.png)
+
+<Info>
+  It is not currently possible to limit door unlocking by a user's geolocation. Users can open doors from the member portal regardless of their physical location.
+</Info>
+
+If a user previously used the Brivo mobile app, they will see a message on the **Access** page that they already have a Brivo Mobile Pass.
+
+- To unlock via RNTOR, they must click **Remove Mobile Pass**.
+- Once removed, locks will become available on the **Access** page.
+
+![Image](/images/integrations/access-control-brivo-7.png)
+
+#### Inform customers how to unlock doors
+
+Users do not receive automated emails from Brivo about access. Guide your customers how to unlock doors:
+
+- Add custom [booking confirmation emails](/admin/general/customize-emails) in resource settings (e.g., for nonmembers). Explain them that upon arrival, they can unlock doors via the **Access** page in your member web portal or mobile app.
+- [Create a **How to enter the space** guide.](/admin/support/guides) This way, all customers will be able to find instructions on unlocking doors on your **Information** and **Support** pages at any time.
+
+## Disconnect Brivo
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page \> **Brivo**.
+2. Press **Disconnect** and confirm your choice.
+
+<Warning>
+  When the integration is disconnected, access will not be granted for future bookings or subscriptions. Any access already granted remains active and must be revoked manually through the Brivo dashboard.
+</Warning>
+
+## Troubleshoot Brivo access errors
+
+<Accordion title='"No locks"'>
+  If a customer can see the **No locks** message on the **Access** page, this could be happening due to the following reasons:
+
+  - **Wrong Brivo Site selected in integration settings:** The integration is configured to show locks from a specific Brivo Site. If you selected the Site different from the one where your locks are added, users will see no locks. To fix:
+    1. Go to the **Integrations** page \> **Brivo** in RNTOR.
+    2. In the **Site** dropdown, select the Brivo Site where your locks are added.
+  - **No access groups in plans or resources:** Once you connected the Brivo integration to RNTOR, make sure to [select Brivo access groups](/admin/integrations/access-control/brivo#configure-brivo-integration) in plans' and resources' settings. Without a linked access group, no locks will appear for the customer.
+  - **Customer has no booking or subscription, or it doesn't include a Brivo access group:** For a customer to be eligible for access and see locks, they must have an active resource booking or  subscription with a Brivo access group linked to it. To fix:
+    1. Go to **Customers** \> open the customer profile \> open their subscription or booking.
+    2. In the **Access** section, make sure the appropriate Brivo access group is selected.
+  - **Locks have not been added to the access group in the Brivo dashboard:** If your Brivo access group linked to customer booking or subscription does not contain any locks, the customer will see no locks on the **Access** page. To fix:
+    1. Open the Brivo dashboard \> go to the relevant access group \> add the required locks \> save changes.
+    2. In RNTOR, go to **Customers** \> open the customer profile \> open their subscription \> in the **Access** section, confirm the correct Brivo group is selected and press **Save** to trigger a re-sync
+  - **Subscription or booking hasn't started yet:** If a customer's subscription or booking has a future start date, it is not yet active. Access to Brivo is granted only once the subscription or booking start date is reached — specifically, customers with subscriptions are synced to the Brivo access group at midnight (00:00) on the start date. For bookings, access is granted 30 minutes before the booking. The customer will gain access automatically at that time and will see the locks on the **Access** page from that moment on. No action is needed — access will be granted automatically when the date arrives.
+  - **Customer logged in with the wrong email:** Access to Brivo is tied to the email address associated with the user's  account. If a user signs in with a different email than the one on their subscription or booking, they will not receive access. To fix:
+    1. Ask the customer to log out and sign back in using the correct email address — the one associated with their subscription or booking.
+    2. If needed, verify the correct email under **Customers** \> customer profile.
+</Accordion>
+
+**FAQs**
+
+<Accordion title="How to set up access groups for different doors?">
+  To ensure a seamless flow for your members, create multiple access groups in Brivo based on your space layout and then link them to the specific resources or plans in RNTOR:
+
+  - **Front door lock:** If you only have one main door, create a single access group and link it to all your resources and plans.
+  - **Front door lock and Private offices locks:** To give office tenants private access, create separate access groups for each individual office. Each group should include the **Front door** lock plus that **Specific office** lock. Link each unique group to its corresponding office resource.
+  - **Front door lock and locks for certain rooms:**
+    - Create groups for each **Room** \+ **Front door**. Link each room to the access groups you created for it so users only access the specific room they booked.
+    - To provide access to desks, open spaces, or lounges, you only need one access group containing the **Front door** lock.
+  - **Tiered access:** For members on different plans, create groups with the same locks but different time restrictions. Link these groups to the corresponding plans — for example, a "9 AM – 6 PM" group for regular members and a "24/7" group for those on exclusive plans.
+</Accordion>

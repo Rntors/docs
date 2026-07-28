@@ -1,0 +1,77 @@
+---
+title: "Luckey"
+description: "Configure the Luckey integration with RNTOR"
+hidden: true
+---
+
+By integrating with the Luckey access control solution, RNTOR automates physical access to the premises.
+
+<Info>
+  Luckey is a distinct company not affiliated with us. For any inquiries regarding Luckey's solutions, services, or pricing, please reach out to Luckey directly. We do not have the authority to provide information or support on behalf of Luckey.
+</Info>
+
+## Prerequisites
+
+To enable Luckey integration with RNTOR, make sure you meet these requirements:
+
+1. Have an active RNTOR subscription.
+2. Have an [API add-on](https://rntor.com/pricing) purchased.
+
+## Connect the Luckey integration
+
+<Tip>
+  Before enabling the integration, set up **Smartphone Access rules** in Luckey for your RNTOR plans or companies. This ensures that newly synced users added to the correct user tag in Luckey automatically receive the appropriate mobile access credentials.
+</Tip>
+
+Follow these steps to connect the integration:
+
+1. The [owner](/admin/administration/administrators/owner) needs to navigate to RNTOR \> press the menu **(...)** near the network name \> **Network settings**.
+2. Open the **Developers** page \> copy the Client ID and Client secret.
+
+![Image](/images/integrations/access-control-luckey-1.png)
+
+3. Head to the Luckey dashboard \> Settings \> select RNTOR \> insert the Client ID and Client secret copied in the previous step.
+4. Select the RNTOR location you’d like to connect to your Luckey system.
+
+## Configure access for Luckey
+
+The integration of RNTOR with Luckey allows granting access based on the following conditions:
+
+- Subscription for the individual user
+- Belonging to a company
+
+### Access for subscriptions
+
+To automate access for subscriptions of individual users, do the following:
+
+1. Go to RNTOR and [invite users](/admin/customer-management/users/members#invite-a-member).
+2. [Create subscriptions](/admin/billing/subscriptions/set-up-subscriptions) for new users by selecting a plan from the drop-down list.
+
+### Access for companies
+
+To automate access for company users, do the following:
+
+1. Go to your RNTOR and [invite users](/admin/customer-management/users/members#invite-a-member).
+2. [Create a company](/admin/customer-management/companies/set-up-companies) and add users to the relevant company.
+
+## How the Luckey integration works
+
+- Once the integration is active, users invited to the member web portal or mobile app are automatically synced in real time to the Luckey dashboard—but no access is granted by default.
+- Access is only provided if a user has an individual subscription or is added to a company. Eligible users are automatically assigned the corresponding user tag in Luckey.
+- After synchronization, users receive an email prompting them to activate their Luckey account, which grants them access.
+- To ensure users receive the correct mobile access credentials automatically, configure Smartphone Access rules in Luckey for your plans and companies.
+- If a user's or company’s subscription is canceled, expires, or the user is removed from the company, their Luckey access is automatically revoked.
+
+<Info>
+  The subscription remains active from its start date until its end or cancellation date, regardless of the payment status of the member's invoices. To revoke access from the member, [schedule a subscription end](/admin/billing/subscriptions/edit-a-subscription), or [cancel it](/admin/billing/subscriptions/cancel-a-subscription).
+</Info>
+
+## Disconnect the Lucky integration
+
+To disable Lucky, navigate to the Luckey dashboard \> Settings \> disable RNTOR from there.
+
+Once disabled, the user synchronization between the two platforms will stop working immediately. However, all users and Luckey Smart Tags that have already been synchronized will remain on the platform.
+
+<Info>
+  The integration has been developed by the Luckey team. Please reach out to their support in case of any questions about the connection and user sync.
+</Info>

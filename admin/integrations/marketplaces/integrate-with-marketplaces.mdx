@@ -1,6 +1,37 @@
 ---
-title: "Integrate with marketplaces"
-description: "Connect Rntor to coworking marketplaces."
+title: "Other marketplaces"
+description: "Integrate RNTOR with external marketplace platforms to automatically sync external bookings"
+sidebarTitle: "Other marketplaces"
 ---
 
-Coming soon.
+You can integrate RNTOR with various marketplace platforms via Google Calendar or API to automatically synchronize all room and desk bookings you receive externally to RNTOR.
+
+<Info>
+  A marketplace platform of your choice is a distinct company not affiliated with us. For any inquiries regarding their solutions, services, or pricing, please reach out to them directly. We do not have the authority to provide information or support on their behalf.
+</Info>
+
+## Enable integration with a marketplace platform
+
+Follow the steps below to activate a marketing platform integration.
+
+### Integration via Google Calendar
+
+<Info>
+  Before connecting a marketplace platform of your choice, ensure that the marketplace supports integration with Google Calendar.
+</Info>
+
+1. Connect and configure [Google Calendar integration](/admin/integrations/bookings/google-calendar) in RNTOR for the relevant rooms and desks.
+2. Grant "make changes to events" permission to the relevant email address for the calendars you wish to sync with the marketplace. Refer to the specific marketplace's guidelines for the email address.
+3. Send **Calendar ID** and **Public URL** to the relevant support team email address, asking to enable the integration.
+
+#### How integration with a marketplace platform works via Google Calendar
+
+- When an external booking is made, the record is created on Google Calendar, which will then sync with RNTOR.
+- The sync between Google Calendar and RNTOR is real-time, meaning updates are reflected immediately.
+- While some platforms may ensure that room or desk availability is verified before any booking is finalized, others might have different configurations based on their booking workflow. Refer to the platform's documentation or support guidelines.
+- While some platforms may sync reservations up to 90 days in advance, others might have different configurations based on their specific requirements.
+- For desk, office, equipment, and parking lot bookings, one booking in Google Calendar books 1 seat in the corresponding resource in RNTOR.
+
+### Integration via API
+
+For custom marketplace integrations, RNTOR provides [an API](/admin/administration/api-and-webhooks) that lets you connect directly with the platform and adapt the integration to your workflow.

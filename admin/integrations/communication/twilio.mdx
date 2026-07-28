@@ -3,4 +3,75 @@ title: "Twilio"
 description: "Send SMS notifications through Twilio."
 ---
 
-Coming soon.
+Twilio is a cloud communications platform that connects you to customers on any digital channel. The integration allows you to deliver login confirmation codes for Wi-Fi authentication and members' invitations by SMS.
+
+![Send invitations and Wi-Fi codes via Twilio on RNTOR's coworking space management platform](/images/integrations/communication-twilio-1.png)
+
+<Info>
+  Twilio is a distinct company not affiliated with us. For any inquiries regarding Twilio's solutions, services, or pricing, please reach out to Twilio directly. We do not have the authority to provide information or support on behalf of Twilio.
+</Info>
+
+## Prerequisites
+
+To enable Twillio integration with your member web portal, make sure you've completed the following prerequisites:
+
+1. Have an active RNTOR subscription.
+2. Have your Twilio account set up with a Twilio Phone Number, Account SID, and Auth token configured.
+3. Have access to the Twilio owner account.
+4. Have IronWiFi integration [enabled and configured](/admin/integrations/wifi/ironwifi) if Twilio integration is going to be used for Wi-Fi authentication.
+
+<Info>
+  If SMS is not arriving, ensure you have a sufficient account balance in Twilio.
+</Info>
+
+## Connect the Twilio integration
+
+To enable Twilio for RNTOR, the [owner](/admin/administration/administrators/owner) needs to follow these steps:
+
+1. Go to RNTOR \> **Network settings** page by pressing the menu **(...)** near the network name **\> Twilio**. _On this page, you'll also see two helpful buttons:_
+   - **About**: For general information about the integration.
+   - **Docs**: For detailed instructions on connecting and configuring.
+
+![Image](/images/integrations/communication-twilio-2.png)
+
+2. Press **Connect**, enter integration details, and confirm your choice. [Learn where to find them on Twilio](https://support.twilio.com/hc/en-us/articles/360006956594-Twilio-Third-Party-Application-and-Product-Support)
+
+![Image](/images/integrations/communication-twilio-3.png)
+
+3. Select a phone number that will be used to identify a sender and configure what you want SMS to be sent for: the Wi-Fi login code and/or new member invitations.
+4. Press `Save`.
+
+## How Twilio integration works
+
+Twilio integration can be used to send out members' invitations by SMS and, as well as for Wi-Fi authentication codes.
+
+<Info>
+  If Twilio integration is connected, the phone number field in the member web portal and mobile app has a validation, and phone numbers must be entered in the international format with the country code in the member web portal or mobile app.
+</Info>
+
+### How the integration works for members' invitations by SMS
+
+If the Twilio integration is connected, when an administrator [invites a new user](/admin/customer-management/users/members#invite-a-member) indicating a member's phone number, a member will receive an invitation via SMS in addition to regular email invitations.
+
+SMS for a member invitation will include what location the member was invited to, the link to log in, and what email was used. The user follows a link from the SMS and is logged in to the app with member access.
+
+### How the integration works for Wi-Fi authentication
+
+Once both IronWIfi and Twilio integrations are connected, users can get WiFi authentication codes via SMS in addition to regular email with confirmation codes.
+
+<Tip>
+  SMS can be delivered to a user only if they have provided a cellular phone number in their account. [Manage user account](/admin/customer-management/users/manage-user-account)
+</Tip>
+
+When in your space, users choose the open Wi-Fi network on their device, and upon entering an email address in the captive portal, a unique login code is automatically sent to their registered phone number via SMS. [How users connect to Wi-Fi](/admin/integrations/wifi/ironwifi)
+
+<Info>
+  Only confirmation codes for Wi-Fi login are delivered by SMS. For security reasons, confirmation codes to log in to your member web portal or mobile apps are sent by email only.
+</Info>
+
+## Disconnect the Twilio integration
+
+To disconnect Twilio, follow these steps:
+
+1. Go to RNTOR as an [owner](/admin/administration/administrators/owner)\> **Network settings** page by pressing the menu **(...)** near the network name **\> Twilio**.
+2. Press **Disconnect** and confirm your choice.

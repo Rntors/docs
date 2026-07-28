@@ -1,6 +1,52 @@
 ---
-title: "Set up access control"
-description: "Configure access control integrations."
+title: "Overview"
+description: "Understand the key differences between access control integrations supported in RNTOR"
+sidebarTitle: "Overview"
 ---
 
-Coming soon.
+RNTOR supports five major access control integrations: Kisi, Brivo, Salto KS, Avigilon Alta, and Tapkey. Additionally, some access control solution providers develop and maintain their own integrations with RNTOR, such as Luckey.
+
+When choosing an access control provider, consider how the integration will work for your members' experience and your daily administration.
+
+## Integration comparison
+
+| **Integration** | **Unlocking via RNTOR** | **Access granted based on** | **Email invitation to install ACS app** | **Developed and maintained by** |
+| --- | --- | --- | --- | --- |
+| [Kisi](/admin/integrations/access-control/kisi) | ✓ | Subscriptions & bookings | Not needed | RNTOR |
+| [Brivo](/admin/integrations/access-control/brivo) | ✓ | Subscriptions & bookings | Not needed | RNTOR |
+| [Salto KS](/admin/integrations/access-control/salto-ks) | ✓ | Subscriptions & bookings | Not needed | RNTOR |
+| [Avigilon Alta](/admin/integrations/access-control/avigilon-alta) | _X_ | Subscriptions & bookings | Yes | RNTOR |
+| [Tapkey](/admin/integrations/access-control/tapkey) | _X_ | Subscriptions & bookings | No (user downloads the app themselves) | RNTOR |
+| [Luckey](/admin/integrations/access-control/luckey) | _X_ | Subscriptions & belonging to a company | Yes | Luckey |
+
+## Main difference
+
+Access is granted and revoked automatically across all RNTOR-developed integrations in the same manner:
+
+- When a user has an active booking or subscription, they are automatically synced to the access control system and added to the appropriate access group to receive access.
+- When their booking or subscription ends, they are automatically removed from the access group to revoke access.
+
+The main difference between integrations is whether users unlock doors directly from the RNTOR's member mobile app or web portal, or use an external method.
+
+### Unlocking within RNTOR
+
+**Supported for: Kisi, Brivo, Salto KS**
+
+With these integrations, your customers can unlock doors directly from the RNTOR interface.
+
+1. User unlock doors from your RNTOR's member app or web portal:
+   - Kisi and Brivo integrations — from the **Access** page.
+   - Salto KS integration — using the **Unlock** button.
+2. No additional apps or invitations are required.
+
+### Unlocking outside RNTOR
+
+**Supported for: Avigilon Alta, Tapkey, Luckey**
+
+With these integrations, unlocking happens outside of RNTOR, using the methods provided by the access control solution.
+
+1. Users get a booking or subscription in your RNTOR's member app or web portal.
+2. RNTOR automatically syncs the user and grants them access.
+3. Users unlock doors via the provided unlocking method. Each provider offers their own range of unlocking options, such as their native mobile app, Apple Wallet, physical cards, keychain tokens, etc.
+
+The most common unlocking method is via the provider's mobile app. Once synced from RNTOR for the first time, Avigilon Alta and Luckey send the user an automated email invitation to install their app to unlock doors.

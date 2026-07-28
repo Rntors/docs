@@ -3,4 +3,24 @@ title: "LiquidSpace"
 description: "Distribute inventory through LiquidSpace."
 ---
 
-Coming soon.
+LiquidSpace is a marketplace platform for customers to book workspaces and meeting rooms on demand. You can integrate RNTOR with LiquidSpace via Google Calendar to automatically synchronize all room and desk bookings you receive via LiquidSpace to RNTOR.
+
+<Info>
+  LiquidSpace is a distinct company not affiliated with us. For any inquiries regarding LiquidSpace's solutions, services, or pricing, please reach out to LiquidSpace directly. We do not have the authority to provide information or support on behalf of LiquidSpace.
+</Info>
+
+## Enable LiquidSpace integration
+
+To activate the LiquidSpace integration, follow these steps:
+
+1. Connect and configure [Google Calendar integration](/admin/integrations/bookings/google-calendar) in RNTOR for the relevant rooms and desks.
+2. Grant "make changes to events" permission to [calendars@liquidspace.com](mailto:calendars@liquidspace.com) for the calendars you wish to sync with LiquidSpace. [Guideline from LiquidSpace](https://support.liquidspace.com/hc/en-us/articles/203992839-Google-Calendar)
+3. Send **Calendar ID** and **Public URL** to [support@liquidspace.com](mailto:support@liquidspace.com) asking to enable RNTOR integration.
+
+## How LiquidSpace integration works
+
+- When a booking is made on LiquidSpace, LiquidSpace will create a record on Google Calendar, which will sync to RNTOR.
+- LiquidSpace will always double-check room or desk availability in RNTOR before a booking is made.
+- For LiquidSpace, it takes about 15 minutes to pull the reservations from the Google Calendar and about 90 days out.
+- Google Calendar bookings sync with RNTOR is in real-time.
+- For desk, office, equipment, and parking lot bookings, one booking in Google Calendar books 1 seat in the corresponding resource in RNTOR.

@@ -3,4 +3,134 @@ title: "QuickBooks Online"
 description: "Sync Rntor invoices and payments with QuickBooks Online."
 ---
 
-Coming soon.
+Seamlessly synchronize invoices from RNTOR with QuickBooks Online to automate revenue accounting management.
+
+<Info>
+  QuickBooks is a distinct company not affiliated with us. For any inquiries regarding QuickBooks's solutions, services, or pricing, reach out to QuickBooks directly. We do not have the authority to provide information or support on behalf of QuickBooks.
+</Info>
+
+## Prerequisites
+
+1. Have your QuickBooks Online account ready.
+2. Create the relevant service in your QuickBooks Online account where invoices and payments from RNTOR will be synced.
+3. Set a tax in your QuickBooks account:
+
+- **For US-based accounts:** Set the tax regardless of the tax rate in RNTOR. The exact tax rate is not passed from RNTOR to QuickBooks and is defined by your QuickBooks settings.
+
+<Info>
+  If rates differ, the invoice will sync, but the payment cannot sync because the totals won't match. The invoice will remain **Unpaid** in QuickBooks.
+</Info>
+
+- **For non-US-based accounts:** Set the tax rate to match the one you have in your location. [Manage taxes](/admin/billing/taxes/set-up-taxes)
+
+<Warning>
+  Invoices with a tax rate that does not match the tax set in your QuickBooks account will not synchronize for non-US-based accounts.
+</Warning>
+
+## Connect the QuickBooks Online integration
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+
+![Image](/images/integrations/accounting-quickbooks-online-1.png)
+
+2. Find **QuickBooks Online**. Press **Connect**.
+
+![Image](/images/integrations/accounting-quickbooks-online-2.png)
+
+3. Log in to your Intuit account and connect the company where to sync invoices.
+4. Select the same QuickBooks Online organization in the **Organization** dropdown.
+5. Select the **Service** to which invoices and payments from RNTOR should synchronize in your QuickBooks account.
+
+<Warning>
+  If no **Service** is selected, the integration will remain incomplete, and invoices and payments will not sync to QuickBooks Online.
+</Warning>
+
+![Image](/images/integrations/accounting-quickbooks-online-3.png)
+
+## How QuickBooks Online integration works
+
+- The integration automatically syncs all newly issued invoices to QuickBooks in real time.
+- If the invoice status updates in RNTOR, it's automatically reflected in QuickBooks.
+- Once the invoice status changes to **Paid**, a corresponding payment for it is created.
+- RNTOR syncs invoices for all types of purchases, including subscription invoices and one-off payments such as bookings, shop orders, event tickets, and more.
+- Credit notes for unpaid invoices sync to QuickBooks as payments or credits, automatically updating the invoice status to **Partially Paid**.
+
+<Info>
+  Starting December 9, 2025, RNTOR began generating invoices for all payments. From this date onward, invoices for all payments sync to QuickBooks. Before December 9, 2025, immediate one-off payments (bookings, shop orders, event tickets, etc.) generated receipts only, and these transactions were synced to QuickBooks as **Sales Receipts**.
+</Info>
+
+### How invoices sync
+
+The integration syncs and matches QuickBooks Online invoices with data from RNTOR:
+
+| **Data** | **Sync** |
+| --- | --- |
+| Customer name | Matches the company or user name in RNTOR |
+| Customer email | - |
+| Legal business name / Name | ✓ |
+| Invoice date | ✓ |
+| Due date | ✓ |
+| Invoice no. | ✓ |
+| Service | Based on the option you selected in the “Service” dropdown during integration setup |
+| Description | Invoice item name in RNTOR |
+| Qty | ✓ |
+| Rate | ✓ |
+| Amount | ✓ |
+| Tax | **Non-US-based account:** ✓**US-based account:** Synced only if tax is applied in RNTOR. The exact tax rate is not passed to QuickBooks from RNTOR and is defined by your QuickBooks settings. |
+| Attachment | Invoice PDF |
+| Status | ✓ |
+
+![Image](/images/integrations/accounting-quickbooks-online-4.png)
+
+<Warning>
+  Applied balance, partial payments, credit notes on paid invoices, and refunds do not sync to QuickBooks.
+</Warning>
+
+### How invoice statuses and invoice payments sync
+
+The integration syncs the following invoice statuses to QuickBooks Online:
+
+| **Invoice status in RNTOR** | **Status in QuickBooks Online** |
+| --- | --- |
+| Unpaid | Due |
+| Paid | Paid in full |
+| Voided | Voided |
+
+![Image](/images/integrations/accounting-quickbooks-online-5.png)
+
+How invoice payments sync to QuickBooks Online:
+
+![Image](/images/integrations/accounting-quickbooks-online-6.png)
+
+<Tip>
+  If you see an error saying QuickBooks failed to sync an invoice, check [our help article](/admin/administration/your-account/notifications/integration-failures) for the cause and how to resolve it.
+</Tip>
+
+#### Notes
+
+If a booking or purchase is canceled and [auto-refunded](/admin/billing/payments/refunds) in RNTOR, the refund and its status won’t sync to QuickBooks Online. For guidance on handling refunded transactions in QuickBooks Online, contact their support.
+
+## Disconnect the QuickBooks Online integration
+
+To disconnect QuickBooks Online, follow these steps:
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+2. Select **QuickBooks Online** \> press **Disconnect** and confirm your choice.
+
+**FAQ**
+
+<Accordion title="Why aren't any of my invoices or payments syncing to QuickBooks?">
+  This is usually because the integration setup is incomplete. Ensure you have selected a **Service** on the RNTOR **Integrations** page. Without a selected service, invoices and payments will not sync to QuickBooks Online.
+</Accordion>
+
+<Accordion title="Why is my invoice marked as 'Paid' in RNTOR but still shows as 'Unpaid' (Due) in QuickBooks?">
+  This typically happens due to a tax rate discrepancy. If the tax rate in RNTOR differs from the one set in QuickBooks, the total amounts won't match. QuickBooks cannot automatically apply a payment to an invoice if the totals are different, leaving the invoice in **Unpaid** status.
+</Accordion>
+
+<Accordion title="I am a non-US user. Why is my invoice failing to sync entirely?">
+  For non-US-based accounts, the tax rate in RNTOR must exactly match the tax rate set in your QuickBooks account. If there is any difference, QuickBooks will reject the invoice sync. Please verify and align your tax settings in both platforms.
+</Accordion>
+
+<Accordion title="Why didn't the status update in QuickBooks after I canceled and refunded a booking?">
+  The integration does not support the synchronization of applied balance, partial payments, credit notes on paid invoices, and refunds. When a transaction is refunded or canceled in RNTOR, you must manually update or void the corresponding invoice in QuickBooks.
+</Accordion>

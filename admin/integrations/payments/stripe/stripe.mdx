@@ -3,4 +3,214 @@ title: "Stripe"
 description: "Connect Stripe to accept payments in Rntor."
 ---
 
-Coming soon.
+RNTOR allows accepting money payments with Stripe.
+
+<Info>
+  Stripe is a distinct company not affiliated with us. For any inquiries regarding Stripe's solutions, services, or pricing, please reach out to Stripe directly. We do not have the authority to provide information or support on behalf of Stripe.
+</Info>
+
+<Info>
+  We do not charge any fees on top of Stripe.
+</Info>
+
+## Connect Stripe
+
+To connect Stripe for accepting payments, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name.
+
+![Image](/images/integrations/payments-stripe-stripe-1.png)
+
+2. Find the **Stripe** integration page. _On this page, you'll also see two helpful buttons:_
+   - **About**: For general information about the integration.
+   - **Docs**: For detailed instructions on connecting and configuring.
+3. Press **Connect** and give permission to acquire payments on your behalf.
+
+<Info>
+  To integrate with Stripe, you'll need to connect a live account. Our system doesn't support test accounts.
+</Info>
+
+## Configure Stripe
+
+1. In the **Payments** section, select services for which customers should be able to pay via Stripe.
+   - Bookings
+   - Event tickets
+   - Shop products
+   - Credit packages
+   - Invoices
+2. In the **Payment method surcharges** section, choose the percentage of the fee to charge customers on top of their purchase total. This fee will apply only to card payments.
+
+![Image](/images/integrations/payments-stripe-stripe-2.png)
+
+3. In the **Payment configurations** section, press the menu **(...)** near the **Invoice payments** \> tap **Edit**.
+
+![Image](/images/integrations/payments-stripe-stripe-3.png)
+
+4. You'll be redirected to your Stripe dashboard. Here, configure the [payment methods](#available-payment-methods) you want to allow customers to use to pay for invoices. Your Stripe account must be eligible to enable these payment methods.
+
+![Image](/images/integrations/payments-stripe-stripe-4.png)
+
+5. Navigate back to the **Stripe** page \> press the menu **(...)** near the **Instant one-off payments** \> tap **Edit**.
+
+![Image](/images/integrations/payments-stripe-stripe-5.png)
+
+6. In your Stripe dashboard, configure the [payment methods](#available-payment-methods) you want to allow customers to use for one-off payments.
+
+![Image](/images/integrations/payments-stripe-stripe-6.png)
+
+7. Navigate back to the **Stripe** page \> enable the **Automatic refunds** switch to let users get automatic refunds for canceled bookings, tickets, and orders if eligible. [Understand refunds](/admin/billing/payments/refunds)
+
+![Image](/images/integrations/payments-stripe-stripe-7.png)
+
+<Info>
+  Automatic refunds are enabled by default as soon as the Stripe integration is connected.
+</Info>
+
+## Available payment methods
+
+### Overview
+
+The Stripe integration supports the following payment methods:
+
+| **Payment method** | **For instant one-off payments** | **For invoice payments** | **Supports saving and auto-charging recurring invoices** |
+| --- | --- | --- | --- |
+| Cards | ✓ | ✓ | ✓ |
+| Wallets (Apple Pay, Google Pay, Link) | ✓ | ✓ | ✓ |
+| Bank debits (ACH, Australia BECS, Bacs, NZ BECS, PADs, SEPA) |  | ✓ | ✓ |
+| Vouchers (Boleto) |  | ✓ | ✓ |
+| iDEAL | ✓ | ✓ | ✓ (saved as SEPA) |
+| Bancontact | ✓ | ✓ | ✓ |
+| TWINT | ✓ | ✓ |  |
+| BLIK | ✓ | ✓ |  |
+| EPS | ✓ | ✓ |  |
+| PayNow | ✓ | ✓ |  |
+| PromptPay | ✓ | ✓ |  |
+| Pay By Bank | ✓ | ✓ |  |
+| Przelewy24 | ✓ | ✓ |  |
+| Klarna | ✓ | ✓ | ✓ |
+| Crypto payments | ✓ | ✓ |  |
+| GrabPay | ✓ | ✓ |  |
+| Billie | ✓ | ✓ |  |
+| Afterpay / Clearpay | ✓ | ✓ |  |
+| Revolut Pay | ✓ | ✓ | ✓ |
+
+### Cards
+
+The Stripe integration accepts both domestic and international debit and credit cards based on your Stripe account settings. Real-time payment confirmation allows card payments for any purchases.
+
+### Wallets
+
+**Apple Pay** is supported on Safari and iOS, while **Google Pay** is available on Chrome and Android. Users can easily pay with a card that is saved in their Apple or Google Wallet. **Link** by Stripe works seamlessly across different devices and browsers.
+
+### Bank debits
+
+RNTOR can accept bank debits for invoice payments only, as it takes multiple days to confirm a payment. [Manage bank debits](/admin/integrations/payments/stripe/accept-invoice-payments-with-bank-debits)
+
+### Bank redirects
+
+**iDEAL** is a Netherlands-based payment method that allows customers to complete online transactions using their bank credentials.
+
+**Bancontact** is the most popular online payment method in Belgium. Customers use a Bancontact card or mobile app linked to a Belgian bank account to make online payments.
+
+**TWINT** is a popular payment method used in Switzerland. It allows customers to authenticate and approve payments using an approved TWINT mobile app. Payments with TWINT can only be made in CHF currency.
+
+**BLIK** is a single-use payment method that requires customers to authenticate their payments. When customers want to pay online using BLIK, they request a six-digit code from their banking application and enter it into the payment collection form.
+
+**EPS** is an Austria-based payment method that lets customers complete transactions online using their bank credentials.
+
+**PayNow** is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Payments with PayNow can only be made in SGD currency.
+
+**PromptPay** is a Thailand-based payment method that allows customers to make a payment using their preferred app from participating banks. Customers see a QR code when checking out with PromptPay. They complete the payment by scanning it using a Thailand bank app. PromptPay is available for Stripe accounts based in Thailand. Payments can be made only in THB currency.
+
+**Pay By Bank** is a single-use payment method available in the UK that allows customers to pay directly from their bank account. When a customer chooses Pay by Bank, they first select their bank and then approve the payment on their bank's mobile app.
+
+**Przelewy24** is a Poland-based payment method aggregator that allows customers to complete transactions online using bank transfers and other methods.
+
+**GrabPay** is an e-wallet payment method used primarily in Southeast Asia. It allows customers to complete transactions using their Grab app, drawing from their digital wallet balance or linked payment methods. Payments via GrabPay are typically processed in local currencies, such as SGD or MYR.
+
+### Buy now, pay later
+
+**Klarna** is a "Buy now, pay later" payment method. It enables customers to pay for purchases over time. When the payment is accepted, you receive the entire order amount in your Stripe account. Klarna collects the initial payment from your customer and any future instalment payments.
+
+### Vouchers
+
+**Boleto** is the official payment method in Brazil. Boleto works for invoice payments only, since it takes several days to complete a transaction. Users receive a voucher stating the amount to pay for services or goods. Users then pay the boleto before its expiration date in one of several different methods, including at authorized agencies or banks, ATMs, or online bank portals.
+
+### Crypto
+
+You can enable the **Crypto** payment method to accept digital currencies, particularly stablecoins, from your customers.
+
+## What data is synchronized to Stripe
+
+Upon a successful payment or adding a payment method, the integration creates a customer on Stripe. The following information is synchronized:
+
+- **For users:** Full user name, email, legal business name, address, and description of payment.
+- **For companies:** Full company name, legal business name, address, and description of payment.
+
+<Info>
+  The language of the payment description in Stripe matches your [location's default language.](/admin/general/language)
+</Info>
+
+## Identify users' transactions in Stripe
+
+You can easily find users' transactions in the Stripe dashboard by clicking **View in Stripe** on the transaction in RNTOR.
+
+![Image](/images/integrations/payments-stripe-stripe-8.png)
+
+Alternatively, use the following unique identifiers:
+
+- ID — coincides with `ID` in the **Payment method** section in the Stripe dashboard. You can copy the ID of the transaction from the [**Transactions** custom report](/admin/analytics-reports/reports).
+- Time — coincides with the date and time of the transaction in the Stripe dashboard.
+- Description — the types of purchases users make, such as room bookings, desk bookings, shop orders, etc.​
+
+## Disputed payments
+
+A dispute (also known as a chargeback) occurs when a cardholder questions your payment with their card issuer.
+
+If users dispute payments with you via their bank, administrators [receive a notification](/member/account/notifications) about this and can view all disputed payments in RNTOR.
+
+Administrators tap on the notification to open the disputed payment. Alternatively, they can always find disputed payments by looking into invoices and transactions in RNTOR.
+
+The disputed invoice is marked as "Disputed."
+
+![Image](/images/integrations/payments-stripe-stripe-9.png)
+
+The transaction for the invoice or a one-off payment will have a **Disputed** status.
+
+![Image](/images/integrations/payments-stripe-stripe-10.png)
+
+Both users and administrators can view a disputed payment.
+
+<Info>
+  RNTOR reflects payment dispute status, but it doesn't automatically alter bookings, invoices, orders, etc. The original records remain unchanged, and the transaction and invoice status stays **Paid** if funds were initially received.
+</Info>
+
+To clarify the dispute, reach out to your customer directly or contact Stripe, your payment processor.
+
+To recharge a re-charge for the service is necessary, [create a one-off payment](/admin/billing/payments/create-one-off-payments).
+
+## Disconnect Stripe
+
+To disconnect Stripe integration, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Stripe**.
+2. Scroll down and press **Disconnect**. Confirm your choice.
+
+**FAQ**
+
+<Accordion title="How the surcharge is displayed to admins and customers?">
+  - Members always see the exact surcharge amount clearly displayed at the point of checkout before they confirm payment.
+
+  ![Image](/images/integrations/payments-stripe-stripe-11.png)
+
+  - Surcharge amount is also shown on the invoice receipt.
+
+  ![Image](/images/integrations/payments-stripe-stripe-12.png)
+
+  - As an administrator, you can also view the specific surcharge by opening the transaction details.
+  - RNTOR syncs surcharge to Xero and QuickBooks Online. ​
+</Accordion>
+
+<Accordion title="What currencies does Stripe support?">
+  Find the list of all currencies currently supported by Stripe in this article : [Supported currencies](https://docs.stripe.com/currencies).
+</Accordion>

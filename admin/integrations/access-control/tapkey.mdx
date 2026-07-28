@@ -1,0 +1,143 @@
+---
+title: "Tapkey"
+description: "Configure the Tapkey integration with RNTOR"
+hidden: true
+---
+
+Integration with Tapkey access control solution allows you to automate granting customers temporary access to designated locks based on bookings and subscriptions.
+
+<Info>
+  Tapkey is a distinct company not affiliated with us. For any inquiries regarding Tapkey's solutions, services, or pricing, please reach out to Tapkey directly. We do not have the authority to provide information or support on behalf of Tapkey.
+</Info>
+
+## Prerequisites
+
+1. Set up your Tapkey account.
+   - Enable and add user groups exclusively for RNTOR.
+   - Configure all locks and add to user groups.
+
+<Warning>
+  Reusing access groups created for other applications may cause errors.
+</Warning>
+
+2. Have access to the Tapkey administrator account.
+
+## Connect Tapkey integration
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+
+![Image](/images/integrations/access-control-tapkey-1.png)
+
+2. Find the **Tapkey** integration page and click **Connect**.
+
+![Image](/images/integrations/access-control-tapkey-2.png)
+
+3. Give permission to connect Tapkey with RNTOR.
+4. Select a locking system.
+
+<Info>
+  You can connect a separate Tapkey account to each location in RNTOR.
+</Info>
+
+## Configure access for Tapkey
+
+The integration allows granting access based on:
+
+- Subscription
+- Room booking
+- Desk booking
+- Office booking
+- Equipment booking
+- Parking booking
+
+### Access for subscriptions
+
+#### For future new members
+
+1. For membership plans, open the [plan settings](/admin/billing/plans/set-up-plans) \> **Access** section \> select the appropriate Tapkey user group.
+2. For resource rentals, open the [resource settings](/admin/resource-management/resources/set-up-resources) \> **Access** section \> select the appropriate Tapkey user group.
+3. When you [create subscriptions](/admin/billing/subscriptions/set-up-subscriptions) for customers or customers [sign up](/admin/billing/plans/immediate-plan-sign-ups) by themselves, the user is automatically synced to the selected Tapkey user group for the duration of their subscription.
+
+##### For existing members
+
+1. [Open member's subscription](/admin/billing/subscriptions/edit-a-subscription) \> open a specific item.
+2. In the **Access** section, select the appropriate Tapkey user group.
+
+Adding or editing access takes effect immediately.
+
+![Image](/images/integrations/access-control-tapkey-3.png)
+
+#### Access for resource bookings
+
+To automate access for customers for resource bookings:
+
+1. Go to **Resources** \> **Rooms, Desks, Offices, Parking**, or **Equipment** page.
+2. Open the [resource settings](/admin/resource-management/resources/set-up-resources) and select the appropriate Tapkey user group in the **Access** section.
+
+![Image](/images/integrations/access-control-tapkey-4.png)
+
+## How Tapkey integration works
+
+### Access based on subscriptions
+
+- When a user gets a subscription, they are synced to the assigned access group for the entire subscription period.
+- Company subscriptions grant access to all users within the company.
+- Customers are synced to the access group at midnight (00:00) on their subscription start date.
+- When a subscription expires or is canceled, access is automatically revoked.
+
+<Info>
+  Access remains active from the subscription start date until its end or cancellation date, regardless of the customer's invoice payment status. To revoke access, [schedule a subscription end](/admin/billing/subscriptions/edit-a-subscription), or [cancel it](/admin/billing/subscriptions/cancel-a-subscription).
+</Info>
+
+#### Access based on bookings
+
+- Users receive access to the assigned access group for the full duration of their booking.
+- Invitees to room bookings also receive access.
+- Users have a 30-minute grace period before and after the booking time:
+
+| Booking time | Access window |
+| --- | --- |
+| 12:00 PM - 4:00 PM | 11:30 AM - 4:30 PM |
+| 9:30 AM - 11:30 AM | 9:00 AM - 12:00 PM |
+
+### How users unlock doors
+
+1. When a user makes a booking or purchases a subscription, they are automatically synced to your Tapkey dashboard.
+2. The user needs to install the Tapkey app and set up their account.
+   - They must use the same email address as in your member web portal or mobile app
+3. Once set up, users unlock doors through the Tapkey app.
+
+<Info>
+  To unlock a door, users must be physically present in front of the corresponding lock.
+</Info>
+
+#### Inform customers how to unlock doors
+
+Users do not receive automated emails from Tapkey about access. Guide your customers how to unlock doors:
+
+- Add custom [booking confirmation emails](/admin/general/customize-emails) in resource settings (e.g., for nonmembers). Explain them that upon arrival, they can unlock doors via the **Access** page in your member web portal or mobile app.
+- [Create a **How to enter the space** guide.](/admin/support/guides) This way, all customers will be able to find instructions on unlocking doors on your **Information** and **Support** pages at any time.
+
+## Disconnect Tapkey
+
+To disconnect Tapkey, follow these steps:
+
+1. Go to RNTOR \> **Integrations** page by pressing the menu **(...)** next to the location's name \> **Tapkey**.
+2. Press **Disconnect** and confirm your choice.
+
+<Warning>
+  When the integration is disconnected, access will not be granted for future bookings or subscriptions. Any access already granted remains active and must be revoked manually through the Tapkey dashboard.
+</Warning>
+
+**FAQs**
+
+<Accordion title="How to set up access groups for different doors?">
+  To ensure a seamless flow for your members, create multiple access groups in Tapkey based on your space layout and then link them to the specific resources or plans in RNTOR:
+
+  - **Front door lock:** If you only have one main door, create a single access group and link it to all your resources and plans.
+  - **Front door lock and Private offices locks:** To give office tenants private access, create separate access groups for each individual office. Each group should include the **Front door** lock plus that **Specific office** lock. Link each unique group to its corresponding office resource.
+  - **Front door lock and locks for certain rooms:**
+    - Create groups for each **Room** \+ **Front door**. Link each room to the access groups you created for it so users only access the specific room they booked.
+    - To provide access to desks, open spaces, or lounges, you only need one access group containing the **Front door** lock.
+  - **Tiered access:** For members on different plans, create groups with the same locks but different time restrictions. Link these groups to the corresponding plans — for example, a "9 AM – 6 PM" group for regular members and a "24/7" group for those on exclusive plans.
+</Accordion>

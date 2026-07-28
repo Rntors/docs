@@ -1,0 +1,136 @@
+---
+title: "Avigilon Alta"
+description: "Configure the Avigilon Alta integration with RNTOR"
+hidden: true
+---
+
+Integration with the Avigilon Alta (_formerly Openpath_) access control solution allows you to automate granting customers temporary access to designated locks based on bookings and subscriptions.
+
+<Info>
+  Avigilon is a distinct company not affiliated with us. For any inquiries regarding Avigilon's solutions, services, or pricing, please reach out to Avigilon directly. We do not have the authority to provide information or support on behalf of Avigilon.
+</Info>
+
+## Prerequisites
+
+1. Have access to the Avigilon Alta administrator account.
+2. Set up your Avigilon Alta account:
+   - Create zones
+   - connect entries to them
+   - Add zones to access groups.
+
+<Tip>
+  It's recommended to create access groups exclusively for RNTOR. Reusing access groups created for other applications may cause errors.
+</Tip>
+
+## Connect Avigilon Alta integration
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page.
+
+![Image](/images/integrations/access-control-avigilon-alta-1.png)
+
+2. Find the **Avigilon Alta** integration page and click **Connect**.
+
+![Image](/images/integrations/access-control-avigilon-alta-2.png)
+
+3. Enter your Avigilon Alta account email and password
+4. Select your Avigilon Alta organization.
+5. Manage the **Mobile credentials** switch:
+   - **Enabled (Recommended)** — RNTOR automatically creates a mobile credential when a user is first synced and granted access. This sends the user an email to install the Avigilon Alta app and ensures they can unlock doors without manual setup.
+   - **Disabled** — mobile credentials are not created automatically. An administrator must manually assign credentials in the Avigilon Alta dashboard after the user is synced.
+
+<Info>
+  You can connect a separate Avigilon Alta account to each location in RNTOR.
+</Info>
+
+## Configure Avigilon Alta integration
+
+The integration allows granting access based on:
+
+- Subscription
+- Room booking
+- Desk booking
+- Office booking
+- Equipment booking
+- Parking booking
+
+### Access for subscriptions
+
+#### For future new members
+
+1. For membership plans, open the [plan settings](/admin/billing/plans/set-up-plans) \> **Access** section \> select the appropriate Avigilon Alta group.
+2. For resource rentals, open the [resource settings](/admin/resource-management/resources/set-up-resources) \> **Access** section \> select the appropriate Avigilon Alta group.
+3. When you [create subscriptions](/admin/billing/subscriptions/set-up-subscriptions) for customers or customers [sign up](/admin/billing/plans/immediate-plan-sign-ups) by themselves, the user is automatically synced to the selected Avigilon Alta group for the duration of their subscription.
+
+##### For existing members
+
+1. [Open member's subscription](/admin/billing/subscriptions/edit-a-subscription) \> open a specific item.
+2. In the **Access** section, select the appropriate Kisi access group.
+
+Adding or editing access takes effect immediately.
+
+![Image](/images/integrations/access-control-avigilon-alta-3.png)
+
+#### Access for resource bookings
+
+To automate access for customers for resource bookings:
+
+1. Go to **Resources** \> **Rooms, Desks, Offices, Parking**, or **Equipment** page.
+2. Open the [resource settings](/admin/resource-management/resources/set-up-resources) and select the appropriate Avigilon Alta access group in the **Access** section.
+
+![Image](/images/integrations/access-control-avigilon-alta-4.png)
+
+## How Avigilon Alta integration works
+
+### Access based on subscriptions
+
+- When a user gets a subscription, they are synced to the assigned access group for the entire subscription period.
+- Company subscriptions grant access to all users within the company.
+- Customers are synced to the access group at midnight (00:00) on their subscription start date.
+- When a subscription expires or is canceled, access is automatically revoked.
+
+<Info>
+  Access remains active from the subscription start date until its end or cancellation date, regardless of the customer's invoice payment status. To revoke access, [schedule a subscription end](/admin/billing/subscriptions/edit-a-subscription), or [cancel it](/admin/billing/subscriptions/cancel-a-subscription).
+</Info>
+
+#### Access based on bookings
+
+- Users receive access to the assigned access group for the full duration of their booking.
+- Invitees to room bookings also receive access.
+- Users have a 30-minute grace period before and after the booking time:
+
+| Booking time | Access window |
+| --- | --- |
+| 12:00 PM - 4:00 PM | 11:30 AM - 4:30 PM |
+| 9:30 AM - 11:30 AM | 9:00 AM - 12:00 PM |
+
+### How users unlock doors
+
+If **Mobile credentials** are enabled:
+
+1. When a user makes their first booking or purchases a subscription, an Avigilon Alta mobile credential is automatically created.
+2. The user receives an email inviting them to install the Avigilon Alta app and set up their account.
+   - They must use the same email address as in your member web portal or mobile app
+3. Once set up, users unlock doors through the Avigilon Alta Open app.
+4. For subsequent bookings or subscriptions, users are granted access automatically and do not receive additional emails.
+
+## Disconnect Avigilon Alta
+
+1. Press the menu **(...)** next to the location's name \> go to the **Integrations** page \> **Avigilon Alta.**
+2. Press **Disconnect** and confirm your choice.
+
+<Warning>
+  When the integration is disconnected, access will not be granted for future bookings or subscriptions. Any access already granted remains active and must be revoked manually through the Avigilon Alta dashboard.
+</Warning>
+
+**FAQs**
+
+<Accordion title="How to set up access groups for different doors?">
+  To ensure a seamless flow for your members, create multiple access groups in Avigilon Alta based on your space layout and then link them to the specific resources or plans in RNTOR:
+
+  - **Front door lock:** If you only have one main door, create a single access group and link it to all your resources and plans.
+  - **Front door lock and Private offices locks:** To give office tenants private access, create separate access groups for each individual office. Each group should include the **Front door** lock plus that **Specific office** lock. Link each unique group to its corresponding office resource.
+  - **Front door lock and locks for certain rooms:**
+    - Create groups for each **Room** \+ **Front door**. Link each room to the access groups you created for it so users only access the specific room they booked.
+    - To provide access to desks, open spaces, or lounges, you only need one access group containing the **Front door** lock.
+  - **Tiered access:** For members on different plans, create groups with the same locks but different time restrictions. Link these groups to the corresponding plans — for example, a "9 AM – 6 PM" group for regular members and a "24/7" group for those on exclusive plans.
+</Accordion>
