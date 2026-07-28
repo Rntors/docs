@@ -1,6 +1,134 @@
 ---
 title: "Schedule"
-description: "Configure location schedule"
+description: "Configure your location schedule for members and the public, customize schedules for specific resources and days, and set your closed days"
 ---
 
-Placeholder content.
+# Schedule
+
+> Configure your location schedule for members and the public, customize schedules for specific resources and days, and set your closed days
+
+RNTOR offers flexibility and customization to accommodate your space's business hours for resource bookings.
+
+- Set different booking hours for members (location members and admins) VS the public (nonmembers, network members, and new customers).
+- Customize operating hours by weekday.
+- Define custom schedules for specific resources.
+
+## Configure location schedule
+
+<Info>
+  The location schedule sets the default booking hours for all resources — unless a specific resource has a custom schedule, which will override it.
+</Info>
+
+To configure your location schedule, do the following:
+
+1. Go to RNTOR \> press the **(...)** button next to the location name \> **Location settings** page \> **General** \> **Information** tab.
+2. Scroll down to the **Schedule** section.
+
+![Image](/images/location-schedule-1.png)
+
+<Info>
+  Administrators can adjust the location schedule at any time to extend or reduce the operating hours as needed.
+</Info>
+
+### Default schedule
+
+Within the **Schedule** section, you'll find the **Default** schedule.
+
+- If your space works during the same hours for members and the public, configure only this schedule, and it will apply to all users.
+- If your space has different working hours for members and the public, the default schedule will apply to members.
+
+1. Tap on **Default** to reveal the settings.
+2. Select the workdays and set the necessary **From** & **Until** times.
+3. Press **Save**.
+
+### Public schedule
+
+If your space has different working hours for members and the public, the **Public** schedule will apply to users who are not members of your location. This allows you to set separate booking hours based on user roles — for example, giving members 24/7 access while restricting nonmembers to bookings during staffed hours. [Understand user roles](/admin/customer-management/users/user-roles)
+
+To enable and configure a separate schedule for public users, do the following:
+
+1. Tap on **Enable public schedule**.
+2. Configure the public schedule's settings.
+3. Save your changes to activate the public schedule.
+
+<Info>
+  To disable the public schedule, turn the **Public schedule** switch off.
+</Info>
+
+### Set different hours within workdays
+
+If your space operates on different hours throughout the week, you can easily customize the schedule to match.
+
+For example, you might be open 24/7 on weekdays, but only from 9:00 a.m. to 5:00 p.m. on weekends. To set this up, follow these steps:
+
+1. Go to RNTOR \> press the **(...)** button next to the location name \> **Location settings** page \> **General**.
+2. Select the default or public schedule to which this change applies.
+3. Press the **Add** button.
+
+![Set different hours within workdays on RNTOR coworking space management platform](/images/location-schedule-2.png)
+
+4. Select days deselected in the main schedule above and choose the different working hours for them in the **From** and **Until** sections.
+
+![Set different hours within workdays on RNTOR coworking space management platform](/images/location-schedule-3.png)
+
+4. Hit **Save**.
+
+If you need to remove different hours for some days, press the **Remove** button.
+
+![Set different hours within workdays on RNTOR coworking space management platform](/images/location-schedule-4.png)
+
+<Info>
+  If different working hours during certain days apply for both members and nonmembers, add them to both default and public schedules.
+</Info>
+
+<Info>
+  If workdays have different hours, the unavailable booking times on the room calendar will have a very light shade of gray.
+</Info>
+
+### Select closed days
+
+At times, you may need to close your space for holidays or special events to prevent bookings on those days. To do this, simply mark the relevant dates as closed in your location schedule:
+
+1. Go to RNTOR \> press the **(...)** button next to the location name \> **Location settings** page \> **General** \> pick the schedule you want to edit.
+2. In the **Closed days** section, select dates when the location must be unavailable for bookings (e.g., December 25).
+
+![Select closed days on RNTOR coworking space management platform](/images/location-schedule-5.png)
+
+3. Press **Save**.
+
+Once it's done, all resources will be automatically blocked for bookings on these dates for the current and the subsequent years.
+
+<Info>
+  If you want the location to be unavailable for members and nonmembers on particular days, select closed days for both the default and public schedules.
+</Info>
+
+## Where users see the location schedule
+
+The schedule you set is visible to users on the **Information** page. Network members and nonmembers can see your public schedule, and location members can see the default schedule.
+
+![Configure schedule on RNTOR coworking space management platform](/images/location-schedule-6.png)
+
+## Configure a custom schedule for a resource
+
+RNTOR allows you to configure a custom schedule for a specific resource, giving you extra flexibility. By enabling a custom schedule in a resource's settings, you can:
+
+- Override the location schedule for that resource.
+- Set unique working hours — for example, if a meeting room should only be available in the evenings or on weekends.
+- Block out specific days (e.g. for maintenance or events) without affecting other resources.
+
+This is ideal for resources that operate on different hours than the rest of your space.
+
+To enable a custom schedule for a resource:
+
+1. Go to the **Resources** \> **Rooms, Desks, Offices, Parking,** or **Equipment**.
+2. Create or [edit](/admin/resource-management/resources/set-up-resources) the resource.
+3. Enable the **Custom schedule** switch.
+4. Click on the preferred schedule and modify it.
+
+![Image](/images/location-schedule-7.png)
+
+5. Save the changes.
+
+<Info>
+  Once enabled, the custom schedule will fully control the resource's availability and ignore the location schedule.
+</Info>

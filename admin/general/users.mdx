@@ -1,6 +1,96 @@
 ---
 title: "Users"
-description: "Manage users"
+description: "Track and manage users across all your locations from one place, check when the user was last active in member portal and their terms of use acceptance record. Configure default privacy settings and visibility for all users, and blacklist abusive email addresses"
 ---
 
-Placeholder content.
+# Users
+
+> Track and manage users across all your locations from one place, check when the user was last active in member portal and their terms of use acceptance record. Configure default privacy settings and visibility for all users, and blacklist abusive email addresses
+
+RNTOR captures all users who have logged in to your network at least once and allows the [owner](/admin/administration/administrators/owner) to view, manage and export them from the **Network settings \> Users** page:
+
+- Add a user as member or nonmember to any location in one click
+- Track which of users you invited have activated their accounts
+- Check when each user was last active, and more.
+
+## View all users in your network
+
+As an owner:
+
+1. Click your network name top left.
+2. Go to **Network settings \> Users**.
+3. Review the list of all users across your network.
+
+![Image](/images/users-1.png)
+
+Users are sorted from the most recently created to the oldest. Use the following columns to understand user activity:
+
+- **Created** — the date you first invited the user or the user logged in to your member portal by themselves.
+- **Last active** — the date when the user was last active in your member web portal or mobile app.
+
+<Tip>
+  Use **Last active** column to check which of your invited users have activated their account. If no date is shown, the user hasn’t logged in yet.
+</Tip>
+
+- **Terms accepted** — the date the user accepted your terms of use.
+- **Locations** — shows whether the user is a member or nonmember of any location. Click a location name to open their profile there.
+
+4. Click the **(...)** menu next to a user to:
+
+- Add them as a nonmember to any location
+- Invite them as member to any location
+- [Blacklist](#blacklist-users) the user's email
+
+5. Click **(...)** \> **Export as CSV** top right to export your user list.
+
+**FAQ**
+
+<Accordion title="How can I check which user logged in and when?">
+  1. Click your network name top left.
+  2. Go to **Network settings \> Users**.
+  3. Check the **Last active** column — it shows the date each user was last active in your member web portal or mobile app. If no date is shown, the user hasn't logged in yet.
+</Accordion>
+
+## Manage visibility of user information
+
+The [owner](/admin/administration/administrators/owner) can define the initial visibility of personal information for all new users to balance openness with strong privacy and security.
+
+For example, you may set to make members’ names and booking titles visible to other members by default to support collaboration, while strictly restricting data like users' email addresses and phone numbers to administrators only.
+
+1. Click your network name in the top left.
+2. Go to **Network settings** \> **Privacy and security**.
+3. Select **User privacy defaults**.
+4. Define the default visibility of personal information for all new users who register in your member portal. By default:
+   - User names and booking titles are visible to **Company members** (that is, only to members of their own company if they belong to any company).
+   - Email addresses and phone numbers are visible only to **Administrators**.
+
+<Info>
+  Changes to privacy defaults apply only to users who register after the update. Existing users are not affected.
+</Info>
+
+<Info>
+  Each user can [update their own privacy settings](/admin/customer-management/users/manage-user-account) at any time from their **Account** page and override these defaults. For example, they may choose to make their personal information visible to others for networking purposes or completely hide their name or booking titles from everyone except administrators.
+</Info>
+
+## Blacklist users
+
+To maintain strong security in your member portal, the [owner](/admin/administration/administrators/owner) can block abusive users by adding them to a blacklist.
+
+1. Click your network name top left.
+2. Go to **Network settings** \> **Users**.
+3. Find the necessary user and click **(...)** \> **Blacklist email** next to them.
+
+To blacklist an email who isn't among your users:
+
+1. Go to **Network settings** \> **Privacy and security**.
+2. Switch to the **Blacklist** tab.
+3. In the **Email** field, type the user's email address.
+4. Click **Add**, and confirm.
+
+### How the blacklist works
+
+- Once blacklisted, the user is immediately logged out of all active sessions.
+- They can no longer log in to the member web portal or mobile apps.
+- Blacklisting applies across your entire network (if you have multiple locations), but does not extend to other networks.
+- On the **Users** page, blacklisted users are marked with a red shield icon with a slash.
+- You can remove a user from the blacklist at any time by clicking **(...)** \> **Remove email from blacklist** next to them.

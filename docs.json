@@ -293,7 +293,7 @@
                   },
                   {
                     "group": "General",
-                    "icon": "gear",
+                    "icon": "gear-complex",
                     "pages": [
                       "admin/general/privacy-policy",
                       "admin/general/terms-of-use",
@@ -839,7 +839,7 @@
                   },
                   {
                     "group": "عام",
-                    "icon": "gear",
+                    "icon": "gear-complex",
                     "pages": [
                       "ar/admin/general/privacy-policy",
                       "ar/admin/general/terms-of-use",

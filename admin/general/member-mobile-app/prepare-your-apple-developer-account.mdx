@@ -1,6 +1,85 @@
 ---
 title: "Prepare your Apple Developer account"
-description: "Set up your Apple Developer account for app distribution"
+description: "Steps to set up your corporate Apple Developer account to publish branded mobile apps"
 ---
 
-Placeholder content.
+# Prepare your Apple Developer account
+
+> Steps to set up your corporate Apple Developer account to publish branded mobile apps
+
+Complete these four steps below to prepare for branded mobile apps.
+
+## 1. Enroll in the Apple Developer Program
+
+- Prepare an Apple ID for your organization. Create it [here](https://appleid.apple.com/account#!&page=create).
+- Get a D-U-N-S Number. Request it [here](https://www.dnb.com/duns/get-a-duns.html).
+- Please keep in mind that the Apple Developer Program costs \$99 annually.
+- Nonprofit organizations in certain countries can have fee waivers ([eligibility](https://developer.apple.com/support/membership-fee-waiver/)).
+- Enroll as an organization with an Apple ID and a D-U-N-S number [here](https://developer.apple.com/programs/enroll/).
+- Depending on your country, the enrollment process could take up to two weeks.
+
+![Image](/images/member-mobile-app-prepare-your-apple-developer-account-1.png)
+
+<Warning>
+  **Enrolling as an individual is not supported.** Make sure you enroll as an organization with a D-U-N-S number. Joining the Apple Developer Program as an organization requires you to have the authority to enter into legal agreements with Apple on behalf of your organization. A sole proprietor/single-person business can not enroll in the Apple Developer Program as an organization.
+</Warning>
+
+## 2. Prepare your Apple Developer account for the new app submission
+
+Apple requires developers to provide trader status to submit new apps or app updates for distribution in the European Union. To comply with the Digital Services Act, trader status is needed. Follow these steps to submit it: ​
+
+1. Go to the [Business](https://appstoreconnect.apple.com/business) section in your Apple Developer account.
+2. Press **Complete Compliance Requirements** at the top \> choose your trader status and proceed with the following steps on the screen.
+
+<Tip>
+  Refer to [Apple's documentation](https://developer.apple.com/help/app-store-connect/manage-compliance-information/manage-european-union-digital-services-act-trader-requirements/) to understand what your trader status is.
+</Tip>
+
+## 3. Invite us to your Apple Developer account
+
+For us to submit your app under your Apple Developer Account and maintain it, we need to be invited as administrators to your App Store Connect account. Follow the steps to send the invite:
+
+1. Go to [App Store Connect](https://appstoreconnect.apple.com/) and log in with your Apple ID.
+2. Open the **Users and Access** page and click on the `+` button.
+3. Enter the information of the new user and assign permissions to the new user:
+
+| **Field** | **Value** |
+| --- | --- |
+| First Name | Ross |
+| Last Name | Khanas |
+| Email | [publisher@rntor.com](mailto:publisher@andcards.com) |
+| Role | Admin |
+| Developer Resources | Access to Certificates, Identifiers & Profiles |
+
+<Warning>
+  Our team will not be able to publish your apps without the Admin role and certificate access.
+</Warning>
+
+4. Press **Invite**. The email invitation will be sent to the our Product Team.
+
+<Tip>
+  From time to time, you will receive transactional emails from Apple whenever a new app version is approved or a message from the app review team is received. You can ignore these messages as our Product Team is also receiving them and taking full care of your application publication. We'll let you know if there's anything important you need to know.
+</Tip>
+
+## 4. Generate an App Store Connect API Key
+
+To enable automated app submissions and updates, you have to generate a one-time [App Store Connect API Key](https://developer.apple.com/documentation/appstoreconnectapi) and upload the credentials to RNTOR.
+
+### Step 1: Generate the API Key
+
+1. On your desktop, log in to your Apple Developer account, go to the [**Users and Access**](https://appstoreconnect.apple.com/access/integrations/api) [section \> **Integrations** tab.](https://appstoreconnect.apple.com/access/integrations/api)
+2. Under the **Team Keys**, press the plus (\+) button next to the **Active** header to generate a new key.
+3. Give your key a name and an **Admin** level role.
+4. Click **Download API Key** to save the .p8 file. _This private key can only be downloaded once. Ensure you store it securely._
+5. Copy the Key ID and Issuer ID from the same page. You will need these later to upload to RNTOR for submitting and updating your mobile apps.
+
+<Tip>
+  Use a desktop to download your API key to ensure the file is properly saved in .p8 format.
+</Tip>
+
+### Step 2: Connect to RNTOR
+
+Depending on your current setup, follow the relevant instructions below:
+
+- **For new mobile app publications (initial setup):** Proceed with [these steps](/admin/general/member-mobile-app/get-started) next.
+- **For existing customers who have an iOS mobile app published:** Log in as [an owner](/admin/administration/administrators/owner) and navigate to the [Member mobile app](https://app.rntor.comsettings/member-mobile-app) page \> click **Continue** \> upload your .p8 file along with the Key ID and Issuer ID, and submit these details.

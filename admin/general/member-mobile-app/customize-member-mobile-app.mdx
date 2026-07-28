@@ -1,6 +1,88 @@
 ---
 title: "Customize member mobile app"
-description: "Customize the member mobile app"
+description: "Customize your member mobile app's appearance and manage your branded app store listings and screenshots in App Store and Google Play"
 ---
 
-Placeholder content.
+# Customize member mobile app
+
+> Customize your member mobile app's appearance and manage your branded app store listings and screenshots in App Store and Google Play
+
+RNTOR allows you to customize the member mobile app, including colors, icons, and listings on the App Store and Google Play.
+
+Such customizations help improve user experience, strengthen brand identity, and boost engagement with member mobile app.
+
+## Customize the member mobile app appearance
+
+| Change of the background color | ✓ |
+| --- | --- |
+| Change of the accent color | ✗ (requires mobile release) |
+| Font | ✗ (applies only to the member web portal) |
+
+Learn more about [how to customize](/admin/general/member-web-portal/customize-member-web-portal) the background and accent colors through the member web portal.
+
+<Info>
+  The theme of the member mobile app follows the device's theme. To change it, users go to the device's settings, find the **Personalization** section, and switch between light or dark mode. The app theme will update automatically.
+</Info>
+
+## Update icons for member mobile app
+
+To update icons for the member mobile app, follow the steps below:
+
+1. Log in as an [owner](/admin/administration/administrators/owner) and go to **Network settings** \> **Member** **mobile** **app**.
+
+![Image](/images/member-mobile-app-customize-member-mobile-app-1.png)
+
+2. Tap on **Foreground Graphic** and upload your SVG logo. Ensure that the file meets the following requirements.
+   - The logo must be in **SVG format**.
+   - Dimensions should be **72 x 72 pixels**.
+   - Include only vector shapes (no fonts or raster elements).
+   - Ensure the background is transparent and use foreground graphics only.
+3. Check the preview to ensure everything seems fine for you. If any image on the preview doesn't display your icon properly, double-check [the requirements](/admin/general/media-formats) and upload the corrected logo.
+4. **For Android:** Follow [these steps](#google-play-console) to upload a new icon in Google Play.
+5. **For iOS:** Wait for the next mobile app release, as the new icon will be updated with the new app version once it's published on the App Store.
+
+Icons of low-quality or non-compliant icons may result in app rejection.
+
+## Update member mobile app listing
+
+You can update your App Store or Google Play application page's name, custom screenshots, and privacy policy.
+
+### App Store Connect
+
+1. Log in to [App Store Connect](https://appstoreconnect.apple.com/) as the account owner.
+2. Open **My Apps** and select your app.
+3. Create a new app version: Click the **"\+"** button in the top-left corner and enter a version number that follows standard versioning conventions. For example, if the current version is **4.8.12**, enter **4.8.13**.
+4. Update your app information:
+   1. App name and subtitle on the **App Information** page under the **General** section of the left navigation panel.
+   2. Application screenshots, description, by selecting the new app version under the **iOS App** section. [Screenshot rules and specifications](https://help.apple.com/app-store-connect/#/dev910472ff2)
+   3. Privacy Policy on the **App Privacy** page below the **General** section.
+5. Always press **Save** top right.
+
+<Info>
+  Your changes will go live once the new version is released in the regular cycle.
+</Info>
+
+<Warning>
+  All changes must comply with Apple's [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/). Failure to do so may result in your app being rejected by Apple.
+</Warning>
+
+### Google Play Console
+
+1. Log in to the [Google Play Console](https://play.google.com/console/) using the Google Account that's been granted access to your Play Store listing. If you don't have access yet, email [support@rntor.com](mailto:support@rntor.com) to request admin permissions.
+2. Select your app in **All apps**.
+3. Go to the **Main store listing** under the **Grow** section of the left navigation pane.
+4. Make your changes:
+   1. App name
+   2. Short description
+   3. Long description
+   4. Application icon. [Google Play icon design specifications](https://developer.android.com/distribute/google-play/resources/icon-design-specifications)
+   5. Feature graphics according to the specifications mentioned on the page.
+   6. Phone screenshots according to the specifications mentioned on the page.
+5. Press **Save** on the bottom right. Your app store listing should update within a few minutes.
+
+### Notes
+
+- If you encounter display issues when uploading an SVG file, consider the following steps:
+  1. Inspect the SVG file to confirm it was created correctly and is not corrupted. This includes consulting the designer if necessary.
+  2. Ensure the SVG file has a transparent background and includes only foreground graphics. This is essential for compliance and proper display.
+  3. Once corrections are made, re-upload the file and review the visual preview across all icons to confirm it displays as intended. Proper troubleshooting can prevent display inaccuracies and maintain the app's professional appearance.

@@ -1,6 +1,61 @@
 ---
 title: "Visibility"
-description: "Control location visibility"
+description: "Control who can see the content of your location by setting visibility levels for each module and resource ranging from public to administrators"
 ---
 
-Placeholder content.
+# Visibility
+
+> Control who can see the content of your location by setting visibility levels for each module and resource ranging from public to administrators
+
+The **Visibility** property lets you control who can see the content and pages.
+
+## Visibility levels
+
+There are four visibility levels:
+
+| **Administrators** | Only the administrators of the selected location. |
+| --- | --- |
+| **Location members** | Members see the object in their location of membership. |
+| **Network members** | Any member of any location within your network can view the information. |
+| **Public** | Any user who opened the member web portal and mobile app. |
+| **Members with exclusive access** | Members who are subscribed to a plan that explicitly includes these resources (via the [**Exclusive access** setting](/admin/billing/plans/set-up-plans)). This visibility setting is available for resources only. |
+
+## How to set up visibility
+
+To configure the page visibility, follow these steps:
+
+1. Go to the RNTOR \> tap the **(...)** button next to the location name \> **Locations** **settings** page.
+2. Choose a desired module \> locate the **Visibility** dropdown \> select the desired value. The visibility settings for certain pages are limited to only a few options.
+
+![Image](/images/location-visibility-1.png)
+
+The following pages have visibility controls:
+
+- **Community**
+- **Feed**
+- **Visitors**
+- **Support**
+
+<Info>
+  The visibility of pages such as **Rooms**, **Desks**, **Offices**, **Parking**, **Equipment**, **Events**, **Shop,** and **Benefits** depends on the visibility settings of resources added to these pages.
+</Info>
+
+![Image](/images/location-visibility-2.png)
+
+<Info>
+  Sharing your app content through the **Share** button on **Rooms**, **Feed**, **Events**, **Benefits**, and **Shop** does not change the visibility property of the object.
+</Info>
+
+**FAQ**
+
+<Accordion title="What is the difference between network members and location members?">
+  Network members exist when you have multiple locations—they may belong to one location but not another. Location members belong to a specific location. They can access member-only areas in the member web portal and mobile app, have subscriptions, and can view content marked for **Location members** and above.
+
+  <Info>
+    Location members and network members can be found on the **Customers**page in the app.
+  </Info>
+</Accordion>
+
+<Accordion title="Why can't I see some resources in the member web portal or mobile app?">
+  If a resource isn't visible on its dedicated page (for example, you don't see your room on the **Rooms** page), it may be [assigned](/admin/resource-management/resources/manage-resource-rentals-with-assignments) to a member or company. Navigate to RNTOR \> **Resources** \> open the necessary module and locate the resource you are looking for to see the assignment. If the resource should be available to all, [remove the assignment](/admin/resource-management/resources/manage-resource-rentals-with-assignments).
+</Accordion>
