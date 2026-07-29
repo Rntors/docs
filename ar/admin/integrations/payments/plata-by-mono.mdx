@@ -4,4 +4,63 @@ description: "Configure the plata by mono integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح RNTOR قبول المدفوعات عبر plata by mono.
+
+## الربط
+
+1. [افتح حسابًا](https://www.monobank.ua/e-comm).
+
+<Warning>
+  لضمان حفظ البطاقة بعد الدفع، اطلب من دعم monobank تفعيل خيار **робота з токенами** عند تسجيل الحساب.
+</Warning>
+
+2. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+3. افتح **plata by mono**؛ استخدم **حول** للمعلومات و**الوثائق** للتعليمات.
+
+<img src="/images/integrations/payments-plata-by-mono-1.png" alt="plata by mono 1" /> <img src="/images/integrations/payments-plata-by-mono-2.png" alt="plata by mono 2" />
+
+4. اضغط **ربط** وأدخل بيانات الحساب.
+
+![بيانات plata by mono](/images/integrations/payments-plata-by-mono-3.png)
+
+## الإعداد
+
+فعّل الدفع للحجوزات وتذاكر الفعاليات ومنتجات المتجر وحزم الرصيد والفواتير.
+
+## كيفية العمل
+
+- يضيف التكامل **طريقة دفع جديدة** إلى [طرق الدفع](/ar/admin/billing/payments/payment-methods)، وينقل المستخدم إلى صفحة plata by mono.
+- بعد أول دفعة بالبطاقة، يحفظها النظام في **العضوية** \> **الفوترة** للمدفوعات السريعة.
+- تُستخدم [الطريقة الافتراضية](/ar/admin/billing/payments/payment-gateway) في [الدفع التلقائي](/ar/admin/billing/subscriptions/control-invoice-auto-charge).
+
+## العثور على المعاملات
+
+- **Transaction ID** — يطابق **ID замовлення**، ويمكن نسخه من تقرير [المعاملات](/ar/admin/analytics-reports/reports).
+- **الوصف** — نوع الشراء.
+
+## الانتقال من WayForPay
+
+عند فصل WayForPay بالكامل، تُحذف بطاقات المستخدمين المحفوظة معه فورًا.
+
+<Tip>
+  لا تفصله قبل اليوم الأول من الشهر إذا كانت فواتير الأعضاء تُحصّل تلقائيًا في هذا اليوم.
+</Tip>
+
+1. افتح **التكاملات** \> **WayForPay**.
+2. عطّل الدفع عبره لكل الخدمات عدا الفواتير.
+
+![إعداد WayForPay](/images/integrations/payments-plata-by-mono-4.png)
+
+3. اربط plata by mono وفعّله لكل الخدمات عدا الفواتير.
+
+![إعداد plata by mono](/images/integrations/payments-plata-by-mono-5.png)
+
+4. تستمر فواتير المستخدمين بالتحصيل عبر بطاقات WayForPay، بينما يستخدمون plata by mono لبقية المشتريات، وتُحفظ بطاقاتهم بعد أول دفعة.
+5. بعد حفظ البطاقات، عطّل الفواتير في WayForPay وفعّلها في plata by mono.
+6. لتفعيل الدفع التلقائي:
+   - اطلب من الأعضاء جعل البطاقة المحفوظة [افتراضية](/ar/admin/billing/payments/payment-gateway).
+   - أو انتظر دفعهم الفاتورة التالية يدويًا؛ بعدها تصبح البطاقة افتراضية تلقائيًا.
+
+## الفصل
+
+انتقل إلى **التكاملات** \> **plata by mono**، واضغط **فصل** وأكّد.

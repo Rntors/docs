@@ -3,4 +3,69 @@ title: "البدء"
 description: "البدء باستخدام تطبيق الأعضاء للهاتف المحمول"
 ---
 
-محتوى نائب.
+تطبيق الجوال للأعضاء تطبيق White-label لعملائك على Google Play وApp Store، يمنحهم وصولًا سهلًا من الجوال إلى الحجوزات والمدفوعات وجميع خدماتك.
+
+تعزز تجربة الهاتف الحديثة تفاعل الأعضاء وحضور علامتك، وتساعدك على البقاء متصلًا بهم لحظيًا.
+
+## المتطلبات الأساسية
+
+1. افتح حساب Apple Developer باسم مؤسسة و[جهّزه لإرسال تطبيق جديد](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account).
+2. [أنشئ مفتاح App Store Connect API](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account)، وانسخ Key ID وIssuer ID.
+3. جهّز أيقونة وفق [متطلبات Google وApple](/ar/admin/general/media-formats):
+   - **الصيغة:** SVG.
+   - **الأبعاد:** 72 × 72 بكسل.
+   - **الخلفية:** شفافة بلا خلفية.
+4. إذا لم تكن قد فعلت، [فاشترك في ملحق تطبيق الأعضاء](/ar/admin/administration/billing/make-changes-to-rntor-subscription).
+
+## إنشاء تطبيقات الأعضاء
+
+1. [ادعُ RNTOR](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account) عبر [publisher@rntor.com](mailto:publisher@rntor.com) إلى مؤسسة Apple Developer.
+2. افتح **إعدادات الشبكة** \> **تطبيق الجوال للأعضاء** بصفتك [مالكًا](/ar/admin/administration/administrators/owner)، وأرسل التفاصيل:
+   - ارفع الرسم الأمامي واختر لون الخلفية.
+   - أدخل بيانات حساب Apple Developer.
+   - ارفع ملف مفتاح API وأدخل Key ID وIssuer ID.
+
+بعد الإرسال نبدأ إعداد تطبيقَي iOS وAndroid، ونخبرك بالبريد عند نشرهما. وإذا رُفض التطبيق، نعيد إرساله إلى Apple وGoogle خلال 48 ساعة.
+
+<Info>
+  نستخدم عند النشر الأولي أوصافنا وقائمة الكلمات المفتاحية ولقطات الشاشة النموذجية. وبعد نشر التطبيق بعلامتك، يمكنك [تحديث صفحة المتجر](/ar/admin/general/member-mobile-app/customize-member-mobile-app).
+</Info>
+
+### الاستعداد للمراجعة
+
+تراجع Apple وGoogle محتوى التطبيق ووظائفه، ويعد نقص المحتوى سببًا شائعًا للرفض. قبل الإرسال:
+
+1. تأكد من صلاحية [سياسة الخصوصية](/ar/admin/general/privacy-policy) و[شروط الاستخدام](/ar/admin/general/terms-of-use) واحتوائهما اسم الشبكة.
+2. أضف موارد قابلة للحجز، مثل [الغرف](/ar/admin/resource-management/resources/set-up-resources#الغرف) و[المكاتب](/ar/admin/resource-management/resources/set-up-resources#المكاتب) و[المكاتب الخاصة](/ar/admin/resource-management/resources/set-up-resources#المكاتب-الخاصة)، مع صور غلاف. استخدم صورًا مؤقتة إذا لم تتوفر النهائية.
+3. [أنشئ منشورًا](/ar/admin/engagement/feed) في **الخلاصة** للترحيب بالأعضاء.
+4. [أنشئ فعالية قادمة](/ar/admin/engagement/events/set-up-events) بوصف وصورة. يمكنك [تعديلها](/ar/admin/engagement/events/set-up-events#تعديل-فعالية) أو [حذفها](/ar/admin/engagement/events/set-up-events#حذف-فعالية) بعد النشر.
+5. [أكمل صفحة **المعلومات**](/ar/admin/location/information) بصور المساحة ووصفها وبيانات الاتصال والجدول.
+
+## الوصول إلى التطبيقات
+
+- بعد النشر، تتحدّث [الصفحة المقصودة](/ar/admin/general/member-web-portal/customize-landing-page) تلقائيًا بشارتي App Store وGoogle Play وروابط التنزيل.
+
+![روابط تطبيق الأعضاء](/images/member-mobile-app-1.png)
+
+- يمكنك أيضًا مشاركة الروابط المباشرة في موقعك ورموز QR وشبكات التواصل والإعلانات. [الترويج للتطبيق](/ar/guides/promotion/promote-member-web-portal-and-mobile-app).
+
+<Info>
+  يتطلب التطبيق Android 8.0 أو أحدث، أو iOS 17.0 أو أحدث.
+</Info>
+
+## كيفية عمل التطبيق
+
+- **White-label وقابل للتخصيص:** عزز علامتك بالشعارات والألوان و[الإشعارات الفورية](/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية).
+- **متاح في المتجرين:** يسهل تنزيله من Google Play وApp Store.
+- **محسّن للجوال:** يقدم وظائف بوابة الويب نفسها بتجربة مصممة للهاتف.
+- **تجربة أفضل:** ينشئ المستخدم الحجوزات والمدفوعات وينضم إلى الفعاليات ويصل إلى خدماتك بسرعة.
+
+**الأسئلة الشائعة**
+
+<Accordion title="كيف أختبر التطبيق قبل الإصدار؟">
+  جرّب تطبيقات بعض عملائنا من روابط التنزيل أسفل صفحاتهم المقصودة، مثل [FoundrSpace Coworking](https://app.foundrspace.com/) أو [Hatch Coworking](https://app.hatchcoworking.com/).
+</Accordion>
+
+<Accordion title="هل يوجد حد لطول اسم التطبيق؟">
+  نعم، الحد في App Store وGoogle Play هو **30 حرفًا**. اختر اسمًا بديلًا إذا كان اسم مساحتك أطول.
+</Accordion>

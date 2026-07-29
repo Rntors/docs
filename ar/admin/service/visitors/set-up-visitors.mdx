@@ -3,6 +3,135 @@ title: "إعداد Visitors"
 description: "قم بإعداد إدارة الزوار في موقعك."
 ---
 
-قم بإعداد وحدة Visitors لتتبع الضيوف في موقعك.
+تتيح إضافة Visitors الوصول إلى وحدة **الزوار** وتطبيق **Reception**.
 
-_التوثيق قريبًا._
+صُممت لتسجيل زوار الأعضاء وتتبعهم، وتبسيط وصولهم ومغادرتهم عند الاستقبال، وإشعار المضيف فور وصول زائره، وجمع بيانات تواصل الزوار العابرين، دون حاجة إلى تدخل موظف استقبال. يمنح ذلك زوارك انطباعًا أوليًا احترافيًا ويخفف عبء العمل على مكتب الاستقبال.
+
+## من هم الزوار؟
+
+الزائر هو أي شخص يدعوه عضو إلى المساحة، عادةً لاجتماع أو زيارة شخصية. نوصي بوضع سياسة تُلزم الأعضاء بتسجيل جميع زوارهم لتسهيل التتبع والوصول.
+
+من الحالات الشائعة:
+
+- ضيف يحضر اجتماعًا مع عضو.
+- صديق أو قريب يأتي لزيارة عضو.
+
+<Warning>
+  يقتصر Reception على تسجيل وصول زوار الأعضاء الذين يأتون مجانًا ومن دون حجز. وهو غير مخصص لتسجيل وصول الأعضاء أو العملاء والمستأجرين أصحاب الحجوزات أو الاشتراكات.
+</Warning>
+
+## المتطلبات
+
+1. جهاز لوحي مدعوم:
+   - شاشة لا تقل عن 7 بوصات.
+   - دعم Google Play على Android أو App Store على iPadOS.
+   - Android 8.0 أو أحدث، أو iOS/iPadOS 15.1 أو أحدث.
+2. إذا لم تكن مشتركًا بعد، [اشترك في إضافة Visitors](/ar/admin/administration/billing/make-changes-to-rntor-subscription) من **إعدادات الشبكة** \> **الفوترة**.
+
+## إعداد وحدة الزوار
+
+1. اضغط على قائمة **(...)** بجوار اسم الموقع، ثم **إعدادات الموقع** \> **الخدمة** \> **الزوار**.
+2. فعّل الوحدة و[حدد ظهور](/ar/admin/location/visibility) صفحة **الزوار**.
+3. **البحث عن المضيف** — حدد البيانات التي يستخدمها الزائر غير المسجل للعثور على مضيفه في جهاز Reception:
+   - الاسم الكامل، وهو إلزامي.
+   - البريد الإلكتروني.
+   - رقم الهاتف.
+   - اسم الشركة، إذا كان المضيف عضوًا في شركة.
+4. **تسجيل المغادرة** — فعّله للسماح للزوار بتسجيل المغادرة وتتبع مدة الزيارة.
+5. **ترك بيانات التواصل** — فعّله لاستخدام Reception أيضًا في [جمع بيانات الزوار العابرين](/ar/admin/service/visitors/collect-contacts-of-walk-ins-with-reception).
+6. **الدعوة** — فعّله إذا أردت [تخصيص رسالة دعوة الزيارة](/ar/admin/general/customize-emails).
+
+![إعداد وحدة الزوار](/images/service-visitors-1.png)
+
+بعد التفعيل، تظهر صفحة **الزوار** للأعضاء ويمكنهم [تسجيل زوارهم والموافقة على طلبات الزيارة](/ar/member/visitors/preregister-and-approve-visit-requests).
+
+## إعداد تطبيق Reception
+
+### تسجيل الدخول والإعداد
+
+1. نزّل Reception على الجهاز اللوحي:
+   - Google Play: [https://app.rntor.com](https://app.rntor.com)
+   - App Store: [https://app.rntor.com](https://app.rntor.com)
+2. افتح التطبيق واضغط على **تسجيل الدخول**.
+
+![تسجيل الدخول إلى Reception](/images/service-visitors-2.png)
+
+3. استخدم حساب مسؤول في الموقع الذي تريد تفعيل Reception له.
+4. اختر الشبكة والموقع المطلوبين.
+
+![اختيار الشبكة والموقع](/images/service-visitors-3.png)
+
+5. تظهر شاشة خيارات تسجيل الوصول والمغادرة لتسجيل الزوار.
+
+![شاشة Reception](/images/service-visitors-4.png)
+
+6. لمنع الغرباء من إغلاق التطبيق والوصول إلى الجهاز، اضبط [الوصول الموجه](https://support.apple.com/en-us/HT202612) على iPad أو [تثبيت الشاشة](https://support.google.com/android/answer/9455138?hl=ar) على Android.
+
+### تخصيص Reception
+
+يعكس التطبيق هوية الشبكة تلقائيًا ويعرض:
+
+- شعار بوابة الأعضاء.
+- اسم بوابة الأعضاء.
+- اللون المميز.
+- آخر [صورة غلاف](/ar/admin/location/information) للموقع المستخدم.
+
+<Info>
+  إذا لم يحمّل الموقع صورة غلاف، يُستخدم لون الخلفية بدلًا منها.
+</Info>
+
+![تخصيص Reception](/images/service-visitors-customize-reception-1.png)
+
+لتخصيص المظهر، حدّث إعدادات الشبكة:
+
+1. لتغيير الاسم أو الشعار أو اللون المميز، ينتقل [المالك](/ar/admin/administration/administrators/owner) إلى **إعدادات الشبكة** \> **عام** \> علامتي تبويب **المعلومات** و**العلامة التجارية**.
+
+<Info>
+  تسري هذه التغييرات أيضًا على بوابة الأعضاء أو تطبيق الهاتف حسب العنصر.
+</Info>
+
+2. لتغيير خلفية Reception، [حمّل صورة غلاف جديدة](/ar/admin/location/information) للموقع.
+
+<Accordion title="الخروج من تطبيق Reception">
+  1. عطّل [الوصول الموجه](https://support.apple.com/en-us/HT202612) على iPad أو [تثبيت الشاشة](https://support.google.com/android/answer/9455138?hl=ar) على Android.
+  2. أغلق التطبيق بسحبه إلى أعلى وخارج الشاشة.
+</Accordion>
+
+<Accordion title="تسجيل الخروج من Reception">
+  1. أغلق Reception بسحبه إلى أعلى وخارج الشاشة.
+  2. افتحه مجددًا.
+  3. اضغط على **(...)** أعلى اليسار ثم **تسجيل الخروج**.
+
+  ![تسجيل الخروج من Reception](/images/service-visitors-5.png)
+</Accordion>
+
+## كيفية عمل حل الزوار
+
+- **التسجيل المسبق والوصول السريع:** يستطيع العضو [تسجيل زائره مسبقًا](/ar/member/visitors/preregister-and-approve-visit-requests). يتلقى الزائر دعوة عبر البريد تتضمن رمز الزيارة، ويستخدمه [لتسجيل الوصول](/ar/member/visitors/check-in-and-check-out) في Reception.
+- **التسجيل الذاتي:** يستطيع الزائر غير المسجل تسجيل نفسه على الجهاز و[طلب زيارة](/ar/member/visitors/check-in-and-check-out)، ثم يوافق العضو أو يرفض من جهازه.
+- **إشعارات المضيف التلقائية:** عند وصول الزائر أو طلبه زيارة، يتلقى المضيف إشعارًا فوريًا أو بريدًا إلكترونيًا.
+- **تسجيل المغادرة وتتبع المدة:** يستطيع الزائر [تسجيل المغادرة](/ar/member/visitors/check-in-and-check-out)، لتتبع مدة الزيارة وتطبيق الحدود.
+- **جمع العملاء المحتملين:** يستطيع المهتمون بالمساحة استخدام [**ترك بيانات التواصل**](/ar/admin/service/visitors/collect-contacts-of-walk-ins-with-reception).
+- **تجربة تحمل علامتك التجارية:** [يعكس Reception علامتك](/ar/admin/service/visitors/set-up-visitors#تخصيص-reception) بعرض الشعار وصورة الموقع.
+
+## حل مشكلات الوصول إلى Reception
+
+<Accordion title="1. اتصال الإنترنت ضعيف">
+  أعد توصيل الجهاز بشبكة Wi-Fi أو جرّب شبكة أخرى.
+</Accordion>
+
+<Accordion title="2. تسجيل الدخول ببريد غير صحيح">
+  تأكد من استخدام حساب [مسؤول](/ar/admin/administration/administrators/administrators) في الموقع؛ فالمسؤولون فقط يمكنهم اختيار الشبكة والموقع عند الدخول.
+</Accordion>
+
+<Accordion title="3. إصدار التطبيق قديم">
+  ثبّت أحدث إصدار من [Google Play](https://app.rntor.com) أو [App Store](https://app.rntor.com).
+</Accordion>
+
+<Accordion title="4. اشتراك RNTOR غير نشط أو لا يتضمن إضافة Visitors">
+  [تحقق من حالة اشتراكك](/ar/admin/administration/billing/rntor-subscription) ومن توفر [إضافة Visitors](/ar/admin/service/visitors/set-up-visitors).
+</Accordion>
+
+<Accordion title="5. الجهاز لا يطابق المتطلبات">
+  تأكد من مطابقة الجهاز [لمتطلبات](/ar/admin/service/visitors/set-up-visitors#المتطلبات) تثبيت Reception.
+</Accordion>

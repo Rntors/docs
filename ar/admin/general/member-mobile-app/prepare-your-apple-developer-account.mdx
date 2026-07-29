@@ -3,4 +3,77 @@ title: "إعداد حساب Apple Developer الخاص بك"
 description: "إعداد حساب Apple Developer لتوزيع التطبيق"
 ---
 
-محتوى نائب.
+أكمل الخطوات الأربع التالية للاستعداد لتطبيقاتك.
+
+## 1. التسجيل في Apple Developer Program
+
+- جهّز Apple ID للمؤسسة أو [أنشئه](https://appleid.apple.com/account#!&page=create).
+- احصل على رقم D‑U‑N‑S من [هنا](https://www.dnb.com/duns/get-a-duns.html).
+- تبلغ رسوم البرنامج 99 دولارًا سنويًا.
+- قد تحصل المؤسسات غير الربحية المؤهلة في بعض الدول على [إعفاء](https://developer.apple.com/support/membership-fee-waiver/).
+- [سجّل كمؤسسة](https://developer.apple.com/programs/enroll/) باستخدام Apple ID ورقم D‑U‑N‑S.
+- قد تستغرق العملية حتى أسبوعين حسب الدولة.
+
+![حساب Apple Developer](/images/member-mobile-app-prepare-your-apple-developer-account-1.png)
+
+<Warning>
+  **التسجيل كفرد غير مدعوم.** سجّل كمؤسسة برقم D‑U‑N‑S. ويتطلب ذلك امتلاك صلاحية إبرام الاتفاقيات القانونية مع Apple نيابةً عن المؤسسة. لا يستطيع المالك الفردي أو النشاط المكوّن من شخص واحد التسجيل كمؤسسة.
+</Warning>
+
+## 2. تجهيز الحساب لإرسال التطبيق
+
+تلزم Apple المطورين بتقديم حالة التاجر لتوزيع تطبيق جديد أو تحديث داخل الاتحاد الأوروبي امتثالًا لقانون الخدمات الرقمية:
+
+1. افتح قسم [Business](https://appstoreconnect.apple.com/business).
+2. اضغط **Complete Compliance Requirements** واختر حالة التاجر، ثم أكمل الخطوات.
+
+<Tip>
+  راجع [توثيق Apple](https://developer.apple.com/help/app-store-connect/manage-compliance-information/manage-european-union-digital-services-act-trader-requirements/) لفهم حالة التاجر.
+</Tip>
+
+## 3. دعوتنا إلى حساب Apple Developer
+
+لنشر التطبيق باسم حسابك وصيانته، ادعُ فريقنا كمسؤولين في App Store Connect:
+
+1. سجّل الدخول إلى [App Store Connect](https://appstoreconnect.apple.com/).
+2. افتح **Users and Access** واضغط **\+**.
+3. أدخل:
+
+| **الحقل** | **القيمة** |
+| --- | --- |
+| الاسم الأول | Ross |
+| اسم العائلة | Khanas |
+| البريد | [publisher@rntor.com](mailto:publisher@rntor.com) |
+| الدور | Admin |
+| موارد المطور | Access to Certificates, Identifiers & Profiles |
+
+<Warning>
+  لا يستطيع فريقنا النشر دون دور Admin والوصول إلى الشهادات.
+</Warning>
+
+4. اضغط **Invite**.
+
+<Tip>
+  قد تصلك رسائل تشغيلية من Apple عند قبول إصدار أو ورود رسالة من فريق المراجعة. يمكن تجاهلها لأن فريق المنتج يتلقاها ويتولى النشر، وسنخبرك إذا كان هناك إجراء مهم.
+</Tip>
+
+## 4. إنشاء مفتاح App Store Connect API
+
+لأتمتة الإرسال والتحديث، أنشئ [مفتاح API](https://developer.apple.com/documentation/appstoreconnectapi) لمرة واحدة وارفع بياناته إلى RNTOR.
+
+### الخطوة 1: إنشاء المفتاح
+
+1. من الحاسوب، افتح [**Users and Access** \> **Integrations**](https://appstoreconnect.apple.com/access/integrations/api).
+2. تحت **Team Keys**، اضغط **\+** بجانب **Active**.
+3. سمّ المفتاح ومنحه دور **Admin**.
+4. اضغط **Download API Key** لتنزيل ملف .p8. _لا يمكن تنزيل المفتاح الخاص إلا مرة واحدة؛ احفظه بأمان._
+5. انسخ Key ID وIssuer ID من الصفحة نفسها.
+
+<Tip>
+  استخدم حاسوبًا لضمان حفظ ملف .p8 بصورة صحيحة.
+</Tip>
+
+### الخطوة 2: الربط مع RNTOR
+
+- **لنشر تطبيق جديد:** تابع [هذه الخطوات](/ar/admin/general/member-mobile-app/get-started).
+- **لعملاء لديهم تطبيق iOS منشور:** سجّل الدخول [كمالك](/ar/admin/administration/administrators/owner)، وافتح صفحة [تطبيق الجوال للأعضاء](https://app.rntor.com/settings/member-mobile-app)، واضغط **Continue**، ثم ارفع ملف .p8 وأدخل Key ID وIssuer ID وأرسل التفاصيل.

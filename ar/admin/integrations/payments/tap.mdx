@@ -4,4 +4,36 @@ description: "Configure the Tap integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح التكامل استقبال المدفوعات في RNTOR.
+
+## ربط Tap
+
+1. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+
+![Tap 1](/images/integrations/payments-tap-1.png)
+
+2. افتح **Tap**؛ استخدم **حول** للمعلومات و**الوثائق** للتعليمات.
+
+![Tap 2](/images/integrations/payments-tap-2.png)
+
+3. اضغط **ربط**، وأدخل Secret Key من إعدادات Tap. أنشئه وفق [الدليل](https://developers.tap.company/reference/api-endpoint#api-credentials).
+
+<Warning>
+  لحفظ بطاقات العملاء وتمكين [الدفع التلقائي](/ar/admin/billing/subscriptions/control-invoice-auto-charge)، اطلب من دعم Tap تفعيل **Save Card Feature**. من دونه يعيد العملاء إدخال البطاقة كل مرة ويدفعون الفواتير يدويًا.
+</Warning>
+
+## الإعداد
+
+فعّل الدفع للحجوزات وتذاكر الفعاليات ومنتجات المتجر والفواتير وحزم الرصيد.
+
+## كيفية العمل
+
+يضيف التكامل **طريقة دفع جديدة** وينقل المستخدم إلى Tap لاستخدام الطرق المفعّلة في حسابك.
+
+<Tip>
+  يدعم Tap 18 طريقة دفع في 8 دول. راجع [القائمة الكاملة](https://www.andcards.com/integrations/payments/tap).
+</Tip>
+
+## الفصل
+
+انتقل إلى **التكاملات** \> **Tap**، واضغط **فصل** وأكّد.

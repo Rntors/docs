@@ -4,4 +4,51 @@ description: "Configure the WayForPay integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح التكامل استقبال المدفوعات عبر الإنترنت في RNTOR.
+
+## الربط
+
+1. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+
+![WayForPay 1](/images/integrations/payments-wayforpay-1.png)
+
+2. افتح الصفحة؛ استخدم **حول** للمعلومات و**الوثائق** للتعليمات.
+
+![WayForPay 2](/images/integrations/payments-wayforpay-2.png)
+
+3. اضغط **ربط**.
+4. أدخل **Merchant login** و**Merchant security key** واضغط **ربط**.
+
+![بيانات WayForPay](/images/integrations/payments-wayforpay-3.png)
+
+<Warning>
+  لحفظ بطاقات العملاء وتمكين [الدفع التلقائي](/ar/admin/billing/subscriptions/control-invoice-auto-charge)، اطلب من دعم WayForPay تفعيل **робота з токенами**. من دونه يعيد العملاء إدخال البطاقة كل مرة ويدفعون الفواتير يدويًا.
+</Warning>
+
+## الإعداد
+
+1. فعّل الدفع للحجوزات وتذاكر الفعاليات ومنتجات المتجر وحزم الرصيد والفواتير.
+2. فعّل أو عطّل **الرد التلقائي** للحجوزات والتذاكر والطلبات المؤهلة. [فهم الرد](/ar/admin/billing/payments/refunds).
+
+![إعداد WayForPay](/images/integrations/payments-wayforpay-4.png)
+
+<Info>
+  يكون الرد التلقائي مفعّلًا افتراضيًا بعد الربط.
+</Info>
+
+## كيفية العمل
+
+- يضيف **طريقة دفع جديدة** إلى [طرق الدفع](/ar/admin/billing/payments/payment-methods)، وينقل المستخدم إلى WayForPay.
+- بعد أول دفعة تُحفظ البطاقة في **العضوية** \> **الفوترة**.
+- يستطيع المستخدم [إضافة البطاقة أو حذفها](/ar/admin/billing/payments/payment-gateway).
+- تُستخدم [الطريقة الافتراضية](/ar/admin/billing/payments/payment-gateway) في [الدفع التلقائي](/ar/admin/billing/subscriptions/control-invoice-auto-charge).
+
+## العثور على المعاملات
+
+- **المعرّف** — يطابق **Order reference** ويمكن نسخه من تقرير [المعاملات](/ar/admin/analytics-reports/reports).
+- **الوقت** — تاريخ المعاملة ووقتها.
+- **الوصف** — نوع الشراء.
+
+## الفصل
+
+انتقل إلى **التكاملات** \> **WayForPay**، واضغط **فصل** وأكّد.

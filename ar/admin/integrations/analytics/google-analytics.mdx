@@ -3,4 +3,38 @@ title: "Google Analytics"
 description: "تتبع النشاط باستخدام Google Analytics."
 ---
 
-قريباً.
+افهم سلوك مستخدمي بوابة الأعضاء وحسّن الحملات الإعلانية باستخدام Google Analytics 4 من خلال تتبع التفاعل والأحداث الرئيسية.
+
+## ربط Google Analytics
+
+1. بصفتك [المالك](/ar/admin/administration/administrators/owner)، اضغط اسم الشبكة \> **إعدادات الشبكة**.
+2. افتح **التكاملات** \> **Google Analytics**.
+3. اضغط **ربط** وأدخل **Measurement ID** الخاص بـGA4.
+4. يبدأ RNTOR بإرسال الأحداث المدعومة من بوابة الأعضاء.
+
+![ربط Google Analytics](/images/integrations/analytics-google-analytics-1.png)
+
+إلى جانب [أحداث GA4 الافتراضية](https://support.google.com/analytics/answer/9234069)، تُرسل الأحداث التالية:
+
+| الحدث | التفسير |
+| --- | --- |
+| login | تسجيل الدخول |
+| share | مشاركة محتوى البوابة |
+| begin\_checkout | بدء عملية دفع |
+| purchase | نجاح عملية شراء مالية |
+| add\_to\_cart | إضافة منتج إلى السلة |
+| generate\_lead | جدولة جولة عبر [Calendly](/ar/admin/integrations/bookings/calendly) أو [HubSpot](/ar/admin/integrations/bookings/hubspot-meeting-scheduler) |
+
+<Info>
+  يقتصر التكامل على تتبع أحداث بوابة الأعضاء على الويب.
+</Info>
+
+## الربط مع Google Ads
+
+1. اربط GA4 بـRNTOR.
+2. اربط Google Ads بـGoogle Analytics وفق [إرشادات Google](https://support.google.com/google-ads/answer/1704341?hl=en).
+3. استخدم روابط صفحات بوابة الأعضاء في الحملات وراقب المشتريات والتحويلات لتحسين الإعلانات.
+
+<Tip>
+  تعرّف على روابط صفحات البوابة و[كيفية الترويج لها](/ar/guides/promotion/integrate-with-your-marketing-website).
+</Tip>

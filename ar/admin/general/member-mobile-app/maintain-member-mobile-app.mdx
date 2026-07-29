@@ -3,4 +3,99 @@ title: "صيانة تطبيق الأعضاء للهاتف المحمول"
 description: "صيانة وتحديث تطبيق الأعضاء للهاتف المحمول"
 ---
 
-محتوى نائب.
+يتولى فريقنا نشر تطبيقات الأعضاء وصيانتها بالكامل، ولذلك نحتاج إلى وصول مستمر إلى حساب Apple Developer. يجب أن يحافظ مالك الحساب على عضوية نشطة ويقبل اتفاقيات Apple الدورية ويتولى المتطلبات الموضحة أدناه.
+
+## عضوية Apple Developer
+
+إذا كانت العضوية مدفوعة، فتأكد من نجاح تحصيل Apple للرسوم السنوية. ولا تدفع المؤسسات غير الربحية المؤهلة الرسوم.
+
+<Warning>
+  حتى تعيد تفعيل العضوية، لا نستطيع تحديث التطبيقات، ويُزال تطبيق iOS من App Store.
+</Warning>
+
+## اتفاقية ترخيص Apple Developer
+
+تحدّث Apple اتفاقياتها القانونية أحيانًا، ويجب أن يقبلها مالك الحساب لمواصلة نشر التحديثات. اتبع [إرشادات Apple](https://developer.apple.com/help/app-store-connect/manage-agreements/sign-and-update-agreements).
+
+<Warning>
+  لا يمكننا نشر إصدارات جديدة حتى تقبل الاتفاقية المحدثة؛ فهذا قيد من Apple.
+</Warning>
+
+<Tip>
+  إذا فات تطبيقك إصدار بسبب انتهاء العضوية أو اتفاقية معلقة، فسيُحدّث مع دورة الإصدار التالية.
+</Tip>
+
+## الامتثال لقانون الخدمات الرقمية
+
+تلزم Apple المطورين بتقديم حالة التاجر لتوزيع التطبيقات والتحديثات في الاتحاد الأوروبي:
+
+1. افتح قسم [Business](https://appstoreconnect.apple.com/business).
+2. اضغط **Complete Compliance Requirements** واختر حالة التاجر، ثم أكمل الخطوات.
+
+<Tip>
+  راجع [توثيق Apple](https://developer.apple.com/help/app-store-connect/manage-compliance-information/manage-european-union-digital-services-act-trader-requirements/) لفهم حالة التاجر المناسبة.
+</Tip>
+
+## سياسة الخصوصية وشروط الاستخدام
+
+تلزم Apple وGoogle تطبيقك [بسياسة خصوصية](/ar/admin/general/privacy-policy) و[شروط استخدام](/ar/admin/general/terms-of-use) صالحتين. يجب أن تحتوي الصفحتان معلومات صحيحة لنشر التطبيق.
+
+## حل مشكلات الوصول إلى تطبيق الجوال
+
+<Accordion title="1. تحقق من اتصال الإنترنت">
+  قد يمنع الاتصال الضعيف الوصول إلى التطبيق. أعد الاتصال بشبكة Wi‑Fi أو استخدم شبكة أخرى.
+</Accordion>
+
+<Accordion title="2. التطبيق غير موجود في App Store أو Google Play">
+  قد يرجع ذلك إلى:
+
+  - مشكلة مؤقتة في المتجر؛ حدّث الصفحة أو تحقق من تحديثات المتجر.
+  - لم يُنشر التطبيق بعد أو أُزيل.
+  - البحث باسم غير صحيح؛ تأكد من اسم التطبيق.
+  - نظام تشغيل الجهاز غير [متوافق](/ar/admin/general/member-mobile-app/get-started).
+</Accordion>
+
+<Accordion title="3. التطبيق قديم">
+  إذا ظهرت رسالة بأن التطبيق قديم:
+
+  - قد يتوفر إصدار جديد؛ تحقق من المتجر أو اضغط **Update**.
+  - إذا تعذر الوصول إلى تطبيق iOS، فتأكد من إكمال متطلبات [صيانة التطبيق](/ar/admin/general/member-mobile-app/maintain-member-mobile-app).
+</Accordion>
+
+<Accordion title="4. التطبيق معلّق">
+  إذا عُلّق اشتراك RNTOR، تظهر رسالة «الخدمة غير متاحة. تواصل مع المسؤول» عند الوصول إلى البوابة أو التطبيق.
+
+  وفق [شروط الاستخدام](https://rntor.com/terms)، يحدث التعليق تلقائيًا إذا لم يصل الدفع خلال مهلة 7 أيام بعد إصدار الفاتورة.
+
+  <Info>
+    لأن اشتراكات RNTOR آلية، لا يمكن تعديل التعليق الناتج عن عدم الدفع خلال مهلة الأيام السبعة يدويًا.
+  </Info>
+
+  لاستعادة الوصول، يحتاج [المالك](/ar/admin/administration/administrators/owner) إلى [سداد الدفعة المستحقة](/ar/admin/administration/billing/make-changes-to-rntor-subscription#تحديث-معلومات-الدفع-أو-الفوترة).
+</Accordion>
+
+<Accordion title="5. اشتراك RNTOR لم يعد نشطًا">
+  إذا أُلغي الاشتراك، يُزال التطبيق من المتاجر ويُقيّد الوصول إلى بوابة الويب في تاريخ الإلغاء.
+</Accordion>
+
+**الأسئلة الشائعة**
+
+<Accordion title="ماذا أفعل إذا لم أجد التطبيق في نتائج البحث؟">
+  تراعي متاجر التطبيقات عوامل مثل العنوان واسم المطور والوصف. إذا لم يظهر، راجع [مقال Google Play](https://support.google.com/googleplay/android-developer/thread/231101934/app-is-not-showing-on-play-store?hl=en) و[دليل App Store](https://developer.apple.com/app-store/search/) حول عوامل الظهور.
+</Accordion>
+
+<Accordion title="ماذا أفعل إذا رفضت Apple تطبيق iOS؟">
+  يتلقى فريقنا رسالة الرفض أيضًا ويتابع الحل مع Apple. بعد الحل نتواصل معك، ونعيد إرسال التطبيق خلال 24–48 ساعة.
+</Accordion>
+
+<Accordion title="هل أقبل اتفاقيتي التطبيقات المدفوعة والمجانية؟">
+  إذا ظهرت **Paid Apps Agreement** و**Free Apps Agreement**، فتواصل مع دعم Apple بشأن الاتفاقية المدفوعة، واتبع جميع المطالبات الواردة في [هذا المقال](/ar/admin/general/member-mobile-app/maintain-member-mobile-app) للنشر.
+</Accordion>
+
+<Accordion title="ما رسوم عضوية Apple Developer؟">
+  يعمل RNTOR بصورة مستقلة عن Apple والخدمات الخارجية ولا يملك رؤية لأسعارها. تواصل مع Apple لمعرفة الرسوم. ولا يفرض RNTOR رسومًا إضافية على التكاملات؛ راجع توفر التكامل في خطتك من [الأسعار](https://rntor.com/pricing).
+</Accordion>
+
+<Accordion title="ماذا أفعل إذا وصلني بريد من Apple بشأن Distribution Certificate؟">
+  يتولى فريقنا إنشاء شهادات التوزيع ويتلقى الإشعار نفسه، ولا يلزمك أي إجراء.
+</Accordion>

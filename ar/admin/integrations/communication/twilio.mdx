@@ -3,4 +3,64 @@ title: "Twilio"
 description: "إرسال إشعارات الرسائل النصية القصيرة عبر Twilio."
 ---
 
-قريباً.
+Twilio منصة اتصالات سحابية. يتيح التكامل إرسال دعوات الأعضاء ورموز تأكيد تسجيل الدخول إلى Wi‑Fi عبر SMS.
+
+![إرسال الرسائل](/images/integrations/communication-twilio-1.png)
+
+<Info>
+  Twilio شركة مستقلة وغير تابعة لـRNTOR. للاستفسار عن خدماتها أو أسعارها، تواصل معها مباشرة.
+</Info>
+
+## المتطلبات الأساسية
+
+1. اشتراك RNTOR نشط.
+2. حساب Twilio يتضمن رقم هاتف وAccount SID وAuth token.
+3. صلاحية مالك في Twilio.
+4. [ربط IronWiFi وإعداده](/ar/admin/integrations/wifi/ironwifi) إذا كنت ستستخدم SMS لمصادقة الشبكة.
+
+<Info>
+  إذا لم تصل الرسائل، تحقق من وجود رصيد كافٍ في Twilio.
+</Info>
+
+## ربط Twilio
+
+يُجري [المالك](/ar/admin/administration/administrators/owner) الخطوات الآتية:
+
+1. افتح **إعدادات الشبكة** من **(...)** بجوار اسمها، ثم **Twilio**.
+
+![صفحة Twilio](/images/integrations/communication-twilio-2.png)
+
+2. اضغط **ربط** وأدخل البيانات. [العثور على بيانات Twilio](https://support.twilio.com/hc/en-us/articles/360006956594-Twilio-Third-Party-Application-and-Product-Support)
+
+![بيانات الربط](/images/integrations/communication-twilio-3.png)
+
+3. اختر رقم المرسل، وحدد ما إذا كانت الرسائل تُستخدم لرمز Wi‑Fi أو دعوات الأعضاء أو كليهما.
+4. احفظ.
+
+## آلية العمل
+
+<Info>
+  بعد الربط، يتحقق RNTOR من رقم الهاتف ويجب إدخاله بالصيغة الدولية مع رمز الدولة.
+</Info>
+
+### دعوات الأعضاء
+
+عندما [يدعو المسؤول عضوًا](/ar/admin/customer-management/users/members#دعوة-عضو) ويضيف رقمه، يتلقى العضو SMS إلى جانب البريد. تتضمن الرسالة الموقع ورابط الدخول والبريد المستخدم.
+
+### رموز Wi‑Fi
+
+بعد ربط IronWiFi وTwilio، يمكن إرسال رمز مصادقة الشبكة عبر SMS إلى جانب البريد.
+
+<Tip>
+  يجب أن يكون رقم الهاتف المحمول محفوظًا في الحساب. [إدارة حساب المستخدم](/ar/admin/customer-management/users/manage-user-account)
+</Tip>
+
+عند اختيار الشبكة وإدخال البريد في بوابة الدخول، يُرسل الرمز إلى الرقم المسجّل. [كيفية الاتصال بالشبكة](/ar/admin/integrations/wifi/ironwifi)
+
+<Info>
+  تُرسل عبر SMS رموز Wi‑Fi فقط. أما رموز دخول بوابة الأعضاء والتطبيق فتُرسل بالبريد لأسباب أمنية.
+</Info>
+
+## فصل Twilio
+
+بصفتك [المالك](/ar/admin/administration/administrators/owner)، افتح **إعدادات الشبكة** \> **Twilio**، واضغط **فصل** وأكد.

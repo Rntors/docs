@@ -4,4 +4,42 @@ description: "Configure the Mercado Pago integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح التكامل استقبال المدفوعات في RNTOR.
+
+## الربط
+
+1. احصل على **Access token** من لوحة Mercado Pago. [العثور على بيانات الاعتماد](https://www.mercadopago.com.ar/developers/en/docs/checkout-api-orders/resources/credentials).
+2. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+
+![Mercado Pago 1](/images/integrations/payments-mercado-pago-1.png)
+
+3. افتح الصفحة واستخدم **حول** للمعلومات و**الوثائق** للتعليمات.
+
+![Mercado Pago 2](/images/integrations/payments-mercado-pago-2.png)
+
+4. اضغط **ربط**.
+5. أدخل **Access token** واختر عملة الحساب.
+
+![بيانات Mercado Pago](/images/integrations/payments-mercado-pago-3.png)
+
+6. أكّد واختر الخدمات ثم اضغط **حفظ**.
+
+<Warning>
+  يجب أن تطابق عملة الموقع عملة حساب Mercado Pago.
+</Warning>
+
+## كيفية العمل
+
+![الدفع عبر Mercado Pago](/images/integrations/payments-mercado-pago-4.png)
+
+يضيف التكامل **Mercado Pago** إلى طرق الدفع، وينقل المستخدم إلى صفحة البوابة لإدخال بيانات البطاقة أو المحفظة. يدعم البطاقات الائتمانية والمدينة، ويمكن دفع الغرف والمكاتب والفعاليات والمنتجات وحزم الرصيد والفواتير.
+
+## العثور على المعاملات
+
+- **المعرّف** — يطابق **External Reference**، ويمكن نسخه من تقرير [المعاملات](/ar/admin/analytics-reports/reports).
+- **الوقت** — تاريخ المعاملة ووقتها.
+- **الوصف** — نوع الشراء.
+
+## الفصل
+
+انتقل إلى **التكاملات** \> **Mercado Pago**، واضغط **فصل** وأكّد.

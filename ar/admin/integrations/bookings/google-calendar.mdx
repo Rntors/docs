@@ -3,4 +3,84 @@ title: "Google Calendar"
 description: "مزامنة حجوزات Rntor مع Google Calendar."
 ---
 
-قريباً.
+يتيح التكامل مزامنة الحجوزات المستقبلية والجديدة والمحدّثة مع تقويم محدد لحظيًا، للغرف والمقاعد والمكاتب والمعدات والمواقف.
+
+## لماذا تستخدم المزامنة؟
+
+تفيد عند [التكامل مع سوق](/ar/admin/integrations/marketplaces/integrate-with-marketplaces) مثل [LiquidSpace](/ar/admin/integrations/marketplaces/liquidspace)، أو عند الانتقال من منصة أخرى وإعادة إنشاء الحجوزات المستقبلية.
+
+<Tip>
+  نوصي باستقبال الحجوزات مباشرة عبر بوابة الأعضاء والتطبيق للتحكم في بيانات الحجز والمدفوعات والتواصل والتحليلات، وإتاحة بقية خدماتك للعملاء.
+</Tip>
+
+## المتطلبات الأساسية
+
+1. اشتراك RNTOR نشط.
+2. يزامن كل مورد مع تقويم Google واحد فقط.
+3. [أنشئ تقويمًا منفصلًا](https://support.google.com/calendar/answer/37095?hl=en) لكل مورد وسمّه بوضوح.
+4. أدر الحجوزات المنشأة في RNTOR — [تعديلًا](/ar/member/bookings/book-a-desk) أو [إلغاءً](/ar/admin/resource-management/resources/manage-bookings) — داخل RNTOR فقط.
+5. أدر الحجوزات المنشأة في Google داخل Google فقط.
+
+## ربط تقويم Google
+
+1. اضغط **(...)** بجوار الموقع، وافتح **التكاملات** \> **تقويم Google**.
+
+![صفحة التكامل](/images/integrations/bookings-google-calendar-1.png)
+
+2. اضغط **ربط** وامنح صلاحية قراءة التقويمات والكتابة فيها.
+
+## مزامنة باتجاه واحد
+
+1. افتح **الموارد** ثم نوع المورد.
+2. اضغط **(...)** بجواره \> **تعديل**.
+3. في **مزامنة التقويم** اختر التقويم.
+
+![اختيار التقويم](/images/integrations/bookings-google-calendar-2.png)
+
+تُزامن جميع حجوزات RNTOR المستقبلية والجديدة والمحدّثة إلى Google، ولا تنتقل حجوزات Google إلى RNTOR.
+
+![اتجاه واحد](/images/integrations/bookings-google-calendar-3.png)
+
+## مزامنة باتجاهين
+
+استخدمها للأسواق أو لنقل الحجوزات من منصة أخرى.
+
+1. افتح المورد واضغط **(...)** \> **تعديل**.
+2. اختر التقويم.
+3. فعّل **مزامنة باتجاهين** واحفظ.
+
+![تفعيل الاتجاهين](/images/integrations/bookings-google-calendar-4.png)
+
+تنتقل الحجوزات المستقبلية والجديدة والمحدّثة في الاتجاهين. وفي حجوزات المقاعد والمكاتب والمواقف، يحجز كل حدث في Google مقعدًا واحدًا في مورد RNTOR.
+
+![المزامنة الثنائية](/images/integrations/bookings-google-calendar-5.png)
+
+<Warning>
+  لا يدعم التكامل الحجوزات المتكررة؛ تتم مزامنة أول حجز فقط. أنشئ التكرار مباشرة في النظام الذي ستديره منه.
+</Warning>
+
+## فصل التكامل
+
+افتح **التكاملات** \> **تقويم Google**، واضغط **فصل** وأكد.
+
+<Warning>
+  بعد الفصل، تُزال تلقائيًا من RNTOR كل الحجوزات التي تمت مزامنتها من Google.
+</Warning>
+
+## الأسئلة الشائعة
+
+<Accordion title="لماذا فشل Google في إنشاء حجز؟">
+  راجع [إخفاقات التكامل](/ar/admin/administration/your-account/notifications/integration-failures) لمعرفة السبب والحل.
+</Accordion>
+
+<Accordion title="كيف أزيل حدث Google من RNTOR؟">
+  أدر الحدث من Google عند استخدام المزامنة الثنائية. وإذا لم تعد تحتاج المزامنة، افصل التكامل فتُزال كل حجوزات Google من RNTOR.
+</Accordion>
+
+<Accordion title="هل يمكن للمستخدم إضافة حجزه إلى تقويمه؟">
+  نعم، يمكنه بعد نجاح الحجز إضافته إلى تقويم Google أو Microsoft 365 Outlook، أو لاحقًا من **الحساب** \> **الحجوزات**.
+
+  <img src="/images/integrations/bookings-google-calendar-6.png" alt="إضافة إلى التقويم" /> <img src="/images/integrations/bookings-google-calendar-7.png" alt="إضافة لاحقة" />
+
+  في تطبيق الأعضاء، يفتح زر **إضافة إلى التقويم** التقويم الافتراضي للجهاز.
+</Accordion>

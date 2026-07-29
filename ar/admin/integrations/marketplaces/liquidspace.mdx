@@ -3,4 +3,22 @@ title: "LiquidSpace"
 description: "توزيع المخزون عبر LiquidSpace."
 ---
 
-قريباً.
+LiquidSpace سوق لحجز مساحات العمل وغرف الاجتماعات عند الطلب. يمكنك ربطه بـRNTOR عبر تقويم Google لمزامنة حجوزات الغرف والمقاعد تلقائيًا.
+
+<Info>
+  LiquidSpace شركة مستقلة وغير تابعة لـRNTOR. للاستفسار عن خدماتها أو أسعارها، تواصل معها مباشرة.
+</Info>
+
+## تفعيل التكامل
+
+1. اربط [تقويم Google](/ar/admin/integrations/bookings/google-calendar) وأعدّه للغرف والمقاعد المطلوبة.
+2. امنح صلاحية تعديل الأحداث إلى [calendars@liquidspace.com](mailto:calendars@liquidspace.com) في التقويمات المطلوبة. راجع [إرشادات LiquidSpace](https://support.liquidspace.com/hc/en-us/articles/203992839-Google-Calendar).
+3. أرسل **معرّف التقويم** و**الرابط العام** إلى [support@liquidspace.com](mailto:support@liquidspace.com) واطلب تفعيل تكامل RNTOR.
+
+## آلية العمل
+
+- ينشئ LiquidSpace حدثًا في Google عند الحجز، ثم يُزامن إلى RNTOR.
+- يتحقق LiquidSpace من توفر الغرفة أو المقعد في RNTOR قبل الحجز.
+- يسحب LiquidSpace الحجوزات من Google كل نحو 15 دقيقة ولمدة تقارب 90 يومًا مستقبلًا.
+- المزامنة بين Google وRNTOR لحظية.
+- في المقاعد والمكاتب والمعدات والمواقف، يحجز كل حدث مقعدًا واحدًا في المورد المقابل.
