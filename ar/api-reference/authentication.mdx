@@ -1,11 +1,11 @@
 ---
-title: 'المصادقة'
-description: 'تعرّف على كيفية مصادقة طلبات API الخاصة بك'
+title: "المصادقة"
+description: "تعرّف على كيفية مصادقة طلبات API الخاصة بك"
 ---
 
 ## OAuth 2.0
 
-تستخدم Rntor API بروتوكول OAuth 2.0 للمصادقة. يجب أن تتضمن جميع طلبات API رمز وصول صالحاً في رأس `Authorization`.
+تستخدم RNTOR API بروتوكول OAuth 2.0 للمصادقة. يجب أن تتضمن جميع طلبات API رمز وصول صالحاً في رأس `Authorization`.
 
 ```bash
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -13,13 +13,13 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ## الحصول على بيانات اعتماد API الخاصة بك
 
-1. سجّل الدخول إلى [لوحة تحكم Rntor](https://app.rntor.com)
+1. سجّل الدخول إلى [لوحة تحكم RNTOR](https://app.rntor.com)
 2. انتقل إلى **Settings** → **API & Integrations**
 3. انقر على **Create API Key**
 4. انسخ Client ID و Client Secret الخاصين بك
 
 <Warning>
-احتفظ بـ Client Secret الخاص بك بأمان. لا تكشفه أبداً في الكود من جانب العميل أو في المستودعات العامة.
+  احتفظ بـ Client Secret الخاص بك بأمان. لا تكشفه أبداً في الكود من جانب العميل أو في المستودعات العامة.
 </Warning>
 
 ## الرؤوس المطلوبة
@@ -27,7 +27,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 يجب أن تتضمن جميع طلبات API الرؤوس التالية:
 
 | الرأس | الوصف |
-|--------|-------------|
+| --- | --- |
 | `Authorization` | client secret الخاص بـ API كرمز Bearer |
 | `X-Client-ID` | معرّف client الخاص بـ API |
 | `Content-Type` | `application/json` للطلبات التي تحتوي على جسم |
@@ -45,7 +45,7 @@ curl -X GET "https://api.rntor.com/v1/networks" \
 يمكن تكوين مفاتيح API بنطاقات محددة للحد من الوصول:
 
 | النطاق | الوصف |
-|-------|-------------|
+| --- | --- |
 | `read:bookings` | قراءة بيانات الحجوزات |
 | `write:bookings` | إنشاء وتعديل الحجوزات |
 | `read:members` | قراءة معلومات الأعضاء |
@@ -56,5 +56,5 @@ curl -X GET "https://api.rntor.com/v1/networks" \
 | `write:invoices` | إنشاء وتعديل الفواتير |
 
 <Info>
-اطلب فقط النطاقات التي يحتاج إليها تكاملك. يتبع ذلك مبدأ الحد الأدنى من الامتيازات.
+  اطلب فقط النطاقات التي يحتاج إليها تكاملك. يتبع ذلك مبدأ الحد الأدنى من الامتيازات.
 </Info>
