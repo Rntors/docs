@@ -2,4 +2,41 @@
 title: "إشعارات إخفاقات التكاملات"
 ---
 
-قريباً.
+تبلغك RNTOR بفشل التكاملات عبر [إشعارات المسؤول](/ar/admin/administration/your-account/notifications/set-up-notifications).
+
+![إشعار فشل التكامل](/images/account-notifications-integrations-failures-1.png)
+
+تشمل الإشعارات Google Calendar وXero وQuickBooks Online.
+
+| **التكامل** | **رسالة الخطأ** | **الحل** |
+| --- | --- | --- |
+| Google Calendar | فشل إنشاء حجز لأن حجزًا آخر موجود في \[الوقت\] | حدث تعارض في الفترة. راجع الحجز المطلوب مزامنته والحجز الموجود في RNTOR. |
+| Google Calendar | فشل إنشاء حجز متكرر في \[اسم المورد\] | لا يدعم التكامل الحجوزات المتكررة حاليًا. أنشئها مباشرةً في RNTOR. |
+| Xero | Account code '200' is not a valid code for this document | حقل **Code** في حساب Sales فارغ. أدخل القيمة `200` في Xero. |
+| Xero | You must specify an Account ID for the payment | أدخل قيمة **Account ID** في حساب المقاصة داخل Xero. |
+| Xero | Organization is not subscribed to currency \[currency code\] | أضف عملة الفاتورة المفقودة إلى حساب Xero. |
+| Xero | Bank account status invalid for payment creation | حساب البنك الذي تُزامن إليه المدفوعات لم يعد صالحًا أو حُذف أو أُرشف. صححه في Xero وأعد ربط المدفوعات بالحساب الصحيح. |
+| Xero | A required Xero account is not selected or invalid | يجب تحديد حساب صالح لكل نوع من بنود الفواتير وللمدفوعات. انتقل إلى **التكاملات \> Xero** وأصلح الحسابات المفقودة أو غير الصالحة. |
+| QuickBooks Online | Business Validation Error: Make sure all your transactions have a sales tax rate before you save. | ضريبة الفاتورة لا تطابق ضريبة QuickBooks. عدّل معدل ضريبة المبيعات أو أنشئ معدلًا جديدًا في QuickBooks، أو [عدّل الضريبة في RNTOR](/ar/admin/administration/your-account/notifications/set-up-notifications). |
+| QuickBooks Online | Subscription period has ended or canceled or there was a billing problem | انتهت تجربة QuickBooks أو اشتراكه، أو أُلغي أو توجد مشكلة فوترة. افتح QuickBooks ثم **الإعدادات \> Subscriptions and billing** وراجع الاشتراك وحدّثه. |
+
+<Info>
+  تُرسل إشعارات الفشل إلى مسؤولي الموقع الذي وقع فيه الخطأ أو انقطع فيه الاتصال فقط.
+</Info>
+
+## حل مشكلات الاتصال
+
+تدعم RNTOR منتجات خارجية متعددة، لكنها غير مسؤولة عن الأخطاء أو الانقطاعات الناتجة عنها. تساعدك الإشعارات على تحديد المشكلة ومعالجتها سريعًا.
+
+### انتهاء صلاحية الاتصال
+
+- اقطع اتصال التكامل في RNTOR.
+- أعد ربطه ببيانات الحساب المحدّثة.
+
+### التحقق من إعداد الحساب
+
+راجع لوحة المنتج الخارجي وتأكد من استيفاء إعداداته لمتطلبات RNTOR الموضحة لكل تكامل في [مركز المساعدة](/ar/admin/integrations/set-up-integrations).
+
+### التواصل مع دعم المنتج الخارجي
+
+إذا استمرت المشكلة أو احتجت إلى تفسير الخطأ، تواصل مع فريق دعم المنتج الخارجي لمعالجة إعدادات حسابك.

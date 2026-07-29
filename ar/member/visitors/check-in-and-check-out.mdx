@@ -3,4 +3,74 @@ title: "كيفية تسجيل دخول وخروج الزوار"
 description: "آلية تسجيل دخول الزوار وخروجهم."
 ---
 
-قريباً.
+بعد [إعداد](/ar/admin/service/visitors/set-up-visitors) وحدة الزوار وتطبيق الاستقبال، توجد ثلاث طرق للدخول:
+
+- دخول سريع بعد [التسجيل المسبق](/ar/member/visitors/preregister-and-approve-visit-requests) باستخدام رمز الزيارة.
+- تسجيل ذاتي لزائر غير مسجل عبر جهاز الاستقبال.
+- تسجيل بواسطة مسؤول نيابةً عن الزائر.
+
+## الدخول السريع
+
+1. عند [تسجيل الزائر](/ar/member/visitors/preregister-and-approve-visit-requests)، تصله [دعوة](/ar/admin/general/customize-emails) بها التفاصيل ورمز من 6 أرقام.
+2. عند الوصول، يرى شاشة الاستقبال. <img src="/images/member-visitors-check-in-and-check-out-1.png" alt="شاشة الاستقبال" />
+3. يضغط على **تسجيل الدخول** ويؤكد امتلاكه رمزًا. <img src="/images/member-visitors-check-in-and-check-out-2.png" alt="اختيار الدخول بالرمز" />
+4. يدخل الرمز. <img src="/images/member-visitors-check-in-and-check-out-3.png" alt="إدخال الرمز" />
+5. إذا كان صالحًا، تتأكد الزيارة ويتلقى المضيف [إشعارًا](/ar/member/account/notifications). <img src="/images/member-visitors-check-in-and-check-out-4.png" alt="نجاح الدخول" />
+
+<Tip>
+  إذا فُقد الرمز، يمكن للمسؤول أو المضيف رؤيته في تفاصيل الزيارة.
+</Tip>
+
+## التسجيل الذاتي
+
+1. يختار الزائر **لا** عند سؤاله عن الرمز.
+2. يُدخل الاسم واللقب والبريد والهاتف اختياريًا، ويبحث عن المضيف وفق [إعدادات البحث عن المضيف](/ar/admin/service/visitors/set-up-visitors). <img src="/images/member-visitors-check-in-and-check-out-5.png" alt="بيانات الطلب" />
+3. بعد الإرسال، يتلقى المضيف إشعارًا للموافقة أو الرفض. <img src="/images/member-visitors-check-in-and-check-out-6.png" alt="انتظار الموافقة" />
+
+## التسجيل بواسطة مسؤول
+
+1. يفتح المسؤول **الخدمة \> الزوار** في بوابة الإدارة.
+2. يضغط على **طلب جديد**. <img src="/images/member-visitors-check-in-and-check-out-7.png" alt="طلب جديد" />
+3. يدخل بيانات الزائر ويحدد المضيف.
+4. يضغط على **طلب**.
+5. يتلقى المضيف إشعارًا ويمكنه [الموافقة أو الرفض](/ar/member/visitors/preregister-and-approve-visit-requests).
+
+## تسجيل الخروج
+
+إذا فُعّل [**تسجيل الخروج**](/ar/admin/service/visitors/set-up-visitors)، يدخل الزائر رمز الزيارة عند الاستقبال. يضيف ذلك طابعًا زمنيًا ويسمح [بتتبع مدة الزيارة](/ar/admin/service/visitors/track-and-manage-visits).
+
+![تسجيل الخروج](/images/member-visitors-check-in-and-check-out-8.png)
+
+## استكشاف مشكلات الدخول
+
+<Accordion title="1. اتصال إنترنت غير مستقر">
+  أعد توصيل الجهاز بشبكة Wi-Fi أو استخدم شبكة أخرى.
+</Accordion>
+
+<Accordion title="2. اختيار موقع خاطئ">
+  أغلق تطبيق الاستقبال، ثم [افتحه وسجّل الدخول](/ar/admin/service/visitors/set-up-visitors) واختر الموقع الصحيح. <img src="/images/member-visitors-check-in-and-check-out-9.png" alt="اختيار الموقع" />
+</Accordion>
+
+<Accordion title="3. الزائر سجّل دخوله بالفعل">
+  يصبح الرمز غير صالح بعد استخدامه. وإذا سجّل الزائر ذاتيًا وقبل المضيف الطلب، يحدث الدخول تلقائيًا ويُستخدم الرمز للخروج فقط.
+
+  راجع الحالة من **RNTOR \> الخدمة \> الزوار**: <img src="/images/member-visitors-check-in-and-check-out-10.png" alt="حالة الزيارة" />
+
+  - دائرة فارغة: لم يدخل.
+  - خضراء: دخل.
+  - بنفسجية: دخل وخرج.
+</Accordion>
+
+<Accordion title="4. الزيارة في تاريخ أو وقت آخر">
+  يعمل الرمز في التاريخ والوقت المحددين فقط. اطلب من المضيف فتح صفحة الزوار و[تعديل الزيارة](/ar/admin/service/visitors/track-and-manage-visits).
+</Accordion>
+
+**الأسئلة الشائعة**
+
+<Accordion title="هل تنتهي صلاحية رمز الدخول؟">
+  الرمز لمرة واحدة ويظل صالحًا في يوم الزيارة حتى نهاية اليوم. توضح الدعوة وقت انتهاء الصلاحية.
+</Accordion>
+
+<Accordion title="هل يوافق الزوار على سياسة الخصوصية؟">
+  تتضمن الدعوة رابط البوابة. بعد فتحه والمتابعة، يقرأ المستخدم معلومات البيانات والخصوصية، وتُعد المتابعة موافقةً عليها.
+</Accordion>

@@ -3,4 +3,56 @@ title: "قبول مدفوعات الفواتير عبر الخصم المصرف�
 description: "تحصيل مدفوعات الفواتير من خلال الخصم المصرفي عبر Stripe."
 ---
 
-قريباً.
+يمكنك تقليل رسوم المعالجة بقبول الفواتير عبر الخصم البنكي.
+
+<Info>
+  تتوفر الوظيفة حصريًا عبر [Stripe](/ar/admin/integrations/payments/stripe/stripe).
+</Info>
+
+## التفعيل
+
+1. انتقل إلى **التكاملات \> Stripe**.
+2. في **إعدادات الدفع** افتح **(...)** بجوار **مدفوعات الفواتير** ثم **تعديل**. <img src="/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-1.png" alt="إعداد الفواتير" />
+3. في Stripe، فعّل طرق الخصم التي يدعمها حسابك. <img src="/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-2.png" alt="طرق الخصم" />
+
+| **الطريقة** | **المنطقة** | **الدفع التلقائي** |
+| --- | --- | --- |
+| ACH Direct Debit | الولايات المتحدة | ✓ |
+| Australia BECS | أستراليا | ✓ |
+| Bacs | المملكة المتحدة | ✓ |
+| NZ BECS | نيوزيلندا | ✓ |
+| Pre-Authorized Debits | كندا | ✓ |
+| SEPA | أوروبا | ✓ |
+
+<Info>
+  الحد الأقصى لمعاملة SEPA هو 10,000 يورو، وللمستخدم الجديد حد أسبوعي مماثل يرتفع مع الاستخدام. لزيادته، [تواصل مع Stripe](https://support.stripe.com/contact).
+</Info>
+
+## إضافة حساب بنكي
+
+### بصفة عميل
+
+يستطيع [العضو](/ar/admin/customer-management/users/members) أو [مدير الشركة](/ar/admin/customer-management/companies/company-members-and-managers):
+
+1. فتح **العضوية \> الفوترة \> الفواتير**.
+2. فتح فاتورة غير مدفوعة واختيار **طريقة دفع جديدة**.
+3. اختيار الخصم وإدخال الحساب.
+4. من صفحة الفوترة، اختيار **(...) \> تعيين كافتراضي**.
+
+<Info>
+  إذا دُفعت الفاتورة الأولى بالحساب البنكي، يُحفظ تلقائيًا كطريقة افتراضية.
+</Info>
+
+![حساب بنكي محفوظ](/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-3.png)
+
+يمكن أيضًا [إضافة الحساب يدويًا وتعيينه افتراضيًا](/ar/admin/billing/payments/payment-gateway).
+
+![إضافة الحساب](/images/integrations/payments-stripe-accept-invoice-payments-with-bank-debits-4.png)
+
+<Info>
+  يمكن إضافة ACH وAustralia BECS وNZ BECS وPADs وSEPA يدويًا، أما Bacs فيُضاف عبر دفع فاتورة.
+</Info>
+
+### بصفة مسؤول
+
+يستطيع المسؤول [إضافة حساب العميل وتعيينه افتراضيًا](/ar/admin/billing/payments/payment-gateway) للدفع التلقائي.

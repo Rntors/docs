@@ -3,4 +3,95 @@ title: "صيانة تطبيق الأعضاء للهاتف المحمول"
 description: "صيانة وتحديث تطبيق الأعضاء للهاتف المحمول"
 ---
 
-محتوى نائب.
+يتولى فريقنا نشر التطبيقات وصيانتها، ويتطلب ذلك وصولًا متواصلًا إلى حساب Apple Developer. يجب أن يحافظ المالك على عضوية نشطة ويقبل اتفاقيات Apple ويتولى المتطلبات التالية.
+
+## عضوية Apple Developer
+
+تأكد من نجاح تحصيل الرسوم السنوية. لا تدفع المؤسسة غير الربحية المؤهلة الرسوم.
+
+<Warning>
+  حتى إعادة تفعيل العضوية، لا نستطيع تحديث التطبيقات ويُزال تطبيق iOS من App Store.
+</Warning>
+
+## اتفاقية ترخيص Apple Developer
+
+تحدّث Apple الاتفاقيات أحيانًا ويلزم المالك قبولها. اتبع [إرشادات Apple](https://developer.apple.com/help/app-store-connect/manage-agreements/sign-and-update-agreements).
+
+<Warning>
+  حتى قبول الاتفاقية الجديدة، لا يمكننا نشر إصدارات جديدة بسبب قيد من Apple.
+</Warning>
+
+<Tip>
+  إذا فات التطبيق إصدار بسبب انتهاء العضوية أو انتظار الاتفاقية، يُحدّث في الإصدار التالي.
+</Tip>
+
+## الامتثال لقانون الخدمات الرقمية
+
+تطلب Apple حالة التاجر للنشر في الاتحاد الأوروبي:
+
+1. افتح [Business](https://appstoreconnect.apple.com/business).
+2. اضغط **Complete Compliance Requirements**، واختر الحالة وأكمل الخطوات.
+
+<Tip>
+  راجع [وثائق Apple](https://developer.apple.com/help/app-store-connect/manage-compliance-information/manage-european-union-digital-services-act-trader-requirements/).
+</Tip>
+
+## سياسة الخصوصية وشروط الاستخدام
+
+تتطلب Apple وGoogle [سياسة خصوصية](/ar/admin/general/privacy-policy) و[شروط استخدام](/ar/admin/general/terms-of-use) صالحتين.
+
+## حل مشكلات الوصول
+
+<Accordion title="1. تحقق من الإنترنت">
+  أعد الاتصال بشبكة Wi-Fi إذا كان الاتصال ضعيفًا.
+</Accordion>
+
+<Accordion title="2. التطبيق غير موجود في App Store أو Google Play">
+  قد يرجع ذلك إلى:
+
+  - مشكلة مؤقتة في المتجر؛ حدّثه أو تحقق من تحديثاته.
+  - التطبيق لم يُنشر بعد أو أُزيل.
+  - البحث باسم غير صحيح.
+  - عدم [توافق نظام الجهاز](/ar/admin/general/member-mobile-app/get-started).
+</Accordion>
+
+<Accordion title="3. التطبيق قديم">
+  - قد يتوفر تحديث؛ راجع المتجر أو اضغط **تحديث**.
+  - إذا تعذر الوصول إلى تطبيق iOS، فتأكد من تنفيذ متطلبات [الصيانة](/ar/admin/general/member-mobile-app/maintain-member-mobile-app).
+</Accordion>
+
+<Accordion title="4. التطبيق معلّق">
+  إذا عُلّق اشتراك RNTOR، تظهر رسالة «الخدمة غير متاحة. تواصل مع المسؤول». وفق [الشروط](https://rntor.com/terms)، يحدث التعليق تلقائيًا إذا لم تُدفع الفاتورة خلال مهلة 7 أيام.
+
+  <Info>
+    لا يمكن تعديل التعليق الناتج عن عدم الدفع يدويًا بسبب الطبيعة الآلية للاشتراكات.
+  </Info>
+
+  لاستعادة الوصول، يجب على [المالك](/ar/admin/administration/administrators/owner) [سداد الدفعة المستحقة](/ar/admin/administration/billing/make-changes-to-rntor-subscription#تحديث-بيانات-الدفع-أو-الفوترة).
+</Accordion>
+
+<Accordion title="5. اشتراك RNTOR لم يعد نشطًا">
+  عند إلغاء الاشتراك، يُلغى نشر تطبيق الجوال ويُقيد الوصول إلى تطبيق الويب في تاريخ الإلغاء.
+</Accordion>
+
+**الأسئلة الشائعة**
+
+<Accordion title="ماذا أفعل إذا لم أجد تطبيقي في نتائج البحث؟">
+  يعتمد البحث على الاسم واسم المطور والوصف وعوامل أخرى. راجع [منشور Google Play](https://support.google.com/googleplay/android-developer/thread/231101934/app-is-not-showing-on-play-store?hl=ar) و[دليل App Store](https://developer.apple.com/app-store/search/#:~:text=Search%20results%20are%20ranked%20based,User%20behavior.).
+</Accordion>
+
+<Accordion title="ماذا أفعل إذا رفضت Apple تطبيق iOS؟">
+  يتلقى فريقنا رسالة الرفض ويتابعها مع Apple. قد تتراوح الأسباب من رابط سياسة لا يعمل إلى خطأ من Apple، وسنعيد التقديم خلال 24–48 ساعة ونتواصل معك عند الحل.
+</Accordion>
+
+<Accordion title="هل أقبل اتفاقيتي التطبيقات المدفوعة والمجانية؟">
+  إذا ظهرتا معًا، تواصل مع دعم Apple بشأن **Paid Apps Agreement**، ونفّذ جميع المتطلبات الموضحة في [هذا الدليل](/ar/admin/general/member-mobile-app/maintain-member-mobile-app).
+</Accordion>
+
+<Accordion title="كم تبلغ رسوم عضوية Apple Developer؟">
+  يعمل RNTOR مستقلًا عن Apple ولا يملك تفاصيل أسعارها. تواصل مع Apple للرسوم. لا يفرض RNTOR رسومًا إضافية على ربط الخدمات؛ تحقق فقط من توفر التكامل في خطتك على [صفحة الأسعار](https://rntor.com/pricing).
+</Accordion>
+
+<Accordion title="ماذا أفعل إذا وصلني بريد عن Distribution Certificate؟">
+  يتولى فريقنا إنشاء هذه الشهادات ويتلقى الإشعارات نفسها، ولا يلزمك أي إجراء.
+</Accordion>

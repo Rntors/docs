@@ -3,4 +3,69 @@ title: "البدء"
 description: "البدء باستخدام تطبيق الأعضاء للهاتف المحمول"
 ---
 
-محتوى نائب.
+تطبيق الجوال للأعضاء هو تطبيق بعلامتك على Google Play وApp Store، يتيح للعملاء الوصول بسهولة إلى الحجوزات والمدفوعات وجميع الخدمات.
+
+تزيد تجربة الهاتف الحديثة تفاعل الأعضاء وتقوي العلامة وتبقيك متصلًا بهم لحظيًا.
+
+## المتطلبات الأساسية
+
+1. افتح حساب Apple Developer باسم مؤسسة و[جهزه لتقديم التطبيقات](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account).
+2. [أنشئ مفتاح App Store Connect API](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account)، وانسخ Key ID وIssuer ID.
+3. جهز الأيقونة وفق [متطلبات Google وApple](/ar/admin/general/media-formats):
+   - **التنسيق:** SVG.
+   - **الحجم:** 72 × 72 بكسل.
+   - **الخلفية:** شفافة بلا خلفية.
+4. [اشترك في إضافة تطبيق الجوال](/ar/admin/administration/billing/make-changes-to-rntor-subscription) إن لم تكن فعلت.
+
+## إنشاء تطبيقاتك
+
+1. [ادعُ RNTOR](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account) عبر [publisher@rntor.com](mailto:publisher@andcards.com) إلى مؤسسة Apple Developer.
+2. ك[مالك](/ar/admin/administration/administrators/owner)، انتقل إلى **إعدادات الشبكة** \> **تطبيق الجوال للأعضاء** وأرسل:
+   - الرسم الأمامي ولون الخلفية.
+   - تفاصيل حساب Apple Developer.
+   - ملف مفتاح API وKey ID وIssuer ID.
+
+نبدأ إعداد تطبيقي iOS وAndroid بعد الإرسال، ونبلغك بالبريد عند نشرهما. وإذا رُفض التطبيق، نعيد إرساله إلى Apple وGoogle خلال 48 ساعة.
+
+<Info>
+  نستخدم في النشر الأول وصفًا وكلمات مفتاحية ولقطات شاشة نموذجية. بعد نشره بعلامتك، يمكنك [تحديث صفحة المتجر](/ar/admin/general/member-mobile-app/customize-member-mobile-app).
+</Info>
+
+### الاستعداد للتقديم
+
+تراجع Apple وGoogle المحتوى والوظائف، ويؤخر المحتوى الناقص الموافقة. قبل التقديم:
+
+1. تأكد من توافق [سياسة الخصوصية](/ar/admin/general/privacy-policy) و[شروط الاستخدام](/ar/admin/general/terms-of-use) واحتوائهما اسم الشبكة.
+2. أضف الموارد القابلة للحجز، مثل [الغرف](/ar/admin/resource-management/resources/set-up-resources#الغرف) و[المكاتب](/ar/admin/resource-management/resources/set-up-resources#المكاتب) و[المكاتب الخاصة](/ar/admin/resource-management/resources/set-up-resources#المكاتب-الخاصة)، مع صور غلاف. استخدم صورًا مؤقتة عند الحاجة.
+3. [أنشئ منشورًا](/ar/admin/engagement/feed) ترحيبيًا في **الخلاصة**.
+4. [أنشئ فعالية قادمة](/ar/admin/engagement/events/set-up-events) بوصف وصورة غلاف. ويمكن [تعديلها](/ar/admin/engagement/events/set-up-events#تعديل-فعالية) أو [حذفها](/ar/admin/engagement/events/set-up-events#حذف-فعالية) بعد النشر.
+5. [أكمل صفحة **المعلومات**](/ar/admin/location/information) بالصور والوصف والتواصل والجدول.
+
+## الوصول إلى التطبيقات
+
+- بعد النشر، تتحدث [صفحة الوصول](/ar/admin/general/member-web-portal/customize-landing-page) تلقائيًا وتعرض شعاري App Store وGoogle Play وروابط التنزيل.
+
+![روابط تنزيل تطبيق الجوال](/images/member-mobile-app-1.png)
+
+- شارك الروابط في موقعك أو رموز QR أو الشبكات الاجتماعية أو الإعلانات. [الترويج للتطبيق](/ar/guides/promotion/promote-member-web-portal-and-mobile-app)
+
+<Info>
+  يتطلب التنزيل Android 8.0 أو أحدث، أو iOS 17.0 أو أحدث.
+</Info>
+
+## آلية عمل التطبيق
+
+- **بعلامتك وقابل للتخصيص:** شعارات وألوان و[إشعارات فورية](/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية).
+- **متاح في المتجرين:** تنزيل سهل على المنصتين.
+- **محسن للهاتف:** وظائف بوابة الويب نفسها بتجربة ملائمة للهاتف.
+- **تجربة أفضل:** حجوزات ومدفوعات وفعاليات وخدمات أسرع.
+
+**الأسئلة الشائعة**
+
+<Accordion title="كيف أختبر التطبيق قبل الإصدار؟">
+  جرّب تطبيقات عملاء RNTOR من روابط التنزيل أسفل صفحات وصولهم، مثل [FoundrSpace Coworking](https://app.foundrspace.com/) أو [Hatch Coworking](https://app.hatchcoworking.com/).
+</Accordion>
+
+<Accordion title="هل يوجد حد لطول اسم التطبيق؟">
+  نعم، الحد في App Store وGoogle Play هو **30 حرفًا**. استخدم اسمًا بديلًا إذا كان اسم المساحة أطول.
+</Accordion>

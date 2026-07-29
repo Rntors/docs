@@ -3,4 +3,91 @@ title: "نطاق مخصص لبوابة الويب الخاصة بالأعضاء"
 description: "إعداد نطاق مخصص لبوابة الويب الخاصة بالأعضاء"
 ---
 
-محتوى نائب.
+## ما النطاق الفرعي المخصص؟
+
+هو عنوان بعلامتك مثل members.coworkingspace.com أو residents.coworkingspace.com، ويُنشأ كنطاق فرعي من نطاق تملكه. أسماء شائعة:
+
+- members
+- portal
+- community
+- residents
+- app
+
+![مثال نطاق مخصص](/images/member-web-portal-manage-a-custom-third-level-domain-for-your-member-web-portal-1.png)
+
+## إعداد نطاق مخصص
+
+### لدى مسجل النطاق
+
+1. سجّل الدخول إلى حساب المسجل.
+2. افتح لوحة DNS.
+3. أنشئ سجلًا:
+
+| **النوع** | CNAME |
+| --- | --- |
+| **الاسم** | النطاق الفرعي، مثل members أو app أو community |
+| **القيمة** | cname.rntor.com |
+| **TTL** | اترك الافتراضي |
+
+تحقق من البيانات. تعليمات المسجلين:
+
+- [GoDaddy](https://www.godaddy.com/help/add-a-cname-record-19236?)
+- [Google Domains](https://support.google.com/domains/answer/3251147?hl=ar)
+- [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain)
+- [WordPress](https://wordpress.com/support/domains/connect-subdomain/#connecting-your-subdomain-to-an-external-site)
+- [WIX](https://support.wix.com/en/article/adding-or-updating-cname-records-in-your-wix-account)
+- [Webflow](https://university.webflow.com/lesson/connect-a-custom-domain)
+- [Squarespace](https://support.squarespace.com/hc/en-us/articles/360002101888-Adding-custom-DNS-records-to-your-Squarespace-managed-domain)
+
+### في RNTOR
+
+1. يضغط [المالك](/ar/admin/administration/administrators/owner) **(...)** بجوار اسم الشبكة.
+2. يفتح **إعدادات الشبكة** \> **بوابة الويب للأعضاء** \> **عام**.
+3. يدخل النطاق كاملًا في **النطاق المخصص**. إذا ظهر قسم **التحقق**، فأضف سجله المطلوب إلى DNS.
+
+![إضافة النطاق في RNTOR](/images/member-web-portal-manage-a-custom-third-level-domain-for-your-member-web-portal-2.png)
+
+### التحقق من الإعداد
+
+قد تستغرق سجلات DNS وقتًا للانتشار عالميًا، لكن CNAME عادةً أسرع من تغييرات خوادم الأسماء التي قد تستغرق 48 ساعة. افتح بوابتك تحت النطاق المخصص للتحقق.
+
+يظهر النطاق «غير متحقق» حتى يكتمل الانتشار.
+
+<Info>
+  يستطيع المالك الضغط **التحقق من تقدم الانتشار** أسفل الحقل للانتقال إلى [DNS Checker](https://dnschecker.org/) والبحث عن حالة السجل.
+</Info>
+
+## النقل إلى مزود استضافة آخر
+
+1. أنشئ [السجل نفسه](#لدى-مسجل-النطاق) في لوحة المزود الجديد.
+2. احذف السجلات من المزود القديم.
+
+## تغيير اسم النطاق
+
+1. أنشئ سجلًا للنطاق الجديد.
+2. أدخل النطاق الجديد في **إعدادات الشبكة** \> **بوابة الويب للأعضاء** \> **عام**.
+3. احذف سجل النطاق القديم.
+
+## حل مشكلات النطاق المخصص
+
+إذا وصلتك رسالة آلية عن مشكلة، فقد اكتشف RNTOR خللًا في عنوان البوابة.
+
+<Accordion title="1. مشكلة مؤقتة لدى مزود النطاق">
+  قد يتعطل المزود مؤقتًا أو يفشل حل DNS في مناطق محددة رغم عمله في بلدك. جرّب فتح البوابة تحت النطاق للتحقق.
+</Accordion>
+
+<Accordion title="2. إعداد CNAME غير صحيح">
+  افتح لوحة DNS وتأكد من تهيئة السجل [كما هو موضح](/ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#لدى-مسجل-النطاق).
+</Accordion>
+
+<Accordion title="3. النطاق غير مضاف إلى RNTOR">
+  قد يكون سجل DNS موجودًا لكن العنوان غير مضاف إلى حقل **النطاق المخصص**. يجب على [المالك](/ar/admin/administration/administrators/owner) مراجعة [إعدادات الشبكة](/ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#في-rntor). إذا أُزيل الحقل فلن تعمل البوابة بالعنوان.
+</Accordion>
+
+بعد الحل، تصلك رسالة تأكيد آلية. افتح البوابة تحت النطاق للتحقق.
+
+**الأسئلة الشائعة**
+
+<Accordion title="لماذا لا يعمل نطاقي المخصص؟">
+  راجع قسم [حل مشكلات النطاق المخصص](#حل-مشكلات-النطاق-المخصص).
+</Accordion>

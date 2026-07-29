@@ -4,4 +4,39 @@ description: "Configure the Mercado Pago integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح تكامل Mercado Pago استلام المدفوعات عبر RNTOR.
+
+<Info>
+  🌍 تتوفر Mercado Pago في الأرجنتين والبرازيل وتشيلي وكولومبيا والمكسيك وبيرو وأوروغواي.
+</Info>
+
+<Info>
+  Mercado Pago شركة مستقلة وغير تابعة لنا. تواصل معها مباشرة لأي استفسارات.
+</Info>
+
+## الربط
+
+1. احصل على **Access token** من لوحة Mercado Pago. [العثور على بيانات Mercado Pago](https://www.mercadopago.com.ar/developers/en/docs/checkout-api-orders/resources/credentials)
+2. انتقل إلى **التكاملات** عبر قائمة **(...)** بجوار اسم الموقع. <img src="/images/integrations/payments-mercado-pago-1.png" alt="صفحة التكاملات" />
+3. افتح **Mercado Pago**؛ تتضمن الصفحة زري **حول** و**المستندات**. <img src="/images/integrations/payments-mercado-pago-2.png" alt="صفحة Mercado Pago" />
+4. اضغط على **ربط**.
+5. أدخل Access token واختر عملة حسابك. <img src="/images/integrations/payments-mercado-pago-3.png" alt="بيانات Mercado Pago" />
+6. أكّد الاختيار وحدد الخدمات ثم اضغط على **حفظ**.
+
+<Warning>
+  يجب أن تطابق عملة الموقع عملة حساب Mercado Pago.
+</Warning>
+
+## آلية العمل
+
+![الدفع عبر Mercado Pago](/images/integrations/payments-mercado-pago-4.png)
+
+تظهر طريقة **Mercado Pago** في بوابة الأعضاء وتطبيقات الجوال. يُحوّل المستخدم إلى صفحة الدفع لإدخال بطاقة Mercado Pago أو بيانات المحفظة. تُدعم البطاقات الائتمانية وبطاقات الخصم، ويمكن دفع قيمة الغرف والمكاتب والفعاليات والمنتجات وحزم الرصيد والفواتير.
+
+## تحديد المعاملات
+
+استخدم External Reference المطابق لمعرّف المعاملة في [تقرير **المعاملات**](/ar/admin/analytics-reports/reports)، أو وقت المعاملة ووصف نوع الشراء.
+
+## قطع الاتصال
+
+انتقل إلى **التكاملات \> Mercado Pago** واضغط على **قطع الاتصال** وأكّد اختيارك.

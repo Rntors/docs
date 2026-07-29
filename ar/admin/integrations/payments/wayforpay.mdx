@@ -4,4 +4,49 @@ description: "Configure the WayForPay integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح تكامل WayForPay استلام المدفوعات عبر الإنترنت في RNTOR.
+
+<Info>
+  🌍 تتوفر WayForPay في أوكرانيا.
+</Info>
+
+<Info>
+  WayForPay شركة مستقلة وغير تابعة لنا. تواصل معها مباشرة لأي استفسارات.
+</Info>
+
+## الربط
+
+1. انتقل إلى **التكاملات** عبر قائمة **(...)** بجوار اسم الموقع. <img src="/images/integrations/payments-wayforpay-1.png" alt="صفحة التكاملات" />
+2. افتح **WayForPay**؛ تتضمن الصفحة زري **حول** و**المستندات**. <img src="/images/integrations/payments-wayforpay-2.png" alt="صفحة WayForPay" />
+3. اضغط على **ربط**.
+4. أدخل **Merchant login** و**Merchant security key** ثم اربط. <img src="/images/integrations/payments-wayforpay-3.png" alt="بيانات WayForPay" />
+
+<Warning>
+  لحفظ البطاقات وتفعيل [الدفع التلقائي](/ar/admin/billing/subscriptions/control-invoice-auto-charge)، اطلب من دعم WayForPay تفعيل `робота з токенами`. من دونه سيعيد العملاء إدخال البطاقة لكل دفعة ويدفعون الفواتير يدويًا.
+</Warning>
+
+## الإعداد
+
+1. اختر الخدمات المقبولة: الحجوزات، التذاكر، المتجر، حزم الرصيد، والفواتير.
+2. فعّل أو عطّل **الاسترداد التلقائي** للحجوزات والتذاكر والطلبات المؤهلة. [فهم المبالغ المستردة](/ar/admin/billing/payments/refunds)
+
+![إعداد WayForPay](/images/integrations/payments-wayforpay-4.png)
+
+<Info>
+  يُفعّل الاسترداد التلقائي افتراضيًا عند الربط.
+</Info>
+
+## آلية العمل
+
+- تظهر **طريقة دفع جديدة** ضمن [طرق الدفع](/ar/admin/billing/payments/payment-methods)، ويُحوّل المستخدم إلى WayForPay لاختيار الطريقة المفعّلة.
+- تُحفظ البطاقة بعد أول دفعة في **العضوية \> الفوترة** للدفعات السريعة.
+- يستطيع المستخدم [إضافة بطاقاته أو حذفها](/ar/admin/billing/payments/payment-gateway).
+- تُستخدم [الطريقة الافتراضية](/ar/admin/billing/payments/payment-gateway) في [الدفع التلقائي](/ar/admin/billing/subscriptions/control-invoice-auto-charge).
+
+## تحديد المعاملات
+
+استخدم Order reference المطابق لمعرّف المعاملة في [تقرير **المعاملات**](/ar/admin/analytics-reports/reports)، أو وقتها ووصفها.
+
+## قطع الاتصال
+
+انتقل إلى **التكاملات \> WayForPay** واضغط على **قطع الاتصال** وأكّد اختيارك.
