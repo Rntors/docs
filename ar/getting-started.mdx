@@ -4,122 +4,112 @@ description: "دليل خطوة بخطوة لإعداد الشبكة والمو�
 sidebarTitle: "دليل البدء"
 ---
 
-يرشدك هذا الدليل إلى إعداد أول تكامل لك مع Rntor. بنهايته، ستحصل على بيانات اعتماد API واشتراك webhook فعّال.
+أعددنا هذا الدليل لمساعدتك على إعداد موقعك والانطلاق من الأساسيات. تعرّف على كيفية توفير الوقت وتقديم خدمة ممتازة للأعضاء باستخدام RNTOR.
 
-## المتطلبات الأساسية
+## إعداد الشبكة
 
-<Check>
-  حساب تاجر في Rntor مع صلاحيات المالك
-</Check>
+**الوقت الإجمالي: 10 دقائق**
 
-<Check>
-  الوصول إلى Settings → Developers في لوحة التحكم الخاصة بك
-</Check>
+ستحتاج إلى ما يلي:
 
-## الخطوة 1: الانتقال إلى Developers
+- مواد الهوية التجارية لنشاطك، بما في ذلك شعار مربع وألوان العلامة التجارية.
+- الوصول إلى لوحة تحكم اسم النطاق لإعداد [نطاق مخصّص](/ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal).
+- نص سياسة الخصوصية وشروط الاستخدام.
+- وصف لبوابة الأعضاء على الويب.
 
-1. سجّل الدخول إلى لوحة تحكم Rntor الخاصة بك
-2. انتقل إلى **Settings** في شريط التنقل الرئيسي
-3. اختر علامة التبويب **Developers**
+خطوات إعداد الشبكة:
 
-<Frame>
-  <img
-    alt="Developers Tab"
-    className="block dark:hidden"
-    src="/images/developer-light.png"
-  />
-  <img
-    alt="Developers Tab"
-    className="hidden dark:block"
-    src="/images/developer-dark.png"
-  />
-</Frame>
+1. سجّل الدخول إلى RNTOR بصفتك [مالكًا](/ar/admin/administration/administrators/owner).
+2. من اللوحة الجانبية اليسرى، اضغط على **(…)** بجوار اسم الشبكة، ثم اختر **إعدادات الشبكة \> عام**.
 
-## الخطوة 2: إنشاء بيانات اعتماد API
+![صورة](/images/getting-started-set-up-network-1.png)
 
-تُستخدم مفاتيح API لمصادقة تكاملك. وبينما لا تزال REST API قادمة قريباً، فإن إنشاء بيانات الاعتماد الآن يهيئك للوصول الفوري عند إطلاقها.
-
-1. في قسم **API Keys**، انقر على **Generate New Key**
-2. أدخل اسماً وصفياً (مثل "Production Integration" أو "Zapier Connection")
-3. راجع النطاقات الافتراضية
-4. انقر على **Generate**
+3. أعدّ [نطاقًا مخصّصًا](/ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal) وتذييل البريد الإلكتروني، ثم [خصّص مظهر بوابة الأعضاء على الويب](/ar/admin/general/member-web-portal/customize-member-web-portal) وأضف سياساتك.
 
 <Warning>
-  يتم عرض **Client Secret** الخاص بك مرة واحدة فقط. انسخه واحفظه بأمان فور إنشائه.
+  نظرًا إلى أنك تعالج بيانات شخصية، فقد تلزمك القوانين المعمول بها ومنصات نشر التطبيقات بالإفصاح عن ممارسات الخصوصية، كما تحظر المحتوى والسلوكيات غير المقبولة. أضف [سياسة الخصوصية](/ar/admin/general/privacy-policy) و[شروط الاستخدام](/ar/admin/general/terms-of-use)، وسيظهر كلاهما في بوابة الأعضاء على الويب وتطبيق الجوال.
 </Warning>
 
-ستتلقى:
+## إعداد المواقع
 
-- **Client ID**: `rntor_` متبوعاً بـ 24 حرفاً (آمن للتخزين، يُستخدم في الطلبات)
-- **Client Secret**: `sk_` متبوعاً بـ 40 حرفاً (احتفظ به سراً، يُستخدم للمصادقة)
+**الوقت الإجمالي: 15 دقيقة**
 
-```bash Example Credentials
-Client ID: rntor_abc123def456ghi789jkl012
-Client Secret: sk_mno345pqr678stu901vwx234yza567bcd890efg
-```
+ستحتاج إلى ما يلي:
 
-## الخطوة 3: إعداد نقاط نهاية Webhook
+- معلومات الموقع الأساسية، مثل الاسم والعنوان والوصف وبيانات التواصل وصورة أو مقطع فيديو.
+- أدلة الموقع، مثل تعليمات مواقف السيارات واصطحاب الحيوانات الأليفة والطباعة.
+- بيانات الفوترة والحساب البنكي لنشاطك.
+- معدل ضريبة المبيعات أو ضريبة القيمة المضافة المطبّق محليًا.
 
-تتيح لك Webhooks استقبال إشعارات في الوقت الفعلي عند وقوع الأحداث في Rntor.
+خطوات إعداد المواقع:
 
-1. انتقل إلى علامة التبويب **Webhooks**
-2. ستُحمَّل بوابة webhooks الخاصة بـ Svix
-3. انقر على **Add Endpoint**
-4. أدخل عنوان URL لنقطة النهاية الخاصة بك (يجب أن يكون HTTPS)
-5. اختر الأحداث التي تريد الاشتراك فيها
+1. يجب على المالك [إضافة جميع المواقع](/ar/admin/administration/locations).
+2. بصفتك [مسؤولًا](/ar/admin/administration/administrators/administrators)، اختر الموقع من اللوحة الجانبية اليسرى، واضغط على **(…)** بجواره، ثم اختر **إعدادات الموقع**.
+3. اضبط إعدادات الموقع العامة و[الفوترة](/ar/admin/billing/set-up-billing)، وفعّل الوحدات التي تحتاج إليها.
+4. اضغط على **(…)** بجوار الموقع، واختر **التكاملات**، ثم اربط التكاملات المطلوبة، مثل [بوابة الدفع](/ar/admin/integrations/payments/overview).
 
-<Tip>
-  ابدأ بعدد قليل من الأحداث الرئيسية مثل `booking.created` و `customer.created` لاختبار تكاملك.
-</Tip>
+![صورة](/images/getting-started-set-up-locations-1.png)
 
-### الاختبار محلياً
+## إعداد الموارد
 
-للتطوير المحلي، استخدم خدمة نفق:
+**الوقت الإجمالي: ساعة واحدة**
 
-```bash Using ngrok
-ngrok http 3000
-# Use the generated HTTPS URL as your webhook endpoint
-```
+ستحتاج إلى ما يلي:
 
-## الخطوة 4: تحقق من أول webhook
+- صور غلاف للغرف والمكاتب المشتركة والمكاتب الخاصة وأي خدمات أخرى تقدّمها.
+- أسعار مواردك.
 
-بمجرد الاشتراك، أطلق حدثاً في Rntor (مثل إنشاء حجز) وتحقق من:
+خطوات إعداد الموارد:
 
-1. أن نقطة النهاية الخاصة بك تتلقى طلب POST
-2. أن الحمولة تحتوي على البيانات المتوقعة
-3. أن التحقق من التوقيع يمر بنجاح (انظر [الأمان](/ar/webhooks/security))
+1. انتقل إلى **الموارد** واختر الصفحة المطلوبة.
 
-```javascript Example: Logging Received Webhooks
-app.post('/webhooks/rntor', (req, res) => {
-  console.log('Received webhook:', req.body);
-  
-  const { event_type, _meta } = req.body;
-  console.log(`Event: ${event_type}`);
-  console.log(`Merchant: ${_meta.merchant_id}`);
-  
-  res.status(200).send('OK');
-});
-```
+![صورة](/images/getting-started-set-up-resources-1.png)
 
-## الخطوات التالية
+- [الغرف](/ar/admin/resource-management/resources/set-up-resources#الغرف)
+- [المكاتب المشتركة](/ar/admin/resource-management/resources/set-up-resources#المكاتب)
+- [المكاتب الخاصة](/ar/admin/resource-management/resources/set-up-resources#المكاتب-الخاصة)
+- [مواقف السيارات](/ar/admin/resource-management/resources/set-up-resources#مواقف-السيارات)
+- [المعدات](/ar/admin/resource-management/resources/set-up-resources#المعدات)
 
-<CardGroup cols={2}>
-  <Card title="أمان Webhook" icon="shield" href="/webhooks/security">
-    طبّق التحقق من التوقيع لتأمين نقاط النهاية الخاصة بك
-  </Card>
+2. أنشئ مواردك واضبط أوقات إتاحتها وإعدادات ظهورها وأسعارها وقواعد الحجز أو الإيجار.
 
-  <Card title="مصادقة API" icon="key" href="/api-reference/authentication">
-    تعرّف على كيفية مصادقة طلبات API الخاصة بك
-  </Card>
-</CardGroup>
+## إعداد الخطط والعقود
 
-## حدود المعدل
+**الوقت الإجمالي: 30 دقيقة**
 
-تخضع جميع طلبات API لحدود معدل لضمان استقرار المنصة:
+ستحتاج إلى ما يلي:
 
-| الحد | القيمة |
-| --- | --- |
-| الطلبات لكل دقيقة | 60 |
-| حد الدفعة | 10 طلبات |
+- قائمة بخطط العضوية المتكررة، تتضمن العناوين والأسعار والأوصاف.
+- قوالب عقود للاتفاقيات الفردية مع عملائك.
 
-تجاوز هذه الحدود يُرجع استجابة `429 Too Many Requests`.
+خطوات أتمتة إصدار الفواتير والاشتراكات:
+
+1. انتقل إلى **الفوترة \> الخطط** ثم [أنشئ الخطط](/ar/admin/billing/plans/set-up-plans).
+2. [أضف باقات الاعتمادات والتصاريح اليومية](/ar/admin/billing/credits-and-day-passes/packages) و[الخصومات](/ar/admin/billing/discounts/coupons-and-promo-codes) عند الحاجة.
+3. [حمّل قوالب العقود](/ar/admin/billing/contracts/templates).
+
+![صورة](/images/getting-started-set-up-plans-and-contracts-1.png)
+
+4. اضغط على **بوابة الأعضاء على الويب** في اللوحة الجانبية اليسرى للتحقق من طريقة ظهور خدماتك للأعضاء.
+
+## دعوة الأعضاء
+
+**الوقت الإجمالي: 5 دقائق لكل حساب**
+
+ستحتاج إلى جدول بيانات يتضمن أسماء الأعضاء وعناوين بريدهم الإلكتروني ومعلومات اشتراكاتهم.
+
+خطوات دعوة الأعضاء:
+
+1. [أنشئ الشركات](/ar/admin/customer-management/companies/set-up-companies).
+2. [ادعُ الأعضاء](/ar/admin/customer-management/users/members) باستخدام ملف دعوة جماعية.
+3. [أنشئ الاشتراكات](/ar/admin/billing/subscriptions/set-up-subscriptions).
+4. عرّف الأعضاء بإمكانات تجربة العضو الجديدة من خلال الموجز والنشرات البريدية، ومن خلال [الترويج لبوابة الأعضاء على الويب وتطبيق الجوال](/ar/guides/promotion/promote-member-web-portal-and-mobile-app) عبر وسائل التواصل الاجتماعي وموقعك التسويقي.
+
+## استكشف الدوكس وRNTOR
+
+تابع ما يحدث في مساحة العمل المشتركة لحظة بلحظة من خلال بوابة مسؤولي RNTOR:
+
+- [افتح بوابة مسؤولي RNTOR](https://app.rntor.com)
+- [استكشف دوكس RNTOR](/ar/introduction)
+
+كلما احتجت إلى مساعدة، ابحث عن الإجابات في الدوكس أو [تواصل مع الدعم](/ar/admin/administration/contact-support).
