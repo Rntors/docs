@@ -3,4 +3,104 @@ title: "نطاق مخصص لبوابة الويب الخاصة بالأعضاء"
 description: "إعداد نطاق مخصص لبوابة الويب الخاصة بالأعضاء"
 ---
 
-محتوى نائب.
+## ما النطاق الفرعي المخصص؟
+
+هو اسم فريد يحمل علامتك ويعرّف موقعًا، مثل members.coworkingspace.com أو residents.coworkingspace.com. يكفي إنشاء نطاق فرعي باستخدام نطاق تملكه. ومن الأسماء الشائعة:
+
+- members
+- portal
+- community
+- residents
+- app
+
+![إعداد نطاق مخصص في RNTOR](/images/member-web-portal-manage-a-custom-third-level-domain-for-your-member-web-portal-1.png)
+
+## إعداد نطاق مخصص
+
+قبل إضافته في RNTOR، أكمل الإعداد لدى مسجّل النطاق.
+
+### في حساب مسجّل النطاق
+
+1. سجّل الدخول إلى مسجّل النطاق.
+2. افتح لوحة DNS.
+3. أنشئ السجل التالي:
+
+| **النوع** | CNAME |
+| --- | --- |
+| **الاسم** | اسم النطاق الفرعي، مثل members أو app أو community |
+| **القيمة** | cname.rntor.com |
+| **TTL** | اترك القيمة الافتراضية |
+
+راجع صحة البيانات. تعليمات المزودين الشائعين:
+
+- [GoDaddy](https://www.godaddy.com/help/add-a-cname-record-19236?)
+- [Google Domains](https://support.google.com/domains/answer/3251147?hl=en#zippy=%2Ccname)
+- [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain)
+- [WordPress](https://wordpress.com/support/domains/connect-subdomain/#connecting-your-subdomain-to-an-external-site)
+- [WIX](https://support.wix.com/en/article/adding-or-updating-cname-records-in-your-wix-account)
+- [Webflow](https://university.webflow.com/lesson/connect-a-custom-domain)
+- [Squarespace](https://support.squarespace.com/hc/en-us/articles/360002101888-Adding-custom-DNS-records-to-your-Squarespace-managed-domain)
+
+### في RNTOR
+
+بعد إكمال الإعداد لدى المسجّل:
+
+1. يفتح [المالك](/ar/admin/administration/administrators/owner) RNTOR ويضغط **(...)** بجانب اسم الشبكة.
+2. يختار **إعدادات الشبكة** \> **بوابة الويب للأعضاء** \> **عام**.
+3. يُدخل النطاق الفرعي كاملًا في حقل **النطاق المخصص**، مثل members.coworkingspace.com. إذا ظهر قسم **التحقق**، فأضف السجل المطلوب إلى DNS لإكمال العملية.
+
+![إضافة النطاق في RNTOR](/images/member-web-portal-manage-a-custom-third-level-domain-for-your-member-web-portal-2.png)
+
+### التحقق من الإعداد
+
+بعد تغيير سجلات DNS، تحتاج إلى وقت للانتشار عالميًا. بخلاف تغييرات خوادم الأسماء التي قد تستغرق 48 ساعة، ينتشر سجل CNAME عادةً بسرعة. تحقق بفتح بوابة الأعضاء على النطاق المخصص.
+
+يظل النطاق ظاهرًا بصفة غير موثق حتى تكتمل العملية والانتشار.
+
+<Info>
+  يستطيع المالك الضغط على **التحقق من تقدم الانتشار** أسفل الحقل للانتقال إلى [DNS Checker](https://dnschecker.org/)، ثم الضغط على **بحث** لرؤية حالة الانتشار.
+</Info>
+
+## نقل النطاق إلى مزود استضافة آخر
+
+1. افتح لوحة DNS لدى المزود الجديد و[أنشئ السجل](#في-حساب-مسجل-النطاق).
+2. احذف السجل السابق من المزود القديم.
+
+## تغيير اسم النطاق
+
+1. افتح لوحة DNS وأنشئ [سجلًا جديدًا](#في-حساب-مسجل-النطاق) للنطاق الجديد.
+2. أضف النطاق الجديد في **إعدادات الشبكة** \> **بوابة الويب للأعضاء** \> **عام** \> **النطاق المخصص**.
+3. احذف سجل النطاق القديم.
+
+## حل مشكلات النطاق المخصص
+
+إذا وصلتك رسالة آلية عن مشكلة، فهذا يعني أن RNTOR اكتشف خللًا في رابط بوابة الأعضاء. اتبع الخطوات التالية:
+
+<Accordion title="1. مشكلة مؤقتة لدى مزود النطاق">
+  تُرسل الرسالة عند اكتشاف مشكلة في سجل CNAME أو في النطاق نفسه.
+
+  - ربما واجه المزود عطلًا تقنيًا مؤقتًا.
+  - قد يعمل النطاق في بلدك لكنه يتعذر مؤقتًا في مناطق أخرى بسبب تحليل DNS.
+
+  جرّب فتح بوابة الأعضاء على النطاق للتحقق.
+</Accordion>
+
+<Accordion title="2. إعداد CNAME غير صحيح">
+  ربما أُعد السجل بصورة غير صحيحة. افتح لوحة DNS وتأكد من مطابقته [للقيم الموضحة](#في-حساب-مسجل-النطاق).
+</Accordion>
+
+<Accordion title="3. النطاق غير مضاف إلى حقل النطاق المخصص في RNTOR">
+  قد يكون سجل DNS موجودًا لكن النطاق غير مضاف إلى RNTOR.
+
+  يجب أن يراجع [المالك](/ar/admin/administration/administrators/owner) [**إعدادات الشبكة** \> **بوابة الويب للأعضاء** \> **عام**](#في-rntor) ويتأكد من إضافة النطاق الصحيح.
+
+  إذا أُزيل الحقل بالخطأ، فلن تعمل البوابة على الرابط المخصص.
+</Accordion>
+
+بعد حل المشكلة، تتلقى رسالة تأكيد آلية من RNTOR. افتح البوابة على النطاق للتحقق من عملها.
+
+**الأسئلة الشائعة**
+
+<Accordion title="لماذا لا يعمل النطاق المخصص؟">
+  راجع قسم [حل مشكلات النطاق المخصص](#حل-مشكلات-النطاق-المخصص) أعلاه.
+</Accordion>
