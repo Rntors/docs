@@ -4,4 +4,32 @@ description: "حل المشكلات الشائعة في مدفوعات Stripe."
 sidebarTitle: "استكشاف أخطاء المدفوعات الفاشلة"
 ---
 
-قريباً.
+إذا فشلت معاملة أو لم تجد دفعة، فراجع حالتها وسبب الخطأ.
+
+<Info>
+  تحتاج إلى [صلاحية مسؤول](/ar/admin/administration/administrators/administrators) في الموقع وإلى الوصول إلى لوحة Stripe.
+</Info>
+
+## 1. مراجعة الحالة في RNTOR
+
+انتقل إلى **الفوترة \> المعاملات \> الأموال**، وصفِّ حسب الشركة أو المستخدم، ثم مرّر فوق الحالة.
+
+![حالة المعاملة](/images/integrations/payments-stripe-troubleshoot-stripe-payments-1.png)
+
+## 2. مراجعة التفاصيل في Stripe
+
+للحالات الفاشلة أو قيد المعالجة أو المتنازع عليها، افتح المعاملة في RNTOR واضغط على **عرض في Stripe** لمشاهدة الرسائل وأسباب الفشل.
+
+![تفاصيل Stripe](/images/integrations/payments-stripe-troubleshoot-stripe-payments-2.png)
+
+أو نزّل [تقرير **المعاملات**](/ar/admin/analytics-reports/reports)، واعثر على المعاملة بالمبلغ أو الوقت أو الحالة، ثم انسخ ID وابحث به في Stripe.
+
+![معرّف المعاملة](/images/integrations/payments-stripe-troubleshoot-stripe-payments-3.png)
+
+<Info>
+  استخدم معرّف المعاملة دائمًا؛ فالأسماء وعناوين البريد قد تتغير.
+</Info>
+
+## 3. التواصل مع Stripe
+
+إذا لم يتضح السبب، قدّم معرّف المعاملة إلى دعم Stripe واطلب تفسير الخطأ والمساعدة في حله.

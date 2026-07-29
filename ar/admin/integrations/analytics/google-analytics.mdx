@@ -3,4 +3,46 @@ title: "Google Analytics"
 description: "تتبع النشاط باستخدام Google Analytics."
 ---
 
-قريباً.
+احصل على رؤى قيّمة حول سلوك المستخدمين وحسّن حملاتك الإعلانية من خلال تكامل Google Analytics مع بوابة الأعضاء على الويب.
+
+يمكنك استخدام Google Analytics 4 من أجل:
+
+- فهم كيفية تفاعل المستخدمين مع المحتوى في بوابة الأعضاء على الويب.
+- تتبّع الأحداث الرئيسية واستخدامها لتحسين حملات Google Ads.
+
+## ربط Google Analytics
+
+1. بصفتك [المالك](/ar/admin/administration/administrators/owner)، انقر على اسم الشبكة أعلى اليسار، ثم اختر **إعدادات الشبكة**.
+2. انتقل إلى **التكاملات \> Google Analytics**.
+3. اضغط على **ربط** وأدخل **معرّف القياس** لربط حساب GA4 بمنصة RNTOR.
+4. بعد الربط، تبدأ RNTOR في إرسال الأحداث المدعومة من بوابة الأعضاء على الويب إلى موقعك في GA4.
+
+![إعداد Google Analytics](/images/integrations/analytics-google-analytics-1.png)
+
+إضافةً إلى [أحداث Google Analytics 4 الافتراضية](https://support.google.com/analytics/answer/9234069)، يجري تتبّع الأحداث المخصصة التالية:
+
+| **اسم الحدث** | **التوضيح** |
+| --- | --- |
+| login | تسجيل المستخدمين الدخول إلى بوابة الأعضاء على الويب |
+| share | ضغط المستخدمين على زر **مشاركة** لمشاركة محتوى البوابة |
+| begin\_checkout | بدء المستخدمين عملية دفع في البوابة |
+| purchase | إتمام المستخدمين عملية شراء مالية ناجحة في البوابة |
+| add\_to\_cart | إضافة المستخدمين منتجات المتجر إلى سلة التسوق |
+| generate\_lead | حجز المستخدمين جولة من الصفحة الرئيسية لبوابة الأعضاء عبر التكامل مع [Calendly](/ar/admin/integrations/bookings/calendly) أو [HubSpot Meeting Scheduler](/ar/admin/integrations/bookings/hubspot-meeting-scheduler) |
+
+<Info>
+  يتوفر تكامل Google Analytics لتتبّع الأحداث في بوابة الأعضاء على الويب فقط.
+</Info>
+
+## ربط Google Analytics مع Google Ads
+
+يمكنك تحسين حملات Google Ads من خلال تتبّع أحداث المستخدمين في بوابة الأعضاء على الويب. لتتبّع التحويلات الناتجة عن حملتك:
+
+1. اربط حساب Google Analytics 4 بمنصة RNTOR.
+2. انتقل إلى حسابك في Google Ads واربطه بـGoogle Analytics وفق [إرشادات Google](https://support.google.com/google-ads/answer/1704341?hl=ar).
+
+<Tip>
+  تعرّف على كيفية الحصول على روابط صفحات محددة في بوابة الأعضاء وكيفية الترويج لها من [هنا](/ar/guides/promotion/integrate-with-your-marketing-website#buttons-for-specific-services).
+</Tip>
+
+3. راقب باستمرار مشتريات المستخدمين في البوابة، وتتبّع التحويلات الناتجة عن الحملات الإعلانية التي تتضمن هذه الروابط لاتخاذ قرارات مدروسة بشأن تحسين إعلانات Google.

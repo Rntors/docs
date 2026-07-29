@@ -4,4 +4,46 @@ description: "Configure the Freedom Pay integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح تكامل Freedom Pay استلام المدفوعات في RNTOR.
+
+<Info>
+  🌍 تتوفر Freedom Pay في كازاخستان وقيرغيزستان وأوزبكستان فقط.
+</Info>
+
+<Info>
+  Freedom Pay شركة مستقلة وغير تابعة لنا. تواصل معها مباشرة لأي استفسارات.
+</Info>
+
+## ربط Freedom Pay
+
+1. جهّز حساب Freedom Pay مفعّلًا بالكامل.
+2. اطلب من دعم Freedom Pay تفعيل الخاصية `pg_check_url` لحسابك؛ فهي مطلوبة لتحديث حالة دفع الحجوزات.
+3. انتقل إلى صفحة **التكاملات** عبر قائمة **(...)** بجوار اسم الموقع. <img src="/images/integrations/payments-freedom-pay-1.png" alt="صفحة التكاملات" />
+4. افتح **Freedom Pay**؛ تتضمن الصفحة زري **حول** و**المستندات**. <img src="/images/integrations/payments-freedom-pay-2.png" alt="صفحة Freedom Pay" />
+5. اضغط على **ربط**.
+6. أدخل بلد التاجر وMerchant ID وSecret Key. <img src="/images/integrations/payments-freedom-pay-3.png" alt="بيانات Freedom Pay" />
+7. اضغط على **ربط** واضبط الخدمات المقبولة.
+
+<Tip>
+  تجد البيانات في إعدادات متجر Freedom Pay.
+</Tip>
+
+<Warning>
+  تفعيل `pg_check_url` ضروري، وهو معطّل افتراضيًا ولا يتحكم فيه إلا Freedom Pay. من دونه قد يُخصم من المستخدم مقابل حجز محذوف.
+</Warning>
+
+## الإعداد
+
+يمكن تفعيل الدفع للحجوزات وتذاكر الفعاليات والمتجر والفواتير وحزم الرصيد.
+
+## آلية العمل
+
+تظهر طريقة **طريقة دفع جديدة** في بوابة الأعضاء وتطبيق الجوال، ويُحوّل المستخدم إلى صفحة Freedom Pay لاختيار إحدى الطرق المفعّلة في حسابك.
+
+## تحديد المعاملات
+
+استخدم رقم الطلب المطابق لمعرّف المعاملة في [تقرير **المعاملات**](/ar/admin/analytics-reports/reports)، أو وقت المعاملة ووصف نوع الشراء.
+
+## قطع الاتصال
+
+انتقل إلى **التكاملات \> Freedom Pay** واضغط على **قطع الاتصال** وأكّد اختيارك.

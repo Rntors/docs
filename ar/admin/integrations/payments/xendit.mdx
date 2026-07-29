@@ -4,4 +4,42 @@ description: "Configure the Xendit integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح تكامل Xendit استلام المدفوعات في RNTOR.
+
+<Info>
+  🌍 تتوفر Xendit في إندونيسيا وماليزيا والفلبين وسنغافورة وتايلاند وفيتنام.
+</Info>
+
+<Info>
+  Xendit شركة مستقلة وغير تابعة لنا. تواصل معها مباشرة لأي استفسارات.
+</Info>
+
+## ربط Xendit
+
+1. أنشئ Secret Key من لوحة Xendit. [معرفة المزيد](https://docs.xendit.co/docs/api-keys)
+2. انتقل إلى **التكاملات** عبر قائمة **(...)** بجوار اسم الموقع. <img src="/images/integrations/payments-xendit-1.png" alt="صفحة التكاملات" />
+3. افتح صفحة **Xendit**. <img src="/images/integrations/payments-xendit-2.png" alt="صفحة Xendit" />
+4. اضغط على **ربط**.
+5. أدخل Secret Key واختر البلد المطابق لبلد تشغيل حساب Xendit، ثم اربط. <img src="/images/integrations/payments-xendit-3.png" alt="بيانات Xendit" />
+
+<Warning>
+  تدعم Xendit العملات IDR وMYR وPHP وSGD وTHB وUSD وVND فقط. يجب أن تكون عملة الموقع إحداها.
+</Warning>
+
+6. فعّل في Xendit قنوات الدفع المطلوبة، مثل المحافظ والتحويلات/الحسابات الافتراضية ورموز QR ومنافذ البيع. راجع [قنوات الدفع المتاحة](https://docs.xendit.co/docs/available-payment-channels).
+
+## الإعداد
+
+فعّل الدفع للحجوزات وتذاكر الفعاليات ومنتجات المتجر وحزم الرصيد والفواتير.
+
+## آلية العمل
+
+تظهر **طريقة دفع جديدة** عند إتمام الشراء، ويُحوّل المستخدم إلى صفحة Xendit لاختيار إحدى القنوات المفعّلة.
+
+## تحديد المعاملات
+
+يطابق Reference ID معرّف الحجز أو التذكرة أو الطلب أو العضوية، ويمكن البحث أيضًا بتاريخ المعاملة ووقتها.
+
+## قطع الاتصال
+
+انتقل إلى **التكاملات \> Xendit** واضغط على **قطع الاتصال** وأكّد اختيارك.

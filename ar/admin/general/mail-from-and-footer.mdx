@@ -3,4 +3,143 @@ title: "MAIL FROM وتذييل البريد الإلكتروني"
 description: "تكوين MAIL FROM وتذييل البريد الإلكتروني"
 ---
 
-محتوى نائب.
+يتيح RNTOR إعداد عنوان MAIL FROM وتخصيص تذييل رسائل المعاملات لتبدو أكثر احترافية وتعكس علامتك ويسهل على العملاء التعرف عليها والثقة بها.
+
+## إعداد عنوان MAIL FROM مخصص
+
+تُرسل الرسائل افتراضيًا من [hello@transactional.rntor.com](mailto:hello@transactional.rntor.com) وتتضمن العنوان البريدي لـRNTOR للامتثال لأنظمة مكافحة الرسائل المزعجة. ويمكنك استبدال المرسل بعنوانك.
+
+<Info>
+  MAIL FROM المخصص إضافة برسوم إعداد لمرة واحدة. [الأسعار](https://rntor.com/pricing)
+</Info>
+
+1. راسل [support@rntor.com](mailto:support@rntor.com) وأرسل العنوان المطلوب.
+2. بعد التأكيد، نحصّل الرسوم مرة واحدة من طريقة الدفع الافتراضية مقابل استخدام دائم، ويمكن تغيير العنوان لاحقًا بلا رسوم إضافية.
+3. يرسل الفريق ملفًا بسجلات DNS وتعليمات إضافتها لدى مسجل نطاقك.
+4. أخبرنا بعد الإضافة لنتحقق منها ونفعّل العنوان.
+
+تعليمات أشهر المسجلين:
+
+- [GoDaddy](https://www.godaddy.com/help/manage-dns-records-680)
+- [Google Domains](https://support.google.com/domains/answer/3290350)
+- [Namecheap](https://www.namecheap.com/support/knowledgebase/subcategory/2237/host-records-setup/)
+- [WordPress](https://wordpress.com/support/domains/custom-dns/)
+- [WIX](https://support.wix.com/en/article/managing-dns-records-in-your-wix-account)
+- [Squarespace](https://support.squarespace.com/hc/en-us/articles/360002101888-Adding-custom-DNS-records-to-your-Squarespace-managed-domain)
+
+**نصائح**
+
+- تجنب العناوين العامة مثل info@؛ تميل عناوين مثل members@ أو hello@ إلى أن تبدو أوثق لمزودي البريد.
+- أضف سجل DMARC لتحسين التحقق والوصول:
+
+1. سجّل الدخول إلى مسجل النطاق.
+2. افتح إعدادات DNS.
+3. أنشئ سجلًا:
+
+| **النوع** | TXT |
+| --- | --- |
+| **الاسم** | \_dmarc |
+| **القيمة** | v=DMARC1; p=none; sp=none; pct=100; rua=mailto:[example@yourdomain.com](mailto:example@yourdomain.com);<br />استبدل البريد بعنوان مُدار لاستقبال تقارير DMARC. |
+| **TTL** | اترك القيمة الافتراضية |
+
+### آلية عمل MAIL FROM المخصص
+
+تُرسل جميع رسائل المعاملات، مثل الدعوات وتأكيدات الدفع والفواتير، من عنوانك المخصص للحفاظ على اتساق العلامة.
+
+![تخصيص عنوان المرسل](/images/emails-1.png)
+
+**النقل إلى مزود استضافة آخر**
+
+1. افتح لوحة DNS لدى المزود الجديد.
+2. أعد إنشاء السجلات نفسها.
+3. احذفها من المزود السابق.
+
+**النقل إلى نطاق آخر**
+
+1. اطلب سجلات جديدة من [الدعم](/ar/admin/administration/contact-support).
+2. أضفها إلى DNS النطاق الجديد.
+3. احذف سجلات النطاق القديم.
+
+## تخصيص تذييل البريد
+
+يمكنك إضافة اسم الشركة والعنوان البريدي والتفاصيل القانونية إلى تذييل كل رسالة. يقوم [المالك](/ar/admin/administration/administrators/owner) بما يلي:
+
+1. اضغط **(...)** بجوار اسم الشبكة.
+2. انتقل إلى **إعدادات الشبكة** \> **عام** \> **المعلومات**.
+3. في قسم **البريد الإلكتروني** \> **التذييل**، أدخل اسم الشركة وعنوانها.
+
+تظهر المعلومات نصًا عاديًا في جميع الرسائل المستقبلية.
+
+<Tip>
+  للامتثال لقانون CAN-SPAM، يجب إدراج عنوان بريدي فعلي صالح. [المزيد](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+</Tip>
+
+## حل مشكلات تسليم البريد
+
+<Accordion title="دعوات الانضمام">
+  إذا لم يجد العضو الدعوة، افتح **العملاء** \> المستخدم \> قسم **الدعوة**.
+
+  إذا فشل التسليم، تظهر رسالة خطأ «تعذر تسليم الدعوة...». عدم ظهورها يعني أن الرسالة سُلّمت وأن المشكلة في صندوق المستخدم.
+
+  ![خطأ تسليم الدعوة](/images/customer-management-troubleshoot-email-delivery-issues-1.png)
+
+  ### عند ظهور خطأ
+
+  1. تحقق من صحة البريد. إذا كان به خطأ، أزل المستخدم بزر **إزالة** وادعه مجددًا.
+  2. إذا كان صحيحًا، فقد يرفض مزود البريد رسائل RNTOR. اطلب من العضو التواصل مع فريق تقنية المعلومات والسماح برسائل [hello@transactional.rntor.com](mailto:hello@transactional.rntor.com).
+  3. يمكنك [إعداد MAIL FROM مخصص](/ar/admin/general/mail-from-and-footer)، وقد يحل المشكلة في بعض الحالات.
+
+  بعد الحل، استخدم **إعادة إرسال الدعوة**.
+
+  ### عند عدم ظهور خطأ
+
+  - اطلب منه مراجعة البريد المزعج وعوامل التصفية.
+  - اطلب السماح بعنوان RNTOR.
+  - استخدم بريدًا بديلًا مثل Gmail أو Hotmail.
+</Accordion>
+
+<Accordion title="الفواتير">
+  - تأكد من أن المستخدم يبحث في البريد المرتبط بحسابه، ويمكنه معرفته من **الحساب**.
+  - تحقق من إرسال الفاتورة. [إرسال فاتورة](/ar/admin/billing/invoices/issue-invoices)
+  - لفاتورة الشركة، تأكد من تحديد مدير الشركة وصحة بريده. [تحديد مديري الشركة](/ar/admin/customer-management/companies/set-up-companies#إضافة-أعضاء-الشركة-ومديريها)
+</Accordion>
+
+<Accordion title="رموز تسجيل الدخول">
+  إذا لم يصل رمز OTP:
+
+  1. راجع **العروض الترويجية** و**البريد المزعج** وعوامل التصفية.
+  2. تواصل مع مزود البريد للسماح بعنوان RNTOR.
+  3. إذا كان المستخدم داخلًا من جهاز آخر، فليتحقق من الرمز المرسل ك[إشعار فوري](/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية) إلى ذلك الجهاز.
+</Accordion>
+
+## تحسين قابلية وصول البريد
+
+**1. أضف العنوان إلى القائمة المسموح بها أو جهات الاتصال، أو حدده «ليس مزعجًا».**
+
+إذا وصلت الرسائل إلى مجلد البريد المزعج، اسمح بعنوان [hello@transactional.rntor.com](mailto:hello@transactional.rntor.com).
+
+- [Gmail](https://support.google.com/mail/answer/8151?hl=ar)
+- [Outlook](https://support.microsoft.com/ar-sa/office/add-recipients-to-the-safe-senders-list-in-outlook-be1baea0-beab-4a30-b968-9004332336ce)
+- [Yahoo](https://in.help.yahoo.com/kb/new-mail-for-desktop/add-edit-delete-contacts-yahoo-mail-sln28059.html)
+
+**2. [خصص تذييل البريد](#تخصيص-تذييل-البريد).**
+
+أضف معلومات نشاطك والعنوان والتنبيهات القانونية للحفاظ على المظهر والوضوح والامتثال.
+
+**3. [أعد MAIL FROM مخصصًا](#إعداد-عنوان-mail-from-مخصص).**
+
+لتصدر جميع الرسائل من عنوانك بصورة موحدة واحترافية.
+
+**الأسئلة الشائعة**
+
+<Accordion title="كم يستغرق تفعيل MAIL FROM بعد طلب الإضافة؟">
+  يعتمد على سرعة إضافة سجلات DNS. بعد إنشائها وإخطارنا خلال [ساعات الدعم](/ar/admin/administration/contact-support)، نتحقق منها ونفعّل العنوان.
+</Accordion>
+
+<Accordion title="هل يمكن إضافة عدة عناوين MAIL FROM؟">
+  تدعم الميزة عنوان مرسل واحدًا فقط، للحفاظ على الاتساق وتجنب إرباك المستلمين.
+</Accordion>
+
+<Accordion title="ماذا أفعل إذا لم تنجح خطوات الحل؟">
+  [تواصل مع الدعم](/ar/admin/administration/contact-support)، واذكر الخطوات المنفذة وبريد المستخدم.
+</Accordion>

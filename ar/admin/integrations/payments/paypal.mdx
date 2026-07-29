@@ -4,4 +4,44 @@ description: "Configure the PayPal integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح تكامل PayPal استلام المدفوعات عبر RNTOR.
+
+<Info>
+  🌍 يتوفر PayPal في أكثر من [190 دولة](https://www.paypal.com/ua/webapps/mpp/country-worldwide).
+</Info>
+
+<Info>
+  PayPal شركة مستقلة وغير تابعة لنا. لأي استفسارات عن حلولها أو خدماتها أو أسعارها، تواصل معها مباشرة.
+</Info>
+
+## ربط PayPal
+
+1. احصل على [بيانات API](https://developer.paypal.com/api/rest/#get-credentials):
+   1. افتح [لوحة PayPal](https://developer.paypal.com/dashboard/applications/live) وأنشئ تطبيق REST API.
+   2. افتح التطبيق وانسخ **Client ID** و**Secret**.
+2. انتقل إلى صفحة **التكاملات** عبر قائمة **(...)** بجوار اسم الموقع. <img src="/images/integrations/payments-paypal-1.png" alt="صفحة التكاملات" />
+3. افتح صفحة **PayPal**؛ تتضمن زري **حول** و**المستندات**. <img src="/images/integrations/payments-paypal-2.png" alt="صفحة PayPal" />
+4. اضغط على **ربط**.
+5. الصق Client ID وSecret واضغط على **ربط**. <img src="/images/integrations/payments-paypal-3.png" alt="بيانات PayPal" />
+
+<Warning>
+  يجب أن تكون عملة الموقع ضمن [العملات التي يدعمها PayPal](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/).
+</Warning>
+
+## آلية عمل PayPal
+
+يضيف التكامل طريقة **PayPal** إلى قسم الدفع في بوابة الأعضاء وتطبيق الجوال. يُحوّل المستخدم إلى صفحة PayPal لإكمال البيانات، ويمكنك تحديد الطرق المتاحة مثل البطاقات ورصيد PayPal. يستطيع الأعضاء دفع قيمة الغرف والمكاتب والفعاليات والمنتجات والأرصدة والفواتير.
+
+![الدفع عبر PayPal](/images/integrations/payments-paypal-4.png)
+
+## تحديد معاملات المستخدمين
+
+ابحث في لوحة PayPal باستخدام:
+
+- **ID:** يطابق Custom ID ويمكن نسخه من [تقرير **المعاملات**](/ar/admin/analytics-reports/reports).
+- **الوقت:** يطابق تاريخ المعاملة ووقتها.
+- **الوصف:** يوضح نوع الشراء، مثل حجز غرفة أو مكتب أو طلب متجر.
+
+## قطع الاتصال
+
+انتقل إلى **التكاملات \> PayPal** واضغط على **قطع الاتصال** وأكّد اختيارك.
