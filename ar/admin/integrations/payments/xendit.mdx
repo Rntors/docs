@@ -4,4 +4,43 @@ description: "Configure the Xendit integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح التكامل استقبال المدفوعات في RNTOR.
+
+## ربط Xendit
+
+1. أنشئ Secret Key من لوحة Xendit. [معرفة المزيد](https://docs.xendit.co/docs/api-keys).
+2. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+
+![Xendit 1](/images/integrations/payments-xendit-1.png)
+
+3. افتح **Xendit**.
+
+![Xendit 2](/images/integrations/payments-xendit-2.png)
+
+4. اضغط **ربط**.
+5. ألصق **Secret Key** واختر **الدولة** المطابقة لدولة تشغيل الحساب واضغط **ربط**.
+
+![بيانات Xendit](/images/integrations/payments-xendit-3.png)
+
+<Warning>
+  يدعم Xendit عملات IDR وMYR وPHP وSGD وTHB وUSD وVND. يجب أن تكون عملة الموقع إحداها.
+</Warning>
+
+6. فعّل قنوات الدفع المطلوبة في حساب Xendit، مثل المحافظ والتحويلات والحسابات الافتراضية ورموز QR ومنافذ البيع. راجع [القنوات المتاحة](https://docs.xendit.co/docs/available-payment-channels).
+
+## الإعداد
+
+فعّل الدفع للحجوزات وتذاكر الفعاليات ومنتجات المتجر وحزم الرصيد والفواتير.
+
+## كيفية العمل
+
+يضيف التكامل **طريقة دفع جديدة** وينقل المستخدم إلى صفحة Xendit لاستخدام أي قناة مفعّلة في حسابك.
+
+## العثور على المعاملات
+
+- **Reference ID** — يطابق معرف الحجز أو التذكرة أو الطلب أو العضوية.
+- **الوقت** — تاريخ المعاملة ووقتها.
+
+## الفصل
+
+انتقل إلى **التكاملات** \> **Xendit**، واضغط **فصل** وأكّد.

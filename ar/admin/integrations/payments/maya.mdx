@@ -4,4 +4,43 @@ description: "Configure the Maya integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح التكامل استقبال المدفوعات في RNTOR.
+
+## ربط Maya
+
+1. أنشئ مفتاحَي Public وSecret API من لوحة Maya.
+2. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+
+![Maya 1](/images/integrations/payments-maya-1.png)
+
+3. افتح **Maya** واضغط **ربط**.
+
+![Maya 2](/images/integrations/payments-maya-2.png)
+
+4. ألصق المفتاحين واضغط **ربط**.
+
+![Maya 3](/images/integrations/payments-maya-3.png)
+
+5. أدخل رابط Webhook: [https://api.rntor.com/integrations/maya/v1.0/payments/webhook](https://api.rntor.com/integrations/maya/v1.0/payments/webhook).
+
+<Tip>
+  تدعم Maya ميزة [Authorize (Hold) and Capture](https://developers.maya.ph/docs/authorize-hold-and-capture) لحجز أموال المستخدم مؤقتًا ثم تحصيلها. لتفعيلها، تواصل مع دعم Maya.
+</Tip>
+
+## الإعداد
+
+فعّل الدفع للحجوزات وتذاكر الفعاليات ومنتجات المتجر وحزم الرصيد والفواتير.
+
+## كيفية العمل
+
+يضيف التكامل **طريقة دفع جديدة** وينقل المستخدم إلى صفحة Maya لاستخدام الطرق المفعّلة.
+
+## العثور على المعاملات
+
+- معرف الحجز أو التذكرة أو الطلب أو العضوية يطابق **Reference Number**.
+- **الوقت** — تاريخ المعاملة ووقتها.
+- **العناصر** — نوع الشراء.
+
+## الفصل
+
+انتقل إلى **التكاملات** \> **Maya**، واضغط **فصل** وأكّد.

@@ -4,4 +4,61 @@ description: "Configure the Luckey integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يؤتمت تكامل RNTOR مع Luckey الدخول الفعلي إلى الموقع.
+
+<Info>
+  Luckey شركة مستقلة وغير تابعة لـRNTOR. للاستفسار عن حلولها أو خدماتها أو أسعارها، تواصل معها مباشرة.
+</Info>
+
+## المتطلبات الأساسية
+
+1. اشتراك RNTOR نشط.
+2. شراء [إضافة API](https://rntor.com/pricing).
+
+## ربط Luckey
+
+<Tip>
+  قبل التفعيل، أعدّ **قواعد الدخول عبر الهاتف الذكي** في Luckey لخطط RNTOR أو الشركات. وبذلك يحصل المستخدمون الجدد المضافون إلى وسم المستخدم الصحيح على بيانات اعتماد الدخول المناسبة تلقائيًا.
+</Tip>
+
+1. ينتقل [المالك](/ar/admin/administration/administrators/owner) في RNTOR إلى **(...)** بجوار اسم الشبكة \> **إعدادات الشبكة**.
+2. يفتح **المطورون** وينسخ Client ID وClient secret.
+
+![بيانات الربط](/images/integrations/access-control-luckey-1.png)
+
+3. في لوحة Luckey، افتح **Settings** \> **RNTOR**، وأدخل القيمتين.
+4. اختر موقع RNTOR الذي تريد ربطه بنظام Luckey.
+
+## إعداد الدخول
+
+يمكن منح الصلاحية بناءً على اشتراك المستخدم الفردي أو انضمامه إلى شركة.
+
+### الاشتراكات الفردية
+
+1. [ادعُ المستخدمين](/ar/admin/customer-management/users/members#دعوة-عضو) إلى RNTOR.
+2. [أنشئ اشتراكات](/ar/admin/billing/subscriptions/set-up-subscriptions) لهم باختيار خطة.
+
+### الشركات
+
+1. [ادعُ المستخدمين](/ar/admin/customer-management/users/members#دعوة-عضو).
+2. [أنشئ شركة](/ar/admin/customer-management/companies/set-up-companies) وأضف المستخدمين إليها.
+
+## آلية عمل التكامل
+
+- بعد التفعيل، يُزامن المدعوون إلى بوابة الأعضاء أو التطبيق مع Luckey لحظيًا، لكن دون منح الصلاحية افتراضيًا.
+- تُمنح الصلاحية فقط لمن لديه اشتراك فردي أو ينتمي إلى شركة، ويُسند إليه وسم Luckey المناسب تلقائيًا.
+- يتلقى المستخدم بعد المزامنة رسالة لتفعيل حساب Luckey.
+- أعدّ قواعد Smartphone Access في Luckey حتى يحصل المستخدم على بيانات الاعتماد الصحيحة.
+- تُلغى الصلاحية تلقائيًا عند إلغاء الاشتراك أو انتهائه أو إزالة المستخدم من الشركة.
+
+<Info>
+  تبقى الصلاحية فعالة من تاريخ بداية الاشتراك حتى نهايته أو إلغائه بصرف النظر عن حالة الفواتير. لإلغائها، [جدوِل نهاية الاشتراك](/ar/admin/billing/subscriptions/edit-a-subscription) أو [ألغِه](/ar/admin/billing/subscriptions/cancel-a-subscription).
+</Info>
+
+## فصل Luckey
+
+من لوحة Luckey، افتح **Settings** وعطّل RNTOR. تتوقف المزامنة فورًا، لكن يبقى المستخدمون وSmart Tags التي تمت مزامنتها سابقًا.
+
+<Info>
+  طوّر فريق Luckey هذا التكامل. تواصل مع دعمهم لأي أسئلة عن الربط أو مزامنة المستخدمين.
+</Info>

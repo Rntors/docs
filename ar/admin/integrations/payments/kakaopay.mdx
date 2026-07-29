@@ -4,4 +4,60 @@ description: "Configure the KakaoPay integration with RNTOR"
 hidden: true
 ---
 
-Coming soon.
+يتيح تكامل KakaoPay استقبال المدفوعات في RNTOR.
+
+<Info>
+  🌍 يتوفر KakaoPay في كوريا الجنوبية.
+</Info>
+
+<Info>
+  KakaoPay شركة مستقلة غير تابعة لنا. للاستفسار عن حلولها أو خدماتها أو أسعارها، تواصل معها مباشرةً.
+</Info>
+
+## ربط KakaoPay
+
+1. اضغط **(...)** بجانب اسم الموقع \> **التكاملات**.
+
+![تكامل KakaoPay 1](/images/integrations/payments-kakaopay-1.png)
+
+2. افتح **KakaoPay**، واستخدم **حول** للمعلومات العامة أو **الوثائق** للتعليمات.
+
+![تكامل KakaoPay 2](/images/integrations/payments-kakaopay-2.png)
+
+3. اضغط **ربط**.
+4. أدخل **Admin key** و**CID**.
+
+![بيانات KakaoPay](/images/integrations/payments-kakaopay-3.png)
+
+5. افتح حساب KakaoPay \> **My Application** \> **App Settings** \> **Platform**.
+6. في قسم **Web** أضف: [https://rntor.com](https://rntor.com) و[https://api.rntor.com](https://api.rntor.com).
+
+## إعداد KakaoPay
+
+1. اختر الخدمات القابلة للدفع:
+   - الحجوزات.
+   - تذاكر الفعاليات.
+   - منتجات المتجر.
+   - حزم الرصيد.
+   - الفواتير.
+2. فعّل أو عطّل **الرد التلقائي** للحجوزات والتذاكر والطلبات المؤهلة. [فهم المبالغ المستردة](/ar/admin/billing/payments/refunds).
+
+![إعداد KakaoPay](/images/integrations/payments-kakaopay-4.png)
+
+<Info>
+  يكون الرد التلقائي مفعّلًا افتراضيًا فور ربط التكامل.
+</Info>
+
+## كيفية عمل KakaoPay
+
+يضيف التكامل طريقة **KakaoPay** إلى صفحة الدفع. عند اختيارها ينتقل المستخدم إلى تطبيق KakaoPay ويستخدم إحدى الطرق المتاحة فيه.
+
+## العثور على المعاملات
+
+- **المعرّف** — يطابق **Order ID** في KakaoPay، ويمكن نسخه من تقرير [**المعاملات**](/ar/admin/analytics-reports/reports).
+- **الوقت** — يطابق تاريخ المعاملة ووقتها.
+- **الوصف** — نوع الشراء.
+
+## فصل KakaoPay
+
+انتقل إلى **التكاملات** \> **KakaoPay**، واضغط **فصل** وأكّد.
