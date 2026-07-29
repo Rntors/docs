@@ -2,4 +2,41 @@
 title: "إشعارات إخفاقات التكاملات"
 ---
 
-قريباً.
+يبلغك RNTOR بإخفاقات التكامل عبر [إشعارات المسؤول](/ar/admin/administration/your-account/notifications/set-up-notifications).
+
+![إشعار إخفاق](/images/account-notifications-integrations-failures-1.png)
+
+تتوفر الإشعارات لـGoogle Calendar وXero وQuickBooks Online:
+
+| التكامل | الخطأ | الحل |
+| --- | --- | --- |
+| Google Calendar | فشل إنشاء حجز لوجود حجز آخر في الوقت نفسه | تحقق من الحجز المطلوب مزامنته والحجز الموجود في RNTOR |
+| Google Calendar | فشل إنشاء حجز متكرر | لا يدعم التكامل تكرار الحجوزات؛ أنشئه مباشرة في RNTOR |
+| Xero | Account code '200' is not a valid code | افتح حساب المبيعات في Xero وأدخل 200 في حقل **Code** |
+| Xero | You must specify an Account ID for the payment | أدخل قيمة **Account ID** في حساب التسوية |
+| Xero | Organization is not subscribed to currency | أضف عملة الفاتورة إلى حساب Xero |
+| Xero | Bank account status invalid for payment creation | الحساب المحوّلة إليه المدفوعات حُذف أو أُرشف أو عُدّل؛ أصلحه وأعد ربط المدفوعات |
+| Xero | A required Xero account is not selected or invalid | افتح **التكاملات** \> **Xero** واختر حسابًا صالحًا لكل نوع عنصر وللمدفوعات |
+| QuickBooks Online | Make sure all your transactions have a sales tax rate | ضريبة الفاتورة لا تطابق QuickBooks؛ عدّل النسبة هناك أو [في RNTOR](/ar/admin/billing/taxes/set-up-taxes) |
+| QuickBooks Online | Subscription period has ended or canceled... | انتهت تجربة QuickBooks أو اشتراكه أو توجد مشكلة دفع؛ راجع **Subscriptions and billing** في الحساب |
+
+<Info>
+  تُرسل إشعارات الإخفاق إلى مسؤولي الموقع الذي وقع فيه الخطأ أو الانقطاع فقط.
+</Info>
+
+## حل مشكلات الاتصال
+
+RNTOR غير مسؤول عن أخطاء المنتجات الخارجية أو انقطاعها، لكنه يرسل الإشعارات لتحديد المشكلة بسرعة.
+
+### انتهاء صلاحية الاتصال
+
+- افصل التكامل في RNTOR.
+- أعد ربطه ببيانات الحساب المحدّثة.
+
+### التحقق من إعداد الحساب
+
+افتح لوحة المنتج الخارجي وتأكد من استيفاء متطلبات التكامل الموضحة في [مركز المساعدة](/ar/admin/integrations/set-up-integrations).
+
+### التواصل مع دعم المزود
+
+إذا استمرت المشكلة أو احتجت إلى توضيح، تواصل مع دعم المنتج الخارجي لإصلاح إعدادات حسابك.
