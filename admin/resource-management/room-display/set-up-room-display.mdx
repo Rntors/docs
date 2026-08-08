@@ -1,78 +1,113 @@
 ---
 title: "Room display"
-description: "Set up and configure Room display on tablet devices outside your room entrances to provide real-time room availability and instant bookings"
+description: "Set up and configure Room display on tablets outside room entrances to show real-time room availability, enable instant QR bookings, and prevent abandoned bookings"
 ---
 
-Room display is an app for showing real-time room availability on a tablet right next to the room entrance. It helps customers find free rooms, make instant bookings via QR code, and prevents abandoned bookings.
+Room display is an app that shows real-time room availability on a tablet next to the room entrance, so customers can find and book a free room without leaving the hallway.
 
 ## Prerequisites
 
-1. Have supported tablet devices:
-   * A minimum screen size of 7 inches.
-   * Support Google Play (for Android) or the App Store (for iPadOS).
-   * Android 8.0 or above, iOS/iPadOS 15.1 or later.
-2. Ensure your [rooms are added](/admin/resource-management/resources/set-up-resources#rooms) and configured in RNTOR with photos uploaded. The room photo is used as a room display background.
-3. Room display is available as a paid add-on on RNTOR legacy plans, and included at no additional cost with the new Business plan.
-   * If you’re on a legacy plan, [upgrade your subscription to the Business plan](/admin/administration/billing/make-changes-to-rntor-subscription).
+* The tablet has a minimum screen size of 7 inches and supports the App Store.
+* The tablet runs iOS or iPadOS 15.1 or later.
+* Your [rooms are added](/admin/resource-management/resources/set-up-resources#rooms) and configured in RNTOR with photos uploaded—the room photo is used as the Room display background.
 
 ## Set up Room display
 
-### Log in to and set up Room display
-
-1. Download the Room display app to your tablet(s) by following these links:
-   * Google Play: [https://play.google.com/store/apps/details?id=com.rntor.roomdisplay](https://play.google.com/store/apps/details?id=com.rntor.roomdisplay)
-   * App Store: [https://apps.apple.com/us/app/rntor-room-display/id6759832576](https://apps.apple.com/us/app/rntor-room-display/id6759832576)
+1. Download [RNTOR Room Display from the App Store](https://apps.apple.com/us/app/rntor-room-display/id6759832576) to your tablet.
 2. Open the app and press **Log in**.
-3. Log in with the account of an administrator for the location where you want to enable Room display.
-4. Select your network and relevant location.
-5. The rooms added to this location will appear. Press a room to activate Room display for it.
-6. To prevent strangers from shutting down the app and reopening your tablet, set up [Guided access](https://support.apple.com/en-us/HT202612) on iPad or [Screen pinning](https://support.google.com/android/answer/9455138?hl=en) on Android tablets.
-
-#### Exit Room display
-
-1. Turn off the [Guided access](https://support.apple.com/en-us/HT202612) on iPad or [Screen pinning](https://support.google.com/android/answer/9455138?hl=en) on Android.
-2. Close the app by swiping it up and off the screen.
-
-#### Log out from Room display
-
-To log out from your current account on the Room display:
-
-1. Close Room display by swiping it up and off the screen and reopen it.
-2. Tap the **(...)** button in the top right corner > **Log out**.
+3. Log in with the account of an administrator for the location where you want to set up Room display.
+4. Select your network and location.
+5. Select a room from the list to activate Room display for it.
+6. Lock the tablet so strangers can't close the app or reopen the device: set up [Guided Access](https://support.apple.com/guide/ipad/use-guided-access-ipada16d1374/ipados) on iPad.
 
 ## How Room display works
 
-* **Real-time availability:** Room display can be installed at the entrance of each room and shows its real-time availability with clear color indicators — green (available), yellow (available soon), and red (occupied). It makes it easy for customers to find an available room in your space.
+### Availability indicators
 
-### Available
+Room display signals room availability by tinting the background color of the tablet.
+
+| **Tablet color** | **Explanation** |
+| --- | --- |
+| Green | The room is available. The free time until the next booking is longer than the room's minimum booking duration. |
+| Yellow | The room becomes available in less than 60 minutes. |
+| Red | The room is unavailable for the next 60 minutes. |
+
+The display also shows the current and upcoming bookings, with the booker's full name, booking title, and time.
+
+<Info>
+  Room display respects a user's [privacy settings](/admin/customer-management/users/manage-user-account). If a user selects **Administrators** for their **Booking title visibility**, their booking title doesn't appear on the display.
+</Info>
+
+**Available**
 
 ![RNTOR Room Display showing a room available for booking](/images/resource-management-room-display-1.webp)
 
-### Available soon
+**Available soon**
 
 ![RNTOR Room Display showing when an occupied room becomes available](/images/resource-management-room-display-2.webp)
 
-### Occupied
+**Occupied**
 
 ![RNTOR Room Display showing an occupied room and its current meeting](/images/resource-management-room-display-3.webp)
 
-* **On-demand bookings:** At the entrance, users can instantly book an available room on demand by scanning a QR code from the Room display with their smartphone. The display updates immediately to reflect the new booking.
-* **Meeting progress and calendar:** The display shows the current meeting status, a progress bar, and upcoming bookings, helping users understand when the room will be free.
-* **Check-in and abandoned booking protection:** For totally free rooms, users can check in directly on the Room display. In case of no check-in, the system automatically removes the booking from the calendar, freeing up the space for others.
-* **Simple setup:** Room display runs on widely available OS or Android tablets, requiring no expensive hardware.
+### Ad-hoc QR bookings
 
-**FAQs**
+Room display shows a unique QR code for the room in the bottom-left corner of the screen. Scanning it takes the user to the room's booking calendar in the member web portal or mobile app, where they can book the room instantly.
 
-<Accordion title="Can I install Room display or Reception on a tablet without Google Play or App Store?">
-  The recommended and official way to install Room display and Reception apps is through Google Play Store or Apple App Store. Access to one of these stores is a key requirement as outlined in our [Room display/Reception tablet prerequisites](/admin/resource-management/room-display/set-up-room-display).
+### Abandoned booking protection
 
-  For Android tablets without Google Play access, we do offer APK versions of the Room Display and Reception apps. These can be downloaded here: https://www.rntor.com/download.
+To prevent no-shows, Room display supports a check-in feature for rooms that are completely free, with **Money** and **Credits** pricing disabled.
 
-  However, please note:
+#### Configure abandoned booking protection
 
-  * APK installations are not officially supported in the same way as store installations
-  * We cannot guarantee full functionality, stability, or automatic updates
-  * Some features may not work as expected depending on the device
+When [creating](/admin/resource-management/resources/set-up-resources#rooms) or editing a free room, enable **Check in** and set:
 
-  For the best experience and reliability, we strongly recommend using tablets that meet all system requirements, including access to Google Play or the App Store.
+* **Abandoned threshold**—how long after the booking start Room display waits for a check-in before canceling the booking.
+* **Early check in**—how long before the booking start the **Check in** button appears on Room display.
+
+#### Check in on Room display
+
+1. If **Check in** is enabled for a room, then when a user books it, the booking starts in a **Tentative** status.
+2. The **Check in** button appears on Room display based on the **Early check in** time, for example 10 minutes before the booking starts.
+3. If the user taps **Check in**, the booking status changes to **Confirmed** and a confirmation message appears on the screen.
+4. If nobody checks in before the **Abandoned threshold** passes, for example 5 minutes after the booking starts, the booking status changes to **Canceled** and is automatically removed from the calendar, freeing up the room for others.
+
+## Log out of Room display
+
+### Exit Room display
+
+1. Turn off [Guided Access](https://support.apple.com/guide/ipad/use-guided-access-ipada16d1374/ipados) on iPad.
+2. Close the app by swiping it up and off the screen.
+
+### Log out from Room display
+
+1. Close Room display by swiping it up and off the screen, then reopen it.
+2. Tap **(...)** in the top-right corner, then tap **Log out**.
+
+## Troubleshoot Room display
+
+<Accordion title="Poor internet connection">
+  If bookings don't appear on Room display or you can't access it, the tablet might have a weak or unstable internet connection. Reconnect the tablet to Wi-Fi or connect to a different network.
+</Accordion>
+
+<Accordion title="Logged in with the wrong email address">
+  To set up Room display for a room in a specific location, log in with an [administrator account](/admin/administration/administrators/administrators) for that location. [Log out of the app](#log-out-from-room-display) and log back in with an administrator account that has access to the correct location.
+</Accordion>
+
+<Accordion title="Outdated app version">
+  Make sure you're using the latest version of Room display. Check the App Store for updates, or tap **Update** if it's shown.
+</Accordion>
+
+<Accordion title="Your RNTOR subscription is not active">
+  [Check your RNTOR subscription](/admin/administration/billing/rntor-subscription) status to make sure it's active and not suspended.
+</Accordion>
+
+<Accordion title="The device doesn't meet technical requirements">
+  Make sure your tablet meets the [prerequisites](#prerequisites) to install Room display.
+</Accordion>
+
+## FAQs
+
+<Accordion title="Can I install Room display on a tablet without the App Store?">
+  The recommended and official way to install RNTOR Room Display is through the Apple App Store. Access to the App Store is a [requirement](#prerequisites). For the best experience, automatic updates, and reliability, use a tablet that meets all system requirements, including access to the App Store.
 </Accordion>
