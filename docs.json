@@ -215,21 +215,8 @@
                           "admin/resource-management/resources/hybrid-offices"
                         ]
                       },
-                      {
-                        "group": "Floors",
-                        "pages": [
-                          "admin/resource-management/floors/set-up-floor-plans",
-                          "admin/resource-management/floors/use-floor-plans",
-                          "admin/resource-management/floors/manage-floor-plans"
-                        ]
-                      },
-                      {
-                        "group": "Room display",
-                        "pages": [
-                          "admin/resource-management/room-display/set-up-room-display",
-                          "admin/resource-management/room-display/use-room-display"
-                        ]
-                      }
+                      "admin/resource-management/floors/set-up-floor-plans",
+                      "admin/resource-management/room-display/set-up-room-display"
                     ]
                   },
                   {
@@ -785,21 +772,8 @@
                           "ar/admin/resource-management/resources/hybrid-offices"
                         ]
                       },
-                      {
-                        "group": "الطوابق",
-                        "pages": [
-                          "ar/admin/resource-management/floors/set-up-floor-plans",
-                          "ar/admin/resource-management/floors/use-floor-plans",
-                          "ar/admin/resource-management/floors/manage-floor-plans"
-                        ]
-                      },
-                      {
-                        "group": "شاشة الغرف",
-                        "pages": [
-                          "ar/admin/resource-management/room-display/set-up-room-display",
-                          "ar/admin/resource-management/room-display/use-room-display"
-                        ]
-                      }
+                      "ar/admin/resource-management/floors/set-up-floor-plans",
+                      "ar/admin/resource-management/room-display/set-up-room-display"
                     ]
                   },
                   {
