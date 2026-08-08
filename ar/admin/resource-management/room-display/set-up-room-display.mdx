@@ -9,15 +9,24 @@ description: "أعد شاشة الغرف واضبطها على الأجهزة ا
 
 - أن يكون مقاس شاشة الجهاز اللوحي 7 بوصات على الأقل وأن يدعم App Store.
 - أن يعمل الجهاز بنظام iOS أو iPadOS 15.1 أو أحدث.
-- أن تكون [غرفك مضافة](/ar/admin/resource-management/resources/set-up-resources#الغرف) ومُعدّة في RNTOR مع رفع صورها، إذ تُستخدم صورة الغرفة خلفيةً لشاشة الغرف.
+- أن تكون [غرفك مضافة](/ar/admin/resource-management/resources/set-up-resources#إضافة-الغرف) ومُعدّة في RNTOR مع رفع صورها، إذ تُستخدم صورة الغرفة خلفيةً لشاشة الغرف.
 
 ## إعداد شاشة الغرف
 
 1. نزّل [RNTOR Room Display من App Store](https://apps.apple.com/us/app/rntor-room-display/id6759832576) على جهازك اللوحي.
 2. افتح التطبيق واضغط **تسجيل الدخول**.
+
+![تسجيل الدخول إلى RNTOR Room Display](/images/resource-management-room-display-set-up-login.png)
+
 3. سجّل الدخول بحساب مسؤول في الموقع الذي تريد إعداد شاشة الغرف فيه.
 4. اختر شبكتك وموقعك.
+
+![اختيار الشبكة والموقع في RNTOR Room Display](/images/resource-management-room-display-set-up-location.png)
+
 5. اختر غرفة من القائمة لتفعيل شاشة الغرف لها.
+
+![اختيار غرفة في RNTOR Room Display](/images/resource-management-room-display-set-up-room.png)
+
 6. اقفل الجهاز حتى لا يستطيع الغرباء إغلاق التطبيق أو الوصول إلى الجهاز، وذلك بتفعيل [الوصول الموجّه](https://support.apple.com/ar-eg/guide/ipad/ipada16d1374/ipados) على iPad.
 
 ## كيفية عمل شاشة الغرف
@@ -52,6 +61,8 @@ description: "أعد شاشة الغرف واضبطها على الأجهزة ا
 
 ### الحجوزات الفورية عبر QR
 
+![حجز غرفة عبر رمز QR في RNTOR Room Display](/images/resource-management-room-display-ad-hoc-qr-bookings.png)
+
 تعرض شاشة الغرف رمز QR فريدًا للغرفة في الركن السفلي الأيسر. يؤدي مسحه إلى تقويم حجز الغرفة في بوابة الأعضاء على الويب أو تطبيق الهاتف، حيث يستطيع المستخدم حجز الغرفة فورًا.
 
 ### الحماية من الحجوزات المهجورة
@@ -60,16 +71,24 @@ description: "أعد شاشة الغرف واضبطها على الأجهزة ا
 
 #### إعداد الحماية من الحجوزات المهجورة
 
-عند [إنشاء](/ar/admin/resource-management/resources/set-up-resources#الغرف) غرفة مجانية أو تعديلها، فعّل **تسجيل الحضور** وحدد:
+عند [إنشاء](/ar/admin/resource-management/resources/set-up-resources#إضافة-الغرف) غرفة مجانية أو [تعديلها](/ar/admin/resource-management/resources/set-up-resources#تعديل-غرفة)، فعّل **تسجيل الحضور** وحدد:
 
 - **مهلة الحجز المهجور:** المدة التي تنتظرها شاشة الغرف بعد بدء الحجز قبل إلغائه إذا لم يسجل أحد حضوره.
 - **تسجيل الحضور المبكر:** المدة التي يظهر قبلها زر **تسجيل الحضور** على شاشة الغرف قبل بدء الحجز.
+
+![إعداد الحماية من الحجوزات المهجورة في RNTOR](/images/resource-management-room-display-configure-abandoned-booking-protection.png)
 
 #### تسجيل الحضور على شاشة الغرف
 
 1. إذا كان **تسجيل الحضور** مفعّلًا للغرفة، يبدأ الحجز الجديد بحالة **مبدئي**.
 2. يظهر زر **تسجيل الحضور** على شاشة الغرف بحسب مدة **تسجيل الحضور المبكر**، مثل 10 دقائق قبل بدء الحجز.
+
+![زر تسجيل الحضور في RNTOR Room Display](/images/resource-management-room-display-check-in-button.png)
+
 3. إذا ضغط المستخدم **تسجيل الحضور**، تتغير حالة الحجز إلى **مؤكد** وتظهر رسالة تأكيد على الشاشة.
+
+![تأكيد تسجيل الحضور في RNTOR Room Display](/images/resource-management-room-display-check-in-confirmation.png)
+
 4. إذا لم يسجل أحد حضوره قبل انتهاء **مهلة الحجز المهجور**، مثل 5 دقائق بعد بدء الحجز، تتغير الحالة إلى **ملغى** ويُزال الحجز تلقائيًا من التقويم لتتاح الغرفة للآخرين.
 
 ## تسجيل الخروج من شاشة الغرف
@@ -84,6 +103,8 @@ description: "أعد شاشة الغرف واضبطها على الأجهزة ا
 1. أغلق شاشة الغرف بسحبها إلى أعلى وخارج الشاشة، ثم افتحها مجددًا.
 2. اضغط **(...)** في الركن العلوي الأيمن، ثم اضغط **تسجيل الخروج**.
 
+![تسجيل الخروج من RNTOR Room Display](/images/resource-management-room-display-log-out.png)
+
 ## استكشاف مشكلات شاشة الغرف وإصلاحها
 
 <Accordion title="اتصال الإنترنت ضعيف">
@@ -91,7 +112,7 @@ description: "أعد شاشة الغرف واضبطها على الأجهزة ا
 </Accordion>
 
 <Accordion title="تسجيل الدخول بعنوان بريد إلكتروني غير صحيح">
-  لإعداد شاشة الغرف لغرفة في موقع محدد، سجّل الدخول باستخدام [حساب مسؤول](/ar/admin/administration/administrators/administrators) في ذلك الموقع. [سجّل الخروج من التطبيق](#تسجيل-الخروج-من-الحساب)، ثم ادخل بحساب مسؤول يملك الوصول إلى الموقع الصحيح.
+  لإعداد شاشة الغرف لغرفة في موقع محدد، سجّل الدخول باستخدام [حساب مسؤول](/ar/admin/administration/administrators/administrators) في ذلك الموقع. [سجّل الخروج من التطبيق](/ar/admin/resource-management/room-display/set-up-room-display#تسجيل-الخروج-من-الحساب)، ثم ادخل بحساب مسؤول يملك الوصول إلى الموقع الصحيح.
 </Accordion>
 
 <Accordion title="إصدار التطبيق قديم">
@@ -103,11 +124,11 @@ description: "أعد شاشة الغرف واضبطها على الأجهزة ا
 </Accordion>
 
 <Accordion title="الجهاز لا يستوفي المتطلبات الفنية">
-  تأكد من أن جهازك اللوحي يستوفي [المتطلبات الأساسية](#المتطلبات-الأساسية) لتثبيت شاشة الغرف.
+  تأكد من أن جهازك اللوحي يستوفي [المتطلبات الأساسية](/ar/admin/resource-management/room-display/set-up-room-display#المتطلبات-الأساسية) لتثبيت شاشة الغرف.
 </Accordion>
 
 ## الأسئلة الشائعة
 
 <Accordion title="هل يمكنني تثبيت شاشة الغرف على جهاز لوحي لا يحتوي على App Store؟">
-  الطريقة الرسمية الموصى بها لتثبيت RNTOR Room Display هي Apple App Store، ويُعد الوصول إلى App Store [متطلبًا أساسيًا](#المتطلبات-الأساسية). للحصول على أفضل تجربة وتحديثات تلقائية وموثوقية، استخدم جهازًا يستوفي جميع متطلبات النظام، بما فيها الوصول إلى App Store.
+  الطريقة الرسمية الموصى بها لتثبيت RNTOR Room Display هي Apple App Store، ويُعد الوصول إلى App Store [متطلبًا أساسيًا](/ar/admin/resource-management/room-display/set-up-room-display#المتطلبات-الأساسية). للحصول على أفضل تجربة وتحديثات تلقائية وموثوقية، استخدم جهازًا يستوفي جميع متطلبات النظام، بما فيها الوصول إلى App Store.
 </Accordion>
