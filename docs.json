@@ -10,7 +10,7 @@
     "dark": "/images/hero-dark.png",
     "light": "/images/hero-light.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
     "primary": "#165D31",
     "light": "#1E8449",
