@@ -1,166 +1,173 @@
 ---
-title: "RNTOR MCP server"
+title: "RNTOR MCP"
 sidebarTitle: "Overview"
-description: "Connect Claude, ChatGPT, and other MCP clients to your RNTOR network with 35 secure, read-only tools."
+description: "Connect AI assistants to your RNTOR workspace data through MCP."
 ---
 
-RNTOR MCP connects AI assistants such as Claude and ChatGPT to your live workspace operations through the open [Model Context Protocol](https://modelcontextprotocol.io).
+Connect your AI assistant to your RNTOR network through the Model Context Protocol (MCP), then ask for workspace information in plain language.
 
-Ask operational questions in plain language instead of switching between dashboards or building one-off reports. RNTOR uses the signed-in user’s existing permissions and the workspace network selected during connection.
+RNTOR MCP connects your RNTOR data to compatible AI assistants such as Claude and ChatGPT using the open [Model Context Protocol](https://modelcontextprotocol.io/). Once connected, you can ask about your network directly in the conversation.
 
-<CardGroup cols={2}>
-  <Card title="Connect with ChatGPT" icon="message" href="/mcp-server/chatgpt">
-    Install or connect RNTOR in ChatGPT, authorize a network, and start asking questions.
-  </Card>
+Instead of searching through the dashboard, describe what you need and let your assistant retrieve the relevant RNTOR information.
 
-  <Card title="Connect with Claude" icon="sparkles" href="/mcp-server/claude">
-    Install the published RNTOR community connector from the Claude Directory.
-  </Card>
-</CardGroup>
+## What you can do with RNTOR MCP
 
-## What you can do
+Once connected, your AI assistant can look up information from across the RNTOR network you authorize:
 
-RNTOR provides **35 read-only tools** across the operational areas below:
-
-- **Networks and locations** — view the networks and locations you are authorized to access.
-- **Members and companies** — find customer records and account status while protecting restricted contact data.
-- **Plans and subscriptions** — compare membership and resource plans, active subscriptions, and renewal dates.
-- **Resources and bookings** — explore rooms, desks, offices, parking spaces, equipment, and bookings.
-- **Invoices and contracts** — review invoice status and balances, contracts, and contract templates.
-- **Shop and orders** — inspect categories, products, and orders across locations.
-- **Benefits and applications** — review member benefits, categories, and submitted applications.
-- **Guides** — retrieve published member guides and operational information.
-
-<Note>
-  RNTOR MCP is read-only. It cannot create, edit, delete, approve, charge, refund, sign, or trigger workflows in your RNTOR account.
-</Note>
+- **Network & locations** — view your network and the locations you operate.
+- **Members & companies** — find members and companies, along with available account information.
+- **Plans & subscriptions** — review membership and resource plans and their subscriptions.
+- **Resources & bookings** — find resources and booking details.
+- **Invoices & contracts** — review invoices, contracts, and contract templates.
+- **Shop & orders** — browse shop products, categories, and orders.
+- **Benefits & applications** — review benefits, categories, and member applications.
+- **Guides** — open published location guides.
 
 ## Connect RNTOR MCP
 
-Use the canonical server URL for every new connection:
+Before connecting, make sure you have an active RNTOR account with access to a network. You do not need to configure API keys or host anything yourself.
 
-```text
-https://mcp.rntor.com/mcp
-```
+### Connect in Claude
 
-There are no API keys to copy. RNTOR uses OAuth: sign in, select the network you want to authorize, review the read-only permissions, and choose **Allow**.
+RNTOR is listed in Claude's connector directory.
 
-<Tip>
-  If you can access multiple RNTOR networks, each connection is restricted to the network selected during authorization. Disconnect and reconnect to switch the authorized network.
-</Tip>
+1. Open [RNTOR in the Claude connector directory](https://claude.ai/directory/rntor), or search for RNTOR under **Settings → Connectors**.
+2. Select **Connect**.
+3. Sign in and authorize the RNTOR network you want Claude to access.
+
+<Frame caption="Upload a screenshot showing RNTOR in the Claude connector directory.">
+  **Screenshot placeholder**
+</Frame>
+
+### Connect in ChatGPT
+
+RNTOR is available as a ChatGPT plugin.
+
+1. Find RNTOR in ChatGPT under **Settings → Plugins**.
+2. Select **Install plugin**.
+3. Sign in and authorize the RNTOR network you want ChatGPT to access.
+
+<Frame caption="Upload a screenshot showing RNTOR in ChatGPT.">
+  **Screenshot placeholder**
+</Frame>
+
+### Connect in another AI assistant
+
+For another MCP-compatible assistant, add RNTOR as a custom connector:
+
+1. Open the assistant's connector settings and choose to add a custom connector.
+2. Enter the RNTOR MCP server URL: `https://mcp.rntor.com/mcp`
+3. Sign in and authorize the RNTOR network you want the assistant to access.
+
+Once connected, ask for the information you need in plain language.
+
+<Frame caption="Upload a screenshot showing the RNTOR MCP URL in another compatible assistant.">
+  **Screenshot placeholder**
+</Frame>
 
 ## Supported tools
 
-The tools are organized by the business tasks workspace teams handle every day.
+These tools let your AI assistant look up information from the RNTOR network you authorize. A single request may use more than one tool when needed.
 
-### Identity, networks, and locations
+### Network & locations
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getCurrentUser` | The signed-in identity used by the connection | “Which RNTOR account is connected?” |
-| `getNetworks` | Networks the authorized user can access | “Which workspace networks can I access?” |
-| `getNetwork` | Details for one authorized network | “Show the key details for our network.” |
-| `getLocations` | Locations available in the selected network | “List our locations and their addresses.” |
-| `getLocation` | Details for one authorized location | “Show the contact details for our Downtown location.” |
+| `getCurrentUser` | See which RNTOR user is connected. | “Which RNTOR account is connected?” |
+| `getNetworks` | List the RNTOR networks available to the connected user. | “Which networks can I access?” |
+| `getNetwork` | See the key details of one RNTOR network. | “Show the details of our coworking network.” |
+| `getLocations` | List locations with their addresses, contact details, and status. | “List our locations and their addresses.” |
+| `getLocation` | Get the details of one location. | “Show the contact details for our Downtown location.” |
 
 ### Customers
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getCustomers` | Members and companies, filterable by location, type, status, and search | “Which companies are active at Downtown?” |
-| `getCustomer` | Details for one member or company | “Show this member’s account and subscription status.” |
+| `getCustomers` | List members and companies for a network or location. | “List all active companies.”<br />“Which members do not have an active subscription?” |
+| `getCustomer` | Get the available details for one member or company. | “Show this member's account and subscription details.” |
 
-### Plans and subscriptions
+### Plans & subscriptions
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getPlans` | Membership and resource plans | “Compare our active membership plans.” |
-| `getPlan` | Details for one plan | “What is included in our Dedicated Desk plan?” |
-| `getSubscriptions` | Subscriptions filtered by customer, status, plan, location, or date | “Which subscriptions renew this month?” |
-| `getSubscription` | Details for one subscription | “When does this subscription renew?” |
+| `getPlans` | List membership and resource plans with their settings. | “Compare our membership plans and their prices.” |
+| `getPlan` | Get the details of one plan. | “Show the details of our Dedicated Desk plan.” |
+| `getSubscriptions` | List subscriptions by location, customer, plan, status, or date range. | “Which subscriptions expire this month?”<br />“List our annual subscriptions.” |
+| `getSubscription` | Get the details of one subscription. | “When does this company's subscription renew?” |
 
-### Resources and bookings
+### Resources & bookings
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getResources` | Resources by location and type | “List meeting rooms and their capacities.” |
-| `getResource` | Details for one resource | “What is the capacity of the Boardroom?” |
-| `getBookings` | Bookings by resource, customer, status, and date range | “What is booked in the Boardroom this week?” |
-| `getBooking` | Details for one booking | “Who booked the Boardroom at 2 PM?” |
+| `getResources` | List bookable rooms, desks, offices, parking spaces, and other resources. | “List the bookable resources at this location.” |
+| `getResource` | Get the details and settings of one resource. | “What is the capacity of the Boardroom?” |
+| `getBookings` | List bookings by location, resource, customer, status, or date range. | “What is booked in the Boardroom this week?”<br />“Show yesterday's meeting-room bookings.” |
+| `getBooking` | Get the details of one booking. | “Who booked the Boardroom at 2 PM today?” |
 
-### Invoices, contracts, and templates
+### Invoices & contracts
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getInvoices` | Invoice records, status, totals, and derived balances | “List unpaid invoices due this week.” |
-| `getInvoice` | Details and line items for one invoice | “What does this invoice cover and what remains due?” |
-| `getContracts` | Contracts filtered by customer, location, status, or date | “Which contracts are awaiting signature?” |
-| `getContract` | Details for one contract | “What is the status and renewal date of this contract?” |
-| `getTemplates` | Available contract templates | “Which contract templates are available?” |
-| `getTemplate` | Metadata for one contract template | “Show the details of our membership agreement template.” |
+| `getInvoices` | List invoice records by location, customer, status, or date range. | “List unpaid invoices due this week.”<br />“How much did we invoice last month?” |
+| `getInvoice` | Get invoice details, line items, totals, and balance information. | “What does this customer's latest invoice cover?” |
+| `getContracts` | List contracts by location, customer, status, or date range. | “Which contracts are still in draft?”<br />“Which contracts have not been signed?” |
+| `getContract` | Get the details of one contract. | “What is the status of this customer's contract?” |
+| `getTemplates` | List available contract templates. | “Which contract templates are available?” |
+| `getTemplate` | Get the details of one contract template. | “Show the details of our membership agreement template.” |
 
-<Note>
-  RNTOR returns the record details available through the connector. Open RNTOR when you need to work with downloadable documents or complete an action.
-</Note>
+### Shop & orders
 
-### Shop and orders
-
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getShopProducts` | Products by location, category, and status | “List active shop products and prices.” |
-| `getShopProduct` | Details and options for one product | “What options are available for this product?” |
-| `getShopCategories` | Shop categories by location | “List our shop categories.” |
-| `getShopCategory` | Details for one shop category | “Which category is this product in?” |
-| `getOrders` | Orders by customer, product, category, status, or time range | “What did members order this week?” |
-| `getOrder` | Details and items for one order | “What was included in this order?” |
+| `getShopProducts` | List shop products by location or category. | “List our shop products and their prices.” |
+| `getShopProduct` | Get the details of one shop product. | “What is the price of coffee in our shop?” |
+| `getShopCategories` | List shop categories. | “List our shop categories.” |
+| `getShopCategory` | Get the details of one shop category. | “Which products are in the drinks category?” |
+| `getOrders` | List shop orders by location, customer, product, status, or date range. | “What did members order this week?”<br />“Which products sold this month?” |
+| `getOrder` | Get the details of one shop order. | “What is included in this order?” |
 
-### Benefits and applications
+### Benefits & applications
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getBenefits` | Published benefits by location, category, and status | “What member benefits are currently available?” |
-| `getBenefit` | Details and terms for one benefit | “What are the terms of this benefit?” |
-| `getBenefitCategories` | Benefit categories | “List our benefit categories.” |
-| `getBenefitCategory` | Details for one benefit category | “Show this benefit category.” |
-| `getBenefitApplications` | Applications by benefit, customer, status, and time range | “Which benefit applications are pending?” |
-| `getBenefitApplication` | Details for one benefit application | “Show the status of this benefit application.” |
+| `getBenefits` | List member benefits by location or category. | “Which benefits are available to members?” |
+| `getBenefit` | Get the details of one benefit. | “What are the terms of this benefit?” |
+| `getBenefitCategories` | List benefit categories. | “List our benefit categories.” |
+| `getBenefitCategory` | Get the details of one benefit category. | “Which benefits are in the wellness category?” |
+| `getBenefitApplications` | List member benefit applications by benefit, customer, status, or date range. | “Who applied for member benefits recently?” |
+| `getBenefitApplication` | Get the details of one benefit application. | “Show the details of this benefit application.” |
 
 ### Guides
 
-| Tool | What it returns | Example prompt |
+| Tool | Description | Example prompts |
 | --- | --- | --- |
-| `getGuides` | Published guides available in a location | “List the guides published for members.” |
-| `getGuide` | Content for one published guide | “Open our Wi-Fi guide.” |
+| `getGuides` | List published guides available at a location. | “List the guides published for members.” |
+| `getGuide` | Get the full content of one published guide. | “Open our Wi-Fi guide.” |
 
-## Access and privacy
+RNTOR MCP tools are read-only. They retrieve information but cannot change data in your RNTOR account.
 
-- Sign in with your RNTOR account.
-- Choose the workspace network you want to connect.
-- The assistant can only view information available to your RNTOR account in that network.
-- The connector is read-only and cannot change your RNTOR data.
+## Security
+
+### Access
+
+- You authorize the connection yourself; there are no API keys to manage in the AI assistant.
+- You can disconnect RNTOR from the assistant at any time.
+- The assistant can access only the network you authorize and only information available to your RNTOR account.
+
+### Data
+
+- RNTOR MCP tools are read-only, so they cannot change your account data.
+- The assistant sees only information your RNTOR account can access.
+- Information used in the AI assistant is handled under that assistant's privacy policy and terms.
+
+For help with RNTOR MCP, contact [support@rntor.com](mailto:support@rntor.com).
 
 ## FAQs
 
-### Can RNTOR MCP change my data?
+<Accordion title="Is there a limit to how much I can ask?">
+  RNTOR MCP is designed for normal conversational use. If a request is temporarily rate-limited, reduce parallel requests, space out sequential requests, and try again after a brief pause.
+</Accordion>
 
-No. The current 35-tool surface only retrieves data.
-
-### Which network can the assistant access?
-
-Only the network selected on the RNTOR OAuth consent screen, and only within the signed-in user’s RNTOR permissions.
-
-### Can I connect a test network?
-
-Yes. Choose the appropriate environment when the connection or request offers that option.
-
-### What happens if I reach a rate limit?
-
-Reduce parallel requests, allow a short pause, and retry. RNTOR returns a standard `429` response when temporary limits apply.
-
-### How do I end access?
-
-Disconnect RNTOR in your AI assistant. You can reconnect later and authorize a network again.
-
-For help, contact [support@rntor.com](mailto:support@rntor.com).
-
-{/* Deployment refresh: 2026-08-22 */}
+<Accordion title="Can I connect RNTOR MCP to more than one AI assistant or account at the same time?">
+  Yes. Each connection is authorized independently and receives its own access. You can connect RNTOR to different assistants or accounts and disconnect each connection separately.
+</Accordion>
