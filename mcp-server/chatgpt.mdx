@@ -35,7 +35,7 @@ RNTOR provides **35 read-only tools** for networks, locations, customers, plans,
     Choose **Connect** when ChatGPT prompts you to authorize the plugin.
   </Step>
   <Step title="Sign in">
-    Sign in with an active RNTOR account. Reviewers can use the password option shown only during a valid OAuth consent flow.
+    Sign in with your active RNTOR account.
   </Step>
   <Step title="Select a network">
     Choose the network ChatGPT may access. This selection is mandatory and cannot exceed your RNTOR permissions.
@@ -95,15 +95,7 @@ https://mcp.rntor.com/mcp
 
 ChatGPT can use the same [35 read-only RNTOR tools](/mcp-server#supported-tools) documented for every MCP client.
 
-The connection can retrieve only:
-
-- the network selected during OAuth;
-- records allowed by the signed-in user’s RNTOR role;
-- the requested live or test environment, never both;
-- non-internal locations; and
-- minimized fields defined by each tool’s structured output schema.
-
-It cannot modify records, process payments, sign contracts, expose private storage paths, or trigger workflows.
+The connection can retrieve information from the network you select, based on your existing RNTOR access. It cannot create, edit, delete, approve, charge, refund, sign, or trigger workflows.
 
 ## Use RNTOR in a conversation
 
@@ -135,7 +127,7 @@ Confirm that the account is active and eligible for the selected network. The pa
 
 ### ChatGPT cannot find a record
 
-Confirm the record belongs to the selected network and environment. Internal locations and cross-network records are intentionally inaccessible.
+Confirm that you selected the right RNTOR network and that your account can view the record.
 
 ### I authorized the wrong network
 

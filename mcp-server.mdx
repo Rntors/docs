@@ -6,7 +6,7 @@ description: "Connect Claude, ChatGPT, and other MCP clients to your RNTOR netwo
 
 RNTOR MCP connects AI assistants such as Claude and ChatGPT to your live workspace operations through the open [Model Context Protocol](https://modelcontextprotocol.io).
 
-Ask operational questions in plain language instead of switching between dashboards or building one-off reports. RNTOR verifies the signed-in user, limits access to the selected network and environment, and returns only data that user is allowed to see.
+Ask operational questions in plain language instead of switching between dashboards or building one-off reports. RNTOR uses the signed-in user’s existing permissions and the workspace network selected during connection.
 
 <CardGroup cols={2}>
   <Card title="Connect with ChatGPT" icon="message" href="/mcp-server/chatgpt">
@@ -20,13 +20,13 @@ Ask operational questions in plain language instead of switching between dashboa
 
 ## What you can do
 
-RNTOR exposes **35 canonical read-only tools** across the operational areas below:
+RNTOR provides **35 read-only tools** across the operational areas below:
 
 - **Networks and locations** — view the networks and locations you are authorized to access.
 - **Members and companies** — find customer records and account status while protecting restricted contact data.
 - **Plans and subscriptions** — compare membership and resource plans, active subscriptions, and renewal dates.
 - **Resources and bookings** — explore rooms, desks, offices, parking spaces, equipment, and bookings.
-- **Invoices and contracts** — review invoice status and balances, contracts, and contract templates without exposing private files.
+- **Invoices and contracts** — review invoice status and balances, contracts, and contract templates.
 - **Shop and orders** — inspect categories, products, and orders across locations.
 - **Benefits and applications** — review member benefits, categories, and submitted applications.
 - **Guides** — retrieve published member guides and operational information.
@@ -51,7 +51,7 @@ There are no API keys to copy. RNTOR uses OAuth: sign in, select the network you
 
 ## Supported tools
 
-Each tool has a structured output schema and truthful read-only annotations. List tools use bounded pagination and scoped cursors; date-based tools validate and pin their requested time window across pages.
+The tools are organized by the business tasks workspace teams handle every day.
 
 ### Identity, networks, and locations
 
@@ -60,7 +60,7 @@ Each tool has a structured output schema and truthful read-only annotations. Lis
 | `getCurrentUser` | The signed-in identity used by the connection | “Which RNTOR account is connected?” |
 | `getNetworks` | Networks the authorized user can access | “Which workspace networks can I access?” |
 | `getNetwork` | Details for one authorized network | “Show the key details for our network.” |
-| `getLocations` | Authorized, non-internal locations | “List our locations and their addresses.” |
+| `getLocations` | Locations available in the selected network | “List our locations and their addresses.” |
 | `getLocation` | Details for one authorized location | “Show the contact details for our Downtown location.” |
 
 ### Customers
@@ -68,25 +68,25 @@ Each tool has a structured output schema and truthful read-only annotations. Lis
 | Tool | What it returns | Example prompt |
 | --- | --- | --- |
 | `getCustomers` | Members and companies, filterable by location, type, status, and search | “Which companies are active at Downtown?” |
-| `getCustomer` | One authorized member or company record | “Show this member’s account and subscription status.” |
+| `getCustomer` | Details for one member or company | “Show this member’s account and subscription status.” |
 
 ### Plans and subscriptions
 
 | Tool | What it returns | Example prompt |
 | --- | --- | --- |
-| `getPlans` | Membership and resource plans with derived plan type | “Compare our active membership plans.” |
+| `getPlans` | Membership and resource plans | “Compare our active membership plans.” |
 | `getPlan` | Details for one plan | “What is included in our Dedicated Desk plan?” |
 | `getSubscriptions` | Subscriptions filtered by customer, status, plan, location, or date | “Which subscriptions renew this month?” |
-| `getSubscription` | Details for one authorized subscription | “When does this subscription renew?” |
+| `getSubscription` | Details for one subscription | “When does this subscription renew?” |
 
 ### Resources and bookings
 
 | Tool | What it returns | Example prompt |
 | --- | --- | --- |
-| `getResources` | Authorized resources by location and type | “List meeting rooms and their capacities.” |
+| `getResources` | Resources by location and type | “List meeting rooms and their capacities.” |
 | `getResource` | Details for one resource | “What is the capacity of the Boardroom?” |
-| `getBookings` | Bookings by resource, customer, status, and bounded time range | “What is booked in the Boardroom this week?” |
-| `getBooking` | Details for one authorized booking | “Who booked the Boardroom at 2 PM?” |
+| `getBookings` | Bookings by resource, customer, status, and date range | “What is booked in the Boardroom this week?” |
+| `getBooking` | Details for one booking | “Who booked the Boardroom at 2 PM?” |
 
 ### Invoices, contracts, and templates
 
@@ -95,12 +95,12 @@ Each tool has a structured output schema and truthful read-only annotations. Lis
 | `getInvoices` | Invoice records, status, totals, and derived balances | “List unpaid invoices due this week.” |
 | `getInvoice` | Details and line items for one invoice | “What does this invoice cover and what remains due?” |
 | `getContracts` | Contracts filtered by customer, location, status, or date | “Which contracts are awaiting signature?” |
-| `getContract` | Details for one authorized contract | “What is the status and renewal date of this contract?” |
-| `getTemplates` | Staff-authorized contract templates | “Which contract templates are available?” |
+| `getContract` | Details for one contract | “What is the status and renewal date of this contract?” |
+| `getTemplates` | Available contract templates | “Which contract templates are available?” |
 | `getTemplate` | Metadata for one contract template | “Show the details of our membership agreement template.” |
 
 <Note>
-  Private document links, storage paths, e-signature details, provider identifiers, and signed URLs are not returned through MCP.
+  RNTOR returns the record details available through the connector. Open RNTOR when you need to work with downloadable documents or complete an action.
 </Note>
 
 ### Shop and orders
@@ -123,25 +123,21 @@ Each tool has a structured output schema and truthful read-only annotations. Lis
 | `getBenefitCategories` | Benefit categories | “List our benefit categories.” |
 | `getBenefitCategory` | Details for one benefit category | “Show this benefit category.” |
 | `getBenefitApplications` | Applications by benefit, customer, status, and time range | “Which benefit applications are pending?” |
-| `getBenefitApplication` | Details for one authorized application | “Show the status of this benefit application.” |
+| `getBenefitApplication` | Details for one benefit application | “Show the status of this benefit application.” |
 
 ### Guides
 
 | Tool | What it returns | Example prompt |
 | --- | --- | --- |
 | `getGuides` | Published guides available in a location | “List the guides published for members.” |
-| `getGuide` | Capped content for one published guide | “Open our Wi-Fi guide.” |
+| `getGuide` | Content for one published guide | “Open our Wi-Fi guide.” |
 
-## Security and privacy
+## Access and privacy
 
-- **OAuth authentication** — every connection is tied to a validated RNTOR user.
-- **Explicit network authorization** — the OAuth consent screen requires a network selection, and the binding is activated only after authorization succeeds.
-- **RLS-backed access** — RNTOR database policies enforce tenant and user permissions.
-- **Live/test separation** — tools default to the live environment and never mix live and test records.
-- **Internal-location protection** — internal operational locations are excluded.
-- **Data minimization** — sensitive provider, payment, signing, storage, and internal-only fields are omitted.
-- **Safe errors** — inaccessible and nonexistent identifiers return indistinguishable responses.
-- **Read-only execution** — every tool is annotated as read-only and performs no business-data writes.
+- Sign in with your RNTOR account.
+- Choose the workspace network you want to connect.
+- The assistant can only view information available to your RNTOR account in that network.
+- The connector is read-only and cannot change your RNTOR data.
 
 ## FAQs
 
@@ -155,7 +151,7 @@ Only the network selected on the RNTOR OAuth consent screen, and only within the
 
 ### Can I connect a test network?
 
-Yes. The environment can be selected explicitly where supported, but live and test data are isolated.
+Yes. Choose the appropriate environment when the connection or request offers that option.
 
 ### What happens if I reach a rate limit?
 

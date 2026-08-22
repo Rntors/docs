@@ -46,7 +46,7 @@ If your organization cannot yet see the directory listing, add RNTOR as a custom
 https://mcp.rntor.com/mcp
 ```
 
-4. Keep **Always required** authentication and automatic OAuth client registration selected when Claude detects them.
+4. Keep the recommended authentication settings detected by Claude.
 5. Connect, sign in, select a network, and allow read-only access.
 
 ## Example prompts
@@ -63,13 +63,11 @@ Claude can combine related tools in one request. For example, ask for a companyâ
 
 For the complete inventory, see [all 35 supported tools](/mcp-server#supported-tools).
 
-## Authorization behavior
+## Access and privacy
 
-- The consent page requires an explicit network.
-- OAuth connections are fail-closed: without an active network binding, network tools return no data.
-- The selected network and environment remain enforced across refreshed access tokens.
-- Cross-network identifiers, internal locations, and live/test mismatches are denied safely.
-- Claude receives only the fields exposed by the read-only tool schemas.
+- Sign in with your RNTOR account and select a workspace network.
+- Claude can only view information available to your account in the selected network.
+- The connector is read-only and cannot change your RNTOR data.
 
 ## Disconnect or change networks
 
@@ -89,7 +87,7 @@ Restart the connection and complete the RNTOR consent screen. Do not reuse an ex
 
 ### A record is not found
 
-The record may belong to another network, a different environment, or an internal location. RNTOR intentionally returns the same safe response for inaccessible and nonexistent records.
+Confirm that you connected the right RNTOR network and that your account can view the record.
 
 ### I need help
 
