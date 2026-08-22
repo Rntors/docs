@@ -1,94 +1,67 @@
 ---
-title: "Connect RNTOR to Claude"
+title: "Claude"
 sidebarTitle: "Claude"
-description: "Install the published RNTOR community connector in Claude and securely query your workspace operations."
+description: "Connect RNTOR to Claude and ask questions about your workspace operations."
 ---
 
-RNTOR is available as a published **Community connector** in the Claude Directory. Connect it to ask Claude about your authorized workspace operations without leaving the conversation.
+Connect RNTOR to Claude to retrieve and analyze your coworking and flexible workspace data in conversation.
 
-<Card title="Open RNTOR in the Claude Directory" icon="sparkles" horizontal href="https://claude.ai/directory/rntor">
-  View the public listing and connect RNTOR for yourself or your Claude organization.
-</Card>
+RNTOR is available in the Claude connector directory. After you authorize a network, Claude can use RNTOR's read-only tools without changing your RNTOR data.
 
 ## Connect RNTOR in Claude
 
-<Steps>
-  <Step title="Open the RNTOR directory listing">
-    Go to [claude.ai/directory/rntor](https://claude.ai/directory/rntor).
-  </Step>
-  <Step title="Choose how to connect">
-    Select **Connect** or **Connect for your team**, depending on your Claude plan and organization permissions.
-  </Step>
-  <Step title="Sign in to RNTOR">
-    Claude starts the RNTOR OAuth flow. Sign in with an active RNTOR account.
-  </Step>
-  <Step title="Select a network">
-    Choose the RNTOR network you want this connection to access. The selection is required and is limited to networks available to your account.
-  </Step>
-  <Step title="Review and allow">
-    Review the read-only categories, then choose **Allow**. Claude returns to the conversation after authorization succeeds.
-  </Step>
-</Steps>
+### 1. Open the RNTOR connector
 
-<Note>
-  RNTOR is currently a Community connector. Community connectors undergo Anthropic’s automated directory review but are not marked as verified by Anthropic.
-</Note>
+Open [RNTOR in the Claude connector directory](https://claude.ai/directory/rntor), or go to **Settings → Connectors** and search for RNTOR.
 
-## Connect manually
+<Frame caption="Upload a screenshot showing RNTOR in the Claude connector directory.">
+  **Screenshot placeholder**
+</Frame>
 
-If your organization cannot yet see the directory listing, add RNTOR as a custom connector:
+### 2. Connect RNTOR
+
+Select **Connect** or **Connect for your team**, depending on your Claude workspace.
+
+<Frame caption="Upload a screenshot showing the Connect button for RNTOR in Claude.">
+  **Screenshot placeholder**
+</Frame>
+
+### 3. Authorize your network
+
+Sign in to RNTOR, select the network you want Claude to access, and choose **Allow**.
+
+### 4. Start asking
+
+Open a Claude conversation and ask questions about your workspace in plain language.
+
+<Frame caption="Upload a screenshot showing a Claude conversation using RNTOR.">
+  **Screenshot placeholder**
+</Frame>
+
+## What you can ask Claude
+
+- **Network and locations:** “List our locations and their addresses.”
+- **Customers:** “Which members do not have an active subscription?”
+- **Plans and subscriptions:** “Which subscriptions renew this month?”
+- **Resources and bookings:** “What is booked in the Boardroom this week?”
+- **Invoices and contracts:** “List unpaid invoices due this week.”
+- **Shop and orders:** “What shop orders were placed today?”
+- **Benefits and applications:** “Which benefit applications are waiting for review?”
+- **Guides:** “Show me the published Wi-Fi guide.”
+
+See the full list on the [RNTOR MCP overview](https://docs.rntor.com/docs/mcp-server#supported-tools).
+
+You can also:
+
+- Combine categories in one request, such as reviewing a customer, their subscription, and recent invoices together.
+- Use RNTOR results alongside other connectors available in the same Claude conversation.
+
+## Disconnect RNTOR from Claude
+
+Disconnecting removes Claude's access to your RNTOR network.
 
 1. Open **Settings → Connectors** in Claude.
-2. Add a custom connector named **RNTOR**.
-3. Enter:
+2. Find RNTOR in your connected services.
+3. Select **Disconnect**.
 
-```text
-https://mcp.rntor.com/mcp
-```
-
-4. Keep the recommended authentication settings detected by Claude.
-5. Connect, sign in, select a network, and allow read-only access.
-
-## Example prompts
-
-- “List our active locations and summarize their time zones and currencies.”
-- “Which subscriptions renew this month?”
-- “Show unpaid invoices due this week and group them by customer.”
-- “What is booked in the Boardroom this week?”
-- “Compare our active membership plans.”
-- “Which benefit applications are still pending?”
-- “List published member guides for Downtown.”
-
-Claude can combine related tools in one request. For example, ask for a company’s subscription status, recent invoices, and bookings together.
-
-For the complete inventory, see [all 35 supported tools](/mcp-server#supported-tools).
-
-## Access and privacy
-
-- Sign in with your RNTOR account and select a workspace network.
-- Claude can only view information available to your account in the selected network.
-- The connector is read-only and cannot change your RNTOR data.
-
-## Disconnect or change networks
-
-To end access, open **Settings → Connectors**, find RNTOR, and disconnect it.
-
-To authorize another network, disconnect and reconnect RNTOR, then choose the new network during consent.
-
-## Troubleshooting
-
-### I do not see a network to select
-
-Confirm that your RNTOR user has an active membership in at least one live network. Platform administrators can select from eligible live networks.
-
-### I returned to Claude without connecting
-
-Restart the connection and complete the RNTOR consent screen. Do not reuse an expired authorization page.
-
-### A record is not found
-
-Confirm that you connected the right RNTOR network and that your account can view the record.
-
-### I need help
-
-Contact [support@rntor.com](mailto:support@rntor.com) and include the time of the connection attempt. Never send access tokens or authorization codes.
+You can reconnect at any time. You can also use RNTOR with [ChatGPT](https://docs.rntor.com/docs/mcp-server/chatgpt) or another compatible assistant through the [RNTOR MCP overview](https://docs.rntor.com/docs/mcp-server).
