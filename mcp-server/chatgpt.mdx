@@ -1,0 +1,146 @@
+---
+title: "ChatGPT"
+sidebarTitle: "ChatGPT"
+description: "Connect RNTOR to ChatGPT, authorize a workspace network, and query live operational data with 35 read-only tools."
+icon: "message"
+---
+
+Connect RNTOR to ChatGPT to query your authorized workspace operations directly in a conversation.
+
+RNTOR provides **35 read-only tools** for networks, locations, customers, plans, subscriptions, resources, bookings, invoices, contracts, shop data, benefits, and guides.
+
+<CardGroup cols={2}>
+  <Card title="Open ChatGPT" icon="message" href="https://chatgpt.com/">
+    Install RNTOR from the plugin directory when available, or add the MCP server as a custom connection.
+  </Card>
+
+  <Card title="Watch the RNTOR demo" icon="circle-play" href="https://www.youtube.com/watch?v=0pT62pvVPjE">
+    See sign-in, network authorization, and real operational questions in ChatGPT.
+  </Card>
+</CardGroup>
+
+<Frame caption="RNTOR for ChatGPT — connection and read-only operations demo">
+  <a href="https://www.youtube.com/watch?v=0pT62pvVPjE">
+  <img src="https://img.youtube.com/vi/0pT62pvVPjE/maxresdefault.jpg" alt="RNTOR ChatGPT connector demo" />
+</a>
+</Frame>
+
+## Install RNTOR in ChatGPT
+
+<Steps>
+  <Step title="Open Plugins">
+    In ChatGPT, open **Settings → Plugins**. If RNTOR is visible in the directory, open its listing and choose **Install plugin**.
+  </Step>
+  <Step title="Connect RNTOR">
+    Choose **Connect** when ChatGPT prompts you to authorize the plugin.
+  </Step>
+  <Step title="Sign in">
+    Sign in with an active RNTOR account. Reviewers can use the password option shown only during a valid OAuth consent flow.
+  </Step>
+  <Step title="Select a network">
+    Choose the network ChatGPT may access. This selection is mandatory and cannot exceed your RNTOR permissions.
+  </Step>
+  <Step title="Allow read-only access">
+    Review the data categories and choose **Allow**. ChatGPT returns to the conversation once OAuth completes.
+  </Step>
+</Steps>
+
+## Connect as a custom MCP server
+
+If the public plugin listing is not visible in your ChatGPT workspace, use the custom connector flow available to your plan:
+
+1. Open the ChatGPT connector or plugin settings and choose to add a custom MCP server.
+2. Enter **RNTOR** as the name.
+3. Use the canonical URL:
+
+```text
+https://mcp.rntor.com/mcp
+```
+
+4. Connect, sign in, select a network, and allow access.
+
+<Warning>
+  Do not use the Supabase function URL for new connections. The supported public endpoint is `https://mcp.rntor.com/mcp`.
+</Warning>
+
+## Start with these prompts
+
+<CardGroup cols={2}>
+  <Card title="Operations overview" icon="building">
+    “Summarize our active locations, resources, and today’s bookings.”
+  </Card>
+
+  <Card title="Renewals" icon="rotate">
+    “Which subscriptions renew this month? Group them by plan.”
+  </Card>
+
+  <Card title="Billing review" icon="file-invoice">
+    “List unpaid invoices due this week and summarize the outstanding balance.”
+  </Card>
+
+  <Card title="Member support" icon="users">
+    “Show this member’s account status, current subscription, and recent bookings.”
+  </Card>
+
+  <Card title="Space utilization" icon="calendar">
+    “What was booked in our meeting rooms yesterday?”
+  </Card>
+
+  <Card title="Commerce" icon="cart-shopping">
+    “Which shop products sold this month, and which orders are still open?”
+  </Card>
+</CardGroup>
+
+## What ChatGPT can access
+
+ChatGPT can use the same [35 read-only RNTOR tools](/mcp-server#supported-tools) documented for every MCP client.
+
+The connection can retrieve only:
+
+- the network selected during OAuth;
+- records allowed by the signed-in user’s RNTOR role;
+- the requested live or test environment, never both;
+- non-internal locations; and
+- minimized fields defined by each tool’s structured output schema.
+
+It cannot modify records, process payments, sign contracts, expose private storage paths, or trigger workflows.
+
+## Use RNTOR in a conversation
+
+Mention RNTOR or select the plugin when starting a question. ChatGPT may call several tools to answer one request.
+
+For best results:
+
+- identify the location, customer, resource, or date range when you know it;
+- ask for a table when comparing records;
+- use ranges of 366 days or less;
+- continue in the same conversation when refining an answer; and
+- ask ChatGPT to reduce parallel calls if it encounters a temporary rate limit.
+
+## Disconnect or switch networks
+
+Open ChatGPT **Settings → Plugins** (or your connector settings), find RNTOR, and disconnect it.
+
+To switch the authorized network, reconnect and select another eligible network on the RNTOR consent screen.
+
+## Troubleshooting
+
+### The sign-in page does not return to ChatGPT
+
+Start a fresh connection from ChatGPT. OAuth authorization links expire and should not be bookmarked or reused.
+
+### My credentials are rejected
+
+Confirm that the account is active and eligible for the selected network. The password option is available only when the login page was opened from a validated OAuth consent flow.
+
+### ChatGPT cannot find a record
+
+Confirm the record belongs to the selected network and environment. Internal locations and cross-network records are intentionally inaccessible.
+
+### I authorized the wrong network
+
+Disconnect RNTOR and reconnect it. Select the intended network before choosing **Allow**.
+
+### I need support
+
+Contact [support@rntor.com](mailto:support@rntor.com). Never include access tokens, authorization codes, or passwords in a support message.
