@@ -2,15 +2,14 @@
   "$schema": "https://mintlify.com/schema.json",
   "theme": "mint",
   "name": "Rntor Developer Documentation",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
-  },
   "hero": {
     "dark": "/images/hero-dark.png",
     "light": "/images/hero-light.png"
   },
-  "favicon": "/favicon.png",
+  "favicon": {
+    "light": "/favicon.svg",
+    "dark": "/favicon.svg"
+  },
   "colors": {
     "primary": "#165D31",
     "light": "#1E8449",
