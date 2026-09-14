@@ -18,31 +18,74 @@ The landing page is generated automatically based on the information you added t
 
 ## Access the landing page
 
-Go to the root of your member web portal custom domain to access the landing page. Here are some examples for your inspiration:
-
-- [Creative States](https://members.creativestates.net/)
-- [Culture Co-Working](https://membersportal.culturecoworking.ie/)
+Open your member portal's domain to visit its landing page. If you use a [custom domain](/admin/general/member-web-portal/custom-domain-for-your-member-web-portal), share that address with visitors.
 
 ## Customize the landing page
 
-The language in which the landing page is displayed for all users is determined by your network language. [Manage network language](/admin/general/language)
+You can enter English and Arabic content using the **EN | AR** selector beside each supported text field. The selector changes the content you are editing, not the dashboard language. Visitors browsing in Arabic see the Arabic version; an empty Arabic field falls back to English.
 
 ### Header section
 
 ![Image](/images/member-web-portal-customize-the-landing-page-2.png)
 
-1. Go to RNTOR [as an owner](/admin/administration/administrators/owner), click **(...)** menu next to your network name on the left-side panel \> **Network** **settings.**
+1. Sign in to [Rntor](https://app.rntor.com) [as an owner](/admin/administration/administrators/owner) and open **Settings** for your network.
 2. Go to **General** \> **Information** tab to customize the network name and email footer.
-3. Go to **General** \> **Branding** tab to customize the logo, accent color for buttons and the font.
-4. Go to **Member web portal** \> **Landing page** tab to customize the headline, description that appears below "Welcome to ..." and index in search machines.
+3. Open **Settings > General > Branding** to update your logo. Use **Theme > Edit** for [portal colors, fonts and appearance](/admin/general/member-web-portal/customize-member-web-portal).
+4. Open **Settings > Member Web Portal > Landing page** to edit **Headline** and **Description**. Use **EN | AR** to enter each language. Describe your space clearly and include your city where useful. Keep the description within 700 characters for best display; leaving the English text blank uses the default copy.
 5. Set up the [custom domain name](/admin/general/member-web-portal/custom-domain-for-your-member-web-portal) if you want the landing page to use your own domain name instead of ...rntor.com.
-6. As an administrator, [upload location cover photos and videos](/admin/location/information) for each location, which will be displayed in a slide show behind the **Welcome** window.
+6. Add [location cover photos and videos](/admin/location/information) to supply the landing slideshow. Their presentation follows the selected layout.
+
+#### Layout editor
+
+1. Open **Settings > Member Web Portal > Landing page**.
+2. Next to **Layout**, click **Edit**.
+3. Adjust **Headings** and **Sections** while watching the live preview.
+4. Check desktop, tablet and mobile sizes, light and dark appearance, and **EN / AR**.
+5. Click **Save** to apply the layout, or **Cancel** to discard the unsaved layout changes.
+
+The preview is read-only. Switching its device, appearance or language does not save changes.
+
+**Headings**
+
+These controls apply to all landing-page headings:
+
+| Control | Options |
+| --- | --- |
+| Font | Body font, or a font from the searchable list |
+| Size | Default, Compact, Large |
+| Weight | Default, Medium, Semibold, Bold |
+| Alignment | Default, Start, Center |
+
+**Header & hero**
+
+One selector coordinates the header and hero together:
+
+| Style | Presentation |
+| --- | --- |
+| Spotlight split | Split hero with a separate floating pill header |
+| Center stage | Centered hero with a separate frosted rail header |
+| Panorama frame | Panoramic hero with a separate halo bar header |
+| Full background | Edge-to-edge hero background with a transparent header over it |
+| Contained background | Background and overlaid header contained within the same content width as Our locations |
+
+For a full background, the header logo and navigation still align with the shared content container. Existing saved combinations may appear as **Custom (existing)** and remain unchanged until you select and save a preset.
+
+**Other section controls**
+
+| Control | Options |
+| --- | --- |
+| Hero icon size | Hidden, Small, Medium, Large |
+| Locations layout | Glass grid, Overlay tiles, Feature rows |
+| Mobile apps | Panel, Compact, Immersive |
+| Footer | Compact, Expanded, Immersive |
+
+The hero icon setting controls the icon inside the hero. Use the preview to compare each presentation before saving.
 
 ### Locations section
 
 ![Image](/images/member-web-portal-customize-the-landing-page-3.png)
 
-1. Navigate to RNTOR and select the necessary location on the left-side panel \> press **(...)** next to it \> **Location settings** \> go to **General** to [upload a cover photo](/admin/location/information) for each location or update the address.
+1. Open **Settings**, select the location under **Locations**, then open its **General** settings to [update cover media and location information](/admin/location/information). Name, description and address support **EN | AR**; empty Arabic values use English.
 2. For **Sign Up** CTAs to appear for each location, an administrator can [create membership plans](/admin/billing/plans/set-up-plans) and enable the **Sign Up** property for them.
 3. To make other pages appear under the location's name, administrators enable them and [set page visibility](/admin/location/visibility) to **Public** or add content with public visibility to these pages so that everybody can access them.
 4. Go to the **Integrations** page and [connect Calendly integration](/admin/integrations/bookings/calendly) to each location for the **Book a tour** CTAs to appear. It will let interested people book a tour with you around the space.
@@ -51,13 +94,15 @@ The language in which the landing page is displayed for all users is determined 
 
 ![Image](/images/member-web-portal-customize-the-landing-page-4.png)
 
-[Order Member Mobile App](/admin/general/member-mobile-app/get-started) for the app store badges to appear.
+The app download section requires the [Member mobile app add-on](/admin/general/member-mobile-app/get-started) and configured app links. Without the add-on, it is hidden. Choose **Panel**, **Compact** or **Immersive** in **Layout > Mobile apps** to change its presentation.
 
 ### Control search engine visibility
 
-By default, your landing page is visible to search engines. To control its visibility, log in as an [owner](/admin/administration/administrators/owner) and navigate to the **Network settings \> Member web portal** \> **Landing page** tab. From there, you can manage the **Index in search engines** switch:
+By default, your landing page is visible to search engines. To control its visibility, log in as an [owner](/admin/administration/administrators/owner) and navigate to the **Settings > Member Web Portal** \> **Landing page** tab. From there, you can manage the **Index in search engines** switch:
 
-- If enabled - you allow search engines to index the landing page and show it in search results. Your member web portal will be visible in search results, making it easy for new customers to find you
-- If disabled - you do not allow search engines to index the landing page and show it in search results. Your member web portal will not appear in search results, making it accessible only via a direct link. _It may take time for these third party search engines to de-index your content._
+- **Enabled:** permits indexing; search engines decide whether and when to include the page in results.
+- **Disabled:** asks search engines not to index the page. Removing an existing result can take time.
+
+This setting does not make the page private or replace access permissions. Visitors can still open its public URL.
 
 ![Image](/images/member-web-portal-customize-the-landing-page-5.png)
