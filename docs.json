@@ -841,6 +841,7 @@
                     "group": "عام",
                     "icon": "gear-complex",
                     "pages": [
+                      "ar/admin/general/branding",
                       "ar/admin/general/privacy-policy",
                       "ar/admin/general/terms-of-use",
                       "ar/admin/general/mail-from-and-footer",
