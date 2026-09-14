@@ -282,6 +282,7 @@
                     "group": "General",
                     "icon": "gear-complex",
                     "pages": [
+                      "admin/general/branding",
                       "admin/general/privacy-policy",
                       "admin/general/terms-of-use",
                       "admin/general/mail-from-and-footer",
