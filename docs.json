@@ -218,6 +218,7 @@
                       "admin/resource-management/room-display/set-up-room-display"
                     ]
                   },
+                  "admin/check-ins",
                   {
                     "group": "Engagement",
                     "icon": "handshake",
@@ -777,6 +778,7 @@
                       "ar/admin/resource-management/room-display/set-up-room-display"
                     ]
                   },
+                  "ar/admin/check-ins",
                   {
                     "group": "التفاعل",
                     "icon": "handshake",

@@ -1,0 +1,183 @@
+---
+title: "Check-ins"
+sidebarTitle: "Check-ins"
+description: "Set up attendance tracking, find check-in codes, record arrivals and departures, and export attendance for your location."
+icon: "clipboard-check"
+---
+
+Use **Check-ins** to record who has arrived at your location and when they leave. Attendance can be linked to a room booking, desk booking, event ticket, visit, or an eligible member's subscription.
+
+A booking or ticket records what is planned. A check-in records actual attendance. Each arrival creates its own attendance session, so returning after checking out creates another row.
+
+## Enable check-ins
+
+1. Select the location you want to manage.
+2. Open **Location settings > Check-ins** from the menu beside the location name.
+3. Turn on **Check-ins**.
+4. Enable the attendance types you want to use.
+
+| Setting | Who can check in |
+| --- | --- |
+| **Event tickets** | Attendees with an eligible event ticket, using their own attendance code. |
+| **Room bookings** | The person who booked the room and eligible invitees, each using their own code. |
+| **Desk bookings** | The person who booked the desk and eligible invitees, each using their own code. |
+| **Subscriptions** | Members with an eligible active personal or company subscription at this location. |
+
+Visit codes are managed through **Visitors**. There is no separate Visits switch in Check-ins, and visitor registration and Reception remain available through their own settings.
+
+<Note>
+  Room and desk codes are issued for eligible bookings created after that booking type is enabled. Turning it on does not add codes to older bookings. Event-ticket codes can also be issued for existing eligible tickets.
+</Note>
+
+Turning off Check-ins disables its code and name check-in workflows and hides the Check-ins page. Attendance history is kept. The separate Visitors workflow and staff attendance actions on individual event tickets remain available through their own controls.
+
+### Find a booking, event, or visit code
+
+For an eligible booking, attendee event ticket, or visit, each person uses a **six-digit code**. A booking organizer and an invitee use separate codes. Staff record event hosts from their host tickets, as described below.
+
+Members can find their codes in the member portal:
+
+- **Bookings:** open the booking details. Upcoming booking cards on the home page also show the code when available.
+- **Events:** open the event ticket to see the code alongside the QR code. Upcoming event cards on the home page also show it.
+- **Visits:** the invitation contains the visit code. The host or an authorized administrator can open the visit on **Visitors** to look it up.
+
+When configured, booking-start reminder emails to the booker and attendee event-reminder emails include the recipient's own code while Check-ins and the matching attendance type are enabled. Booking-end reminders do not include it. Enabling Check-ins does not itself enable reminders.
+
+If a code fails to load in the portal, select **Retry**. Make sure the correct location is selected.
+
+| Code | Opens | Closes |
+| --- | --- | --- |
+| Room or desk booking | One hour before the booking starts | At the booking end time |
+| Event ticket | One hour before the event starts | At the event end time |
+| Visit | One hour before the scheduled visit | At the end of the scheduled visit day |
+
+These times follow the **location's time zone**, including daylight-saving changes. A visit scheduled for 00:30 can therefore open at 23:30 on the previous day.
+
+Rescheduling updates the code's attendance window. Cancellation stops further check-ins, and removing an invitee removes that invitee's eligibility. These changes do not rewrite the times of attendance already recorded.
+
+### Find a member's personal code
+
+Members use their personal code for subscription attendance, without needing a booking. Both **Check-ins** and **Subscriptions** must be enabled for the personal code to be shown.
+
+1. In the member portal, open **Membership**.
+2. Find the **Check-in** section and the **Personal code**.
+3. Use that code at the correct location while the member or their company has an eligible active subscription.
+
+Authorized staff can also find the code in the member's profile. Future, ended, overdue, or suspended subscriptions do not qualify.
+
+The personal code belongs to the member at that location. If the member is fully deleted and the same account is later invited back to the same location, their reserved code is restored. Being deleted does not leave check-in access active.
+
+### Check in at Reception
+
+For visitor code check-in on a configured Reception tablet:
+
+1. Tap **Check in**.
+2. Confirm that you have a code.
+3. Enter the six digits from the visit invitation.
+4. Wait for confirmation before leaving the screen.
+
+The host can then receive the configured visitor-arrival notification.
+
+<Info>
+  Booking, event, and subscription self-service check-in requires a Reception app version that supports those attendance types. If your tablet does not support the code, ask a staff member to use the Check-ins page.
+</Info>
+
+A code cannot open a second attendance session while the person is already checked in. After checking out, they can check in again while the code and their eligibility remain valid.
+
+### Check someone in as staff
+
+1. Select the correct location and open **Check-ins**.
+2. Click **Check in**.
+3. Enter the person's six-digit code.
+4. Confirm the arrival.
+
+For subscription attendance, you can search by name instead. Search results include members with an eligible active personal or company subscription at the selected location.
+
+If **Subscriptions** is off, eligible members can still appear in search, but recording their subscription attendance is blocked. Enable it in **Location settings > Check-ins > Subscriptions** before checking them in.
+
+Name search is for eligible subscription members. Use a booking code for room or desk attendance.
+
+#### Use an event ticket's QR code
+
+An event ticket includes a QR code and a separate six-digit check-in code. The current Check-ins web page accepts the six-digit code; it does not provide an in-page camera scanner.
+
+Ask the attendee to open their ticket and read the six-digit code, or open their ticket from the event as described below. Showing or scanning a QR code alone does not confirm attendance.
+
+#### Record attendance from an event
+
+1. Open **Engagement > Events** and select the event.
+2. Select the attendee to open their ticket.
+3. Click **Check in**. You can also use the attendee row's **… > Check in** action. These event actions require permission to manage events.
+
+Use the host's ticket when recording an event host's attendance. The resulting attendance record is linked to that ticket, and its source can be opened from the Check-ins table.
+
+## Enable check-out
+
+Staff can record departures directly from the Check-ins page.
+
+To offer self-service check-out at Reception, open **Location settings > Reception** and enable **Check out**. Reception requires the Visitors add-on, and the tablet must be configured for the same location. This switch does not control staff check-out from the Check-ins page.
+
+### Check out at Reception
+
+1. Tap **Check out** on Reception.
+2. Enter the same code used for the arrival.
+3. Wait for the departure confirmation.
+
+The supported attendance types depend on the installed Reception app version. If the option is unavailable, ask a staff member to record the departure.
+
+### Check someone out as staff
+
+With permission to manage customers at the location:
+
+1. Open **Check-ins** and find the person's open attendance row.
+2. Open its **…** menu and choose **Check out**.
+
+You can also use the page's **Check out** action and enter the person's code.
+
+The recorded departure belongs to that attendance session. A later return is a separate session and produces another row.
+
+### Automatic check-out
+
+Turn on **Automatic check-out** in **Location settings > Check-ins** to close attendance that remains open overnight.
+
+- The normal cutoff is **midnight in the location's time zone**.
+- If the location's operating period continues past midnight, the cutoff is the end of that overnight period. For example, a schedule ending at 02:00 uses 02:00.
+- An ordinary daytime closing time does not move the cutoff earlier than midnight.
+
+The automatic deadline is set when the person checks in. Enabling the switch later does not add a deadline to an existing session. Disabling it later does not remove a deadline already assigned.
+
+Automatic check-out does not require a Reception tablet.
+
+## Monitor attendance
+
+Open **Check-ins** to review attendance for the selected location. The page starts with **all dates** and no date filter selected.
+
+Use **Add filter** to narrow the table:
+
+| Filter | Use it to find |
+| --- | --- |
+| **Status** | People currently checked in or sessions already checked out |
+| **Check-in date** | Arrivals during a preset period or a Custom date range |
+| **Type** | Room bookings, desk bookings, event tickets, visits, or subscriptions |
+| **User** | Attendance for a particular person |
+
+Click an applied filter to edit it, or remove it with **×**. Combine filters to focus on the attendance you need.
+
+The table shows **User**, **Type**, **Checked in Date**, and **Checked out Date**. Times use the location's time zone. Use the **Checked in** status to identify open sessions; **Departure not recorded** means a departure time is unknown, not necessarily that the person is still present.
+
+A **Late departure** badge identifies a recorded departure after the attendance session's code-valid period.
+
+Open a linked user or attendance source to see its details. Event-host attendance links to the host's ticket. People who have not arrived do not appear as attendance rows; use bookings, events, or Visitors to review expected arrivals.
+
+For staff arrival and departure alerts, open **Settings > Notifications > Check-ins** and enable **Members checked in** or **Members checked out**. Both are off by default. The chosen email or push channel must also be enabled. Recipients must remain active staff with Customers permission for that location. Visitor alerts remain under the Visitors notification options, and automatic check-outs do not send these member alerts.
+
+## Export attendance
+
+1. Open **Check-ins** at the correct location.
+2. Apply the filters for the records you need.
+3. Open the page's **…** menu.
+4. Select **Export CSV** or **Export Excel (XLSX)**.
+
+The download includes the filtered attendance records, not just the visible page of rows. It contains the attendance type and status, user contact information, visit-host details where relevant, code-valid times, and recorded arrival and departure times.
+
+Exports use the same location time zone as the table. For a daily report, apply a Check-in date filter before downloading; leaving the default unchanged exports across all dates.
