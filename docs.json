@@ -574,7 +574,8 @@
                 "group": "Get started",
                 "pages": []
               }
-            ]
+            ],
+            "hidden": true
           },
           {
             "tab": "Support",
