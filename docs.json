@@ -48,16 +48,6 @@
                 "pages": [
                   "admin/overview",
                   {
-                    "group": "Noor AI",
-                    "icon": "sparkles",
-                    "pages": [
-                      "admin/noor-ai/ask-noor-ai",
-                      "admin/noor-ai/bulk-create-resources-products-events-and-benefits",
-                      "admin/noor-ai/promote-products-events-and-benefits",
-                      "admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets"
-                    ]
-                  },
-                  {
                     "group": "Customer management",
                     "icon": "users",
                     "pages": [
@@ -317,6 +307,19 @@
                     ]
                   },
                   {
+                    "group": "AI & Agents",
+                    "icon": "sparkles",
+                    "pages": [
+                      "admin/noor-ai/ask-noor-ai",
+                      "admin/noor-ai/bulk-create-resources-products-events-and-benefits",
+                      "admin/noor-ai/promote-products-events-and-benefits",
+                      "admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets",
+                      "mcp-server",
+                      "mcp-server/claude",
+                      "mcp-server/chatgpt"
+                    ]
+                  },
+                  {
                     "group": "Integrations",
                     "icon": "puzzle-piece",
                     "pages": [
@@ -569,13 +572,10 @@
             "groups": [
               {
                 "group": "Get started",
-                "pages": [
-                  "mcp-server",
-                  "mcp-server/claude",
-                  "mcp-server/chatgpt"
-                ]
+                "pages": []
               }
-            ]
+            ],
+            "hidden": true
           },
           {
             "tab": "Support",
@@ -602,16 +602,6 @@
                 "group": "تجربة المسؤول",
                 "pages": [
                   "ar/admin/overview",
-                  {
-                    "group": "Noor AI",
-                    "icon": "sparkles",
-                    "pages": [
-                      "ar/admin/noor-ai/ask-noor-ai",
-                      "ar/admin/noor-ai/bulk-create-resources-products-events-and-benefits",
-                      "ar/admin/noor-ai/promote-products-events-and-benefits",
-                      "ar/admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets"
-                    ]
-                  },
                   {
                     "group": "إدارة العملاء",
                     "icon": "users",
@@ -874,6 +864,16 @@
                       "ar/admin/general/supported-languages",
                       "ar/admin/general/media-formats",
                       "ar/admin/general/content-sorting"
+                    ]
+                  },
+                  {
+                    "group": "الذكاء الاصطناعي والوكلاء",
+                    "icon": "sparkles",
+                    "pages": [
+                      "ar/admin/noor-ai/ask-noor-ai",
+                      "ar/admin/noor-ai/bulk-create-resources-products-events-and-benefits",
+                      "ar/admin/noor-ai/promote-products-events-and-benefits",
+                      "ar/admin/noor-ai/auto-assign-and-auto-reply-to-support-tickets"
                     ]
                   },
                   {

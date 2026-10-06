@@ -23,6 +23,14 @@ A booking or ticket records what is planned. A check-in records actual attendanc
 | **Desk bookings** | The person who booked the desk and eligible invitees, each using their own code. |
 | **Subscriptions** | Members with an eligible active personal or company subscription at this location. |
 
+<Frame caption="01 — Location settings > Check-ins: master switch and attendance types">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 01 here
+</div>
+</Frame>
+
 Visit codes are managed through **Visitors**. There is no separate Visits switch in Check-ins, and visitor registration and Reception remain available through their own settings.
 
 <Note>
@@ -31,17 +39,43 @@ Visit codes are managed through **Visitors**. There is no separate Visits switch
 
 Turning off Check-ins disables its code and name check-in workflows and hides the Check-ins page. Attendance history is kept. The separate Visitors workflow and staff attendance actions on individual event tickets remain available through their own controls.
 
-### Find a booking, event, or visit code
+### How users get a booking, event ticket, or visit code
 
 For an eligible booking, attendee event ticket, or visit, each person uses a **six-digit code**. A booking organizer and an invitee use separate codes. Staff record event hosts from their host tickets, as described below.
 
-Members can find their codes in the member portal:
+When configured, booking-start reminder emails to the booker and attendee event-reminder emails include the recipient's own code while Check-ins and the matching attendance type are enabled. Booking-end reminders do not include it. Enabling Check-ins does not itself enable reminders. A visitor's invitation email includes their visit code.
 
-- **Bookings:** open the booking details. Upcoming booking cards on the home page also show the code when available.
-- **Events:** open the event ticket to see the code alongside the QR code. Upcoming event cards on the home page also show it.
-- **Visits:** the invitation contains the visit code. The host or an authorized administrator can open the visit on **Visitors** to look it up.
+<Frame caption="02 — Booking-start reminder showing the booker's own check-in code">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
 
-When configured, booking-start reminder emails to the booker and attendee event-reminder emails include the recipient's own code while Check-ins and the matching attendance type are enabled. Booking-end reminders do not include it. Enabling Check-ins does not itself enable reminders.
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 02 here
+</div>
+</Frame>
+
+Members can also find their codes in the member portal:
+
+- Upcoming booking and event cards on the home page show the person's code when available.
+
+<Frame caption="03 — Member home page: an upcoming booking or event with its check-in code">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 03 here
+</div>
+</Frame>
+
+- Open a booking's details to find the booker's or invitee's own code. Open an event ticket to see its attendance code alongside the QR code.
+
+<Frame caption="04 — Member booking details showing the signed-in person's check-in code">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 04 here
+</div>
+</Frame>
+
+- The host or an authorized administrator can open a visit on **Visitors** to look up its code again.
 
 If a code fails to load in the portal, select **Retry**. Make sure the correct location is selected.
 
@@ -55,26 +89,54 @@ These times follow the **location's time zone**, including daylight-saving chang
 
 Rescheduling updates the code's attendance window. Cancellation stops further check-ins, and removing an invitee removes that invitee's eligibility. These changes do not rewrite the times of attendance already recorded.
 
-### Find a member's personal code
+Office, parking, and equipment bookings do not receive these booking check-in codes. Bookings imported from Google Calendar are also excluded.
+
+### How members get a personal check-in code
 
 Members use their personal code for subscription attendance, without needing a booking. Both **Check-ins** and **Subscriptions** must be enabled for the personal code to be shown.
 
 1. In the member portal, open **Membership**.
-2. Find the **Check-in** section and the **Personal code**.
+2. Find the **Check-in code** card.
 3. Use that code at the correct location while the member or their company has an eligible active subscription.
 
-Authorized staff can also find the code in the member's profile. Future, ended, overdue, or suspended subscriptions do not qualify.
+<Frame caption="05 — Membership page: the member's Check-in code card">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 05 here
+</div>
+</Frame>
+
+Authorized staff can also find the **Check-in code** card in the member's profile.
+
+<Frame caption="06 — Staff view of a member's profile: Check-in code">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 06 here
+</div>
+</Frame>
+
+The personal code has no booking-specific hourly window. It works while the member or company subscription remains eligible. Future, ended, overdue, or suspended subscriptions do not qualify.
 
 The personal code belongs to the member at that location. If the member is fully deleted and the same account is later invited back to the same location, their reserved code is restored. Being deleted does not leave check-in access active.
 
-### Check in at Reception
+### How users check in
 
-For visitor code check-in on a configured Reception tablet:
+Reception requires the **Visitors add-on** and a tablet configured for the location. For visitor code check-in:
 
 1. Tap **Check in**.
 2. Confirm that you have a code.
 3. Enter the six digits from the visit invitation.
 4. Wait for confirmation before leaving the screen.
+
+<Frame caption="07 — Reception: Check in and six-digit code entry">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 07 here
+</div>
+</Frame>
 
 The host can then receive the configured visitor-arrival notification.
 
@@ -84,12 +146,22 @@ The host can then receive the configured visitor-arrival notification.
 
 A code cannot open a second attendance session while the person is already checked in. After checking out, they can check in again while the code and their eligibility remain valid.
 
-### Check someone in as staff
+### How administrators check users in
+
+Staff need permission to manage customers at the selected location.
 
 1. Select the correct location and open **Check-ins**.
 2. Click **Check in**.
 3. Enter the person's six-digit code.
 4. Confirm the arrival.
+
+<Frame caption="08 — Check-ins window: member-name search and six-digit code entry">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 08 here
+</div>
+</Frame>
 
 For subscription attendance, you can search by name instead. Search results include members with an eligible active personal or company subscription at the selected location.
 
@@ -97,19 +169,45 @@ If **Subscriptions** is off, eligible members can still appear in search, but re
 
 Name search is for eligible subscription members. Use a booking code for room or desk attendance.
 
-#### Use an event ticket's QR code
+#### Check in attendees using their ticket
 
 An event ticket includes a QR code and a separate six-digit check-in code. The current Check-ins web page accepts the six-digit code; it does not provide an in-page camera scanner.
 
 Ask the attendee to open their ticket and read the six-digit code, or open their ticket from the event as described below. Showing or scanning a QR code alone does not confirm attendance.
 
-#### Record attendance from an event
+<Frame caption="09 — Member event ticket: QR code and separate six-digit attendance code">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 09 here
+</div>
+</Frame>
+
+#### Check in attendees from the event page
 
 1. Open **Engagement > Events** and select the event.
 2. Select the attendee to open their ticket.
 3. Click **Check in**. You can also use the attendee row's **… > Check in** action. These event actions require permission to manage events.
 
+<Frame caption="10 — Staff event ticket: Check in action">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 10 here
+</div>
+</Frame>
+
 Use the host's ticket when recording an event host's attendance. The resulting attendance record is linked to that ticket, and its source can be opened from the Check-ins table.
+
+The attendee-list check marker shows that an arrival was recorded. It remains after the person checks out; use the Check-ins status to see whether they are currently present.
+
+<Frame caption="11 — Event attendee list with the recorded-arrival indicator">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 11 here
+</div>
+</Frame>
 
 ## Enable check-out
 
@@ -117,7 +215,15 @@ Staff can record departures directly from the Check-ins page.
 
 To offer self-service check-out at Reception, open **Location settings > Reception** and enable **Check out**. Reception requires the Visitors add-on, and the tablet must be configured for the same location. This switch does not control staff check-out from the Check-ins page.
 
-### Check out at Reception
+<Frame caption="12 — Location settings > Reception: Check out switch">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 12 here
+</div>
+</Frame>
+
+### How users check out
 
 1. Tap **Check out** on Reception.
 2. Enter the same code used for the arrival.
@@ -125,18 +231,26 @@ To offer self-service check-out at Reception, open **Location settings > Recepti
 
 The supported attendance types depend on the installed Reception app version. If the option is unavailable, ask a staff member to record the departure.
 
-### Check someone out as staff
+### How administrators check users out
 
 With permission to manage customers at the location:
 
 1. Open **Check-ins** and find the person's open attendance row.
 2. Open its **…** menu and choose **Check out**.
 
+<Frame caption="13 — Open attendance row: menu with Check out">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 13 here
+</div>
+</Frame>
+
 You can also use the page's **Check out** action and enter the person's code.
 
 The recorded departure belongs to that attendance session. A later return is a separate session and produces another row.
 
-### Automatic check-out
+### Check users out automatically
 
 Turn on **Automatic check-out** in **Location settings > Check-ins** to close attendance that remains open overnight.
 
@@ -148,7 +262,7 @@ The automatic deadline is set when the person checks in. Enabling the switch lat
 
 Automatic check-out does not require a Reception tablet.
 
-## Monitor attendance
+## Track check-ins
 
 Open **Check-ins** to review attendance for the selected location. The page starts with **all dates** and no date filter selected.
 
@@ -163,6 +277,14 @@ Use **Add filter** to narrow the table:
 
 Click an applied filter to edit it, or remove it with **×**. Combine filters to focus on the attendance you need.
 
+<Frame caption="14 — Check-ins table: populated attendance and Add filter chips">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 14 here
+</div>
+</Frame>
+
 The table shows **User**, **Type**, **Checked in Date**, and **Checked out Date**. Times use the location's time zone. Use the **Checked in** status to identify open sessions; **Departure not recorded** means a departure time is unknown, not necessarily that the person is still present.
 
 A **Late departure** badge identifies a recorded departure after the attendance session's code-valid period.
@@ -171,12 +293,28 @@ Open a linked user or attendance source to see its details. Event-host attendanc
 
 For staff arrival and departure alerts, open **Settings > Notifications > Check-ins** and enable **Members checked in** or **Members checked out**. Both are off by default. The chosen email or push channel must also be enabled. Recipients must remain active staff with Customers permission for that location. Visitor alerts remain under the Visitors notification options, and automatic check-outs do not send these member alerts.
 
-## Export attendance
+<Frame caption="15 — Notification settings: Members checked in and Members checked out">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 15 here
+</div>
+</Frame>
+
+## Export a check-ins report
 
 1. Open **Check-ins** at the correct location.
 2. Apply the filters for the records you need.
 3. Open the page's **…** menu.
 4. Select **Export CSV** or **Export Excel (XLSX)**.
+
+<Frame caption="16 — Check-ins export menu: CSV and Excel (XLSX)">
+  {/* Replace this placeholder with the corresponding Rntor screenshot. */}
+
+  <div style={{ minHeight: "220px", width: "100%", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #a3a3a3", borderRadius: "12px", color: "#737373" }}>
+  Upload screenshot 16 here
+</div>
+</Frame>
 
 The download includes the filtered attendance records, not just the visible page of rows. It contains the attendance type and status, user contact information, visit-host details where relevant, code-valid times, and recorded arrival and departure times.
 
