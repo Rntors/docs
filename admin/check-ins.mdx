@@ -12,7 +12,7 @@ A booking or ticket records what is planned. A check-in records actual attendanc
 ## Enable check-ins
 
 1. Select the location you want to manage.
-2. Open **Location settings > Check-ins** from the menu beside the location name.
+2. Open **Settings > Locations**, choose the location, and select **Check-ins**.
 3. Turn on **Check-ins**.
 4. Enable the attendance types you want to use.
 
@@ -23,8 +23,11 @@ A booking or ticket records what is planned. A check-in records actual attendanc
 | **Desk bookings** | The person who booked the desk and eligible invitees, each using their own code. |
 | **Subscriptions** | Members with an eligible active personal or company subscription at this location. |
 
-<Frame caption="01 — Location settings > Check-ins: master switch and attendance types">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Check-ins settings">
+  <img
+    src="/images/admin/check-ins/settings-en.jpg"
+    alt="Rntor Check-ins settings with attendance types and automatic check-out"
+  />
 </Frame>
 
 **Visits do not have a separate switch in Check-ins settings.** When a member [registers a visit](/member/visitors/preregister-and-approve-visit-requests), Rntor creates a six-digit visit code and sends the visitor an invitation email containing that code. Visitor registration and Reception remain available through their own settings.
@@ -42,21 +45,26 @@ A person receives a **six-digit code** for an eligible booking, attendee event t
 When configured, booking-start reminder emails to the booker and attendee event-reminder emails include the recipient's own code while Check-ins and the matching attendance type are enabled. Booking-end reminders do not include it. Enabling Check-ins does not itself enable reminders. A visitor's invitation email includes their visit code.
 
 <Frame caption="02 — Booking-start reminder showing the booker's own check-in code">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
 </Frame>
 
 Members can also find their codes in the member portal:
 
 - Upcoming booking and event cards on the home page show the person's code when available. Hosts can also find a visitor's code on the upcoming visit card.
 
-<Frame caption="03 — Member home page: an upcoming booking or event with its check-in code">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Member home page: an upcoming booking or event with its check-in code">
+  <img
+    src="/images/admin/check-ins/home-en.jpg"
+    alt="Rntor member home page showing upcoming bookings and their check-in codes"
+  />
 </Frame>
 
 - Open a booking's details to find the booker's or invitee's own code. Open an event ticket to see its attendance code alongside the QR code.
 
-<Frame caption="04 — Member booking details showing the signed-in person's check-in code">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Member booking details showing the signed-in person's check-in code">
+  <img
+    src="/images/admin/check-ins/booking-en.jpg"
+    alt="Rntor member booking details with the signed-in person's check-in code"
+  />
 </Frame>
 
 - The host or an authorized administrator can open a visit on **Visitors** to look up its code again.
@@ -83,14 +91,20 @@ Members use their personal code for subscription attendance, without needing a b
 2. Find the **Check-in code** card.
 3. Use that code at the correct location while the member or their company has an eligible active subscription.
 
-<Frame caption="05 — Membership page: the member's Check-in code card">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Membership page: the member's Check-in code card">
+  <img
+    src="/images/admin/check-ins/membership-en.jpg"
+    alt="Rntor Membership page showing the member's personal check-in code"
+  />
 </Frame>
 
 Authorized staff can also find the **Check-in code** card in the member's profile.
 
-<Frame caption="06 — Staff view of a member's profile: Check-in code">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Staff view of a member's profile: Check-in code">
+  <img
+    src="/images/admin/check-ins/customer-en.jpg"
+    alt="Rntor staff view of a member profile showing the personal check-in code"
+  />
 </Frame>
 
 The personal code has no booking-specific hourly window. It works while the member or company subscription remains eligible. Future, ended, overdue, or suspended subscriptions do not qualify.
@@ -107,7 +121,6 @@ Reception requires the **Visitors add-on** and a tablet configured for the locat
 4. Wait for confirmation before leaving the screen.
 
 <Frame caption="07 — Reception: Check in and six-digit code entry">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
 </Frame>
 
 The host can then receive the configured visitor-arrival notification.
@@ -127,8 +140,11 @@ Staff can record attendance here without a Reception tablet or the Visitors add-
 3. Enter the person's six-digit code.
 4. After entering all six digits, click **Check in**.
 
-<Frame caption="08 — Check-ins window: member-name search and six-digit code entry">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Check in">
+  <img
+    src="/images/admin/check-ins/check-in-dialog-en.jpg"
+    alt="Rntor Check in dialog with member search and six-digit code entry"
+  />
 </Frame>
 
 For subscription attendance, you can search by name instead:
@@ -148,8 +164,11 @@ An event ticket includes a QR code and a separate six-digit check-in code. The c
 
 Ask the attendee to open their ticket and read the six-digit code, or open their ticket from the event as described below. Showing or scanning a QR code alone does not confirm attendance.
 
-<Frame caption="09 — Member event ticket: QR code and separate six-digit attendance code">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Member event ticket: QR code and separate six-digit attendance code">
+  <img
+    src="/images/admin/check-ins/member-ticket-en.jpg"
+    alt="Rntor member event ticket showing the QR code and separate six-digit check-in code"
+  />
 </Frame>
 
 #### Check in attendees from the event page
@@ -158,16 +177,22 @@ Ask the attendee to open their ticket and read the six-digit code, or open their
 2. Select the attendee to open their ticket.
 3. Click **Check in**. The ticket button changes to **Checked in** after the arrival is recorded. You can also use the attendee row's **… > Check in** action. These event actions require permission to manage events.
 
-<Frame caption="10 — Staff event ticket: Check in action">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Check in an event attendee">
+  <img
+    src="/images/admin/check-ins/event-ticket-en.jpg"
+    alt="Rntor attendee ticket with the Check in button"
+  />
 </Frame>
 
 Use the host's ticket when recording an event host's attendance. The resulting attendance record is linked to that ticket, and its source can be opened from the Check-ins table.
 
 The attendee-list check marker shows that an arrival was recorded. It remains after the person checks out; use the Check-ins status to see whether they are currently present.
 
-<Frame caption="11 — Event attendee list with the recorded-arrival indicator">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Event attendance">
+  <img
+    src="/images/admin/check-ins/event-attendees-en.jpg"
+    alt="Rntor event attendee list showing recorded attendance"
+  />
 </Frame>
 
 ## Enable check-out
@@ -176,8 +201,11 @@ Staff can record departures directly from the Check-ins page.
 
 To offer self-service check-out at Reception, open **Location settings > Reception** and enable **Check out**. Reception requires the Visitors add-on, and the tablet must be configured for the same location. This switch does not control staff check-out from the Check-ins page.
 
-<Frame caption="12 — Location settings > Reception: Check out switch">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Reception settings">
+  <img
+    src="/images/admin/check-ins/reception-settings-en.jpg"
+    alt="Rntor Reception settings with the Check out switch"
+  />
 </Frame>
 
 ### How users check out
@@ -195,8 +223,11 @@ If the person cannot find their code, staff can record their departure from the 
 1. Open **Check-ins** and find the person's open attendance row.
 2. Open its **…** menu and choose **Check out**. This action is available only for an open attendance session.
 
-<Frame caption="13 — Open attendance row: menu with Check out">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Check out from an attendance row">
+  <img
+    src="/images/admin/check-ins/check-out-menu-en.jpg"
+    alt="Rntor attendance row menu with Check out"
+  />
 </Frame>
 
 You can also use the page's **Check out** action and enter the person's code.
@@ -230,8 +261,11 @@ Use **Add filter** to narrow the table:
 
 Click an applied filter to edit it, or remove it with **×**. Combine filters to focus on the attendance you need.
 
-<Frame caption="14 — Check-ins table: populated attendance and Add filter chips">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Check-ins table">
+  <img
+    src="/images/admin/check-ins/attendance-table-en.jpg"
+    alt="Rntor Check-ins table showing attendance records and the Add filter control"
+  />
 </Frame>
 
 The table shows **User**, **Type**, **Checked in Date**, and **Checked out Date**. Times use the location's time zone.
@@ -244,10 +278,13 @@ A **Late departure** badge identifies a recorded departure after the attendance 
 
 Open a linked user or attendance source to see its details. Event-host attendance links to the host's ticket. People who have not arrived do not appear as attendance rows; use bookings, events, or Visitors to review expected arrivals.
 
-For staff arrival and departure alerts, open **Settings > Notifications > Check-ins** and enable **Members checked in** or **Members checked out**. Both are off by default. The chosen email or push channel must also be enabled. Recipients must remain active staff with Customers permission for that location. Visitor alerts remain under the Visitors notification options, and automatic check-outs do not send these member alerts.
+For staff arrival and departure alerts, open your profile menu, select **My Profile > Notifications**, and find **Check-ins**. Enable **Members checked in** or **Members checked out**. Both are off by default. The chosen email or push channel must also be enabled. Recipients must remain active staff with Customers permission for that location. Visitor alerts remain under the Visitors notification options, and automatic check-outs do not send these member alerts.
 
-<Frame caption="15 — Notification settings: Members checked in and Members checked out">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Check-in notifications">
+  <img
+    src="/images/admin/check-ins/notification-settings-en.jpg"
+    alt="Rntor notification settings for members checked in and members checked out"
+  />
 </Frame>
 
 ## Export a check-ins report
@@ -257,8 +294,11 @@ For staff arrival and departure alerts, open **Settings > Notifications > Check-
 3. Open the page's **…** menu.
 4. Select **Export CSV** or **Export Excel (XLSX)**.
 
-<Frame caption="16 — Check-ins export menu: CSV and Excel (XLSX)">
-  {/* Screenshot slot. In the Mintlify editor, insert a native image here with /image or drag an image into this Frame. */}
+<Frame caption="Export attendance">
+  <img
+    src="/images/admin/check-ins/export-menu-en.jpg"
+    alt="Rntor Check-ins export menu with CSV and Excel options"
+  />
 </Frame>
 
 The download includes the filtered attendance records, not just the visible page of rows. It contains the attendance type and status, user contact information, visit-host details where relevant, code-valid times, and recorded arrival and departure times.
