@@ -354,11 +354,11 @@
                         "group": "Access control",
                         "pages": [
                           "admin/integrations/access-control/set-up-access-control",
+                          "admin/integrations/access-control/tapkey",
                           "admin/integrations/access-control/salto-ks",
                           "admin/integrations/access-control/kisi",
                           "admin/integrations/access-control/avigilon-alta",
                           "admin/integrations/access-control/brivo",
-                          "admin/integrations/access-control/tapkey",
                           "admin/integrations/access-control/luckey",
                           "admin/integrations/access-control/integration-requirements"
                         ]
@@ -911,11 +911,11 @@
                         "group": "التحكم بالوصول",
                         "pages": [
                           "ar/admin/integrations/access-control/set-up-access-control",
+                          "ar/admin/integrations/access-control/tapkey",
                           "ar/admin/integrations/access-control/salto-ks",
                           "ar/admin/integrations/access-control/kisi",
                           "ar/admin/integrations/access-control/avigilon-alta",
                           "ar/admin/integrations/access-control/brivo",
-                          "ar/admin/integrations/access-control/tapkey",
                           "ar/admin/integrations/access-control/luckey",
                           "ar/admin/integrations/access-control/integration-requirements"
                         ]
