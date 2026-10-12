@@ -1147,6 +1147,11 @@
       "source": "/admin/general/media-formats",
       "destination": "/admin/general/branding",
       "permanent": true
+    },
+    {
+      "source": "/ar/admin/general/media-formats",
+      "destination": "/ar/admin/general/branding",
+      "permanent": true
     }
   ]
 }
