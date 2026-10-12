@@ -302,7 +302,6 @@
                       "admin/general/customize-emails",
                       "admin/general/language",
                       "admin/general/supported-languages",
-                      "admin/general/media-formats",
                       "admin/general/content-sorting"
                     ]
                   },
@@ -862,7 +861,6 @@
                       "ar/admin/general/customize-emails",
                       "ar/admin/general/language",
                       "ar/admin/general/supported-languages",
-                      "ar/admin/general/media-formats",
                       "ar/admin/general/content-sorting"
                     ]
                   },
@@ -1143,5 +1141,17 @@
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/admin/general/media-formats",
+      "destination": "/admin/general/branding",
+      "permanent": true
+    },
+    {
+      "source": "/ar/admin/general/media-formats",
+      "destination": "/ar/admin/general/branding",
+      "permanent": true
+    }
+  ]
 }
