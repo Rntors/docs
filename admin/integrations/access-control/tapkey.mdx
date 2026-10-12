@@ -1,166 +1,125 @@
 ---
 title: "Tapkey"
 sidebarTitle: "Tapkey"
-description: "Connect Tapkey, configure doors and user groups for bookings and subscriptions, and guide customers through unlocking."
+description: "Connect Tapkey, configure access for bookings and subscriptions, and help customers unlock doors."
 ---
 
-Use Tapkey with Rntor to manage door access for confirmed bookings and active memberships. Choose the doors or user groups associated with each resource, plan, or subscription item, then let Rntor synchronize eligible customers.
+Connect Tapkey to manage customers' door access automatically for confirmed bookings and active subscriptions.
 
 <Info>
-  Contact Tapkey for compatible locks, Tapkey apps, account features, and pricing.
+  Tapkey is a separate provider. Contact Tapkey for its hardware, account features, app support, and pricing.
 </Info>
 
 ## Prerequisites
 
-1. Prepare a Tapkey administrator account with the locks for your location.
-2. If you will use **Tapkey groups**, enable user groups on that account and configure each group's door permissions in Tapkey.
-3. Use a **Live** Rntor workspace and an administrator account authorized to manage the location's integrations and the resources or billing settings you will edit.
-4. Make sure customers have an active Rntor customer record and a valid email address.
+1. Set up your locks in Tapkey. To use user groups, enable them on your Tapkey account and assign the required locks to each group.
+2. Use a Tapkey administrator account and a Rntor administrator account with permission to manage the location's integrations.
+3. Use a **Live** workspace in Rntor.
 
 <Warning>
-  Use groups dedicated to Rntor. Access added manually in Tapkey is preserved by Rntor and may continue after a Rntor booking or subscription ends.
+  Create groups dedicated to Rntor instead of sharing groups managed by another application.
 </Warning>
 
 ## Connect Tapkey integration
 
-1. Select the location, open **Integrations**, and choose **Tapkey**.
-2. Click **Connect Tapkey**.
-3. Sign in to Tapkey as an administrator and authorize the connection.
-4. If asked, select the Tapkey account that owns the location's locks and click **Save**.
-5. Check the **Connected account** before configuring access.
+1. Open **Settings**, then **Integrations** under the required location.
+2. Select **Tapkey** and click **Connect Tapkey**.
+3. Sign in to Tapkey and approve the connection.
+4. If prompted, choose the account that owns the location's locks and click **Save**.
 
-<Info>
-  Each location has its own connection and access settings. Tapkey cannot be connected from a Test workspace.
-</Info>
+Each location can have its own Tapkey connection.
 
 ## Configure access for Tapkey
 
-Configure access from the **Access** section of a saved resource, membership plan, or subscription item:
+Access can follow subscriptions or bookings for rooms, desks, offices, equipment, and parking.
 
-- **Tapkey doors:** select individual doors.
-- **Tapkey groups:** select existing user groups when the connected Tapkey account supports them. The group's door permissions are managed in Tapkey.
+Select existing user groups under **Access > Tapkey groups**. Configure each group's locks and access schedule in Tapkey. Groups must be enabled on the connected account.
 
-Selections are saved when you change them. Synchronization runs automatically; a saved selection does not mean the customer's access has finished synchronizing.
+Rntor also supports individual locks through **Tapkey doors**.
 
 ### Access for subscriptions
 
 #### For future new members
 
-1. Open [Billing > Plans](/admin/billing/plans/set-up-plans) and edit the membership plan.
-2. In **Access**, select the required **Tapkey doors** or **Tapkey groups**.
-3. [Create the customer's subscription](/admin/billing/subscriptions/set-up-subscriptions), or let the customer [sign up for the plan](/admin/billing/plans/immediate-plan-sign-ups).
+1. Edit a saved [membership plan](/admin/billing/plans/set-up-plans) and select its access groups in **Access**.
+2. [Create a subscription](/admin/billing/subscriptions/set-up-subscriptions), or let customers [sign up for the plan](/admin/billing/plans/immediate-plan-sign-ups).
 
-Create and save a new plan first, then reopen it to configure Access. For an individual resource rental, configure the saved subscription item that covers the rental.
+For a resource rental, configure access on the saved subscription item covering that rental.
 
 #### For existing members
 
-1. [Open the subscription](/admin/billing/subscriptions/edit-a-subscription).
-2. Open the relevant saved subscription item.
-3. Select its doors or groups under **Access**.
-
-Plan access and item access can both apply. When removing access, check whether another plan, item, or booking still grants it.
+1. [Open the subscription](/admin/billing/subscriptions/edit-a-subscription) and select the relevant saved item.
+2. Choose its Tapkey groups in **Access**. Changes synchronize automatically.
 
 ### Access for resource bookings
 
-1. Go to **Resources** and open **Rooms**, **Desks**, **Offices**, **Parking**, or **Equipment**.
-2. Edit the [saved resource](/admin/resource-management/resources/set-up-resources).
-3. Find **Access** and select the doors or groups that customers need for that resource.
-
-A resource selection controls access for its confirmed bookings. Set subscription access separately on the plan or subscription item.
+1. Go to **Resources > Rooms, Desks, Offices, Parking**, or **Equipment**.
+2. Edit the [resource](/admin/resource-management/resources/set-up-resources) and select its Tapkey groups in **Access**.
 
 ### Access for plans with day passes
 
-To give access only on booked days:
-
-1. Leave Tapkey doors and groups unselected on the plan and its subscription items.
+1. Leave access unselected on the plan and subscription items.
 2. Configure access on the hot desk resource.
-3. Have the customer book the desk using their day pass.
 
-The confirmed booking then determines the access period, including the location's configured time before and after bookings.
+Customers receive access when they book that desk with a day pass, including the location's booking grace period.
 
 <Warning>
-  Selecting access on a plan or subscription item can grant access throughout its eligible subscription period, including days without a desk booking.
+  Setting access on the plan grants access throughout the eligible subscription period, including days without a booking.
 </Warning>
 
 ## How Tapkey integration works
 
 ### Access based on subscriptions
 
-- Access follows active, unsuspended subscriptions and their eligible items.
-- Each item's dates are limited by the subscription's dates. Access starts at midnight on the start date and covers the end date, using the location's time zone.
-- An eligible company subscription covers active customers belonging to that company at the same location, including customers added later.
-- Ending, canceling, or suspending the subscription removes the access it provides unless another entitlement still grants it.
+- Access follows active, unsuspended subscriptions and their item dates.
+- Access begins at midnight on the start date and includes the end date, in the location's time zone.
+- Eligible company subscriptions cover active customers belonging to that company at the same location, including members added later.
+- Ending, canceling, or suspending a subscription removes its access unless another entitlement still provides it.
 
-Invoice payment status is not a separate access rule. Manage eligibility through the subscription's status and dates. You can [edit its end date](/admin/billing/subscriptions/edit-a-subscription) or [cancel the subscription](/admin/billing/subscriptions/cancel-a-subscription).
+Invoice payment status does not independently control access. To end access, [change the subscription's end date](/admin/billing/subscriptions/edit-a-subscription) or [cancel it](/admin/billing/subscriptions/cancel-a-subscription).
 
 ### Access based on bookings
 
-- Only **confirmed** bookings grant access; pending bookings do not.
-- Access covers the booking customer and room invitees linked to eligible customer records at that location.
-- Rescheduling, extending, shortening, or canceling a booking updates the access it provides.
-- Overlapping access periods are combined. Separate bookings do not grant access during the gap between them.
+- Confirmed bookings grant access to the booking customer and eligible room invitees.
+- Changes to booking times or cancellations automatically update access.
+- The default grace period is **15 minutes before and after** a booking. Adjust it in **Integrations > Tapkey > Access window** and click **Save**.
 
-In **Integrations > Tapkey > Access window**, set **Minutes before a booking** and **Minutes after a booking**, then click **Save**. Both default to **15 minutes** and can be set from **0 to 240 minutes**.
-
-With the default settings:
-
-| Booking time | Access window |
+| Booking time | Access with the default grace period |
 | --- | --- |
 | 10:00 AM–12:00 PM | 9:45 AM–12:15 PM |
 | 2:00 PM–3:30 PM | 1:45 PM–3:45 PM |
 
-<Note>
-  Access changes synchronize in the background. Check **Access synchronization** for **Synced**, **Pending**, and **Failed** counts. **Sync now** requests another synchronization; it does not open a door.
-</Note>
-
 ### How users unlock doors
 
-1. Install the Tapkey mobile app.
-2. Sign in using the same email address as the Rntor customer account.
-3. Allow the app to synchronize the available access.
-4. Stand near the relevant lock and unlock it through Tapkey during the permitted period.
-
-<Warning>
-  Tapkey locks can operate offline. A revoked key may remain usable until the phone or lock synchronizes, so a completed removal is not a guarantee of immediate revocation at an offline door.
-</Warning>
+1. Install the Tapkey app.
+2. Sign in with the email address used in Rntor.
+3. Open the app near the relevant lock and unlock during the permitted access period.
 
 #### Inform customers how to unlock doors
 
-Include the Tapkey app and matching-email instructions in your customer onboarding:
+Tapkey does not send an automatic app invitation. Explain installation and the matching email address in:
 
-- Add them to the resource's [booking confirmation email](/admin/general/customize-emails).
-- Publish a [guide explaining how to enter the space](/admin/support/guides).
-
-Ask customers to install Tapkey before arrival rather than wait for an automatic app invitation. Direct customers to Tapkey for unlocking.
+- The resource's [booking confirmation email](/admin/general/customize-emails).
+- A [guide to entering your space](/admin/support/guides).
 
 ## Disconnect Tapkey
 
 1. Open the location's **Integrations > Tapkey** page.
 2. Click **Disconnect** and confirm.
-3. Wait while Rntor removes the access it created. The page shows the disconnecting status during cleanup.
 
-Access created manually in Tapkey is kept. Disconnecting finishes after managed access has been removed.
+Rntor removes the access it created before completing disconnection. Manually added Tapkey access is preserved. If **Access needs review in Tapkey** appears, review the affected memberships in Tapkey to complete disconnection.
 
 <Warning>
-  If **Access needs review in Tapkey** appears, review the affected group memberships in Tapkey and remove access that should no longer exist. Rntor keeps checking and finishes disconnecting once the unresolved access is gone. Offline-lock synchronization limits still apply.
+  Offline locks may continue accepting a revoked key until the phone or lock synchronizes.
 </Warning>
 
 ## FAQs
 
 <Accordion title="How should I organize access for different doors?">
-  Create dedicated groups in Tapkey, then select the matching groups in Rntor. For example:
+  Create dedicated groups in Tapkey and assign them to the matching resources or plans:
 
-  - A shared entrance can be assigned to the resources and plans that require it.
-  - A private office group can contain the entrance and that office's door.
-  - A meeting room group can contain the entrance and the booked room's door.
-
-  Configure any group schedule in Tapkey. You can also use **Tapkey doors** to map individual doors directly.
-</Accordion>
-
-<Accordion title="Why are no Tapkey groups available?">
-  The selected Tapkey account must support user groups and allow Rntor to read and manage membership. If there are no groups, create them in Tapkey. If Rntor requests reconnection, sign in again with the required administrator permissions. Reconnecting does not enable a missing account feature; contact Tapkey about enabling it.
-</Accordion>
-
-<Accordion title="Why has access not synchronized?">
-  Check the connected account, customer's email and active status, booking confirmation or subscription eligibility, and the selected doors or groups. Resolve any reconnection message, review **Access synchronization**, and use **Sync now** if needed. A pending or failed synchronization is not confirmation that a key is ready.
+  - **Shared entrance:** use one entrance group across the resources and plans that need it.
+  - **Private offices:** give each office a group containing its door and the shared entrance.
+  - **Meeting rooms:** combine each room's door with the entrance. Desks and shared areas can use the entrance group alone.
+  - **Membership levels:** set different schedules in Tapkey, such as business hours and round-the-clock access, and assign each group to its plan.
 </Accordion>

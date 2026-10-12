@@ -1,38 +1,32 @@
 ---
 title: "Overview"
 sidebarTitle: "Overview"
-description: "See how Rntor manages booking and subscription access with Tapkey, and how customers unlock doors."
+description: "Understand how Tapkey provides automatic access for Rntor bookings and subscriptions."
 ---
 
-Rntor connects bookings and memberships to door access through [Tapkey](/admin/integrations/access-control/tapkey). Customers manage their bookings in Rntor and use the Tapkey app when they arrive at your space.
+Rntor supports [Tapkey](/admin/integrations/access-control/tapkey) for automatic door access based on bookings and subscriptions. Customers use Rntor to book your services and the Tapkey app to enter your space.
 
 ## Integration comparison
 
-| Integration | Unlock in Rntor | Access basis | App invitation | Maintained by |
+| Integration | Unlocking in Rntor | Access granted for | Email invitation to install the app | Developed and maintained by |
 | --- | --- | --- | --- | --- |
-| [Tapkey](/admin/integrations/access-control/tapkey) | No | Bookings and subscriptions | No | Rntor |
-
-Customers install the Tapkey app themselves; Rntor does not email an invitation to install it. Access requires a confirmed booking or an active subscription.
+| [Tapkey](/admin/integrations/access-control/tapkey) | No | Bookings and subscriptions | No; customers download Tapkey themselves | Rntor |
 
 ## Main difference
 
-Rntor manages **who can enter and when**. Tapkey handles **opening the door**.
+Rntor manages access automatically:
 
-- Link Tapkey doors or available user groups to resources, membership plans, or subscription items.
-- Rntor updates the access it manages when an eligible booking or subscription changes, expires, or is canceled.
-- If another eligible booking or subscription still covers the same access, that access is retained.
+- Eligible bookings and subscriptions grant the customer the access configured for the resource, plan, or subscription item.
+- When eligibility ends, Rntor removes that access unless another active booking or subscription still provides it.
+
+Tapkey handles unlocking through its own app.
 
 ### Unlocking outside Rntor
 
 **Supported integration: Tapkey**
 
-1. The customer has a confirmed booking or active subscription linked to Tapkey access.
-2. Rntor synchronizes their access with the connected Tapkey account.
-3. The customer installs the Tapkey app and signs in with the email address used in Rntor.
-4. At the door, the customer uses Tapkey to unlock it.
+1. A customer makes a confirmed booking or starts an eligible subscription in Rntor.
+2. Rntor synchronizes the customer's access with Tapkey.
+3. The customer installs Tapkey, signs in with the same email address used in Rntor, and unlocks the door when they arrive.
 
-<Info>
-  Tapkey access is configured separately for each location in a Live workspace. Customers open doors in Tapkey; there is no Tapkey unlock button in the Rntor member portal.
-</Info>
-
-See the [Tapkey setup guide](/admin/integrations/access-control/tapkey) for prerequisites, access settings, customer instructions, and disconnecting.
+Customers install the app themselves; they should not wait for a Tapkey invitation email. See [Tapkey](/admin/integrations/access-control/tapkey) for setup and customer instructions.
