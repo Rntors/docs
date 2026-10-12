@@ -1,8 +1,3 @@
----
-title: "Customize emails"
-description: "Customize different emails sent to users, including invitations and confirmations, with your own text"
----
-
 You can customize certain email notifications sent to users by adding your own text. This allows you to create a more personalized experience for your customers and automatically provide them with all the necessary details, reducing follow-up questions.
 
 ## Member invitations and invitation reminders
@@ -27,36 +22,32 @@ To customize member invitation email:
 
 ## Booking confirmations
 
-By default, users do not receive a booking confirmation email. They only receive a payment confirmation (receipt) if they paid via a payment gateway:
+Booking confirmation emails are optional. Enable them for the relevant booking creators on each resource.
 
-![Image](/images/customize-emails-to-users-3.png)
+1. Open **Resources** \> **Rooms**, **Desks**, **Parking**, or **Equipment**.
+2. Create or edit the resource, open **Booking**, and find **Confirmation email**.
+3. Select the categories of people whose bookings should trigger the email. You can select more than one:
+   - **Administrators** — an administrator creates the booking.
+   - **Location members** — a member of this location creates the booking.
+   - **Network members** — a member of another location in the network creates the booking.
+   - **Nonmembers** — a nonmember creates the booking.
+4. Enter your custom text and save the resource.
 
-​ To send your custom booking confirmation emails:
+The recipient is the customer the booking belongs to. Selecting **Administrators** lets that customer receive the confirmation when an administrator books on their behalf.
 
-1. Go to **Resources** \> **Rooms**, **Desks**, **Parking**, or **Equipment**.
-2. When creating or editing a resource, find the **Confirmation email** property.
-3. Choose which user roles should receive this email when booking and paste your custom text.
-   - The booking confirmation email, by default, includes:
-     - A 'Thank you' for the booking
-     - Booking date and time
-   - Your custom text will be inserted in the middle.
+The email includes the booking date and time, your custom text, and the check-in code when the booking has one. Payment receipts and booking-start reminders are separate messages.
 
-![Image](/images/customize-emails-to-users-4.png)
+![Booking confirmation settings](/images/customize-emails-to-users-4.png)
 
 ## Event joining confirmations
 
-By default, for event tickets, users do not receive confirmation emails. They only receive a payment confirmation (receipt) if they paid via a payment gateway.
+To enable the confirmation setting for an event, open **Events**, create or edit the event, and enable **Confirmation email**.
 
-To send your custom confirmation emails to event attendees:
+<Info>
+  Custom event-confirmation text is not currently retained when the event is saved.
+</Info>
 
-1. Go to the **Events** page.
-2. When creating or editing an event, enable **Confirmation email** and paste your email text.
-   - The event joining confirmation email, by default, includes:
-     - A 'Thank you' for joining the event
-     - Event date, time, and venue
-   - Your custom text will be inserted in the middle.
-
-![Image](/images/customize-emails-to-users-5.png)
+![Event confirmation settings](/images/customize-emails-to-users-5.png)
 
 ## Shop order confirmations
 
@@ -82,7 +73,7 @@ To send your custom confirmation email to users after all orders:
 By default, for benefit applications, users do not receive confirmation emails. To send your custom confirmation emails to benefit applicants:
 
 1. Go to the **Benefits** page.
-2. When creating or editing an event, enable **Confirmation email** and paste your email text.
+2. When creating or editing a benefit, enable **Confirmation email** and paste your email text.
 
 ![Image](/images/customize-emails-to-users-7.png)
 
@@ -109,10 +100,10 @@ To customize the visitor invitation email:
 
 ![Image](/images/customize-emails-to-users-9.png)
 
-**FAQs**
+## FAQs
 
 <Accordion title="Where can I see all notifications and email notifications sent to my customers?">
-  To view the list of notifications and emails users receive, refer to the [Understand user notifications](/member/account/notifications) doc.
+  To check recorded email deliveries, open [Email activity](/admin/general/email-activity). For the types of notifications users can receive, see [Understand user notifications](/member/account/notifications).
 </Accordion>
 
 <Accordion title="How can I customize notifications or emails that aren't directly customizable in RNTOR?">
@@ -120,9 +111,7 @@ To customize the visitor invitation email:
 </Accordion>
 
 <Accordion title="Can I add hyperlinks or social media links to custom email text?">
-  Yes. These custom text fields render Markdown formatting, so add hyperlinks — including links to your social media pages — using Markdown link syntax: `[text](url)`. For example, `[RNTOR docs](https://rntor.mintlify.app)` appears as a clickable link reading [RNTOR docs](https://rntor.mintlify.app).
-
-  You can use this to add hyperlinks in any custom emails: invitations, invitation reminders, booking confirmations, event joining confirmations, shop order confirmations, benefit application confirmations, and visit invitations.
+  Use plain text for your custom messages. Markdown links such as `[Directions](https://example.com)` are not consistently converted into clickable links in member invitations, booking confirmations, or visit invitations. Include the full web address in your text.
 </Accordion>
 
 <Accordion title="How do I send new members a welcome email with onboarding instructions?">

@@ -1,28 +1,27 @@
----
-title: "MAIL FROM and footer"
-description: "Step-by-step instructions to configure your custom MAIL FROM address and footer, troubleshoot email delivery issues, and improve deliverability"
----
-
-RNTOR lets you configure a custom MAIL FROM address and customize the footer of your transactional emails so your emails to customers look more professional, reflect your brand, and are easier for customers to recognize and trust in their inbox.
-
-This guide also helps you troubleshoot delivery issues and improve email deliverability.
+Set a custom sender address for your network and manage your email footer in network settings.
 
 ## Set up custom MAIL FROM
 
-By default, all transactional emails are sent from [`hello@transactional.rntor.com`](mailto:hello@transactional.rntor.com) and include RNTOR's postal address in the footer to comply with anti-spam regulations. With custom MAIL FROM, you can replace the default sender with your own email address.
-
-This helps your customers better recognize your business and improves email deliverability in certain scenarios.
+Custom MAIL FROM lets supported network emails use your own sender address. Until that address is verified and enabled, Rntor uses its default sender.
 
 <Info>
-  Custom MAIL FROM is an add-on with a one-time setup fee. [Pricing](https://rntor.com/pricing)
+  Custom MAIL FROM is a subscription add-on. Its renewal cycle follows your network's subscription. Review the amount due now and the renewal terms before confirming the purchase. [Pricing](https://rntor.com/pricing)
 </Info>
 
-1. Contact us at [support@rntor.com](mailto:support@rntor.com) and share the email address you want to use to send emails to users.
-2. Upon your confirmation, we'll charge a one-time fee to your default payment method. It covers lifetime usage. You can later change the email address without additional charges.
-3. Our team will send you a file with DNS records and instructions for adding them to your domain registrar.
-4. Notify us once you set the DNS records. We'll verify them on our end and enable your custom email sending address.
+The network owner can configure the sender in a Live workspace:
 
-Instructions for setting DNS records in common registrars:
+1. Open **Settings** in the sidebar.
+2. Under **Merchant wide (Network)**, open **General** > **Information**.
+3. In **MAIL FROM**, select **Subscribe** if the add-on is not already enabled. Review the purchase details, then select **Confirm and pay**.
+4. Enter your sender email address and select **Save**.
+5. Copy the DNS records displayed below the address to your domain registrar. Use the names, types, values, and priorities shown in Rntor.
+6. Select **Check verification**. When the status becomes **Verified and active**, the verified address is available for sending.
+
+If verification is still pending, allow time for your DNS changes to become available and check again. Payment alone does not verify your domain. MAIL FROM settings in Test workspaces are read-only.
+
+Changing only the part before **@** on an already verified domain does not require new DNS records. Save the new address to apply it.
+
+Instructions for DNS settings in common registrars:
 
 - [GoDaddy](https://www.godaddy.com/help/manage-dns-records-680)
 - [Google Domains](https://support.google.com/domains/answer/3290350)
@@ -31,131 +30,97 @@ Instructions for setting DNS records in common registrars:
 - [WIX](https://support.wix.com/en/article/managing-dns-records-in-your-wix-account)
 - [Squarespace](https://support.squarespace.com/hc/en-us/articles/360002101888-Adding-custom-DNS-records-to-your-Squarespace-managed-domain)
 
-**Tips**
+### Improve deliverability for your custom address
 
-To maximize email deliverability, we recommend:
+<span id="improve-email-deliverability" />
 
-- Avoid using generic addresses like "info@". More specific prefixes—such as "members@" or "hello@"—tend to be viewed as more trustworthy by mail providers and are less likely to end up in spam folders.
-- Set up a DMARC record. It helps recipient servers verify your identity and significantly improves your reach:
+Use a sender address your customers recognize, such as **members@** or **hello@**. Keep the DNS records used to verify the domain in place.
 
-1. Log in to your domain registrar account.
-2. Open the DNS settings or control panel.
-3. Create a new record with the following data:
+You can also configure DMARC with your domain provider. A monitoring record can use the following values:
 
-| **Type** | TXT |
+| Field | Value |
 | --- | --- |
-| **Name** | `_dmarc` |
-| **Value** | `v=DMARC1; p=none; sp=none; pct=100; rua=mailto:[example@yourdomain.com](mailto:example@yourdomain.com);`<br />**Note:** Replace [`example@yourdomain.com`](mailto:example@yourdomain.com) with a managed email address where you wish to receive DMARC reports from mail servers. |
-| **TTL** | leave the default value |
+| Type | TXT |
+| Name | `_dmarc` |
+| Value | `v=DMARC1; p=none; sp=none; pct=100; rua=mailto:reports@yourdomain.com;` |
+| TTL | Your provider's default |
+
+Replace `reports@yourdomain.com` with an address you manage for receiving DMARC reports.
 
 ### How custom MAIL FROM works
 
-With a custom MAIL FROM email address configured, all transactional emails — including invitation emails, payment confirmations, and invoices — are sent from your custom email address. This ensures consistent branding for all your RNTOR-generated communications.
+The sender address belongs to the network. Supported emails use the verified address while the add-on is active.
 
-![Customize the email sender address on RNTOR coworking space management platform](/images/emails-1.png)
+<Info>
+  Some network notifications still use Rntor's default sender. A custom MAIL FROM address does not currently apply to every type of email.
+</Info>
 
 **Migrate custom MAIL FROM to a different hosting provider**
 
-1. Open the DNS panel with your new hosting provider.
-2. Recreate the same DNS records our team originally shared.
-3. Delete the DNS records from your previous hosting provider.
+1. Open the DNS settings with your current provider and copy the records originally used to verify your sending domain.
+2. Add the same records with your new DNS provider.
+3. Keep the old records until the new records are available.
 
 **Migrate custom MAIL FROM to a different domain name**
 
-1. Request new DNS records from our [support team.](/admin/administration/contact-support)
-2. Add the new records to your new domain's DNS panel.
-3. Remove the DNS records associated with the old domain.
+1. Open **Settings** > **Merchant wide (Network)** > **General** > **Information**.
+2. Enter the address on the new domain in **MAIL FROM** and select **Save**.
+3. Add the new DNS records shown in Rntor to that domain.
+4. Select **Check verification**.
+
+Your current verified sender remains in use while the replacement domain is awaiting verification.
 
 ## Customize email footer
 
-You can customize the footer of transactional emails with your business identity information — company name, postal address, and other legal or compliance details shown on every automated email. For this, the [owner](/admin/administration/administrators/owner) should do the following:
+The network owner can save the business details to use as an email footer:
 
-1. On the left-side panel, click **(...)** menu next to your network name.
-2. Go to **Network settings** \> **General** \> **Information** tab.
-3. In the **Email** section \> **Footer** field, enter your company name and business address.
+1. Open **Settings** > **Merchant wide (Network)** > **General** > **Information**.
+2. Under **Email**, enter your business name and postal address in **Footer**.
+3. Use **EN** and **AR** to enter the text in each language. Click outside the field to save.
 
-After this, all future transactional emails will be sent to users with your business information in the footer as plain text.
-
-<Tip>
-  To comply with the CAN-SPAM Act, you must include your valid physical postal address. [Learn more](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
-</Tip>
+<Info>
+  The saved footer is not currently included in every email. Booking confirmations, for example, still use their standard footer.
+</Info>
 
 ## Troubleshoot email delivery issues
 
-If your customer is not be receiving a certain email, follow these steps to troubleshoot delivery issues:
+If a customer cannot find a message, look for it in [Email activity](/admin/general/email-activity) and check its status. **Delivered** means the receiving mail server accepted it; it does not guarantee that the message appears in the inbox. A missing record or the absence of an error does not prove delivery.
 
 <Accordion title="Invitations to join">
-  If a member cannot find the email invitation, go to RNTOR \> **Customers** \> select the user \> inspect the **Invitation** section.
+  1. Check that the customer's email address is correct.
+  2. Look for the invitation in **Email activity**. If it bounced or failed, check the address and ask the recipient's email administrator whether the sender is blocked.
+  3. If it was delivered, ask the recipient to check spam, inbox rules, and any quarantine managed by their email administrator.
+  4. Once the cause is resolved, use **Resend invite** on the customer's page.
 
-  If the email wasn't delivered successfully, you will see a "The invitation to...couldn't be delivered..." error message. If you do not see an error message, it means that the email was successfully delivered, and the issue is on the user's side of the email inbox.
-
-  ![Image](/images/customer-management-troubleshoot-email-delivery-issues-1.png)
-
-  ### If you see an error, follow these steps:
-
-  1. Make sure the invitee's email address is correct. If you made a typo, remove the user using the **Remove** button and reinvite with the correct email.
-  2. If the email address is correct, the user's email service provider rejects RNTOR emails. Sometimes, corporate email inboxes have specific policies to restrict emails from new senders. Ask your member to contact their IT team if their email system is flagging RNTOR emails. They may want to check that emails from [hello@transactional.rntor.com](mailto:hello@transactional.rntor.com) are allowed.
-  3. You can also additionally [configure the custom MAIL FROM address](/admin/general/mail-from-and-footer) for your account. After this, the emails will be sent from your custom email address. In some cases, this may help resolve delivery issues.
-
-  Once your member resolves the issue, use the **Resend invite** button to send the invitation again.
-
-  ### If you do not see an error, try these tips:
-
-  - Ask the user to check spam folders and other email filters, just in case emails are being sent there due to the email service provider filters.
-  - Ask the user to allow emails RNTOR ([hello@transactional.rntor.com](mailto:hello@transactional.rntor.com)) as described in point 2 above.
-  - Invite the user using their alternative secondary email address, such as @gmail.com or @hotmail.com.
+  Ask the recipient to allow the sender address used by your network. You can also try another email address the customer provides.
 </Accordion>
 
 <Accordion title="Invoices">
-  If a member cannot find the invoice sent to the email, try the following:
-
-  - Ask the user to check if they are looking for an invoice in the correct inbox. Users can always check under what email they have a registered account in the app on the **Account** page.
-  - Double-check if the invoice was sent. [Send an invoice](/admin/billing/invoices/issue-invoices)
-  - For company invoices, ensure that the company manager is selected and has a valid email address. [Select company managers](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers)
+  - Confirm that the customer is checking the email address registered on their **Account** page.
+  - Check that the invoice was sent. [Send an invoice](/admin/billing/invoices/issue-invoices)
+  - For a company invoice, check that the company manager is selected and has a valid email address. [Select company managers](/admin/customer-management/companies/set-up-companies#add-company-members-and-managers)
 </Accordion>
 
 <Accordion title="Login codes">
-  If a user is not receiving the OTP code to log in, ask them to do the following:
+  Login-code emails are not included in **Email activity**.
 
-  1. Check the **Promotions** or **Spam** folders and any other email filters as the emails may be getting redirected there by mistake.
-  2. Get in touch with their email service provider for guidance on how to allow emails from [hello@transactional.rntor.com](mailto:hello@transactional.rntor.com).
-  3. If the user has already logged in on another device, ask them to check the login code sent as a [push notification](/admin/administration/your-account/notifications/set-up-notifications#push-notifications) to that device as well.
+  Ask the user to check their spam folder and inbox filters, confirm the email address they entered, and contact their email administrator if messages are blocked. If the problem continues, [contact support](/admin/administration/contact-support).
 </Accordion>
 
-## Improve email deliverability
+## FAQs
 
-Our team follows best practices to ensure emails land in the inbox and avoid spam filters. However, sometimes, email delivery can be impacted by user-enabled inbox filters that block emails from external domains. Here's a list of recommendations to improve email deliverability for users:
-
-**1. Whitelist the email address, add it to contacts, or mark an email as "Not spam."**
-
-If the customer receives the emails in their **Spam** folder, suggest whitelisting our [hello@transactional.rntor.com](mailto:hello@transactional.rntor.com) transactional email address in their email service provider.
-
-- Instructions for [Gmail](https://support.google.com/mail/answer/8151?hl=en-GB&co=GENIE.Platform%3DDesktop&sjid=2909698575983550517-EU#).
-- Instructions for [Outlook](https://support.microsoft.com/en-us/office/add-recipients-to-the-safe-senders-list-in-outlook-be1baea0-beab-4a30-b968-9004332336ce).
-- Instructions for [Yahoo](https://in.help.yahoo.com/kb/new-mail-for-desktop/add-edit-delete-contacts-yahoo-mail-sln28059.html).
-
-**2. [Customize the email footer.](/admin/general/mail-from-and-footer#customize-email-footer)**
-
-Personalize the footer of your transactional emails to include your business information, such as your company name, address, or legal disclaimers. This not only helps maintain a professional appearance but also maintains clarity and compliance.
-
-##### **3. [Configure custom MAIL FROM.](/admin/general/mail-from-and-footer#set-up-custom-mail-from)**
-
-This ensures that all emails, including welcome messages, confirmations, and invoices, come from your custom email address, providing a consistent and professional experience.
-
-**FAQs**
-
-<Accordion title="How quickly is my custom MAIL FROM configured after ordering the add-on?">
-  It depends on how quickly you configure the DNS records that we send you.
-
-  As soon as you create the records and notify us during our [support hours](/admin/administration/contact-support), we will promtly verify them and enable your custom email sending address.
+<Accordion title="How quickly is my custom MAIL FROM configured after subscribing?">
+  After adding the DNS records, select **Check verification**. The time depends on when your DNS provider makes the records available. The sender is ready when Rntor shows **Verified and active**.
 </Accordion>
 
 <Accordion title="Can I add multiple custom MAIL FROM email addresses?">
-  The custom MAIL FROM feature supports one sender email address only.
-
-  All transactional emails will be sent from this single address to maintain consistency and avoid confusion for recipients.
+  One custom sender address can be active for the network. When changing domains, the previous verified address remains active until the replacement is verified.
 </Accordion>
 
-<Accordion title="What should I do if troubleshooting steps didn't help and my customer still didn't receive an email?">
-  If the issue persists after completing all troubleshooting steps, [contact our support team](/admin/administration/contact-support). Share the actions you've already taken, and specify the  user's email address.
+<Accordion title="What happens to my sender address when the add-on is no longer active?">
+  Emails that use custom MAIL FROM return to Rntor's default sender.
+</Accordion>
+
+<Accordion title="What should I do if my customer still does not receive an email?">
+  [Contact support](/admin/administration/contact-support) with the recipient's email address, the message type, when it was expected, its status in **Email activity** if available, and the steps you have already tried.
 </Accordion>
