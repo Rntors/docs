@@ -1,0 +1,35 @@
+---
+title: "Email activity"
+description: "Review your network's recorded emails and understand their delivery status."
+---
+
+Email activity helps network owners and administrators review the messages recorded for their network. Check a message's delivery status before sending it again or contacting support.
+
+## Find an email
+
+1. Click **Settings** in the sidebar.
+2. Under **Merchant wide (Network)**, select **Email activity**.
+3. Find the message in the list, starting with the most recent entries.
+   - Select **Add filter** to filter by **Date**, **Status**, **Category**, or **Audience**. Status, category, and audience filters allow multiple selections.
+   - To look up a recipient, enter their complete email address in **Search** and press **Enter**.
+
+The list includes the status, subject, category, main recipient, and sent date. The date column uses your device's time zone and names it in the header. A message with Bcc recipients shows their count beside the main recipient, such as **+1**.
+
+Message bodies, login-code emails, and emails about your Rntor platform account are excluded.
+
+<Info>
+  The history contains messages recorded since email activity tracking was enabled. Earlier messages are not added retrospectively, and some automated emails are not yet included.
+</Info>
+
+## Understand email statuses
+
+Point to a status icon to read its label and explanation.
+
+- **Queued** — waiting for sending to begin.
+- **Sent** — accepted by the email provider for delivery.
+- **Delivered** — accepted by the receiving mail server. This does not guarantee inbox placement; ask the recipient to check their spam folder if the message is missing.
+- **Bounced** — rejected or returned by the receiving mail server, for example if the address is invalid or the mailbox is full.
+- **Marked as spam** — reported as spam by the recipient.
+- **Failed** — the message could not be sent.
+
+The displayed status relates to the main recipient; a bounced Bcc copy does not replace it. For help with bounced or failed messages, see [Troubleshoot email delivery issues](/admin/general/mail-from-and-footer#troubleshoot-email-delivery-issues).
