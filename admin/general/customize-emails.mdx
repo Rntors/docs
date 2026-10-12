@@ -7,9 +7,7 @@ You can customize certain email notifications sent to users by adding your own t
 
 ## Member invitations and invitation reminders
 
-When you [invite a new member](/admin/customer-management/users/members#invite-a-member), they receive a default invitation email:
-
-![Member Onboarding Invited Member Journey 1 1 1](/images/member-onboarding-invited-member-journey-1-1-1.png)
+When you [invite a new member](/admin/customer-management/users/members#invite-a-member), they receive a default invitation email.
 
 To customize member invitation email:
 
@@ -21,42 +19,38 @@ To customize member invitation email:
      - A call-to-action at the end for the user to sign in with their email address.
    - Your custom text will replace the middle section of the email.
 
-![Image](/images/customize-emails-to-users-2.png)
+![Custom member invitation text in Rntor](/images/customize-emails-invitation-en.jpg)
 
 4. Enable **Invitation reminder** to customize it as well, if preferred. This reminder is automatically sent 3 days after the initial invitation if the user has not yet activated their account.
 
 ## Booking confirmations
 
-By default, users do not receive a booking confirmation email. They only receive a payment confirmation (receipt) if they paid via a payment gateway:
+Booking confirmation emails are optional. Enable them for the relevant booking creators on each resource.
 
-![Image](/images/customize-emails-to-users-3.png)
+1. Open **Resources** \> **Rooms**, **Desks**, **Parking**, or **Equipment**.
+2. Create or edit the resource and find **Confirmation email**.
+3. Select the categories of people whose bookings should trigger the email. You can select more than one:
+   - **Administrators** — an administrator creates the booking.
+   - **Location members** — a member of this location creates the booking.
+   - **Network members** — a member of another location in the network creates the booking.
+   - **Nonmembers** — a nonmember creates the booking.
+4. Enter your custom text and save the resource.
 
-​ To send your custom booking confirmation emails:
+The recipient is the customer the booking belongs to. Selecting **Administrators** lets that customer receive the confirmation when an administrator books on their behalf.
 
-1. Go to **Resources** \> **Rooms**, **Desks**, **Parking**, or **Equipment**.
-2. When creating or editing a resource, find the **Confirmation email** property.
-3. Choose which user roles should receive this email when booking and paste your custom text.
-   - The booking confirmation email, by default, includes:
-     - A 'Thank you' for the booking
-     - Booking date and time
-   - Your custom text will be inserted in the middle.
+The email includes the booking date and time, your custom text, and the check-in code when the booking has one. Payment receipts and booking-start reminders are separate messages.
 
-![Image](/images/customize-emails-to-users-4.png)
+![Booking confirmation settings in Rntor](/images/customize-emails-booking-en.jpg)
 
 ## Event joining confirmations
 
-By default, for event tickets, users do not receive confirmation emails. They only receive a payment confirmation (receipt) if they paid via a payment gateway.
+To enable the confirmation setting for an event, open **Events**, create or edit the event, and enable **Confirmation email**.
 
-To send your custom confirmation emails to event attendees:
+<Info>
+  Custom event-confirmation text is not currently retained when the event is saved.
+</Info>
 
-1. Go to the **Events** page.
-2. When creating or editing an event, enable **Confirmation email** and paste your email text.
-   - The event joining confirmation email, by default, includes:
-     - A 'Thank you' for joining the event
-     - Event date, time, and venue
-   - Your custom text will be inserted in the middle.
-
-![Image](/images/customize-emails-to-users-5.png)
+![Event confirmation settings in Rntor](/images/customize-emails-event-en.jpg)
 
 ## Shop order confirmations
 
@@ -71,10 +65,10 @@ To send your custom confirmation email to users after all orders:
      - Purchase details: order number, products, and total amount paid.
    - Your custom text will be inserted in the middle.
 
-![Image](/images/customize-emails-to-users-6.png)
+![Shop order confirmation settings in Rntor](/images/customize-emails-shop-en.jpg)
 
 <Info>
-  Separate confirmation emails for each product have been replaced by one confirmation email for all shop orders. To configure individual emails for the specific product, use [Zapier](/admin/integrations/automation/zapier).
+  The same confirmation email setting applies to all shop orders. To configure individual emails for the specific product, use [Zapier](/admin/integrations/automation/zapier).
 </Info>
 
 ## Benefit application confirmations
@@ -82,18 +76,16 @@ To send your custom confirmation email to users after all orders:
 By default, for benefit applications, users do not receive confirmation emails. To send your custom confirmation emails to benefit applicants:
 
 1. Go to the **Benefits** page.
-2. When creating or editing an event, enable **Confirmation email** and paste your email text.
+2. When creating or editing a benefit, enable **Confirmation email** and paste your email text.
 
-![Image](/images/customize-emails-to-users-7.png)
+![Benefit confirmation settings in Rntor](/images/customize-emails-benefit-en.jpg)
 
 - The benefit application email, by default, includes a 'Thank you' for applying for the benefit.
 - Your custom text will be pasted after it.
 
 ## Visit invitations
 
-When members [invite a visitor](/member/visitors/preregister-and-approve-visit-requests), they receive a default invitation email:
-
-![Image](/images/customize-emails-to-users-8.png)
+When members [invite a visitor](/member/visitors/preregister-and-approve-visit-requests), the visitor receives a default invitation email.
 
 To customize the visitor invitation email:
 
@@ -104,15 +96,14 @@ To customize the visitor invitation email:
      - The invitation to visit your space
      - Date and time of the visit
      - Visit code
-     - Friendly ending "We are looking forward to greeting you at \[Your space name\]!"
    - Your custom text will be pasted after it.
 
-![Image](/images/customize-emails-to-users-9.png)
+![Visitor invitation setting before enabling custom text in Rntor](/images/customize-emails-visitors-en.jpg)
 
-**FAQs**
+## FAQs
 
 <Accordion title="Where can I see all notifications and email notifications sent to my customers?">
-  To view the list of notifications and emails users receive, refer to the [Understand user notifications](/member/account/notifications) doc.
+  To check recorded email deliveries, open [Email activity](/admin/general/email-activity). For the types of notifications users can receive, see [Understand user notifications](/member/account/notifications).
 </Accordion>
 
 <Accordion title="How can I customize notifications or emails that aren't directly customizable in RNTOR?">
@@ -120,15 +111,11 @@ To customize the visitor invitation email:
 </Accordion>
 
 <Accordion title="Can I add hyperlinks or social media links to custom email text?">
-  Yes. These custom text fields render Markdown formatting, so add hyperlinks — including links to your social media pages — using Markdown link syntax: `[text](url)`. For example, `[RNTOR docs](https://rntor.mintlify.app)` appears as a clickable link reading [RNTOR docs](https://rntor.mintlify.app).
-
-  You can use this to add hyperlinks in any custom emails: invitations, invitation reminders, booking confirmations, event joining confirmations, shop order confirmations, benefit application confirmations, and visit invitations.
+  Use plain text for your custom messages. Markdown links such as `[Directions](https://example.com)` are not consistently converted into clickable links in member invitations, booking confirmations, or visit invitations. Include the full web address in your text.
 </Accordion>
 
 <Accordion title="How do I send new members a welcome email with onboarding instructions?">
-  You  don't need to write an email yourself. When you invite a member from the admin portal, RNTOR automatically sends them a default invitation email that already covers what a new member needs to get started:
-
-  ![Member Onboarding Invited Member Journey 1 1 2](/images/member-onboarding-invited-member-journey-1-1-2.png)
+  You don't need to write an email yourself. When you invite a member from the admin portal, RNTOR automatically sends them a default invitation email that already covers what a new member needs to get started.
 
   The default email includes a personalized greeting,  lists what they can do in the app and has an "Activate my account" button which takes them directly to the member portal.
 
