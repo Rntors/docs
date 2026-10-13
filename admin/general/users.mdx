@@ -1,96 +1,103 @@
 ---
+description: "Review your network's users, activity and terms acceptance. Require profile details, manage privacy defaults and blacklist emails."
 title: "Users"
-description: "Track and manage users across all your locations from one place, check when the user was last active in member portal and their terms of use acceptance record. Configure default privacy settings and visibility for all users, and blacklist abusive email addresses"
 ---
 
-RNTOR captures all users who have logged in to your network at least once and allows the [owner](/admin/administration/administrators/owner) to view, manage and export them from the **Network settings \> Users** page:
+Rntor brings together people invited to your network and people who have signed in to it. The [owner](/admin/administration/administrators/owner) can use **Users** in network settings to:
 
-- Add a user as member or nonmember to any location in one click
-- Track which of users you invited have activated their accounts
-- Check when each user was last active, and more.
+- Add a person to a location as a member or nonmember.
+- Review users across the network and their location relationships.
+- Check recorded activity and terms acceptance, and export the directory.
 
 ## View all users in your network
 
-As an owner:
+As the network owner:
 
-1. Click your network name top left.
-2. Go to **Network settings \> Users**.
-3. Review the list of all users across your network.
+1. Open **Settings** from the dashboard sidebar.
+2. Under your network settings, select **Users**.
+3. Open **Directory** to view users across your locations. Use the search field to find a person.
 
-![Image](/images/users-1.png)
+![Users directory in Rntor](/images/rntor-users-directory-live-en-20261013.jpg)
 
-Users are sorted from the most recently created to the oldest. Use the following columns to understand user activity:
+The most recently created users appear first. The columns show:
 
-- **Created** — the date you first invited the user or the user logged in to your member portal by themselves.
-- **Last active** — the date when the user was last active in your member web portal or mobile app.
+- **Created** — when the person was first invited or joined your network.
+- **Last active** — their latest recorded activity in this network's member web portal.
+- **Terms accepted** — their current terms acceptance date. The column stays empty until they accept, including after you [reset consents](/admin/general/terms-of-use#prompt-users-to-reaccept-the-updated-terms-of-use). Hover over the date to see the exact time, labelled Cairo time.
+- **Locations** — the person's member or nonmember relationship at each location. Select a location name to open their profile there.
 
 <Tip>
-  Use **Last active** column to check which of your invited users have activated their account. If no date is shown, the user hasn’t logged in yet.
+  A blank **Last active** value means that no activity has been recorded yet. It does not, by itself, establish whether someone has ever signed in.
 </Tip>
 
-- **Terms accepted** — the date the user accepted your terms of use.
-- **Locations** — shows whether the user is a member or nonmember of any location. Click a location name to open their profile there.
+Use the **(...)** menu beside a person to invite them as a member, add them as a nonmember, or [blacklist their email](#blacklist-users).
 
-4. Click the **(...)** menu next to a user to:
+To download the directory, open the **(...)** menu at the top of the page and select **Export CSV** or **Export Excel (XLSX)**. The file includes users matching your current search in the selected network and environment.
 
-- Add them as a nonmember to any location
-- Invite them as member to any location
-- [Blacklist](#blacklist-users) the user's email
+## Require profile fields
 
-5. Click **(...)** \> **Export as CSV** top right to export your user list.
+First name and email are always required. The owner can also require a last name and phone number. Members are asked for missing required details before completing a checkout, such as a booking, plan purchase, shop order or event registration.
 
-**FAQ**
+1. Open **Settings** and select **Users** under your network settings.
+2. Select **Preferences**.
+3. Under **Required profile fields**, enable **Last name** or **Phone number**.
 
-<Accordion title="How can I check which user logged in and when?">
-  1. Click your network name top left.
-  2. Go to **Network settings \> Users**.
-  3. Check the **Last active** column — it shows the date each user was last active in your member web portal or mobile app. If no date is shown, the user hasn't logged in yet.
-</Accordion>
+A required phone number must use international format, beginning with **\+** and the country code. If Twilio is connected and the network has not saved a different choice, the phone number starts as required. The owner's saved choice takes precedence.
+
+![Required profile fields in Rntor](/images/rntor-users-required-fields-live-en-20261013.jpg)
 
 ## Manage visibility of user information
 
-The [owner](/admin/administration/administrators/owner) can define the initial visibility of personal information for all new users to balance openness with strong privacy and security.
+The owner can set the initial visibility of users' personal information. For example, names and booking titles can be shared with company members while contact details remain visible only to administrators.
 
-For example, you may set to make members’ names and booking titles visible to other members by default to support collaboration, while strictly restricting data like users' email addresses and phone numbers to administrators only.
+1. Open **Settings** and select **Users** under your network settings.
+2. Select **Preferences**.
+3. Under **User privacy defaults**, choose who can see each type of information.
 
-1. Click your network name in the top left.
-2. Go to **Network settings** \> **Privacy and security**.
-3. Select **User privacy defaults**.
-4. Define the default visibility of personal information for all new users who register in your member portal. By default:
-   - User names and booking titles are visible to **Company members** (that is, only to members of their own company if they belong to any company).
-   - Email addresses and phone numbers are visible only to **Administrators**.
+The default choices are:
 
-<Info>
-  Changes to privacy defaults apply only to users who register after the update. Existing users are not affected.
-</Info>
+- **Name visibility** and **Bookings Title Visibility**: **Company Members**.
+- **Email Visibility** and **Phone number visibility**: **Administrators**.
 
-<Info>
-  Each user can [update their own privacy settings](/admin/customer-management/users/manage-user-account) at any time from their **Account** page and override these defaults. For example, they may choose to make their personal information visible to others for networking purposes or completely hide their name or booking titles from everyone except administrators.
-</Info>
+![User privacy defaults in Rntor](/images/rntor-users-privacy-live-en-20261013.jpg)
 
-![Manage visibility of user information](/images/general-users-manage-visibility-of-user-information.png)
+New users receive the initial privacy choices when they first join. Changing the defaults does not replace a user's saved personal choices.
+
+Each user can [manage their own privacy settings](/admin/customer-management/users/manage-user-account) from **Account**.
 
 ## Blacklist users
 
-To maintain strong security in your member portal, the [owner](/admin/administration/administrators/owner) can block abusive users by adding them to a blacklist.
+The owner can restrict access to the network by blacklisting an email address.
 
-1. Click your network name top left.
-2. Go to **Network settings** \> **Users**.
-3. Find the necessary user and click **(...)** \> **Blacklist email** next to them.
+For someone already in the directory:
 
-To blacklist an email who isn't among your users:
+1. Open **Settings** and select **Users** under your network settings.
+2. On **Directory**, find the person.
+3. Open their **(...)** menu, select **Blacklist email**, and confirm.
 
-1. Go to **Network settings** \> **Privacy and security**.
-2. Switch to the **Blacklist** tab.
-3. In the **Email** field, type the user's email address.
-4. Click **Add**, and confirm.
+For an email address that is not in the directory:
 
-![Blacklist users](/images/general-users-blacklist-users.png)
+1. Open **Users** > **Blacklist**.
+2. Enter the address in **Email**.
+3. Select **Add**.
+
+![Blacklist settings in Rntor](/images/rntor-users-blacklist-live-en-20261013.jpg)
 
 ### How the blacklist works
 
-- Once blacklisted, the user is immediately logged out of all active sessions.
-- They can no longer log in to the member web portal or mobile apps.
-- Blacklisting applies across your entire network (if you have multiple locations), but does not extend to other networks.
-- On the **Users** page, blacklisted users are marked with a red shield icon with a slash.
-- You can remove a user from the blacklist at any time by clicking **(...)** \> **Remove email from blacklist** next to them.
+- The member portal refuses access to the blocked network. An already-open portal displays an access-blocked message when it checks the member's access.
+- The restriction covers the network's locations and does not sign the person out of other networks.
+- The **Directory** marks blacklisted users with a red crossed-out shield.
+- To restore eligibility, open the person's **(...)** menu and select **Remove email from blacklist**.
+
+## FAQs
+
+<Accordion title="How can I check a user's latest activity?">
+  Open **Settings** > your network's **Users** > **Directory**, and check **Last active**. It shows the latest recorded member web portal activity for that network. A blank value means no activity is recorded yet.
+</Accordion>
+
+<Accordion title="Can I hide the member and company directory from members?">
+  Yes. Open **Settings**, select **Customers** under the relevant location, and set **Visibility** to **Administrators**.
+
+  Members can no longer browse that location's member and company directory. Administrators retain access. See [visibility settings](/admin/location/visibility).
+</Accordion>
