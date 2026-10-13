@@ -7,11 +7,11 @@ description: "إعداد حساب Apple Developer لتوزيع التطبيق"
 
 ## 1. التسجيل في Apple Developer Program
 
-- جهّز Apple ID للمؤسسة أو [أنشئه](https://appleid.apple.com/account#!&page=create).
+- جهّز Apple Account للمؤسسة أو [أنشئه](https://account.apple.com/).
 - احصل على رقم D‑U‑N‑S من [هنا](https://www.dnb.com/duns/get-a-duns.html).
-- تبلغ رسوم البرنامج 99 دولارًا سنويًا.
+- تتقاضى Apple **99 دولارًا أمريكيًا لكل سنة عضوية**، أو السعر المحلي الظاهر أثناء [التسجيل](https://developer.apple.com/help/account/membership/program-enrollment/).
 - قد تحصل المؤسسات غير الربحية المؤهلة في بعض الدول على [إعفاء](https://developer.apple.com/support/membership-fee-waiver/).
-- [سجّل كمؤسسة](https://developer.apple.com/programs/enroll/) باستخدام Apple ID ورقم D‑U‑N‑S.
+- [سجّل كمؤسسة](https://developer.apple.com/programs/enroll/) باستخدام Apple Account ورقم D‑U‑N‑S.
 - قد تستغرق العملية حتى أسبوعين حسب الدولة.
 
 <Warning>
@@ -41,7 +41,7 @@ description: "إعداد حساب Apple Developer لتوزيع التطبيق"
 | --- | --- |
 | الاسم الأول | أكّده مع دعم Rntor |
 | اسم العائلة | أكّده مع دعم Rntor |
-| البريد | أكّده مع [دعم Rntor](mailto:support@rntor.com) قبل إرسال الدعوة |
+| البريد | [publisher@rntor.com](mailto:publisher@rntor.com) |
 | الدور | Admin |
 | موارد المطور | Access to Certificates, Identifiers & Profiles |
 
@@ -49,21 +49,32 @@ description: "إعداد حساب Apple Developer لتوزيع التطبيق"
   لا يستطيع فريقنا النشر دون دور Admin والوصول إلى الشهادات.
 </Warning>
 
-4. اضغط **Invite**.
+4. اضغط **Invite** لإرسال الدعوة إلى فريق نشر Rntor.
 
 <Tip>
   قد تصلك رسائل تشغيلية من Apple عند قبول إصدار أو ورود رسالة من فريق المراجعة. يمكن تجاهلها لأن فريق المنتج يتلقاها ويتولى النشر، وسنخبرك إذا كان هناك إجراء مهم.
 </Tip>
 
-## 4. تسجيل بيانات الحساب في Rntor
+## 4. إنشاء مفتاح App Store Connect API
+
+استخدم جهاز كمبيوتر واتبع [إرشادات Apple لإنشاء المفتاح](https://developer.apple.com/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api):
+
+1. افتح **Users and Access** > **Integrations** > **App Store Connect API** > **Team Keys**.
+2. اضغط **Generate API Key** أو **\+**، وسمِّ المفتاح، واختر **Admin**، ثم اضغط **Generate**.
+3. اضغط **Download API Key** لحفظ ملف **.p8**. تتيح Apple تنزيله مرة واحدة؛ احتفظ به بأمان.
+4. سجّل **Key ID** و**Issuer ID** الظاهرين في الصفحة.
+
+<Warning>
+  استخدم مفتاحًا بدور **Admin**؛ لا يقبل Rntor الصلاحيات الأقل. إذا كان مفتاحك بدور أقل، فأنشئ مفتاح Admin وألغِ المفتاح القديم.
+</Warning>
+
+## ربط الحساب بـ Rntor
 
 افتح **إعدادات الشبكة** > **تطبيق الأعضاء** بصفتك [مالكًا](/ar/admin/administration/administrators/owner). تحت **Apple Developer**، اضغط **متابعة**. بعد منح الوصول، فعّل **I have granted access**، وأدخل **Entity name** و**Team ID** من قسم **Membership Details** في حساب Apple Developer، ثم اضغط **Continue**.
 
-تابع [إعداد التطبيق](/ar/admin/general/member-mobile-app/get-started) لاستكمال الأيقونة وحساب Google Play Developer.
+للتطبيق الجديد، تابع [إعداد التطبيق](/ar/admin/general/member-mobile-app/get-started)، وأرسل ملف **.p8** وبيانات **Key ID** و**Issuer ID** مع باقي البيانات.
 
-<Info>
-  نموذج Rntor الحالي يسجّل اسم المؤسسة وTeam ID؛ لا يتضمن رفع ملف مفتاح API بصيغة .p8 أو حقول Key ID وIssuer ID. إذا احتاج فريق النشر إلى مفتاح API، نسّق معه طريقة التسليم الآمنة.
-</Info>
+إذا كان تطبيق iOS منشورًا بالفعل، فافتح **إعدادات الشبكة** > **تطبيق الأعضاء** بصفتك المالك، واضغط **متابعة**، ثم ارفع ملف **.p8**، وأدخل **Key ID** و**Issuer ID** وأرسل البيانات.
 
 <Frame>
   <img

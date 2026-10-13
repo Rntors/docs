@@ -10,20 +10,22 @@ description: "البدء باستخدام تطبيق الأعضاء للهاتف
 ## المتطلبات الأساسية
 
 1. افتح حساب Apple Developer باسم مؤسسة و[جهّزه لإرسال تطبيق جديد](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account).
+2. [أنشئ مفتاح App Store Connect API](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account#4-إنشاء-مفتاح-app-store-connect-api)، واحتفظ بملف .p8 وبيانات Key ID وIssuer ID بأمان.
 2. جهّز حساب Google Play Developer الخاص بمؤسستك.
-3. جهّز أيقونة التطبيق بالمواصفات التالية:
+3. جهّز أيقونة التطبيق وفق [المواصفات](/ar/admin/general/member-mobile-app/customize-member-mobile-app#تحديث-أيقونات-التطبيق) التالية:
    - **الصيغة:** SVG.
    - **الأبعاد:** 72 × 72 بكسل.
    - **الخلفية:** شفافة بلا خلفية.
-4. إذا لم تكن قد فعلت، [فاشترك في ملحق تطبيق الأعضاء](/ar/admin/administration/billing/make-changes-to-rntor-subscription).
+4. افتح **إعدادات الشبكة** > **الفوترة**، ثم [أضف ملحق تطبيق الأعضاء](/ar/admin/administration/billing/make-changes-to-rntor-subscription) إلى اشتراكك.
 
 ## إنشاء تطبيقات الأعضاء
 
-1. أكّد بيانات دعوة فريق النشر مع [دعم Rntor](mailto:support@rntor.com)، ثم [جهّز حساب Apple Developer](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account).
+1. [ادعُ فريق نشر Rntor](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account#3-دعوتنا-إلى-حساب-apple-developer) عبر [publisher@rntor.com](mailto:publisher@rntor.com) إلى حساب Apple Developer الخاص بمؤسستك.
 2. افتح **إعدادات الشبكة** > **تطبيق الأعضاء** بصفتك [مالكًا](/ar/admin/administration/administrators/owner).
 3. ارفع **الرسم الأمامي** واختر **لون الخلفية**، ثم راجع معاينات الأيقونة.
-4. تحت **Apple Developer**، اضغط **متابعة**. بعد منح الوصول المتفق عليه، فعّل **I have granted access**، وأدخل **Entity name** و**Team ID**، ثم اضغط **Continue**.
-5. تحت **Google Play Developer**، اضغط **متابعة**. بعد منح الوصول المتفق عليه، فعّل **I have granted access**، وأدخل **Account name** و**Account email**. يمكنك إضافة **Developer ID / Organization** اختياريًا، ثم اضغط **Continue**.
+4. تحت **Apple Developer**، اضغط **متابعة**. بعد منح الوصول، فعّل **I have granted access**، وأدخل **Entity name** و**Team ID**، ثم اضغط **Continue**.
+5. ارفع **ملف مفتاح API بصيغة .p8**، وأدخل **Key ID** و**Issuer ID** لربط App Store Connect.
+6. تحت **Google Play Developer**، اضغط **متابعة**. بعد منح الوصول، فعّل **I have granted access**، وأدخل **Account name** و**Account email**. يمكنك إضافة **Developer ID / Organization** اختياريًا، ثم اضغط **Continue**.
 
 <Frame>
   <img
@@ -32,7 +34,9 @@ description: "البدء باستخدام تطبيق الأعضاء للهاتف
   />
 </Frame>
 
-نسّق إرسال التطبيق ومواعيد إصداره مع دعم Rntor. بعد النشر يمكنك [تحديث صفحة التطبيق في المتجر](/ar/admin/general/member-mobile-app/customize-member-mobile-app).
+يبدأ تجهيز تطبيقَي iOS وAndroid بعد إرسال بيانات الإعداد، وسنراسلك عند نشرهما. إذا رفض أحد المتجرين التطبيق، يعيد فريق النشر إرساله خلال **48 ساعة**.
+
+نجهّز صفحة المتجر الأولى بأوصاف وكلمات مفتاحية ولقطات شاشة نموذجية. بعد الإطلاق يمكنك [تعديل الصفحة](/ar/admin/general/member-mobile-app/customize-member-mobile-app). لاستفسارات النشر، راسل [publisher@rntor.com](mailto:publisher@rntor.com).
 
 ### الاستعداد للمراجعة
 
@@ -50,20 +54,20 @@ description: "البدء باستخدام تطبيق الأعضاء للهاتف
 - يمكنك أيضًا مشاركة الروابط المباشرة في موقعك ورموز QR وشبكات التواصل والإعلانات. [الترويج للتطبيق](/ar/guides/promotion/promote-member-web-portal-and-mobile-app).
 
 <Info>
-  راجع صفحة تطبيقك في App Store أو Google Play لمعرفة إصدارات نظام التشغيل المدعومة.
+  يتطلب التطبيق **Android 8.0 أو أحدث**، أو **iOS 17.0 أو أحدث**.
 </Info>
 
 ## كيفية عمل التطبيق
 
 - **White-label وقابل للتخصيص:** عزز علامتك بالشعارات والألوان و[الإشعارات الفورية](/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية).
 - **متاح في المتجرين:** يسهل تنزيله من Google Play وApp Store.
-- **محسّن للجوال:** يقدم تجربة مصممة للهاتف، بالوظائف المتاحة في إصدار تطبيقك المنشور.
+- **محسّن للجوال:** يتيح خدمات بوابة الويب نفسها، مع تنقّل وتفاعل مناسبين للهاتف.
 - **تجربة أفضل:** ينشئ المستخدم الحجوزات والمدفوعات وينضم إلى الفعاليات ويصل إلى خدماتك بسرعة.
 
 ## الأسئلة الشائعة
 
 <Accordion title="كيف أختبر التطبيق قبل الإصدار؟">
-  تواصل مع [دعم Rntor](mailto:support@rntor.com) لترتيب معاينة تطبيقك قبل الإصدار.
+  جرّب تطبيقًا منشورًا من روابط App Store أو Google Play في الصفحة المقصودة لأحد عملاء Rntor، لتتعرف على تجربة الأعضاء قبل إطلاق تطبيقك.
 </Accordion>
 
 <Accordion title="هل يوجد حد لطول اسم التطبيق؟">
