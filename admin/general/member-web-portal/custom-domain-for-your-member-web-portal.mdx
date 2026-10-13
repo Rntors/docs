@@ -45,15 +45,15 @@ Double-check the correctness of the data. Instructions for common registrars:
 
 After the setup is complete on the side of your domain registrar, please follow the steps below to configure a custom third-level domain for member web portal:
 
-1. The [owner](/admin/administration/administrators/owner) needs to go to RNTOR and press **(...)** next to the network name.
-2. Choose **Network settings** \> open the **Member web portal** page \> **General** tab.
+1. Sign in to RNTOR as the [owner](/admin/administration/administrators/owner) and open **Settings** for your Live network.
+2. Open **Member web portal** > **General**.
 3. Enter your full custom third-level domain in the **Custom domain** field. For example, `members.coworkingspace.com` or `app.coworkingspace.com`. If a **Verification** section appears after you add the domain, add the required record to your DNS settings to complete the process.
 
 ![Image](/images/member-web-portal-manage-a-custom-third-level-domain-for-your-member-web-portal-2.png)
 
 ### Verify the setup
 
-Once DNS records have been changed, they can take some to propagate, which means global DNS providers recognize they have been changed. Unlike nameserver changes, which can take up to 48 hours to propagate, the propagation of CNAME records is usually very quick. ​ To verify the setup on your end, go to the member web portal and see it working under your custom third-level domain.
+Once DNS records have been changed, they can take some time to propagate, which means global DNS providers recognize they have been changed. Unlike nameserver changes, which can take up to 48 hours to propagate, the propagation of CNAME records is usually very quick. ​ To verify the setup on your end, go to the member web portal and see it working under your custom third-level domain.
 
 A custom domain added to your member web portal will appear unverified until this process is complete and full propagation is achieved.
 
@@ -73,16 +73,14 @@ If you are changing the hosting provider, you need to make the following changes
 If you're changing your domain name, you need to follow these steps:
 
 1. Open the DNS panel of your hosting provider and [create a new record](#in-your-domain-registrar-account) for your new domain.
-2. Add a new record to RNTOR on **Network settings** \> **Member web portal** \> **General** tab \> **Custom domain** field.
+2. Add a new record to RNTOR on **Settings** \> **Member web portal** \> **General** tab \> **Custom domain** field.
 3. Delete an old record created for the old domain.
 
 ## Troubleshoot issues with custom domain
 
-Ensuring your custom domain is correctly set up is essential for your member web portal to function smoothly. If you received an automated email about an issue with your custom domain, it means RNTOR detected a problem with your member web portal URL. There can be a few reasons why this happened and troubleshooting steps we recommend:
+If your member web portal is not accessible under your custom domain, check the following:
 
 <Accordion title="1. A temporary issue on the side of your domain provider">
-  The email is triggered when an issue is detected either with your CNAME record for the member web portal's custom domain or with your domain itself.
-
   - Your domain provider may have had a temporary technical issue, due to which your domain didn't work.
   - Additionally, the domain may work without interruptions in your country but experienced temporary unavailability in other regions due to DNS resolution.
 
@@ -96,16 +94,16 @@ Ensuring your custom domain is correctly set up is essential for your member web
 </Accordion>
 
 <Accordion title="3. Your custom domain is not added to the Custom Domain field in RNTOR">
-  A record you created in your domain's DNS panel wasn't added to the **Network settings** page in RNTOR.
+  A record you created in your domain's DNS panel wasn't added to the **Settings** page in RNTOR.
 
-  [An owner](/admin/administration/administrators/owner) must go to the [**Network settings** \> **General**](/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#in-rntor) page, and check if the right third-party custom domain is added there.
+  [An owner](/admin/administration/administrators/owner) must go to the [**Settings** > **Member web portal** > **General**](/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#in-rntor) page, and check if the right third-party custom domain is added there.
 
   If it was removed by mistake, the member web portal won't work under the custom domain URL.
 </Accordion>
 
-Once the issue with your custom domain is resolved, you'll receive an automated confirmation email from RNTOR. You can verify this by opening your member web portal under the custom domain to ensure it's working properly.
+After correcting the settings, open your member web portal under the custom domain to confirm that it works.
 
-**FAQ**
+## FAQs
 
 <Accordion title="Why doesn't my custom domain work?">
   Learn more about potential causes in the [Troubleshoot issues with custom domain](#troubleshoot-issues-with-custom-domain) section above.
