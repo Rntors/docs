@@ -7,11 +7,11 @@ Complete these four steps below to prepare for branded mobile apps.
 
 ## 1. Enroll in the Apple Developer Program
 
-- Prepare an Apple ID for your organization. Create it [here](https://appleid.apple.com/account#!&page=create).
+- Prepare an Apple Account for your organization. Create it [here](https://account.apple.com/).
 - Get a D-U-N-S Number. Request it [here](https://www.dnb.com/duns/get-a-duns.html).
-- Please keep in mind that the Apple Developer Program costs \$99 annually.
+- Apple charges **US\$99 per membership year**, or the local price shown during [enrollment](https://developer.apple.com/help/account/membership/program-enrollment/).
 - Nonprofit organizations in certain countries can have fee waivers ([eligibility](https://developer.apple.com/support/membership-fee-waiver/)).
-- Enroll as an organization with an Apple ID and a D-U-N-S number [here](https://developer.apple.com/programs/enroll/).
+- Enroll as an organization with an Apple Account and a D-U-N-S number [here](https://developer.apple.com/programs/enroll/).
 - Depending on your country, the enrollment process could take up to two weeks.
 
 <Warning>
@@ -33,15 +33,15 @@ Apple requires developers to provide trader status to submit new apps or app upd
 
 For us to submit your app under your Apple Developer Account and maintain it, we need to be invited as administrators to your App Store Connect account. Follow the steps to send the invite:
 
-1. Go to [App Store Connect](https://appstoreconnect.apple.com/) and log in with your Apple ID.
+1. Go to [App Store Connect](https://appstoreconnect.apple.com/) and log in with your Apple Account.
 2. Open the **Users and Access** page and click on the `+` button.
 3. Enter the information of the new user and assign permissions to the new user:
 
 | **Field** | **Value** |
 | --- | --- |
-| First Name | Confirm with Rntor support |
-| Last Name | Confirm with Rntor support |
-| Email | Confirm with [Rntor support](mailto:support@rntor.com) before inviting |
+| First Name | Rntor |
+| Last Name | Support |
+| Email | [support@rntor.com](mailto:support@rntor.com) |
 | Role | Admin |
 | Developer Resources | Access to Certificates, Identifiers & Profiles |
 
@@ -49,21 +49,32 @@ For us to submit your app under your Apple Developer Account and maintain it, we
   Our team will not be able to publish your apps without the Admin role and certificate access.
 </Warning>
 
-4. Press **Invite**. The email invitation will be sent to the our Product Team.
+4. Click **Invite** to email the invitation to Rntor's publishing team.
 
 <Tip>
   From time to time, you will receive transactional emails from Apple whenever a new app version is approved or a message from the app review team is received. You can ignore these messages as our Product Team is also receiving them and taking full care of your application publication. We'll let you know if there's anything important you need to know.
 </Tip>
 
-## 4. Record your account details in Rntor
+## 4. Generate an App Store Connect API key
+
+On a desktop, follow [Apple's API-key instructions](https://developer.apple.com/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api):
+
+1. Open **Users and Access** > **Integrations** > **App Store Connect API** > **Team Keys**.
+2. Click **Generate API Key** or **\+**, name the key, choose **Admin**, then click **Generate**.
+3. Click **Download API Key** to save the **.p8** file. Apple allows one download; store it securely.
+4. Record the **Key ID** and **Issuer ID** shown on the page.
+
+<Warning>
+  Use a key with the **Admin** role. Rntor does not accept keys with lower access. Replace a lower-role key with an Admin key and revoke the old one.
+</Warning>
+
+## Connect your account to Rntor
 
 As an [owner](/admin/administration/administrators/owner), open **Network settings** > **Member mobile app**. Under **Apple Developer**, click **Continue**. After granting access, enable **I have granted access**, enter your **Entity name** and **Team ID** from **Membership Details** in Apple Developer, and click **Continue**.
 
-Continue with [app setup](/admin/general/member-mobile-app/get-started) to complete the icon and Google Play Developer account details.
+For a new app, continue with [app setup](/admin/general/member-mobile-app/get-started) and submit the **.p8** file, **Key ID** and **Issuer ID** with the remaining details.
 
-<Info>
-  Rntor's current form records the entity name and Team ID. It does not include a .p8 API key upload or Key ID and Issuer ID fields. If the publishing team requires an API key, coordinate a secure handoff with them.
-</Info>
+If your iOS app is already published, open **Network settings** > **Member mobile app** as an owner, click **Continue**, upload the **.p8** file, enter **Key ID** and **Issuer ID**, then submit.
 
 <Frame>
   <img
