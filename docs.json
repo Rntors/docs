@@ -282,11 +282,8 @@
                         "group": "Member web portal",
                         "pages": [
                           "admin/general/member-web-portal/get-started",
-                          "admin/general/member-web-portal/customize-member-web-portal",
                           "admin/general/member-web-portal/custom-domain-for-your-member-web-portal",
-                          "admin/general/member-web-portal/customize-landing-page",
-                          "admin/general/member-web-portal/troubleshoot-issues-with-accessing-member-web-portal",
-                          "admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration"
+                          "admin/general/member-web-portal/customize-landing-page"
                         ]
                       },
                       {
@@ -842,11 +839,8 @@
                         "group": "بوابة الويب للأعضاء",
                         "pages": [
                           "ar/admin/general/member-web-portal/get-started",
-                          "ar/admin/general/member-web-portal/customize-member-web-portal",
                           "ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal",
-                          "ar/admin/general/member-web-portal/customize-landing-page",
-                          "ar/admin/general/member-web-portal/troubleshoot-issues-with-accessing-member-web-portal",
-                          "ar/admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration"
+                          "ar/admin/general/member-web-portal/customize-landing-page"
                         ]
                       },
                       {
@@ -1153,6 +1147,36 @@
     {
       "source": "/ar/admin/general/media-formats",
       "destination": "/ar/admin/general/branding",
+      "permanent": true
+    },
+    {
+      "source": "/admin/general/member-web-portal/customize-member-web-portal",
+      "destination": "/admin/general/branding",
+      "permanent": true
+    },
+    {
+      "source": "/admin/general/member-web-portal/troubleshoot-issues-with-accessing-member-web-portal",
+      "destination": "/admin/general/member-web-portal/get-started#troubleshoot-issues-with-access-to-member-web-portal",
+      "permanent": true
+    },
+    {
+      "source": "/admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration",
+      "destination": "/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#troubleshoot-issues-with-custom-domain",
+      "permanent": true
+    },
+    {
+      "source": "/ar/admin/general/member-web-portal/customize-member-web-portal",
+      "destination": "/ar/admin/general/branding",
+      "permanent": true
+    },
+    {
+      "source": "/ar/admin/general/member-web-portal/troubleshoot-issues-with-accessing-member-web-portal",
+      "destination": "/ar/admin/general/member-web-portal/get-started#حل-مشكلات-الوصول-إلى-بوابة-الويب",
+      "permanent": true
+    },
+    {
+      "source": "/ar/admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration",
+      "destination": "/ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#حل-مشكلات-النطاق-المخصص",
       "permanent": true
     }
   ]
