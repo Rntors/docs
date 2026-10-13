@@ -10,7 +10,7 @@ description: "البدء باستخدام تطبيق الأعضاء للهاتف
 ## المتطلبات الأساسية
 
 1. افتح حساب Apple Developer باسم مؤسسة و[جهّزه لإرسال تطبيق جديد](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account).
-2. [أنشئ مفتاح App Store Connect API](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account)، وانسخ Key ID وIssuer ID.
+2. جهّز حساب Google Play Developer الخاص بمؤسستك.
 3. جهّز أيقونة التطبيق بالمواصفات التالية:
    - **الصيغة:** SVG.
    - **الأبعاد:** 72 × 72 بكسل.
@@ -19,17 +19,20 @@ description: "البدء باستخدام تطبيق الأعضاء للهاتف
 
 ## إنشاء تطبيقات الأعضاء
 
-1. [ادعُ RNTOR](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account) عبر [publisher@rntor.com](mailto:publisher@rntor.com) إلى مؤسسة Apple Developer.
-2. افتح **إعدادات الشبكة** \> **تطبيق الجوال للأعضاء** بصفتك [مالكًا](/ar/admin/administration/administrators/owner)، وأرسل التفاصيل:
-   - ارفع الرسم الأمامي واختر لون الخلفية.
-   - أدخل بيانات حساب Apple Developer.
-   - ارفع ملف مفتاح API وأدخل Key ID وIssuer ID.
+1. أكّد بيانات دعوة فريق النشر مع [دعم Rntor](mailto:support@rntor.com)، ثم [جهّز حساب Apple Developer](/ar/admin/general/member-mobile-app/prepare-your-apple-developer-account).
+2. افتح **إعدادات الشبكة** > **تطبيق الأعضاء** بصفتك [مالكًا](/ar/admin/administration/administrators/owner).
+3. ارفع **الرسم الأمامي** واختر **لون الخلفية**، ثم راجع معاينات الأيقونة.
+4. تحت **Apple Developer**، اضغط **متابعة**. بعد منح الوصول المتفق عليه، فعّل **I have granted access**، وأدخل **Entity name** و**Team ID**، ثم اضغط **Continue**.
+5. تحت **Google Play Developer**، اضغط **متابعة**. بعد منح الوصول المتفق عليه، فعّل **I have granted access**، وأدخل **Account name** و**Account email**. يمكنك إضافة **Developer ID / Organization** اختياريًا، ثم اضغط **Continue**.
 
-بعد الإرسال نبدأ إعداد تطبيقَي iOS وAndroid، ونخبرك بالبريد عند نشرهما. وإذا رُفض التطبيق، نعيد إرساله إلى Apple وGoogle خلال 48 ساعة.
+<Frame>
+  <img
+    src="/images/mobile-settings-ar.jpg"
+    alt="إعدادات تطبيق الأعضاء مع معاينات الأيقونة وإعداد حسابَي Apple وGoogle"
+  />
+</Frame>
 
-<Info>
-  نستخدم عند النشر الأولي أوصافنا وقائمة الكلمات المفتاحية ولقطات الشاشة النموذجية. وبعد نشر التطبيق بعلامتك، يمكنك [تحديث صفحة المتجر](/ar/admin/general/member-mobile-app/customize-member-mobile-app).
-</Info>
+نسّق إرسال التطبيق ومواعيد إصداره مع دعم Rntor. بعد النشر يمكنك [تحديث صفحة التطبيق في المتجر](/ar/admin/general/member-mobile-app/customize-member-mobile-app).
 
 ### الاستعداد للمراجعة
 
@@ -44,26 +47,23 @@ description: "البدء باستخدام تطبيق الأعضاء للهاتف
 ## الوصول إلى التطبيقات
 
 - بعد النشر، تتحدّث [الصفحة المقصودة](/ar/admin/general/member-web-portal/customize-landing-page) تلقائيًا بشارتي App Store وGoogle Play وروابط التنزيل.
-
-![روابط تطبيق الأعضاء](/images/member-mobile-app-1.png)
-
 - يمكنك أيضًا مشاركة الروابط المباشرة في موقعك ورموز QR وشبكات التواصل والإعلانات. [الترويج للتطبيق](/ar/guides/promotion/promote-member-web-portal-and-mobile-app).
 
 <Info>
-  يتطلب التطبيق Android 8.0 أو أحدث، أو iOS 17.0 أو أحدث.
+  راجع صفحة تطبيقك في App Store أو Google Play لمعرفة إصدارات نظام التشغيل المدعومة.
 </Info>
 
 ## كيفية عمل التطبيق
 
 - **White-label وقابل للتخصيص:** عزز علامتك بالشعارات والألوان و[الإشعارات الفورية](/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية).
 - **متاح في المتجرين:** يسهل تنزيله من Google Play وApp Store.
-- **محسّن للجوال:** يقدم وظائف بوابة الويب نفسها بتجربة مصممة للهاتف.
+- **محسّن للجوال:** يقدم تجربة مصممة للهاتف، بالوظائف المتاحة في إصدار تطبيقك المنشور.
 - **تجربة أفضل:** ينشئ المستخدم الحجوزات والمدفوعات وينضم إلى الفعاليات ويصل إلى خدماتك بسرعة.
 
-**الأسئلة الشائعة**
+## الأسئلة الشائعة
 
 <Accordion title="كيف أختبر التطبيق قبل الإصدار؟">
-  جرّب تطبيقات بعض عملائنا من روابط التنزيل أسفل صفحاتهم المقصودة، مثل [FoundrSpace Coworking](https://app.foundrspace.com/) أو [Hatch Coworking](https://app.hatchcoworking.com/).
+  تواصل مع [دعم Rntor](mailto:support@rntor.com) لترتيب معاينة تطبيقك قبل الإصدار.
 </Accordion>
 
 <Accordion title="هل يوجد حد لطول اسم التطبيق؟">
