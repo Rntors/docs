@@ -2,41 +2,36 @@
 title: "إشعارات إخفاقات التكاملات"
 ---
 
-يبلغك RNTOR بإخفاقات التكامل عبر [إشعارات المسؤول](/ar/admin/administration/your-account/notifications/set-up-notifications).
+فعّل **Integrations > Failures** في [تفضيلات الإشعارات](/ar/admin/administration/your-account/notifications/set-up-notifications) لمتابعة مشكلات الاتصال والمزامنة. افتح **الوارد** واختر **التكاملات** لعرض التنبيه والعنصر المتأثر.
 
-![إشعار إخفاق](/images/account-notifications-integrations-failures-1.png)
+![إشعارات فشل مزامنة QuickBooks في وارد Rntor](/images/account-integration-failure-ar-20261014.jpg)
 
-تتوفر الإشعارات لـGoogle Calendar وXero وQuickBooks Online:
+تغطي هذه الصفحة **Google Calendar** و**QuickBooks Online**.
 
-| التكامل | الخطأ | الحل |
+| التكامل | التنبيه أو المشكلة | ما يجب مراجعته |
 | --- | --- | --- |
-| Google Calendar | فشل إنشاء حجز لوجود حجز آخر في الوقت نفسه | تحقق من الحجز المطلوب مزامنته والحجز الموجود في RNTOR |
-| Google Calendar | فشل إنشاء حجز متكرر | لا يدعم التكامل تكرار الحجوزات؛ أنشئه مباشرة في RNTOR |
-| Xero | Account code '200' is not a valid code | افتح حساب المبيعات في Xero وأدخل 200 في حقل **Code** |
-| Xero | You must specify an Account ID for the payment | أدخل قيمة **Account ID** في حساب التسوية |
-| Xero | Organization is not subscribed to currency | أضف عملة الفاتورة إلى حساب Xero |
-| Xero | Bank account status invalid for payment creation | الحساب المحوّلة إليه المدفوعات حُذف أو أُرشف أو عُدّل؛ أصلحه وأعد ربط المدفوعات |
-| Xero | A required Xero account is not selected or invalid | افتح **التكاملات** \> **Xero** واختر حسابًا صالحًا لكل نوع عنصر وللمدفوعات |
-| QuickBooks Online | Make sure all your transactions have a sales tax rate | ضريبة الفاتورة لا تطابق QuickBooks؛ عدّل النسبة هناك أو [في RNTOR](/ar/admin/billing/taxes/set-up-taxes) |
-| QuickBooks Online | Subscription period has ended or canceled... | انتهت تجربة QuickBooks أو اشتراكه أو توجد مشكلة دفع؛ راجع **Subscriptions and billing** في الحساب |
+| Google Calendar | تعارض الحجز مع حجز موجود | قارن وقت الحدث بالحجز الموجود في Rntor، ثم عالج التعارض قبل إعادة المزامنة |
+| QuickBooks Online | رفض الفاتورة لعدم تطابق ضريبة المبيعات | راجع ضريبة الفاتورة والنسب النشطة في QuickBooks. أضف النسبة المطابقة ضمن **Taxes** في QuickBooks، أو صحّح [إعدادات الضرائب في Rntor](/ar/admin/billing/taxes/set-up-taxes) إن كانت خاطئة، ثم أعد محاولة المزامنة |
+| QuickBooks Online | انتهاء التجربة أو الاشتراك، أو وجود مشكلة فوترة تمنع إضافة المعاملات | افتح **Subscriptions and billing** في QuickBooks وعالج حالة الفوترة قبل إعادة المحاولة |
+| QuickBooks Online | الحاجة إلى منح الاتصال تفويضًا مجددًا | أعد ربط حساب QuickBooks المعني في Rntor |
+| QuickBooks Online | غياب المنتج أو الخدمة المطلوبة، أو عدم نشاطها | راجع المنتج أو الخدمة المحددة في إعدادات التكامل، واختر عنصرًا نشطًا |
 
 <Info>
-  تُرسل إشعارات الإخفاق إلى مسؤولي الموقع الذي وقع فيه الخطأ أو الانقطاع فقط.
+  تخص إشعارات الإخفاق مسؤولي الموقع المتأثر. أبقِ **Failures** مفعّلًا في تفضيلاتك، وتأكد من أن صلاحياتك تشمل هذا الموقع.
 </Info>
 
 ## حل مشكلات الاتصال
 
-RNTOR غير مسؤول عن أخطاء المنتجات الخارجية أو انقطاعها، لكنه يرسل الإشعارات لتحديد المشكلة بسرعة.
+اقرأ التنبيه في **الوارد** وافحص العنصر المرتبط قبل تغيير إعدادات التكامل. ظهور التنبيه يساعدك على تحديد المشكلة، ولا يعني اكتمال المزامنة التي فشلت.
 
 ### انتهاء صلاحية الاتصال
 
-- افصل التكامل في RNTOR.
-- أعد ربطه ببيانات الحساب المحدّثة.
+افصل الاتصال المنتهي في Rntor، ثم أعد ربطه بالحساب الصحيح وبيانات الدخول الحالية.
 
 ### التحقق من إعداد الحساب
 
-افتح لوحة المنتج الخارجي وتأكد من استيفاء متطلبات التكامل الموضحة في [مركز المساعدة](/ar/admin/integrations/set-up-integrations).
+راجع إعدادات حساب المزود ومتطلبات [Google Calendar](/ar/admin/integrations/bookings/google-calendar) أو [QuickBooks Online](/ar/admin/integrations/accounting/quickbooks-online). إذا كانت المشكلة تخص فاتورة، راجع أيضًا حالة المزامنة والخطأ الظاهر بجوارها.
 
 ### التواصل مع دعم المزود
 
-إذا استمرت المشكلة أو احتجت إلى توضيح، تواصل مع دعم المنتج الخارجي لإصلاح إعدادات حسابك.
+إذا استمر رفض الاتصال أو المعاملة بعد تصحيح الإعدادات، تواصل مع دعم المزود وأرفق تفاصيل الخطأ. لا يستطيع Rntor تعديل قيود الحساب أو أعطال الخدمة داخل منتج آخر.
