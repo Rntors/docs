@@ -428,7 +428,6 @@
                             "group": "Notifications",
                             "pages": [
                               "admin/administration/your-account/notifications/set-up-notifications",
-                              "admin/administration/your-account/notifications/push-notifications",
                               "admin/administration/your-account/notifications/integration-failures"
                             ]
                           }
@@ -982,7 +981,6 @@
                             "group": "الإشعارات",
                             "pages": [
                               "ar/admin/administration/your-account/notifications/set-up-notifications",
-                              "ar/admin/administration/your-account/notifications/push-notifications",
                               "ar/admin/administration/your-account/notifications/integration-failures"
                             ]
                           }
