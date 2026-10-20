@@ -1176,6 +1176,16 @@
       "source": "/ar/admin/general/member-web-portal/troubleshoot-issues-with-a-custom-domain-configuration",
       "destination": "/ar/admin/general/member-web-portal/custom-domain-for-your-member-web-portal#حل-مشكلات-النطاق-المخصص",
       "permanent": true
+    },
+    {
+      "source": "/admin/administration/your-account/notifications/push-notifications",
+      "destination": "/admin/administration/your-account/notifications/set-up-notifications#push-notifications",
+      "permanent": true
+    },
+    {
+      "source": "/ar/admin/administration/your-account/notifications/push-notifications",
+      "destination": "/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية",
+      "permanent": true
     }
   ]
 }
