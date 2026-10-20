@@ -437,7 +437,6 @@
                         "group": "Administrators",
                         "pages": [
                           "admin/administration/administrators/administrators",
-                          "admin/administration/administrators/owner",
                           "admin/administration/administrators/permissions"
                         ]
                       },
@@ -990,7 +989,6 @@
                         "group": "المسؤولون",
                         "pages": [
                           "ar/admin/administration/administrators/administrators",
-                          "ar/admin/administration/administrators/owner",
                           "ar/admin/administration/administrators/permissions"
                         ]
                       },
@@ -1185,6 +1183,16 @@
     {
       "source": "/ar/admin/administration/your-account/notifications/push-notifications",
       "destination": "/ar/admin/administration/your-account/notifications/set-up-notifications#الإشعارات-الفورية",
+      "permanent": true
+    },
+    {
+      "source": "/admin/administration/administrators/owner",
+      "destination": "/admin/administration/administrators/administrators",
+      "permanent": true
+    },
+    {
+      "source": "/ar/admin/administration/administrators/owner",
+      "destination": "/ar/admin/administration/administrators/administrators",
       "permanent": true
     }
   ]

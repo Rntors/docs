@@ -1,50 +1,88 @@
 ---
 title: "Administrators"
 sidebarTitle: "Administrators"
-description: "Understand the administrator role, how to assign or remove admin access for someone, and what permissions administrators have in RNTOR"
+description: "Manage owners, super administrators, and administrators, invite your team, and set their roles and location access."
 ---
 
-## Who is an administrator
+Administrators are members of your team who operate your network and its locations. There is no limit to the number of administrators at a location.
 
-An administrator is a person on your coworking space's staff or team (e.g., a community manager, receptionist, or employee) who is responsible for managing a specific location. Each location can have an unlimited number of administrators.
+<a id="who-is-an-administrator" />
 
-Users with the **Administrator** role are identified by a shield icon next to their name on the **Customers** page:
+<a id="what-an-administrator-can-do" />
 
-![Image](/images/administration-roles-2.png)
+<a id="who-is-an-owner" />
 
-To view all administrators across all your locations, go to **Network settings \> Administrators**.
+<a id="what-an-owner-can-do" />
 
-![Administration Roles Who Is An Administrator See All Administrators](/images/administration-roles-who-is-an-administrator-see-all-administrators.png)
+## Understand administrator roles
 
-## Assign or remove administrator role
+A network can have several owners. Each staff account has one of these roles:
 
-Administrators can assign new administrators or remove admin access for any user. For this:
+| Role | Access | Restrictions |
+| --- | --- | --- |
+| **Administrator** | Works in the locations assigned to them, within their [permissions](/admin/administration/administrators/permissions). This can include location settings and integrations, content, customers, contracts, subscriptions, billing, bookings, orders, and support tickets. They can use **Free** for resource bookings and receive activity notifications for permitted modules. | Network settings and the Administrators page are view-only. They cannot invite, edit, or remove other administrators. |
+| **Super administrator** | Has every permission in every location. Can change network settings, including branding, member apps, AI features, and API credentials, and manage administrators and other super administrators. | Cannot manage owners, the RNTOR subscription or its add-ons and billing details, add or delete locations, or create or delete test environments. |
+| **Owner** | Has all super administrator access, manages owners, and is your organization's contact for the [RNTOR subscription](/admin/administration/billing/make-changes-to-rntor-subscription), add-ons, and payment and invoicing information. Can also add or delete [locations](/admin/administration/locations) and create or delete [test environments](/admin/administration/test-environment). | The network must always keep at least one owner. |
 
-1. Go to **Customers** \> **Users** tab \> select the user from the list.​
-2. Press the **(...)** menu top right in their profile \> select **Edit**.
-3. Toggle the **Administrator** switch:
-   - Enable it to make the user an administrator and [customize administrator permissions.](/admin/administration/administrators/permissions)
-   - Disable it to make an administrator a regular member.
-
-![Administration Roles Assign Or Remove Administrator Role](/images/administration-roles-assign-or-remove-administrator-role.png)
-
-<Info>
-  If the user is not yet added to RNTOR, [invite them](/admin/customer-management/users/members#invite-a-member) first and toggle the **Administrator** switch.
-</Info>
-
-## What an administrator can do
-
-According to the [enabled permissions](/admin/administration/administrators/permissions), administrators can:
-
-- Manage general location settings.
-- Add any location content.
-- Manage **Customers** page: invite users, create companies, subscriptions, etc.
-- Fully access users' contact and membership information.
-- Book rooms and other resources for free using the **Free** payment method.
-- [View analytics](/admin/analytics-reports/dashboards) and download custom reports.
-- [Receive notifications](/admin/administration/your-account/notifications/set-up-notifications) about all users' activities.
-- [Invite](/admin/customer-management/users/members#invite-a-member) or assign new administrators, [manage administrators' permissions](/admin/administration/administrators/permissions), or remove [administrators](/admin/customer-management/users/remove-users).
+<Tip>
+  Give ownership to an individual using their own account, rather than a shared team inbox. This makes responsibility for the network's subscription and billing clear.
+</Tip>
 
 <Info>
-  Administrators become active and count towards your subscription only if they [meet the criteria](/admin/administration/billing/active-users) by interacting with RNTOR.
+  An administrator counts toward your subscription's active users only when they [meet the activity criteria](/admin/administration/billing/active-users).
 </Info>
+
+## View all administrators
+
+Open **Settings** from the sidebar, then select **Administrators**. The page groups staff under **Owners**, **Super administrators**, and **Administrators** across your network.
+
+## Invite an administrator
+
+1. Open **Settings** > **Administrators** and select **Invite administrator**.
+2. Enter the person's email address. If they do not already have an account, also enter their first and last name.
+3. Choose a **Role**:
+   - **Owner** or **Super administrator** gives all permissions in all locations. No separate location or permission selection is needed. Only an owner can select **Owner**.
+   - **Administrator** lets you keep **All locations** enabled or select specific locations. All [permissions](/admin/administration/administrators/permissions) start enabled; turn off those the person does not need.
+4. Select **Invite**. The person receives an email invitation to the admin portal.
+
+<a id="assign-or-remove-administrator-role" />
+
+<a id="grant-or-remove-owner-rights" />
+
+## Change a role, locations, or permissions
+
+1. Open **Settings** > **Administrators**.
+2. Open the person's **(...)** menu and select **Edit**.
+3. Set their **Role**. An owner can select **Owner** to grant ownership or select another role to remove owner rights.
+4. For the **Administrator** role, select the locations they manage and adjust their [permissions](/admin/administration/administrators/permissions).
+5. Select **Save**.
+
+Owners can edit their own access, but the network's only owner cannot change their own role. Super administrators cannot edit their own account or change an owner's access.
+
+## Remove an administrator
+
+1. Open **Settings** > **Administrators**.
+2. Open the person's **(...)** menu and select **Remove administrator**.
+3. Confirm the removal.
+
+The person loses access to the admin portal. Their customer profile, if they have one, is unaffected.
+
+Owners and super administrators can remove their own administrator access. The network's last owner cannot be removed; another owner must remain.
+
+## FAQs
+
+### How do I give access to more than one location?
+
+[Edit the administrator](#change-a-role-locations-or-permissions) and select the required locations, or enable **All locations**. The same permission settings apply in every location they manage. Owners and super administrators already have all-location access.
+
+### Can an administrator manage other administrators?
+
+Only owners and super administrators can invite, edit, or remove administrators. To give an administrator this responsibility, change their role to **Super administrator**. Only an owner can manage other owners.
+
+### Does removing a customer also remove their administrator access?
+
+No. Removing a member or deleting a nonmember does not revoke administrator access. Use **Remove administrator** on this page to revoke it separately.
+
+### Are company invitations and Company Manager access separate?
+
+Yes. You can still [invite customers](/admin/customer-management/users/members) and invite people from a [company profile](/admin/customer-management/companies/set-up-companies). Choosing a company and enabling **Manager** gives access to that company's member functions. It does not grant the **Administrator**, **Super administrator**, or **Owner** role.
