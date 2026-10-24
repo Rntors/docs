@@ -4,34 +4,52 @@ sidebarTitle: "Test environment"
 description: "Set up an isolated sandbox environment to safely test RNTOR settings and build API integrations without affecting your live network data"
 ---
 
-The Test environment add-on lets you get an isolated sandbox to safely experiment with settings and build integrations without impacting your main network and data.
+A test environment is an isolated network for trying settings and building integrations without changing your live data.
 
-## Set up test environment
+<a id="set-up-test-environment" />
 
-1. [**Sign up for the Test environment add-on**](/admin/administration/billing/make-changes-to-rntor-subscription#upgrade-subscription) from **Network settings** \> **Billing**.
-2. Enter the name, timezone, and currency for your sandbox, then confirm your upgrade.
-3. The test environment is created instantly. Click **Open test environment** to begin testing and development.
+## Create a test environment
+
+Only an [owner](/admin/administration/administrators/administrators) can create or delete test environments.
+
+1. Open **Settings** > **Developers** for your network.
+2. Select **Test environments** > **Create test environment**.
+3. Enter the name, timezone, and currency, then select **Create**.
+4. Confirm the charge and select **Open test environment**.
+
+You can create several test environments. Each is a paid add-on; see [pricing](https://rntor.com/en/pricing).
 
 ## How test environment works
 
-The test environment fully mirrors the functionality of the main environment, with a few exceptions:
+The test network provides the same core workflows, with these exceptions:
 
-- You can connect [Stripe](/admin/integrations/payments/stripe/stripe), [Mollie](/admin/integrations/payments/mollie) integrations, as well as sandbox [PayPal](/admin/integrations/payments/paypal) or [Maya](/admin/integrations/payments/maya) accounts to the test environment. Other integrations are not available for connection.
-- Setting up a custom domain is disabled.
-- All email subjects, invoices, receipts, and credit note PDFs include a `[TEST]` prefix and a disclaimer stating they are non-fiscal documents generated for testing purposes only.
-- The test environment uses the DropboxSign sandbox for [eSignatures](/admin/billing/contracts/esignature). Contracts sent for eSignature explicitly state that they are not legally binding.
+- Connect [Stripe](/admin/integrations/payments/stripe/stripe) or [Mollie](/admin/integrations/payments/mollie), or sandbox accounts for [PayPal](/admin/integrations/payments/paypal), [Maya](/admin/integrations/payments/maya), and Authorize.net. Other integrations cannot be connected.
+- Custom domains are unavailable.
+- Email subjects and invoice, receipt, and credit note PDFs carry a `[TEST]` label. These are test documents, not fiscal documents.
+- [eSignatures](/admin/billing/contracts/esignature) use the provider's test environment. Test contracts are marked as non-binding. RNTOR uses BoldSign for electronic signatures.
+- Live add-ons do not transfer: Visitors, Floor plans, Member mobile app, and Custom MAIL FROM are unavailable. API access is included.
+- You can add any number of [locations](/admin/administration/locations).
 
 ![Administration Test Environment How Test Environment Works](/images/administration-test-environment-how-test-environment-works.png)
 
+## Delete a test environment
+
+1. As an owner, open **Settings** > **Developers** > **Test environments**.
+2. Open the environment's **(...)** menu and select **Delete**.
+3. Confirm deletion.
+
+Its charge stops at the next subscription renewal.
+
+<Warning>
+  Deletion permanently removes the test environment and its data. It cannot be undone.
+</Warning>
+
 ## Access to API in test environment
 
-When operating in the test environment, RNTOR [API credentials](/admin/administration/api-and-webhooks) are accessible to you at no additional cost. This allows you to freely build your custom integrations. These credentials are valid for the test environment only.
+[API credentials](/admin/administration/api-and-webhooks) are included at no additional cost and work only against the test network.
 
-Once you have completed your testing or integration development, contact our support team to [cancel your Test environment](/admin/administration/billing/make-changes-to-rntor-subscription#cancel-or-downgrade-your-subscription) add-on and [purchase the standard API add-on](/admin/administration/billing/make-changes-to-rntor-subscription#upgrade-subscription) for your live network. This will allow you to authenticate and deploy your integrations against your live network and data.
+To use an integration with live data, the owner [purchases the API & webhooks add-on](/admin/administration/billing/make-changes-to-rntor-subscription#upgrade-subscription) for the live network. [Delete the test environment](#delete-a-test-environment) when you no longer need it.
 
 ## Switching environments
 
-To toggle between your live and test networks:
-
-1. Click the **(...)** next to your network name in the top left of the admin portal.
-2. In the the **Network** dropdown, select your desired environment.
+Open the network selector in the admin portal and choose the live or test network you want to work in.

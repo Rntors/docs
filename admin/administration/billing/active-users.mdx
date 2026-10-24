@@ -8,20 +8,21 @@ Your subscription with RNTOR includes a certain number of active users. If you e
 
 ## Who are active users
 
-An active user is someone who engages with the member web portal, member mobile app, or RNTOR through bookings, payments, or by having a personal or company active subscription, thereby creating value for your business.
+An active user is someone who engages with the member web portal, member mobile app, or RNTOR through bookings, payments, an active personal or company subscription, or an active resource assignment, thereby creating value for your business.
 
 Users are considered active only if they perform any action from the following list:
 
 - Create, update, or delete a booking, or be an owner or invitee of a created, updated, or deleted booking.
 - Complete a payment for any service using credits, invoices, or money.
-- Have an [active personal or company subscription](/getting-started).
+- Have an [active personal or company subscription](/admin/billing/subscriptions/set-up-subscriptions).
+- Have an active [resource assignment](/admin/resource-management/resources/manage-resource-rentals-with-assignments) during the period, or belong to a company that has one.
 
 ## Check active users for the current period
 
-The [owner](/admin/administration/administrators/owner) can always check all the details of active users and related charges by following these steps:
+The [owner](/admin/administration/administrators/administrators) can always check all the details of active users and related charges by following these steps:
 
-1. Click the network name in the top left corner of the left-side panel.
-2. Go to the **Network settings** \> **Billing** page \> check the **Usage** section \> **Active users**. <img src="/images/administration-billing-active-users-check-active-users-for-the-current-period.png" alt="Administration Billing Active Users Check Active Users For The Current Period" />
+1. Open **Settings** from the sidebar.
+2. Go to the **Settings** \> **Billing** page \> check the **Usage** section \> **Active users**. <img src="/images/administration-billing-active-users-check-active-users-for-the-current-period.png" alt="Administration Billing Active Users Check Active Users For The Current Period" />
 
 | **Section** | **Meaning** |
 | --- | --- |
@@ -39,21 +40,23 @@ The [owner](/admin/administration/administrators/owner) can always check all the
 
 An owner can download a list of active users for the previous subscription periods to verify charges:
 
-1. Go to **Network settings** \> **Billing**.
+1. Select **Billing**.
 2. Locate the **Invoices** section \> click **(...)** \> **Download active users** to view your active user count for that timeframe.
 
 ![Administration Billing Active Users Check Active Users For The Past Period](/images/administration-billing-active-users-check-active-users-for-the-past-period.png)
 
-### Counting active users
+## Counting active users
 
 - Active users are counted at the entire app level, regardless of the number of locations.
 - If a user performs multiple activities from [this list](#who-are-active-users) within the same billing period, they are counted only once.
-- A company itself is never counted as an active user. Meanwhile, users who belong to a company with an active subscription are counted as active users.
+- A company itself is never counted as an active user. Meanwhile, users who belong to a company with an active subscription or resource assignment are counted as active users. A company with no members contributes no active users.
 - Active users don't roll over to the next billing period. Every billing period starts counting activities anew.
+- Activity in a [test environment](/admin/administration/test-environment) is excluded. Only activity in your live network counts.
 
 ## Best practices
 
 To maintain accurate active user data:
 
 - If a customer is not paying their invoices, [cancel their subscription](/admin/billing/subscriptions/cancel-a-subscription) to remove them from the active user count.
-- If certain company members are inactive, [remove them from the company](/admin/customer-management/companies/set-up-companies#remove-company-members) so they are no longer counted as active users based on the company subscription.
+- If certain company members are inactive, [remove them from the company](/admin/customer-management/companies/set-up-companies#remove-company-members) so they are no longer counted through the company's subscription or assignment.
+- When a rental ends, [remove its resource assignment](/admin/resource-management/resources/manage-resource-rentals-with-assignments) so it no longer makes the customer active.

@@ -8,9 +8,9 @@ If you are running multiple locations, you can add them to RNTOR. Each location 
 
 ## Add a location
 
-The [owner](/admin/administration/administrators/owner) needs to follow these steps:
+The [owner](/admin/administration/administrators/administrators) needs to follow these steps:
 
-1. On the left-side panel, click your network name \> **Network settings** \> **Locations** page.
+1. Open **Settings** > **Locations** for your network.
 2. Press **Add location**, and enter the details:
    - Name
    - Country
@@ -23,14 +23,14 @@ The [owner](/admin/administration/administrators/owner) needs to follow these st
 3. Press **Create**.
 
 <Info>
-  Adding more locations is available on the Pro plan and above in RNTOR legacy plans and on the [new Business plan.](/admin/administration/billing/make-changes-to-rntor-subscription)
+  A new location increases the subscription fee and any add-on fees charged per location. Review [pricing](https://rntor.com/en/pricing).
 </Info>
 
 ## Edit a location
 
 To rename a location, modify your location's language or timezone, administrators follow these steps:
 
-1. On the left-side panel, select the location \> click **(...)** next to it \> **Location** **settings** \> **General**.
+1. Select the location, then open **Location settings** > **General**.
 2. Make your changes and leave the page. The changes will apply immediately.
 
 ![Locations Edit A Location](/images/administration-locations-5.png)
@@ -41,9 +41,9 @@ To rename a location, modify your location's language or timezone, administrator
 
 ## Delete a location
 
-The [owner](/admin/administration/administrators/owner) needs to follow these steps:
+The [owner](/admin/administration/administrators/administrators) needs to follow these steps:
 
-1. On the left-side panel, click your network name \> **Network settings** \> **Locations** page.
+1. Open **Settings** > **Locations** for your network.
 
 ![Image](/images/administration-locations-3.png)
 
@@ -55,9 +55,11 @@ The [owner](/admin/administration/administrators/owner) needs to follow these st
   Deleting a location is permanent and irreversible. Even our engineers can't recover your data.
 </Warning>
 
-When members of one location can seamlessly access your other locations, engagement and retention increase. Learn how to set up a system where members can discover, access, and pay for services across your entire network using their credits and day passes.
+The current billing period is not refunded. The location and its per-location add-ons stop being charged from the next renewal.
 
 ## Multi-location management tips
+
+Help members discover, book, and pay for services across your network using credits and day passes.
 
 ### Configure visibility
 
@@ -75,26 +77,22 @@ Members can spend their personal or company credits and day passes across locati
 
 ![Locations Multi Location Management Tips Cross Location Credits And Day Passes](/images/administration-locations-5.png)
 
-**FAQs**
-
-<Accordion title="How to duplicate members to a second location?">
-  You do not need to migrate or duplicate members manually. By using the **Network members visibility** setting and [**cross-location credits and day passes**](/admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes), you can grant members access to both locations automatically.
-</Accordion>
+## FAQs
 
 <Accordion title="How are locations ordered for customers?">
-  <br />**On the landing page**
+  On the [landing page](/admin/general/member-web-portal/customize-landing-page), locations appear alphabetically.
 
-  Locations on the \*\*[landing page](/admin/general/member-web-portal/customize-landing-page) \*\*are ordered alphabetically by their title.
+  In the member portal and mobile app's **Locations** list, locations are grouped in this order:
 
-  **On the Locations page**
+  1. Locations where the customer is a member.
+  2. Locations with a pending request to join.
+  3. Other locations.
 
-  The order of the locations on the main \*\*Locations \*\*page in the member web portal and mobile apps depends on the user’s geolocation. If the user allowed tracking their geolocation, the locations are sorted in the following order:
+  Each group is sorted by distance when geolocation is allowed, or alphabetically otherwise.
+</Accordion>
 
-  1. The location where the user is a member (if the user is a member of any location) is at the top of the page.
-  2. Other locations are arranged from nearest to furthest based on the user’s geolocation.
+<Accordion title="Which location opens when customers open the member portal?">
+  The portal and mobile app return to the **Home** page of the location opened last. Customers can switch from **Locations**.
 
-  If the user didn’t allow geolocation checking, the locations are ordered in the following order:
-
-  1. Locations where a user has either an administrator or a member role.
-  2. All other locations.
+  On a first visit, customers see **Locations**, or **Home** when the network has one location. After signing out of the mobile app, it opens **Locations** again.
 </Accordion>
