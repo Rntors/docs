@@ -36,6 +36,8 @@ A network can have several owners. Each staff account has one of these roles:
 
 Open **Settings** from the sidebar, then select **Administrators**. The page groups staff under **Owners**, **Super administrators**, and **Administrators** across your network.
 
+![Owners, super administrators, and administrators in the Rntor staff directory](/images/rntor-administrators-list-en-20261024.jpg)
+
 ## Invite an administrator
 
 1. Open **Settings** > **Administrators** and select **Invite administrator**.
@@ -43,7 +45,15 @@ Open **Settings** from the sidebar, then select **Administrators**. The page gro
 3. Choose a **Role**:
    - **Owner** or **Super administrator** gives all permissions in all locations. No separate location or permission selection is needed. Only an owner can select **Owner**.
    - **Administrator** lets you keep **All locations** enabled or select specific locations. All [permissions](/admin/administration/administrators/permissions) start enabled; turn off those the person does not need.
-4. Select **Invite**. The person receives an email invitation to the admin portal.
+
+<Frame>
+  <img
+    src="/images/rntor-administrator-invite-en-20261024.jpg"
+    alt="Invite an administrator with their name, email, location, and permissions"
+  />
+</Frame>
+
+4. Select **Send invitation**. The person receives an email invitation to the admin portal.
 
 <a id="assign-or-remove-administrator-role" />
 
@@ -55,6 +65,14 @@ Open **Settings** from the sidebar, then select **Administrators**. The page gro
 2. Open the person's **(...)** menu and select **Edit**.
 3. Set their **Role**. An owner can select **Owner** to grant ownership or select another role to remove owner rights.
 4. For the **Administrator** role, select the locations they manage and adjust their [permissions](/admin/administration/administrators/permissions).
+
+<Frame>
+  <img
+    src="/images/rntor-administrator-edit-en-20261024.jpg"
+    alt="Edit an administrator's role, assigned locations, and grouped permissions"
+  />
+</Frame>
+
 5. Select **Save**.
 
 Owners can edit their own access, but the network's only owner cannot change their own role. Super administrators cannot edit their own account or change an owner's access.
@@ -63,6 +81,14 @@ Owners can edit their own access, but the network's only owner cannot change the
 
 1. Open **Settings** > **Administrators**.
 2. Open the person's **(...)** menu and select **Remove administrator**.
+
+<Frame>
+  <img
+    src="/images/rntor-administrator-remove-en-20261024.jpg"
+    alt="Remove administrator in the staff directory's action menu"
+  />
+</Frame>
+
 3. Confirm the removal.
 
 The person loses access to the admin portal. Their customer profile, if they have one, is unaffected.
@@ -71,18 +97,18 @@ Owners and super administrators can remove their own administrator access. The n
 
 ## FAQs
 
-### How do I give access to more than one location?
+<Accordion title="How do I give access to more than one location?">
+  [Edit the administrator](#change-a-role-locations-or-permissions) and select the required locations, or enable **All locations**. The same permission settings apply in every location they manage. Owners and super administrators already have all-location access.
+</Accordion>
 
-[Edit the administrator](#change-a-role-locations-or-permissions) and select the required locations, or enable **All locations**. The same permission settings apply in every location they manage. Owners and super administrators already have all-location access.
+<Accordion title="Can an administrator manage other administrators?">
+  Only owners and super administrators can invite, edit, or remove administrators. To give an administrator this responsibility, change their role to **Super administrator**. Only an owner can manage other owners.
+</Accordion>
 
-### Can an administrator manage other administrators?
+<Accordion title="Does removing a customer also remove their administrator access?">
+  No. Removing a member or deleting a nonmember does not revoke administrator access. Use **Remove administrator** on this page to revoke it separately.
+</Accordion>
 
-Only owners and super administrators can invite, edit, or remove administrators. To give an administrator this responsibility, change their role to **Super administrator**. Only an owner can manage other owners.
-
-### Does removing a customer also remove their administrator access?
-
-No. Removing a member or deleting a nonmember does not revoke administrator access. Use **Remove administrator** on this page to revoke it separately.
-
-### Are company invitations and Company Manager access separate?
-
-Yes. You can still [invite customers](/admin/customer-management/users/members) and invite people from a [company profile](/admin/customer-management/companies/set-up-companies). Choosing a company and enabling **Manager** gives access to that company's member functions. It does not grant the **Administrator**, **Super administrator**, or **Owner** role.
+<Accordion title="Are company invitations and Company Manager access separate?">
+  Yes. You can still [invite customers](/admin/customer-management/users/members) and invite people from a [company profile](/admin/customer-management/companies/set-up-companies). Choosing a company and enabling **Manager** gives access to that company's member functions. It does not grant the **Administrator**, **Super administrator**, or **Owner** role.
+</Accordion>
