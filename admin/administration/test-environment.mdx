@@ -23,7 +23,9 @@ You can create several test environments. Each is a paid add-on; see [pricing](h
 
 The test network provides the same core workflows, with these exceptions:
 
-- Connect [Stripe](/admin/integrations/payments/stripe/stripe) or [Mollie](/admin/integrations/payments/mollie), or sandbox accounts for [PayPal](/admin/integrations/payments/paypal), [Maya](/admin/integrations/payments/maya), and Authorize.net. Other integrations cannot be connected.
+- Use [Stripe](/admin/integrations/payments/stripe/stripe) in Test mode for payment testing.
+- Connect [Google Calendar](/admin/integrations/bookings/google-calendar) to synchronize bookings in your test network.
+- Connect [QuickBooks Online](/admin/integrations/accounting/quickbooks-online) to a **Sandbox** company. Test networks use QuickBooks Sandbox; live networks use production companies.
 - Custom domains are unavailable.
 - Email subjects and invoice, receipt, and credit note PDFs carry a `[TEST]` label. These are test documents, not fiscal documents.
 - [eSignatures](/admin/billing/contracts/esignature) use the provider's test environment. Test contracts are marked as non-binding. RNTOR uses BoldSign for electronic signatures.
