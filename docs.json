@@ -209,6 +209,11 @@
                     ]
                   },
                   {
+                    "group": "Catalog",
+                    "icon": "book-open",
+                    "pages": []
+                  },
+                  {
                     "group": "Engagement",
                     "icon": "handshake",
                     "pages": [
@@ -762,6 +767,11 @@
                       "ar/admin/resource-management/floors/set-up-floor-plans",
                       "ar/admin/resource-management/room-display/set-up-room-display"
                     ]
+                  },
+                  {
+                    "group": "الكتالوج",
+                    "icon": "book-open",
+                    "pages": []
                   },
                   "ar/admin/check-ins",
                   {
