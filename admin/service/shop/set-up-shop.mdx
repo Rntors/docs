@@ -9,18 +9,18 @@ Sell additional services, such as food or merch, to your customers.
 ## Enable Shop
 
 1. Click the menu **(...)** near the location name on the left-side panel.
-2. Go to **Location settings** > **Service** > **Shop**.
+2. Go to **Location settings** > **Catalog**.
 3. Enable the **Shop** switch.
 4. Create product categories to group your products by type. For example, **Cafe**, **Merch**, **Services**, etc.
 
 <Info>
-  By default, shop categories are sorted alphabetically by title. Drag and drop categories to rearrange their order.
+  New categories are added to the end of the list. Drag and drop categories to set their display order.
 </Info>
 
 5. Enable the **Order confirmation email** switch and [customize your confirmation email](/admin/general/customize-emails) template.
 
 <Info>
-  Users automatically receive the customized order confirmation email text after each order.
+  When order confirmation emails are enabled, configure their text in Catalog settings. You can enter English and Arabic versions.
 </Info>
 
 ![Shop image 1](/images/service-shop-1.png)
@@ -42,11 +42,11 @@ Sell additional services, such as food or merch, to your customers.
 | Featured             | If enabled, the product will be prominently pinned at the top of the **Shop** page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Options              | Add variations for the product. For example, if you're selling a branded T-shirt, your options might be different sizes and colors. If you're selling coffee, options could include **Latte** or "Americano." For each product option set: <ul><li>**Name** — the name of the product.</li><li>**Description** — extra details about this specific option.</li><li>**Available for order** — toggle this on to make the option available for order. If it's turned off, the option will appear as greyed out and unavailable.</li><li>**Limited quantity** — if you have a limited number of items in stock, enable this option and enter the available quantity. The system will automatically show this option as **Out of stock** once this number of items is ordered. [<u>Manage shop product availability</u>](/admin/service/shop/set-up-shop#manage-product-availability)</li><li>**Pricing** — set price in money and/or credits per item and set a [<u>custom tax rate</u>](/admin/billing/taxes/custom-tax-rates), if it's different from your location's default tax rate.</li></ul> |
 | Order                | <ul><li>**Enabled** — enables the **Order** button, allowing users to place orders for this product.</li><li>**Disabled** — lets users read the product description but not submit an order.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Refund policy        | Select whether orders are refundable. If an [<u>automatic refund</u>](/admin/billing/payments/refunds) is possible, it will only be processed if users cancel their orders while still in the **New** status.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Refund policy | Choose **No refund** or **Only if new**. Review the order's eligibility and refund outcome when canceling; a status change alone does not prove that money was returned. |
 | Visibility           | Manage access to the product by making it visible to administrators, location members, network members, or the public.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 <Tip>
-  [Bulk create shop products](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) with the help of Noor AI.
+  [Bulk create shop products](/admin/noor-ai/bulk-create-resources-products-events-and-benefits) with the RNTOR assistant.
 </Tip>
 
 ## How Shop works
@@ -131,11 +131,11 @@ The shop product will still be listed on the **Shop** page, but without the **Or
 ![Service Shop Edit Or Delete A Product](/images/service-shop-edit-or-delete-a-product.png)
 
 <Info>
-  If you update a product, users will be notified with a red notification dot on the **Shop** button. The product will appear at the top of the category on the **Shop** page.
+  After editing a product, review its visibility and options in the member portal. Use **Promote** to share an update in the feed.
 </Info>
 
 <Info>
-  Editing the [refund policy](/admin/billing/payments/refunds) applies only to future orders made after the administrator's changes.
+  Review the [refund policy](/admin/billing/payments/refunds) and order details before processing a cancellation or communicating a refund outcome.
 </Info>
 
 <Warning>
@@ -144,11 +144,29 @@ The shop product will still be listed on the **Shop** page, but without the **Or
 
 ## Edit or delete a product category
 
-1. Go to **Location settings** > **Service** > **Shop**.
+1. Go to **Location settings** > **Catalog**.
 2. Press the menu **(...)** next to the necessary category > **Edit** or **Delete**.
 
 ![Service Shop Edit Or Delete A Product Category 2](/images/service-shop-edit-or-delete-a-product-category-2.png)
 
 <Warning>
-  Deleting a product category is irreversible and can not be undone. All products from the selected category will be deleted automatically.
+  Before deleting a category, review its products and move the products you want to keep into another category. Confirm category deletion after reviewing its contents.
 </Warning>
+
+## Filter and export products
+
+Use search and the **Category** filter in **Catalog** > **Products**. Open the page menu and choose **Export products data** to download the filtered list as CSV. To delete several products, choose **Select items**, select the products, and review the selection before choosing **Delete**.
+
+## FAQs
+
+<Accordion title="How does disabling orders differ from hiding a product?">
+  Turning **Order** off keeps the product details visible without allowing purchases. Setting **Visibility** to **Administrators only** hides the product from customers. To disable a single variation, turn off **Available for order** on that option.
+</Accordion>
+
+<Accordion title="How do I restock an option?">
+  Open the product and option, check **Available for order** and **Limited quantity**, enter the actual available quantity, and save.
+</Accordion>
+
+<Accordion title="Can an administrator create an order for a customer?">
+  Yes. Click **Create order** in **Catalog** > **Products** and follow the [order creation steps](/admin/service/shop/manage-orders#create-an-order-for-a-customer).
+</Accordion>

@@ -31,7 +31,8 @@ To give the same discount to every member who signs up for a plan or resource ti
    * **For a plan** — go to **Catalog** > **Memberships** and open the membership, then the [plan](/admin/billing/plans/set-up-plans) under **Plans**.
    * **For an office, desk, or other resource** — offices, desks, and other resources are rented through a [resource tier](/admin/resource-management/resources/set-up-pricing#set-up-pricing-for-resource-rentals) rather than a plan, so open the resource on its **Resources** page (for example, **Offices** or **Desks**) and edit the tier you want.
 2. Locate the **Discounts** section.
-3. In the **Granted coupons** field, select the discounts that members on this plan or resource tier are eligible for.
+3. In **Granted coupons**, select the required discounts and save the plan. For a membership, save the membership window too.
+4. Review existing subscribers' items separately. If the intended coupons are not present, open the subscription, add them in **Granted coupons**, and save.
 
 <Frame>
   ![Grant coupons to every subscriber of a plan in RNTOR](/images/billing-discounts-plan-coupons.jpg)
@@ -40,7 +41,7 @@ To give the same discount to every member who signs up for a plan or resource ti
 ### How granted coupons apply at checkout
 
 * Customers see full, standard prices for all products in the member portal.
-* When a customer proceeds to checkout, if they have a coupon for that product in their subscription, it is automatically applied and the discount and discounted total is shown before the customer confirms payment.
+* At checkout, the system selects the best eligible discount for the payment method and shows the discounted total before confirmation. Monetary and credit payments may qualify for different discounts.
 
 <Frame>
 </Frame>
@@ -113,12 +114,12 @@ To create a promo code:
 |                               |                                                                                                                                                                                                                                                                              |
 | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Code**                      | The code customers enter at checkout to redeem the discount.                                                                                                                                                                                                                 |
-| **Expiration**                | Enable if the promo code should be valid only until a specific date. The expiration date is the last day the code can be redeemed, though customers can apply it to bookings scheduled after that date.                                                                      |
+| **Expiration** | Enable it and choose the expiration date and time. Check the selected time; do not assume the code remains valid until the end of that day. |
 | **Limited by first purchase** | Enable to make the promo code valid only for customers making their first purchase of this product type at the location.                                                                                                                                                     |
 | **Limited redemption**        | Enable to limit how many times the promo code can be redeemed across all customers. The promo code redemption limit cannot exceed the coupon's redemption limit. The limit applies to transactions — if the limit is 5, the promo code can be used for 5 separate purchases. |
 
 <Info>
-  Once created, a promo code cannot be edited. [Archive the promo code](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#archive-a-promo-code) and create a new one if changes are needed.
+  You can change a promo code from its details page using **Edit**, then **Save**. Delete the code from its menu when it should no longer be used.
 </Info>
 
 5. Share the promo code directly with customers or publish it in your marketing campaign. Customers enter it at checkout to redeem the discount.
@@ -145,7 +146,7 @@ Once a coupon or promo code is applied, the discount appears in transaction and 
 </Frame>
 
 <Info>
-  Only customers without an active subscription can apply promo codes during subscription sign-up. For customers with an existing subscription, only administrators can [apply coupons](/admin/billing/discounts/apply-discounts-to-bookings-and-purchases#apply-discounts-to-specific-customers-bookings-and-subscriptions) to their subscription items directly.
+  Customers enter a promo code when purchasing a new subscription, including an additional subscription. To discount a subscription that is already running, an administrator applies a coupon to its subscription item.
 </Info>
 
 ## Track coupon and promo code usage
@@ -178,33 +179,35 @@ Delete a coupon when you no longer want the discount to be redeemable. For this:
   ![Delete a coupon from the RNTOR Discounts list](/images/billing-discounts-delete-coupon.jpg)
 </Frame>
 
-Once deleted, the coupon will no longer be available to use for both administrators and customers who had it in their subscription.
+Deleting the coupon also deletes its associated promo codes. Review subscriptions and promotions that rely on it before deleting.
 
-## Archive a promo code
+<span id="archive-a-promo-code" />
 
-Archive a promo code when a promotion ends or the discount is no longer available. For this:
+## Delete a promo code
+
+To remove a promo code after a promotion ends:
 
 1. Go to **Catalog** > **Discounts**.
 2. Select the coupon associated with the promo code.
-3. Click **(...)** next to the promo code > **Archive**.
+3. Click **(...)** next to the promo code, select **Delete**, and confirm.
 
 <Frame>
 </Frame>
 
-Once archived, the promo code will no longer be valid to redeem discounts.
+After deletion, the code cannot be used for new purchases.
 
-**FAQs**
+## FAQs
 
 <Accordion title="Why is the user seeing the 'Promo code is not valid' error?">
   This error typically appears for one of the following reasons:
 
   * The code might have been entered with a typo or extra spaces. Please double-check it.
   * The promo code might be **Limited by first purchases**, and the user might have already purchased this product type previously. You can verify the user's previous purchases in their profile under **Customers**.
-  * The promo code might be redeemable for product types different from what the user is trying to purcase. Check the promo code and its associated coupon to confirm its eligible products types.
+  * The promo code might be redeemable for product types different from what the user is trying to purchase. Check the promo code and its associated coupon to confirm its eligible products types.
   * The coupon might be limited to specific items, and the selected item is not eligible. Review the **Applicable items** section for the relevant coupon.
   * The promo code might have expired. Check its expiration date.
   * The promo code or associated coupon might have reached the redemption limit.
-  * The promo code might have been archived or the associated coupon was deleted.
+  * The promo code or its associated coupon may have been deleted.
 
   You can verify the promo code settings on the **Catalog > Discounts** page.
 </Accordion>
@@ -213,7 +216,7 @@ Once archived, the promo code will no longer be valid to redeem discounts.
   * For new subscriptions, the discount takes effect on the subscription start date and applies to their first subscription payment.
   * For existing subscriptions, the discount takes effect on the next renewal date.
 
-  The discount duration is determined by the [coupon's "Duration type](/admin/billing/discounts/coupons-and-promo-codes) and begins when the discount takes effect.
+  The discount duration is determined by the [coupon's **Duration type**](/admin/billing/discounts/coupons-and-promo-codes) and begins when the discount takes effect.
 
   If the coupon's **Duration type** is other than "Once," the discount is applied to subsequent subscription invoices for the defined period.
 
@@ -222,5 +225,21 @@ Once archived, the promo code will no longer be valid to redeem discounts.
   Examples:
 
   * A coupon with a **3-month** duration applied to a yearly subscription discounts only the first yearly invoice, since only one invoice is generated during that period. The discount applies to the full yearly subscription price, not a prorated 3-month amount.
-  * A coupon with a **3-month** duration applied to a weekly subscription discounts all 13 weekly invoices generated within the first 3 months.
+  * For a weekly subscription, the discount covers eligible invoices within the three-month period; the number of invoices depends on their dates.
+</Accordion>
+
+<Accordion title="How do I change or remove a customer's granted discount?">
+  Open **Customers**, then the customer's or company's subscription, and select the item granting the discount. In **Granted coupons**, remove the old coupon or select a replacement, then save the item and subscription. To change a shared coupon's rules, open it in **Catalog** > **Discounts** and choose **Edit**.
+</Accordion>
+
+<Accordion title="Can selected members pay less for the same room?">
+  Create a room coupon, enable **Apply to specific items**, select the rooms, and grant the coupon in the relevant customers' subscriptions. Review the final amount and payment method when booking; credit discounts require **Applicable to credits** on the coupon.
+</Accordion>
+
+<Accordion title="Why does a booking total differ from the resource's standard price?">
+  Check the booking's payment details for the discount or promo code used, then review granted coupons in the customer's personal or company subscription. A later coupon change does not mean the price recorded for the original booking was incorrect.
+</Accordion>
+
+<Accordion title="Does a promo code combine with a granted coupon?">
+  No. A valid promo code replaces the granted coupon for the transaction. Review the final total before confirming payment.
 </Accordion>

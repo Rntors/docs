@@ -51,9 +51,11 @@ With memberships, you can:
 | Enable with **Request** type | Customers can see this plan and [submit a request](/admin/billing/plans/applications-for-plans#how-users-apply-for-a-plan) to sign up. Administrators process requests as support tickets. Useful if you don’t allow new customers to become your members independently. |
 | Disable **Sign-up** | The plan should remain visible only for administrators for [creating subscriptions](/admin/billing/subscriptions/set-up-subscriptions). |
 
-- [**Access**](/admin/integrations/access-control) — access control group. Appears if you have the [integration with the access control system](/admin/integrations/access-control).
-- [**Printing**](/admin/integrations/printing/ezeep-blue) — printing access group.
-- **Exclusive access** — customers on this plan have exclusive access to see or book resources.
+- [**Access**](/admin/integrations/access-control) — configure the door access group on a saved plan when a connected integration is available.
+
+<Info>
+  Configure exclusive resources and benefits in the shared membership window.
+</Info>
 
 5. Save the plan, then click **Save** in the membership window to save the membership and its plans.
 
@@ -94,6 +96,12 @@ To delete the whole membership, use **Delete** in its row menu.
   To stop new customer sign-ups, [disable **Sign-up**](/admin/billing/plans/set-up-plans) for the membership's plans. This keeps the plans available to administrators when creating subscriptions.
 </Warning>
 
+## Filter and export memberships
+
+Use the **Sign-up** filter to find memberships with an **Immediate**, **Request**, or **Off** plan. A membership matches when at least one of its plans matches the filter.
+
+Open the page menu and choose **Export**, then CSV or XLSX, to download the displayed memberships. The export contains one row per plan. You can also select memberships for bulk sign-up changes, export, or deletion. Deletion restrictions still apply to plans referenced by existing records.
+
 ## FAQs
 
 <AccordionGroup>
@@ -131,13 +139,15 @@ To delete the whole membership, use **Delete** in its row menu.
     - Turn on **Auto-update from plan** in existing customers’ subscriptions, then make a change to the plan. This way, it will automatically apply to existing members, too.
   </Accordion>
 
-  <Accordion title="How to raise the price for all customers who are subscribed to the plan?">
-    Ensure the [**Auto-update from plan** setting is enabled](/admin/billing/subscriptions/edit-a-subscription) in all your customers’ active subscriptions who have that plan. Then, edit the plan as needed.
+  <Accordion title="How do I raise a plan's price for existing subscribers?">
+    Review the linked subscription items and decide whether to use **Auto-update from plan** or [edit subscriptions manually](/admin/billing/subscriptions/edit-a-subscription). Save the new price, then review each subscription and its upcoming invoice before communicating the amount due. Changing a plan price does not establish that an already issued invoice has changed.
+  </Accordion>
 
-    - Any changes made to pricing, credits, or day passes will apply automatically to their subscriptions with the start of the next billing cycle.
-    - Changes to discounts, door access, and exclusive resource access apply immediately.
+  <Accordion title="Why is a plan missing from the customer catalog?">
+    Open the membership and its plan, then check that **Sign-up** is enabled with **Immediate** or **Request** selected. A plan with sign-up switched off remains available to administrators when creating subscriptions. Immediate sign-up also requires a price greater than zero.
+  </Accordion>
+
+  <Accordion title="Can I change a saved plan's billing cycle?">
+    The **Cycle** field is locked after the plan is saved. Add a new plan with the required cycle, and review existing customer subscriptions separately before moving customers to another option.
   </Accordion>
 </AccordionGroup>
-
-```text
-```
