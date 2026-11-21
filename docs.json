@@ -83,15 +83,6 @@
                     "pages": [
                       "admin/billing/set-up-billing",
                       {
-                        "group": "Plans",
-                        "pages": [
-                          "admin/billing/plans/set-up-plans",
-                          "admin/billing/plans/immediate-plan-sign-ups",
-                          "admin/billing/plans/applications-for-plans",
-                          "admin/billing/plans/virtual-office-and-mailing"
-                        ]
-                      },
-                      {
                         "group": "Contracts",
                         "pages": [
                           "admin/billing/contracts/set-up-contracts",
@@ -162,16 +153,8 @@
                         "pages": [
                           "admin/billing/credits-and-day-passes/credits",
                           "admin/billing/credits-and-day-passes/day-passes",
-                          "admin/billing/credits-and-day-passes/packages",
                           "admin/billing/credits-and-day-passes/scheduled-transactions",
                           "admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes"
-                        ]
-                      },
-                      {
-                        "group": "Discounts",
-                        "pages": [
-                          "admin/billing/discounts/coupons-and-promo-codes",
-                          "admin/billing/discounts/apply-discounts-to-bookings-and-purchases"
                         ]
                       },
                       {
@@ -209,6 +192,36 @@
                     ]
                   },
                   {
+                    "group": "Catalog",
+                    "icon": "book-open",
+                    "pages": [
+                      {
+                        "group": "Memberships",
+                        "pages": [
+                          "admin/billing/plans/set-up-plans",
+                          "admin/billing/plans/immediate-plan-sign-ups",
+                          "admin/billing/plans/applications-for-plans",
+                          "admin/billing/plans/virtual-office-and-mailing"
+                        ]
+                      },
+                      "admin/billing/credits-and-day-passes/packages",
+                      {
+                        "group": "Discounts",
+                        "pages": [
+                          "admin/billing/discounts/coupons-and-promo-codes",
+                          "admin/billing/discounts/apply-discounts-to-bookings-and-purchases"
+                        ]
+                      },
+                      {
+                        "group": "Products",
+                        "pages": [
+                          "admin/service/shop/set-up-shop",
+                          "admin/service/shop/manage-orders"
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "group": "Engagement",
                     "icon": "handshake",
                     "pages": [
@@ -221,13 +234,6 @@
                     "group": "Service",
                     "icon": "handshake-angle",
                     "pages": [
-                      {
-                        "group": "Shop",
-                        "pages": [
-                          "admin/service/shop/set-up-shop",
-                          "admin/service/shop/manage-orders"
-                        ]
-                      },
                       "admin/service/benefits/set-up-benefits",
                       {
                         "group": "Visitors",
@@ -633,15 +639,6 @@
                     "pages": [
                       "ar/admin/billing/set-up-billing",
                       {
-                        "group": "الخطط",
-                        "pages": [
-                          "ar/admin/billing/plans/set-up-plans",
-                          "ar/admin/billing/plans/immediate-plan-sign-ups",
-                          "ar/admin/billing/plans/applications-for-plans",
-                          "ar/admin/billing/plans/virtual-office-and-mailing"
-                        ]
-                      },
-                      {
                         "group": "العقود",
                         "pages": [
                           "ar/admin/billing/contracts/set-up-contracts",
@@ -715,18 +712,10 @@
                         "pages": [
                           "ar/admin/billing/credits-and-day-passes/credits",
                           "ar/admin/billing/credits-and-day-passes/day-passes",
-                          "ar/admin/billing/credits-and-day-passes/packages",
                           "ar/admin/billing/credits-and-day-passes/manage-credit-balance",
                           "ar/admin/billing/credits-and-day-passes/manage-day-pass-balance",
                           "ar/admin/billing/credits-and-day-passes/scheduled-transactions",
                           "ar/admin/billing/credits-and-day-passes/cross-location-credits-and-day-passes"
-                        ]
-                      },
-                      {
-                        "group": "الخصومات",
-                        "pages": [
-                          "ar/admin/billing/discounts/coupons-and-promo-codes",
-                          "ar/admin/billing/discounts/apply-discounts-to-bookings-and-purchases"
                         ]
                       },
                       {
@@ -763,6 +752,36 @@
                       "ar/admin/resource-management/room-display/set-up-room-display"
                     ]
                   },
+                  {
+                    "group": "الكتالوج",
+                    "icon": "book-open",
+                    "pages": [
+                      {
+                        "group": "العضويات",
+                        "pages": [
+                          "ar/admin/billing/plans/set-up-plans",
+                          "ar/admin/billing/plans/immediate-plan-sign-ups",
+                          "ar/admin/billing/plans/applications-for-plans",
+                          "ar/admin/billing/plans/virtual-office-and-mailing"
+                        ]
+                      },
+                      "ar/admin/billing/credits-and-day-passes/packages",
+                      {
+                        "group": "الخصومات",
+                        "pages": [
+                          "ar/admin/billing/discounts/coupons-and-promo-codes",
+                          "ar/admin/billing/discounts/apply-discounts-to-bookings-and-purchases"
+                        ]
+                      },
+                      {
+                        "group": "المنتجات",
+                        "pages": [
+                          "ar/admin/service/shop/set-up-shop",
+                          "ar/admin/service/shop/manage-orders"
+                        ]
+                      }
+                    ]
+                  },
                   "ar/admin/check-ins",
                   {
                     "group": "التفاعل",
@@ -777,13 +796,6 @@
                     "group": "الخدمة",
                     "icon": "handshake-angle",
                     "pages": [
-                      {
-                        "group": "المتجر",
-                        "pages": [
-                          "ar/admin/service/shop/set-up-shop",
-                          "ar/admin/service/shop/manage-orders"
-                        ]
-                      },
                       "ar/admin/service/benefits/set-up-benefits",
                       {
                         "group": "الزوار",
